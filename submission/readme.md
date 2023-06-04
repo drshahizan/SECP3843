@@ -45,6 +45,7 @@ A folder structure for a Malaysian culture system with CSS, JS, HTML, database, 
         ├── 📁images
         └── 📁source-code
 ```
+
 | No | Name | Folder |
 | --- | --- | :---: |
 | 1 | ADAM WAFII BIN AZUAR | [:octocat:](https://github.com/Jokeryde) |
@@ -91,7 +92,6 @@ A folder structure for a Malaysian culture system with CSS, JS, HTML, database, 
 | 42 | VINCENT BOO EE KHAI | [:octocat:](https://github.com/Vincboo) |
 | 43 | YONG ZHI YAN | [:octocat:](https://github.com/yongzy328) |
 
-```
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
