@@ -45,6 +45,21 @@ A folder structure for a Malaysian culture system with CSS, JS, HTML, database, 
 │   └── 📁files
 │       ├── 📁images
 │       └── 📁source-code
+├── 📁questions 3
+│   ├── 📄answerQ3.md
+│   └── 📁files
+│       ├── 📁images
+│       └── 📁source-code
+├── 📁questions 4
+│   ├── 📄answerQ4.md
+│   └── 📁files
+│       ├── 📁images
+│       └── 📁source-code
+└── 📁questions 5
+    ├── 📄answerQ5.md
+    └── 📁files
+        ├── 📁images
+        └── 📁source-code
 ```
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
