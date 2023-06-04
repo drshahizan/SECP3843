@@ -25,6 +25,46 @@ Alternative assessment offer several advantages over traditional assessments. Th
 ## Dataset
 Each student will be allocated a specific dataset exclusively for the purpose of conducting the Alternative Assessment. It is strictly prohibited to employ any other datasets. All responses and solutions provided for the Alternative Assessment must be derived solely from the assigned dataset.
 
+## Submission
+
+### Folder Structure
+You must place your file in the submission folder. Within the [`submission`](./submission) folder, create a folder called your  `github_id`. Name the default file as `index.php`. Suggested folder structure for this project:
+
+A folder structure for a Malaysian culture system with CSS, JS, HTML, database, PHP, and reporting:
+
+```
+📁group_id
+├── 📄readme.md
+├── 📁questions 1
+│   ├── 📄bootstrap.min.css
+│   └── 📄style.css
+├── 📁questions 1
+│   ├── 📄jquery.min.js
+│   └── 📄bootstrap.min.js
+├── 📁includes
+│   ├── 📄config.php
+│   ├── 📄functions.php
+│   └── 📄header.php
+├── 📁images
+│   ├── 📄banner.jpg
+│   └── 📄logo.png
+├── 📁pages
+│   ├── 📄about.php
+│   ├── 📄events.php
+│   ├── 📄gallery.php
+│   ├── 📄news.php
+│   ├── 📄profile.php
+│   └── 📄search.php
+├── 📁reporting
+│   ├── 📄daily-report.php
+│   ├── 📄monthly-report.php
+│   └── 📄yearly-report.php
+└── 📁database
+    ├── 📄db_config.php
+    ├── 📄db_create.php
+    ├── 📄db_seed.php
+    └── 📄db_connection.php
+```
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
