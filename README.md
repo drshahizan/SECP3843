@@ -36,34 +36,15 @@ A folder structure for a Malaysian culture system with CSS, JS, HTML, database, 
 📁group_id
 ├── 📄readme.md
 ├── 📁questions 1
-│   ├── 📄bootstrap.min.css
-│   └── 📄style.css
-├── 📁questions 1
-│   ├── 📄jquery.min.js
-│   └── 📄bootstrap.min.js
-├── 📁includes
-│   ├── 📄config.php
-│   ├── 📄functions.php
-│   └── 📄header.php
-├── 📁images
-│   ├── 📄banner.jpg
-│   └── 📄logo.png
-├── 📁pages
-│   ├── 📄about.php
-│   ├── 📄events.php
-│   ├── 📄gallery.php
-│   ├── 📄news.php
-│   ├── 📄profile.php
-│   └── 📄search.php
-├── 📁reporting
-│   ├── 📄daily-report.php
-│   ├── 📄monthly-report.php
-│   └── 📄yearly-report.php
-└── 📁database
-    ├── 📄db_config.php
-    ├── 📄db_create.php
-    ├── 📄db_seed.php
-    └── 📄db_connection.php
+│   ├── 📄answerQ1.md
+│   └── 📁files
+│       ├── 📁images
+│       └── 📁source-code
+├── 📁questions 2
+│   ├── 📄answerQ2.md
+│   └── 📁files
+│       ├── 📁images
+│       └── 📁source-code
 ```
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
