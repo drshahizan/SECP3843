@@ -45,9 +45,8 @@ A folder structure for a Malaysian culture system with CSS, JS, HTML, database, 
         ├── 📁images
         └── 📁source-code
 ```
-
 | No | Name | Folder |
-| --- | --- | --- |
+| --- | --- | :---: |
 | 1 | ADAM WAFII BIN AZUAR | [:octocat:](https://github.com/Jokeryde) |
 | 2 | ADRINA ASYIQIN BINTI MD ADHA | [:octocat:](https://github.com/adrinaasyiqin) |
 | 3 | AFIF HAZMIE ARSYAD BIN AGUS | [:octocat:](https://github.com/AfifHazmie) |
@@ -91,8 +90,6 @@ A folder structure for a Malaysian culture system with CSS, JS, HTML, database, 
 | 41 | TERENCE A/L LOORTHANATHAN | [:octocat:](https://github.com/Terence172) |
 | 42 | VINCENT BOO EE KHAI | [:octocat:](https://github.com/Vincboo) |
 | 43 | YONG ZHI YAN | [:octocat:](https://github.com/yongzy328) |
-
-Let me know if there's anything else I can help with!
 
 ```
 
