@@ -12,9 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Submission
 
 ### Folder Structure
-You must place your file in the submission folder. Within the [`submission`](./submission) folder, create a folder called your  `github_id`. Name the default file as `index.php`. Suggested folder structure for this project:
-
-A folder structure for a Malaysian culture system with CSS, JS, HTML, database, PHP, and reporting:
+You must place your file in the submission folder. Within the `submission` folder, create a folder called your  `github_id`. Name the default file as `index.php`. Suggested folder structure for this project:
 
 ```
 📁group_id
