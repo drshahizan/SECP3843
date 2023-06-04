@@ -15,7 +15,7 @@ Don't forget to hit the :star: if you like this repo.
 You must place your file in the submission folder. Within the `submission` folder, create a folder called your  `github_id`. Suggested folder structure for this project:
 
 ```
-📁group_id
+📁github_id
 ├── 📄readme.md
 ├── 📁questions 1
 │   ├── 📄answerQ1.md
@@ -45,21 +45,20 @@ You must place your file in the submission folder. Within the `submission` folde
 ```
 The folder structure you provided appears to be organized in a hierarchical manner. Here's a description of each component:
 
-1. `group_id` folder: This is the main folder or directory that serves as the root or parent directory for the entire structure.
+- `github_id` is your folder or repository name.
+- `readme.md` is a Markdown file that serves as the readme for the repository. It usually contains information about the project, instructions, and documentation.
 
-2. `readme.md` file: This file is typically used to provide information, instructions, or a summary of the contents within the `group_id` folder. It often serves as a guide for users or collaborators.
+Inside the `github_id` folder, there are five directories named `questions 1`, `questions 2`, `questions 3`, `questions 4`, and `questions 5`. Each of these directories represents a separate section or set of questions in the repository.
 
-3. `questions 1-5` folders: These folders represent individual question directories, numbered from 1 to 5. Each question folder contains the answer to the corresponding question and a subdirectory named `files`.
+Inside each `questions` directory, you'll find the following structure:
 
-4. `answerQ1.md` to `answerQ5.md` files: These files contain the answers to the respective questions. They likely provide explanations, solutions, or descriptions related to each question.
+- `answerQ1.md` (or `answerQ2.md`, `answerQ3.md`, etc.) is a Markdown file that contains the answer or response to the specific question. It likely provides a detailed explanation, solution, or discussion related to the question.
+- `files` is a subdirectory within each `questions` directory that contains additional files related to the answer.
+- Inside the `files` directory, you'll find two subdirectories:
+  - `images` directory holds image files that are referenced or used within the answer or any associated documentation.
+  - `source-code` directory contains source code files related to the question, answer, or any code examples provided.
 
-5. `files` subdirectories: Each question folder has a subdirectory named `files`, which further organizes the content related to that specific question.
-
-6. `images` subdirectory: This subdirectory within the `files` directory is used to store image files relevant to the question. It might contain visual aids, diagrams, or other graphical content.
-
-7. `source-code` subdirectory: This subdirectory, also located within the `files` directory, is used to store the source code files associated with the question. It typically holds programming code or scripts.
-
-Overall, this folder structure seems to be designed for organizing question-specific files and their associated resources, such as images and source code, in a clear and structured manner. It can be helpful for managing and sharing question-based content within a group or collaborative project.
+In summary, this folder structure appears to be organizing a GitHub repository by dividing it into separate sections for different questions. Each question has its own directory, including the answer file, along with subdirectories for related files, such as images and source code.
 
 ## Your Folder
 
