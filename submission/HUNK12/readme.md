@@ -1,1 +1,4 @@
-Hello! This is the submission folder for Mikhel Adam
+
+|NAME  | MIKHEL ADAM BIN MUHAMMAD EZRIN |
+|--|--|
+| Matric No. | A20EC0237 |
