@@ -2,7 +2,7 @@
   <p align='center'>👨‍🎓 Alternative Assesement Submition</p>
 </h1>
 <p align="center">
-  <img src="photo_6334516191514702112_y-removebg-preview.png" alt="Centered Image" style="width: 300px; height: 400px;">
+  <img src="photo_6334516191514702112_y-removebg-preview.png" alt="Centered Image" style="width: 260px; height: 350px;">
 </p>
 <div align="center">
   <p>
