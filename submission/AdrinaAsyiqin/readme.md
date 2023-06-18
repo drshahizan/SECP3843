@@ -4,7 +4,6 @@
   <img height="200px" src="https://github.com/drshahizan/special-topic-data-engineering/assets/96984290/80ed8f41-e774-47e6-b993-94ea309b3257" />
 </p>
 
-</p>
 <table align='center'>
   <tr>
     <th>Name</th>
