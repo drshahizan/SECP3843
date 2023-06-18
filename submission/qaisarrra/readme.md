@@ -1,16 +1,20 @@
 <h1 align='center'>Alternative Assessment</h1>
 <p align='center'>SECP3843-01: Special Topic in Data Engineering</p>
 
-<table align='center'>
-  <tr>
-    <th>Student Name</th>
-    <th>Matric</th>
-  </tr>
-  <tr>
-    <td>Qaisara binti Rohzan</td>
-    <td>A20EC0133</td>
-  </tr>
+<table align="center">
+    <tr>
+        <td>Student</td>
+        <td>Name</td>
+        <td>ID</td>
+    </tr>
+    <tr>
+        <td><img src="https://github.com/qaisarrra/qaisarrra/blob/main/qai_dp.jpg" width="222" height="200" alt="Qaisara"></td>
+        <td>Qaisara binti Rohzan</td>
+        <td>A20EC0133</td>
+    </tr>
 </table>
+
+
 
 ## Answer Sheets📝
 
