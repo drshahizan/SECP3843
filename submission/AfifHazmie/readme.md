@@ -1,5 +1,5 @@
 <h1>
-  <p align='center'>👨‍🎓 Alternative Assessment Submition</p>
+  <p align='center'>👨‍🎓 Alternative Assessment</p>
 </h1>
 <p align="center">
   <img src="photo_6334516191514702112_y-removebg-preview.png" alt="Centered Image" style="width: 260px; height: 350px;">
