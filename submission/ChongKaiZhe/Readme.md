@@ -1,6 +1,6 @@
 <h1 align="center">Alternative Assessment</h1>
 <h2 align="center">SECP3843 - Special Topic for Data Engineering</h2>
-
+<img align="center">
 <img src="https://github.com/drshahizan/SECP3843/assets/120616074/40e8ab11-8b93-4ae6-b10e-8c55233d7441">
 
 <table align="center">
