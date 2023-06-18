@@ -6,11 +6,13 @@
         <td align="center">Student</td>
         <td align="center">Name</td>
         <td align="center">ID</td>
+        <td align="center">Github</td>
     </tr>
     <tr>
         <td><img src="https://github.com/qaisarrra/qaisarrra/blob/main/qai_dp.jpg" width="222" height="200" alt="Qaisara"></td>
         <td>Qaisara binti Rohzan</td>
         <td>A20EC0133</td>
+        <td><a href="https://github.com/qaisarrra">:octocat:</a></td>
     </tr>
 </table>
 
