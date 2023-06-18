@@ -9,7 +9,7 @@
 <br>
 
 ## Folder Structure 📂
-The following the the folder structure for Terence172. Which is nested in the [`submission`](../submission) folder.
+The following the the folder structure for Terence172. Which is nested in the [`submission`](../) folder.
 
 ```
 📁Terence172
