@@ -1,6 +1,10 @@
 <h1 align="center"> Terence AA Folder ✍️ <a href="#" target="_blank" rel="noreferrer">  </a>   <br>
 </h1>
 
+## Details 🔎
+* Name: Terence Loorthanathan
+* Matric Number : A20EC0165
+* Course : Data Engineering
 
 ## Contents📝
 - 📑[Question 1 Answer](https://github.com/drshahizan/SECP3843/blob/main/submission/Terence172/question%201/answerQ1.md)
