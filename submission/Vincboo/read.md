@@ -1,3 +1,10 @@
-Name : Vincent Boo Ee Khai
-Matrix No. : A20EC0231
-Contact No.: +60 19-558 3800
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Matric</th>
+  </tr>
+  <tr>
+    <td>Vincent Boo Ee Khai</td>
+    <td>A20EC0231</td>
+  </tr>
+</table>
