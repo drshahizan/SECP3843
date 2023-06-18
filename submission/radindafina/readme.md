@@ -1,7 +1,9 @@
 <h1 align="center">Alternative Assessment</h1>
 <h2 align="center">SECP3843 - Special Topic for Data Engineering</h2>
 
-<img src="https://www.who.com.au/media/89034/whoni-portrait-image-2.jpg?width=90&center=0.0,0.0">
+<div align="center">
+  <img src="https://www.who.com.au/media/89034/whoni-portrait-image-2.jpg?width=90&center=0.0,0.0">
+</div>
 
 <table align="center">
   <tr>
