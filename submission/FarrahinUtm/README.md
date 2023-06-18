@@ -1,5 +1,5 @@
 
-<h1 align="center"> Special Topic Data Engineering - SECP3843(01)<br></br>
+<h1 align="center"> <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/FarrahinUtm/star.gif" width="30px" height="30px"/> Special Topic Data Engineering - SECP3843(01)<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/FarrahinUtm/star.gif" width="30px" height="30px"/><br></br>
 </h1>
 <p align="center">
 <table align="center">
@@ -16,7 +16,7 @@
 <br>
 
 # ALTERNATIVE ASSESSMENT
-## ABOUT ME 🌊
+## ABOUT ME 
 
 ## Contents📝
 
