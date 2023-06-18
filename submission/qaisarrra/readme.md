@@ -3,9 +3,9 @@
 
 <table align="center">
     <tr>
-        <td>Student</td>
-        <td>Name</td>
-        <td>ID</td>
+        <td align="center">Student</td>
+        <td align="center">Name</td>
+        <td align="center">ID</td>
     </tr>
     <tr>
         <td><img src="https://github.com/qaisarrra/qaisarrra/blob/main/qai_dp.jpg" width="222" height="200" alt="Qaisara"></td>
