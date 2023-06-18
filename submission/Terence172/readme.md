@@ -1,8 +1,10 @@
 <h1 align="center"> Terence AA Folder ✍️ <a href="#" target="_blank" rel="noreferrer">  </a>   <br>
 </h1>
-<p text-align="center">
-    ![ProfilePhoto](https://github.com/drshahizan/SECP3843/assets/119557391/ad1b0ce3-0ade-4da8-a711-e74526c6aa85)
-</p>
+
+
+![ProfilePhoto](https://github.com/drshahizan/SECP3843/assets/119557391/ad1b0ce3-0ade-4da8-a711-e74526c6aa85)
+
+
 ## Details 🔎
 * Name: Terence Loorthanathan
 * Matric Number : A20EC0165
