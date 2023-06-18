@@ -1,7 +1,6 @@
-<h2>Special Topic Data Engineering - SECP3843(01) <br></h2>
-# ALTERNATIVE ASSESSMENT
-## 🌟 About Me 🌟
 
+<h1 align="center"> Special Topic Data Engineering - SECP3843(01)<br></br>
+</h1>
 <p align="center">
 <table align="center">
   <tr>
@@ -15,3 +14,4 @@
   </table>
 </p>
 <br>
+
