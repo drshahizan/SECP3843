@@ -1,3 +1,6 @@
+<p>
+  <img height="200px" src="" />
+</p>
 <table>
   <tr>
     <th>Name</th>
