@@ -8,8 +8,8 @@
 
 <br>
 
-### Folder Structure
-You must place your file in the submission folder. Within the [`submission`](./submission) folder, create a folder called your  `github_id`. Name the default file as `index.php`. Suggested folder structure for this project:
+## Folder Structure 📂
+The following the the folder structure for Terence172. Which is nested in the [`submission`](../) folder.
 
 ```
 📁Terence172
