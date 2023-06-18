@@ -1,5 +1,7 @@
 <div id="header" align="center">
   <img src="https://media.giphy.com/media/L1R1tvI9svkIWwpVYr/giphy.gif"/>
+  ![WhatsApp Image 2023-06-16 at 12 15 29](https://github.com/drshahizan/SECP3843/assets/73205963/20d32846-6af3-46b6-bc83-600ebd78c7ef)
+
   <div id="badges">
   <a href="https://www.linkedin.com/in/amirah-raihanah-abdul-rahim-090530141/">
     <img src="https://img.shields.io/badge/LinkedIn-blue?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn Badge"/>
