@@ -3,7 +3,7 @@
 
 <div>
   <p>
-    Name : Goo Ye Jui
+    Name : Goo Ye Jui <br>
     Matrics Number : A20EC0191
   </p>
 </div>
