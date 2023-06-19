@@ -5,7 +5,19 @@
 </p>
 
 
-
+ <table align='center'>
+   <tr>
+     <th>Name</th>
+     <th>Matrics Number</th>
+      <th>Github</th>
+   </tr>
+ 
+   <tr>
+     <td>Myza Nazifa Binti Nazry</td>
+     <td>A20EC0219</td>
+     <td><a href="https://github.com/myzanazifah">:octocat:</a></td>
+   </tr>
+  </table>
 
 
 ## Answer Sheets📝
