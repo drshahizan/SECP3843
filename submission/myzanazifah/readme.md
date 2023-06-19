@@ -5,20 +5,7 @@
 </p>
 
 
-<table align="center">
-    <tr>
-       
-        <td align="center">Name</td>
-        <td align="center">ID</td>
-        <td align="center">Github</td>
-    </tr>
-    <tr>
-        
-        <td>Myza Nazifa Binti Nazry</td>
-        <td>A20EC0219</td>
-        <td><a href="https://github.com/myzanazifah">:octocat:</a></td>
-    </tr>
-</table>
+
 
 
 ## Answer Sheets📝
