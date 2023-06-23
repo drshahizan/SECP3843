@@ -3,8 +3,9 @@
 ## Alternative Assessment
 
 <p align="center">
-  <img height="200px" src="[materials/profile.png](https://github.com/drshahizan/SECP3843/assets/97084950/4bc3895b-16b0-4823-9ad2-6ab5760bf0cb)" />
+  <img height="200px" src="![Lee Jia Xian_Passport_size_pic](https://github.com/drshahizan/SECP3843/assets/97084950/356425ad-3bed-4d59-ba2a-68cee8ea22c5)" />
 </p>
+
 
 <table align="center">
   <tr>
@@ -16,8 +17,8 @@
     <td>A20EC0200o</td>
   </tr>
 </table>
-## Submission
 
+## Submission
 | No | Answer | File |
 | :-----: | ----- | :------: |
 | 1 | Question 1 | <a href="https://github.com/drshahizan/SECP3843/blob/main/submission/Leejxx/question%201/answerQ1.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
