@@ -12,7 +12,8 @@ Don't forget to hit the :star: if you like this repo.
 ## Alternative Assessment
 
 <p align="center">
-  <img height="200px" src="materials/profile.png" />
+  <img height="200px" src="https://github.com/drshahizan/SECP3843/assets/120564694/5c3e5754-9b9d-496c-bff4-009fb22d1d74" />
+
 </p>
 
 <table align="center">
@@ -21,8 +22,8 @@ Don't forget to hit the :star: if you like this repo.
     <th>Matric No.</th>
   </tr>
   <tr>
-    <td>your name</td>
-    <td>matric no</td>
+    <td>Maizatul Afrina Safiah Binti Saiful Azwan</td>
+    <td>A20EC0204</td>
   </tr>
 </table>
 
