@@ -3,7 +3,7 @@
 ## Alternative Assessment
 
 <p align="center">
-  <img height="200px" src="![Lee Jia Xian_Passport_size_pic](https://github.com/drshahizan/SECP3843/assets/97084950/356425ad-3bed-4d59-ba2a-68cee8ea22c5)" />
+  <img height="200px" src="https://github.com/drshahizan/SECP3843/assets/97084950/356425ad-3bed-4d59-ba2a-68cee8ea22c5" />
 </p>
 
 
