@@ -17,7 +17,7 @@
    </tr>
   </table>
 
-<h3 align='center'>Submission 💯	</h3>
+<h2 align='center'>Submission 💯	</h2>
 
 <table align='center'>
   <tr>
