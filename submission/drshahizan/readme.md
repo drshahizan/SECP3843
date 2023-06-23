@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Alternative Assessment
 
 <p align="center">
-  <img height="200px" src="https://github.com/drshahizan/SECP3843/assets/120616074/40e8ab11-8b93-4ae6-b10e-8c55233d7441" />
+  <img height="200px" src="materials/profile.png" />
 </p>
 
 <table align="center">
