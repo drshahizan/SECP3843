@@ -28,9 +28,9 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Submission
 
-| No | Question | MCQ |
+| No | Answer | MCQ |
 | :-----: | ----- | :------: |
-| 1 | JS Fundamentals | <a href="./materials/notes/n1q.md"><img src="./images/question.svg" width="24px" height="24px"></a> |
+| 1 | Question 1 | <a href="../../images/materials/notes/n1q.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
 
 
 
