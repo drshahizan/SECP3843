@@ -1,6 +1,5 @@
-# Special Topic Data Engineering (SECP3843)
-
-## Alternative Assessment
+<h1 align="center">Special Topic Data Engineering (SECP3843)</h1>
+<h2 align="center">Alternative Assessment 📃</h2>
 
 <p align="center">
   <img height="200px" src="https://github.com/drshahizan/SECP3843/assets/99240177/eb12307a-1df1-407f-a0e7-ebc7e8192ba6" />
