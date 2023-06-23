@@ -7,9 +7,7 @@
 
 Don't forget to hit the :star: if you like this repo.
 
-# Special Topic Data Engineering (SECP3843)
-
-## Alternative Assessment
+# Special Topic Data Engineering (SECP3843): Alternative Assessment
 
 ### Name:
 ### Matric No.:
