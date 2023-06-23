@@ -26,6 +26,15 @@ Don't forget to hit the :star: if you like this repo.
   </tr>
 </table>
 
+## Submission
+
+| No | Question | MCQ |
+| :-----: | ----- | :------: |
+| 1 | JS Fundamentals | <a href="./materials/notes/n1q.md"><img src="./images/question.svg" width="24px" height="24px"></a> |
+
+
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
