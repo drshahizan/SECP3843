@@ -3,7 +3,7 @@
 ## Alternative Assessment
 
 <p align="center">
-  <img height="200px" src="materials/profile.png" />
+  <img height="200px" src="photo_2021-10-23_19-03-27.jpg" />
 </p>
 
 <table align="center">
