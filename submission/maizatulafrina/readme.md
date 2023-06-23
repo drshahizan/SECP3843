@@ -21,7 +21,7 @@ Don't forget to hit the :star: if you like this repo.
     <th>Matric No.</th>
   </tr>
   <tr>
-    <td>Maizatul Afrina Safiah Binti Saiful Azwan</td>
+    <td>Maizatul Afrina Safiah Binti Saiful Azwan </td>
     <td>A20EC0204</td>
   </tr>
 </table>
