@@ -21,8 +21,8 @@ Don't forget to hit the :star: if you like this repo.
     <th>Matric No.</th>
   </tr>
   <tr>
-    <td>your name</td>
-    <td>matric no</td>
+    <td>Qaisara binti Rohzan</td>
+    <td>A20EC0133</td>
   </tr>
 </table>
 
