@@ -17,12 +17,37 @@
    </tr>
   </table>
 
-<h3 align='center'>Alternative Asessment ©️</h3>
+<h3 align='center'>Submission 💯	</h3>
 
-| No | Answer | File |
-| :-----: | ----- | :------: |
-| 1 | Question 1 | <a href="./Question1/AnswerQ1.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 2 | Question 2 | <a href="./Question2/AnswerQ2.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 3 | Question 3 | <a href="./Question3/AnswerQ3.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 4 | Question 4 | <a href="./Question4/AnswerQ4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 5 | Question 5 | <a href="./Question5/AnswerQ5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+<table align='center'>
+  <tr>
+    <th>No</th>
+    <th>Answer</th>
+    <th>File</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Question 1</td>
+    <td><a href="./Question1/AnswerQ1.md"><img src="../../images/answer.png" width="24px" height="24px"></a></td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Question 2</td>
+    <td><a href="./Question2/AnswerQ2.md"><img src="../../images/answer.png" width="24px" height="24px"></a></td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Question 3</td>
+    <td><a href="./Question3/AnswerQ3.md"><img src="../../images/answer.png" width="24px" height="24px"></a></td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>Question 4</td>
+    <td><a href="./Question4/AnswerQ4.md"><img src="../../images/answer.png" width="24px" height="24px"></a></td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>Question 5</td>
+    <td><a href="./Question5/AnswerQ5.md"><img src="../../images/answer.png" width="24px" height="24px"></a></td>
+  </tr>
+</table>
