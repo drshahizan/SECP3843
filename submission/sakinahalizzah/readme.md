@@ -2,7 +2,7 @@
 <h2 align="center">Alternative Assessment 📃</h2>
 
 <p align="center">
-  <img height="200px" src="https://github.com/drshahizan/SECP3843/assets/99240177/372a93fb-bbea-4f22-aab1-a69b85bb0ce0" />
+  <img height="200px" src="https://github.com/drshahizan/SECP3843/assets/99240177/a8ed5a27-52f6-4813-9810-b01bda956830" />
 </p>
 
 <table align="center">
