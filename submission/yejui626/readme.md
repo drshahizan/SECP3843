@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Alternative Assessment
 
 <p align="center">
-  <img height="200px" src="materials/profile.png" />
+  <img height="200px" src="https://github.com/drshahizan/SECP3843/assets/97009588/f6f7e7a2-db4c-486f-9069-4ff0d9af7052" />
 </p>
 
 <table align="center">
@@ -21,8 +21,8 @@ Don't forget to hit the :star: if you like this repo.
     <th>Matric No.</th>
   </tr>
   <tr>
-    <td>your name</td>
-    <td>matric no</td>
+    <td>GOO YE JUI</td>
+    <td>A20EC0191</td>
   </tr>
 </table>
 
