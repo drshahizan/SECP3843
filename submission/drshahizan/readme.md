@@ -28,7 +28,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Submission
 
-| No | Answer | MCQ |
+| No | Answer | File |
 | :-----: | ----- | :------: |
 | 1 | Question 1 | <a href="./question1/question1.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
 
