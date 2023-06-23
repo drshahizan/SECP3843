@@ -11,8 +11,21 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Alternative Assessment
 
+<p align="center">
+  <img height="200px" src="https://github.com/drshahizan/SECP3843/assets/120616074/40e8ab11-8b93-4ae6-b10e-8c55233d7441" />
+</p>
 
-##Name
+<table align="center">
+  <tr>
+    <th>Name</th>
+    <th>Matric No.</th>
+  </tr>
+  <tr>
+    <td>CHONG KAI ZHE</td>
+    <td>A20EC0086</td>
+  </tr>
+</table>
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
