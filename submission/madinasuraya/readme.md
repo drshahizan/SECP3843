@@ -16,3 +16,13 @@
      <td>A20EC0203</td>
    </tr>
   </table>
+
+<h3 align='center'>Alternative Asessment ©️</h3>
+
+| No | Answer | File |
+| :-----: | ----- | :------: |
+| 1 | Question 1 | <a href="./Question1/AnswerQ1.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 2 | Question 2 | <a href="./Question2/AnswerQ2.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 3 | Question 3 | <a href="./Question3/AnswerQ3.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 4 | Question 4 | <a href="./Question4/AnswerQ4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 5 | Question 5 | <a href="./Question5/AnswerQ5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
