@@ -1,30 +1,28 @@
- <h2 align="center">Alternative Assessment</h2>
- <h3 align="center"> SECP3843-01: Special Topic in Data Engineering</h2>
-<div align="center">
-  <img src="https://github.com/drshahizan/SECP3843/assets/99240177/eb12307a-1df1-407f-a0e7-ebc7e8192ba6" />
-</div>
+# Special Topic Data Engineering (SECP3843)
+
+## Alternative Assessment
+
+<p align="center">
+  <img height="200px" src="https://github.com/drshahizan/SECP3843/assets/99240177/eb12307a-1df1-407f-a0e7-ebc7e8192ba6" />
+</p>
 
 <table align="center">
- <tr>
-  <th>Name</th>
-  <th>Matric No.</th>
-  <th>Github</th>
- </tr>
- <tr>
-  <td>Sakinah Al'izzah Binti Mohd Asri</td>
-  <td>A20EC0142</td>
-  <td align="center"><a href="https://github.com/sakinahalizzah">:octocat:</a></td>
- </tr>
+  <tr>
+    <th>Name</th>
+    <th>Matric No.</th>
+  </tr>
+  <tr>
+    <td>Sakinah Al'izzah Binti Mohd Asri</td>
+    <td>A20EC0142</td>
+  </tr>
 </table>
 
-<!-- ANSWER SHEETS -->
-<details>
-  <summary>Answer Sheets</summary>
-  <ol>
-    <li><a href="https://github.com/drshahizan/SECP3843/tree/be6423bc67b9c2f00228600823df4c57ba101ba0/submission/sakinahalizzah/question%201">Questions 1</a></li>
-    <li><a href="https://github.com/drshahizan/SECP3843/tree/26aa5ebaf1d3b4c6dc2a0befcbc7cdc82cd46981/submission/sakinahalizzah/question%202">Questions 2</a></li>
-    <li><a href="https://github.com/drshahizan/SECP3843/tree/e25a00f696a2350eeb0e67c6ad0bb094ef0da56a/submission/sakinahalizzah/question%203">Questions 3</a></li>
-    <li><a href="https://github.com/drshahizan/SECP3843/tree/e25a00f696a2350eeb0e67c6ad0bb094ef0da56a/submission/sakinahalizzah/question%204">Questions 4</a></li>
-    <li><a href="https://github.com/drshahizan/SECP3843/tree/e25a00f696a2350eeb0e67c6ad0bb094ef0da56a/submission/sakinahalizzah/question%205">Questions 5</a></li>
-  </ol>
-</details>
+## Submission
+
+| No | Answer | File |
+| :-----: | ----- | :------: |
+| 1 | Question 1 | <a href="./question1/question1.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 2 | Question 2 | <a href="./question2/question2.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 3 | Question 3 | <a href="./question3/question3.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 4 | Question 4 | <a href="./question4/question4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 5 | Question 5 | <a href="./question5/question5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
