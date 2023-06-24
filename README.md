@@ -27,38 +27,7 @@ Each student will be allocated a specific dataset exclusively for the purpose of
 
 ## [Submission](./submission)
 
-### Folder Structure
-You must place your file in the submission folder. Within the [`submission`](./submission) folder, create a folder called your  `github_id`. Name the default file as `index.php`. Suggested folder structure for this project:
 
-```
-📁group_id
-├── 📄readme.md
-├── 📁questions 1
-│   ├── 📄answerQ1.md
-│   └── 📁files
-│       ├── 📁images
-│       └── 📁source-code
-├── 📁questions 2
-│   ├── 📄answerQ2.md
-│   └── 📁files
-│       ├── 📁images
-│       └── 📁source-code
-├── 📁questions 3
-│   ├── 📄answerQ3.md
-│   └── 📁files
-│       ├── 📁images
-│       └── 📁source-code
-├── 📁questions 4
-│   ├── 📄answerQ4.md
-│   └── 📁files
-│       ├── 📁images
-│       └── 📁source-code
-└── 📁questions 5
-    ├── 📄answerQ5.md
-    └── 📁files
-        ├── 📁images
-        └── 📁source-code
-```
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
