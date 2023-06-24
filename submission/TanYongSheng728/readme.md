@@ -27,26 +27,26 @@
   <tr>
     <td>1</td>
     <td>Question 1</td>
-    <td><a href="./question1/question1.md"><img src="../../images/answer.png" width="24px" height="24px"></a></td>
+    <td><a href="./question 1/answerQ1.md"><img src="../../images/answer.png" width="24px" height="24px"></a></td>
   </tr>
   <tr>
     <td>2</td>
     <td>Question 2</td>
-    <td><a href="./question2/question2.md"><img src="../../images/answer.png" width="24px" height="24px"></a></td>
+    <td><a href="./question 2/answerQ2.md"><img src="../../images/answer.png" width="24px" height="24px"></a></td>
   </tr>
   <tr>
     <td>3</td>
     <td>Question 3</td>
-    <td><a href="./question3/question3.md"><img src="../../images/answer.png" width="24px" height="24px"></a></td>
+    <td><a href="./question 3/answerQ3.md"><img src="../../images/answer.png" width="24px" height="24px"></a></td>
   </tr>
   <tr>
     <td>4</td>
     <td>Question 4</td>
-    <td><a href="./question4/question4.md"><img src="../../images/answer.png" width="24px" height="24px"></a></td>
+    <td><a href="./question 4/answerQ4.md"><img src="../../images/answer.png" width="24px" height="24px"></a></td>
   </tr>
   <tr>
     <td>5</td>
     <td>Question 5</td>
-    <td><a href="./question5/question5.md"><img src="../../images/answer.png" width="24px" height="24px"></a></td>
+    <td><a href="./question 5/answerQ5.md"><img src="../../images/answer.png" width="24px" height="24px"></a></td>
   </tr>
 </table>
