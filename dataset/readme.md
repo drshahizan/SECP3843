@@ -15,7 +15,7 @@ Don't forget to hit the :star: if you like this repo.
 | --- | --- | :---: |
 | 1 | ADAM WAFII BIN AZUAR | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/03-movie" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 2 | ADRINA ASYIQIN BINTI MD ADHA | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
-| 3 | AFIF HAZMIE ARSYAD BIN AGUS | <a href="AfifHazmie" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 3 | AFIF HAZMIE ARSYAD BIN AGUS | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 4 | AHMAD AIMAN HAFIZI BIN MUHAMMAD | <a href="AimanHafizi619" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 5 | AHMAD MUHAIMIN BIN AHMAD HAMBALI | <a href="Mincridible" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 6 | AMIRAH RAIHANAH BINTI ABDUL RAHIM | <a href="raihanarahim" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
@@ -26,9 +26,9 @@ Don't forget to hit the :star: if you like this repo.
 | 11 | GOO YE JUI | <a href="yejui626" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 12 | HONG PEI GEOK | <a href="peiyu00" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 13 | KELVIN EE | <a href="Kelvinnn-2" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
-| 14 | KONG JIA ROU | <a href="jrkong2001utm" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 14 | KONG JIA ROU | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 15 | LEE CAI XUAN | <a href="leecaixuan" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
-| 16 | LEE JIA XIAN | <a href="Leejxx" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 16 | LEE JIA XIAN | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 17 | LEE MING QI | <a href="MQiLEE" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 18 | LOW JUNYI | <a href="LowJunyi2001" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 19 | LUQMAN ARIFF BIN NOOR AZHAR | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/03-movie" ><img src="../images/dataset.png" width="24px" height="24px" ></a> |  
@@ -44,11 +44,11 @@ Don't forget to hit the :star: if you like this repo.
 | 29| NUR IRDINA ALIAH BINTI ABDUL WAHAB | <a href="Deelia99" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 30 | NUR IZZAH MARDHIAH BINTI RASHIDI | <a href="izzahmardhiah" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 31 | NUR SYAMALIA FAIQAH BINTI MOHD KAMAL | <a href="nursyamalia" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
-| 32 | NURARISSA DAYANA BINTI MOHD SUKRI | <a href="yanakunn" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 32 | NURARISSA DAYANA BINTI MOHD SUKRI | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 33 | NURFARRAHIN BINTI CHE ALIAS | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/03-movie" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 34 | ONG HAN WAH | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/03-movie" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 35 | QAISARA BINTI ROHZAN | <a href="qaisarrra" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
-| 36 | RADIN DAFINA BINTI RADIN ZULKAR NAIN | <a href="radindafina" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 36 | RADIN DAFINA BINTI RADIN ZULKAR NAIN | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 37 | RISHMA FATHIMA BINTI BASHER | <a href="rishmafathima" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 38 | SAKINAH AL'IZZAH BINTI MOHD ASRI | <a href="sakinahalizzah" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 39 | SINGTHAI SRISOI | <a href="singthai-srisoi" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
