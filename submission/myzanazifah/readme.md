@@ -20,10 +20,13 @@
   </table>
 
 
-## Answer Sheets📝
+## Submission
 
-- 📑[Question 1](https://github.com/drshahizan/SECP3843/tree/main/submission/myzanazifah/question1)
-- 📑[Question 2](https://github.com/drshahizan/SECP3843/tree/main/submission/myzanazifah/question2)
-- 📑[Question 3](https://github.com/drshahizan/SECP3843/tree/main/submission/myzanazifah/question3)
-- 📑[Question 4](https://github.com/drshahizan/SECP3843/tree/main/submission/myzanazifah/question4)
-- 📑[Question 5](https://github.com/drshahizan/SECP3843/tree/main/submission/myzanazifah/question5)
+| No | Answer | File |
+| :-----: | ----- | :------: |
+| 1 | Question 1 | <a href="./question1/question1.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 2 | Question 2 | <a href="./question2/question2.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 3 | Question 3 | <a href="./question3/question3.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 4 | Question 4 | <a href="./question4/question4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 5 | Question 5 | <a href="./question5/question5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+
