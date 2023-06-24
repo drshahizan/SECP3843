@@ -3,7 +3,7 @@
 ## Alternative Assessment
 
 <p align="center">
-  <img height="190px" src="https://github.com/yanakunn/SECP3843/assets/76076543/37cf6efb-60fa-4265-9940-ad7d4f131e63" />
+  <img height="200px" src="https://github.com/yanakunn/SECP3843/assets/76076543/ac3d22fc-5101-4ac4-abf1-5024cd3a3330" />
 </p>
 
 <table align="center">
