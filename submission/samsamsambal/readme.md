@@ -1,7 +1,20 @@
-<h1>Luqman Ariff Bin Noor Azhar (A20EC0202)</h1>
+# Special Topic Data Engineering (SECP3843)
 
-<h3>Alternative Assessment</h3>
-<img src="gamabr.jpg"  width="40%">
+## Alternative Assessment
+<p align="center">
+<img src="gamabr.jpg"  width="20%">
+</p>
+<table align="center">
+  <tr>
+    <th>Name</th>
+    <th>Matric No.</th>
+  </tr>
+  <tr>
+    <td>Luqman Ariff Bin Noor Azhar/td>
+    <td>A20EC0202</td>
+  </tr>
+</table>
+<br>
 
 ## Dataset:
 ## Submission
