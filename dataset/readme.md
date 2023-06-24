@@ -51,7 +51,7 @@ Don't forget to hit the :star: if you like this repo.
 | 36 | RADIN DAFINA BINTI RADIN ZULKAR NAIN | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 37 | RISHMA FATHIMA BINTI BASHER | <a href="rishmafathima" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 38 | SAKINAH AL'IZZAH BINTI MOHD ASRI | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/02-analytics" ><img src="../images/dataset.png" width="24px" height="24px" ></a> |  
-| 39 | SINGTHAI SRISOI | <a href="singthai-srisoi" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 39 | SINGTHAI SRISOI | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/03-movie" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 40 | TAN YONG SHENG | <a href="TanYongSheng728" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 41 | TERENCE A/L LOORTHANATHAN | <a href="Terence172" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 42 | VINCENT BOO EE KHAI | <a href="Vincboo" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
