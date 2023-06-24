@@ -28,9 +28,4 @@
 | 4 | Question 4 | <a href="./question4/question4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
 | 5 | Question 5 | <a href="./question5/question5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
 
-- 📑[Question 1](https://github.com/drshahizan/SECP3843/tree/main/submission/raihanarahim/question1)
-- 📑[Question 2](https://github.com/drshahizan/SECP3843/tree/main/submission/raihanarahim/question2)
-- 📑[Question 3](https://github.com/drshahizan/SECP3843/tree/main/submission/raihanarahim/question3)
-- 📑[Question 4](https://github.com/drshahizan/SECP3843/tree/main/submission/raihanarahim/question4)
-- 📑[Question 5](https://github.com/drshahizan/SECP3843/tree/main/submission/raihanarahim/question5)
 
