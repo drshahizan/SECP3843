@@ -1,8 +1,3 @@
----
-name: Singthai Srisoi
-matric-no: A20EC0147
----
-
 <div align="center">
 <h1>Special Topic Data Engineering (SECP3843)</h1>
 <h2>Alternative Assessment</h2>
