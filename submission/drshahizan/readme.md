@@ -24,6 +24,10 @@ Don't forget to hit the :star: if you like this repo.
     <td>your name</td>
     <td>matric no</td>
   </tr>
+    <tr>
+    <td>your name</td>
+    <td>matric no</td>
+  </tr>
 </table>
 
 ## Submission
