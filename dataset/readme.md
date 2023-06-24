@@ -9,58 +9,7 @@ Don't forget to hit the :star: if you like this repo.
 
 # Special Topic Data Engineering
 
-## Submission
-
-### Folder Structure
-You must place your file in the submission folder. Within the `submission` folder, create a folder called your  `github_id`. Suggested folder structure for this project:
-
-```
-📁github_id
-├── 📄readme.md
-├── 📁questions 1
-│   ├── 📄answerQ1.md
-│   └── 📁files
-│       ├── 📁images
-│       └── 📁source-code
-├── 📁questions 2
-│   ├── 📄answerQ2.md
-│   └── 📁files
-│       ├── 📁images
-│       └── 📁source-code
-├── 📁questions 3
-│   ├── 📄answerQ3.md
-│   └── 📁files
-│       ├── 📁images
-│       └── 📁source-code
-├── 📁questions 4
-│   ├── 📄answerQ4.md
-│   └── 📁files
-│       ├── 📁images
-│       └── 📁source-code
-└── 📁questions 5
-    ├── 📄answerQ5.md
-    └── 📁files
-        ├── 📁images
-        └── 📁source-code
-```
-The folder structure you provided appears to be organized in a hierarchical manner. Here's a description of each component:
-
-- `github_id` is your folder or repository name.
-- `readme.md` is a Markdown file that serves as the readme for the repository. It usually contains information about the project, instructions, and documentation.
-
-Inside the `github_id` folder, there are five directories named `questions 1`, `questions 2`, `questions 3`, `questions 4`, and `questions 5`. Each of these directories represents a separate section or set of questions in the repository.
-
-Inside each `questions` directory, you'll find the following structure:
-
-- `answerQ1.md` (or `answerQ2.md`, `answerQ3.md`, etc.) is a Markdown file that contains the answer or response to the specific question. It likely provides a detailed explanation, solution, or discussion related to the question.
-- `files` is a subdirectory within each `questions` directory that contains additional files related to the answer.
-- Inside the `files` directory, you'll find two subdirectories:
-  - `images` directory holds image files that are referenced or used within the answer or any associated documentation.
-  - `source-code` directory contains source code files related to the question, answer, or any code examples provided.
-
-In summary, this folder structure appears to be organizing a GitHub repository by dividing it into separate sections for different questions. Each question has its own directory, including the answer file, along with subdirectories for related files, such as images and source code.
-
-## Your Folder
+## Dataset
 
 | No | Name | Folder |
 | --- | --- | :---: |
