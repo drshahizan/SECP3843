@@ -42,7 +42,7 @@ Don't forget to hit the :star: if you like this repo.
 | 27 | MYZA NAZIFA BINTI NAZRY | <a href="myzanazifah" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 28 | NAYLI NABIHAH BINTI JASNI | <a href="nellyexey" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 29| NUR IRDINA ALIAH BINTI ABDUL WAHAB | <a href="Deelia99" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
-| 30 | NUR IZZAH MARDHIAH BINTI RASHIDI | <a href="izzahmardhiah" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 30 | NUR IZZAH MARDHIAH BINTI RASHIDI | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 31 | NUR SYAMALIA FAIQAH BINTI MOHD KAMAL | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/02-analytics" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 32 | NURARISSA DAYANA BINTI MOHD SUKRI | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 33 | NURFARRAHIN BINTI CHE ALIAS | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/03-movie" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
