@@ -11,9 +11,9 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Dataset
 
-| No | Name | Folder |
+| No | Name | Dataset |
 | --- | --- | :---: |
-| 1 | ADAM WAFII BIN AZUAR | <a href="Jokeryde" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 1 | ADAM WAFII BIN AZUAR | <a href="Jokeryde" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 2 | ADRINA ASYIQIN BINTI MD ADHA | <a href="AdrinaAsyiqin" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 3 | AFIF HAZMIE ARSYAD BIN AGUS | <a href="AfifHazmie" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 4 | AHMAD AIMAN HAFIZI BIN MUHAMMAD | <a href="AimanHafizi619" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
