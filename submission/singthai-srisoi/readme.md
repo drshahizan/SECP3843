@@ -18,7 +18,7 @@
 
 <h2>Submission</h2>
 
-<table>
+<table width="450">
   <tr>
     <th>No</th>
     <th>Answer</th>
