@@ -39,7 +39,40 @@ Don't forget to hit the :star: if you like this repo.
 | 4 | Question 4 | <a href="./question4/question4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
 | 5 | Question 5 | <a href="./question5/question5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
 
+## Folder Structure 📂
+The following the the folder structure for Terence172. Which is nested in the [`submission`](../) folder.
 
+```
+📁Terence172
+├── 📄readme.md
+├── 📁materials
+├── 📁question1
+│   ├── question1.md
+│   └── 📁files
+│       ├── 📁images
+│       └── 📁source-code
+├── 📁question2
+│   ├── question2.md
+│   └── 📁files
+│       ├── 📁images
+│       └── 📁source-code
+├── 📁question3
+│   ├── question3.md
+│   └── 📁files
+│       ├── 📁images
+│       └── 📁source-code
+├── 📁question4
+│   ├── question4.md
+│   └── 📁files
+│       ├── 📁images
+│       └── 📁source-code
+└── 📁question5
+    ├── question5.md
+    └── 📁files
+        ├── 📁images
+        └── 📁source-code
+```
+<br>
 
 
 
