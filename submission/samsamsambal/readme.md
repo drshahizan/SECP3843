@@ -10,7 +10,7 @@
     <th>Matric No.</th>
   </tr>
   <tr>
-    <td>Luqman Ariff Bin Noor Azhar/td>
+    <td>Luqman Ariff Bin Noor Azhar</td>
     <td>A20EC0202</td>
   </tr>
 </table>
