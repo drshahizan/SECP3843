@@ -10,8 +10,8 @@ Don't forget to hit the :star: if you like this repo.
 
 # Special Topic Data Engineering (SECP3843): Alternative Assessment
 
-#### Name:
-#### Matric No.:
+#### Name: Low Junyi
+#### Matric No.: A20EC0071
 #### Dataset:
 
 ## Question 5 (a)
