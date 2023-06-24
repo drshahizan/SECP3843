@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Alternative Assessment
 
 <p align="center">
-  <img width=40% src="https://github.com/drshahizan/SECP3843/assets/120614477/1cb8a45e-f300-46be-8fd1-a7d920efcdb2">
+  <img width=20% src="https://github.com/drshahizan/SECP3843/assets/120614477/1cb8a45e-f300-46be-8fd1-a7d920efcdb2">
 </p>
 
 <table align='center'>
