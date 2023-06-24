@@ -2,7 +2,7 @@
 <h2 align="center">Alternative Assessment</h2>
 
 <p align="center">
-  <img height="200px" src="materials/profile.png" />
+  <img height="200px" src="images/profile.jpeg" />
 </p>
 
 <table align="center">
