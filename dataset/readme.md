@@ -14,7 +14,7 @@ Don't forget to hit the :star: if you like this repo.
 | No | Name | Dataset |
 | --- | --- | :---: |
 | 1 | ADAM WAFII BIN AZUAR | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/03-movie" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
-| 2 | ADRINA ASYIQIN BINTI MD ADHA | <a href="AdrinaAsyiqin" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 2 | ADRINA ASYIQIN BINTI MD ADHA | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 3 | AFIF HAZMIE ARSYAD BIN AGUS | <a href="AfifHazmie" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 4 | AHMAD AIMAN HAFIZI BIN MUHAMMAD | <a href="AimanHafizi619" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 5 | AHMAD MUHAIMIN BIN AHMAD HAMBALI | <a href="Mincridible" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
