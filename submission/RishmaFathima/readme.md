@@ -43,31 +43,31 @@ Don't forget to hit the :star: if you like this repo.
 The following the the folder structure for Terence172. Which is nested in the [`submission`](../) folder.
 
 ```
-📁Terence172
+📁RishmaFathima
 ├── 📄readme.md
 ├── 📁materials
-├── 📁question1
-│   ├── question1.md
+├── 📁Question1
+│   ├── Question1.md
 │   └── 📁files
 │       ├── 📁images
 │       └── 📁source-code
-├── 📁question2
-│   ├── question2.md
+├── 📁Question2
+│   ├── Question2.md
 │   └── 📁files
 │       ├── 📁images
 │       └── 📁source-code
-├── 📁question3
-│   ├── question3.md
+├── 📁Question3
+│   ├── Question3.md
 │   └── 📁files
 │       ├── 📁images
 │       └── 📁source-code
-├── 📁question4
-│   ├── question4.md
+├── 📁Question4
+│   ├── Question4.md
 │   └── 📁files
 │       ├── 📁images
 │       └── 📁source-code
-└── 📁question5
-    ├── question5.md
+└── 📁Question5
+    ├── Question5.md
     └── 📁files
         ├── 📁images
         └── 📁source-code
