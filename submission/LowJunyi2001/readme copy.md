@@ -21,13 +21,10 @@ Don't forget to hit the :star: if you like this repo.
     <th>Matric No.</th>
   </tr>
   <tr>
-    <td>your name</td>
-    <td>matric no</td>
+    <td>Low Junyi</td>
+    <td>A20EC0071</td>
   </tr>
-    <tr>
-    <td>your name</td>
-    <td>matric no</td>
-  </tr>
+
 </table>
 <br>
 
