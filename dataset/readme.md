@@ -23,7 +23,7 @@ Don't forget to hit the :star: if you like this repo.
 | 8 | CHONG KAI ZHE | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/02-analytics" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 9 | EDDIE WONG CHUNG PHENG | <a href="Prowong01" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 10 | FARAH IRDINA BINTI AHMAD BAHARUDIN | <a href="arasayooo" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
-| 11 | GOO YE JUI | <a href="yejui626" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 11 | GOO YE JUI | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 12 | HONG PEI GEOK | <a href="peiyu00" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 13 | KELVIN EE | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 14 | KONG JIA ROU | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
@@ -32,14 +32,14 @@ Don't forget to hit the :star: if you like this repo.
 | 17 | LEE MING QI | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/02-analytics" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 18 | LOW JUNYI | <a href="LowJunyi2001" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 19 | LUQMAN ARIFF BIN NOOR AZHAR | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/03-movie" ><img src="../images/dataset.png" width="24px" height="24px" ></a> |  
-| 20 | MADIHAH BINTI CHE ZABRI | <a href="Madihah04" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 20 | MADIHAH BINTI CHE ZABRI | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 21 | MADINA SURAYA BINTI ZHARIN | <a href="madinasuraya" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 22 | MAIZATUL AFRINA SAFIAH BINTI SAIFUL AZWAN | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 23 | MIKHEL ADAM BIN MUHAMMAD EZRIN | <a href="HUNK12" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
-| 24 | MUHAMMAD DINIE HAZIM BIN AZALI | <a href="DinieHazim" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 24 | MUHAMMAD DINIE HAZIM BIN AZALI | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 25 | MUHAMMAD IMRAN HAKIMI BIN MOHD SHUKRI | <a href="muhdimranh" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 26 | MUHAMMAD NAQUIB BIN ZAKARIA | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/03-movie" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
-| 27 | MYZA NAZIFA BINTI NAZRY | <a href="myzanazifah" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 27 | MYZA NAZIFA BINTI NAZRY | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 28 | NAYLI NABIHAH BINTI JASNI | <a href="nellyexey" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 29| NUR IRDINA ALIAH BINTI ABDUL WAHAB | <a href="Deelia99" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 30 | NUR IZZAH MARDHIAH BINTI RASHIDI | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
@@ -54,7 +54,7 @@ Don't forget to hit the :star: if you like this repo.
 | 39 | SINGTHAI SRISOI | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/03-movie" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 40 | TAN YONG SHENG | <a href="TanYongSheng728" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 41 | TERENCE A/L LOORTHANATHAN | <a href="Terence172" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
-| 42 | VINCENT BOO EE KHAI | <a href="Vincboo" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 42 | VINCENT BOO EE KHAI | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 | 43 | YONG ZHI YAN | <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
 
 ## Contribution 🛠️
