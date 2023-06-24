@@ -12,7 +12,8 @@
 ### Dataset: Supply Store Dataset
 
 ### Submission
-
+<h3 align="center">Dataset: Supply Store Dataset</h3>
+<h3 align="center">Submission</h3>
 <table align="center">
   <tr>
     <th>No</th>
