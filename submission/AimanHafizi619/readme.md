@@ -1,13 +1,3 @@
-<h1><p align='center'>👨‍🎓 Ahmad Aiman Hafizi Bin Muhammad</p> </h1>
-<p align="center">
-
-</p>
-
-|Name  | Matric No. | Profile Picture |
-|--|--|--|
-| AHMAD AIMAN HAFIZI BIN MUHAMMAD | A20EC0177 | <img src="profile-pic.png"  width="40%"> |
-
-
 <a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/network/members"><img src="https://img.shields.io/github/forks/drshahizan/SECP3843" alt="Forks Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/pulls"><img src="https://img.shields.io/github/issues-pr/drshahizan/SECP3843" alt="Pull Requests Badge"/></a>
@@ -22,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Alternative Assessment
 
 <p align="center">
-  <img height="200px" src="materials/profile.png" />
+  <img height="200px" src="profile-pic.png" />
 </p>
 
 <table align="center">
@@ -31,13 +21,8 @@ Don't forget to hit the :star: if you like this repo.
     <th>Matric No.</th>
   </tr>
   <tr>
-    <td>your name</td>
-    <td>matric no</td>
-  </tr>
-    <tr>
-    <td>your name</td>
-    <td>matric no</td>
-  </tr>
+    <td>AHMAD AIMAN HAFIZI BIN MUHAMMAD</td>
+    <td>A20EC0177</td>
 </table>
 <br>
 
