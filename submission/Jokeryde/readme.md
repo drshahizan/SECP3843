@@ -1,11 +1,3 @@
-AA FINAL
-
-<img src="https://github.com/drshahizan/SECP3843/blob/b258210aaed9fc156dcd7236a012e9a37acff947/submission/Jokeryde/img/img001.jpg" />
-
-Adam Wafii Bin Azuar
-Matric Number: A20EC0003
-
-
 <a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/network/members"><img src="https://img.shields.io/github/forks/drshahizan/SECP3843" alt="Forks Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/pulls"><img src="https://img.shields.io/github/issues-pr/drshahizan/SECP3843" alt="Pull Requests Badge"/></a>
