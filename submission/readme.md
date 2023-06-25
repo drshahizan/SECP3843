@@ -71,7 +71,7 @@ In summary, this folder structure appears to be organizing a GitHub repository b
 | 5 | AHMAD MUHAIMIN BIN AHMAD HAMBALI | <a href="Mincridible" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 6 | AMIRAH RAIHANAH BINTI ABDUL RAHIM | <a href="raihanarahim" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 7 | CHLOE RACQUELMAE KENNEDY | <a href="Racquelmae" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
-| 8 | CHONG KAI ZHE | <a href="Chongkz29" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 8 | CHONG KAI ZHE | <a href="ChongKaiZhe" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 9 | EDDIE WONG CHUNG PHENG | <a href="Prowong01" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 10 | FARAH IRDINA BINTI AHMAD BAHARUDIN | <a href="Farah Irdina" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 11 | GOO YE JUI | <a href="yejui626" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
@@ -91,7 +91,7 @@ In summary, this folder structure appears to be organizing a GitHub repository b
 | 25 | MUHAMMAD IMRAN HAKIMI BIN MOHD SHUKRI | <a href="muhdimranh" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 26 | MUHAMMAD NAQUIB BIN ZAKARIA | <a href="nqbzkr01" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 27 | MYZA NAZIFA BINTI NAZRY | <a href="myzanazifah" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
-| 28 | NAYLI NABIHAH BINTI JASNI | <a href="nellyexey" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 28 | NAYLI NABIHAH BINTI JASNI | <a href="naylinabihah" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 29| NUR IRDINA ALIAH BINTI ABDUL WAHAB | <a href="Deelia99" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 30 | NUR IZZAH MARDHIAH BINTI RASHIDI | <a href="izzahmardhiah" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 31 | NUR SYAMALIA FAIQAH BINTI MOHD KAMAL | <a href="nursyamalia" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
@@ -100,7 +100,7 @@ In summary, this folder structure appears to be organizing a GitHub repository b
 | 34 | ONG HAN WAH | <a href="ongwah" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 35 | QAISARA BINTI ROHZAN | <a href="qaisarrra" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 36 | RADIN DAFINA BINTI RADIN ZULKAR NAIN | <a href="radindafina" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
-| 37 | RISHMA FATHIMA BINTI BASHER | <a href="rishmafathima" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 37 | RISHMA FATHIMA BINTI BASHER | <a href="RishmaFathima" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 38 | SAKINAH AL'IZZAH BINTI MOHD ASRI | <a href="sakinahalizzah" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 39 | SINGTHAI SRISOI | <a href="singthai-srisoi" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 40 | TAN YONG SHENG | <a href="TanYongSheng728" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 

@@ -13,7 +13,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Alternative Assessment
 
 <p align="center">
-  <img height="250px" src="imran.jpg" />
+  <img height="350px" src="imran.jpg" />
 </p>
 
 <table align="center">
