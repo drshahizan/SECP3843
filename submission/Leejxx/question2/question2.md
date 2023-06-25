@@ -37,6 +37,7 @@ You can return the list of all databases running on MongoDB Server including def
 <img  src="./files/images/shell2.JPG"></img>
 
 Then enter `use AA` to switch to the desired database where we want.
+
 <img  src="./files/images/shell3.JPG"></img>
 
 ## Question 2 (b)
