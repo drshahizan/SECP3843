@@ -27,7 +27,7 @@ Don't forget to hit the :star: if you like this repo.
 </table>
 <br>
 
-## Dataset: AIRBNB LISTINGS DATASET
+## Dataset: Airbnb Listing Dataset
 
 ## Submission
 
