@@ -9,8 +9,6 @@ Don't forget to hit the :star: if you like this repo.
 
 # Special Topic Data Engineering (SECP3843)
 
-<a href="./accounts.json" ><img src="./dataset.png" width="24px" height="24px" ></a>
-
 ## Alternative Assessment
 
 <p align="center">
@@ -29,6 +27,11 @@ Don't forget to hit the :star: if you like this repo.
 <br>
 
 ## Dataset: Analytics Dataset
+<a href="./accounts.json" ><img src="./dataset.png" width="24px" height="24px" ></a>
+
+<a href="./customers.json" ><img src="./dataset.png" width="24px" height="24px" ></a>
+
+<a href="./transactions.json" ><img src="./dataset.png" width="24px" height="24px" ></a>
 
 ## Submission
 
