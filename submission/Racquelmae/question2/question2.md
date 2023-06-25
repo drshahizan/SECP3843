@@ -18,31 +18,33 @@ Don't forget to hit the :star: if you like this repo.
 Download the [City Inspections](https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections) dataset into the pc. 
 
 ### 2. Start MongoDB server
-../images/start_server.jpg
+<img  src="./files/images/start_server.jpg"></img>
 Open Command Prompt and type `mongod` to start the MongoDB server.
 
 ### 3. Import Dataset
-../images/import.jpg
+<img  src="./files/images/import.jpg"></img>
 In the terminal, type `mongoimport "C:\Users\chloe\Downloads\city_inspections.json" -d AA -c City` to import the dataset into MongoDB. The database and collection are automatically created as `-d AA` specifies the name of the database on which to run the mongoimport and `-c City` specifies the collection to import.
-
-../images/database.jpg
+<br>
+<br>
+<img  src="./files/images/database.jpg"></img>
 Once the dataset is imported, it could be seen in MongoDB Compass.
 
 ### 4. Access MongoDB shell
-../images/mongosh.jpg
+<img  src="./files/images/mongosh.jpg"></img>
 In the terminal, type `mongosh` to access MongoDB shell.
 
-../images/show_dbs.jpg
+<img  src="./files/images/show_dbs.jpg"></img>
+
 To see all available databases, type `show dbs`.
 
 ## Question 2 (b)
-../images/use_AA.jpg
+<img  src="./files/images/use_AA.jpg"></img>
+
 In the terminal, type 'use AA' to switch to the AA database.
 
 ### i. Create
 `db.collection.insertOne()` method inserts a single document into a collection. If the document does not specify an _id field, MongoDB adds the _id field with an ObjectId value to the new document. 
 
-../images/create.jpg
 To insert a new document into the AA.City collection:
 ```json
 db.City.insertOne(
@@ -57,29 +59,32 @@ db.City.insertOne(
     }
 )
 ```
-
-../images/create2.jpg
+<img  src="./files/images/create.jpg"></img>
+<br>
+<br>
+<img  src="./files/images/create2.jpg"></img>
 The newly created document can be found in the database.
 
-../images/create3.jpg
+<img  src="./files/images/create3.jpg"></img>
+
 Or using the find method in the terminal. 
 
 ### ii. Read
 `db.collection.find()` method reads documents in the collection. To select documents which match an equality condition, specify the condition as a `<field>:<value>` pair in the query filter document.
 
-../images/find.jpg
 To return all inspections where the id equals 10312-2015-ENFO from the AA.City collection:
 ```json
 db.City.find( { id: "10312-2015-ENFO" } )
 ```
-
-../images/find2.jpg
+<img  src="./files/images/find.jpg"></img>
+<br>
+<br>
+<img  src="./files/images/find2.jpg"></img>
 The document can also be found in the database.
 
 ### iii. Update
 `db.collection.updateOne()` method updates the first document that matches a specified filter.
 
-../images/update.jpg
 To update the first document in the AA.City collection where certificate_number equals 10003479:
 ```json
 db.City.updateOne( 
@@ -90,19 +95,21 @@ db.City.updateOne(
     }
 )
 ```
-
-../images/update1.jpg
+<img  src="./files/images/update.jpg"></img>
+<br>
+<br>
+<img  src="./files/images/update1.jpg"></img>
 Before the document was updated, the address is null.
 
-../images/update2.jpg
+<img  src="./files/images/update2.jpg"></img>
 The updated document can be found in the database.
 
-../images/update3.jpg
+<img  src="./files/images/update3.jpg"></img>
+
 Or using the find method in the terminal. 
 
 `db.collection.updateMany()` method updates all documents that match a specified filter.
 
-../images/update_m.jpg
 To update all documents in the AA.City collection where business_name is null and sector equals "Mobile Food Vendor - 881":
 ```json
 db.City.updateMany(
@@ -113,32 +120,36 @@ db.City.updateMany(
   }
 )
 ```
-
-../images/update4.jpg
+<img  src="./files/images/update_m.jpg"></img>
+<br>
+<br>
+<img  src="./files/images/update4.jpg"></img>
 Before the document was updated, the business_name is null.
 
-../images/update5.jpg
+<img  src="./files/images/update5.jpg"></img>
 The updated document can be found in the database.
 
-../images/update6.jpg
+<img  src="./files/images/update6.jpg"></img>
+
 Or using the find method in the terminal. 
 
 ### iv. Delete
 `db.collection.deleteOne()` method deletes the first document that matches a specified filter.
 
-../images/delete.jpg
 To delete the first document in the AA.City collection where result equals "Unable to Locate":
 ```json
 db.City.deleteOne( { result: "Unable to Locate" } )
 ```
-
-../images/delete1.jpg
+<img  src="./files/images/delete.jpg"></img>
+<br>
+<br>
+<img  src="./files/images/delete1.jpg"></img>
 Before the document was deleted, the total number of documents is 214.
 
-../images/delete2.jpg
+<img  src="./files/images/delete2.jpg"></img>
 After the document was deleted, the total number of documents is decrease to 213.
 
-../images/delete3.jpg
+<img  src="./files/images/delete3.jpg"></img>
 The delete document cannot be found in the database.
 
 ## Contribution 🛠️
