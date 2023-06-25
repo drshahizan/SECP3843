@@ -24,10 +24,10 @@ Open Command Prompt and type `"mongod"` to start the MongoDB server.
 
 ### 3. Access MongoDB shell
 In the terminal, type `mongosh` to access MongoDB shell.
-<img  src="./files/images/"></img>
+<img  src="./files/images/mongosh.png"></img>
 
 To see all available databases, type `show dbs`.<br>
-<img  src="./files/images/"></img>
+<img  src="./files/images/showdbs.png"></img>
 
 ### 4. Import Dataset into Mongodb
 In the terminal, type `mongoimport -d AA -collection "City Inspection" --file "C:\Users\user\Downloads\city_inspections.json" --jsonArray`
