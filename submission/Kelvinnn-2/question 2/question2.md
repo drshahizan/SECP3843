@@ -74,7 +74,7 @@ In the case of retrieving all inspections where the id field equals "10057-2015-
 db.CityInspections.find( { id: "10057-2015-ENFO" } )
 ```
 This query instructs MongoDB to find all documents in the City collection where the value of the id field is equal to "10057-2015-ENFO".
-<img  height="400px" src="./files/images/find.jpg"></img>
+<img  height="400px" src="./files/images/find.png"></img>
 
 ### iii. Update 
 #### Update Query 1:
@@ -85,7 +85,7 @@ db.CityInspections.updateOne(
   { $set: { result: "Violation Issued" } }
 )
 ```
-<img  src="./files/images/update.png"></img>
+<img  src="./files/images/updateone.png"></img>
 This query uses the updateOne() method to update a single document that matches the specified filter. The $set operator is used to set the value of the result field to "Violation Issued" for the matched document.
 
 #### Update Query 2:
