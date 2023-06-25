@@ -15,8 +15,16 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 2 (a)
 
+### Prerequisites
+To carry out the tasks of this question, it it crucial to do the following:
+1. Install [MongoDB Community Server](https://www.mongodb.com/try/download/community)
+2. Install [MongoDB Shell](https://www.mongodb.com/try/download/shell)
+3. Install [MongoDB Database Tools](https://www.mongodb.com/try/download/database-tools)
+4. Edit paths in the system environment variables. Include the MongoDB and Mongosh folder directory
+<br></br>
+
 ### 1. Download JSON file provided in dataset repository
-Click the download button to download the [City Inspections](https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections) dataset into the device.
+After completing the prerequisite task, Go to Github and click the download button to download the [City Inspections](https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections) dataset into the device.
 
 ### 2. Launch MongoDB server
 Open Command Prompt and type `"mongod"` to start the MongoDB server.

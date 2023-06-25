@@ -71,9 +71,17 @@ When you define or modify your Django models, such as adding new fields or alter
 
 Running `python manage.py makemigrations` examines the current state of your models and compares them to the existing database schema. It then generates a set of migration files that describe the required changes to be made to the database schema.
 
+9. `Register Apps`: In the `setting.py` file, locate the INSTALLED_APPS method. Add a new app below the 'django.contrib.statisfiles' called `AnalyticsDataset` so that when the mogration proses is initiated, Django web server knows which app is being updated to the MySql and MongoDB databse.
+
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image11.png)
+
 9. `Migrate database`: Type in `python manage.py makemigrations` in the command prompt. Then, run the python manage.py migrate command to apply these migrations. My Sql and MongoDB database will be updated.
 
 ![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image9.png)
+
+10. `Load JSON`: Write a script to read the three JSON datasets obtained from AA: accounts.json, accounts.json, and transactions.json. Update both MySql and MongoDB databases. Create a file called `load_dataset.py` in AnalyticsDataset app to retrieve the dataset later.
+
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image10.png)
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

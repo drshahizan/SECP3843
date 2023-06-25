@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Alternative Assessment
 
 <p align="center">
-  <img src="photo_6334516191514702112_y-removebg-preview.png" alt="Centered Image" style="width: 260px; height: 350px;">
+  <img src="Apip1.jpg" alt="Centered Image" style="width: 260px; height: 350px;">
 </p>
 
 <table align="center">
@@ -27,7 +27,7 @@ Don't forget to hit the :star: if you like this repo.
 </table>
 <br>
 
-## Dataset: Supply Store
+## Dataset: 🏬Supply Store 
 
 ## Submission
 
