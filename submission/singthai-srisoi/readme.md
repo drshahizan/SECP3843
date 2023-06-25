@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Alternative Assessment
 
 <p align="center">
-  <img height="200px" src="materials/sinthai.png" />
+  <img height="200px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/singthai-srisoi/materials/singthai.png" />
 </p>
 
 <table align="center">
@@ -30,7 +30,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Dataset: Mflix
 
-Source link: https://github.com/drshahizan/dataset/tree/main/mongodb/02-analytics
+Source link: https://github.com/drshahizan/dataset/tree/main/mongodb/03-movies
 
 ## Submission
 
