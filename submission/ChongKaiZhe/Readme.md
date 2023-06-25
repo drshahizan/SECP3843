@@ -26,8 +26,7 @@ Don't forget to hit the :star: if you like this repo.
   </tr>
 </table>
 
-## Dataset:
-<a href="https://github.com/drshahizan/dataset/tree/main/mongodb/02-analytics" ><img src="../images/dataset.png" width="24px" height="24px" ></a> | 
+## Dataset: Analytics 
 
 ## Submission
 
