@@ -39,7 +39,46 @@ From the command prompt, execute `mongoimport --db mflix --collection movies --f
 ![Q2](files/images/pic1.png)
 ![Q2](files/images/pic2.png)
 ## Question 2 (b)
+1. Create
+We will be using the `db.comments.insertOne()` method to insert a single document into the selected collection. This is an example of the method
+```
+db.comments.insertOne({
+  _id: ObjectId(),
+  name: "John Doe",
+  email: "johndoe@example.com",
+  movie_id: ObjectId("5b7327724a68c3f7a7bcb1ae"),
+  text: "This is a great movie!",
+  date: ISODate("2023-06-25T12:00:00Z")
+})
+```
 
+2. Read
+To read a single document or multiple simply use `db.movies.find()` method. It will search through the whole document to find a document that fits the description. 
+```
+db.movies.find({ title: "Civilization" })
+```
+
+4. Update
+To update a single document, we can use `db.users.updateOne()` method which will update only one. If we want to update multiple documents, we can use `db.movies.updateMany()` method to update multiple documents.
+```
+db.users.updateOne(
+   { _id: ObjectId("59b99db4cfa9a34dcd7885b6") },
+   { $set: { name: "Jane Doe" } }
+)
+```
+
+```
+db.movies.updateMany(
+   { countries: "USA" },
+   { $set: { countries: "Amerika" } }
+)
+```
+
+6. Delete
+To delete a single document we can use `db.users.deleteOne()` method.
+```
+db.users.deleteOne({ name: "Joffrey Baratheon" })
+```
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
