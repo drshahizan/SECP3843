@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Alternative Assessment
 
 <p align="center">
-  <img height="200px" src="materials/profile.png" />
+  <img height="200px" src="materials/666 Cropped.jpg" />
 </p>
 
 <table align="center">
@@ -27,7 +27,7 @@ Don't forget to hit the :star: if you like this repo.
 </table>
 <br>
 
-## Dataset:
+## Dataset: Mflix Dataset
 
 ## Submission
 
