@@ -26,7 +26,7 @@ Don't forget to hit the :star: if you like this repo.
 </table>
 <br>
 
-## Dataset: [Tweets](https://github.com/drshahizan/dataset/tree/main/mongodb/06-tweets)
+## Dataset: [Tweets](https://github.com/drshahizan/dataset/tree/main/mongodb/06-tweets) <img src="materials/twitter-logo.png" height="18">
 
 ## Submission
 
