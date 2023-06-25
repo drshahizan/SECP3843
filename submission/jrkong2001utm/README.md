@@ -28,6 +28,8 @@ Don't forget to hit the :star: if you like this repo.
 <br>
 
 ## Dataset:
+Supply sore dataset :
+https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales
 
 ## Submission
 
