@@ -27,11 +27,11 @@ Don't forget to hit the :star: if you like this repo.
 <br>
 
 ## Dataset: Analytics Dataset
-<a href="./accounts.json" ><img src="./dataset.png" width="24px" height="24px" ></a>
+<a href="./accounts.json" ><img src="./dataset.png" width="24px" height="24px" >Accounts Dataset</a>
 
-<a href="./customers.json" ><img src="./dataset.png" width="24px" height="24px" ></a>
+<a href="./customers.json" ><img src="./dataset.png" width="24px" height="24px" >Customers Dataset</a>
 
-<a href="./transactions.json" ><img src="./dataset.png" width="24px" height="24px" ></a>
+<a href="./transactions.json" ><img src="./dataset.png" width="24px" height="24px" >Transactions Dataset</a>
 
 ## Submission
 
@@ -50,7 +50,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
-You can also contact me using [Linkedin](https://www.linkedin.com/in/drshahizan/) for any other queries or feedback.
+You can also contact me using [Linkedin](https://www.linkedin.com/in/aiman-hafizi-63b0a8275/) for any other queries or feedback.
 
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fdrshahizan&labelColor=%23697689&countColor=%23555555&style=plastic)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fdrshahizan)
 ![](https://hit.yhype.me/github/profile?user_id=81284918)

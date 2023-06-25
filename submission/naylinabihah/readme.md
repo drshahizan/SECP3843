@@ -28,7 +28,7 @@ Don't forget to hit the :star: if you like this repo.
 </table>
 <br>
 
-## Dataset: Companies
+## Dataset: [Companies](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/companies.json)
 
 ## Submission
 
