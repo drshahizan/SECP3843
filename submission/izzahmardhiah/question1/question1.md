@@ -42,7 +42,7 @@ Run Django's migration commands to create the necessary tables in both the MySQL
 4. Implement data storage and retrieval for MySQL
 
 
-5. Implement data storage and retrieval for MongoDB:
+5. Implement data storage and retrieval for MongoDB
 
 
 ## Question 1 (b)
