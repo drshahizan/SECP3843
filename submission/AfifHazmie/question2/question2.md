@@ -26,9 +26,15 @@ Pre-Steps:
    
 3. Type the command `mongosh` in command prompt to access to MongoDB shell
    
-   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA23.jpg" style="width: 1000px; height: 600px;">
+   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA23.jpg" style="width: 700px; height: 250px;">
    
-4. 
+4. Import json dataset file into mongoDB using mongo shell.
+    - In the terminal with Mongo Shell active, type in the command `mongoimport -d AA --collection "Supply Store" --file "C:\Users\User\OneDrive\Desktop\DEGREE\SEMESTER 6\ST_DataEng\AA\Store\sales.json" --jsonArray`
+    - `-d` = database name
+    - `--collection` = database collection name
+    - `--file` = file path to the JSON dataset file
+      
+5. 
 
 ## Question 2 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
