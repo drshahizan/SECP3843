@@ -54,10 +54,14 @@ Don't forget to hit the :star: if you like this repo.
 4. Define data models
    - Define models representing the JSON dataset and its fields in the Django app's `models.py` file, including the JSONField for storing JSON data.
      
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA5.jpg" style="width: 300px; height:250px;">
+     
 5. Generate and apply migration
    - Generate the database migration file using the `python manage.py makemigration` on the Django web server.
    - Apply the migration to generate the necessary table in the database server using the command below.
    - `python manage.py migrate`
+
+   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA6.jpg" style="width: 300px; height:250px;">
    
 6. Load JSON data into the database
    - Create a script in the Django web server to fetch the JSON data from the JSON dataset server and save it into MongoDB Database server.
