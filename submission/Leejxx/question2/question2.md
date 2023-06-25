@@ -1,4 +1,4 @@
-<a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
+![image](https://github.com/drshahizan/SECP3843/assets/97084950/8bd7985d-8d4b-44e4-888c-a112fc8afac8)![image](https://github.com/drshahizan/SECP3843/assets/97084950/2b0c6949-19d0-4e2f-b069-7ca65f988a80)<a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/network/members"><img src="https://img.shields.io/github/forks/drshahizan/SECP3843" alt="Forks Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/pulls"><img src="https://img.shields.io/github/issues-pr/drshahizan/SECP3843" alt="Pull Requests Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/issues"><img src="https://img.shields.io/github/issues/drshahizan/SECP3843" alt="Issues Badge"/></a>
@@ -94,7 +94,60 @@ db.Sales.find({ "_id": ObjectId("5bd761dcae323e45a93ccff3") })
 You can find it by using the filter in Mongo DB too
 <img  src="./files/images/read2.JPG"></img>
 
+### iii. Update
+#### a) updateOne()
+The updateOne() function is used to update a single document within a collection by specifying a filter criteria to match the desired document and providing the update operations to be performed on that document. For this case, i want to update the purchase method of the sale document with the _id value "5bd761dcae323e45a93ccfe8" and set it to "In-store".
+```
+db.Sales.updateOne(
+  { _id: ObjectId("5bd761dcae323e45a93ccfe8") }, // Specify the filter criteria to match the document
+  { $set: { purchaseMethod: "In-store" } } // Update the purchaseMethod field
+);
 
+```
+<img  src="./files/images/update2.JPG"></img>
+
+Before update:
+<img  src="./files/images/update1.JPG"></img>
+
+After update:
+<img  src="./files/images/update3.JPG"></img>
+We noticed that the purchaseMethod is changed from `Online` to `In-store`
+
+#### b) updateMany()
+The `updateMany()` function is used to update multiple documents in a collection based on a specified filter criteria, allowing us to modify existing data in bulk. In this case, updateMany() operation will update all documents in the Sales collection where the purchaseMethod field is from "In store" and set it to "In-store". 
+```
+db.Sales.updateMany(
+  { purchaseMethod: "In store" }, // Filter criteria
+  { $set: { purchaseMethod: "In-store" } } // Update operation
+);
+
+```
+**From below, we can notice that 2819 documents meet the criteria and have been modified..
+<img  src="./files/images/update5.JPG"></img>
+
+
+
+Before updateMany():
+<img  src="./files/images/update4.JPG"></img>
+
+After updateMany():
+All the purchaseMethod field with "In store" is changed to "In-store"
+<img  src="./files/images/update6.JPG"></img>
+<img  src="./files/images/update7.JPG"></img>
+
+### iv. Delete
+deleteOne() is a MongoDB method that allows use to delete a single document from a collection based on a specified filter criterion. It removes <b>the first document</b> that matches the given filter.
+In this case, I want to delete a single document from the sales collection where the storeLocation field matches the value "Denver". It will remove the first document that meets the specified criteria.
+```
+db.Sales.deleteOne({ "storeLocation": "Denver" });
+```
+<img  src="./files/images/delete2.JPG"></img>
+
+Before delete(total number is 1549):
+<img  src="./files/images/delete1.JPG"></img>
+
+After delete(total number is 1548):
+<img  src="./files/images/delete3.JPG"></img>
 
 
 ## Contribution 🛠️
