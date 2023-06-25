@@ -27,11 +27,11 @@ Don't forget to hit the :star: if you like this repo.
 <br>
 
 ## Dataset: Analytics Dataset
-<a href="./accounts.json" ><img src="./dataset.png" width="24px" height="24px" ></a>
+<a href="./accounts.json" ><img src="./dataset.png" width="24px" height="24px" >Accounts Dataset</a>
 
-<a href="./customers.json" ><img src="./dataset.png" width="24px" height="24px" ></a>
+<a href="./customers.json" ><img src="./dataset.png" width="24px" height="24px" >Customers Dataset</a>
 
-<a href="./transactions.json" ><img src="./dataset.png" width="24px" height="24px" ></a>
+<a href="./transactions.json" ><img src="./dataset.png" width="24px" height="24px" >Transactions Dataset</a>
 
 ## Submission
 
