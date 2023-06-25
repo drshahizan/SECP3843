@@ -63,10 +63,35 @@ Step 9. Test and Refine
 
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+Django, MySQL and MongoDB System Architecture
 
+![Django System Architecture](https://github.com/drshahizan/SECP3843/assets/92329710/6efda90c-0d98-49a9-942e-61c2e23a0dd4)
 
+1. Client Side
+- The client side includes Django Template which users interact with the Django application. Clients send requests to the Django server and receive responses to view dynamic web pages.
+
+2. Django Web Server
+- The Django Web Server act as the backend of the application. It receives requests from clients, processes, and provide appropriate responses.
+- It consist of URL routing, request processsing, view functions, authentication, and other server-side functionalities.
+
+3. URLs
+- The URL plays a crucial role in defining the mapping between a specific URL pattern and the corresponding view function that should be executed when that URL is accessed.
+
+5. Views
+- Views receive requests from clients through URLs, interact with the database access layer, perform necessary computations or operations, and generate responses.
+- Views can read data from MySQL or MongoDB based on the requirements of the application.
+
+6. Django Models
+- In Django, the data structure of the application and its relationships is implemented in Django models. It represent as database tables and allow Django to interact iwth the underlying databases.
+- Django models use Python classes and Django's ORM, Object-Relational Mapping to define the data fields, constraints and behaviors.
+
+7. MySQL Database
+- In this system architecture, MySQL serves as one of the database options for storing and retrieving the structured data. Django uses the MySQL connector and ORM to interact with the MySQL database.
+- The structured data is stored in the MySQL and read using SQL queries.
+
+9. MongoDB Database
+- MongoDB serves as the other database option alongside MySQL to store the semi or unstructured data. Django uses the Djongo package, which provides compatibility between Django and MongoDB.
 
 
 ## Contribution 🛠️

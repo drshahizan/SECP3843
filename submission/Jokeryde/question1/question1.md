@@ -17,7 +17,44 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 1 (a)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+1. Set up the virtual environment and activate the virtual environment
+   
+   ``` py -3 -m venv .venv ```
+   
+   ```.venv\scripts\activate ```
+
+2. Install Django and the required packages
+
+   ``` pip install Django ```
+
+4. Create a Django Project
+
+   ``` django-admin startproject AA_STDE ```
+
+5. Configure the Database and Django Settings. Update the databases setting to configure the MySQL and MongoDB connections.
+
+```
+     DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db_aa',
+        'USER': 'root',
+        'PASSWORD': ' ',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }}
+
+   DATABASES = {
+    'default': {
+        'ENGINE': 'django_mongodb_engine',
+        'NAME': 'jokeryde',
+        'HOST': 'localhost',
+        'PORT': '27017',
+    }
+    }
+```
+
+  6. 
 
 ## Question 1 (b)
 
