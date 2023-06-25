@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Alternative Assessment
 
 <p align="center">
-  <img height="200px" src="materials/profile.png" />
+  <img height="200px" src="submission/FarrahinUtm/photo_2023-06-18_11-38-17.jpg" />
 </p>
 
 <table align="center">
