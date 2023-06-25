@@ -22,43 +22,15 @@ Here are some common examples of alternative assessment methods:
 
 Alternative assessment offer several advantages over traditional assessments. They provide a more authentic representation of students' abilities, encourage higher-order thinking skills, promote creativity and innovation, and enhance student engagement and motivation. Additionally, alternative assessments allow for personalized and differentiated evaluation, catering to individual learning styles and preferences.
 
-## Dataset
+### ✨ Question <a href="./dataset/AAquestion.pdf"><img src="./images/exam.png" width="36px" height="36px"></a>
+ 
+  
+## [Dataset](./dataset)
 Each student will be allocated a specific dataset exclusively for the purpose of conducting the Alternative Assessment. It is strictly prohibited to employ any other datasets. All responses and solutions provided for the Alternative Assessment must be derived solely from the assigned dataset.
 
 ## [Submission](./submission)
 
-### Folder Structure
-You must place your file in the submission folder. Within the [`submission`](./submission) folder, create a folder called your  `github_id`. Name the default file as `index.php`. Suggested folder structure for this project:
 
-```
-📁group_id
-├── 📄readme.md
-├── 📁questions 1
-│   ├── 📄answerQ1.md
-│   └── 📁files
-│       ├── 📁images
-│       └── 📁source-code
-├── 📁questions 2
-│   ├── 📄answerQ2.md
-│   └── 📁files
-│       ├── 📁images
-│       └── 📁source-code
-├── 📁questions 3
-│   ├── 📄answerQ3.md
-│   └── 📁files
-│       ├── 📁images
-│       └── 📁source-code
-├── 📁questions 4
-│   ├── 📄answerQ4.md
-│   └── 📁files
-│       ├── 📁images
-│       └── 📁source-code
-└── 📁questions 5
-    ├── 📄answerQ5.md
-    └── 📁files
-        ├── 📁images
-        └── 📁source-code
-```
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
