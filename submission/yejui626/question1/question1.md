@@ -15,11 +15,10 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Stories Dataset
 
 ## Question 1 (a)
+### Explanation of steps required to integrate Django with JSON, ensuring efficient data storage and retrieval from both MySQL and MongoDB databases.
 These are the steps for implementing a configuration using the servers used in this project. It is to ensure seamless integration between the Django web framework, a JSON dataset provided in this project, and the MySQL and MongoDB databases.
 
-### Explanation of steps required to integrate Django with JSON, ensuring efficient data storage and retrieval from both MySQL and MongoDB databases.
-
-### 1. Steps to setup Django server.
+### 1. Steps to setup Django server including the project and application folder.
 First, we are using the Django web framework as the base for building the portal. Hence, we need to setup the Django server.
 
 1. Locate to your project file and create a virtual environment.
@@ -28,12 +27,38 @@ py -m venv env
 env\Scripts\activate
 ```
 
-2. Once you’ve created and activated your Python virtual environment, you can install Django into this dedicated development workspace using `pip install django` .
-![Alt text](./files/images/image.png)
+2. Once you’ve created and activated your Python virtual environment, you can install Django into this dedicated development workspace using `pip install django`. <br>
 
 3. After you’ve successfully installed Django, you’re ready to create the scaffolding for your new web application. With your virtual environment set up and activated and Django installed, you can now create a project using `django-admin startproject AA_Goo`
 
+4. For this project, we need to create an app contain the functionality of providing users with a platform for viewing data and executing dashboard visualizations based on JSON-provided data. You can execute the startapp command through the manage.py file using `py manage.py startapp stories` to generates a default folder structure for a Django app.
 
+### 2. Configuring Django Settings
+   1. Open the Django project's `settings.py` file.
+   2. Define the database settings for both MySQL and MongoDB.
+   ``` python
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': 'aa',
+                'USER': 'root',
+                'PASSWORD': '',
+                'HOST': 'localhost',
+                'PORT': 8000,
+            },
+            'mongodb': {
+                'ENGINE': 'djongo',
+                'ENFORCE_SCHEMA': False,
+                'NAME': 'AA',
+                'CLIENT': {
+                    'host': 'localhost:27017',
+                    'port': 27017,
+                    'username': '',
+                    'password': '',
+                }
+            }
+        }
+   ```
 
 
 ## Question 1 (b)
