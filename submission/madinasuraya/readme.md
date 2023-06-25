@@ -26,7 +26,7 @@ Don't forget to hit the :star: if you like this repo.
    </tr>
   </table>
 
-## Dataset: Companies 🏢
+## Dataset: [Companies 🏢](./dataset)
 
 ## Submission 💯
 
