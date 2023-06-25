@@ -36,11 +36,11 @@ Source link: https://github.com/drshahizan/dataset/tree/main/mongodb/02-analytic
 
 | No | Answer | File |
 | :-----: | ----- | :------: |
-| 1 | Question 1 | <a href=""><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 2 | Question 2 | <a href=""><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 3 | Question 3 | <a href=""><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 4 | Question 4 | <a href=""><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 5 | Question 5 | <a href=""><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 1 | Question 1 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/leecaixuan/question1"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 2 | Question 2 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/leecaixuan/question2"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 3 | Question 3 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/leecaixuan/question3"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 4 | Question 4 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/leecaixuan/question4"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 5 | Question 5 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/leecaixuan/question5"><img src="../../images/answer.png" width="24px" height="24px"></a> |
 
 
 
