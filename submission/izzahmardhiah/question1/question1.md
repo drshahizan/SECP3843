@@ -28,12 +28,15 @@ Thirdly, I propose leveraging cloud-based services such as MongoDB Atlas or Comp
 
 ### Steps required to integrate Django with the JSON dataset, ensuring efficient data storage and retrieval from both MySQL and MongoDB databases:- 
 1. Configure Django for MySQL and MongoDB
+
 Edit the settings.py file in our Django project.Then, define the connection details for both the MySQL and MongoDB databases, including host, port, username, and password.
 
 2. Define Django models
+
 In the models.py file of our Django application, define models that represent the data structures in the JSON dataset. Create fields in the models that correspond to the JSON data, ensuring the appropriate data types are used.
 
 3. Generate database tables
+
 Run Django's migration commands to create the necessary tables in both the MySQL and MongoDB databases. This step will ensure that the database schemas align with the defined Django models.
 
 4. Implement data storage and retrieval for MySQL
