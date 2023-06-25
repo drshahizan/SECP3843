@@ -35,7 +35,7 @@ Source link: [https://github.com/drshahizan/dataset/tree/main/mongodb/03-movies]
 ## Submission
 
 | No | Answer | File |
-| :-----: | ----- | :------: |
+| :-----: | ---------------------------------------------------- | :------: |
 | 1 | Question 1 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/leecaixuan/question1"><img src="../../images/answer.png" width="24px" height="24px"></a> |
 | 2 | Question 2 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/leecaixuan/question2"><img src="../../images/answer.png" width="24px" height="24px"></a> |
 | 3 | Question 3 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/leecaixuan/question3"><img src="../../images/answer.png" width="24px" height="24px"></a> |
