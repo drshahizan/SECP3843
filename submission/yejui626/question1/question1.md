@@ -33,7 +33,7 @@ env\Scripts\activate
 
 4. For this project, we need to create an app contain the functionality of providing users with a platform for viewing data and executing dashboard visualizations based on JSON-provided data. You can execute the startapp command through the manage.py file using `py manage.py startapp stories` to generates a default folder structure for a Django app.
 
-### 2. Configuring Django Settings
+### 2. Configuring Django database settings
    1. Open the Django project's `settings.py` file.
    2. Define the database settings for both MySQL and MongoDB.
    ``` python
@@ -59,6 +59,11 @@ env\Scripts\activate
             }
         }
    ```
+   3. Install database connectors for MySQL and MongoDB using the "mysqlclient" and "djongo" library.
+   ``` python
+    pip install mysqlclient
+    pip install djongo
+   ```   
 
 
 ## Question 1 (b)
