@@ -26,7 +26,7 @@ Don't forget to hit the :star: if you like this repo.
 </table>
 <br>
 
-## Dataset:
+## Dataset: [Supply Store](https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales)
 
 ## Submission
 
