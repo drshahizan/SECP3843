@@ -71,7 +71,7 @@ In summary, this folder structure appears to be organizing a GitHub repository b
 | 5 | AHMAD MUHAIMIN BIN AHMAD HAMBALI | <a href="Mincridible" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 6 | AMIRAH RAIHANAH BINTI ABDUL RAHIM | <a href="raihanarahim" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 7 | CHLOE RACQUELMAE KENNEDY | <a href="Racquelmae" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
-| 8 | CHONG KAI ZHE | <a href="Chongkz29" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 8 | CHONG KAI ZHE | <a href="ChongKaiZhe" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 9 | EDDIE WONG CHUNG PHENG | <a href="Prowong01" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 10 | FARAH IRDINA BINTI AHMAD BAHARUDIN | <a href="Farah Irdina" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 11 | GOO YE JUI | <a href="yejui626" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
