@@ -14,8 +14,18 @@ Don't forget to hit the :star: if you like this repo.
   <img height="200px" src="https://github.com/drshahizan/special-topic-data-engineering/assets/96984290/80ed8f41-e774-47e6-b993-94ea309b3257" />
 </p>
 
-<p align='center'> ADRINA ASYIQIN BINTI MD ADHA</p>
-<p align='center'> A20EC0174</p>
+<table align="center">
+  <tr>
+    <th>Name</th>
+    <th>Matric No.</th>
+  </tr>
+  <tr>
+    <td>ADRINA ASYIQIN BINTI MD ADHA</td>
+    <td> A20EC0174</td>
+  </tr>
+
+</table>
+
 <br>
 
 
