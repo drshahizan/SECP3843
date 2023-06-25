@@ -27,17 +27,17 @@ Don't forget to hit the :star: if you like this repo.
 </table>
 <br>
 
-## Dataset:
+## Dataset: [Stories](https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories)
 
 ## Submission
 
 | No | Answer | File |
 | :-----: | ----- | :------: |
-| 1 | Question 1 | <a href="./question1/question1.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 2 | Question 2 | <a href="./question2/question2.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 3 | Question 3 | <a href="./question3/question3.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 4 | Question 4 | <a href="./question4/question4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 5 | Question 5 | <a href="./question5/question5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 1 | Question 1 | <a href="question 1/answerQ1.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 2 | Question 2 | <a href="question 2/answerQ2.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 3 | Question 3 | <a href="question 3/answerQ3.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 4 | Question 4 | <a href="question 4/answerQ4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 5 | Question 5 | <a href="question 5/answerQ5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
 
 
 

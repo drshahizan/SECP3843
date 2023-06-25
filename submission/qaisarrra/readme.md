@@ -27,7 +27,7 @@ Don't forget to hit the :star: if you like this repo.
 </table>
 <br>
 
-## Dataset: 04 - Companies
+## Dataset: [Companies](https://github.com/drshahizan/dataset/tree/main/mongodb/04-companies)
 
 ## Submission
 
