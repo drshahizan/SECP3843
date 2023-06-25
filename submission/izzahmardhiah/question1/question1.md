@@ -15,7 +15,32 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [City Inspections Dataset](https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections)
 
 ## Question 1 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+For the platform I am proposing to build, it is feasible to use three servers to achieve our goals.
+- Server 1: Web Server + Django Application Server
+- Server 2: MySQL database
+- Server 3: MongoDB Atlas or Compass
+
+Firstly, we can combine the roles of the web server and Django application server into a single server, which is a common and efficient practice. This approach will enable us to handle incoming HTTP requests, serve the Django application, and manage the application logic seamlessly. By integrating the web server and Django framework on one server, we can ensure seamless integration and efficient data storage and retrieval. I suggest managing file storage within the existing servers without the need for an additional dedicated server. Django provides options for handling file uploads and storage directly within the application server. By configuring the Django application server to manage file storage, we can avoid the complexity and overhead of setting up a separate file server.
+
+Secondly, I suggest dedicating a separate server for hosting the MySQL database. This dedicated server will securely store user login and registration credentials. By having a separate MySQL server, we can optimize it specifically for handling database operations efficiently. With proper configuration, indexing, and query optimization, we can ensure reliable and fast data storage and retrieval.
+
+Thirdly, I propose leveraging cloud-based services such as MongoDB Atlas or Compass for storing the JSON dataset. These services provide highly scalable and managed databases, eliminating the need for separate server infrastructure. By utilizing a cloud-based solution, we can leverage the scalability and flexibility offered by the service provider, enabling efficient storage and retrieval of the JSON dataset. Configuring the appropriate connection settings will allow the Django application server to seamlessly communicate with the MongoDB Atlas or Compass service.
+
+### Steps required to integrate Django with the JSON dataset, ensuring efficient data storage and retrieval from both MySQL and MongoDB databases:- 
+1. Configure Django for MySQL and MongoDB
+Edit the settings.py file in our Django project.Then, define the connection details for both the MySQL and MongoDB databases, including host, port, username, and password.
+
+2. Define Django models
+In the models.py file of our Django application, define models that represent the data structures in the JSON dataset. Create fields in the models that correspond to the JSON data, ensuring the appropriate data types are used.
+
+3. Generate database tables
+Run Django's migration commands to create the necessary tables in both the MySQL and MongoDB databases. This step will ensure that the database schemas align with the defined Django models.
+
+4. Implement data storage and retrieval for MySQL
+
+
+5. Implement data storage and retrieval for MongoDB:
+
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
