@@ -65,7 +65,95 @@ Where,
 ![Q2](files/images/q2_6.png)
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+In order to execute CRUD operations for MongoDB,
+
+### Step 1: Start the MongoDB server
+
+Open command prompt and start the MongoDB server by running the the `mongod` command.
+
+![Q2](files/images/q2_1.png)
+
+### Step 2: Access the MongoDB shell
+
+Run the `mongosh` command to access the MongoDB shell.
+
+### Step 3: Select the target database
+
+In the MongoDB shell, switch to the desired database. The command `use` should be followed by database name. For example: I will run `use airbnbportal`.
+
+![Q2](files/images/q2_3.png)
+
+### Step 4: Run CRUD operations.
+
+From the command prompt or terminal,
+
+#### For Create Operation:
+
+Run the insertOne function. This will add a new data. Since the `_id` is not specified, MongoDB will create a random `ObjectId`.
+
+```
+db.ListingsAndReviews.insertOne({
+"name": "1 Billion Dollar Mansion",
+"summary": "Huge house made with 30,000 diamonds.",
+"property_type": "Bungalow",
+"room_type": "Entire home/apt",
+"bedrooms": 15,
+"bathrooms": 10,
+"price": 20000})
+```
+![Q2](files/images/q2_11.png)
+
+#### For Read Operation:
+
+Run the find function. This will search for inquired column or attribute. In this example, I will be searching data with `name` : `"1 Billion Dollar Mansion"`
+
+```
+db.ListingsAndReviews.find({
+"name": "1 Billion Dollar Mansion"})
+```
+
+![Q2](files/images/q2_10.png)
+
+
+#### For Update Operation:
+
+1. Run the updateOne function. This will search for inquired column or attribute, and update only one of the search results.
+
+```
+db.ListingsAndReviews.updateOne({
+"name": "1 Billion Dollar Mansion" },
+{ $set: { "price": 50000 } })
+```
+
+![Q2](files/images/q2_12.png)
+
+![Q2](files/images/q2_14.png)
+
+2. Run the updateMany function. This will search for inquired column or attribute, and update all of the search results.
+
+```
+db.ListingsAndReviews.updateMany({
+"cancellation_policy": "moderate" },
+{ $set: { "cancellation_policy": "normal" }})
+```
+
+![Q2](files/images/q2_15.png)
+
+![Q2](files/images/q2_16.png)
+
+
+#### For Delete Operation:
+
+Run the deleteOne function. This will search for inquired column or attribute, and delete only one of the search results.
+
+```
+db.ListingsAndReviews.deleteOne({
+"name": "1 Billion Dollar Mansion" })
+```
+
+![Q2](files/images/q2_17.png)
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
