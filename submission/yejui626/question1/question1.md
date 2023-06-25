@@ -147,11 +147,35 @@ class DatabaseRouter:
 
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### System Architecture Diagram
+This system architecture focuses on the seamless integration between the web server (Django), dataset (JSON), and databases (MySQL and MongoDB). <br>
+![Alt text](./files/images/System%20Architecture.png)
 
+### Detailed explanation for each component
 
+   - **Django Web Server and MVT**
+   Django acts as an agent to process the requests from the users and send response to the users while interacting with the databases and dataset.
+      - Models: Specify the necessary data structures and relationships required by the application which allow us to do CRUD seamlessly.
+      - Views: Handle the logic for processing requests, retrieving data from the databases, and rendering templates.
+      - Templates: Contain the HTML structure and placeholders for dynamic data.
 
+   - **Dataset (JSON)**
+   Location of the dataset is stored. In this case, the dataset was downloaded to local from github.
 
+   - **Databases**
+      Handles data storage, retrieval, and management operations.
+      - **MySQL**
+      It is a relational database server which used to store structure data. In this project, it is used to store user authentication data used for user registration and login.
+      - **MongoDB**
+      It is a NoSQL database server which used to store JSON data. In this project, it is used to store the JSON dataset (Stories dataset).
+
+   - **External Libraries for database integration**
+         - **ORM**
+         To perform interaction between Django models and MySQL, Django's ORM (Object-Relational Mapping) provides an abstraction layer that allows us to work with MySQL using Python classes and methods, making it easier to perform database operations.
+        - **Djongo**
+        Django can serve as the MongoDB connector when integrating it with MongoDB. Djongo enables interaction between Django models and MongoDB collections.
+
+    
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
