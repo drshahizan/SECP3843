@@ -29,6 +29,7 @@ Don't forget to hit the :star: if you like this repo.
 <br>
 
 ## Dataset:
+<a href="https://github.com/drshahizan/dataset/tree/main/mongodb/06-tweets">06-Tweets</a>
 
 ## Submission
 
