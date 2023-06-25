@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Alternative Assessment
 
 <p align="center">
-  <img height="200px" src="materials/profile.png" />
+  <img height="200px" src="materials/profile.jpg" />
 </p>
 
 <table align="center">
@@ -21,13 +21,10 @@ Don't forget to hit the :star: if you like this repo.
     <th>Matric No.</th>
   </tr>
   <tr>
-    <td>your name</td>
-    <td>matric no</td>
+    <td>NURFARRAHIN BINTI CHE ALIAS</td>
+    <td>A20EC0121</td>
   </tr>
-    <tr>
-    <td>your name</td>
-    <td>matric no</td>
-  </tr>
+   
 </table>
 <br>
 
@@ -50,7 +47,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
-You can also contact me using [Linkedin](https://www.linkedin.com/in/drshahizan/) for any other queries or feedback.
+You can also contact me using [Linkedin]() for any other queries or feedback.
 
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fdrshahizan&labelColor=%23697689&countColor=%23555555&style=plastic)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fdrshahizan)
 ![](https://hit.yhype.me/github/profile?user_id=81284918)
