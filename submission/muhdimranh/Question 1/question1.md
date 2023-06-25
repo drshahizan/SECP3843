@@ -41,6 +41,7 @@ a. Install djongo using `pip install djongo` and mysqlclient using `pip install 
 
 b. Modify the "DATABASES" library as the following:
 
+```
 MongoDB: `DATABASES = {
         'default': {
             'ENGINE': 'djongo',
@@ -50,7 +51,7 @@ MongoDB: `DATABASES = {
                 'host': 'mongodb+srv://<username>:<password>@<atlas cluster>/<myFirstDatabase>?retryWrites=true&w=majority'
             }  
         }
-}`
+}
 
 MySQL: `DATABASES = {
 	'default': {
@@ -62,7 +63,7 @@ MySQL: `DATABASES = {
 		'PORT':'3306',
 	}
 }
-`
+```
 
 c. To use both, here is an example of how I implement it in my settings.py:
 
