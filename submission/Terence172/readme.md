@@ -30,9 +30,14 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Dataset
 
-| [Tweets.json](https://github.com/drshahizan/dataset/tree/main/mongodb/06-tweets) |
-|:---:|
-| <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/06-tweets" ><img src="../../images/dataset.png" ></a>|
+<table align="center">
+  <tr>
+    <th>Tweets.json</th>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/drshahizan/dataset/tree/main/mongodb/06-tweets" ><img src="../../images/dataset.png" ></a></td>
+  </tr>
+</table>
 
 ## Submission
 
