@@ -27,7 +27,7 @@ Don't forget to hit the :star: if you like this repo.
 </table>
 <br>
 
-## Dataset:
+## Dataset: [Airbnb Listings Dataset](https://github.com/drshahizan/dataset/tree/c8e9f4a7cbdb0c1b78ca2c73915ff56ceeb50e70/mongodb/05-airbnb)
 
 ## Submission
 
