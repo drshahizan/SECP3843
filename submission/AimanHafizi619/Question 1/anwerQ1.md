@@ -18,7 +18,7 @@ Don't forget to hit the :star: if you like this repo.
 
 Setting up a Django project involves installing Python and Django, creating a virtual environment, creating a new Django project using the django-admin command, configuring the database in the settings.py file, and starting the development server using the python manage.py runserver command.
 
-To integrate Django with the JSON dataset and ensure efficient data storage and retrieval from both MySQL and MongoDB databases for the Analytics Dataset, you need to follow several steps.
+To integrate Django with the JSON dataset and ensure efficient data storage and retrieval from both MySQL and MongoDB databases for the Analytics Dataset, follow these steps.
 
 1. *Install Django*: Start by installing Django by using the pip package manager to install Django. Since I am using Windows, use `pip install Django`.
 
