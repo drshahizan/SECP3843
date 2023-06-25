@@ -44,73 +44,67 @@ In the terminal, type 'use AA' to switch to the AA database.<br>
 
 To insert a new document into the AA.City collection:
 <img  src="./files/images/create.jpg"></img>
-<br>
-<br>
-<img  src="./files/images/create2.jpg"></img>
+
 The newly created document can be found in the database.
+<img  src="./files/images/create2.jpg"></img>
 
+Or use the find method in the terminal. 
 <img  src="./files/images/create3.jpg"></img>
-
-Or using the find method in the terminal. 
 
 ### ii. Read
 `db.collection.find()` method reads documents in the collection. To select documents which match an equality condition, specify the condition as a `<field>:<value>` pair in the query filter document.
 
 To return all inspections where the id equals 10312-2015-ENFO from the AA.City collection:
 <img  src="./files/images/find.jpg"></img>
-<br>
-<br>
-<img  src="./files/images/find2.jpg"></img>
-The document can also be found in the database.
 
-### iii. Update
+The document can also be found in the database.
+<img  src="./files/images/find2.jpg"></img>
+
+### iii. Update 
+#### a. UpdateOne
 `db.collection.updateOne()` method updates the first document that matches a specified filter.
 
 To update the first document in the AA.City collection where certificate_number equals 10003479:
 <img  src="./files/images/update.jpg"></img>
-<br>
-<br>
-<img  src="./files/images/update1.jpg"></img>
+
 Before the document was updated, the address is null.
+<img  src="./files/images/update1.jpg"></img>
 
-<img  src="./files/images/update2.jpg"></img>
 The updated document can be found in the database.
+<img  src="./files/images/update2.jpg"></img>
 
+Or use the find method in the terminal. 
 <img  src="./files/images/update3.jpg"></img>
 
-Or using the find method in the terminal. 
-
+#### a. UpdateMany
 `db.collection.updateMany()` method updates all documents that match a specified filter.
 
 To update all documents in the AA.City collection where business_name is null and sector equals "Mobile Food Vendor - 881":
 <img  src="./files/images/update_m.jpg"></img>
-<br>
-<br>
-<img  src="./files/images/update4.jpg"></img>
+
 Before the document was updated, the business_name is null.
+<img  src="./files/images/update4.jpg"></img>
 
-<img  src="./files/images/update5.jpg"></img>
 The updated document can be found in the database.
+<img  src="./files/images/update5.jpg"></img>
 
+Or use the find method in the terminal.<br>
 <img  src="./files/images/update6.jpg"></img>
-
-Or using the find method in the terminal. 
 
 ### iv. Delete
 `db.collection.deleteOne()` method deletes the first document that matches a specified filter.
 
 To delete the first document in the AA.City collection where result equals "Unable to Locate":
 <img  src="./files/images/delete.jpg"></img>
-<br>
-<br>
-<img  src="./files/images/delete1.jpg"></img>
+
 Before the document was deleted, the total number of documents is 214.
+<img  src="./files/images/delete1.jpg"></img>
 
-<img  src="./files/images/delete2.jpg"></img>
 After the document was deleted, the total number of documents is decrease to 213.
+<img  src="./files/images/delete2.jpg"></img>
 
-<img  src="./files/images/delete3.jpg"></img>
 The delete document cannot be found in the database.
+<img  src="./files/images/delete3.jpg"></img>
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
