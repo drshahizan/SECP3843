@@ -116,6 +116,8 @@ db.CityInspections.deleteOne( { result: "Fail" } )
 ```
 <img  src="./files/images/deleteone.png"></img>
 
+The result count has successfully decreased by 1.
+
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
