@@ -17,6 +17,13 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 1 (a)
 There are several steps that are required to integrate Django with the JSON dataset, ensuring efficient data storage and retrieval from both MySQL and MongoDB databases to enable the creation of dynamic web pages. Below is the comprehensive list of steps required to perform the latter:
 
+1. **First of all, we'll need to install Django. For this case study, we'll be installing Django on a local machine instead of a server. The steps for both are relatively the same. Below are the steps to install Django on a local machine:**
+   - Install Django on the the local machine where the Django web framework will be deployed. For this case study, we will be utilizing [Visual Studio Code](https://code.visualstudio.com/) as the IDE. 
+   - Create a new Django project using the `django-admin startproject` command.
+   - Configure the project settings, including database connections, in the `settings.py` file.
+   - Check if the system is able to run on a local server with the command `py manage.py runserver`
+   - The steps above can be watched via a YouTube tutorial [here](https://www.youtube.com/watch?v=LQTMqGns7Co&ab_channel=PrettyPrinted). Additionally, the video also shows how to create a superuser and login to the Django administration page.
+
 IN PROGRESS
 
 ## Question 1 (b)
