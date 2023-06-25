@@ -32,7 +32,7 @@ Don't forget to hit the :star: if you like this repo.
 
 | Tweets.json |
 |:---:|
-| <a href="tweets.json" ><img src="../../images/dataset.png" ></a>|
+| <a href="tweets.json" ><img src="https://github.com/drshahizan/dataset/tree/main/mongodb/06-tweets" ></a>|
 
 ## Submission
 
