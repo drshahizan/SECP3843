@@ -22,6 +22,9 @@ Here are some common examples of alternative assessment methods:
 
 Alternative assessment offer several advantages over traditional assessments. They provide a more authentic representation of students' abilities, encourage higher-order thinking skills, promote creativity and innovation, and enhance student engagement and motivation. Additionally, alternative assessments allow for personalized and differentiated evaluation, catering to individual learning styles and preferences.
 
+### Question <a href="./dataset/AAquestion.pdf"><img src="../../images/answer.png" width="24px" height="24px"></a>
+ 
+  
 ## Dataset
 Each student will be allocated a specific dataset exclusively for the purpose of conducting the Alternative Assessment. It is strictly prohibited to employ any other datasets. All responses and solutions provided for the Alternative Assessment must be derived solely from the assigned dataset.
 
