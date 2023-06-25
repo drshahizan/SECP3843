@@ -32,7 +32,7 @@ Don't forget to hit the :star: if you like this repo.
 
 <table align="center">
   <tr>
-    <th>Tweets.json</th>
+    <th><text href="https://github.com/drshahizan/dataset/tree/main/mongodb/06-tweets">Tweets.json</text></th>
   </tr>
   <tr>
     <td><a href="https://github.com/drshahizan/dataset/tree/main/mongodb/06-tweets" ><img src="../../images/dataset.png" ></a></td>
