@@ -22,16 +22,16 @@ Follow the steps below to connect Django with the JSON dataset and ensure effect
 #### Django Installation: 
 
 1. Open Command Prompt and run this command ```pip install Django```
-<img href="../materials/Django1.png">
+<img src="../materials/Django1.png">
 
 2. Create Django project by typing this command ```django-admin startproject comppanies```
-<img href="Django2.png">
+<img src="../materials/Django2.png">
 
 3. Create new Django app inside newly created folder by run this command ```python manage.py startapp companiesDataset```
 
 4. Install necessary packages ```pip install django mysqlclient pymongo``` and `pip install djongo`
-<img href="Django3.png">
-<img href="Django4.png"> 
+<img src="../materials/Django3.png">
+<img src="../materials/Django4.png">
 
 
 #### Define models for MySQL and MongoDB:
@@ -174,7 +174,7 @@ class Company(models.Model):
 #### Migrate the databases :
 
 1. Run the following commands to create the necessary database tables for MySQL and MongoDB `python manage.py makemigrations` and `python manage.py migrate`
-<img href='./materials/Django5.png'>
+<img src="../materials/Django5.png">
 
 #### Import JSON dataset into the models
 
@@ -216,7 +216,7 @@ class Command(BaseCommand):
 2. Create new folder named data and put the companies.json inside the folder
 
 3. Run `python manage.py import_data`
-<img href='./materials/Django6.png'>
+<img src="../materials/Django6.png">
 
 
 
