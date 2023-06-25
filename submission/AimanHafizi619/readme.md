@@ -33,10 +33,10 @@ Don't forget to hit the :star: if you like this repo.
 | No | Answer | File |
 | :-----: | ----- | :------: |
 | 1 | Question 1 | <a href="./Question 1/anwerQ1.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 2 | Question 2 | <a href="./Question 2/anwerQ2.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 3 | Question 3 | <a href="./Question 3/anwerQ3.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 4 | Question 4 | <a href="./Question 4/anwerQ4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 5 | Question 5 | <a href="./Question 5/anwerQ5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 2 | Question 2 | <a href="./Question 2/answerQ2.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 3 | Question 3 | <a href="./Question 3/answerQ3.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 4 | Question 4 | <a href="./Question 4/answerQ4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 5 | Question 5 | <a href="./Question 5/answerQ5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
 
 
 
