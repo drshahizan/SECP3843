@@ -14,10 +14,29 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: 03 - Movies
 
 ## Question 2 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Step 1: Prepare the JSON file
+
+Download the Movies dataset. There should be four JSON files, comments, movies, theaters, and users. Download all four files and put them in a single folder.
+
+Step 2: Command Prompt
+
+Head over to the file where the MongoDB file is located. Navigate through the files until you see the `bin` file. Open a Command Prompt from there.
+
+Step 3: Import the JSON file
+
+From the command prompt, execute `mongoimport --db mflix --collection movies --file "C:\Users\User\Desktop\Luqman's Work stuff\sem 6 shits\Dataset\movies.json"`. 
+
+`mongoimport`: The MongoDB library we will be using to import the dataset. <br>
+
+`--db`: The database name <br>
+
+`--collection`: The collection name <br>
+
+`--file`: The file path to the JSON file <br>
+
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
