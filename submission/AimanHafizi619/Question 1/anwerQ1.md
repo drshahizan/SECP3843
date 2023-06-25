@@ -56,6 +56,7 @@ By using mysqlclient, it can establish a connection to a MySQL database server, 
    
 >The `default` database is for MySql. Create a new database in MySql database and name it 'analytics'.
 
+
 >The `mongdb` database is for MongoDB. Create a new database cluster name `projectcluster` with both username and password as admin, for now. Name the database as `analytics`
 
 ![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image7.png)
