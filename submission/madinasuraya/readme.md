@@ -7,8 +7,8 @@
 
 Don't forget to hit the :star: if you like this repo.
 
-<h1 align='center'>Special Topic Data Engineering (SECP3843) 👩‍💻</h1>
-<h2 align='center'>Alternative Asessment ©️</h2>
+<h1>Special Topic Data Engineering (SECP3843) 👩‍💻</h1>
+<h2>Alternative Asessment ©️</h2>
 
 <p align="center">
   <img height="200px" src="https://github.com/drshahizan/SECP3843/assets/119557584/4729a4cf-ee1a-476b-85d3-dae3adaade35" />
