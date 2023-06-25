@@ -24,9 +24,13 @@ To integrate Django with the JSON dataset and ensure efficient data storage and 
 
 ![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image1.png)
 
-2. *Create Django project*: Create a new Django project by typing `django-admin startproject`. A new project directory will be create with all the necessary files and folders pre-install.
+2. *Create Django project*: Create a new Django project by typing `django-admin startproject Analytics` where Analytics is the name of this project. A new project directory will be create with all the necessary files and folders pre-install.
 
-![Q2](https://github.com/drshahizan/SECP3843/blob/1c5090aaaef0c19e147d6cc9c7b2732b918e9165/submission/AimanHafizi619/Question%201/files/images/Q1%20image2.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/submission/AimanHafizi619/Question%201/files/images/Q1%20image2.png)
+
+3. *Create Django app*: Change directory by typing 'cd Analytics` in command prompt. Inside the Analytics directory, create an app by typing `python manage.py startapp AnalyticsDataset` in the command prompt where AnalyticsDataset is the name of the app. A new app directory with the required files will be created.
+
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image3.png)
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
