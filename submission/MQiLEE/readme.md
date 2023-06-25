@@ -22,9 +22,9 @@
 
 | No | Answer | File |
 | :-----: | ----- | :------: |
-| 1 | Question 1 | <a href="./questions1/answerQ1.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 2 | Question 2 | <a href="./questions2/answerQ2.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 3 | Question 3 | <a href="./questions3/answerQ3.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 4 | Question 4 | <a href="./questions4/answerQ4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 5 | Question 5 | <a href="./questions5/answerQ5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 1 | Question 1 | <a href="./questions 1/answerQ1.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 2 | Question 2 | <a href="./questions 2/answerQ2.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 3 | Question 3 | <a href="./questions 3/answerQ3.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 4 | Question 4 | <a href="./questions 4/answerQ4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 5 | Question 5 | <a href="./questions 5/answerQ5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
 
