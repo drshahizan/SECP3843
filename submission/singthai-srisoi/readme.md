@@ -21,14 +21,14 @@ Don't forget to hit the :star: if you like this repo.
     <th>Matric No.</th>
   </tr>
   <tr>
-    <td>Lee Cai Xuan</td>
-    <td>A20EC0062</td>
+    <td>Singthai Srisoi</td>
+    <td>A20EC0147</td>
   </tr>
 
 </table>
 <br>
 
-## Dataset: Analytics Dataset
+## Dataset: Mflix
 
 Source link: https://github.com/drshahizan/dataset/tree/main/mongodb/02-analytics
 
