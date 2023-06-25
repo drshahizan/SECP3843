@@ -32,7 +32,7 @@ To integrate Django with the JSON dataset and ensure efficient data storage and 
 
 ![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image3.png)
 
-4. *Modify Database*: Open the settings.py file in Analytics directory. Set the "DATABASES" dictionary to include the necessary configuration for MySQL and MongoDB databases. Locate the screenshot of database codes in the settings.py file.
+4. *Locate Database*: Open the settings.py file in Analytics directory. Set the "DATABASES" dictionary to include the necessary configuration for MySQL and MongoDB databases. Locate the screenshot of database codes in the settings.py file.
 
 ![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image4.png)
 
@@ -51,6 +51,29 @@ By using mysqlclient, it can establish a connection to a MySQL database server, 
 6. *Install mysqlclient*: Install mysqlclient by typing `pip install mysqlclient` in the command prompt.
 
 ![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image6.png)
+
+7. *Modify Databse*: In the settings.py file, update the "DATABASES" code as the screenshot below.
+   
+>The `default` database is for MySql. Create a new database in MySql database and name it 'analytics'.
+
+
+>The `mongdb` database is for MongoDB. Create a new database cluster name `projectcluster` with both username and password as admin, for now. Name the database as `analytics`
+
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image7.png)
+
+In the context of Django, a model represents the structure and behavior of a database table. It defines the fields and relationships of the data stored in the table. Models in Django are typically defined in the models.py file of an app.
+
+8. *Create models*: Do to AnalyticsDataset app, locate the `models.py` file and update the models to match that of the AA dataset. Create three models: Accounts, Customers, and Transactions.
+
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image8.png)
+
+When you define or modify your Django models, such as adding new fields or altering existing ones, Django needs to keep track of these changes and apply them to the database. Database migrations provide a way to manage these changes and keep the database schema synchronized with the models.
+
+Running `python manage.py makemigrations` examines the current state of your models and compares them to the existing database schema. It then generates a set of migration files that describe the required changes to be made to the database schema.
+
+9. `Migrate database`: Type in `python manage.py makemigrations` in the command prompt. Then, run the python manage.py migrate command to apply these migrations. My Sql and MongoDB database will be updated.
+
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image9.png)
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
