@@ -43,7 +43,7 @@ Step 5: Select the target collection
 
 In the MongoDB shell, switch to the desired collection. The command `db.` should be followed by database name. For example: I will run `db.ListingsAndReviews`.
 
-
+![Q2](files/images/q2_8.png)
 
 Step 6: Start importing JSON file
 
