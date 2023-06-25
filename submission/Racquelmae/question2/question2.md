@@ -36,7 +36,7 @@ To see all available databases, type `show dbs`.<br>
 <img  src="./files/images/show_dbs.jpg"></img>
 
 ## Question 2 (b)
-In the terminal, type 'use AA' to switch to the AA database.<br>
+In the terminal, type `use AA` to switch to the AA database.<br>
 <img  src="./files/images/use_AA.jpg"></img>
 
 ### i. Create
