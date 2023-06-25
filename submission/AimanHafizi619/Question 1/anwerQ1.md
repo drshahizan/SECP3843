@@ -44,6 +44,14 @@ With Djongo, you can define Django models that represent your data structure and
 
 ![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image5.png)
 
+`mysqlclient` is a Python library that provides an interface for connecting to a MySQL database from a Python application. It is a MySQL connector for Python that allows the interaction with a MySQL database using Python code.
+
+By using mysqlclient, it can establish a connection to a MySQL database server, authenticate with the necessary credentials, and perform CRUD (Create, Read, Update, Delete) operations on the database. It provides a convenient and efficient way to interact with MySQL databases from any Python applications.
+
+6. *Install mysqlclient*: Install mysqlclient by typing `pip install mysqlclient` in the command prompt.
+
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image6.png)
+
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
