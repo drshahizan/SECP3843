@@ -17,14 +17,16 @@ Don't forget to hit the :star: if you like this repo.
 Step 1: Prepare the JSON file
 
 Download the Movies dataset. There should be four JSON files, comments, movies, theaters, and users. Download all four files and put them in a single folder.
+![Q2](files/images/pic4.png)
 
 Step 2: Command Prompt
 
-Head over to the file where the MongoDB file is located. Navigate through the files until you see the `bin` file. Open a Command Prompt from there.
+Head over to the file where the MongoDB file is located. Navigate through the files until you see the `bin` file. Open a Command Prompt from there. <br>
+![Q2](files/images/pic3.png)
 
 Step 3: Import the JSON file
 
-From the command prompt, execute `mongoimport --db mflix --collection movies --file "C:\Users\User\Desktop\Luqman's Work stuff\sem 6 shits\Dataset\movies.json"`. 
+From the command prompt, execute `mongoimport --db mflix --collection movies --file "C:\Users\User\Desktop\Luqman's Work stuff\sem 6 shits\Dataset\movies.json"`. The data will be imported into your localhost and it will also automatically create both the database and the collection.
 
 `mongoimport`: The MongoDB library we will be using to import the dataset. <br>
 
@@ -34,7 +36,8 @@ From the command prompt, execute `mongoimport --db mflix --collection movies --f
 
 `--file`: The file path to the JSON file <br>
 
-
+![Q2](files/images/pic1.png)
+![Q2](files/images/pic2.png)
 ## Question 2 (b)
 
 
