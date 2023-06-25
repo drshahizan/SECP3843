@@ -61,6 +61,12 @@ By using mysqlclient, it can establish a connection to a MySQL database server, 
 
 ![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image7.png)
 
+In the context of Django, a model represents the structure and behavior of a database table. It defines the fields and relationships of the data stored in the table. Models in Django are typically defined in the models.py file of an app.
+
+8. *Create models*: Do to AnalyticsDataset app, locate the `models.py` file and update the models to match that of the AA dataset. Create three models: Accounts, Customers, and Transactions.
+
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image8.png)
+
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
