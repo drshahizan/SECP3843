@@ -90,6 +90,12 @@ Before applying migration, make sure in the settings.py, in INSTALLED_APPS, your
 
 ![Q1](files/images/q1_13.png)
 
+Pictures below show how migration is made towards MySQL.
+
+![Q1](files/images/q1_16.png)
+
+![Q1](files/images/q1_15.png)
+
 ### 7. **Load data from JSON**
 Write a script or a Django management command to read the JSON dataset (listingsAndReviews.json) and populate the tables in both databases. I will use the Django ORM to interact with the databases and insert the data.
 
