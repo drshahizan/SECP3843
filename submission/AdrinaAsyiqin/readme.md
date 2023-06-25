@@ -17,12 +17,11 @@ Don't forget to hit the :star: if you like this repo.
 <p align='center'> ADRINA ASYIQIN BINTI MD ADHA</p>
 <p align='center'> A20EC0174</p>
 <br>
-<h3 align="center">Dataset: Supply Store Dataset</h3>
-<h3 align="center">Submission</h3>
-<br>
+
 
 ## Dataset: [Supply Store](https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales)
 
+## Submission
 <table>
   <tr>
     <th>No</th>
