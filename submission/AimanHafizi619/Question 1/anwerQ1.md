@@ -26,7 +26,7 @@ To integrate Django with the JSON dataset and ensure efficient data storage and 
 
 2. *Create Django project*: Create a new Django project by typing `django-admin startproject Analytics` where Analytics is the name of this project. A new project directory will be create with all the necessary files and folders pre-install.
 
-![Q1](https://github.com/drshahizan/SECP3843/blob/submission/AimanHafizi619/Question%201/files/images/Q1%20image2.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image2.png)
 
 3. *Create Django app*: Change directory by typing 'cd Analytics` in command prompt. Inside the Analytics directory, create an app by typing `python manage.py startapp AnalyticsDataset` in the command prompt where AnalyticsDataset is the name of the app. A new app directory with the required files will be created.
 
