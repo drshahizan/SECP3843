@@ -48,14 +48,14 @@ To insert a new document into the AA.City collection:
 The newly created document can be found in the database.
 <img  src="./files/images/create2.jpg"></img>
 
-Or use the find method in the terminal. 
-<img  src="./files/images/create3.jpg"></img>
+Or use the find method in the terminal.<br>
+<img  height="300px" src="./files/images/create3.jpg"></img>
 
 ### ii. Read
 `db.collection.find()` method reads documents in the collection. To select documents which match an equality condition, specify the condition as a `<field>:<value>` pair in the query filter document.
 
-To return all inspections where the id equals 10312-2015-ENFO from the AA.City collection:
-<img  src="./files/images/find.jpg"></img>
+To return all inspections where the id equals "10312-2015-ENFO" from the AA.City collection:
+<img  height="400px" src="./files/images/find.jpg"></img>
 
 The document can also be found in the database.
 <img  src="./files/images/find2.jpg"></img>
@@ -73,8 +73,8 @@ Before the document was updated, the address is null.
 The updated document can be found in the database.
 <img  src="./files/images/update2.jpg"></img>
 
-Or use the find method in the terminal. 
-<img  src="./files/images/update3.jpg"></img>
+Or use the find method in the terminal.<br>
+<img  height="300px" src="./files/images/update3.jpg"></img>
 
 #### a. UpdateMany
 `db.collection.updateMany()` method updates all documents that match a specified filter.
