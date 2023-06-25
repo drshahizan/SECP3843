@@ -27,7 +27,7 @@ Don't forget to hit the :star: if you like this repo.
 </table>
 <br>
 
-## Dataset: [Stories](stories.json)
+## Dataset: [Stories](https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories)
 
 ## Submission
 
