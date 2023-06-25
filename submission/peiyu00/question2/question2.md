@@ -36,7 +36,7 @@ Navigate to https://www.mongodb.com/try/download/shell and click download button
 - MongoDB Command Line Database Tools <br>
 Navigate to https://www.mongodb.com/try/download/database-tools and click download button.
   <p align="center">
-    <img height="200px" src="./files/images/DatabaseTools.png"></img>
+    <img height="300px" src="./files/images/DatabaseTools.png"></img>
   </p>
 
 #### Step 1: Prepare the JSON File
