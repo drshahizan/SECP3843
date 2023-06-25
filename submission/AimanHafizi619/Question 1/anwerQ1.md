@@ -67,6 +67,14 @@ In the context of Django, a model represents the structure and behavior of a dat
 
 ![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image8.png)
 
+When you define or modify your Django models, such as adding new fields or altering existing ones, Django needs to keep track of these changes and apply them to the database. Database migrations provide a way to manage these changes and keep the database schema synchronized with the models.
+
+Running `python manage.py makemigrations` examines the current state of your models and compares them to the existing database schema. It then generates a set of migration files that describe the required changes to be made to the database schema.
+
+9. `Migrate database`: Type in `python manage.py makemigrations` in the command prompt. Then, run the python manage.py migrate command to apply these migrations. My Sql and MongoDB database will be updated.
+
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image9.png)
+
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
