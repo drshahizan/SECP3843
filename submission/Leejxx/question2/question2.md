@@ -11,10 +11,11 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Name: Lee Jia Xian  
 #### Matric No.: A20EC0200
-#### Dataset:
+#### Dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" >Supply Store Dataset</a>
 
 ## Question 2 (a)
 ### 1. Download dataset (JSON File)
+Download the dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" >Supply Store Dataset</a>
 
 ### 2. Start MongoDB server with command Prompt
 Open Command Prompt and enter `mongod` to start the MongoDB server.
