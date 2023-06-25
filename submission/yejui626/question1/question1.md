@@ -15,7 +15,23 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Stories Dataset
 
 ## Question 1 (a)
-![Image1](./files/images/image.png)
+These are the steps for implementing a configuration using the servers used in this project. It is to ensure seamless integration between the Django web framework, a JSON dataset provided in this project, and the MySQL and MongoDB databases.
+
+### Explanation of steps required to integrate Django with JSON, ensuring efficient data storage and retrieval from both MySQL and MongoDB databases.
+
+### 1. Steps to setup Django server.
+First, we are using the Django web framework as the base for building the portal. Hence, we need to setup the Django server.
+
+1. Locate to your project file and create a virtual environment.
+```python
+py -m venv env
+env\Scripts\activate
+```
+
+2. Once you’ve created and activated your Python virtual environment, you can install Django into this dedicated development workspace using `pip install django` .
+![Alt text](./files/images/image.png)
+
+3. After you’ve successfully installed Django, you’re ready to create the scaffolding for your new web application. With your virtual environment set up and activated and Django installed, you can now create a project using `django-admin startproject AA_Goo`
 
 
 
