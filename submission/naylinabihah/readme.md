@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Alternative Assessment
 
 <p align="center">
-  <img height="200px" src="materials/profile.png" />
+  <img height="200px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/photo1679392770%20(2).jpeg" />
 </p>
 
 <table align="center">
@@ -28,7 +28,7 @@ Don't forget to hit the :star: if you like this repo.
 </table>
 <br>
 
-## Dataset:
+## Dataset: Companies
 
 ## Submission
 
