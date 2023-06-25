@@ -100,7 +100,7 @@ In summary, this folder structure appears to be organizing a GitHub repository b
 | 34 | ONG HAN WAH | <a href="ongwah" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 35 | QAISARA BINTI ROHZAN | <a href="qaisarrra" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 36 | RADIN DAFINA BINTI RADIN ZULKAR NAIN | <a href="radindafina" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
-| 37 | RISHMA FATHIMA BINTI BASHER | <a href="rishmafathima" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
+| 37 | RISHMA FATHIMA BINTI BASHER | <a href="RishmaFathima" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 38 | SAKINAH AL'IZZAH BINTI MOHD ASRI | <a href="sakinahalizzah" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 39 | SINGTHAI SRISOI | <a href="singthai-srisoi" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
 | 40 | TAN YONG SHENG | <a href="TanYongSheng728" ><img src="../images/folder.png" width="24px" height="24px" ></a> | 
