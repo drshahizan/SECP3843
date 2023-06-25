@@ -25,7 +25,7 @@
 </table>
 <br>
 
-## Dataset: City Inspections Dataset
+## Dataset: [City Inspections Dataset](https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections)
 <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections" ><img src="materials/dataset.png" height="40px" ></a> 
 
 ## Submission

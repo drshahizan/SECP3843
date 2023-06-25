@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Alternative Assessment
 
 <p align="center">
-  <img height="200px" src="materials/profile.png" />
+  <img height="200px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question1/files/images/passport%20img%202.jpg" />
 </p>
 
 <table align="center">
@@ -28,7 +28,9 @@ Don't forget to hit the :star: if you like this repo.
 </table>
 <br>
 
-## Dataset:
+## Dataset: Analytics Dataset
+
+Source link: https://github.com/drshahizan/dataset/tree/main/mongodb/02-analytics
 
 ## Submission
 
