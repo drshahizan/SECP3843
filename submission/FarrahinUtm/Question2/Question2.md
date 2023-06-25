@@ -5,39 +5,31 @@
 <a href="https://github.com/drshahizan/SECP3843/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/drshahizan/SECP3843?color=2b9348"></a>
 ![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fdrshahizan%2FSECP3843&labelColor=%23d9e3f0&countColor=%23697689&style=flat)
 
+
 Don't forget to hit the :star: if you like this repo.
 
-# Special Topic Data Engineering (SECP3843)
-## Alternative Assessment
+# Special Topic Data Engineering (SECP3843): Alternative Assessment
+
+#### Name: NURFARRAHIN BINTI CHE ALIAS
+#### Matric No.: A20EC0121
+#### Dataset: Mflix
+
+## Question 2 (a)
+You have been given a JSON file that contains data that must be imported into a MongoDB database. The JSON file must follows the appropriate structure for MongoDB documents. Your task is to outline the step-by-step process to add the data from the JSON file into MongoDB. Provide a detailed explanation of each step involved in the process with screenshots, including any necessary commands. Ensure that your answer covers the preparation of the JSON file, starting the MongoDB server, accessing the MongoDB shell, selecting the target database, choosing the collection, and executing the import command.
+
+## Question 2 (b)
+b.	Create FIVE (5) MongoDB queries that demonstrating various Create, Read, Update, and Delete (CRUD) operations on the documents stored in the database. Ensure that you use different types of functions provided by MongoDB for each query. The breakdown for the number of queries per operation is as follows:
+
+i.	Create – 1 query
+
+ii.	Read – 1 query
+
+iii.	Update – 2 queries
+
+iv.	Delete – 1 query.
 
 
-<p align="center"><img src="https://github.com/drshahizan/SECP3843/assets/97009562/2da52fcb-febf-4ee3-bcb1-0727b70e3feb" alt="kelvin" title="kelvin-photo" height="350" /></p>
-
-<table align='center'>
-
-  <tr>
-    <th>Name</th>
-    <th>Matric</th>
-  </tr>
-  <tr>
-    <td>Kelvin Ee</td>
-    <td>A20EC0195</td>
-  </tr>
-</table>
-
-## Dataset: City Inspections
-
-## Submission
-
-| No | Answer | File |
-| :-----: | ----- | :------: |
-| 1 | Question 1 | <a href="submission/Kelvinnn-2/question 1/question1.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 2 | Question 2 | <a href="./question2/question2.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 3 | Question 3 | <a href="./question3/question3.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 4 | Question 4 | <a href="./question4/question4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 5 | Question 5 | <a href="./question5/question5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-
-
+For each query, include the MongoDB query itself and provide screenshots of the results obtained from executing the queries.
 
 
 

@@ -19,7 +19,7 @@
 </table>
 <br>
 
-## Dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-Sales" >Sales</a>
+## Dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" >Supply Store Dataset</a>
 
 ## Submission
 | No | Answer | File |
