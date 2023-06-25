@@ -20,7 +20,7 @@ To integrate Django with the JSON dataset and ensure efficient data storage and 
 
 1. **Install Django**: Start by installing Django by using the pip package manager to install Django. Use `python -m pip install Django`.
 
-![alt text](https://github.com/drshahizan/SECP3843/tree/main/submission/muhdimranh/Question%201/files/images/q1_1.png)
+![alt text](files/images/q1_1.png)
 
 2. **Set up Django project**: Create a new Django project using the `django-admin startproject` command. This will create a project directory with the necessary files and folders.
 
