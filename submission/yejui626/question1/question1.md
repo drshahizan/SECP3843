@@ -155,9 +155,9 @@ This system architecture focuses on the seamless integration between the web ser
 
    - **Django Web Server and MVT**
    Django acts as an agent to process the requests from the users and send response to the users while interacting with the databases and dataset.
-      - Models: Specify the necessary data structures and relationships required by the application which allow us to do CRUD seamlessly.
-      - Views: Handle the logic for processing requests, retrieving data from the databases, and rendering templates.
-      - Templates: Contain the HTML structure and placeholders for dynamic data.
+      - **Models:** Specify the necessary data structures and relationships required by the application which allow us to do CRUD seamlessly.
+      - **Views:** Handle the logic for processing requests, retrieving data from the databases, and rendering templates.
+      - **Templates:** Contain the HTML structure and placeholders for dynamic data.
 
    - **Dataset (JSON)**
    Location of the dataset is stored. In this case, the dataset was downloaded to local from github.
@@ -170,9 +170,9 @@ This system architecture focuses on the seamless integration between the web ser
       It is a NoSQL database server which used to store JSON data. In this project, it is used to store the JSON dataset (Stories dataset).
 
    - **External Libraries for database integration**
-        - **ORM**
+        - **ORM**: 
          To perform interaction between Django models and MySQL, Django's ORM (Object-Relational Mapping) provides an abstraction layer that allows us to work with MySQL using Python classes and methods, making it easier to perform database operations.
-        - **Djongo**
+        - **Djongo**: 
         Django can serve as the MongoDB connector when integrating it with MongoDB. Djongo enables interaction between Django models and MongoDB collections.
 
     
