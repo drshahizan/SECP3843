@@ -21,7 +21,7 @@ These are the steps for implementing a configuration using the servers used in t
 ### 1. Steps to setup Django server including the project and application folder.
 First, we are using the Django web framework as the base for building the portal. Hence, we need to setup the Django server.
 
-1. Locate to your project file and create a virtual environment.
+1. Locate to the project file and create a virtual environment.
 ```python
 py -m venv env
 env\Scripts\activate
@@ -59,11 +59,91 @@ env\Scripts\activate
             }
         }
    ```
-   3. Install database connectors for MySQL and MongoDB using the "mysqlclient" and "djongo" library.
+   3. Install database connectors ("mysqlclient" and "djongo" library) for MySQL and MongoDB using 
    ``` python
     pip install mysqlclient
     pip install djongo
    ```   
+### 2. Configuring Django models
+To allow seamless integration between Django and the databases, we need to define a Django models that represent the structure and fields of the JSON dataset.
+
+   1. Open the stories app's `models.py` file.
+   2. Define Django models that represent the structure and fields of the JSON dataset according to the data dictionary.
+   ``` python
+        from django.db import models
+
+
+        class Container(models.Model):
+            _DATABASE = "mongodb"
+            name = models.CharField(max_length=255)
+            short_name = models.CharField(max_length=255)
+
+
+        class Topic(models.Model):
+            _DATABASE = "mongodb"
+            name = models.CharField(max_length=255)
+            short_name = models.CharField(max_length=255)
+
+
+        class User(models.Model):
+            _DATABASE = "mongodb"
+            name = models.CharField(max_length=255)
+            registered = models.DateTimeField()
+            fullname = models.CharField(max_length=255)
+            icon = models.URLField()
+            profileviews = models.IntegerField()
+
+
+        class ShortURL(models.Model):
+            _DATABASE = "mongodb"
+            short_url = models.URLField()
+            view_count = models.IntegerField()
+
+
+        class Story(models.Model):
+            _DATABASE = "mongodb"
+            _id = models.CharField(max_length=255, unique=True)
+            href = models.URLField()
+            title = models.CharField(max_length=255)
+            comments = models.IntegerField()
+            container = models.ForeignKey(Container, on_delete=models.CASCADE)
+            submit_date = models.DateTimeField()
+            topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
+            promote_date = models.DateTimeField()
+            id = models.CharField(max_length=255)
+            media = models.CharField(max_length=255)
+            diggs = models.IntegerField()
+            description = models.TextField()
+            link = models.URLField()
+            user = models.ForeignKey(User, on_delete=models.CASCADE)
+            status = models.CharField(max_length=255)
+            shorturl = models.ManyToManyField(ShortURL)
+   ```
+### 3. Configuring Django Database Routing
+To allow Django to support multiple databases, we require a database routing to specify which database to use for each model. Routing rules to route specific models to MySQL or MongoDB based on their requirements is set up under this file. For example, the models `[Container, Topic, User, ShortURL, Story]` that we have just created is routed to MongoDB.
+
+```python
+class DatabaseRouter:
+    def db_for_read(self, model, **hints):
+        return getattr(model, "_DATABASE", "default")
+
+    def db_for_write(self, model, **hints):
+        return getattr(model, "_DATABASE", "default")
+
+    def allow_relation(self, obj1, obj2, **hints):
+        """
+        Relations between objects are allowed if both objects are
+        in the master/slave pool.
+        """
+        db_list = ('default')
+        return obj1._state.db in db_list and obj2._state.db in db_list
+
+    def allow_migrate(self, db, model):
+        """
+        All non-auth models end up in this pool.
+        """
+        return True  
+```
 
 
 ## Question 1 (b)
