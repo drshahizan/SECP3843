@@ -26,7 +26,12 @@ customer.json
 transactions.json
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q3%20image3.png)
 
-**Step 2**
+**Step 2**C
+>Do to this location open command prompt or cmd and type in mongod. `Programs Files` > `MongoDB` > `Server` > `6.0` > `bin`.
+
+![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image7.png)
+
+**Step 3**
 
 The MongoDB Shell is a command-line interface (CLI) tool provided by MongoDB that allows users to interact with MongoDB databases using a JavaScript-based scripting language. It provides a convenient way to perform various database operations, including querying, inserting, updating, and deleting data.
 
@@ -34,11 +39,22 @@ The MongoDB Shell is a command-line interface (CLI) tool provided by MongoDB tha
 
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image4.png)
 
-**Step 3**
-
-Using MongoDB Shell, select database `analytics` by typing `use analytics` in the MongoDB Shell.
+**Step 4**
+>Using MongoDB Shell, select database `analytics` by typing `use analytics`.
 
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image5.png)
+
+**Step 5**
+>Using MongoDB Shell, select selection `analyticsdataset`. The command db. should be followed by database name. For example: I will run db.ListingsAndReviews.
+
+![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image6.png)
+
+**Step 6**
+>Go to `Program Files` > `MongoDB` > `Tools` > `100` > `bin`. Using MongoDB Shell, type in the following code.
+
+`mongoimport --uri mongodb+srv://admin:admin@projectcluster.7sndifd.mongodb.net/ --db analytics --collection analyticsdataset --file "C:\Users\ahmad\Desktop\Django\accounts.json".`
+
+![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image8.png)
 
 ## Question 2 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
