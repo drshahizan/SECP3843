@@ -10,7 +10,7 @@ Don't forget to hit the :star: if you like this repo.
 
 # Special Topic Data Engineering (SECP3843)
 
-## Alternative Assessment
+## Alternative Assessment ✍️
 
 <p align="center">
   <img height="200px" src="https://github.com/drshahizan/SECP3843/assets/119557391/ad1b0ce3-0ade-4da8-a711-e74526c6aa85" />
@@ -28,7 +28,7 @@ Don't forget to hit the :star: if you like this repo.
 </table>
 <br>
 
-## Dataset
+## Dataset 📊
 
 <table align="center">
   <tr>
@@ -39,7 +39,7 @@ Don't forget to hit the :star: if you like this repo.
   </tr>
 </table>
 
-## Submission
+## Submission ✅
 
 <table align="center">
   <tr>
