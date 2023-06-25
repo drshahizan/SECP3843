@@ -51,13 +51,14 @@ db.comments.insertOne({
   date: ISODate("2023-06-25T12:00:00Z")
 })
 ```
-
+![Q2](files/images/pic21.png) <br>
+![Q2](files/images/pic211.png) <br>
 2. Read
 To read a single document or multiple simply use `db.movies.find()` method. It will search through the whole document to find a document that fits the description. 
 ```
 db.movies.find({ title: "Civilization" })
 ```
-
+![Q2](files/images/pic22.png) <br>
 4. Update
 To update a single document, we can use `db.users.updateOne()` method which will update only one. If we want to update multiple documents, we can use `db.movies.updateMany()` method to update multiple documents.
 ```
@@ -66,19 +67,23 @@ db.users.updateOne(
    { $set: { name: "Jane Doe" } }
 )
 ```
-
+![Q2](files/images/pic23.png) <br>
+![Q2](files/images/pic231.png) <br>
 ```
 db.movies.updateMany(
    { countries: "USA" },
    { $set: { countries: "Amerika" } }
 )
 ```
-
+![Q2](files/images/pic232.png) <br>
+![Q2](files/images/picAMERIKAAA.png) <br>
 6. Delete
 To delete a single document we can use `db.users.deleteOne()` method.
 ```
 db.users.deleteOne({ name: "Joffrey Baratheon" })
 ```
+![Q2](files/images/pic25.png) <br>
+![Q2](files/images/pic251.png) <br>
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
