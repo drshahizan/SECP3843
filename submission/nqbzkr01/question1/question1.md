@@ -63,9 +63,10 @@ Step 9. Test and Refine
 
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
+
+![Django System Architecture](https://github.com/drshahizan/SECP3843/assets/92329710/6efda90c-0d98-49a9-942e-61c2e23a0dd4)
 
 
 
