@@ -27,7 +27,7 @@ Don't forget to hit the :star: if you like this repo.
 </table>
 <br>
 
-## Dataset: <a href="mongodb/03-movie">Movie</a>
+## Dataset: <a href="[mongodb/03-movie](https://github.com/drshahizan/dataset/tree/main/mongodb/03-movie)">Movie</a>
 
 ## Submission
 
