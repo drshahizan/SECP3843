@@ -26,7 +26,7 @@
 <br>
 
 ## Dataset:
-<a href="https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections" ><img src="../images/dataset.png" width="24px" height="24px" ></a>
+<a href="https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections" ><img src="materials/dataset.png" height="40px" ></a>
 ## Submission
 
 | No | Answer | File |
