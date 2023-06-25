@@ -20,14 +20,13 @@ Click the download button to download the [City Inspections](https://github.com/
 
 ### 2. Launch MongoDB server
 Open Command Prompt and type `"mongod"` to start the MongoDB server.
-<img  ></img>
+<img  src="./files/images/mongod.png"></img>
 
 ### 3. Access MongoDB shell
 In the terminal, type `mongosh` to access MongoDB shell.
 <img  src="./files/images/mongosh.png"></img>
 
-To see all available databases, type `show dbs`.<br>
-<img  src="./files/images/showdbs.png"></img>
+
 
 ### 4. Import Dataset into Mongodb
 In the terminal, type `mongoimport -d AA -collection "City Inspection" --file "C:\Users\user\Downloads\city_inspections.json" --jsonArray`
@@ -35,7 +34,10 @@ In the terminal, type `mongoimport -d AA -collection "City Inspection" --file "C
  The database and collection are automatically created as -d AA specifies the name of the database on which to run the mongoimport and -collection "City Inspection" specifies the collection to import.
 
 ### 5. View Dataset in Mongodb Compass
-Once the dataset is imported, it could be viewed in MongoDB Compass.
+Once the dataset is imported, To see all available databases, type `show dbs`.<br>
+<img  src="./files/images/showdbs.png"></img>
+
+Besides, it could be viewed in MongoDB Compass.
 <img  src="./files/images/importsuccess.png"></img>
 
 ## Question 2 (b)
