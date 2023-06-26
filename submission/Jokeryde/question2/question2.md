@@ -33,9 +33,10 @@ Don't forget to hit the :star: if you like this repo.
      </ul>
 
   3. Set up path inside system enviroment
-     <img src="https://github.com/drshahizan/SECP3843/blob/0ab73ca1ce9f455715b6856adb29aaf488f920c4/submission/Jokeryde/question2/files/images/image_2023-06-26_183600121.png" style="width: 800px; height: 350px;">
      
-  4. And open command prompt and type 'mongod' to start the mongodb server
+     <img src="https://github.com/drshahizan/SECP3843/blob/0ab73ca1ce9f455715b6856adb29aaf488f920c4/submission/Jokeryde/question2/files/images/image_2023-06-26_183600121.png">
+     
+  5. And open command prompt and type 'mongod' to start the mongodb server
       <img src="https://github.com/drshahizan/SECP3843/blob/0ab73ca1ce9f455715b6856adb29aaf488f920c4/submission/Jokeryde/question2/files/images/mongod.jpg" style="width: 800px; height: 350px;">
       
   6. Next, inside the command type 'mongosh' to access the MongoDB Shell
@@ -61,26 +62,42 @@ Don't forget to hit the :star: if you like this repo.
 
   1. Start MongoDB server by using ```mongod``` command inside the command prompt.
   2. Open MongoDB Shell terminal inside MongoDB Compass, type ```use mflix``` to switch the database.
-     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/switch.jpg" style="width: 800px; height: 350px;">
+
+     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/switch.jpg">
      
   3. Next, to create a new query, I'll be using the ```insertOne()``` method in MongoDB to insert a single record into my mflixx collection which represent as my movie collection.
-     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/insertdb.jpg" style="width: 800px; height: 350px;">
 
-     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/insert%20part%202.jpg" style="width: 800px; height: 350px;">
+     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/insertdb.jpg">
+
+     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/insert%20part%202.jpg">
      
 
   4. The new record can be found in the database inside mflixx collection.
-     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/data%20insert.jpg" style="width: 800px; height: 350px;">
+
+      <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/data%20insert.jpg">
 
   5. Next for READ, I'll be using the ```find()``` method to read the record inside the mflixx collection. I filtered the record where the movie rated is "PG13".
      
-     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/find%20movie.jpg" style="width: 800px; height: 350px;">
+     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/find%20movie.jpg">
 
   6. Next we have the UPDATE. So I'm going to update the year of the movie from "2020" to "2019" by using the ```updateOne()``` method.
-     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/updateone.jpg" style="width: 800px; height: 350px;">
 
-  7. As for DELETE, I used the ```deleteOne()``` method to delete the records that are "PG13" rated.
-     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/delete.jpg" style="width: 800px; height: 350px;">
+     <img rc="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/updateone.jpg">
+
+  7. For the second UPDATE queries, I've used the ```updateMany()``` method to update few record simultaneously.
+
+<img src="https://github.com/drshahizan/SECP3843/blob/f2ce59043557cf14ba46fbafe26b78c3c828bba4/submission/Jokeryde/question2/files/images/updatemany.jpg">
+
+
+<img src="https://github.com/drshahizan/SECP3843/blob/f2ce59043557cf14ba46fbafe26b78c3c828bba4/submission/Jokeryde/question2/files/images/updatemanyy.jpg">
+
+
+<img src="https://github.com/drshahizan/SECP3843/blob/f2ce59043557cf14ba46fbafe26b78c3c828bba4/submission/Jokeryde/question2/files/images/updatemanyyy.jpg">
+     
+
+  8. As for DELETE, I used the ```deleteOne()``` method to delete the records that are "PG13" rated.
+
+     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/delete.jpg">
 
      
 
