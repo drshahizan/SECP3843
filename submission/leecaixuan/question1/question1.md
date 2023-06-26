@@ -16,22 +16,18 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 1 (a)
 Step 1 - Install Django and create project in Visual Studio Code
+Install Django 
 
 ```
-PS C:\Users\User> pip install django
-Requirement already satisfied: django in c:\users\user\appdata\local\programs\python\python311\lib\site-packages (2.2.28)
-    Uninstalling pip-22.3.1:
-      Successfully uninstalled pip-22.3.1
-Successfully installed pip-23.1.2
-PS C:\Users\User>
-PS C:\Users\User> python -m pip install django
-Requirement already satisfied: django in c:\users\user\appdata\local\programs\python\python311\lib\site-packages (2.2.28)
-Requirement already satisfied: pytz in c:\users\user\appdata\local\programs\python\python311\lib\site-packages (from django) (2020.1)
-Requirement already satisfied: sqlparse>=0.2.2 in c:\users\user\appdata\local\programs\python\python311\lib\site-packages (from django) (0.2.4)
-PS C:\Users\User> django-admin startproject AA_project
-PS C:\Users\User> python manage.py migrate
-PS C:\Users\User> cd AA_project
-PS C:\Users\User\AA_project> code .
+pip install django
+```
+Create project
+
+```
+django-admin startproject AA_project
+python manage.py migrate
+cd AA_project
+code .
 ```
 
 ## Question 1 (b)
