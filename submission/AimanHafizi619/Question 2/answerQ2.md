@@ -27,7 +27,7 @@ transactions.json
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q3%20image3.png)
 
 **Step 2**
->Do to this location open command prompt or cmd and type in mongod. `Programs Files` > `MongoDB` > `Server` > `6.0` > `bin`.
+>Go to this location open command prompt or cmd and type in mongod. `Programs Files` > `MongoDB` > `Server` > `6.0` > `bin`.
 
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image7.png)
 
@@ -68,11 +68,11 @@ Before applying the CRUD (Create, Read, Update, Delete) operations, do these ste
 
 **Step 1**: Start MongoDB server
 
->If currently using the the previous command prompt, click the command prompt. Then, click `Ctrl + C` twice to exit the previous database.
+>Clode the current Command Prompt
 
->If opening a brand new command prompt, type in `mongod` to run MongoDB server.
+>Go to this location open command prompt or cmd and type in mongod. `Programs Files` > `MongoDB` > `Server` > `6.0` > `bin` again.
 
-![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image16.png)
+![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image17.png)
 
 **Step 2**: Start MongoDB shell
 Run the mongosh command to access the MongoDB shell.
