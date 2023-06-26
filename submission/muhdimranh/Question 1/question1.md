@@ -115,9 +115,36 @@ From all the steps above, there are some steps that I may skip in case I already
 
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+![Q1](files/images/q1_17.png)
 
+### 1. User Interface (Application UI, Admin UI, Dashboard):
+
+This is the interface through which users interact with the application. It sends HTTP/HTTPS requests to the web server.
+
+### 2. Web Server (Django):
+
+Acts as the central hub of the application. Handles incoming HTTP/HTTPS requests from the user interface. Contains the application layer, models layer, visualization module and JSON dataset.
+
+### 3. Application Layer:
+
+Includes forms, template and view function responsible for handling requests and generating responses. Communicates with the models layer and retrieves data for presentation.
+
+### 4. Models Layer:
+
+Represents the database layer of the application. Consists of two databases: MySQL DB and MongoDB. Stores and retrieves data using Django's ORM (Object-Relational Mapping). By including bidirectional arrows between the Models Layer and JSON Datasets components, I indicate that data synchronization can occur in both directions. This means that updates made in the models layer can be reflected in the JSON datasets, and vice versa. This ensures data synchronization.
+
+### 5. JSON Datasets:
+
+Contains the dataset the Airbnb dataset provided for analysis. These datasets serve as a source of data for the application.
+
+### 6. Data Synchronization:
+
+Involves the synchronization of data between the models layer (databases) and the JSON datasets. Ensures that the data remains consistent and up to date in both storage options.
+
+### 7. Data Presentation:
+
+Involves the generation of visualizations and the presentation of data to the user. This component includes the dashboard and visualization modules.
 
 
 
