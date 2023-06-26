@@ -28,9 +28,9 @@ To integrate Django with the JSON dataset and ensure efficient data storage and 
 
 ![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image2.png)
 
-3. *Create Django app*: Change directory by typing 'cd Analytics` in command prompt. Inside the Analytics directory, create an app by typing `python manage.py startapp AnalyticsDataset` in the command prompt where AnalyticsDataset is the name of the app. A new app directory with the required files will be created.
+3. *Create Django app*: Change directory by typing 'cd Analytics` in command prompt. Inside the Analytics directory, create three apps by typing `python manage.py startapp app_name` where app_name is 'Accounts','Customers' and 'Transactions' in the command prompt. New apps directory with the required files will be created.
 
-![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image3.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image12.png)
 
 4. *Locate Database*: Open the settings.py file in Analytics directory. Set the "DATABASES" dictionary to include the necessary configuration for MySQL and MongoDB databases. Locate the screenshot of database codes in the settings.py file.
 
@@ -63,17 +63,19 @@ By using mysqlclient, it can establish a connection to a MySQL database server, 
 
 In the context of Django, a model represents the structure and behavior of a database table. It defines the fields and relationships of the data stored in the table. Models in Django are typically defined in the models.py file of an app.
 
-8. *Create models*: Do to AnalyticsDataset app, locate the `models.py` file and update the models to match that of the AA dataset. Create three models: Accounts, Customers, and Transactions.
+8. *Create models*: For every app (Accounts, Cistomers, and Transaction), locate the `models.py` file and update the models as below.
 
-![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image8.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image13.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image14.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image%2015.png)
 
 When you define or modify your Django models, such as adding new fields or altering existing ones, Django needs to keep track of these changes and apply them to the database. Database migrations provide a way to manage these changes and keep the database schema synchronized with the models.
 
 Running `python manage.py makemigrations` examines the current state of your models and compares them to the existing database schema. It then generates a set of migration files that describe the required changes to be made to the database schema.
 
-9. `Register Apps`: In the `setting.py` file, locate the INSTALLED_APPS method. Add a new app below the 'django.contrib.statisfiles' called `AnalyticsDataset` so that when the mogration proses is initiated, Django web server knows which app is being updated to the MySql and MongoDB databse.
+9. `Register Apps`: In the `setting.py` file, locate the INSTALLED_APPS method. Add a new app below the 'django.contrib.statisfiles' called `Accounts`, `Customers`, and `Transactions` so that when the migration proses is initiated, Django web server knows which app is being updated to the MySql and MongoDB databse.
 
-![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image11.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image16.png)
 
 9. `Migrate database`: Type in `python manage.py makemigrations` in the command prompt. Then, run the python manage.py migrate command to apply these migrations. My Sql and MongoDB database will be updated.
 

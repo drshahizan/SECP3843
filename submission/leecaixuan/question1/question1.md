@@ -15,7 +15,56 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Analytics Dataset
 
 ## Question 1 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Step 1 - Install Django and create project in Visual Studio Code
+
+Install Django 
+
+```
+pip install django
+```
+Create project named AA_project
+
+```
+django-admin startproject AA_project
+python manage.py migrate
+cd AA_project
+code .
+```
+
+Create a Django App named AA_DjangoApp
+
+```
+python manage.py startapp AA_DjangoApp
+```
+
+Step 2 - Define Django Models
+
+Based on the dataset, the models consist of 3 classes which are Account, Customer and Transaction. 
+
+```
+from django.db import models
+
+# Create your models here.
+class Account(models.Model):
+    account_id = models.IntegerField(unique=True)
+    limit = models.IntegerField()
+    products = models.ArrayField(models.CharField(max_length=255))
+
+class Customer(models.Model):
+    username = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    address = models.CharField(max_length=255)
+    birthdate = models.DateTimeField()
+    email = models.EmailField()
+    accounts = models.ManyToManyField(Account)
+    tier_and_details = models.JSONField()
+
+class Transaction(models.Model):
+    account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    transaction_count = models.IntegerField()
+    bucket_start_date = models.DateTimeField()
+    bucket_end_date = models.DateTimeField()
+```
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
