@@ -69,9 +69,9 @@ project, and the MySQL and MongoDB databases, few servers need to be setup and c
 
 **4. Migrate the Models**
 
--  To do migration, run `python manage.py makemigrations` command and `python manage.py migrate` command. 
+Run the following commands to create the necessary database tables for MySQL and MongoDB 'python manage.py makemigrations' and 'python manage.py migrate'
 
-    <img width="626" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/373af744-c84a-4df6-914b-c53d6ca621f8">
+
 
 
 **5. Retrieve Data**
