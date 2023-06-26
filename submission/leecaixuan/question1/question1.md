@@ -163,7 +163,7 @@ from pymongo import MongoClient
 # MongoDB connection details
 mongodb_host = 'localhost'
 mongodb_port = 27017
-mongodb_database = 'mydatabase'
+mongodb_database = 'aa_project'
 mongodb_collection_account = 'accounts'
 mongodb_collection_customer = 'customers'
 mongodb_collection_transaction = 'transactions'
@@ -208,7 +208,71 @@ client.close()
 <h4>How to Retrieve Data from database</h4>
 
 - MySql database
+
+Example: Retrieve data from the Accounts table
+
+```
+# Import the model representing the account table
+from myapp.models import Account
+
+def retrieve_accounts_data():
+    # Retrieve all records from the account table
+    accounts = Account.objects.all()
+
+    # Iterate over the retrieved accounts
+    for account in accounts:
+        account_id = account.account_id
+        limit = account.limit
+        products = account.products
+
+        # Print data
+        print(f"Account ID: {account_id}")
+        print(f"Limit: {limit}")
+        print(f"Products: {products}")
+
+retrieve_accounts_data()
+```
+
 - MongoDB
+
+Example: Retrieve data from Accounts table
+
+```
+from pymongo import MongoClient
+
+def retrieve_accounts_data():
+    # Establish a connection to MongoDB
+    client = MongoClient('mongodb://localhost:27017')
+
+    # Access the database
+    db = client['aa_project']
+
+    # Access the "accounts" collection
+    collection = db['accounts']
+
+    # Define the query
+    query = {'status': 'active'}  # Example query to retrieve active accounts
+
+    # Execute the query and retrieve the documents
+    accounts = collection.find(query)
+
+    # Iterate over the retrieved accounts
+    for account in accounts:
+        account_id = account['_id']
+        limit = account['limit']
+        products = account['products']
+
+        # Print the data
+        print(f"Account ID: {account_id}")
+        print(f"Limit: {limit}")
+        print(f"Products: {products}")
+
+    # Close the MongoDB connection
+    client.close()
+
+retrieve_accounts_data()
+```
+
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
