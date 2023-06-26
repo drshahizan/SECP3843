@@ -20,16 +20,16 @@ Don't forget to hit the :star: if you like this repo.
 1. Download the JSON file.
    - Go to Github repository which stores the dataset.
      
-      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/dw%20data(1).png" /></div>
-      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/dw%20data(2).png" /></div>
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/dw%20data(1).png" /></div>
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/dw%20data(2).png" /></div>
    - Next, click 'Raw' and it will display the overall dataset code. Then, download the file by clicking on Save As and save the code as JSON file.
           
-      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/dw%20datas(3).png" /></div>
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/dw%20datas(3).png" /></div>
    
 2. Download and Install MongoDB
    - Go to the MongoDB official website (https://www.mongodb.com/try/download/community) and download the server.
 
-     <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/dw%20mongodb.png" /></div>
+     <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/dw%20mongodb.png" /></div>
    - After downloading and configuring the server, install the MongoDB server.
 
      
@@ -41,35 +41,35 @@ Don't forget to hit the :star: if you like this repo.
       ```
    - Once we have confirmed it is listening to the appropriate port, we can connect to the MongoDB deployment as shown below.
      
-      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/q2%20mongodb(1).png" /></div>
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/q2%20mongodb(1).png" /></div>
       
    - After connecting, it should display like the picture below.
           
-      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/q2%20mongodb(2).png" /></div>
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/q2%20mongodb(2).png" /></div>
 
       
 4. Create a new database.
    - For my database, I have named it as stories and the collection as col_stories. After naming both the database name and collection name, click on the create button.
      
-      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/q2%20mongodb(3).png" /></div>
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/q2%20mongodb(3).png" /></div>
       
    - After creating the database, it will display the newly created database as shown below:
      
-      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/q2%20mongodb(4).png" /></div>
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/q2%20mongodb(4).png" /></div>
 
       
 5. Importing the JSON data
    - Click on Add Data and choose Import JSON file.
       
-      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/import(1).png" /></div>
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/import(1).png" /></div>
       
    - Then, choose the correct JSON dataset and click on Import button.
       
-      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/import(2).png" /></div>
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/import(2).png" /></div>
       
    - After the dataset has finished importing into MongoDB, check and verify the dataset. Verify if it is the correct dataset and if all the data has been successfully imported in the MongoDB database.
       
-      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/import(3).png" /></div>
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/import(3).png" /></div>
 
       
 ## Question 2 (b)
