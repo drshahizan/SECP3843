@@ -40,11 +40,14 @@ project, and the MySQL and MongoDB databases, few servers need to be setup and c
 
      <img width="415" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/ca408d19-7517-4282-b26b-86746daaff01">
 
-**2. Define Models for MySQL and MongoDB**
+**2. Define Connection Details for MySQL and MongoDB**
+   -  In `settings.py` file, define the connection details for both MySQL and MongoDB database which include database name, username, password, host and others.
+      <img width="499" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/de4a6b80-cecb-4912-8f8c-0b3aece9f262">
 
-   - Define the models for MySQL
-     
-      ```python from django.db import models
+**3. Define models for Django**
+
+      ```python
+      from django.db import models
       
       class Inspection(models.Model):
           id = models.CharField(max_length=50, primary_key=True)
@@ -61,6 +64,7 @@ project, and the MySQL and MongoDB databases, few servers need to be setup and c
           def __str__(self):
               return self.name
 
+              
 ## Question 1 (b)
 
 
