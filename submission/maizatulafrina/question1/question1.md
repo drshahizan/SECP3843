@@ -19,6 +19,15 @@ Don't forget to hit the :star: if you like this repo.
 To ensure seamless integration between the Django web framework, a JSON dataset provided in this
 project, and the MySQL and MongoDB databases, few servers need to be setup and configure.
 
+**1. Django**
+   - Open Command Prompt and run `pip install Django` command.
+   - Then, run `django-admin startproject inspection` command to create Django project.
+   - Next step, in order to create a django app inside the folder, run `python manage.py startapp inspectionApp`. This is where we can define all the models for MySQL and MongoDB.
+   - The other packages that need to be installed are mysqlclient and djongo. To install mysqlclient, run `pip install django
+
+
+**2. MySQL**
+    - 
 
 ## Question 1 (b)
 
