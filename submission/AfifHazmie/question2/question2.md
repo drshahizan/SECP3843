@@ -42,9 +42,9 @@ Requirement before following the steps:
 5. Import json dataset file into mongoDB using mongo shell.
     - In the terminal with Mongo Shell active, type in the command `mongoimport --uri mongodb+srv://afifhazmiearsyad:abc123456789@noctua.bw9bvzx.mongodb.net/ --db SupplyStore --collection Sales --file "C:\Users\User\Downloads\sales.json"`
     - Lets break the command into parts:
-    - `--db` = database name
-    - `--collection` = database collection name
-    - `--file` = file path to the JSON dataset file
+      - `--db` = database name
+      - `--collection` = database collection name
+      - `--file` = file path to the JSON dataset file
     - The Database and collection will be automatically created as we execute the command.
       
     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA26.jpg" style="width:900px; height: 200px;">
