@@ -59,9 +59,13 @@ pip install pymysql
 ```
 Head over to the `settings.py` file. Navigate to the databases settings which we have created. We will change the configurations. It should look like this example below:
 
+![Q3](file/image/q3_db1.png)
 
 Step 3: Define Model
 Now we will continue by defining the models of the recently created tables. Head over to your `models.py` file and define each model class. It should look like this example below:
+
+![Q3](file/image/q3_model.png)
+
 Step 4: Database Migration
 Once we’re done with defining the models, we will need to migrate the database. Open up a terminal and run these two commands:
 ```
@@ -74,18 +78,27 @@ Head over to the `accounts` app directory, open the `views.py` file. Import the 
 from django.shortcuts import render, redirect
 from .forms import UserRegistrationForm
 from .models import Customer, Technical, Management
-
 ```
 Create the view function for registration. It should look like this:
+
+![Q3](file/image/q3_view_regi.png)
+
 Head over to the `forms.py` file and create the class for our form. It should look like this:
+
+![Q3](file/image/q3_view_form.png)
+
 Step 6: Login
 Open the terminal and run the following command to install this package:
 ```
 pip install django.contrib.auth
 ```
 Open `views.py` file and create your login view, it should look like this:
+
+![Q3](file/image/q3_login.png)
+
 Open `urls.py` and insert both paths for login and register as such:
 
+![Q3](file/image/q3_path.png)
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
