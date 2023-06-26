@@ -16,6 +16,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 1 (a)
 Step 1 - Install Django and create project in Visual Studio Code
+
 Install Django 
 
 ```
