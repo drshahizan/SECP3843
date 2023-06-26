@@ -78,6 +78,37 @@ project, and the MySQL and MongoDB databases, few servers need to be setup and c
 
 ## Question 1 (b)
 
+                       +----------------------+
+                       |    Web Server        |
+                       |   (Django Framework) |
+                       +----------------------+
+                                    |
+                                    |
+                                    |
+                                    v
+                       +----------------------+
+                       |                      |
+                       |    JSON Dataset      |
+                       |                      |
+                       +----------------------+
+                                    |
+                                    |
+                                    |
+                                    v
+                       +----------------------+
+                       |                      |
+                       |   MySQL Database     |
+                       |                      |
+                       +----------------------+
+                                    |
+                                    |
+                                    |
+                                    v
+                       +----------------------+
+                       |                      |
+                       |   MongoDB Database   |
+                       |                      |
+                       +----------------------+
 
 
 
