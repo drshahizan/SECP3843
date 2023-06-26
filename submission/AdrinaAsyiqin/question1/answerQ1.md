@@ -36,7 +36,6 @@ virtualenv myenv
 myenv\Scripts\activate
 ```
 
-
 ### Step 3: Run server
 
 1. Go into project directory and run the command
@@ -54,14 +53,10 @@ python manage.py runserver
 pip install django
 ```
 
-3. Verify installation by running python in the terminal. This will open a python shell 
-
-4. run 
+3. Verify installation by running python in the terminal. This will open a python shell and run
 ```
 import django
 ```
-
-5. check django version
 
 ### Step 5: Configure django settings
 1. Open settings.py 
@@ -71,7 +66,7 @@ import django
 3. Update INSTALLED_APPS list to include neccessary Django apps and django_pandas
 
 ### Step 6: Migrate database schema
-1. Run `pyhton manage.py migrate` command to create necessary models for the database
+1. Run `python manage.py migrate` command to create necessary models for the database
 
 2. Check if migration ran successfully and table created in both databases
 
@@ -110,9 +105,7 @@ class Command(BaseCommand):
 
 ```
 
-4. Save the file
-
-5. Run management command
+4. Save the file and run management command
 ```python
 python manage.py import_json_data
 ```
