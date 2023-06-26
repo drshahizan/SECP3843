@@ -32,16 +32,92 @@ project, and the MySQL and MongoDB databases, few servers need to be setup and c
 
      <img width="465" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/3aa6d421-d49d-4332-813d-bb60aff4f53e">
 
-   - The other packages that need to be installed are mysqlclient and djongo. To install mysqlclient, run `pip install django
+   - The other packages that need to be installed are mysqlclient and djongo. To install mysqlclient, run `pip install django mysqlclient pymongo` command.
+     
+     <img width="415" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/aaddfea3-909f-4de1-b7a3-ca1570a8bf53">
+
+   - For djongo, run `pip install djongo` command.
+
+     <img width="415" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/ca408d19-7517-4282-b26b-86746daaff01">
+
+**2. Define Connection Details for MySQL and MongoDB**
+   -  In `settings.py` file, define the connection details for both MySQL and MongoDB database which include database name, username, password, host and others.
+     
+      <img width="499" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/de4a6b80-cecb-4912-8f8c-0b3aece9f262">
+
+**3. Define models for Django**
+
+-  In `models.py` file, define the models according to its data structure and data types.
+
+      ```python
+      from django.db import models
+      
+      class Inspection(models.Model):
+          id = models.CharField(max_length=50, primary_key=True)
+          certificate_number = models.IntegerField()
+          business_name = models.CharField(max_length=255)
+          date = models.DateField()
+          result = models.CharField(max_length=255)
+          sector = models.CharField(max_length=255)
+          city = models.CharField(max_length=255)
+          zip_code = models.IntegerField()
+          street = models.CharField(max_length=255)
+          number = models.IntegerField()
+      
+          def __str__(self):
+              return self.name
+
+**4. Migrate the Models**
+
+Run the following commands to create the necessary database tables for MySQL and MongoDB 'python manage.py makemigrations' and 'python manage.py migrate'
 
 
-**2. MySQL**
-    - 
+
+
+**5. Retrieve Data**
 
 ## Question 1 (b)
 
+                    +----------------------+
+                    |   Web Server         |
+                    | (Django Framework)   |
+                    +----------------------+
+                            |      |     
+                            |      |    
+                            |      |    
+                            v      v  
+                    +----------------------+
+                    |                      |
+                    |    JSON Dataset      |
+                    |                      |
+                    +----------------------+
+                            |      |     
+                            |      |    
+                            |      |    
+                            v      v  
+                    +----------------------+
+                    |                      |
+                    |   MySQL Database     |
+                    |                      |
+                    +----------------------+
+                            |      |     
+                            |      |    
+                            |      |    
+                            v      v  
+                    +----------------------+
+                    |                      |
+                    |   MongoDB Database   |
+                    |                      |
+                    +----------------------+
 
 
+   - Web Server (Django Framework): The web server component is responsible for handling client requests, managing URL routing, and rendering dynamic web pages. In this architecture, Django, a Python-based web framework, is used as the web server. Django follows the Model-View-Controller (MVC) architectural pattern and provides a high-level abstraction for building web applications. It facilitates the seamless integration of the other components and ensures efficient communication between the client and the backend.
+
+   - JSON Dataset: The JSON dataset component contains the data that needs to be imported into the databases. It follows a specific structure that matches the expected format for the target databases. The JSON dataset can be stored in a file or retrieved from an external source. It acts as the source of data for populating the databases and provides the initial set of information for the application.
+
+   - MySQL Database: The MySQL database component is a popular relational database management system. It provides a structured storage solution with support for ACID (Atomicity, Consistency, Isolation, Durability) properties. In this architecture, MySQL is integrated with Django using the Django ORM (Object-Relational Mapping). It allows seamless interaction with the MySQL database, including querying, data retrieval, and manipulation.
+
+   - MongoDB Database: The MongoDB database component is a NoSQL document-oriented database. It offers a flexible schema and scalability, making it suitable for handling unstructured or semi-structured data. In this architecture, Django integrates with MongoDB using the mongoengine library, which provides an Object-Document Mapping (ODM) layer. This allows the application to interact with MongoDB, perform queries, retrieve data, and manipulate documents.
 
 
 

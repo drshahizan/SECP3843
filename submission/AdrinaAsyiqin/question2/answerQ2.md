@@ -1,3 +1,13 @@
+<a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
+<a href="https://github.com/drshahizan/SECP3843/network/members"><img src="https://img.shields.io/github/forks/drshahizan/SECP3843" alt="Forks Badge"/></a>
+<a href="https://github.com/drshahizan/SECP3843/pulls"><img src="https://img.shields.io/github/issues-pr/drshahizan/SECP3843" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/drshahizan/SECP3843/issues"><img src="https://img.shields.io/github/issues/drshahizan/SECP3843" alt="Issues Badge"/></a>
+<a href="https://github.com/drshahizan/SECP3843/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/drshahizan/SECP3843?color=2b9348"></a>
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fdrshahizan%2FSECP3843&labelColor=%23d9e3f0&countColor=%23697689&style=flat)
+
+
+Don't forget to hit the :star: if you like this repo.
+
 # Special Topic Data Engineering (SECP3843): Alternative Assessment
 
 #### Name: Adrina Asyiqin Binti Md Adha
@@ -5,6 +15,12 @@
 #### Dataset: sales.json
 
 ## Question 2 (a)
+
+### Requirements
+- MongoDB Compass
+- MongoDB Tools
+- MongoDB Community
+  
 ### Step 1: Prepare sales.json file 
 1. `Use Validation Tool` : There are several online JSON validation tools available that can help you validate the format and structure of your JSON file. These tools can identify any syntax errors or formatting issues in your JSON file. For example: https://jsonlint.com/
 2. `Check Data Types` : Verify that the data types of the values in the JSON file are appropriate for your MongoDB documents. For example, strings should be enclosed in double quotes, numbers should not be enclosed in quotes, and boolean values should be either true or false. The below shows the data type for json file.
@@ -82,8 +98,7 @@ use salesdatabase
 
 
 ### Step 2: Create the queries
-1. Create
-Use the following code to create 
+1. Create Query
 ```
 db.salessample.insertOne({
   "_id": ObjectId(),
@@ -110,13 +125,18 @@ db.salessample.insertOne({
 ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/3e05216d-b48b-4954-8f5a-47274c53fc7b)
 
-2. Read
+2. Read Query
 ```
 db.salessample.find({ "storeLocation": "Denver" })
 ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/7c14b81f-4c91-4723-9e07-1f050abb4d7c)
 
-3. Update
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/8bd5e995-ae5c-4bfb-89ce-f673ca554b05)
+
+
+3. Update Query
+ - Update One
+ - Update Many
 ```
 #update one
 db.salessample.updateOne(
@@ -125,6 +145,8 @@ db.salessample.updateOne(
 )
 ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/fd048863-fa38-40e9-a153-2e3d176b6bfa)
+
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/d0de0e7f-9d1c-417c-9d4f-eac2d0914841)
 
 ```
 #update many
@@ -135,10 +157,20 @@ db.salessample.updateMany(
 ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/4634daba-bb73-47bb-a16f-a3f14024c901)
 
-4. Delete
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/7fe0ae53-90cd-46f1-91d4-f36561404f18)
+
+4. Delete Query
 ```
 db.salessample.deleteOne({ "_id": ObjectId("5bd761dcae323e45a93ccfe8") })
 ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/4a39a065-d8d6-42dc-8c6c-870d04477de5)
 
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/004504fd-6d37-4053-bf10-db1a43ecbded)
 
+## Contribution 🛠️
+Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
+
+You can also contact me using [Linkedin](https://www.linkedin.com/in/drshahizan/) for any other queries or feedback.
+
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fdrshahizan&labelColor=%23697689&countColor=%23555555&style=plastic)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fdrshahizan)
+![](https://hit.yhype.me/github/profile?user_id=81284918)

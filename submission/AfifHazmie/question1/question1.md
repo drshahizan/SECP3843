@@ -24,12 +24,20 @@ Don't forget to hit the :star: if you like this repo.
           <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA1.jpg" style="width: 700px; height: 200px;">
        
      - MongoDB Database Server
-       - Using the command `pip install pymongo`
+       - Using the command
+         ```python
+         
+         pip install pymongo
+         
+         ```
          
          <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA3.jpg" style="width: 700px; height: 100px;">
          
      - MySQL Database Server
-       - Using the command `pip install mysqlclient`
+       - Using the command
+         ```python
+         pip install mysqlclient
+         ```
          
          <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA2.jpg" style="width: 550px; height: 150px;">
          
@@ -44,12 +52,16 @@ Don't forget to hit the :star: if you like this repo.
      
 3. Create Django project and app.
    - Open the terminal in visual studio code or command prompt and type
-   - `django-admin startproject Store`
+   - ```python
+     django-admin startproject Store
+     ```
      
      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA4.jpg" style="width: 600px; height: 60px;">
      
    - Create django app within the project with the command
-   - `python manage.py startapp AA`
+   - ```python
+     python manage.py startapp AA
+     ```
   
 4. Define data models
    - Define models representing the JSON dataset and its fields in the Django app's `models.py` file, including the JSONField for storing JSON data.
@@ -80,11 +92,49 @@ Don't forget to hit the :star: if you like this repo.
    - Deploy the Django application.
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### System Architecture
+ - The system architecture diagram illustrates the seamless integration between Django, a web server framework, a JSON dataset, MySQL, and MongoDB databases.
 
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/SA.jpg" >
 
+### Architecture Components
+1. User interface
+   - A user interface (UI) refers to the means by which a user interacts with a computer system, software application, or electronic device.
+   - It encompasses all the elements and components that enable users to input commands, navigate through functionalities, and receive feedback from the system.
+   - The purpose of a user interface is to facilitate effective communication and interaction between the user and the system.
+   
+3. Django Web Server
+   - Handles HTTP requests, processes them, and generates dynamic web pages.
+   - Utilizes Django's URL routing, request handling, session management, and template rendering capabilities.
+   
+4. Database Server
+   - MySQL Database:
+      - Stores and manages structured data, such as customer information.
+      - Utilizes SQL queries for data retrieval and manipulation.
+   - MongoDB Database:
+      - Stores and manages the JSON dataset, which may have varying structures and nested data.
+      - Follows a document-oriented model and uses MongoDB queries for data retrieval and manipulation.
 
+5. Json Dataset
+   - Contains structured data in JSON format, such as sales information, customer details, and product data.
+     
+6. Django App
+   - Represents the Django application that integrates the JSON dataset, MySQL, and MongoDB.
+   - Defines models to represent the JSON dataset and interact with the databases.
+   - Utilizes Django's ORM for database operations and data retrieval.
 
+7. Applications Layer
+   - Views: Handles user requests, retrieves data from the databases, and passes it to the templates.
+   - Templates: Render dynamically generated web pages using retrieved data.
+     
+8. Visualization
+   - The Visualization Tool interacts with the MySQL and MongoDB databases to retrieve the required data for visualization purposes.
+   - It executes queries against the databases to extract the relevant data and generates visual representations such as charts, graphs, or reports.
+   - The resulting visualizations are then presented to the users through the web server, enabling them to gain insights and analyze the data.
+
+At the center of the diagram is the Django web server, responsible for handling HTTP requests, processing, and generating dynamic web pages. The JSON dataset, represented by the Sales.json file, contains structured data such as sales information, customer details, and product data. To store and manage structured data, the architecture includes a MySQL database. MySQL follows a relational model and utilizes SQL queries for data retrieval and manipulation. On the other hand, the MongoDB database is used to store and manage the JSON dataset. MongoDB follows a document-oriented model and supports MongoDB queries for data operations.
+
+The Django application, represented in the diagram as the Django App, acts as the bridge between the web server, the JSON dataset, and the databases. It defines models that represent the JSON dataset and facilitate interaction with the MySQL and MongoDB databases. Views and templates in Django handle user requests, retrieve data from the databases, and render dynamically generated web pages. Finally, visualization tools are used to produce insight and results 
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
