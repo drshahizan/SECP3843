@@ -17,26 +17,20 @@ def topological_sort_as_sets(dependency_graph):
         current = {node for node, deps in todo.items() if not deps}
 
         if not current:
-            raise CyclicDependencyError(
-                "Cyclic dependency in graph: {}".format(
-                    ", ".join(repr(x) for x in todo.items())
-                )
-            )
+            raise CyclicDependencyError('Cyclic dependency in graph: {}'.format(
+                ', '.join(repr(x) for x in todo.items())))
 
         yield current
 
         # remove current from todo's nodes & dependencies
-        todo = {
-            node: (dependencies - current)
-            for node, dependencies in todo.items()
-            if node not in current
-        }
+        todo = {node: (dependencies - current) for node, dependencies in
+                todo.items() if node not in current}
 
 
-def stable_topological_sort(nodes, dependency_graph):
+def stable_topological_sort(l, dependency_graph):
     result = []
     for layer in topological_sort_as_sets(dependency_graph):
-        for node in nodes:
+        for node in l:
             if node in layer:
                 result.append(node)
     return result
