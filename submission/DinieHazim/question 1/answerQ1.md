@@ -168,11 +168,36 @@ Follow these steps to integrate Django with the JSON dataset and ensure efficien
 3. Run `python manage.py import_data`
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<p align="center">
+<img src="https://github.com/drshahizan/SECP3843/blob/b877061f493e8df06786c1431db70b37397152e7/submission/DinieHazim/question%201/files/images/System%20Architecture.png" width="300" height="400">
+</p>
 
+1. Client Side:
+   - The client side consists of the user's web browser or client application.
+   - Templates, written in HTML, CSS, and JavaScript, are rendered on the client side to create the user interface.
+   - Templates handle the presentation and layout of the application, including the structure, styling, and interactive elements visible to users.
 
+2. Server Side:
+   - The server side encompasses the backend logic responsible for processing client requests and generating responses.
+   
+   - Application Logic (Views, Controllers, or Handlers):
+        - This component receives requests from clients and contains the business logic of the application.
+        - It interprets and validates incoming data, performs necessary computations or operations, and determines the appropriate response.
 
+   - View Logic:
+        - The view logic component handles the preparation and manipulation of data to be presented to the client.
+        - It retrieves data from the model and passes it to the appropriate template for rendering.
 
+   - Model:
+        - The model represents the application's data structure and business rules.
+        - It defines the schema and relationships between data entities, such as tables or collections in a database.
+        - The model interacts with the database to perform CRUD operations, including data retrieval, creation, updating, and deletion.
+
+3. Database:
+   - The database component stores and manages persistent data used by the application.
+   - In this case, it stores the `stories.json` file.
+   - The database stores the data defined by the model and provides mechanisms for querying and modifying the data.
+   - The model component communicates with the database to retrieve or update data, ensuring data integrity and consistency.
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

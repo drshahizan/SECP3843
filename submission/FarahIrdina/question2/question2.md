@@ -15,6 +15,8 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 2 (a)
 
+### Steps to import JSON file into MongoDB
+
 The JSON file that I have been received is about AirBnb Listing Reviews. To import this JSON file inside MongoDB database, there are a few steps that must be followed.
 
 #### 1. Install MongoDB Command Line Database Tools
