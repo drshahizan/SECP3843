@@ -15,13 +15,83 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: 03 - Movie
 
 ## Question 1 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Here are comprehensive explanation of the steps required to integrate Django with the JSON dataset, ensuring efficient data storage and retrieval from both MySQL and MongoDB databases:
+
+Step 1. Define Django Models
+- Identify the structure the JSON dataset and create Django models that represent the data.
+- Define fields in the models that correspond to the attributes of the JSON dataset.
+- Consider using appropriate field types such as CharField, TextField, DateTime, etc., based on the data in the JSON dataset.
+
+Step 2. Set up Database Connections
+- Configure database connections in Django's settings.py file to connect to both MySQL and MongoDB.
+- Specify the connection details such as host, port, username, password, and database name for each database.
+
+Step 3. Create Django Database
+- Run Django's migration command "python manage.py migrate" to create the necessary database tables for the Django models.
+- This step creates the tables in both MySQL and MongoDB databases, ensuring the required schema for data storage.
+
+Step 4. Load JSON Data into Django Models
+- Write Python code or management commands in Django to load the JSON dataset into the Django models.
+- Parse the JSON data and use Django's model APIs to create instances of the models and populate them with the data.
+- Save the model instances to the respective databases, both MySQL and MongoDB.
+
+Step 5. Retrieve Data from Databases
+- In Django views or API endpoints, write code to retrieve data from both MySQL adn MongoDB databases.
+- Use Django's query APIs to perform efficient and optimized queries on the database tables ot retrieve the required data.
+- Leverage the Django ORM's features, such as filtering, ordering, and aggregations, to handle complex data retrieval operations.
+
+Step 6. Efficient Data Storage
+- Utilize the database-specific features and optimizations provided by MySQL and MongoDB for efficient data storage.
+- In MySQL, take advantage of indexes, query optimizations, and data normalization techniques to ensure efficient storage and retrieval of structured data.
+- In MongoDB, leverage the flexibility and scalability of the document-oriented database model to store and retrieve JSON data efficiently.
+
+Step 7. Maintain Data Consistency
+- Implement appropriate data validation and integrity checks in your Django models and database schemas to maintain data consistency.
+- Ensure that the data stored in both MySQL and MongoDB databases aligns with the defined structure and constraints of your Django models.
+
+Step 8. Monitor and Optimize Performance
+- Regularly monitor the performance of your Django application and the interactions with the databases.
+- Identify bottlenecks, optimize database queries, and fine-tune the database configurations to improve performance.
+- Consider implementing caching mechanisms to reduce the load on the databases and enhance response times.
+
+Step 9. Test and Refine
+- Thoroughly test your application's integration with the JSON dataset, MySQL, and MongoDB.
+- Verify data storage, retrieval, and manipulation operations to ensure they meet your requirements.
+- Gather user feedback, monitor system behavior, and refine your implementation based on the insghts gained.
+
+
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+Django, MySQL and MongoDB System Architecture
 
+![Django System Architecture](https://github.com/drshahizan/SECP3843/assets/92329710/6efda90c-0d98-49a9-942e-61c2e23a0dd4)
 
+1. Client Side
+- The client side includes Django Template which users interact with the Django application. Clients send requests to the Django server and receive responses to view dynamic web pages.
+
+2. Django Web Server
+- The Django Web Server act as the backend of the application. It receives requests from clients, processes, and provide appropriate responses.
+- It consist of URL routing, request processsing, view functions, authentication, and other server-side functionalities.
+
+3. URLs
+- The URL plays a crucial role in defining the mapping between a specific URL pattern and the corresponding view function that should be executed when that URL is accessed.
+
+5. Views
+- Views receive requests from clients through URLs, interact with the database access layer, perform necessary computations or operations, and generate responses.
+- Views can read data from MySQL or MongoDB based on the requirements of the application.
+
+6. Django Models
+- In Django, the data structure of the application and its relationships is implemented in Django models. It represent as database tables and allow Django to interact iwth the underlying databases.
+- Django models use Python classes and Django's ORM, Object-Relational Mapping to define the data fields, constraints and behaviors.
+
+7. MySQL Database
+- In this system architecture, MySQL serves as one of the database options for storing and retrieving the structured data. Django uses the MySQL connector and ORM to interact with the MySQL database.
+- The structured data is stored in the MySQL and read using SQL queries.
+
+9. MongoDB Database
+- MongoDB serves as the other database option alongside MySQL to store the semi or unstructured data. Django uses the Djongo package, which provides compatibility between Django and MongoDB.
 
 
 ## Contribution 🛠️

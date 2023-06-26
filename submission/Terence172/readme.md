@@ -4,13 +4,13 @@
 <a href="https://github.com/drshahizan/SECP3843/pulls"><img src="https://img.shields.io/github/issues-pr/drshahizan/SECP3843" alt="Pull Requests Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/issues"><img src="https://img.shields.io/github/issues/drshahizan/SECP3843" alt="Issues Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/drshahizan/SECP3843?color=2b9348"></a>
-![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fdrshahizan%2FSECP3843%2Ftree%2Fmain%2Fsubmission%2FTerence172&countColor=%23d9e3f0&style=plastic)
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fdrshahizan%2FSECP3843&labelColor=%23d9e3f0&countColor=%23697689&style=flat)
 
 Don't forget to hit the :star: if you like this repo.
 
 # Special Topic Data Engineering (SECP3843)
 
-## Alternative Assessment
+## Alternative Assessment ✍️
 
 <p align="center">
   <img height="200px" src="https://github.com/drshahizan/SECP3843/assets/119557391/ad1b0ce3-0ade-4da8-a711-e74526c6aa85" />
@@ -28,7 +28,7 @@ Don't forget to hit the :star: if you like this repo.
 </table>
 <br>
 
-## Dataset
+## Dataset 📊
 
 <table align="center">
   <tr>
@@ -39,7 +39,7 @@ Don't forget to hit the :star: if you like this repo.
   </tr>
 </table>
 
-## Submission
+## Submission ✅
 
 <table align="center">
   <tr>
@@ -115,5 +115,8 @@ The following the the folder structure for Terence172. Which is nested in the [`
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
-You can also contact me using [Linkedin](https://www.linkedin.com/in/terencenathan/) for any other queries or feedback.
+You can also contact me using [Linkedin](https://www.linkedin.com/in/drshahizan/) for any other queries or feedback.
+
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fdrshahizan&labelColor=%23697689&countColor=%23555555&style=plastic)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fdrshahizan)
+![](https://hit.yhype.me/github/profile?user_id=81284918)
 
