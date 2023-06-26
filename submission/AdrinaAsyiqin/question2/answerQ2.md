@@ -39,7 +39,9 @@ C:\Program Files\MongoDB\Server\6.0\bin
 mongosh "mongodb+srv://cluster0.yvk5zzq.mongodb.net/" --apiVersion 1 --username adrinaasyiqin
 ```
 `cluster0.yvk5zzq.mongodb.net` : can be modified using your own connection
+
 `adrinaasyiqin` : is the username of your MongoDB
+
 The command prompt will then ask for the password.
 
 3. Connect to a database by using the following command
@@ -51,7 +53,6 @@ use salesdatabase
 ### Create the queries
 1. Create
 ```
-insert data
 db.salessample.insertOne({
   "_id": ObjectId(),
   "saleDate": { "$date": { "$numberLong": "1427144809506" } },
