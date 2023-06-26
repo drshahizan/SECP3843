@@ -19,11 +19,11 @@ The JSON file that I have been received is about AirBnb Listing Reviews. To impo
 
 #### 1. Install MongoDB Command Line Database Tools
 
-Firstly, click ![here](https://www.mongodb.com/try/download/bi-connector) to download MongoDB Command Line Database Tools. Click Download and install it.
+Firstly, click [here](https://www.mongodb.com/try/download/bi-connector) to download MongoDB Command Line Database Tools. Click Download and install it.
 
 #### 2. Install MongoDB Shell
 
-Next, click ![here](https://www.mongodb.com/try/download/bi-connector) to download MongoDB Shell. Click Download and install it.
+Next, click [here](https://www.mongodb.com/try/download/bi-connector) to download MongoDB Shell. Click Download and install it.
 
 #### 3. Run mongosh
 
