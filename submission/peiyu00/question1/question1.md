@@ -35,6 +35,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
     - View: View receives requests from the user interface, retrieves and manipulates data from the models, and renders the appropriate templates for generating HTML or other response formats. 
     - Template: Template is a file to describe how the result should be represented. It is responsible for generating the user interface and presenting the data to the user. 
   - Django ORM: ORM (Object-Relational Mapping) is an abstract layer provided by django The ORM allows developers to perform database operations such as inserting, updating, deleting and querying using Python code and eliminates the need to write raw SQL queries.
+  - "Django": "Djongo" is a third-party library that provides integration between Django and MongoDB. 
 
 - #### Database
   There will be two databases integrate in this project 
