@@ -15,7 +15,17 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Companies
 
 ## Question 1 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This portal is going to implement the usage of Django, JSON, MySQL and MongoDB. To built the best portal in terms of seamless integration between these four things in five servers at most, there are many ways to do so. These are the ways that I choose to use as an IT consultant in this case.
+
+First, since using Django web framework, we should install Django framework in all 5 servers to ensure that everything is uniformed and can work properly. 'pip' can be used to install Django project in the servers as it act as a package installer for Python specifically. All servers should have the same version of Django and make sure that the version is stable and compatible with the devices and operating system.
+
+```python
+!pip install django
+```
+
+```python
+!django-admin startproject portal
+``` 
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
