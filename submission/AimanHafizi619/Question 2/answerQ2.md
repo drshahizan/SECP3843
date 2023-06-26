@@ -56,7 +56,7 @@ The MongoDB Shell is a command-line interface (CLI) tool provided by MongoDB tha
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image%2012.png)
 
 **Step 8**
-Final results should look like below. All three collections named `Accounts`, `Customers`, and `Transactions` has been automatically filled with data from the JSON files.
+>Final results should look like below. All three collections named `Accounts`, `Customers`, and `Transactions` has been automatically filled with data from the JSON files.
 
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image%2013.png)
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image14.png)
