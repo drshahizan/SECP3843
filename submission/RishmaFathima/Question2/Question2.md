@@ -25,7 +25,7 @@ Don't forget to hit the :star: if you like this repo.
 4. The file is opened through visual studio code to see if the data is available and ready to be used in MongoDB.
 
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.11.png">
+<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a90bbeb3cda83a1b6b9ba3097a2902cfe62dd494/submission/RishmaFathima/Question2/files/images/2.1.11.png">
 
 5.  I navigated to MongoDB Compass on my device and opened it. I had to connect to deployment containing the collections I wish to import my dataset into. I left the connection string (URI) as default as “mongodb://localhost:2017” and connect to it.
 
