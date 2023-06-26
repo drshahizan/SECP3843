@@ -47,6 +47,8 @@ project, and the MySQL and MongoDB databases, few servers need to be setup and c
 
 **3. Define models for Django**
 
+-  In `models.py` file, define the models according to its data structure and data types.
+
       ```python
       from django.db import models
       
