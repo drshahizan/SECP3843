@@ -15,6 +15,12 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: sales.json
 
 ## Question 2 (a)
+
+### Requirements
+- MongoDB Compass
+- MongoDB Tools
+- MongoDB Community
+  
 ### Step 1: Prepare sales.json file 
 1. `Use Validation Tool` : There are several online JSON validation tools available that can help you validate the format and structure of your JSON file. These tools can identify any syntax errors or formatting issues in your JSON file. For example: https://jsonlint.com/
 2. `Check Data Types` : Verify that the data types of the values in the JSON file are appropriate for your MongoDB documents. For example, strings should be enclosed in double quotes, numbers should not be enclosed in quotes, and boolean values should be either true or false. The below shows the data type for json file.
@@ -126,6 +132,9 @@ db.salessample.find({ "storeLocation": "Denver" })
 ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/7c14b81f-4c91-4723-9e07-1f050abb4d7c)
 
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/8bd5e995-ae5c-4bfb-89ce-f673ca554b05)
+
+
 3. Update
 ```
 #update one
@@ -136,6 +145,8 @@ db.salessample.updateOne(
 ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/fd048863-fa38-40e9-a153-2e3d176b6bfa)
 
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/d0de0e7f-9d1c-417c-9d4f-eac2d0914841)
+
 ```
 #update many
 db.salessample.updateMany(
@@ -145,12 +156,15 @@ db.salessample.updateMany(
 ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/4634daba-bb73-47bb-a16f-a3f14024c901)
 
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/7fe0ae53-90cd-46f1-91d4-f36561404f18)
+
 4. Delete
 ```
 db.salessample.deleteOne({ "_id": ObjectId("5bd761dcae323e45a93ccfe8") })
 ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/4a39a065-d8d6-42dc-8c6c-870d04477de5)
 
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/004504fd-6d37-4053-bf10-db1a43ecbded)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
