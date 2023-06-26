@@ -74,6 +74,9 @@ Before applying the CRUD (Create, Read, Update, Delete) operations, do these ste
 
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image16.png)
 
+**Step 2**: Start MongoDB shell
+Run the mongosh command to access the MongoDB shell.
+
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
