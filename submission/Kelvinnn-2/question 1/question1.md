@@ -18,11 +18,15 @@ Don't forget to hit the :star: if you like this repo.
 
 ### Solutions on implementing a configuration using five servers used in this project:
 
-#### a) Web Server: This server will handle incoming HTTP requests and serve the Django web application. It will run the web server software (such as Apache or Nginx) and the necessary components for Django to operate.
-#### b) Database Server 1 (MySQL): This server will host the MySQL database. It will handle storing and retrieving data from the MySQL database management system. Django will connect to this server to interact with the MySQL database.
-#### c) Database Server 2 (MongoDB): This server will host the MongoDB database. It will handle storing and retrieving data from the MongoDB NoSQL database. Django will connect to this server to interact with the MongoDB database.
-#### d) Load Balancer: If the web server has high traffic expect or want to distribute the load across multiple web servers, implement a load balancer to receive incoming requests and distribute them among the available web servers to ensure efficient handling of traffic.
-#### e) Caching Server:  Introduce a caching server to improve performance and reduce database load. This server will store frequently accessed data in memory, allowing faster retrieval. For example, Redis or Memcached are popular choices for caching servers.
+a) Web Server: This server will handle incoming HTTP requests and serve the Django web application. It will run the web server software (such as Apache or Nginx) and the necessary components for Django to operate.
+
+b) Database Server 1 (MySQL): This server will host the MySQL database. It will handle storing and retrieving data from the MySQL database management system. Django will connect to this server to interact with the MySQL database.
+
+c) Database Server 2 (MongoDB): This server will host the MongoDB database. It will handle storing and retrieving data from the MongoDB NoSQL database. Django will connect to this server to interact with the MongoDB database.
+
+d) Load Balancer: If the web server has high traffic expect or want to distribute the load across multiple web servers, implement a load balancer to receive incoming requests and distribute them among the available web servers to ensure efficient handling of traffic.
+
+e) Caching Server:  Introduce a caching server to improve performance and reduce database load. This server will store frequently accessed data in memory, allowing faster retrieval. For example, Redis or Memcached are popular choices for caching servers.
 
 To integrate Django with the JSON dataset and ensure efficient data storage and retrieval from both MySQL and MongoDB databases, you can follow these comprehensive steps:
 
