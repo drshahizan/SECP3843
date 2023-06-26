@@ -24,7 +24,7 @@ Don't forget to hit the :star: if you like this repo.
   $ python -m venv env
   ```
 - Next, activate the virtual environment using:
-  ```python
+  ```
 $ source env/bin/activate
   ```
 > Note: please note that on Windows, need to use `source env/Scripts/activate` in order to activate the virtual environment.
