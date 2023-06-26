@@ -70,6 +70,9 @@ Don't forget to hit the :star: if you like this repo.
 7. Configure database connection
    - In the Django web server, find the django setting file named `settings.py`.
    - Set up the database connection for both MongoDB and MySQL database by providing the credentials such as hostname and password.
+   - For example, I have set up the connections for both MySQL and MongoDB 
+
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA7.jpg" style="width: 650px; height: 300px;">
      
 8. Testing and Monitor
    - Run the Django web server to verify the database connection.
