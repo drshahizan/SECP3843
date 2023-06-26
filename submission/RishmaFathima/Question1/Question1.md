@@ -38,17 +38,18 @@ Don't forget to hit the :star: if you like this repo.
         - From the app folder created, in the ``models.py`` file, the model of the prject would be defined. 
       
 
-  4. ``Configure the settings of the project``:
+  3. ``Configure the settings of the project``:
 
-        - Update the ``settings.py`` file in the project folder:
+        - Update the ``settings.py`` file in the project folder to define the database setting for Mysql and MongoDB:
         - Install django with the command ``pip install django`` to work as database connectors.
-        - Finally to get the JSON data from the dataset and to save it into MogoDB server, I need to create a script in Django.
-           
-  5. ``Migration of database and load the JSON file``:
-
-        - Create a script in the Django web server to fetch the JSON data from the JSON dataset server and save it into MongoDB Database server.
-        - Then add the command ``python manage.py migrate`` to make th emigrations work with Mysql and MongoDB
         - Install mysqlclient with the command ``pip install mysqlclient`` to work as database connectors
+         
+           
+  4. ``Migration of database and load the JSON file``:
+
+        - Add the command ``python manage.py makemigrations`` to migrate the database from the ``models.py``
+        - Then add the command ``python manage.py migrate`` to make th emigrations work with Mysql and MongoDB
+        - Finally to get the JSON data from the dataset and to save it into MogoDB server, I need to create a script in Django.
          
   5. ``Update and Testing Data``:
 
