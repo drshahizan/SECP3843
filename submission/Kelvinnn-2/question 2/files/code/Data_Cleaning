@@ -1,0 +1,111 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "id": "Y8EurK7sJmSL"
+      },
+      "outputs": [],
+      "source": [
+        "import json\n",
+        "\n",
+        "# Open the original JSON file with the correct encoding\n",
+        "with open('city_inspections.json', 'r', encoding='utf-8') as file:\n",
+        "    data = file.readlines()\n",
+        "\n",
+        "# Modify the data to add square brackets\n",
+        "modified_data = '[' + ','.join(data) + ']'\n",
+        "\n",
+        "# Write the modified data to a new file with the correct encoding\n",
+        "with open('modified_city_inspections.json', 'w', encoding='utf-8') as file:\n",
+        "    file.write(modified_data)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# Open the original JSON file\n",
+        "with open('city_inspections.json', 'r', encoding='utf-8') as file:\n",
+        "    original_data = file.read()\n",
+        "\n",
+        "# Open the modified JSON file\n",
+        "with open('modified_city_inspections.json', 'r', encoding='utf-8') as file:\n",
+        "    modified_data = file.read()\n",
+        "\n",
+        "# Print the original and modified data\n",
+        "print(\"Original Data:\")\n",
+        "print(original_data[:3500])  # Print the first 3500 characters\n",
+        "\n",
+        "print(\"\\nModified Data:\")\n",
+        "print(modified_data[:3500])  # Print the first 3500 characters"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "K-QhdPYaJw9M",
+        "outputId": "17596fbe-9482-4b6b-c9a0-836e6f1fefc0"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Original Data:\n",
+            "{\"_id\":{\"$oid\":\"56d61033a378eccde8a8354f\"},\"id\":\"10021-2015-ENFO\",\"certificate_number\":9278806,\"business_name\":\"ATLIXCO DELI GROCERY INC.\",\"date\":\"Feb 20 2015\",\"result\":\"No Violation Issued\",\"sector\":\"Cigarette Retail Dealer - 127\",\"address\":{\"city\":\"RIDGEWOOD\",\"zip\":11385,\"street\":\"MENAHAN ST\",\"number\":1712}}\n",
+            "{\"_id\":{\"$oid\":\"56d61033a378eccde8a83550\"},\"id\":\"10057-2015-ENFO\",\"certificate_number\":6007104,\"business_name\":\"LD BUSINESS SOLUTIONS\",\"date\":\"Feb 25 2015\",\"result\":\"Violation Issued\",\"sector\":\"Tax Preparers - 891\",\"address\":{\"city\":\"NEW YORK\",\"zip\":10030,\"street\":\"FREDERICK DOUGLASS BLVD\",\"number\":2655}}\n",
+            "{\"_id\":{\"$oid\":\"56d61033a378eccde8a83551\"},\"id\":\"10084-2015-ENFO\",\"certificate_number\":9278914,\"business_name\":\"MICHAEL GOMEZ RANGHALL\",\"date\":\"Feb 10 2015\",\"result\":\"No Violation Issued\",\"sector\":\"Locksmith - 062\",\"address\":{\"city\":\"QUEENS VLG\",\"zip\":11427,\"street\":\"214TH ST\",\"number\":8823}}\n",
+            "{\"_id\":{\"$oid\":\"56d61033a378eccde8a83552\"},\"id\":\"1012-2015-CMPL\",\"certificate_number\":5346909,\"business_name\":\"A\\u0026C CHIMNEY CORP.\",\"date\":\"Apr 22 2015\",\"result\":\"Violation Issued\",\"sector\":\"Home Improvement Contractor - 100\",\"address\":{\"city\":\"QUEENS VLG\",\"zip\":11428,\"street\":\"210TH ST\",\"number\":9440}}\n",
+            "{\"_id\":{\"$oid\":\"56d61033a378eccde8a83553\"},\"id\":\"10127-2015-CMPL\",\"certificate_number\":5381180,\"business_name\":\"ERIC CONSTRUCTION AND DECORATING INC.\",\"date\":\"Sep  8 2015\",\"result\":\"Violation Issued\",\"sector\":\"Home Improvement Contractor - 100\",\"address\":{\"city\":\"STATEN ISLAND\",\"zip\":10304,\"street\":\"TODT HILL RD\",\"number\":1233}}\n",
+            "{\"_id\":{\"$oid\":\"56d61033a378eccde8a83554\"},\"id\":\"10172-2015-CMPL\",\"certificate_number\":9304489,\"business_name\":\"UNNAMED HOT DOG VENDOR LICENSE NUMBER TA01158\",\"date\":\"Aug 21 2015\",\"result\":\"No Violation Issued\",\"sector\":\"Mobile Food Vendor - 881\",\"address\":{\"city\":\"\",\"zip\":\"\",\"street\":\"\",\"number\":\"\"}}\n",
+            "{\"_id\":{\"$oid\":\"56d61033a378eccde8a83555\"},\"id\":\"102-2015-UNIT\",\"certificate_number\":10003479,\"business_name\":\"SOUTH BRONX AUTOMOTIVE CORP\",\"date\":\"May 28 2015\",\"result\":\"Pass\",\"sector\":\"Tow Truck Company - 124\",\"address\":{\"city\":\"\",\"zip\":\"\",\"street\":\"\",\"number\":\"\"}}\n",
+            "{\"_id\":{\"$oid\":\"56d61033a378eccde8a83556\"},\"id\":\"10268-2015-CMPL\",\"certificate_number\":9304816,\"business_name\":\"UNNAMED HOT DOG VENDOR NO LICENSE NUMBER PROVIDED\",\"date\":\"Aug 19 2015\",\"result\":\"No Violation Issued\",\"sector\":\"Mobile Food Vendor - 881\",\"address\":{\"city\":\"\",\"zip\":\"\",\"street\":\"\",\"number\":\"\"}}\n",
+            "{\"_id\":{\"$oid\":\"56d61033a378eccde8a83557\"},\"id\":\"10284-2015-ENFO\",\"certificate_number\":9287088,\"business_name\":\"VYACHESLAV KANDZHANOV\",\"date\":\"Feb 25 2015\",\"result\":\"No Violation Issued\",\"sector\":\"Misc Non-Food Retail - 817\",\"address\":{\"city\":\"NEW YORK\",\"zip\":10030,\"street\":\"FREDRCK D BLVD\",\"number\":2655}}\n",
+            "{\"_id\":{\"$oid\":\"56d61033a378eccde8a83558\"},\"id\":\"10312-2015-ENFO\",\"certificate_number\":9287090,\"business_name\":\"GRICEYDA M VILLAR\",\"date\":\"Feb 25 2015\",\"result\":\"No Violation Issued\",\"sector\":\"Salons And Barbershop - 841\",\"address\":{\"city\":\"NEW YORK\",\"zip\":10030,\"street\":\"FREDRCK D BLVD\",\"number\":2645}}\n",
+            "{\"_id\":{\"$oid\":\"56d61033a378eccde8a83559\"},\"id\":\"10302-2015-ENFO\",\"certificate_number\":9287089,\"business_name\":\"NYC CANDY STORE SHOP CORP\",\"date\":\"Feb 25 2015\",\"result\":\"No Violation Issued\",\"sector\":\"Cigarette Retail Dealer - 127\",\"address\":{\"city\":\"NEW YORK\",\"zip\":10030,\"street\":\"FREDRCK D BLVD\",\"number\":2653}}\n",
+            "{\"_id\":{\"$oid\":\"56d61033a378eccde8a8355a\"},\"id\":\"10290-2015-CMPL\",\"certificate_number\":9305498,\"business_name\":\"AYAD YOUSSEF\",\"date\":\"Jul 23 2\n",
+            "\n",
+            "Modified Data:\n",
+            "[{\"_id\":{\"$oid\":\"56d61033a378eccde8a8354f\"},\"id\":\"10021-2015-ENFO\",\"certificate_number\":9278806,\"business_name\":\"ATLIXCO DELI GROCERY INC.\",\"date\":\"Feb 20 2015\",\"result\":\"No Violation Issued\",\"sector\":\"Cigarette Retail Dealer - 127\",\"address\":{\"city\":\"RIDGEWOOD\",\"zip\":11385,\"street\":\"MENAHAN ST\",\"number\":1712}}\n",
+            ",{\"_id\":{\"$oid\":\"56d61033a378eccde8a83550\"},\"id\":\"10057-2015-ENFO\",\"certificate_number\":6007104,\"business_name\":\"LD BUSINESS SOLUTIONS\",\"date\":\"Feb 25 2015\",\"result\":\"Violation Issued\",\"sector\":\"Tax Preparers - 891\",\"address\":{\"city\":\"NEW YORK\",\"zip\":10030,\"street\":\"FREDERICK DOUGLASS BLVD\",\"number\":2655}}\n",
+            ",{\"_id\":{\"$oid\":\"56d61033a378eccde8a83551\"},\"id\":\"10084-2015-ENFO\",\"certificate_number\":9278914,\"business_name\":\"MICHAEL GOMEZ RANGHALL\",\"date\":\"Feb 10 2015\",\"result\":\"No Violation Issued\",\"sector\":\"Locksmith - 062\",\"address\":{\"city\":\"QUEENS VLG\",\"zip\":11427,\"street\":\"214TH ST\",\"number\":8823}}\n",
+            ",{\"_id\":{\"$oid\":\"56d61033a378eccde8a83552\"},\"id\":\"1012-2015-CMPL\",\"certificate_number\":5346909,\"business_name\":\"A\\u0026C CHIMNEY CORP.\",\"date\":\"Apr 22 2015\",\"result\":\"Violation Issued\",\"sector\":\"Home Improvement Contractor - 100\",\"address\":{\"city\":\"QUEENS VLG\",\"zip\":11428,\"street\":\"210TH ST\",\"number\":9440}}\n",
+            ",{\"_id\":{\"$oid\":\"56d61033a378eccde8a83553\"},\"id\":\"10127-2015-CMPL\",\"certificate_number\":5381180,\"business_name\":\"ERIC CONSTRUCTION AND DECORATING INC.\",\"date\":\"Sep  8 2015\",\"result\":\"Violation Issued\",\"sector\":\"Home Improvement Contractor - 100\",\"address\":{\"city\":\"STATEN ISLAND\",\"zip\":10304,\"street\":\"TODT HILL RD\",\"number\":1233}}\n",
+            ",{\"_id\":{\"$oid\":\"56d61033a378eccde8a83554\"},\"id\":\"10172-2015-CMPL\",\"certificate_number\":9304489,\"business_name\":\"UNNAMED HOT DOG VENDOR LICENSE NUMBER TA01158\",\"date\":\"Aug 21 2015\",\"result\":\"No Violation Issued\",\"sector\":\"Mobile Food Vendor - 881\",\"address\":{\"city\":\"\",\"zip\":\"\",\"street\":\"\",\"number\":\"\"}}\n",
+            ",{\"_id\":{\"$oid\":\"56d61033a378eccde8a83555\"},\"id\":\"102-2015-UNIT\",\"certificate_number\":10003479,\"business_name\":\"SOUTH BRONX AUTOMOTIVE CORP\",\"date\":\"May 28 2015\",\"result\":\"Pass\",\"sector\":\"Tow Truck Company - 124\",\"address\":{\"city\":\"\",\"zip\":\"\",\"street\":\"\",\"number\":\"\"}}\n",
+            ",{\"_id\":{\"$oid\":\"56d61033a378eccde8a83556\"},\"id\":\"10268-2015-CMPL\",\"certificate_number\":9304816,\"business_name\":\"UNNAMED HOT DOG VENDOR NO LICENSE NUMBER PROVIDED\",\"date\":\"Aug 19 2015\",\"result\":\"No Violation Issued\",\"sector\":\"Mobile Food Vendor - 881\",\"address\":{\"city\":\"\",\"zip\":\"\",\"street\":\"\",\"number\":\"\"}}\n",
+            ",{\"_id\":{\"$oid\":\"56d61033a378eccde8a83557\"},\"id\":\"10284-2015-ENFO\",\"certificate_number\":9287088,\"business_name\":\"VYACHESLAV KANDZHANOV\",\"date\":\"Feb 25 2015\",\"result\":\"No Violation Issued\",\"sector\":\"Misc Non-Food Retail - 817\",\"address\":{\"city\":\"NEW YORK\",\"zip\":10030,\"street\":\"FREDRCK D BLVD\",\"number\":2655}}\n",
+            ",{\"_id\":{\"$oid\":\"56d61033a378eccde8a83558\"},\"id\":\"10312-2015-ENFO\",\"certificate_number\":9287090,\"business_name\":\"GRICEYDA M VILLAR\",\"date\":\"Feb 25 2015\",\"result\":\"No Violation Issued\",\"sector\":\"Salons And Barbershop - 841\",\"address\":{\"city\":\"NEW YORK\",\"zip\":10030,\"street\":\"FREDRCK D BLVD\",\"number\":2645}}\n",
+            ",{\"_id\":{\"$oid\":\"56d61033a378eccde8a83559\"},\"id\":\"10302-2015-ENFO\",\"certificate_number\":9287089,\"business_name\":\"NYC CANDY STORE SHOP CORP\",\"date\":\"Feb 25 2015\",\"result\":\"No Violation Issued\",\"sector\":\"Cigarette Retail Dealer - 127\",\"address\":{\"city\":\"NEW YORK\",\"zip\":10030,\"street\":\"FREDRCK D BLVD\",\"number\":2653}}\n",
+            ",{\"_id\":{\"$oid\":\"56d61033a378eccde8a8355a\"},\"id\":\"10290-2015-CMPL\",\"certificate_number\":9305498,\"business_name\":\"AYAD YOUSSEF\",\"dat\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "efVM0mWMLKiy"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
