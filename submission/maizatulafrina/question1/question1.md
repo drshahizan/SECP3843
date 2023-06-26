@@ -74,6 +74,8 @@ project, and the MySQL and MongoDB databases, few servers need to be setup and c
     <img width="626" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/373af744-c84a-4df6-914b-c53d6ca621f8">
 
 
+**5. Retrieve Data**
+
 ## Question 1 (b)
 
 
