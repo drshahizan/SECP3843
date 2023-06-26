@@ -18,7 +18,9 @@ Requirement before following the steps:
 - Install [MongoDB Shell](https://www.mongodb.com/try/download/shell)
 - Install [MongoDB Community](https://www.mongodb.com/try/download/community)
 - Install [MongoDB Database Tools](https://www.mongodb.com/try/download/database-tools)
-  
+
+### Steps:
+
 1. Download and prepare the JSON data file [Supply Store](https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales) into device.
    
    <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA24.jpg" style="width: 800px; height: 350px;">
@@ -40,7 +42,8 @@ Requirement before following the steps:
      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA25.jpg" style="width: 200px; height: 100px;">
      
 5. Import json dataset file into mongoDB using mongo shell.
-    - In the terminal with Mongo Shell active, type in the command `mongoimport --uri mongodb+srv://afifhazmiearsyad:abc123456789@noctua.bw9bvzx.mongodb.net/ --db SupplyStore --collection Sales --file "C:\Users\User\Downloads\sales.json"`
+    - In the terminal with Mongo Shell active, type in the command
+      - `mongoimport --uri mongodb+srv://afifhazmiearsyad:abc123456789@noctua.bw9bvzx.mongodb.net/ --db SupplyStore --collection Sales --file "C:\Users\User\Downloads\sales.json"`
     - Lets break the command into parts:
       - `--db` = database name
       - `--collection` = database collection name
@@ -54,7 +57,48 @@ Requirement before following the steps:
    <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA27.jpg" style="width:700px; height: 500px;">
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Before start or make any queries on MongoDB, we first have to start the MongoDB server using the command `mongod`
+
+### Steps:
+
+1. Open MongoDB Compass. Find the MongoDB Compass terminal or in command prompt with Mongo Shell activated.
+   
+   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/mongocompass.jpg">
+   
+2. In the terminal, execute the command `use` followed by database name. For example, I will execute the command `use SupplyStore`
+
+3. Run CRUD Operations.
+   ### Create query:
+   - Run insertone function in the terminal to insert new data into the collection.
+     ```
+     db.Sales.insertOne({
+      saleDate: ISODate("2023-07-02T16:11:59.565Z"),
+      items: [
+        {
+          name: "book stand",
+          tags: ["office", "accessory"],
+          price: 10.99,
+          quantity: 4
+        },
+        {
+          name: "stapler",
+          tags: ["office", "stationery"],
+          price: 7.99,
+          quantity: 10
+        }
+      ],
+      storeLocation: "Johor",
+      customer: {
+        gender: "M",
+        age: 22,
+        email: "afifhazmie2@gmail.com",
+        satisfaction: 4,
+        couponUsed: false,
+        purchaseMethod: "In store"
+      }
+    })
+     ```
+   - 
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
