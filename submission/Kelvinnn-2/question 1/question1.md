@@ -50,7 +50,8 @@ Figure below shows the breakdown of the system architecture:
 ### Detailed explanations for each component, utilizing precise terminology and suggesting acceptable terms:
 #### Components:
 
-- **Frontend**:
+-**Frontend**:
+
 Web browsers or client applications that interact with the system.
 Utilizes HTML, CSS, and JavaScript to render the user interface.
 Communicates with the backend to fetch and update data.
