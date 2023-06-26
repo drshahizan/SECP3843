@@ -23,16 +23,16 @@
 2. Run the following command. `myproject` can be renamed to desired name
  
 ```python
-//start project
+#start project
 django-admin.py startproject myproject
 
-//Move into project directory using the command 
+#Move into project directory using the command 
 cd myproject
 
-//Open a new terminal and install virtual environment by running the below command. `myenv` can be replaced with desired name
+#Open a new terminal and install virtual environment by running the below command. `myenv` can be replaced with desired name
 virtualenv myenv
 
-//Activate virtual environment by running command 
+#Activate virtual environment by running command 
 myenv\Scripts\activate
 ```
 
