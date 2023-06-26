@@ -35,14 +35,21 @@ Don't forget to hit the :star: if you like this repo.
   2. ``Define Django models in models.py``:
         - JSON file is downloaded from the Github.
         - Django models were created based on the attributes from the downloaded JSON file which contain the dataset of ``Airbnb Listing Dataset``.
-        - From the app folder created, in the ``models.py`` file, the model of the prject would be defined. 
+        - From the app folder created, in the ``models.py`` file, the model of the prject would be defined.
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/c18d8db59264504dc5f34395291dfe90abb48c90/submission/RishmaFathima/Question1/files/images/1.1.2.png">
+          
+   
       
 
   3. ``Configure the settings of the project``:
 
-        - Update the ``settings.py`` file in the project folder to define the database setting for Mysql and MongoDB:
-        - Install django with the command ``pip install django`` to work as database connectors.
+        - Update the ``settings.py`` file in the project folder to define the database setting for Mysql and MongoDB
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/c18d8db59264504dc5f34395291dfe90abb48c90/submission/RishmaFathima/Question1/files/images/1.1.3.1.png">
+           
+        - Install django with the command ``pip install django`` to work as database connectors
+           
         - Install mysqlclient with the command ``pip install mysqlclient`` to work as database connectors
+          <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/c18d8db59264504dc5f34395291dfe90abb48c90/submission/RishmaFathima/Question1/files/images/1.1.3.2.png">
          
            
   4. ``Migration of database and load the JSON file``:
