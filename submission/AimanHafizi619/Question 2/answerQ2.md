@@ -85,6 +85,13 @@ Before applying the CRUD (Create, Read, Update, Delete) operations, do these ste
 
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image20.png)
 
+**Step 4**: Select Collection
+>Type in `db.Accounts` to access the `Accounts` collection. The CRUD operation will take place in the Accounts collection.
+
+![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image21.png)
+
+
+
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
