@@ -15,8 +15,69 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: companies.json
 
 ### Question 3 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+1. Download Django in command prompt
+   ```
+   pip install django
+   ```
+   
+2. In the desired file path, create new django project
+   ```
+   django-admin startproject djangoAA
+   ```
+   
+3. Navigate path to the new created project
+   ```
+   cd AA
+   ```
+   
+4. Startapp for the users. The folder directory is as follows.
+   ```
+   python manage.py startapp signup
+   ```
+  <p align="center">
+      <img width="122" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/ed2447f0-a99d-4043-bb71-eeda4b2305ff">
+  </p>
+
+5. Open **settings.py** in **AA** folder and update the code.
+   - Firstly, add the name of the startapp folder in **INSTALLED_APPS**.
+      ```
+      INSTALLED_APPS = [
+          'django.contrib.admin',
+          'django.contrib.auth',
+          'django.contrib.contenttypes',
+          'django.contrib.sessions',
+          'django.contrib.messages',
+          'django.contrib.staticfiles',
+          'signup',
+      ]
+      ```
+    - Next, configure the database connection to mysql.
+      ```
+      DATABASES = {'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'aa',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+                'unix_socket': 'C:/xampp/mysql/mysql.sock',}}}
+      ```
+  6. Apply migrations
+     ```
+     python manage.py makemigrations
+     ```
+     ```
+     python manage.py migrate
+     ```
+  7. Open localhost and create new database. I created my folder as 'aa'.
+      <p align="center">
+           <img width="162" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/af17e0cd-33c6-4216-9f79-50e4941f4f75">
+      </p>
+
+8. Open **signup** folder and start creating the views.
+     
 ### Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
