@@ -118,12 +118,22 @@ db.salessample.find({ "storeLocation": "Denver" })
 
 3. Update
 ```
+#update one
 db.salessample.updateOne(
   { "_id": ObjectId("5bd761dcae323e45a93ccfe8") },
   { $set: { "storeLocation": "New York" } }
 )
 ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/fd048863-fa38-40e9-a153-2e3d176b6bfa)
+
+```
+#update many
+db.salessample.updateMany(
+  { "customer.gender": "M" },
+  { $set: { "storeLocation": "New York" } }
+)
+```
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/4634daba-bb73-47bb-a16f-a3f14024c901)
 
 4. Delete
 ```
