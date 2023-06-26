@@ -60,7 +60,142 @@ Don't forget to hit the :star: if you like this repo.
 <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.10.png">
    
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+
+1. ``Create Query``
+   </br>
+ 
+
+   ```ruby 
+      db.Airbnb.insertOne(
+      {"listing_url":"https://www.airbnb.com/rooms/10006546",
+      "name":"Rich Duplex", 
+      "summary":"Super comfortable apartment", 
+      "description":"located in the middle of city", 
+      "neighbourhood_overview":"sea view and many beach side restaurants",
+      "notes":"have a wonderful view with the foods", 
+      "transit":"train and rental cars available",
+      "access":"available to help guest",
+      "interaction":"cot-10$", 
+      "house_rules":"make home your comfort",
+      "property_type":"apartment",
+      "room_type":"duplex room",
+      "bed_type":"double bed",
+      "minimum_nights":"3",
+      "maximum_nights":"40",
+      "cancellation_policy":"moderate",
+      "last_scraped":"2019-02-16T05:00:00.000+00:00",
+      "calender_last_scraped":"2019-02-16T05:00.000+00:00",
+      "first_review":"2016-01-03T05:00:00.000+00:00",
+      "last_review":"2019-01-20T05:00:00.000+00:00",
+      "accomodates":"7",
+      "bedrooms":"3",
+      "beds":"4"})
+   ```
+The following figure shows the code in the MongoDB shell terminal and the output from the terminal:
+
+<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.3.png">
+
+The following figure shows the output in the MongoDb Compass where a data is added when the Airbnb collection is filtered with a filter of ``{name:'Rich Duplex'}`` :
+
+<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.4.png">
+
+2. ``Read Query 1``
+    </br>
+
+
+   ```ruby 
+      db.Airbnb.find();
+   ```
+
+The following figure shows the code in the MongoDB shell terminal:
+
+<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.5.png">
+
+The following figure shows the output from the terminal of MongoDB shell:
+
+<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.6.png">
+
+ ``Read Query 2``
+ </br>
+
+   
+   ```ruby 
+      db.Airbnb.find().count();
+   ```
+
+The following figure shows the code in the MongoDB shell terminal and the output from the terminal: 
+
+<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.7.png">
+
+ ``Read Query 3``
+ </br>
+
+   
+   ```ruby 
+    db.Airbnb.findOne({‘name’:’Rich Duplex’})
+   ```
+
+The following figure shows the code in the MongoDB shell terminal and the output from the terminal: 
+
+<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.8.png">
+
+3. ``Update Query 1``
+    </br>
+
+
+   ```ruby 
+     db.Airbnb.updateOne(
+     {'name':'Rich Duplex'},
+     {$set:{'name':'Rich Double Duplex'}
+     })
+   ```
+   
+The following figure shows the code in the MongoDB shell terminal and the output from the terminal:
+
+<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.9.png">
+
+The following figure shows the output in the MongoDb Compass where a data is added when the Airbnb collection is filtered with a filter of ``{name:'Rich Double Duplex'}`` :
+
+<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.10.png">
+
+``Update Query 2``
+    </br>
+
+
+   ```ruby 
+    db.Airbnb.findOneAndUpdate(
+    {'name':'Rich Double Duplex'},
+    {$set:{'beds':'5','bedrooms':'4'}},
+    {returnNewDocument:true}
+    )
+   ```
+
+The following figure shows the code in the MongoDB shell terminal and the output from the terminal:
+
+<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.11.png">
+
+The following figure shows the output in the MongoDb Compass where a data is added when the Airbnb collection is filtered with a filter of ``{name:'Rich Double Duplex'}`` :
+
+<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.12.png">
+
+4. ``Delete Query``
+    </br>
+
+
+   ```ruby 
+    db.Airbnb.deleteOne(
+    {'name':'Rich Double Duplex'})
+   ```
+The following figure shows the code in the MongoDB shell terminal and the output from the terminal:
+
+<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.13.png">
+
+The following figure shows that there is no output in the MongoDb Compass when the Airbnb collection is filtered with a filter of ``{name:'Rich Double Duplex'}`` because the data is deleted:
+
+<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.14.png">
+
+
 
 
 
