@@ -25,6 +25,9 @@ To carry out the tasks of this question, it it crucial to do the following:
 
 ### 1. Download JSON file provided in dataset repository
 After completing the prerequisite task, Go to Github and click the download button to download the [City Inspections](https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections) dataset into the device.
+ It is found that the tweets.json file is not formatted correctly as a JSON array. Therefore, python will be used to perform data preparation by adding brackets at the beginning and end of the file. Each individual tweet object should be enclosed within square brackets '[ ]' and separated by commas ','. <br>
+ ```Data Preparation```: <a href="./files/code/Data_Cleaning.ipynb">Data_Cleaning.ipynb</a> <br>
+```Modified dataset```: <a href="./files/code/modified_city_inspections.json">modified_city_inspections.json</a>
 
 ### 2. Launch MongoDB server
 Open Command Prompt and type `"mongod"` to start the MongoDB server.
