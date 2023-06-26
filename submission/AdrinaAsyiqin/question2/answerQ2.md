@@ -21,11 +21,19 @@
 ### Step 2: Start MongoDB server and upload sales.json file
 1. Open MongoDB on your laptop 
 2. Connect to a connection
+![775b87814d848643d6659095730f5ae21acdc423](https://github.com/drshahizan/SECP3843/assets/96984290/7787ed1e-f131-4892-9fa1-e5724437f694)
+
 3. Create a new database named `salesdatabase`
 4. Create a new collection under salesdatabase named `salessample` 
+![5e6a39d1ee4d01b029a6e5d8110dbce15e5178e4](https://github.com/drshahizan/SECP3843/assets/96984290/82ea7a74-64fa-4643-86ac-8ecd8b9b9462)
 5. Click on 'Add Data' dropdown and choose Import JSON or . CSV file
+![0daad43455d3666539873a89a1aa8e3e31baddfb](https://github.com/drshahizan/SECP3843/assets/96984290/b16f73ec-cde0-42b5-9fc4-78874f0906d9)
 6. Choose sales.json from file explorer and click on `Import`.
 7. The database will then appear in the mongodb database after all documents is imported.
+![5f119ea6d353d75976418feac637716fcb405c8e](https://github.com/drshahizan/SECP3843/assets/96984290/1cb498ad-e28e-48ef-a53f-72fede3bae32)
+
+![4a6211df17abc9ee7104328e404473fef59fdd2a](https://github.com/drshahizan/SECP3843/assets/96984290/b33324e7-f715-434a-a769-e15b33cd422d)
+
 
 ## Question 2 (b)
 
