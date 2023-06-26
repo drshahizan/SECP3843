@@ -22,7 +22,7 @@ Install Django
 ```
 pip install django
 ```
-Create project
+Create project named AA_project
 
 ```
 django-admin startproject AA_project
