@@ -16,22 +16,26 @@
    d. Select option 'Add python PATH' and choose the 'Customize installation' option 
 
    In the customisation screen, ensure pip package and the 'add python to environment' variables option is selected
+   <br>
 
 ### Step 2: Create Django Project Folder
 
    a. Create a project folder and open it in Visual Studio Code
 
    b. Run the following command. `myproject` can be renamed to desired name
+
         ```python
            django-admin.py startproject myproject
         ```
 
    c. Move into project directory using the command 
+   
         ```python
            cd myproject
         ```   
 
    d. Open a new terminal and install virtual environment by running the below command. `myenv` can be replaced with desired name
+
    ```python
     virtualenv myenv
     ``` 
