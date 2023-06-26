@@ -145,7 +145,7 @@ db.companies.find({ "founded_year": 2001}).limit(1)
    -  updateOne()
    
       ```
-      db.companies.updateOne({ "founded_day": 1}, {$set: {"founded_month":       12}})
+      db.companies.updateOne({ "founded_day": 1}, {$set: {"founded_month":12}})
       ```
     <p align="center">
           <img width="485" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/1f0142aa-b401-4981-9deb-eec922f86746"><br>
