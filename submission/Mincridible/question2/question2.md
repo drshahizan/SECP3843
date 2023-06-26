@@ -17,8 +17,46 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 2 (a)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+#### Prior Installation step:
 
+1. Install MongoDB Shell
+2. Install MongoDB Database Tools
+3. Make sure that you add those two path into system environment variable
+
+#### Prepare the JSON file
+
+1. Go to <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/04-companies">Companies Dataset</a> and download the json file
+
+#### Start MongoDB Server
+
+1. Run `mongod` in command prompt
+<img src="../materials/Q2(a)">
+
+#### Access MongoDB Shell
+
+1. Run the MongoDB Shell by executing the appropriate command: `mongosh`
+<img src="../materials/Q2_2">
+
+#### Setup Database
+
+1. Open MongoDB Compass and create new Database named 'AA_companies' and Collection.
+2. To switch to the intended database, execute the following command: `use AA_companies`
+
+#### Import Dataset
+
+1. Run this in command prompt ` mongoimport --uri mongodb+srv://mincridible:minzpro1@min.tan7fdn.mongodb.net/ --db Companies --collection CompaniesMeta --file "C:\Users\Hp\Downloads\companies.json" `
+
+<img src="../materials/Q2_3">
+
+2. Validate the imported dataset on MongoDB Compass
+
+<img src="../materials/Q2_4">
+
+
+
+
+
+#### 
 ## Question 2 (b)
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
