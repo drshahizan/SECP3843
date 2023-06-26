@@ -19,7 +19,7 @@ The answer to the question is divided into the following segments:
 * [Requirements](#-requirements)
 * [Integrating Django with JSON dataset](#️-integrating-django-with-json-dataset)
 
-### Requirements
+## Requirements
 
 As an IT consultant, it is crucial for me to actively participate in overviewing the critical stages and concerns involved in developing a portal that seamlessly integrates various hardware and software applications. Implementing an amount of **5 servers** in this project is possible, whereby the servers are used as:
 
@@ -81,10 +81,53 @@ To mitigate these effects, it is best to re-evaluate the server architecture and
 </table>
 
 
-### Integrating Django with JSON dataset
+## Integrating Django with JSON dataset
+This segment of Question 1. (a) is divided into several parts:
+* [Prerequisites](#-prerequisites)
+* [Setting Up A Django Project](#️-setting-up-a-django-project)
+
+### Prerequisites
+To carry out this segment of the question, it it crucial for to do the following:
+1. Install [Python](https://www.python.org/downloads/)
+2. Install [Visual Studio Code](https://code.visualstudio.com/download)
+<br></br>
+
+### Setting Up A Django Project
+
+**Django Installation** 
+
+1. Create a Django Project Folder. For this project I created a folder named **AA** on my **Desktop**, where it is easily accessible.
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Create%20Project%20Folder.png">
+</p>
+     
+<br>
+
+2. Set up a virtual environment. In your current working directory, this command creates a new virtual environment called``environment``. 
+```bash
+python -m venv environment
+```
+<br>
+
+3. Activate the virtual environment. When the process is finished, you must additionally activate the virtual environment.
+```bash
+environment\Scripts\activate
+```
+<br>
+   
+4. Install Django.
+```bash
+pip install django
+```
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Django%20Installation.png">
+</p>
+<br>
+
+**Create Django Project** 
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The system architecture will consist of the following components:
 
 
 
