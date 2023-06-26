@@ -33,7 +33,7 @@ Then, open the directory file that has the mongosh.exe by using command prompt a
 mongosh
 ```
 
-![image](https://github.com/drshahizan/SECP3843/submission/FarahIrdina/question2/files/images/mongosh.png)
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question2/files/images/mongosh.png)
 
 #### 4. Search for existing databases
 
@@ -43,7 +43,7 @@ Next, to search the existing databases inside your MongoDB, type the code below.
 show dbs
 ```
 
-![image](https://github.com/drshahizan/SECP3843/submission/FarahIrdina/question2/files/images/dbs.png)
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question2/files/images/dbs.png)
 
 #### 5. Use any database
 
@@ -53,7 +53,7 @@ Next, use any database that you prefer based on the list of databases above. I w
 use admin
 ```
 
-![image](https://github.com/drshahizan/SECP3843/submission/FarahIrdina/question2/files/images/admin.png)
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question2/files/images/admin.png)
 
 #### 6. Search for existing collections
 
@@ -63,7 +63,7 @@ Then, to search the existing collections inside your database, type the code bel
 show collections
 ```
 
-![image](https://github.com/drshahizan/SECP3843/submission/FarahIrdina/question2/files/images/collections.png)
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question2/files/images/collections.png)
 
 #### 7. Import JSON file into MongoDB
 
@@ -73,7 +73,7 @@ Lastly, you can import your JSON file into MongoDB. Type the code below.
 mongoimport --db admin --collection airbnb --file C:\Users\User\Downloads\listingsAndReviews.json
 ```
 
-![image](https://github.com/drshahizan/SECP3843/submission/FarahIrdina/question2/files/images/mongoimport.png)
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question2/files/images/mongoimport.png)
 
 ## Question 2 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
