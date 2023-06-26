@@ -159,10 +159,11 @@ db.companies.find({ "founded_year": 2001}).limit(1)
      </p>
 
    - replaceOne()
+     
       ```
-      db.companies.replaceOne(
-    { "name": "Julie .co" }, {"name":"Julie Corporation", "offices":[{"address1": "No 16 Jalan 15/2B,", "address2": "Seksyen 16"}]})
+      db.companies.replaceOne({ "name": "Julie .co" }, {"name":"Julie Corporation", "offices":[{"address1": "No 16 Jalan 15/2B,", "address2": "Seksyen 16"}]})
       ```
+      
     <p align="center">
     <img width="474" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/794527d6-b29d-4798-99c2-5bc08a6d880a">
     </p>
@@ -170,6 +171,7 @@ db.companies.find({ "founded_year": 2001}).limit(1)
       ```
       db.companies.find({"name":"Julie Corporation"})
       ```
+      
       <p align="center">
       <img width="482" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/a63ac0d4-f8f0-4567-8d98-41b04dbc55a9">
       </p>
