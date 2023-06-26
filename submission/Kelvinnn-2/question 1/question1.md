@@ -31,24 +31,64 @@ e) Caching Server:  Introduce a caching server to improve performance and reduce
 To integrate Django with the JSON dataset and ensure efficient data storage and retrieval from both MySQL and MongoDB databases, you can follow these comprehensive steps:
 
 #### Django Installation: 
-1. Begin by installing Django on all five servers. use the pip package manager to install Django by running the following command:
+1. Locate to the project file and create a virtual environment.
+```python
+py -m venv env
+env\Scripts\activate
+```
+2. Begin by installing Django on all five servers. use the pip package manager to install Django by running the following command:
 ```pip install Django```
 <img src="./files/images/installdjango.png">
-2. Set up Django project: Create a Django project on one of the servers. Use the following command to create a new Django project:
+
+3. Set up Django project: Create a Django project on one of the servers. Use the following command to create a new Django project:
 ```django-admin startproject city_inspections```
+Then redirect to city_inspections using the following commands:
+```cd city_inspections```
+<img src="./files/images/cdcity.png">
 
-3. Create Django app: Inside the Django project, create a new app that will handle the integration with the JSON dataset and databases. Use the following command to create a new app:
-```python manage.py startapp city_inspections```
+4. Create Django app: Inside the Django project, create a new app that will handle the integration with the JSON dataset and databases. Use the following command to create a new app:
+```python manage.py startapp city_inspectionsDataset```
+<img src="./files/images/startapp.png">
 
-4. Install necessary packages by using the following command :
+5. Install necessary packages by using the following command :
 ```pip install django mysqlclient pymongo``` and ```pip install djongo```
+<img src="./files/images/packages.png">
 
+### 2. Configuring Django database settings
+   1. Open the Django project's `settings.py` file.
+   2. Define the database settings for both MySQL and MongoDB.
+``` python
+ DATABASES = {
+         'default': {
+             'ENGINE': 'django.db.backends.mysql',
+             'NAME': 'aa',
+             'USER': 'root',
+             'PASSWORD': '',
+             'HOST': 'localhost',
+             'PORT': 8000,
+         },
+         'mongodb': {
+             'ENGINE': 'djongo',
+             'ENFORCE_SCHEMA': False,
+             'NAME': 'AA',
+             'CLIENT': {
+                 'host': 'localhost:27017',
+                 'port': 27017,
+                 'username': '',
+                 'password': '',
+             }
+         }
+     }
+```
+### 3. Configuring Django models
+ To define Django models that represent the structure and fields of the JSON dataset, you can open the models.py file in the city_inspectionsDataset app and define the models based on the data dictionary. Here's an example of how you can define the models:
+
+ 
 ## Question 1 (b)
 ### System Architecture Diagram
 Figure below shows the breakdown of the system architecture:
 <img src="./files/images/1b.png">
 ### Detailed explanations for each component, utilizing precise terminology and suggesting acceptable terms:
-#### Components:
 
 - **Frontend**:
 
