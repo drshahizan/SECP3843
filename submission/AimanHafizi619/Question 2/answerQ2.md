@@ -119,9 +119,23 @@ db.Accounts.find({
 
 >Only one record will be change that has the mentioned `account_id`
 
->Redo step 6 to see the old and new values of `limit` attributes
+>Redo step 6 to see the old and new values of `limit`
 
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image24.png)
+
+**Step 8**: Update Operation (2)
+>This code is to update all records that has the mentioned `limit`
+
+>Type in the code
+
+>Then select attribute `limit` to change
+
+>Only one record will be change that has the mentioned `limit`
+
+>Redo step 6 to see the old and new values of `limit`
+
+![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image25.png)
+
 
 
 
