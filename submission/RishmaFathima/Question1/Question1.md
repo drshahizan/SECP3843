@@ -18,9 +18,19 @@ Don't forget to hit the :star: if you like this repo.
    1. ``Set up the Django project with virtual environment``:
       </br>
         - The first step is to install django in my desktop. In order to install django, I use the command  ``pip install django`` in command prompt.
+          
+          <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/12219ef33b7e27340551d65a344b034a560bd2e4/submission/RishmaFathima/Question1/files/images/1.1.1.1.png">
+          
         - Then, I created a new project b: Use the django-admin startproject command to create a new Django project from a folder I have created called ``AA_Question1``           by using the command called ``django-admin startproject AA_Question1``.
+          
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/12219ef33b7e27340551d65a344b034a560bd2e4/submission/RishmaFathima/Question1/files/images/1.1.1.2.png">
+           
         - After creating the project, I created the Django app by the command ``python manage.py startapp app``.
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/12219ef33b7e27340551d65a344b034a560bd2e4/submission/RishmaFathima/Question1/files/images/1.1.1.3.png">
+           
         - Then, create a virtual environment for the project.
+          
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/12219ef33b7e27340551d65a344b034a560bd2e4/submission/RishmaFathima/Question1/files/images/1.1.1.4.png">
           
   2. ``Define Django models in models.py``:
         - JSON file is downloaded from the Github.
