@@ -95,7 +95,7 @@ Don't forget to hit the :star: if you like this repo.
 ### System Architecture
  - The system architecture diagram illustrates the seamless integration between Django, a web server framework, a JSON dataset, MySQL, and MongoDB databases.
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/SA.jpg" style="width: 700px; height: 600px;">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/SA.jpg" >
 
 ### Architecture Components
 1. User interface
