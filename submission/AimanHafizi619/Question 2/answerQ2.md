@@ -78,7 +78,7 @@ Before applying the CRUD (Create, Read, Update, Delete) operations, do these ste
 
 >To run the mongosh command to access the MongoDB shell by type in `mongosh` in the command prompt
 
-![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image18.png)
+![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image19.png)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
