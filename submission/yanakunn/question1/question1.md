@@ -31,6 +31,31 @@ Considering the sales dataset size, we may only require some of the five servers
 
 Step 1: Install Django and Required Packages
 
+- Create a new directory called project, and navigate into it.
+``` ruby
+$ cd ~/desktop/
+$ mkdir project
+$ cd ~/desktop/project
+```
+
+- Create and activate a new virtual environment called .venv in the directory.
+``` ruby
+$ python3 -m venv .venv
+$ source .venv/bin/activate
+```
+- To deactivate and leave a virtual environment, type deactivate.
+
+- Install Django.
+``` ruby
+(.venv) $ python3 -m pip install django
+```
+- To ensure Django works correctly, create a new project called django_project and then type python manage.py runserver to start the local Django web server.
+``` ruby
+(.venv) $ django-admin startproject django_project .
+(.venv) $ python manage.py runserver
+```
+In your web browser, navigate to http://127.0.0.1:8000/ and you should see the Django Welcome Page.
+
 ## Question 1 (b)
 <img width="942" alt="Screenshot 2023-06-27 at 3 58 26 AM" src="https://github.com/yanakunn/SECP3843/assets/76076543/e8bbc259-afa4-42f6-af9e-8e57f4f27dde">
 
