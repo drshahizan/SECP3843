@@ -32,10 +32,7 @@ Considering the sales dataset size, we may only require some of the five servers
 Step 1: Install Django and Required Packages
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-
-
+<img width="942" alt="Screenshot 2023-06-27 at 3 58 26 AM" src="https://github.com/yanakunn/SECP3843/assets/76076543/e8bbc259-afa4-42f6-af9e-8e57f4f27dde">
 
 
 ## Contribution 🛠️
