@@ -70,7 +70,7 @@ import django
 
 2. Check if migration ran successfully and table created in both databases
 
-### step 7: Import sales.json data into databases
+### Step 7: Import sales.json data into databases
 1. Create a new python file named `import_json_data.py`
 
 2. Open file and import modules using the following command
@@ -110,7 +110,7 @@ class Command(BaseCommand):
 python manage.py import_json_data
 ```
 
-### Step 7: Implement dynamic web pages
+### Step 8: Implement dynamic web pages
 1. create django views and templates to generate web pages based on the data stored in the databases
 
 2. Write django queries to retrueve data from both MySQL and MongoDB databases
