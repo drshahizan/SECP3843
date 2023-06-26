@@ -59,8 +59,22 @@ netstat -ano | findstr "LISTENING" | findstr "mongod"
    - After creating the database, it will display the newly created database as shown below:
      
       <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/q2%20mongodb(4).png" /></div>
-5. 
 
+      
+5. Importing the JSON data
+   - Click on Add Data and choose Import JSON file.
+      
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/import(1).png" /></div>
+      
+   - Then, choose the correct JSON dataset and click on Import button.
+      
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/import(2).png" /></div>
+      
+   - After the dataset has finished importing into MongoDB, check and verify the dataset. Verify if it is the correct dataset and if all the data has been successfully imported in the MongoDB database.
+      
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/import(3).png" /></div>
+
+      
 ## Question 2 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
