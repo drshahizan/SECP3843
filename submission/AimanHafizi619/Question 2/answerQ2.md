@@ -40,7 +40,7 @@ The MongoDB Shell is a command-line interface (CLI) tool provided by MongoDB tha
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image4.png)
 
 **Step 4**
->Using MongoDB Shell, select database `analytics` by typing `use analytics`.
+>Using MongoDB Shell, select database `analytics` by typing `use Analytics`.
 
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image5.png)
 
