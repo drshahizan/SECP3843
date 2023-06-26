@@ -174,6 +174,26 @@ To read/view the document, simply search the query on MongoDB and click 'Find'. 
 <br></br>
 
 ### Update 
+There are two alternative ways to update document(s) using MongoDB Shell.
+
+**a. Update Single Document**
+To update contents of a single document, I used [db.collection.updateOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateOne/).
+```bash
+db.Companies.updateOne(
+   {
+      "email_address": "info@mobiance.com"
+   },
+   {
+      $set: { twitter_username: "mobiance"}
+   }
+)
+```
+
+**b. Update Many Documents**
+To update contents of multiple documents, I used [db.collection.updateMany()](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateMany/).
+```bash
+db.Companies.updateMany({"email_address": "info@mobiance.com"},)
+```
 
 ### Delete
 To delete a document record using the MongoDB Shell, I applied a similar approach to the **db.collection.find()** method but instead I used the [db.collection.deleteOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.deleteOne/) method. This methods will allow me to delete a document based on the related query, in this case using the email address of a company (info@mobiance.com).
