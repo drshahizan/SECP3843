@@ -43,10 +43,42 @@ While implementing **5 servers** can be highly irresistible, there are several f
 * **Complexity and Management**: Consider the difficulty of managing and maintaining several servers. More servers necessitate more effort for configuration, monitoring, and troubleshooting. Determine whether the project team has the competence and resources to efficiently manage several servers.
 > Answer: The project team does not have the competence and resources to efficiently manage several servers due to the lack of experience. The project's aim to seamlessly integrate the Django web framework, the JSON dataset, the MySQL and MongoDB database is straight-forward. Implementing additional and unnecessary servers will only **increase the project's complexity**. Managing and maintaining additional servers that are not actively used might add to the infrastructure's complexity. This complexity can lead to increased maintenance costs and possible sites of failure.
 
-To mitigate these effects, it is best to re-evaluate the server architecture and make modifications based on portal's real usage and requirements. After careful consideration, implementing **3 SERVERS** for this project is best believe a practical approach, whereby the servers are used as:
-1. **Main Web Server**: Apache (Used by Django Web Framework)
-2. **Database Server 1**: MySQL
-3. **Database Server 2**: MongoDB
+To mitigate these effects, it is best to re-evaluate the server architecture and make modifications based on project's portal real usage and requirements. After careful considerations, implementing the **3 Server Approach** for this project appears to be a viable option, with each server performing a specific purpose. This architecture promotes optimal task distribution and maintains a manageable infrastructure while ensuring seamless integration, efficient data storage, and retrieval.
+
+<table>
+  <tr>
+    <th>No</th>
+    <th>Server Purpose</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Main Web Server: Apache (Used by Django Web Framework)</td>
+    <td>
+      <ul>
+        The main web server, which is powered by Apache, is critical in managing incoming HTTP requests and serving the Django web application. Apache, a popular web server, provides reliable performance and strong interoperability with the Django framework. The main web server efficiently handles web traffic by exploiting Apache's capabilities, providing the flawless delivery of dynamic web pages to consumers. It serves as the point of contact for user interactions, sending requests to the necessary components for processing and answer generation.
+      </ul>  
+     </td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Database Server 1: MySQL</td>
+    <td>
+      <ul>
+        This server is dedicated to hosting the MySQL database and allows for the efficient storage and retrieval of structured data. MySQL, a dependable relational database management system, works effortlessly with Django, enabling for the effective storing and management of project-related data. MySQL assures the integrity and reliability of the stored data due to its proven track record and substantial community support. This server enables the project to reap the benefits of a relational database, guaranteeing effective data storage and retrieval for diverse application capabilities.
+      </ul>  
+     </td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Database Server 2: MongoDB</td>
+    <td>
+      <ul>
+        The MongoDB database is hosted on the second database dedicated server. MongoDB, a versatile NoSQL database, excels at managing unstructured or semi-structured data like the JSON information provided. MongoDB is an excellent solution for applications demanding scalability and flexibility due to its ability to extend horizontally and accommodate massive amounts of data. The integration of MongoDB and Django allows for the effective storage and retrieval of JSON data within the project's portal. The query capabilities of MongoDB, as well as its document-oriented approach, allow for the effective management of various and growing data structures.
+      </ul>  
+     </td>
+  </tr>
+</table>
 
 
 ### Integrating Django with JSON dataset
