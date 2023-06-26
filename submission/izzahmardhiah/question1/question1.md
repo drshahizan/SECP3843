@@ -26,7 +26,7 @@ Secondly, I suggest dedicating a separate server for hosting the MySQL database.
 
 Thirdly, I propose leveraging cloud-based services such as MongoDB Atlas or Compass for storing the JSON dataset. These services provide highly scalable and managed databases, eliminating the need for separate server infrastructure. By utilizing a cloud-based solution, we can leverage the scalability and flexibility offered by the service provider, enabling efficient storage and retrieval of the JSON dataset. Configuring the appropriate connection settings will allow the Django application server to seamlessly communicate with the MongoDB Atlas or Compass service.
 
-### Steps required to integrate Django with the JSON dataset, ensuring efficient data storage and retrieval from both MySQL and MongoDB databases:- 
+### Steps required to integrate Django with the JSON dataset, retrieving data from both MySQL and MongoDB databases:- 
 1. Configure Django for MySQL and MongoDB
 
 Edit the settings.py file in our Django project.Then, define the connection details for both the MySQL and MongoDB databases, including host, port, username, and password.
@@ -46,10 +46,25 @@ Run Django's migration commands to create the necessary tables in both the MySQL
 
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<div align="center"><img src="../materials/system_architecture.png" /></div>
 
+1. Client Layer
+- The Application UI (User Interface) refers to the visual presentation and layout of the application that users interact with.
+- HTML, CSS, JavaScript.
+- Dashboard is a component of the client layer that provides a consolidated view of data and visualizations to users.
+It typically includes charts, graphs, tables, and other data visualizations that allow users to analyze and interpret information effectively. The Dashboard component retrieves data from the backend (web application layer) and presents it in a visually engaging and informative manner, enabling users to gain insights and make data-driven decisions.
 
+2. Web Application Layer
+- Web Server + Django Application Server consists of a web server responsible for handling incoming HTTP requests from clients and routing them to the appropriate components. The Django application server runs the Django web framework, which provides the core functionality of the application, including request processing, URL routing, view rendering, and response generation.
 
+- Django Web Framework follows the Model-View-Controller (MVC) architectural pattern, allowing developers to define models to represent the data structure, views to handle user requests, and templates for rendering HTML output. Django also provides built-in features for session management, authentication, and security.
+
+3. Database Layer
+- MySQL Database is a popular open-source relational database management system. It is used to store user login and registration credentials. The MySQL database provides a structured data storage mechanism, where data is organized into tables with predefined schemas and relationships.
+  
+- MongoDB Database is a NoSQL document-oriented database. It is suitable for storing unstructured or semi-structured data, such as the JSON dataset in this scenario. MongoDB stores data in flexible, schema-less documents, allowing for dynamic and scalable data storage and retrieval.
+
+- ORM (Object-Relational Mapping) is a technique used to map the objects and relationships defined in the application's programming language (in this case, Python) to the database tables or collections. Django's ORM enables developers to interact with the databases using Python code, abstracting away the underlying SQL queries. It provides a convenient and consistent way to perform database operations, including data storage, retrieval, querying, and data manipulation.
 
 
 ## Contribution 🛠️

@@ -17,7 +17,37 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 2 (a)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  1. Install the necessary requirement before starting the process:
+     <ul>
+       <li> Install MongoDB Community</li>
+       <li> Install MongoDB Shell</li>
+       <li> Install MongoDB Database Tools</li>
+     </ul>
+
+  2. Download JSON file from GitHub
+     <ul>
+       <li> movies.json</li>
+       <li> comments.json</li>
+       <li> users.json</li>
+       <li> theaters.json</li>
+     </ul>
+
+  3. Set up path inside system enviroment
+     
+  4. And open command prompt and type 'mongod' to start the mongodb server
+
+  5. Next, inside the command type 'mongosh' to access the MongoDB Shell
+     
+  6. Select the target database by typing 'use mflix'
+      
+  7. Import JSON datatsets into MongoDB using Mongo Shell by typing inside the command ```mongoimport --uri mongodb+srv://jokeryde:adamkaya@jokeryde.cnn7sr4.mongodb.net/ --db mflix --collection mflixx --file "D:\STDE\movies.json"```
+
+      
+  8. Repeat the steps for comments.json, users.json and theaters.json
+
+      
+  9. JSON file successfully imported into MongoDB
+
 
 ## Question 2 (b)
 
