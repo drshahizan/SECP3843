@@ -132,39 +132,32 @@ python manage.py import_json_data
 
 ## Question 1 (b)
 
-+---------------------+
-|       User          |
-|      Interface      |
-+----------+----------+
-           |
-           |
-    HTTP Requests
-           |
-           v
-+---------------------+
-|    Django Web       |
-|       Server        |
-+---------------------+
-           |
-           |
-    Database Queries
-           |
-           v
-+---------------------+
-|      MySQL          |
-|     Database        |
-+---------------------+
-           |
-           |
-    Database Queries
-           |
-           v
-+---------------------+
-|      MongoDB        |
-|     Database        |
-+---------------------+
-
-
+```
+                     +---------------------+
+                     |       User          |
+                     |      Interface      |
+                     +----------+----------+
+                                |
+                                |
+                         HTTP Requests
+                                |
+                                v
+                     +---------------------+
+                     |    Django Web       |
+                     |       Server        |
+                     +---------------------+
+                                |
+                                |
+                         Database Queries
+                                |
+               +----------------v----------------+
+               |                                 |
+               |                                 |
++---------------------+                +---------------------+
+|      MySQL          |                |      MongoDB        |
+|     Database        |                |     Database        |
++---------------------+                +---------------------+
+```
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
