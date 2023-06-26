@@ -44,7 +44,7 @@ env\Scripts\activate
                 'USER': 'root',
                 'PASSWORD': '',
                 'HOST': 'localhost',
-                'PORT': 8000,
+                'PORT': 3306,
             },
             'mongodb': {
                 'ENGINE': 'djongo',
