@@ -67,7 +67,6 @@ The MongoDB Shell is a command-line interface (CLI) tool provided by MongoDB tha
 Before applying the CRUD (Create, Read, Update, Delete) operations, do these steps first
 
 **Step 1**: Start MongoDB server
-
 >Clode the current command prompt
 
 >Go to this location open command prompt or cmd and type in mongod. `Programs Files` > `MongoDB` > `Server` > `6.0` > `bin` again.
@@ -75,7 +74,6 @@ Before applying the CRUD (Create, Read, Update, Delete) operations, do these ste
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image17.png)
 
 **Step 2**: Start MongoDB shell
-
 >To run the mongosh command to access the MongoDB shell by type in `mongosh` in the command prompt
 
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image19.png)
@@ -91,7 +89,6 @@ Before applying the CRUD (Create, Read, Update, Delete) operations, do these ste
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image21.png)
 
 **Step 5**: Create Operation
-
 >Type in the code below to add a new row of data into the Accounts collections. There will be four attributes `_id`, `account_id`, `limit`, and `products`.
 
 >MongoDB will create a random ObjectId if left unspecified.
@@ -106,17 +103,25 @@ db.Accounts.insertOne({
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image22.png)
 
 **Step 6**: Read Operation
-
 >Type in the code below to find a particular row of data from Accounts collections.
 
 ```
-Analytics> db.Accounts.find({
+db.Accounts.find({
 ... "account_id":101010})
 ```
 
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image23.png)
 
-*Step 7** Update Operation (1)
+**Step 7**: Update Operation (1)
+>Type in the code below to search for a particular record using the `account_id`
+
+>Then select an attribute to change
+
+>Only one record will be change that has the mentioned `account_id`
+
+>Redo step 6 to see the old and new values of `limit` attributes
+
+![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image24.png)
 
 
 
