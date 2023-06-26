@@ -44,7 +44,11 @@
 
 
 ## Question 2 (b)
-
+### Requirements
+- MongoDB Compass
+- MongoDB Tools
+- MongoDB Community
+  
 ### Step 1: Connect to MongoDB
 1. Open command prompt where MongoDB is located. It is usually in the program files folder. For example mine is in 
 ```
