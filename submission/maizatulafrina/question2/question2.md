@@ -15,6 +15,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 2 (a)
 
+  - njcnd
 ## Question 2 (b)
 
 
