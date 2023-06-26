@@ -30,27 +30,27 @@ Don't forget to hit the :star: if you like this repo.
 #### Start MongoDB Server
 
 1. Run `mongod` in command prompt
-<img src="../materials/Q2(a)">
+<img src="../materials/Q2(a).png">
 
 #### Access MongoDB Shell
 
 1. Run the MongoDB Shell by executing the appropriate command: `mongosh`
-<img src="../materials/Q2_2">
+<img src="../materials/Q2_2.png">
 
 #### Setup Database
 
-1. Open MongoDB Compass and create new Database named 'AA_companies' and Collection.
-2. To switch to the intended database, execute the following command: `use AA_companies`
+1. Open MongoDB Compass and create new Database named 'Companies' and Collection.
+2. To switch to the intended database, execute the following command: `use Companies`
 
 #### Import Dataset
 
 1. Run this in command prompt ` mongoimport --uri mongodb+srv://mincridible:minzpro1@min.tan7fdn.mongodb.net/ --db Companies --collection CompaniesMeta --file "C:\Users\Hp\Downloads\companies.json" `
 
-<img src="../materials/Q2_3">
+<img src="../materials/Q2_3.png">
 
 2. Validate the imported dataset on MongoDB Compass
 
-<img src="../materials/Q2_4">
+<img src="../materials/Q2_4.png">
 
 
 
