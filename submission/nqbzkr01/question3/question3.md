@@ -30,12 +30,12 @@ Don't forget to hit the :star: if you like this repo.
 > Note: please note that on Windows, need to use `source env/Scripts/activate` in order to activate the virtual environment.
 - After activating the environment, you need to proceed by installing Django using `pip`:
   ```python
-$ pip install django
+  $ pip install django
   ```
 - If the framework is successfully installed, the Django management commands now can be used to create and work with the Django project.
 - Next, install mysql-client using:
   ```python
-$ pip install mysqlclient
+  $ pip install mysqlclient
   ```
 
 
