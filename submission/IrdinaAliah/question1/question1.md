@@ -14,7 +14,7 @@ Don't forget to hit the :star: if you like this repo.
 #### Matric No.: A20EC0115
 #### Dataset:AIRBNB
 
-##Question 1(a)
+#Question 1(a)
 You have been assigned the task of providing instructions to the technical staff on 
 implementing a configuration using five servers used in this project. This task is to ensure 
 seamless integration between the Django web framework, a JSON dataset provided in this 
@@ -24,7 +24,7 @@ comprehensive explanation of the steps required to integrate Django with the JSO
 ensuring efficient data storage and retrieval from both MySQL and MongoDB databases. 
 [10 marks] 
 
-##Question 2(a)
+#Question 2(a)
 b.Design a detailed and comprehensive system architecture. Focusing on the seamless 
 integration between the web server (Django), dataset (JSON), and databases (MySQL and 
 MongoDB). Give detailed explanations for each component, utilizing precise terminology and 
