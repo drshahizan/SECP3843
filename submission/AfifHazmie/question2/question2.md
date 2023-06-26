@@ -102,7 +102,7 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
 
      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/createquery.jpg" style="width:500px; height: 400px;">
 ---
-   ### View Query
+   ### View Query:
    - Run the `find` in the Mongosh terminal
      
      ```
@@ -113,7 +113,7 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
      
      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/viewquery.jpg" style="width:350px; height: 500px;">
      
- ### Update Query 1
+ ### Update Query 1:
  - Run the `updateOne` in the mongosh terminal with the field that I want to change
  - `updateOne` function is used to update a single document that first match field filter and then the `$set` is used to replace the current data with new data.
  - for example: I want to update the item 1 to bookshelf with price 19.99 and item 2 change the quantity to 15
@@ -136,9 +136,9 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
   }
 )
   ```
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/updateonequery.jpg" style="width:250px; height: 580px;">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/updateonequery.jpg" style="width:300px; height: 600px;">
 
- ### Update Query 2
+ ### Update Query 2:
  - Run the `updateMany` in the mongosh terminal with the field that I want to change
  - The `updateMany` function is used to update all the data that satisfied the filtered field.
  - For example in here I will add another data with the same store location "Johor" using the create query
@@ -161,7 +161,19 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
    
    <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/kl.jpg" style="width:300px; height: 300px;">
    
-### Delete Query 
+### Delete Query: 
+ - To delete the data in mongodb use whether `deleteOne` to deleete first match data or `deleteMany` to delete all data that satisfied the filter.
+ - Execute the below line:
+
+```
+db.Sales.deleteMany({ storeLocation: "Johor" })
+```
+
+   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/deletequery.jpg" style="width:450px; height: 200px;">
+ 
+ - Try filtering `storeLocation = "Kuala Lumpur"`, there will be no result shown.
+
+   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/deleteresult.jpg" style="width:600px; height: 350px;">
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
