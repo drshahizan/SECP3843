@@ -109,6 +109,11 @@ db.Accounts.insertOne({
 
 >Type in the code below to find a particular row of data from Accounts collections.
 
+```
+Analytics> db.Accounts.find({
+... "account_id":101010})
+```
+
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image23.png)
 
 *Step 7** Update Operation (1)
