@@ -1,23 +1,50 @@
- <h3 align="center">Alternative Assessment</h3>
-<table align="center">
- <tr>
-  <th>Name</th>
-  <th>Matric No.</th>
- </tr>
- <tr>
-  <td>Sakinah Al'izzah Binti Mohd Asri</td>
-  <td>A20EC0142</td>
- </tr>
-</table>
+<a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
+<a href="https://github.com/drshahizan/SECP3843/network/members"><img src="https://img.shields.io/github/forks/drshahizan/SECP3843" alt="Forks Badge"/></a>
+<a href="https://github.com/drshahizan/SECP3843/pulls"><img src="https://img.shields.io/github/issues-pr/drshahizan/SECP3843" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/drshahizan/SECP3843/issues"><img src="https://img.shields.io/github/issues/drshahizan/SECP3843" alt="Issues Badge"/></a>
+<a href="https://github.com/drshahizan/SECP3843/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/drshahizan/SECP3843?color=2b9348"></a>
+![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fdrshahizan%2FSECP3843&labelColor=%23d9e3f0&countColor=%23697689&style=flat)
 
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li><a href="https://github.com/drshahizan/SECP3843/tree/be6423bc67b9c2f00228600823df4c57ba101ba0/submission/sakinahalizzah/question%201">Questions 1</a></li>
-    <li><a href="https://github.com/drshahizan/SECP3843/tree/26aa5ebaf1d3b4c6dc2a0befcbc7cdc82cd46981/submission/sakinahalizzah/question%202">Questions 2</a></li>
-    <li><a href="https://github.com/drshahizan/SECP3843/tree/e25a00f696a2350eeb0e67c6ad0bb094ef0da56a/submission/sakinahalizzah/question%203">Questions 3</a></li>
-    <li><a href="https://github.com/drshahizan/SECP3843/tree/e25a00f696a2350eeb0e67c6ad0bb094ef0da56a/submission/sakinahalizzah/question%204">Questions 4</a></li>
-    <li><a href="https://github.com/drshahizan/SECP3843/tree/e25a00f696a2350eeb0e67c6ad0bb094ef0da56a/submission/sakinahalizzah/question%205">Questions 5</a></li>
-  </ol>
-</details>
+Don't forget to hit the :star: if you like this repo.
+
+# Special Topic Data Engineering (SECP3843)
+
+## Alternative Assessment
+
+<p align="center">
+  <img height="200px" src="https://github.com/drshahizan/SECP3843/assets/99240177/a8ed5a27-52f6-4813-9810-b01bda956830" />
+</p>
+
+<table align="center">
+  <tr>
+    <th>Name</th>
+    <th>Matric No.</th>
+  </tr>
+  <tr>
+    <td>Sakinah Al'izzah Binti Mohd Asri</td>
+    <td>A20EC0142</td>
+  </tr>
+</table>
+<br>
+
+## Dataset: [Analytics Dataset](https://github.com/drshahizan/dataset/tree/main/mongodb/02-analytics)
+
+## Submission
+
+| No | Answer | File |
+| :-----: | ----- | :------: |
+| 1 | Question 1 | <a href="./question1/question1.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 2 | Question 2 | <a href="./question2/question2.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 3 | Question 3 | <a href="./question3/question3.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 4 | Question 4 | <a href="./question4/question4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 5 | Question 5 | <a href="./question5/question5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+
+
+
+## Contribution 🛠️
+Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
+
+You can also contact me using [Linkedin](https://www.linkedin.com/in/drshahizan/) for any other queries or feedback.
+
+[![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fdrshahizan&labelColor=%23697689&countColor=%23555555&style=plastic)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fdrshahizan)
+![](https://hit.yhype.me/github/profile?user_id=81284918)
