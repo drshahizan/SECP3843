@@ -30,7 +30,7 @@ Don't forget to hit the :star: if you like this repo.
            
         - Then, create a virtual environment for the project.
           
-           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/12219ef33b7e27340551d65a344b034a560bd2e4/submission/RishmaFathima/Question1/files/images/1.1.1.4.png">
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/871e6e313e09d8f507b32aaf9d54173434080a29/submission/RishmaFathima/Question1/files/images/new%201.1.1.4.png">
           
   2. ``Define Django models in models.py``:
         - JSON file is downloaded from the Github.
