@@ -15,6 +15,86 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: sales.json
 
 ## Question 3 (a)
+### Step 1: Define User Model
+- in models.py define User model that extends Django's built in User model
+- Add any additional model fields for user type : customer, technical worker, and senior management
+  
+### Step 2: Create database table
+- Configure database in the settings.py
+  ```
+    # settings.py
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'db_sales',
+            'HOST': 'localhost',
+            'PORT': '3307',
+            'USER': 'root',
+            'PASSWORD': '',
+        }
+    }
+
+  ```
+- generate neessary tables based on the defined models by running migrations
+- execute the following command
+```
+python manage.py makemigrations
+python manage.py migrate
+```
+- This will create the required databases table for user registration
+
+### Step 3: Create Views
+- define views for handling user registration and login 
+- in views.py create function or classes that handle the registration and login logic
+- use Django built-in authentication views and forms for handling user authentication
+```
+# views.py
+
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import login, logout
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/register.html', {'form': form})
+
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            return redirect('home')
+    else:
+        form = AuthenticationForm()
+    return render(request, 'registration/login.html', {'form': form})
+
+def logout_view(request):
+    logout(request)
+    return redirect('login')
+```
+
+### Step 4: Create template
+- Create template for user registration and login forms
+- place the template in app's template directory
+
+### Step 5: Define URL patterns
+- Configure URL pattern in the app's urls.py to map the views with appropriate URLs
+- Define routes to user registration, login, logout
+```
+# urls.py
+
+from django.urls import
+
+```
+### Step 6: Integrate with frontend
+- Make appropriate HTTP request to Django endpoints for user registration and authentication. 
 
  
 ## Question 3 (b)

@@ -98,8 +98,7 @@ use salesdatabase
 
 
 ### Step 2: Create the queries
-1. Create
-Use the following code to create 
+1. Create Query
 ```
 db.salessample.insertOne({
   "_id": ObjectId(),
@@ -126,7 +125,7 @@ db.salessample.insertOne({
 ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/3e05216d-b48b-4954-8f5a-47274c53fc7b)
 
-2. Read
+2. Read Query
 ```
 db.salessample.find({ "storeLocation": "Denver" })
 ```
@@ -135,7 +134,9 @@ db.salessample.find({ "storeLocation": "Denver" })
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/8bd5e995-ae5c-4bfb-89ce-f673ca554b05)
 
 
-3. Update
+3. Update Query
+ - Update One
+ - Update Many
 ```
 #update one
 db.salessample.updateOne(
@@ -158,7 +159,7 @@ db.salessample.updateMany(
 
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/7fe0ae53-90cd-46f1-91d4-f36561404f18)
 
-4. Delete
+4. Delete Query
 ```
 db.salessample.deleteOne({ "_id": ObjectId("5bd761dcae323e45a93ccfe8") })
 ```
