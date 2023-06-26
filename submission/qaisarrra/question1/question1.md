@@ -98,14 +98,14 @@ To carry out this segment of the question, it it crucial for to do the following
 
 1. Create a Django Project Folder. For this project I created a folder named **AA** on my **Desktop**, where it is easily accessible.
 <p align="center">
-   <img width="947" alt="image" src=">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Create%20Project%20Folder.png">
 </p>
      
 <br>
 
 2. Set up a virtual environment. In your current working directory, this command creates a new virtual environment called``environment``. 
 ```bash
-python3 -m venv environment
+python -m venv environment
 ```
 <br>
 
@@ -115,11 +115,16 @@ environment\Scripts\activate
 ```
 <br>
    
-4. Install Django. Open command prompt by pressing on the Windows key + R **OR** type cmd or cmd.exe in the Run command box before pressing **Enter**.
+4. Install Django.
 ```bash
 pip install django
 ```
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Django%20Installation.png">
+</p>
 <br>
+
+**Create Django Project** 
 
 ## Question 1 (b)
 The system architecture will consist of the following components:
