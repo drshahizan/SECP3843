@@ -93,13 +93,103 @@ db.companies.find().pretty()
 </p>
 
 
-
-
-
-
-
-
-
-
 ### Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+1. Create
+   ```
+   db.companies.insertOne({
+                    "email_address": "info@julieco.com",
+                    "name": "Julie .co",
+                    "founded_day": {
+                          "$numberInt": "1"
+                      },
+                      "founded_month": {
+                          "$numberInt": "3"
+                      },
+                      "founded_year": {
+                          "$numberInt": "2015"
+                      },
+                    "number_of_employees": {
+                          "$numberInt": "10"
+                      },
+                      "offices": [
+                          {
+                              "address1": "No 14 Jalan 15/2B,",
+                              "address2": "Seksyen 15,",
+                              "city": "Bandar Baru Bangi",
+                              "country_code": "MY",
+                              "description": null,
+                              "latitude": null,
+                              "longitude": null,
+                              "state_code": null,
+                              "zip_code": "43650"
+                          }
+                      ],
+                    "overview": "<p>Julie .co provides consultation about pets.",
+                    "permalink": "julie.co",
+                    "phone_number": "+6012-3136850"
+        })
+   ```
+<p align="center">
+<img width="313" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/b5a693fa-ee3a-426a-9028-b09d0001337c">
+</p>
+
+2. Read
+```
+db.companies.find({ "founded_year": 2001}).limit(1)
+```
+<p align="center">
+<img width="314" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/3a1e793c-6e82-4804-8ebe-e3734abac7f0">
+</p>
+
+3. Update
+   -  updateOne()
+   
+      ```
+      db.companies.updateOne({ "founded_day": 1}, {$set: {"founded_month":       12}})
+      ```
+    <p align="center">
+          <img width="485" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/1f0142aa-b401-4981-9deb-eec922f86746"><br>
+    </p>
+    
+    ```
+     db.companies.find({ "founded_day": 1}).limit(1)
+     ```
+     <p align="center">
+     <img width="471" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/461d1d16-d050-40bf-96eb-af9d99986eb3">
+     </p>
+
+   - replaceOne()
+      ```
+      db.companies.replaceOne(
+    { "name": "Julie .co" }, {"name":"Julie Corporation", "offices":[{"address1": "No 16 Jalan 15/2B,", "address2": "Seksyen 16"}]})
+      ```
+    <p align="center">
+    <img width="474" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/794527d6-b29d-4798-99c2-5bc08a6d880a">
+    </p>
+
+      ```
+      db.companies.find({"name":"Julie Corporation"})
+      ```
+      <p align="center">
+      <img width="482" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/a63ac0d4-f8f0-4567-8d98-41b04dbc55a9">
+      </p>
+
+
+4. Delete
+
+```
+ db.companies.deleteOne({"name": "Julie Corporation"})
+ ```
+<p align="center">
+<img width="453" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/f62bfec2-c3ea-4b60-aa75-ae6681fa910e">
+</p>
+
+
+
+
+
+
+
+
+
+   
