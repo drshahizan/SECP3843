@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Alternative Assessment
 
 <p align="center">
-  <img height="200px" src=[submission/IrdinaAliah/materials/profil pic.png](https://github.com/drshahizan/SECP3843/blob/1b01a05adbe002c80421aa0f82ba37a1e0c79940/submission/IrdinaAliah/materials/memancing.jpg)" />
+  <img height="200px" src=[submission/IrdinaAliah/materials/profil pic.png] />
 </p>
 
 <table align="center">
