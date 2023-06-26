@@ -29,7 +29,7 @@
 
 ## Question 2 (b)
 
-### Connect to MongoDB
+### Step 1: Connect to MongoDB
 1. Open command prompt where MongoDB is located. It is usually in the program files folder. For example mine is in 
 ```
 C:\Program Files\MongoDB\Server\6.0\bin
@@ -50,7 +50,7 @@ use salesdatabase
 ```
 `salesdatabase` : Can be modified using your own database name
 
-### Create the queries
+### Step 2: Create the queries
 1. Create
 ```
 db.salessample.insertOne({
