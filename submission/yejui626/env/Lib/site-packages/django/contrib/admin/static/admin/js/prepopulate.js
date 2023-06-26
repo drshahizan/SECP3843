@@ -1,7 +1,6 @@
 /*global URLify*/
-'use strict';
-{
-    const $ = django.jQuery;
+(function($) {
+    'use strict';
     $.fn.prepopulate = function(dependencies, maxLength, allowUnicode) {
         /*
             Depends on urlify.js
@@ -12,15 +11,15 @@
             allowUnicode - Unicode support of the URLify'd string
         */
         return this.each(function() {
-            const prepopulatedField = $(this);
+            var prepopulatedField = $(this);
 
-            const populate = function() {
+            var populate = function() {
                 // Bail if the field's value has been changed by the user
                 if (prepopulatedField.data('_changed')) {
                     return;
                 }
 
-                const values = [];
+                var values = [];
                 $.each(dependencies, function(i, field) {
                     field = $(field);
                     if (field.val().length > 0) {
@@ -40,4 +39,4 @@
             }
         });
     };
-}
+})(django.jQuery);

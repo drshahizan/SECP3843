@@ -6,14 +6,13 @@ class SpatialRefSysMixin:
     The SpatialRefSysMixin is a class used by the database-dependent
     SpatialRefSys objects to reduce redundant code.
     """
-
     @property
     def srs(self):
         """
         Return a GDAL SpatialReference object.
         """
         # TODO: Is caching really necessary here?  Is complexity worth it?
-        if hasattr(self, "_srs"):
+        if hasattr(self, '_srs'):
             # Returning a clone of the cached SpatialReference object.
             return self._srs.clone()
         else:
@@ -32,10 +31,7 @@ class SpatialRefSysMixin:
             except Exception as e:
                 msg = e
 
-            raise Exception(
-                "Could not get OSR SpatialReference from WKT: %s\nError:\n%s"
-                % (self.wkt, msg)
-            )
+            raise Exception('Could not get OSR SpatialReference from WKT: %s\nError:\n%s' % (self.wkt, msg))
 
     @property
     def ellipsoid(self):
@@ -53,12 +49,12 @@ class SpatialRefSysMixin:
     @property
     def spheroid(self):
         "Return the spheroid name for this spatial reference."
-        return self.srs["spheroid"]
+        return self.srs['spheroid']
 
     @property
     def datum(self):
         "Return the datum for this spatial reference."
-        return self.srs["datum"]
+        return self.srs['datum']
 
     @property
     def projected(self):
@@ -121,7 +117,7 @@ class SpatialRefSysMixin:
         """
         srs = gdal.SpatialReference(wkt)
         sphere_params = srs.ellipsoid
-        sphere_name = srs["spheroid"]
+        sphere_name = srs['spheroid']
 
         if not string:
             return sphere_name, sphere_params

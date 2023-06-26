@@ -5,13 +5,10 @@ reader and writer classes.
 """
 from django.contrib.gis.geos.geometry import GEOSGeometry
 from django.contrib.gis.geos.prototypes.io import (
-    WKBWriter,
-    WKTWriter,
-    _WKBReader,
-    _WKTReader,
+    WKBWriter, WKTWriter, _WKBReader, _WKTReader,
 )
 
-__all__ = ["WKBWriter", "WKTWriter", "WKBReader", "WKTReader"]
+__all__ = ['WKBWriter', 'WKTWriter', 'WKBReader', 'WKTReader']
 
 
 # Public classes for (WKB|WKT)Reader, which return GEOSGeometry
