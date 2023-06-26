@@ -131,18 +131,29 @@ python manage.py migrate
 
 1. Client Layer
    - Dashboard
+     - The dashboard provides a user interface for viewing and interacting with the data. It consists of visualizations such as charts and graph.
    - Web Browser
+     - Software application used by users to access and interact with web-based portal. The web browser will send HTTP requests to retrieve web pages, send form data and others. It will also render HTML, CSS and Javascript received from server to display the user interface.
    - UI Interface
+     - The UI Interface contains the overall design and layout of the portal. For example, it includes visual elements such as buttons and forms which will allow the users to interact with the portal's features and functionalities.
 3. Reverse Proxy
-4. Django Application Layer
+   - It will handle incoming client requests and forward the request to the appropriate backend servers. This will ensure that the server will not become overwhelmed with traffic. In addition, it can also provide security by acting as a barrier between the clients and application servers which will make it harder for outsiders to hack the system.
+5. Django Application Layer
    - View
+     - View will receive the HTTP request from the client layer and interact with models for data retrieval or data storage and render the appropriate template.
    - Model
+     - Model represents the data structure of the portal and will define the database schema. Model will be interacting with the database layer.
    - Template
+     - Templates is the structure and the overall layout of the webpages which will be displayed to the user. It contains HTML and CSS which will generate dynamic content.
 6. Database Layer
    - Djongo
+     - It is a connector for MongoDB which will allow Django application to interact with MongoDB. This will enable users to insert, update and delete data in MongoDB.
    - MongoDB
+     - MongoDB will store the JSON data as it provides high scalability for handling large volumes of data. It also provides flexible schema and this enables users to store semi-structured data such as JSON data.
    - ORM
+     - ORM (Object-Relational Mapping) is a technique that lets user query and manipulate data from a database using an object-oriented concepts. It will also allow user to define the Django models which represents the database tables or collections. By utilizing the ORM, users can perform database operations by using Python code.
    - MySQL
+     - MySQL is a reliable and widely adopted relational database management system. Hence, it will be used for storing the user credentials as it provides robust data storage, reliability and performance.
 
 
 
