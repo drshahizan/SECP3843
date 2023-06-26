@@ -417,7 +417,7 @@ urlpatterns = [
 
 ## Link to the project folder
 
-<a href="./question3">Folder</a>
+<a href="./question3">Souce Code Folder</a>
 
 ## Question 3 (b)
 
