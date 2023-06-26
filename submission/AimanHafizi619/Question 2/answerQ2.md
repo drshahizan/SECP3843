@@ -68,14 +68,17 @@ Before applying the CRUD (Create, Read, Update, Delete) operations, do these ste
 
 **Step 1**: Start MongoDB server
 
->Clode the current Command Prompt
+>Clode the current command prompt
 
 >Go to this location open command prompt or cmd and type in mongod. `Programs Files` > `MongoDB` > `Server` > `6.0` > `bin` again.
 
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image17.png)
 
 **Step 2**: Start MongoDB shell
-Run the mongosh command to access the MongoDB shell.
+
+>To run the mongosh command to access the MongoDB shell by type in `mongosh` in the command prompt
+
+![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image18.png)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
