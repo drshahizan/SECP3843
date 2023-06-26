@@ -40,7 +40,7 @@ Step 1: Install Django and required dependencies:
 
 Optional: Set up the virtual environment:
 - A virtual environment is a self-contained environment that allows you to install packages without changing the overall Python installation on your machine. Run the following command in your terminal to establish a virtual environment:
-  ```javascript
+  ```python
       python -m venv myenv
       // activate virtual environment
       myenv\Scripts\activate
@@ -57,7 +57,7 @@ Step 4: Configure the database in project settings:
  - Open the `settings.py` file located in the project 'analytics' directory.
  - Set the `DATABASES` configuration to include both MySQL and MongoDB settings. Here's an example:
 
-   ```javascript
+   ```
      DATABASES = {
          'default': {
              'ENGINE': 'django.db.backends.mysql',
@@ -112,21 +112,18 @@ Step 5: Define Django models:
 
 Step 6: Migrate the models:
  - Apply the initial migrations for both MySQL and MongoDB databases using the command: `python manage.py migrate`.
+   ```python
+   python manage.py makemigrations
+   ```
  - Django will create the necessary tables and collections in the databases based on your model definitions.
+ - Once you have created the migration file, you can apply the migrations by running the following command:
+   ```python
+   python manage.py migrate
+   ```
 
 Step 7: Load the JSON dataset into databases:
  - Write a script or use Django's management command to load the JSON dataset into the MySQL and MongoDB databases.
  - In the script or management command, parse the JSON dataset, create Django model instances, and save them to the respective databases.
-
-   ```javascript
-     mysql_accounts = accounts.objects.using('default').all()
-     mysql_customers = customers.objects.using('default').all()
-     mysql_transactions = transactions.objects.using('default').all()
-
-     mongodb_accounts = accounts.objects.using('mongodb').all()
-     mongodb_customers = customers.objects.using('mongodb').all()
-     mongodb_transactions = transactions.objects.using('mongodb').all()
-   ```
 
 ## Question 1 (b)
 
