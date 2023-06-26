@@ -86,9 +86,12 @@ Don't forget to hit the :star: if you like this repo.
 
 ### Read Operation
 
-1. Run `db.CompaniesMeta.find({}, { name: "Ahmad Muhaimin Bin Ahmad Hambali", email: "ahmadmuhaimin135@gmail.com" })` on command prompt or MongoDB Shell
+1. Run this code on command prompt or MongoDB Shell
+```python
+db.CompaniesMeta.find({}, { name: "Ahmad Muhaimin Bin Ahmad Hambali", email: "ahmadmuhaimin135@gmail.com" }) 
+```
 
-2. Check the output
+3. Check the output
 <img src="../materials/Q2_7.png">
 
 ### Update Operation
