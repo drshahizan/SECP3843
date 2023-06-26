@@ -177,11 +177,13 @@ To read/view the document, simply search the query on MongoDB and click 'Find'. 
 There are two alternative ways to update document(s) using MongoDB Shell.
 
 **a. Update Single Document**
-To update contents of a single document, I used [db.collection.updateOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateOne/). To locate the record, I useD the **{"email_address": "info@mobiance.com"}** query followed by the setting the query that we would like to change. In the figures below, we can see that the **twitter_username** in the document is **null**, before setting it to **mobiance**.
+
+To update contents of a single document, I used [db.collection.updateOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateOne/). To locate the record, I used the **{"email_address": "info@mobiance.com"}** query followed by setting the query that we would like to change. In the figures below, we can see that the **twitter_username** in the document is **null**, before setting it to **mobiance**.
 <p align="center">
    <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question2/files/images/Before%20UpdateOne.png">
 </p>
 
+Execute this command in MongoDB Shell to set null valued twitter_username to **mobiance**
 ```bash
 db.Companies.updateOne(
    {
