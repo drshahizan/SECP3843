@@ -393,7 +393,7 @@ urlpatterns = [
 2. Open terminal and run `python manage.py runserver`
 
    
-##Ouput:
+## Ouput:
 
 ### Login Page
 
