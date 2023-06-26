@@ -33,25 +33,56 @@ Don't forget to hit the :star: if you like this repo.
      </ul>
 
   3. Set up path inside system enviroment
+     <img src="https://github.com/drshahizan/SECP3843/blob/0ab73ca1ce9f455715b6856adb29aaf488f920c4/submission/Jokeryde/question2/files/images/image_2023-06-26_183600121.png" style="width: 800px; height: 350px;">
      
   4. And open command prompt and type 'mongod' to start the mongodb server
-
-  5. Next, inside the command type 'mongosh' to access the MongoDB Shell
+      <img src="https://github.com/drshahizan/SECP3843/blob/0ab73ca1ce9f455715b6856adb29aaf488f920c4/submission/Jokeryde/question2/files/images/mongod.jpg" style="width: 800px; height: 350px;">
+      
+  6. Next, inside the command type 'mongosh' to access the MongoDB Shell
+     <img src="https://github.com/drshahizan/SECP3843/blob/0ab73ca1ce9f455715b6856adb29aaf488f920c4/submission/Jokeryde/question2/files/images/mongosh.jpg" style="width: 800px; height: 350px;">
      
-  6. Select the target database by typing 'use mflix'
+  7. Select the target database by typing 'use mflix'
       
-  7. Import JSON datatsets into MongoDB using Mongo Shell by typing inside the command ```mongoimport --uri mongodb+srv://jokeryde:adamkaya@jokeryde.cnn7sr4.mongodb.net/ --db mflix --collection mflixx --file "D:\STDE\movies.json"```
+      
+  8. Import JSON datatsets into MongoDB using Mongo Shell by typing inside the command ```mongoimport --uri mongodb+srv://jokeryde:adamkaya@jokeryde.cnn7sr4.mongodb.net/ --db mflix --collection mflixx --file "D:\STDE\movies.json"```
+
+      <img src="https://github.com/drshahizan/SECP3843/blob/0ab73ca1ce9f455715b6856adb29aaf488f920c4/submission/Jokeryde/question2/files/images/movies.jpg" style="width: 800px; height: 350px;">
+      
+  9. Repeat the steps for comments.json, users.json and theaters.json
+
+      <img src="https://github.com/drshahizan/SECP3843/blob/0520bb3bed079e157a1f5e2a857d1cf305cf112c/submission/Jokeryde/question2/files/images/other.jpg" style="width: 800px; height: 350px;">
+      
+  10. JSON file successfully imported into MongoDB
+
+      <img src="https://github.com/drshahizan/SECP3843/blob/0520bb3bed079e157a1f5e2a857d1cf305cf112c/submission/Jokeryde/question2/files/images/mongo%20db.jpg" style="width: 800px; height: 350px;">
 
       
-  8. Repeat the steps for comments.json, users.json and theaters.json
-
-      
-  9. JSON file successfully imported into MongoDB
-
-
 ## Question 2 (b)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  1. Start MongoDB server by using ```mongod``` command inside the command prompt.
+  2. Open MongoDB Shell terminal inside MongoDB Compass, type ```use mflix``` to switch the database.
+     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/switch.jpg" style="width: 800px; height: 350px;">
+     
+  3. Next, to create a new query, I'll be using the ```insertOne()``` method in MongoDB to insert a single record into my mflixx collection which represent as my movie collection.
+     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/insertdb.jpg" style="width: 800px; height: 350px;">
+
+     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/insert%20part%202.jpg" style="width: 800px; height: 350px;">
+     
+
+  4. The new record can be found in the database inside mflixx collection.
+     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/data%20insert.jpg" style="width: 800px; height: 350px;">
+
+  5. Next for READ, I'll be using the ```find()``` method to read the record inside the mflixx collection. I filtered the record where the movie rated is "PG13".
+     
+     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/find%20movie.jpg" style="width: 800px; height: 350px;">
+
+  6. Next we have the UPDATE. So I'm going to update the year of the movie from "2020" to "2019" by using the ```updateOne()``` method.
+     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/updateone.jpg" style="width: 800px; height: 350px;">
+
+  7. As for DELETE, I used the ```deleteOne()``` method to delete the records that are "PG13" rated.
+     <img src="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/delete.jpg" style="width: 800px; height: 350px;">
+
+     
 
 ## Contribution 🛠️
 
