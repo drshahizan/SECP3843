@@ -120,7 +120,8 @@ db.CompaniesMeta.updateMany(
 
 1. To delete one data we can use this:
 
-```db.CompaniesMeta.deleteOne(
+```python
+  db.CompaniesMeta.deleteOne(
   { name: "Ahmad Muhaimin Bin Ahmad Hambali" }, {age: 28}
 )
 ```
