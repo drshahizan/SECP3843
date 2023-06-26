@@ -15,12 +15,25 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Stories](https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories)
 
 ## Question 1 (a)
-Follow these steps to integrate Django with the JSON dataset and ensure efficient data storage and retrieval from both MySQL and MongDB databases by using 5 servers:
+#### 5 servers used in this project:
 
 ```1. Web Server```
-1. Install and configure Django on the web server.
+
+```2. Django Application Server```
+
+```3. MySQL Database Server```
+
+```4. MongoDB Database Server```
+
+```5. JSON Dataset Server```
+
+Follow these steps to integrate Django with the JSON dataset and ensure efficient data storage and retrieval from both MySQL and MongDB databases:
+
+#### Install Django:
+
+1. Install and configure Django.
    - Ensure Python is installed on the server or download the latest version from the official [Python website](https://www.python.org/downloads/)
-   - Open a terminal or command prompt on the web server.
+   - Open a terminal or command prompt.
    - Install Django using the command: `pip install Django`.
      ![image](https://github.com/drshahizan/SECP3843/blob/45c2d3cb9f768daea02df72426c9530b0ced805c/submission/DinieHazim/question%201/files/images/248708969-bf530713-0a4f-408f-a293-4969383b80c9.png)
 
@@ -30,16 +43,19 @@ Follow these steps to integrate Django with the JSON dataset and ensure efficien
    - Run the command: `django-admin startproject stories`.
      ![image](https://github.com/drshahizan/SECP3843/blob/d11ebdb1c7df59cb241c3b581b41e62201c9f55c/submission/DinieHazim/question%201/files/images/248711447-86eb15d2-6bdd-48d2-912a-f1316bcd0af8.png)
 
-3. 
+3. Create Django app
+   - Create a new app inside the Django project created before.
+   - The app will handle the integration of the dataset and databases.
+   - Run the command: `python manage.py startapp storiesDataset`.
+     ![image](https://github.com/drshahizan/SECP3843/blob/862e377bf91e814cf13f895dcb95971a067663aa/submission/DinieHazim/question%201/files/images/248779811-324bc2db-a63e-494e-8496-9d28afc3fcb9.png)
 
+4. Install packages
+   - Install two necessary packages by using the following command: `pip install django mysqlclient pymongo` and `pip install djongo`.
+     ![image](https://github.com/drshahizan/SECP3843/assets/120595244/535309a3-a5af-4678-8a67-cf089a9b6326)
 
-```2. Django Application Server```
+#### Create MySQL & MongoDB Models:
 
-```3. MySQL Database Server```
-
-```4. MongoDB Database Server```
-
-```5. JSON Dataset Server```
+1. 
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

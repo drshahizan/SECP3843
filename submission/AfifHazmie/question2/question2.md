@@ -68,8 +68,9 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
 2. In the terminal, execute the command `use` followed by database name. For example, I will execute the command `use SupplyStore`
 
 3. Run CRUD Operations.
+---
    ### Create query:
-   - Run insertone function in the terminal to insert new data into the collection.
+   - Run insertOne function in the terminal to insert new data into the collection.
      ```
      db.Sales.insertOne({
       saleDate: ISODate("2023-07-02T16:11:59.565Z"),
@@ -99,7 +100,80 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
    
    - the created data can be found inside the collecton by filtering using `{storeLocation: "Johor"}`
 
-     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/createquery.jpg">
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/createquery.jpg" style="width:500px; height: 400px;">
+---
+   ### View Query:
+   - Run the `find` in the Mongosh terminal
+     
+     ```
+     db.Sales.find ( {storeLocation: "Johor" } )
+     ```
+   
+   - the terminal will display the following data based on `find` field
+     
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/viewquery.jpg" style="width:350px; height: 500px;">
+     
+ ### Update Query 1:
+ - Run the `updateOne` in the mongosh terminal with the field that I want to change
+ - `updateOne` function is used to update a single document that first match field filter and then the `$set` is used to replace the current data with new data.
+ - for example: I want to update the item 1 to bookshelf with price 19.99 and item 2 change the quantity to 15
+   
+  ```
+   db.Sales.updateOne(
+  { storeLocation: "Johor" },
+  {
+    $set: {
+      "items.$[item1].name": "bookshelf",
+      "items.$[item1].price": 19.99,
+      "items.$[item2].quantity": 15
+    }
+  },
+  {
+    arrayFilters: [
+      { "item1.name": "book stand" },
+      { "item2.name": "stapler" }
+    ]
+  }
+)
+  ```
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/updateonequery.jpg" style="width:300px; height: 600px;">
+
+ ### Update Query 2:
+ - Run the `updateMany` in the mongosh terminal with the field that I want to change
+ - The `updateMany` function is used to update all the data that satisfied the filtered field.
+ - For example in here I will add another data with the same store location "Johor" using the create query
+   
+   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/NewData.jpg">
+   
+ - after that i will execute the below query which will filter data with `storeLocation="Johor"` to change it to `storeLocation = "Kuala Lumpur"`
+   ```
+   db.Sales.updateMany(
+     { storeLocation: "Johor" },
+     { $set: { storeLocation: "Kuala Lumpur" } }
+   )
+   ```
+   
+ - After update the location, when filter using the `storeLocation = "Johor"`, no data will appear as I already change the location.
+   
+   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/jb.jpg" style="width:750px; height: 300px;">
+   
+ - The data will show if I filtered using `storeLocation = "Kuala Lumpur"`
+   
+   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/kl.jpg" style="width:300px; height: 300px;">
+   
+### Delete Query: 
+ - To delete the data in mongodb use whether `deleteOne` to deleete first match data or `deleteMany` to delete all data that satisfied the filter.
+ - Execute the below line:
+
+```
+db.Sales.deleteMany({ storeLocation: "Johor" })
+```
+
+   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/deletequery.jpg" style="width:450px; height: 200px;">
+ 
+ - Try filtering `storeLocation = "Kuala Lumpur"`, there will be no result shown.
+
+   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/deleteresult.jpg" style="width:600px; height: 350px;">
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

@@ -40,11 +40,26 @@ project, and the MySQL and MongoDB databases, few servers need to be setup and c
 
      <img width="415" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/ca408d19-7517-4282-b26b-86746daaff01">
 
+**2. Define Models for MySQL and MongoDB**
 
-
-
-**2. MySQL**
-    - 
+   - Define the models for MySQL
+     
+      ```python from django.db import models
+      
+      class Inspection(models.Model):
+          id = models.CharField(max_length=50, primary_key=True)
+          certificate_number = models.IntegerField()
+          business_name = models.CharField(max_length=255)
+          date = models.DateField()
+          result = models.CharField(max_length=255)
+          sector = models.CharField(max_length=255)
+          city = models.CharField(max_length=255)
+          zip_code = models.IntegerField()
+          street = models.CharField(max_length=255)
+          number = models.IntegerField()
+      
+          def __str__(self):
+              return self.name
 
 ## Question 1 (b)
 
