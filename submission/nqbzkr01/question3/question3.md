@@ -14,8 +14,61 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: 03 - Movie
 
 ## Question 3 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<h4>Create module for managing user registration using and login using Django and MySQL</h4>
 
+1. Initial setup
+- <strong>Creating a Virtual Environment for Django Project</strong>
+  - A virtual environment allows you to isolate your current project dependencies from the rest of packages installed globally on your system or in the other virtual environments. You can either use `virtualenv` which needs to be installed on your system or the `venv` module available as a module in recent versions of Python 3.
+  - Type this in command prompt:
+    ```
+    $ python -m venv env
+    ```
+  - Next, activate the virtual environment using:
+    ```
+    $ source env/bin/activate
+    ```
+  > Note: please note that on Windows, need to use `source env/Scripts/activate` in order to activate the virtual environment.
+  - After activating the environment, you need to proceed by installing Django using `pip`:
+    ```python
+    $ pip install django
+    ```
+  - If the framework is successfully installed, the Django management commands now can be used to create and work with the Django project.
+  - Next, install mysql-client using:
+    ```python
+    $ pip install mysqlclient
+    ```
+- <strong>Creating a MySQL Database to Store Authentication Info</strong>
+  - In the command prompt invoke the `mysql` client using the following command:
+    ```
+    $ mysql -u root -p
+    ```
+  - The command prompt will ask the MySQL password then enter the password and hit Enter.
+  - After that, run the following SQL statement to create a database:
+    ```
+    mysql> create database moviedb;
+    ```
+- <strong>Creating a Django Project</strong>
+  - Let's now create the project using `django-admin.py`. In the terminal, run the following command:
+    ```
+    $ django-admin.py startproject demoproject
+    ```
+  - Next, open the `settings.py` of your project and add the database address and credentials inside the `DATABASES` object.
+    ```
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'mydb',
+        'USER': 'root',
+        'PASSWORD': 'YOUR_DB_PASSWORD',
+        'HOST': 'localhost',   
+        'PORT': '3306',
+        }    
+    }
+    ```
+  - 
+    
+    
+  
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 

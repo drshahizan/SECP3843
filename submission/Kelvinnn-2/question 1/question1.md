@@ -33,7 +33,7 @@ To integrate Django with the JSON dataset and ensure efficient data storage and 
 #### Django Installation: 
 1. Begin by installing Django on all five servers. use the pip package manager to install Django by running the following command:
 ```pip install Django```
-
+<img src="./files/images/installdjango.png">
 2. Set up Django project: Create a Django project on one of the servers. Use the following command to create a new Django project:
 ```django-admin startproject city_inspections```
 
@@ -44,9 +44,44 @@ To integrate Django with the JSON dataset and ensure efficient data storage and 
 ```pip install django mysqlclient pymongo``` and ```pip install djongo```
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### System Architecture Diagram
+Figure below shows the breakdown of the system architecture:
+<img src="./files/images/1b.png">
+### Detailed explanations for each component, utilizing precise terminology and suggesting acceptable terms:
+#### Components:
 
+- **Frontend**:
 
+Web browsers or client applications that interact with the system.
+Utilizes HTML, CSS, and JavaScript to render the user interface.
+Communicates with the backend to fetch and update data.
+
+- **Backend:**
+
+  - **Django Web Server and MVT (Model-View-Template):**
+  Django acts as an agent to process user requests and send responses while interacting with databases and datasets.
+    - **Models:** Specify the necessary data structures and relationships required by the application, allowing seamless CRUD operations.
+    - **Views:** Handle the logic for processing requests, retrieving data from databases, and rendering templates.
+    - **Templates:** Contain the HTML structure and placeholders for dynamic data.
+
+- **Dataset (JSON):**
+Location of the dataset is stored. In this AA, the dataset was downloaded to local from github.Provides data to populate dynamic web pages.
+
+- **Databases:**
+Handles data storage, retrieval, and management operations.
+  - **MySQL:**
+    A relational database server used to store structured data.
+    Used in this project for user authentication data, including user registration and login.
+  - **MongoDB:**
+    A NoSQL database server used to store JSON data.
+    Used in this project to store the JSON dataset (Stories dataset).
+
+- **External Libraries for Database Integration:**
+
+  - **ORM (Object-Relational Mapping):**
+    Django's ORM provides an abstraction layer to interact with MySQL using Python classes and methods, simplifying database operations.
+  - **Djongo:**
+    Enables integration between Django models and MongoDB collections, allowing interaction with MongoDB.
 
 
 

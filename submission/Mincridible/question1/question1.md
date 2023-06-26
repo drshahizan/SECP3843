@@ -216,7 +216,6 @@ class Command(BaseCommand):
 2. Create new folder named data and put the companies.json inside the folder
 
 3. Run `python manage.py import_data`
-<img src="../materials/Django6.png">
 
 
 

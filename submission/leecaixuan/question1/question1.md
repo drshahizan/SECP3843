@@ -15,7 +15,84 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Analytics Dataset
 
 ## Question 1 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<h4>Step 1 - Install Django and create project in Visual Studio Code</h4>
+
+Install Django 
+
+```
+pip install django
+```
+Create project named AA_project
+
+```
+django-admin startproject AA_project
+python manage.py migrate
+cd AA_project
+code .
+```
+
+Create a Django App named AA_DjangoApp
+
+```
+python manage.py startapp AA_DjangoApp
+```
+
+<h4>Step 2 - Connect to MySQL database</h4>
+
+Create a new database named aa_project in MySQL database. Includes the code below in the settings.py file in VS code. Make sure the database name, username, password, host and port are correct.
+
+<p align="center">
+  <img height="100px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question1/files/images/Screenshot%202023-06-26%20173526.png" />
+</p>
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'aa_project',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+```
+
+<h4>Step 3 - Define Django Models</h4>
+
+Based on the dataset, the models consist of 3 classes which are Account, Customer and Transaction. 
+
+```
+from django.db import models
+
+# Create your models here.
+class Account(models.Model):
+    account_id = models.IntegerField(unique=True)
+    limit = models.IntegerField()
+    products = models.ArrayField(models.CharField(max_length=255))
+
+class Customer(models.Model):
+    username = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    address = models.CharField(max_length=255)
+    birthdate = models.DateTimeField()
+    email = models.EmailField()
+    accounts = models.ManyToManyField(Account)
+    tier_and_details = models.JSONField()
+
+class Transaction(models.Model):
+    account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    transaction_count = models.IntegerField()
+    bucket_start_date = models.DateTimeField()
+    bucket_end_date = models.DateTimeField()
+```
+
+After creating the models, run the migrations to create tables in the aa_project database.
+
+```
+python manage.py makemigrations
+python manage.py migrate
+```
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
