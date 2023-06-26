@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Alternative Assessment
 
 <p align="center">
-  <img height="200px" src=materials/profil pic.png" />
+  <img height="200px" src=submission/IrdinaAliah/materials/profil pic.png" />
 </p>
 
 <table align="center">
