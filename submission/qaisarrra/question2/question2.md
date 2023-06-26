@@ -178,6 +178,10 @@ There are two alternative ways to update document(s) using MongoDB Shell.
 
 **a. Update Single Document**
 To update contents of a single document, I used [db.collection.updateOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateOne/).
+<p align="center">
+   <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question2/files/images/Before%20UpdateOne.png">
+</p>
+
 ```bash
 db.Companies.updateOne(
    {
@@ -188,11 +192,24 @@ db.Companies.updateOne(
    }
 )
 ```
+<p align="center">
+   <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question2/files/images/UpdateOne%20from%20MongoDB%20Shell.png">
+   <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question2/files/images/After%20UpdateOne.png">
+</p>
+
 
 **b. Update Many Documents**
 To update contents of multiple documents, I used [db.collection.updateMany()](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateMany/).
 ```bash
-db.Companies.updateMany({"email_address": "info@mobiance.com"},)
+db.Companies.updateMany(
+   {
+      "twitter_username": "", 
+      founded_year: 2004
+   },
+   {
+      $set: { twitter_username: "temporary"}
+   }
+)
 ```
 
 ### Delete
