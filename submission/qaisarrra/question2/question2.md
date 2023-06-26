@@ -93,7 +93,7 @@ For this question, I will have to create FIVE (5) MongoDB queries that demonstra
 <br></br>
 
 ### Create
- For this segment, I have previously deleted the document at the **DELETE** section and now I am recreating it using this method. You can also use the **sample document** from this [page](https://github.com/drshahizan/dataset/tree/main/mongodb/04-companies). However, do not include the document ID as MongoDB will automatically generate it for you. I have also emptied certain arrays for future modification. To create a record using the MongoDB shell, I will use [db.collection.insertOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.insertOne/). The **insertOne()** method will allow me to create a document containing the following queries:
+ For this segment, I have previously deleted the document at the **Delete** section and now I am recreating it using this method. You can also use the **sample document** from this [page](https://github.com/drshahizan/dataset/tree/main/mongodb/04-companies). However, do not include the document ID as MongoDB will automatically generate it for you. I have also emptied certain arrays for future modification. To create a record using the MongoDB shell, I will use [db.collection.insertOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.insertOne/). The **insertOne()** method will allow me to create a document containing the following queries:
 ```bash
 db.Companies.insertOne(
    {
@@ -142,7 +142,15 @@ db.Companies.insertOne(
 ```
 Below shows the expected output of the command:
 <p align="center">
-   <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question2/files/images/Access%20MongoDB%20Shell.png">
+   <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question2/files/images/Create%20from%20MongoDB%20Shell.png">
+</p>
+To view the document that we have created, simply search the query on MongoDB, the outcome should be as follows:
+
+```bash
+{"email_address": "info@mobiance.com"}
+```
+<p align="center">
+   <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question2/files/images/Create%20from%20MongoDB.png">
 </p>
 <br></br>
 
@@ -151,9 +159,17 @@ Since the JSON dataset stores approximately **9500 rows** of records of **42 att
 ```bash
  db.Companies.find({"email_address": "info@mobiance.com"})
 ```
-Below shows the expected output of the command:
+Below shows the expected output snippet of the command:
 <p align="center">
-   <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question2/files/images/Access%20MongoDB%20Shell.png">
+   <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question2/files/images/Read%20from%20MongoDB%20Shell.png">
+</p>
+To read/view the document, simply search the query on MongoDB and click 'Find'. The outcome should be as follows:
+
+```bash
+{"email_address": "info@mobiance.com"}
+```
+<p align="center">
+   <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question2/files/images/Read%20from%20MongoDB.png">
 </p>
 <br></br>
 
@@ -166,8 +182,11 @@ To delete a document record using the MongoDB Shell, I applied a similar approac
 ```
 Below shows the expected output of the command:
 <p align="center">
-   <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question2/files/images/Access%20MongoDB%20Shell.png">
+   <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question2/files/images/Delete%20from%20MongoDB%20Shell.png">
+   <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question2/files/images/Delete%20from%20MongoDB.png">
 </p>
+
+Because I deleted only one document from the database, MongoDB will return **9,499 rows** of records. When I try to find the document using the **({"email_address": "info@mobiance.com"})** query, MongoDB stops me since the document has already been removed and there are no matching query.
 <br></br>
 
 
