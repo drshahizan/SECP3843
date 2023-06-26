@@ -21,25 +21,21 @@
 1. Create a project folder and open it in Visual Studio Code
 
 2. Run the following command. `myproject` can be renamed to desired name
-3. 
+ 
 ```python
+//start project
 django-admin.py startproject myproject
-```
 
-1. Move into project directory using the command 
-```
+//Move into project directory using the command 
 cd myproject
-```   
 
-1. Open a new terminal and install virtual environment by running the below command. `myenv` can be replaced with desired name
-```
+//Open a new terminal and install virtual environment by running the below command. `myenv` can be replaced with desired name
 virtualenv myenv
-``` 
 
-1. Activate virtual environment by running command 
-```
+//Activate virtual environment by running command 
 myenv\Scripts\activate
-``` 
+```
+
 
 ### Step 3: Run server
 
