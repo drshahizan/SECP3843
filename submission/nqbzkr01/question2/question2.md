@@ -16,29 +16,43 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 2 (a)
 <h4>Steps Adding JSON File into MongoDB</h4>
 
-Step 1. Connect to MongoDB server
+Before adding JSON file into MongoDB, there is some steps that need to be followed:
+1. Install the MongoDB Community Server.
+2. Install the MongoDB Shell.
+3. Install MongoDB Database tools.
+4. Lastly, add paths in system environment variables.
+Can refer the tutorial <a href="https://www.youtube.com/watch?v=XZ4usENdH4s&list=PL_euSNU_eLbfmDxRw-Gx45ow5MtBAM3YS&index=7">here.</a>
+
+Step 1. Download the dataset provided.
+- Download the dataset that has been provided in github and put it in file repository.
+![Screenshot 2023-06-26 142817](https://github.com/drshahizan/SECP3843/assets/92329710/bdd26807-f5ac-429a-9588-f2f0505eb604)
+
+Step 2. Connect to MongoDB server
 -Open the command prompt and type `mongod`
 ![Screenshot 2023-06-26 102930](https://github.com/drshahizan/SECP3843/assets/92329710/54312172-12a9-484e-ba27-bfbe463f3f8a)
 
-Step 2. Import the JSON file into MongoDB
+Step 3. Import the JSON file into MongoDB
 - To import the JSON File into MongoDB, use `mongoimport` command.
-`mongoimport "C:\Users\pc\Documents\dataset\03-movie\theaters.json" -d movie -c theaters --drop`
+`mongoimport "C:\Users\pc\Documents\dataset\03-movie\theaters.json" -d movie -c theaters`
+![Screenshot 2023-06-26 112034 (2)](https://github.com/drshahizan/SECP3843/assets/92329710/b08d3006-69fd-4ad5-8f12-b0a37596fbc9)
 
 - The `mongoimport` is a command-line tool provided by MongoDB that allows user to import data from various file formats including JSON, CSV, and TSV into a MongoDB database.
 - The `"C:\Users\pc\Documents\dataset\03-movie\theaters.json"` is the file path of where the JSON file that need to be imported is located.
 - The `-d movie` defined as the specified database name which is movie database in MongoDB localhost.
 - `-c theaters` defined as the specified collection in the database that is in the movie database.
-- `--drop` is used to drop the target collection before the data is imported. It ensures that the existing collection is first deleted, and then the new data is imported.
 
-Step 2. Launch the `mongosh` shell
+Step 4. Launch the `mongosh` shell
 - Launch the `mongosh` shell by opening your command prompt (CMD) and type `mongosh`. Make sure the MongoDB application has been installed and running locally.
 ![Screenshot 2023-06-26 105759 (2)](https://github.com/drshahizan/SECP3843/assets/92329710/13e69939-bed5-41b4-992b-dc88749d2988)
 
-Step 3. 
-
+Step 5. View dataset in MongoDB
+- From command prompt, type `show dbs` and the command prompt will show all databases that resides in MongoDB localhost.
+![Screenshot 2023-06-26 112034 (3)](https://github.com/drshahizan/SECP3843/assets/92329710/1b9f2228-f886-4bdf-9075-0a0e3ff2ce2f)
+- From MongoDB Compass, all the database and collection can be viewed in this application.
+![Screenshot 2023-06-26 143635](https://github.com/drshahizan/SECP3843/assets/92329710/ec443a6a-f5c5-4c55-a1ed-4eb1a48b3279)
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
