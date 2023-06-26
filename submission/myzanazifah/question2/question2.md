@@ -158,7 +158,7 @@ Don't forget to hit the :star: if you like this repo.
       <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/read(2).png" /></div>
    - Update
      
-     For Updates, we can do two different queries where we can update only one document or many documents.
+     Updates operation is used to modify existing documents in a collection. For Updates, we can do two different queries where we can update only one document or many documents.
 
      - Update One Document
        - The code below only allows to edit one document at a time.
@@ -190,6 +190,20 @@ Don't forget to hit the :star: if you like this repo.
            <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update2%20(3).png" /></div>
             <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update2%20(4).png" /></div>
    - Delete
+
+     Delete operation is for removing documents from a collection in the database.
+
+     - The code below is for removing one document from the database.
+       ```
+        db.col_stories.deleteOne({ id: "19971854" })
+       ```
+           
+             
+         <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/delete%20(2).png" /></div>
+     - Below is the data before being removed.
+       <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/delete%20(1).png" /></div>
+     - Below is the data after being removed.
+       <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/delete%20(3).png" /></div>
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
