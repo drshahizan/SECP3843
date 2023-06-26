@@ -266,7 +266,40 @@ urlpatterns = [
 
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+![Q1](files/images/q1.png)
+#### Architecture Components
+1. User Interface
+
+User interface refers to the methods through which a user interacts with a computer system, software application, or electronic device. It encompasses all the components and elements that allow users to input commands, navigate functionalities, and receive system feedback. The main purpose of a user interface is to facilitate effective communication and interaction between the user and the system.
+
+2. Django Web Server
+
+The Django Web Server handles HTTP requests, processes them, and generates dynamic web pages. It utilizes Django's URL routing, request handling, session management, and template rendering capabilities.
+
+3. Database Server
+
+The Database Server consists of two components: MySQL Database and MongoDB Database. The MySQL Database stores and manages structured data, such as user information, and utilizes SQL queries for data retrieval and manipulation. On the other hand, the MongoDB Database stores and manages a JSON dataset with varying structures and nested data. It follows a document-oriented model and employs MongoDB queries for data retrieval and manipulation.
+
+4. JSON Dataset
+
+Consists of four datasets, comments, movies, theaters, and users.
+
+5. Django App
+
+The Django App represents the Django application that integrates the JSON dataset, MySQL, and MongoDB. It defines models to represent the JSON dataset and interact with the databases. The Django ORM (Object-Relational Mapping) is used for database operations and data retrieval.
+
+6. Applications Layer
+
+The Applications Layer consists of Views and Templates. Views handle user requests, retrieve data from the databases, and pass it to the templates. Templates render dynamically generated web pages using the retrieved data.
+
+7. Visualization
+
+The Visualization Tool interacts with the MySQL and MongoDB databases to retrieve the necessary data for visualization purposes. It executes queries against the databases to extract relevant data and generates visual representations such as charts, graphs, or reports. The resulting visualizations are then presented to users through the web server, enabling them to gain insights and analyze the data.
+
+
+The central component of the diagram is the Django web server, which is responsible for handling HTTP requests, processing them, and generating dynamic web pages. The structured data, including movie details, comments, theaters details, users information, is stored in the JSON dataset called movies.json, comments.json, theaters.json, and users.json respectively. To manage this structured data, a MySQL database is utilized, following a relational model and utilizing SQL queries for data retrieval and manipulation. Additionally, the JSON dataset is stored and managed in a MongoDB database, which follows a document-oriented model and supports MongoDB queries for data operations.
+
+The Django application, referred to as the Django App in the diagram, acts as a connector between the web server, the JSON dataset, and the databases. It defines models that represent the JSON dataset and enables interaction with both the MySQL and MongoDB databases. Views and templates in Django handle user requests, retrieve data from the databases, and render dynamically generated web pages. Lastly, visualization tools are utilized to generate insights and outcomes based on the data.
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
