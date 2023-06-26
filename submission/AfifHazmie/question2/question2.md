@@ -95,10 +95,11 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
         satisfaction: 4,
         couponUsed: false,
         purchaseMethod: "In store"
-      }
-    })
-     ```
-   - 
+      }}) 
+   
+   - the created data can be found inside the collecton by filtering using `{storeLocation: "Johor"}`
+
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/createquery.jpg">
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
