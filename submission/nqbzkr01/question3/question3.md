@@ -20,7 +20,7 @@ Don't forget to hit the :star: if you like this repo.
 - <strong>Creating a Virtual Environment for Django Project</strong>
 - A virtual environment allows you to isolate your current project dependencies from the rest of packages installed globally on your system or in the other virtual environments. You can either use `virtualenv` which needs to be installed on your system or the `venv` module available as a module in recent versions of Python 3.
 - Type this in command prompt:
-  ```python
+  ```
   $ python -m venv env
   ```
 - Next, activate the virtual environment using:
