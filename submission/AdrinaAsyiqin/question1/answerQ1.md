@@ -7,40 +7,37 @@
 ## Question 1 (a)
 ### Step 1: Install and Configure Django
    
-   a. Install python from official Python Website (https://www.python.org/downloads/) and follow instructions for operating system. 
+1. Install python from official Python Website (https://www.python.org/downloads/) and follow instructions for operating system. 
 
-   b. Download latest version of Python for windows by clicking on 'Download Python'
+2. Download latest version of Python for windows by clicking on 'Download Python'
 
-   c. Run downloaded installer .exe file
+3. Run downloaded installer .exe file
 
-   d. Select option 'Add python PATH' and choose the 'Customize installation' option 
-
-   In the customisation screen, ensure pip package and the 'add python to environment' variables option is selected
+4. Select option 'Add python PATH' and choose the 'Customize installation' option. In the customisation screen, ensure pip package and the 'add python to environment' variables option is selected
    <br>
 
 ### Step 2: Create Django Project Folder
 
-   a. Create a project folder and open it in Visual Studio Code
+1. Create a project folder and open it in Visual Studio Code
 
-   b. Run the following command. `myproject` can be renamed to desired name
+2. Run the following command. `myproject` can be renamed to desired name
 
-        ```
-           django-admin.py startproject myproject
-        ```
+```python
+django-admin.py startproject myproject
+```
 
-   c. Move into project directory using the command 
+3. Move into project directory using the command 
+```
+cd myproject
+```   
 
-        ```
-           cd myproject
-        ```   
+4. Open a new terminal and install virtual environment by running the below command. `myenv` can be replaced with desired name
 
-   d. Open a new terminal and install virtual environment by running the below command. `myenv` can be replaced with desired name
+```
+virtualenv myenv
+``` 
 
-   ```
-    virtualenv myenv
-    ``` 
-
-   e. Activate virtual environment by running command 
+5. Activate virtual environment by running command 
 
 
 ### Step 3: Run server
