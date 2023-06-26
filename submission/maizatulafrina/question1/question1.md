@@ -67,7 +67,13 @@ project, and the MySQL and MongoDB databases, few servers need to be setup and c
           def __str__(self):
               return self.name
 
-              
+**4. Migrate the Models**
+
+-  To do migration, run `python manage.py makemigrations` command and `python manage.py migrate` command. 
+
+    <img width="626" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/373af744-c84a-4df6-914b-c53d6ca621f8">
+
+
 ## Question 1 (b)
 
 
