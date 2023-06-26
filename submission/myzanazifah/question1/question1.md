@@ -129,6 +129,21 @@ python manage.py migrate
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/SystemArchitecture.jpg" />
 
+1. Client Layer
+   - Dashboard
+   - Web Browser
+   - UI Interface
+3. Reverse Proxy
+4. Django Application Layer
+   - View
+   - Model
+   - Template
+6. Database Layer
+   - Djongo
+   - MongoDB
+   - ORM
+   - MySQL
+
 
 
 
