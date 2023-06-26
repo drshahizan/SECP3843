@@ -75,7 +75,7 @@ Running `python manage.py makemigrations` examines the current state of your mod
 
 9. `Register Apps`: In the `setting.py` file, locate the INSTALLED_APPS method. Add a new app below the 'django.contrib.statisfiles' called `AnalyticsDataset` so that when the mogration proses is initiated, Django web server knows which app is being updated to the MySql and MongoDB databse.
 
-![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image11.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image16.png)
 
 9. `Migrate database`: Type in `python manage.py makemigrations` in the command prompt. Then, run the python manage.py migrate command to apply these migrations. My Sql and MongoDB database will be updated.
 
