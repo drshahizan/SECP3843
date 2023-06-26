@@ -30,32 +30,52 @@ Install the following below:
 - [Python](https://www.python.org/downloads/)
 
 ### Steps
-Step 1: Install Django and required dependencies:
- - Make sure you have Python installed on your system.
+Step 1: Install Django:
  - Open command prompt.
  - Install Django using pip: `pip install django`.
- - Install the Django MySQL package: `pip install mysqlclient`.
- - Install the Django MongoDB package: `pip install djongo`.
- - Install any other necessary dependencies based on your specific project requirements.
 
 Optional: Set up the virtual environment:
 - A virtual environment is a self-contained environment that allows you to install packages without changing the overall Python installation on your machine. Run the following command in your terminal to establish a virtual environment:
   ```python
       python -m venv myenv
-      // activate virtual environment
+      myenv\Scripts\activate
+  ```
+- Activate virtual environment
+  ```python
       myenv\Scripts\activate
   ```
 
 Step 2: Set up the Django project:
- - Create a new Django project using the command: `django-admin startproject analytics`.
- - Navigate into the project directory: `cd analytics`.
+- Create a new Django project using the command: `django-admin startproject analytics`.
+- Navigate into the project directory: `cd analytics`.
+  
+<img  src="./files/images/envproject.png"></img>
 
-Step 3: Set up the Django app:
-- Create a new Django project using the command: `django-admin startapp analytics`.
+Step 3: Set up the Django app and install required packages:
+- Create a new Django project using the command: `django-admin startapp app`.
+- Install the Django MySQL package: `pip install mysqlclient`.
+- Install the Django MongoDB package: `pip install djongo`.
+- Install any other necessary dependencies based on your specific project requirements.
+   
+  <img  src="./files/images/app.png"></img>
+
+- Open the `settings.py` file located in the project 'analytics' directory.
+- Add in the `INSTALLED_APPS` configuration to include 'app'.
+  ```python
+     INSTALLED_APPS = [
+       'django.contrib.admin',
+       'django.contrib.auth',
+       'django.contrib.contenttypes',
+       'django.contrib.sessions',
+       'django.contrib.messages',
+       'django.contrib.staticfiles',
+       'app',
+    ]
+  ```
   
 Step 4: Configure the database in project settings:
- - Open the `settings.py` file located in the project 'analytics' directory.
- - Set the `DATABASES` configuration to include both MySQL and MongoDB settings. Here's an example:
+- Open the `settings.py` file located in the project 'analytics' directory.
+- Set the `DATABASES` configuration to include both MySQL and MongoDB settings. Here's an example:
 
    ```
      DATABASES = {
@@ -79,44 +99,54 @@ Step 4: Configure the database in project settings:
      ```
 
 Step 5: Define Django models:
- - Open the `models.py` file in the 'accounts' directory.
- - Define your models according to the JSON dataset's structure. Use Django's model fields to map the JSON data fields to the database fields.
- - Repeat this steps for 'customers' and 'transaction'.
-   - accounts models:
-    ```javascript
-       class accounts(models.model):
-         account_id = models.IntegerField(primary_key=True)
-         limit = models.IntegerField()
-         products = models.ArrayField(models.CharField(max_length=100))
+- Open the `models.py` file in the 'app' directory.
+- Define your models according to the JSON dataset's structure. Use Django's model fields to map the JSON data fields to the database fields.
+
     ```
-    - customers models:
-    ```javascript
-       class customers(models.model):
-         username = models.CharField(max_length=100)
-         name = models.CharField(max_length=100)
-         address = models.CharField(max_length=200)
-         birthdate = models.DateField()
-         email = models.EmailField()
-         accounts = models.ArrayField(models.IntegerField())
-         tier_and_details = models.JSONField()
+       from django.db import models
+
+       # Create your models here.
+       class Account(models.Model):
+           account_id = models.IntegerField(primary_key=True)
+           limit = models.IntegerField()
+           products = models.JSONField()
+           
+           def __str__(self):
+               return f"Account ID: {self.account_id}"
+           
+       class Customer(models.Model):
+           username = models.CharField(max_length=255)
+           name = models.CharField(max_length=255)
+           address = models.TextField()
+           birthdate = models.DateTimeField()
+           email = models.EmailField()
+           active = models.BooleanField()
+           accounts = models.JSONField()
+           tier_and_details = models.JSONField()
+       
+           def __str__(self):
+               return self.username
+       
+       
+       class Transaction(models.Model):
+           account_id = models.IntegerField()
+           transaction_count = models.IntegerField()
+           bucket_start_date = models.DateTimeField()
+           bucket_end_date = models.DateTimeField()
+           transactions = models.JSONField()
+       
+           def __str__(self):
+               return f"Transactions for Account ID: {self.account_id}"
     ```
-    - transactions models:
-    ```javascript
-       class transactions(models.model):
-         account_id = models.IntegerField()
-         transaction_count = models.IntegerField()
-         bucket_start_date = models.DateField()
-         bucket_end_date = models.DateField()
-         transactions = models.JSONField()
-    ```
+ 
 
 Step 6: Migrate the models:
- - Apply the initial migrations for both MySQL and MongoDB databases using the command: `python manage.py migrate`.
+ - Apply the initial migrations for both MySQL and MongoDB databases using the command.
    ```python
    python manage.py makemigrations
    ```
  - Django will create the necessary tables and collections in the databases based on your model definitions.
- - Once you have created the migration file, you can apply the migrations by running the following command:
+ - Once you have created the migration file, you can apply the migrations by running the following command.
    ```python
    python manage.py migrate
    ```
