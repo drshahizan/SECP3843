@@ -49,6 +49,7 @@ It's important to have a good system for managing traffic to ensure the web serv
    ii. Start the Django project by executing the `django-admin startproject` command and navigate to the project directory.
    
    <img src="https://github.com/sakinahalizzah/SECP3843/assets/99240177/6683a49d-7ae0-46b6-bd7d-ee48ac0c5fa2" />
+   
    Ensure that the project file has been generated.
    
    <img src="https://github.com/sakinahalizzah/SECP3843/assets/99240177/7ec8a872-45de-4a93-a010-ed7c9fecbf3e" />
@@ -93,6 +94,7 @@ To define your Django models, head to the models.py file found within your app d
 **6. Load JSON Data into Databases**
 
 **5. Perform Data Retrieval**
+
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
