@@ -14,15 +14,17 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Supply Store
 
 ## Question 2 (a)
-Pre-Steps:
+Requirement before following the steps:
 - Install [MongoDB Shell](https://www.mongodb.com/try/download/shell)
 - Install [MongoDB Community](https://www.mongodb.com/try/download/community)
+- Install [MongoDB Database Tools](https://www.mongodb.com/try/download/database-tools)
   
 1. Download and prepare the JSON data file [Supply Store](https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales) into device.
    
    <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA24.jpg" style="width: 800px; height: 350px;">
    
-2. Open Command Prompt and type the command `mongod --version` to check the mongodb version and `mongod`
+2. Open Command Prompt and type the command `mongod --version` to check the mongodb version and the type the command `mongod` to start mongodb server
+   
    <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA21.jpg" style="width: 450px; height: 250px;">
 ---
    <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA22.jpg" style="width: 1000px; height: 600px;">
@@ -43,7 +45,13 @@ Pre-Steps:
     - `--db` = database name
     - `--collection` = database collection name
     - `--file` = file path to the JSON dataset file
-6. 
+    - The Database and collection will be automatically created as we execute the command.
+      
+    <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA26.jpg" style="width:900px; height: 200px;">
+      
+6. Successfully import JSON dataset into mongoDB
+
+   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA27.jpg" style="width:700px; height: 500px;">
 
 ## Question 2 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
