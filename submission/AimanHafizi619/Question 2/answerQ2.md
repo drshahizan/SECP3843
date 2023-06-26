@@ -64,9 +64,15 @@ The MongoDB Shell is a command-line interface (CLI) tool provided by MongoDB tha
 
 ## Question 2 (b)
 
-**Create Operation**
+Before applying the CRUD (Create, Read, Update, Delete) operations, do these steps first
 
-Create We will be using the db.comments.insertOne() method to insert a single document into the selected collection. This is an example of the method
+**Step 1**: Start MongoDB server
+
+>If currently using the the previous command prompt, click the command prompt. Then, click `Ctrl + C` twice to exit the previous database.
+
+>If opening a brand new command prompt, type in `mongod` to run MongoDB server.
+
+![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image16.png)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
