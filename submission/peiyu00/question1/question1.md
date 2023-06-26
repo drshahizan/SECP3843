@@ -34,7 +34,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
     - Model: Model component represents the data structure and defines how data is stored in the databases.
     - View: View receives requests from the user interface, retrieves and manipulates data from the models, and renders the appropriate templates for generating HTML or other response formats. 
     - Template: Template is a file to describe how the result should be represented. It is responsible for generating the user interface and presenting the data to the user. 
-  - Django ORM:ORM (Object-Relational Mapping) is an abstract layer provided by django The ORM allows developers to perform database operations such as inserting, updating, deleting and querying using Python code and eliminates the need to write raw SQL queries.
+  - Django ORM: ORM (Object-Relational Mapping) is an abstract layer provided by django The ORM allows developers to perform database operations such as inserting, updating, deleting and querying using Python code and eliminates the need to write raw SQL queries.
 
 - #### Database
   There will be two databases integrate in this project 
