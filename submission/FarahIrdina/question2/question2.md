@@ -33,7 +33,7 @@ Then, open the directory file that has the mongosh.exe by using command prompt a
 mongosh
 ```
 
-![image1](https://github.com/drshahizan/SECP3843/submission/FarahIrdina/question2/files/images/mongosh.png)
+![image](https://github.com/drshahizan/SECP3843/submission/FarahIrdina/question2/files/images/mongosh.png)
 
 #### 4. Search for existing databases
 
