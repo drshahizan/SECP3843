@@ -37,8 +37,38 @@ Don't forget to hit the :star: if you like this repo.
     ```python
     $ pip install mysqlclient
     ```
-
-
+- <strong>Creating a MySQL Database to Store Authentication Info</strong>
+  - In the command prompt invoke the `mysql` client using the following command:
+    ```
+    $ mysql -u root -p
+    ```
+  - The command prompt will ask the MySQL password then enter the password and hit Enter.
+  - After that, run the following SQL statement to create a database:
+    ```
+    mysql> create database moviedb;
+    ```
+- <strong>Creating a Django Project</strong>
+  - Let's now create the project using `django-admin.py`. In the terminal, run the following command:
+    ```
+    $ django-admin.py startproject demoproject
+    ```
+  - Next, open the `settings.py` of your project and add the database address and credentials inside the `DATABASES` object.
+    ```
+    DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql', 
+        'NAME': 'mydb',
+        'USER': 'root',
+        'PASSWORD': 'YOUR_DB_PASSWORD',
+        'HOST': 'localhost',   
+        'PORT': '3306',
+        }    
+    }
+    ```
+  - 
+    
+    
+  
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
