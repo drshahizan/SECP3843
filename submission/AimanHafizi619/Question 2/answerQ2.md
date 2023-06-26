@@ -52,9 +52,13 @@ The MongoDB Shell is a command-line interface (CLI) tool provided by MongoDB tha
 **Step 6**
 >Go to `Program Files` > `MongoDB` > `Tools` > `100` > `bin`. Using MongoDB Shell, type in the following code.
 
-`mongoimport --uri mongodb+srv://admin:admin@projectcluster.7sndifd.mongodb.net/ --db analytics --collection analyticsdataset --file "C:\Users\ahmad\Desktop\Django\accounts.json".`
+`mongoimport --uri mongodb+srv://admin:admin@projectcluster.7sndifd.mongodb.net/ --db analytics --collection Analytics --file "C:\Users\ahmad\Desktop\Analytics\accounts.json".`
 
-![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image8.png)
+`mongoimport --uri mongodb+srv://admin:admin@projectcluster.7sndifd.mongodb.net/ --db analytics --collection Analytics --file "C:\Users\ahmad\Desktop\Analytics\customers.json".`
+
+`mongoimport --uri mongodb+srv://admin:admin@projectcluster.7sndifd.mongodb.net/ --db analytics --collection Analytics --file "C:\Users\ahmad\Desktop\Analytics\transactions.json".`
+
+![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image%2012.png)
 
 **Step 7**
 Final results should look like below
