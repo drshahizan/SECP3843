@@ -96,7 +96,20 @@ To define your Django models, head to the models.py file found within your app d
 **5. Perform Data Retrieval**
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<img src="https://github.com/sakinahalizzah/SECP3843/assets/99240177/7d918d46-0aff-4e93-a0bf-d0bf57cfa040" />
+
+Integrating a web server, dataset, and databases can be a complex process, but with the right system architecture in place, it can be seamless and efficient. The architecture that we recommend involves building the web server on the Django framework. Django is a popular Python-based framework for building web applications, and it provides developers with a range of useful tools and features for creating robust and scalable web applications.
+
+In this architecture, the dataset is stored in JSON format. JSON is a lightweight data format that is commonly used for transmitting and storing structured data. By using JSON, developers can ensure that their data is easily accessible and can be transmitted quickly and efficiently.
+
+To store and retrieve data, two databases are used: MySQL and MongoDB. MySQL is a popular relational database management system that is well-suited for structured data with predefined schemas. It is a reliable and robust database system that is widely used in enterprise applications. On the other hand, MongoDB is a NoSQL database that offers high scalability and flexibility for unstructured or semi-structured data. It is a popular choice for applications that require a high degree of flexibility and scalability.
+
+To integrate Django with both databases, developers use Django's Object-Relational Mapping (ORM). The ORM provides an abstraction layer that simplifies database operations, allowing developers to interact with the databases using Python objects and methods. This abstraction simplifies the process of working with databases, making it easier for developers to write code that interacts with the databases.
+
+The ORM also provides an abstraction layer between the application and the databases. This enables seamless data manipulation, ensuring that the application can interact with the databases in a seamless and efficient manner. By using the ORM, developers can ensure that their code is easily maintainable and scalable.
+
+Overall, this system architecture provides a robust and scalable solution for integrating Django, JSON datasets, and both MySQL and MongoDB databases. It ensures efficient data storage and retrieval and allows for seamless integration between the web server and the databases. With this architecture in place, developers can build robust and scalable web applications that can handle a high volume of data and traffic.
 
 
 
