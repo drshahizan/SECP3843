@@ -131,7 +131,38 @@ python manage.py import_json_data
 
 
 ## Question 1 (b)
-### user INterface (UI)
+
++---------------------+
+|       User          |
+|      Interface      |
++----------+----------+
+           |
+           |
+    HTTP Requests
+           |
+           v
++---------------------+
+|    Django Web       |
+|       Server        |
++---------------------+
+           |
+           |
+    Database Queries
+           |
+           v
++---------------------+
+|      MySQL          |
+|     Database        |
++---------------------+
+           |
+           |
+    Database Queries
+           |
+           v
++---------------------+
+|      MongoDB        |
+|     Database        |
++---------------------+
 
 
 
