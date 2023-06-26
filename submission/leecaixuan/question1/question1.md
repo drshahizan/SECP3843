@@ -94,6 +94,56 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 
+<h4>Step 4 - Import JSON file into database</h4>
+
+Create a load_data.py file to import the JSON file into database.
+
+```
+import json
+from django.core.management.base import BaseCommand
+from AA_DjangoApp.models import Account, Customer, Transaction
+
+class Command(BaseCommand):
+    help = 'Loads JSON data into the database.'
+
+    def handle(self, *args, **options):
+        account_file = '"c:\Users\User\Downloads\AA_SpecialTopic\accounts.json"'
+        customer_file = 'c:\Users\User\Downloads\AA_SpecialTopic\customers.json'
+        transaction_file = 'c:\Users\User\Downloads\AA_SpecialTopic\transactions.json'
+
+        # Load Accounts JSON data
+        with open(account_file) as file:
+            account_data = json.load(file)
+
+            for item in account_data:
+                account = Account(account_id=item['account_id'], limit=item['limit'], products=item['products']])
+                account.save()
+
+        # Load Customers JSON data
+        with open(customer_file) as file:
+            customer_data = json.load(file)
+
+            for item in customer_data:
+                customer = Customer(username=item['username'], name=item['name'], address=item['address'], birthdate=item['birthdate'], email=item['email'], tier_and_details=item['tier_and_details'])
+                customer.save()
+
+        # Load Transactions JSON data
+        with open(transaction_file) as file:
+            transaction_data = json.load(file)
+
+            for item in transaction_data:
+                transaction = Transaction(account=item['account'], transaction_count=item['transaction_count'], bucket_start_date=item['bucket_start_date'], bucket_end_date=item['bucket_end_date'])
+                transaction.save()
+```
+
+Then, run the command below.
+
+```
+python manage.py load_data C:\Users\User\Downloads\AA_SpecialTopic\accounts.json c:\Users\User\Downloads\AA_SpecialTopic\customers.json c:\Users\User\Downloads\AA_SpecialTopic\transactions.json
+```
+
+
+
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
