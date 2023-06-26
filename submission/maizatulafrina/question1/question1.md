@@ -32,7 +32,15 @@ project, and the MySQL and MongoDB databases, few servers need to be setup and c
 
      <img width="465" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/3aa6d421-d49d-4332-813d-bb60aff4f53e">
 
-   - The other packages that need to be installed are mysqlclient and djongo. To install mysqlclient, run `pip install django
+   - The other packages that need to be installed are mysqlclient and djongo. To install mysqlclient, run `pip install django mysqlclient pymongo` command.
+     
+     <img width="415" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/aaddfea3-909f-4de1-b7a3-ca1570a8bf53">
+
+   - For djongo, run `pip install djongo` command.
+
+     <img width="415" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/ca408d19-7517-4282-b26b-86746daaff01">
+
+
 
 
 **2. MySQL**
