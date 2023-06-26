@@ -14,11 +14,27 @@ Don't forget to hit the :star: if you like this repo.
 #### Matric No.: A20EC0174
 #### Dataset: sales.json
 
-## Question 4 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Question 4 
+### Macbine Learning Approach
+#### Decision Tree
+- Data preparation
+  - Software that will be used is Alteryx
+  - Preprocess the sales data. Ensure the data is in a structured format with relevant features and a target variable (e.g., sales amount, customer category).
+  - Split the data into training and testing sets. The training set will be used to build the decision tree model, while the testing set will be used to evaluate its performance.
+- Feature selection
+  - Identify the features from the sales data that are most relevant to predicting the target variable. This can involve analyzing the correlation between features and the target, performing statistical tests, or using domain knowledge.
+  - Select the subset of features that will be used to build the decision tree model.
 
-## Question 4 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+#### Time Series Analysis
+Step 1: Data preparation
+Step 2: Data Exploration
+Step 3: Time Series Decomposition
+Step 4: Stationary Testing
+Step 5: Model Selection
+Step 6: Model Fitting and Parameter Estimation
+Step 7: Model Validation
+Step 8: Forecasting
 
 
 ## Contribution 🛠️
