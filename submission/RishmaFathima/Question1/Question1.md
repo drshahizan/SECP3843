@@ -21,10 +21,10 @@ Don't forget to hit the :star: if you like this repo.
         - Then, I created a new project b: Use the django-admin startproject command to create a new Django project from a folder I have created called ``AA_Question1``           by using the command called ``django-admin startproject AA_Question1``.
         - After creating the project, I created the Django app by the command ``python manage.py startapp app``.
           
-  3. Define Django models:
-        Analyze the JSON dataset to understand its structure and attributes.
-        Create Django models: Define Django models that mirror the structure of the JSON data. Each attribute in the JSON should correspond to a field in the Django             model.
-        Specify field types: Choose appropriate field types for each attribute in the Django models, considering the data types in the JSON dataset.
+  2. ``Define Django models``:
+        - JSON file is downloaded from the Github.
+        - Django models were created based on the attributes from the downloaded JSON file which contain the dataset of ``Airbnb Listing Dataset``.
+      
 
   4. Configure databases:
 
