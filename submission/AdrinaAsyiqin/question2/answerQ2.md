@@ -73,11 +73,13 @@ The command prompt will then ask for the password.
 use salesdatabase
 ```
 `salesdatabase` : Can be modified using your own database name
+
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/ff1ef1f3-c400-4756-9794-93b78f6f86ca)
 
 
 ### Step 2: Create the queries
 1. Create
+Use the following code to create 
 ```
 db.salessample.insertOne({
   "_id": ObjectId(),
@@ -124,3 +126,5 @@ db.salessample.updateOne(
 db.salessample.deleteOne({ "_id": ObjectId("5bd761dcae323e45a93ccfe8") })
 ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/4a39a065-d8d6-42dc-8c6c-870d04477de5)
+
+
