@@ -90,6 +90,16 @@ Before applying the CRUD (Create, Read, Update, Delete) operations, do these ste
 
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image21.png)
 
+**Step 5**: Create Operation.
+
+>Type in the code below to add a new row of data into the Accounts collections. There will be four attributes `_id`, `account_id`, `limit`, and `products`.
+
+>MongoDB will create a random ObjectId if left unspecified.
+
+![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image22.png)
+
+
+
 
 
 ## Contribution 🛠️
