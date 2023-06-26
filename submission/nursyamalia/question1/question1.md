@@ -160,7 +160,7 @@ Step 7: Load the JSON dataset into databases:
                        |
             +----------v----------+
             | Data Processing and |
-            |    Integration     |
+            |    Integration      |
             +---------------------+
 ```
 
