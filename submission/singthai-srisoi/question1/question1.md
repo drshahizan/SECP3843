@@ -230,16 +230,6 @@ Don't forget to hit the :star: if you like this repo.
    mongodb_theaters_list = list(mongodb_theaters.values())
    mongodb_users_list = list(mongodb_users.values())
    ```
-   
-   - You can also use Django's serializer classes to convert the retrieved data into JSON or other formats.
-   
-   ```python
-   from django.core import serializers
-
-   # Serialize data to JSON format
-   mysql_comments_json = serializers.serialize('json', mysql_comments)
-   mongodb_comments_json = serializers.serialize('json', mongodb_comments)
-   ```
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
