@@ -147,6 +147,15 @@ Don't forget to hit the :star: if you like this repo.
       <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/create(2).png" /></div>
      
    - Read
+     - Read operation is to find and retrieve certain data from database. The code below is for finding one data from the database.
+         
+       ```python
+   
+          db.col_stories.find({ id:"19972758" })
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/read(1).png" /></div>
+     - After running the code, check whether the data exist in the database. Below shows that the data exist in the database.
+     
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/read(2).png" /></div>
    - Update
    - Delete
 
