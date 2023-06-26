@@ -63,9 +63,11 @@ By using mysqlclient, it can establish a connection to a MySQL database server, 
 
 In the context of Django, a model represents the structure and behavior of a database table. It defines the fields and relationships of the data stored in the table. Models in Django are typically defined in the models.py file of an app.
 
-8. *Create models*: Do to AnalyticsDataset app, locate the `models.py` file and update the models to match that of the AA dataset. Create three models: Accounts, Customers, and Transactions.
+8. *Create models*: For every app (Accounts, Cistomers, and Transaction), locate the `models.py` file and update the models as below.
 
-![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image8.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image13.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image13.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image13.png)
 
 When you define or modify your Django models, such as adding new fields or altering existing ones, Django needs to keep track of these changes and apply them to the database. Database migrations provide a way to manage these changes and keep the database schema synchronized with the models.
 
