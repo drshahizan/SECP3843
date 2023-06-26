@@ -28,9 +28,9 @@ To integrate Django with the JSON dataset and ensure efficient data storage and 
 
 ![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image2.png)
 
-3. *Create Django app*: Change directory by typing 'cd Analytics` in command prompt. Inside the Analytics directory, create an app by typing `python manage.py startapp AnalyticsDataset` in the command prompt where AnalyticsDataset is the name of the app. A new app directory with the required files will be created.
+3. *Create Django app*: Change directory by typing 'cd Analytics` in command prompt. Inside the Analytics directory, create three apps by typing `python manage.py startapp app_name` where app_name is 'Accounts','Customers' and 'Transactions' in the command prompt. New apps directory with the required files will be created.
 
-![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image3.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image12.png)
 
 4. *Locate Database*: Open the settings.py file in Analytics directory. Set the "DATABASES" dictionary to include the necessary configuration for MySQL and MongoDB databases. Locate the screenshot of database codes in the settings.py file.
 
