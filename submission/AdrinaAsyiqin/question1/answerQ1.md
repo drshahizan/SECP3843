@@ -133,31 +133,63 @@ python manage.py import_json_data
 ## Question 1 (b)
 
 ```
-                     +---------------------+
-                     |       User          |
-                     |      Interface      |
-                     +----------+----------+
-                                |
-                                |
-                         HTTP Requests
-                                |
-                                v
-                     +---------------------+
-                     |    Django Web       |
-                     |       Server        |
-                     +---------------------+
-                                |
-                                |
-                         Database Queries
-                                |
-               +----------------v----------------+
-               |                                 |
-               |                                 |
-+---------------------+                +---------------------+
-|      MySQL          |                |      MongoDB        |
-|     Database        |                |     Database        |
-+---------------------+                +---------------------+
++----------------------+
+|   User Interface     |
++----------------------+
+       | HTTP Request
+       |
+       v
++----------------------+
+|  Django Web Server   |
++----------------------+
+       | Query
+       |
+       v
++----------------------+
+|     MySQL Database   |
++----------------------+
+       | Query
+       |
+       v
++----------------------+
+|    MongoDB Database  |
++----------------------+
+       | Result
+       |
+       v
++----------------------+
+|  Django Web Server   |
++----------------------+
+       | Response
+       |
+       v
++----------------------+
+|   User Interface     |
++----------------------+
+
 ```
+1. <b>User Interface</b>
+The User Interface is responsible for the presentation layer of the system, allowing users to interact with the application. It is developed using web technologies such as HTML, CSS, and JavaScript, along with any relevant frontend frameworks or libraries. Users interact with the interface by inputting data, clicking buttons, or navigating through different pages. The User Interface communicates with the Django web server by sending HTTP requests, which trigger server-side processing and generate responses to be displayed back to the user.
+
+2. <b>Django Web Server</b>
+The Django Web Server, an advanced Python web framework, acts as the core component of the system. It manages the server-side logic and handles incoming HTTP requests from the User Interface. With its robust functionality, the web server processes these requests, executing necessary operations, and generating appropriate responses. It seamlessly integrates with the databases, enabling smooth data operations such as data retrieval and modification. Additionally, the Django Web Server takes charge of URL routing, request management, and template rendering, ensuring efficient handling of user interactions and dynamic content generation for the User Interface.
+
+3. <b>MySQL Database</b>
+The MySQL Database is a widely used relational database management system known for its reliability and scalability. It stores data in a structured manner, organized in tables with predefined schemas. In the context of our system, Django interacts with the MySQL Database through the Django ORM (Object-Relational Mapping). The Django ORM facilitates seamless communication between the web server and the database by mapping database tables to Django models. This abstraction layer allows developers to define models that represent the database tables and provides a convenient interface for performing queries and manipulating data. Through the Django ORM, the MySQL Database efficiently handles data storage and retrieval operations, ensuring the integrity and consistency of the system's data.
+
+4. <b>MongoDB Database</b>
+MongoDB is a versatile NoSQL document-oriented database that excels at handling unstructured or semi-structured data. It utilizes a JSON-like document format with dynamic schemas, offering flexibility in data representation and evolution. In our system, Django communicates with MongoDB through suitable database connectors or libraries. This integration enables Django to utilize MongoDB as an alternative database backend, empowering developers to define models and perform CRUD operations on the data. By leveraging MongoDB's scalability and flexibility, our system can effectively store and retrieve data, adapting to the changing requirements of the application.
+
+### The Flow
+1. User interacts with the User Interface and triggers an HTTP request.
+2. The request is sent to the Django web server.
+3. Django processes the request and performs necessary operations.
+4. For data operations, Django interacts with both the MySQL and MongoDB databases.
+5. Django queries the MySQL database using the Django ORM for relational data needs.
+6. Django queries the MongoDB database using appropriate connectors or libraries for NoSQL data needs.
+7. The databases process the queries and return the results to Django.
+8. Django generates the appropriate response and sends it back to the User Interface.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
