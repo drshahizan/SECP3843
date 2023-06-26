@@ -46,7 +46,8 @@ Run Django's migration commands to create the necessary tables in both the MySQL
 
 
 ## Question 1 (b)
-<img height="200px" src="materials/system_architecture.png" />
+<div align="center"><img src="../materials/system_architecture.png" /></div>
+
 
 
 
