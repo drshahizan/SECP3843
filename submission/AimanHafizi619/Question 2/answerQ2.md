@@ -44,12 +44,7 @@ The MongoDB Shell is a command-line interface (CLI) tool provided by MongoDB tha
 
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image10.png)
 
-**Step 5**
->Using MongoDB Shell, select selection `analyticsdataset`. The command db. should be followed by database name. For example: I will run db.ListingsAndReviews.
-
-![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image6.png)
-
-**Step 6**
+**Step 7**
 >Go to `Program Files` > `MongoDB` > `Tools` > `100` > `bin`. Using MongoDB Shell, type in the following codes one after the other.
 
 `mongoimport --uri mongodb+srv://admin:admin@projectcluster.7sndifd.mongodb.net/ --db analytics --collection Analytics --file "C:\Users\ahmad\Desktop\Analytics\accounts.json".`
@@ -60,7 +55,7 @@ The MongoDB Shell is a command-line interface (CLI) tool provided by MongoDB tha
 
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image%2012.png)
 
-**Step 7**
+**Step 8**
 Final results should look like below. All three collections named `Accounts`, `Customers`, and `Transactions` has been automatically filled with data from the JSON files.
 
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image%2013.png)
