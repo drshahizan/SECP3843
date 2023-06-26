@@ -14,7 +14,66 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: AIRBNB LISTINGS DATASET
 
 ## Question 2 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+The JSON file that I have been received is about AirBnb Listing Reviews. To import this JSON file inside MongoDB database, there are a few steps that must be followed.
+
+#### 1. Install MongoDB Command Line Database Tools
+
+Firstly, click ![here](https://www.mongodb.com/try/download/bi-connector) to download MongoDB Command Line Database Tools. Click Download and install it.
+
+#### 2. Install MongoDB Shell
+
+Next, click ![here](https://www.mongodb.com/try/download/bi-connector) to download MongoDB Shell. Click Download and install it.
+
+#### 3. Run mongosh
+
+Then, open the directory file that has the mongosh.exe by using command prompt and type the code below. 
+
+```
+mongosh
+```
+
+![image1](https://github.com/drshahizan/SECP3843/submission/FarahIrdina/question2/files/images/mongosh.png)
+
+#### 4. Search for existing databases
+
+Next, to search the existing databases inside your MongoDB, type the code below. 
+
+```
+show dbs
+```
+
+![image](https://github.com/drshahizan/SECP3843/submission/FarahIrdina/question2/files/images/dbs.png)
+
+#### 5. Use any database
+
+Next, use any database that you prefer based on the list of databases above. I will use 'admin' database to store the JSON data. Type the code below. 
+
+```
+use admin
+```
+
+![image](https://github.com/drshahizan/SECP3843/submission/FarahIrdina/question2/files/images/admin.png)
+
+#### 6. Search for existing collections
+
+Then, to search the existing collections inside your database, type the code below. 
+
+```
+show collections
+```
+
+![image](https://github.com/drshahizan/SECP3843/submission/FarahIrdina/question2/files/images/collections.png)
+
+#### 7. Import JSON file into MongoDB
+
+Lastly, you can import your JSON file into MongoDB. Type the code below. 
+
+```
+mongoimport --db admin --collection airbnb --file C:\Users\User\Downloads\listingsAndReviews.json
+```
+
+![image](https://github.com/drshahizan/SECP3843/submission/FarahIrdina/question2/files/images/mongoimport.png)
 
 ## Question 2 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
