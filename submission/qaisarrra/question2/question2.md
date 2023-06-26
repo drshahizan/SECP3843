@@ -201,7 +201,13 @@ db.Companies.updateOne(
 
 
 **b. Update Many Documents**
-To update contents of multiple documents, I used [db.collection.updateMany()](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateMany/).
+
+To update contents of multiple documents, I used [db.collection.updateMany()](https://www.mongodb.com/docs/manual/reference/method/db.collection.updateMany/). To locate the record, I used the **{"twitter_username": "", founded_year: 2004}** query followed by setting the query that we would like to change. In the figures below, we can see that the **twitter_username** in the document is **null**, before setting it to **temporary**. We can see that MongoDB returns 92 rows of records in which the column **twitter_username** are empty AND **founded_year** is **2004**.
+<p align="center">
+   <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question2/files/images/Before%20UpdateMany.png">
+</p>
+
+Execute this command in MongoDB Shell to set null valued twitter_username (with founded year 2004) to **temporary**
 ```bash
 db.Companies.updateMany(
    {
@@ -213,6 +219,9 @@ db.Companies.updateMany(
    }
 )
 ```
+<p align="center">
+   <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question2/files/images/After%20UpdateMany.png">
+</p>
 
 ### Delete
 To delete a document record using the MongoDB Shell, I applied a similar approach to the **db.collection.find()** method but instead I used the [db.collection.deleteOne()](https://www.mongodb.com/docs/manual/reference/method/db.collection.deleteOne/) method. This methods will allow me to delete a document based on the related query, in this case using the email address of a company (info@mobiance.com).
