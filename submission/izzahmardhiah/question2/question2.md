@@ -49,7 +49,7 @@ We can observe the overview or summary of the dataset in Schema tab by simply im
 
 
 ## Question 2 (b)
-In MongoDB Compass, user are able to CRUD through GUI or Mongosh (MongoDB Shell). I prefer to use Mongosh terminal to execute the queries.
+In MongoDB Compass, users are able to CRUD through GUI or Mongosh (MongoDB Shell). I prefer to use Mongosh terminal to execute the queries.
 
 
 1. Create
