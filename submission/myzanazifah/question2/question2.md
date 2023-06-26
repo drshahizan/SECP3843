@@ -35,19 +35,16 @@ Don't forget to hit the :star: if you like this repo.
      
 3. Connect to a MongoDB deployment
    - Open the MongoDB Compass and ensure that MongoDB is running and listening on the appropriate port. Run the code below in Command Prompt to check the listening port.
+     ```python
 
-```python
-
-netstat -ano | findstr "LISTENING" | findstr "mongod"
-
-```
-
+      netstat -ano | findstr "LISTENING" | findstr "mongod"
+      ```
    - Once we have confirmed it is listening to the appropriate port, we can connect to the MongoDB deployment as shown below.
-
-      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/q2%20mongodb(1).png" /></div>
-
-   - After connecting, it should display like the picture below.
      
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/q2%20mongodb(1).png" /></div>
+      
+   - After connecting, it should display like the picture below.
+          
       <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/q2%20mongodb(2).png" /></div>
 
       
