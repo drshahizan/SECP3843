@@ -12,9 +12,6 @@ Don't forget to hit the :star: if you like this repo.
 #### Name: Hong Pei Geok
 #### Matric No.: A20EC0044
 #### Dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/06-tweets" >Tweets</a>
-#### Content
-- [Question 2 (a)](#question-2-a)
-- [Question 2 (b)](#question-2-b)
 
 ## Question 2 (a)
 There are several steps to import tweets.json files into MongoDB.
