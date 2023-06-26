@@ -97,7 +97,7 @@ mongodb://localhost:27017
 
 ![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question2/files/images/localhost.png)
 
-#### 2. Use any database
+#### 2. Use database
 
 Next, use the database that you have stored the data. I will use 'admin' database since it is the database that I used to store the airbnb data. Type the code below. 
 
