@@ -118,7 +118,7 @@ Lastly, I would also recommend using reverse proxy server which incorporates loa
 
 ## Question 1 (b)
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/SystemArchitecture.jpg" />
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question1/files/images/SystemArchitecture.jpg" />
 
 1. Client Layer
    - Dashboard
