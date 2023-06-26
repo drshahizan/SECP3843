@@ -25,7 +25,7 @@ Don't forget to hit the :star: if you like this repo.
   ```
 - Next, activate the virtual environment using:
   ```
-$ source env/bin/activate
+  $ source env/bin/activate
   ```
 > Note: please note that on Windows, need to use `source env/Scripts/activate` in order to activate the virtual environment.
 - After activating the environment, you need to proceed by installing Django using `pip`:
