@@ -37,7 +37,24 @@ Create a Django App named AA_DjangoApp
 python manage.py startapp AA_DjangoApp
 ```
 
-Step 2 - Define Django Models
+Step 2 - Connect to MySQL database
+
+Create a new database named aa_project in MySQL database. Includes the code below in the settings.py file in VS code. Make sure the database name, username, password, host and port are correct.
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'aa_project',
+        'USER': 'root',
+        'PASSWORD': '',  # Leave this empty
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+```
+
+Step 3 - Define Django Models
 
 Based on the dataset, the models consist of 3 classes which are Account, Customer and Transaction. 
 
@@ -64,6 +81,13 @@ class Transaction(models.Model):
     transaction_count = models.IntegerField()
     bucket_start_date = models.DateTimeField()
     bucket_end_date = models.DateTimeField()
+```
+
+After creating the models, run the migrations to create tables in the aa_project database.
+
+```
+python manage.py makemigrations
+python manage.py migrate
 ```
 
 ## Question 1 (b)
