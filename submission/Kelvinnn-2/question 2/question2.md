@@ -40,7 +40,7 @@ In the terminal, type `mongosh` to access MongoDB shell.
 
 
 ### 4. Import Dataset into Mongodb
-In the terminal, type `mongoimport "C:\Users\user\Downloads\modified_city_inspections.json" -d AA -collection "City Inspection" `
+In the terminal, type `mongoimport "C:\Users\user\Downloads\modified_city_inspections.json" -d AA -collection "CityInspections" `
  to import the dataset into MongoDB. 
  The database and collection are automatically created as -d AA specifies the name of the database on which to run the mongoimport and -collection "City Inspection" specifies the collection to import.
 
