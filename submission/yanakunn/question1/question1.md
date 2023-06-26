@@ -34,6 +34,14 @@ Step 1: Install Django and Required Packages
 ## Question 1 (b)
 <img width="942" alt="Screenshot 2023-06-27 at 3 58 26 AM" src="https://github.com/yanakunn/SECP3843/assets/76076543/e8bbc259-afa4-42f6-af9e-8e57f4f27dde">
 
+In this system architecture:
+- Clients access the portal via web browsers. 
+- The web server receives and handles HTTP requests, then passes them to the application server. 
+- The Django web framework runs on the application server and communicates with the MySQL and MongoDB databases using its built-in Object-Relational Mapping system. Django models are used to define the structure and behaviors of corresponding database tables, which are Python classes. The Django ORM handles the translation between Python objects and database rows, allowing object-oriented syntax to be used for database operations. 
+- A data loading script loads JSON data into the databases. 
+- Visualization tools are utilized to create dashboard visualizations based on the retrieved data. The frontend integration then integrates these visualizations into the Django templates. 
+- Users can interact with the dashboard, apply filters, and customize the displayed data.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
