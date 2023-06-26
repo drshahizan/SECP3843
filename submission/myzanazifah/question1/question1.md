@@ -16,7 +16,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 1 (a)
 As an IT consultant, I recommend implementing a set of servers for the project to ensure the development of an efficient portal. I propose utilizing a combination of four servers, including the following:
-- First Server : Web Server and Django Application Server
+- Web Server and Django Application Server
 - First Database Server : MySQL
 - Second Database Server : MongoDB
 - Reverse Proxy Server (that incorporates load balancing capabilities.)
