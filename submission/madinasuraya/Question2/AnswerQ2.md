@@ -34,26 +34,26 @@
 
 7. Run mongodb shell using **mongosh** command in ‘Server’ command prompt. Here, I wanted to use a connection  that can connect to my MongoDB Atlas. Thus, I will specify the connection string to open the shell.
 
-```
-mongosh “mongodb+srv://user1:60XRzCr4mubxCPC5@cluster0.evngzba.mongodb.net/test”
-```
+  ```
+  mongosh “mongodb+srv://user1:____________a.mongodb.net/test”
+  ```
 <p align="center">
 <img width="400" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/be83fecb-9994-4981-b5e1-329ac6ba4022">
 </p>
 
 8. To add the database, run ‘use’ command, along with the database name, as follows. I named my database as ‘db_crunchbase’.
 
-```
-use db_crunchbase
-```
+    ```
+    use db_crunchbase
+    ```
 <p align="center">
 <img width="400" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/f6f549ca-e5bb-4b22-a54b-d0afa7c4540e">
 </p>
 
 9. Check if the database successfully created by running **show dbs**.
-```
-show dbs
-```
+    ```
+    show dbs
+    ```
 <p align="center">
 <img width="400" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/1dc9d505-5366-4b54-97bd-f9ad15af743b">
 </p>
@@ -65,9 +65,9 @@ show dbs
     - Collection: companies (define name)
        File: JSON file path.
 
-```
-mongoimport –uri “mongodb+srv://user1:60XRzCr4mubxCPC5@cluster0.evngzba.mongodb.net/test” - - db db_crunchbase - - collection companies - - file "C:\Users\dina_\Documents\companies.json"
-```
+    ```
+    mongoimport –uri “mongodb+srv://user1:________________.mongodb.net/test” - - db db_crunchbase - - collection companies - - file "C:\Users\dina_\Documents\companies.json"
+    ```
 <p align="center">
 <img width="400" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/296bda40-a024-4bfb-b736-c57713965e15">
 </p>
@@ -79,9 +79,9 @@ mongoimport –uri “mongodb+srv://user1:60XRzCr4mubxCPC5@cluster0.evngzba.mong
 
 12. To see the JSON file data, in the shell, run **db.companies.find().pretty()** command. The **pretty()** command is used to make the JSON format more readable.
 
-```
-db.companies.find().pretty()
-```
+    ```
+    db.companies.find().pretty()
+    ```
 <p align="center">
 <img width="400" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/5496d609-59f2-4f51-b148-999cfe73d5c8">
 </p>
