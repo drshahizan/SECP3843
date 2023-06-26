@@ -19,7 +19,7 @@ As an IT consultant, I recommend implementing a set of servers for the project t
 - Web Server and Django Application Server
 - First Database Server : MySQL
 - Second Database Server : MongoDB
-- Reverse Proxy Server (that incorporates load balancing capabilities.)
+- Reverse Proxy Server
 
 Firstly, I would recommend integrating both web server and Django application server as one server. This method is a well-known method and is widely adopted and also an effective practice. The web server will handle the HTTP requests by receiving incoming HTTP requests, processing those requests and then deliver the corresponding web pages. On the other hand, the Django application server will be responsible for running the Django framework. Not only that but it will also manage the execution of Django applications, handle the URL routing and many more. By integrating the servers into one server, it will simplify the deployment process and also reduce the complexity of the server infrastructure. In addition, the team can achieve seamless integration while ensuring optimized data storage and retrieval. We can also eliminate using another server such as a file server by integrating these two servers as Django application server incorporates file handling capabilities within the application itself. So, Django application server can handle the storage and management of uploaded files.
 
