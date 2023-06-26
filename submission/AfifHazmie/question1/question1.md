@@ -24,12 +24,20 @@ Don't forget to hit the :star: if you like this repo.
           <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA1.jpg" style="width: 700px; height: 200px;">
        
      - MongoDB Database Server
-       - Using the command `pip install pymongo`
+       - Using the command
+         ```python
+         
+         pip install pymongo
+         
+         ```
          
          <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA3.jpg" style="width: 700px; height: 100px;">
          
      - MySQL Database Server
-       - Using the command `pip install mysqlclient`
+       - Using the command
+         ```python
+         pip install mysqlclient
+         ```
          
          <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA2.jpg" style="width: 550px; height: 150px;">
          
@@ -44,12 +52,16 @@ Don't forget to hit the :star: if you like this repo.
      
 3. Create Django project and app.
    - Open the terminal in visual studio code or command prompt and type
-   - `django-admin startproject Store`
+   - ```python
+     django-admin startproject Store
+     ```
      
      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA4.jpg" style="width: 600px; height: 60px;">
      
    - Create django app within the project with the command
-   - `python manage.py startapp AA`
+   - ```python
+     python manage.py startapp AA
+     ```
   
 4. Define data models
    - Define models representing the JSON dataset and its fields in the Django app's `models.py` file, including the JSONField for storing JSON data.
