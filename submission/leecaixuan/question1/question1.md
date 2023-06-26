@@ -39,11 +39,13 @@ python manage.py startapp AA_DjangoApp
 
 <h4>Step 2 - Connect to MySQL database</h4>
 
-Create a new database named aa_project in MySQL database. Includes the code below in the settings.py file in VS code. Make sure the database name, username, password, host and port are correct.
+Create a new database named aa_project in MySQL database. Includes the code below in the settings.py file in VS code. 
 
 <p align="center">
   <img height="100px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question1/files/images/Screenshot%202023-06-26%20173526.png" />
 </p>
+
+Make sure the database name, username, password, host and port are correct to connect to MySQL database.
 
 ```
 DATABASES = {
@@ -96,6 +98,8 @@ python manage.py migrate
 
 <h4>Step 4 - Import JSON file into database</h4>
 
+- MySql database
+
 Create a load_data.py file to import the JSON file into database.
 
 ```
@@ -142,6 +146,132 @@ Then, run the command below.
 python manage.py load_data C:\Users\User\Downloads\AA_SpecialTopic\accounts.json c:\Users\User\Downloads\AA_SpecialTopic\customers.json c:\Users\User\Downloads\AA_SpecialTopic\transactions.json
 ```
 
+- MongoDB
+
+Install PyMongo library
+
+```
+pip install pymongo
+```
+
+Create a new file named 'mongodb.py' in VS code to import JSON file into MongoDB database.
+
+```
+import json
+from pymongo import MongoClient
+
+# MongoDB connection details
+mongodb_host = 'localhost'
+mongodb_port = 27017
+mongodb_database = 'aa_project'
+mongodb_collection_account = 'accounts'
+mongodb_collection_customer = 'customers'
+mongodb_collection_transaction = 'transactions'
+
+# JSON file paths
+account_json_file = '"C:\Users\User\Downloads\AA_SpecialTopic\accounts.json"'
+customer_json_file = '"C:\Users\User\Downloads\AA_SpecialTopic\customers.json"'
+transaction_json_file = '"C:\Users\User\Downloads\AA_SpecialTopic\transactions.json"'
+
+# Connect to MongoDB
+client = MongoClient(mongodb_host, mongodb_port)
+db = client[mongodb_database]
+collection_account = db[mongodb_collection_account]
+collection_customer = db[mongodb_collection_customer]
+collection_transaction = db[mongodb_collection_transaction]
+
+# Load Account JSON data
+with open(account_json_file) as file:
+    account_data = json.load(file)
+
+# Insert Account JSON data into MongoDB
+collection_account.insert_many(account_data)
+
+# Load Customer JSON data
+with open(customer_json_file) as file:
+    customer_data = json.load(file)
+
+# Insert Customer JSON data into MongoDB
+collection_customer.insert_many(customer_data)
+
+# Load Transaction JSON data
+with open(transaction_json_file) as file:
+    transaction_data = json.load(file)
+
+# Insert Transaction JSON data into MongoDB
+collection_transaction.insert_many(transaction_data)
+
+# Close the MongoDB connection
+client.close()
+```
+
+<h4>How to Retrieve Data from database</h4>
+
+- MySql database
+
+Example: Retrieve data from the Accounts table
+
+```
+# Import the model representing the account table
+from myapp.models import Account
+
+def retrieve_accounts_data():
+    # Retrieve all records from the account table
+    accounts = Account.objects.all()
+
+    # Iterate over the retrieved accounts
+    for account in accounts:
+        account_id = account.account_id
+        limit = account.limit
+        products = account.products
+
+        # Print data
+        print(f"Account ID: {account_id}")
+        print(f"Limit: {limit}")
+        print(f"Products: {products}")
+
+retrieve_accounts_data()
+```
+
+- MongoDB
+
+Example: Retrieve data from Accounts table
+
+```
+from pymongo import MongoClient
+
+def retrieve_accounts_data():
+    # Establish a connection to MongoDB
+    client = MongoClient('mongodb://localhost:27017')
+
+    # Access the database
+    db = client['aa_project']
+
+    # Access the "accounts" collection
+    collection = db['accounts']
+
+    # Define the query
+    query = {'status': 'active'}  # Example query to retrieve active accounts
+
+    # Execute the query and retrieve the documents
+    accounts = collection.find(query)
+
+    # Iterate over the retrieved accounts
+    for account in accounts:
+        account_id = account['_id']
+        limit = account['limit']
+        products = account['products']
+
+        # Print the data
+        print(f"Account ID: {account_id}")
+        print(f"Limit: {limit}")
+        print(f"Products: {products}")
+
+    # Close the MongoDB connection
+    client.close()
+
+retrieve_accounts_data()
+```
 
 
 ## Question 1 (b)
