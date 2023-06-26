@@ -80,6 +80,11 @@ Before applying the CRUD (Create, Read, Update, Delete) operations, do these ste
 
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image19.png)
 
+**Step 3**: Select Database
+>Type in `use Analytics` to access the `Analytics` database.
+
+![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image20.png)
+
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
