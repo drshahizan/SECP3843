@@ -21,6 +21,8 @@ project, and the MySQL and MongoDB databases, few servers need to be setup and c
 
 **1. Django**
    - Open Command Prompt and run `pip install Django` command.
+     <img width="761" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/de153eb9-991a-4ff8-90c5-274078679718">
+
    - Then, run `django-admin startproject inspection` command to create Django project.
    - Next step, in order to create a django app inside the folder, run `python manage.py startapp inspectionApp`. This is where we can define all the models for MySQL and MongoDB.
    - The other packages that need to be installed are mysqlclient and djongo. To install mysqlclient, run `pip install django
