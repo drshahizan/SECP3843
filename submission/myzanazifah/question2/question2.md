@@ -157,6 +157,38 @@ Don't forget to hit the :star: if you like this repo.
      
       <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/read(2).png" /></div>
    - Update
+     
+     For Updates, we can do two different queries where we can update only one document or many documents.
+
+     - Update One Document
+       - The code below only allows to edit one document at a time.
+           ```
+            db.col_stories.updateOne({ id:"19970018" },{ $set: {"status": "famous"} })
+            ```
+           
+             
+         <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update1%20(3).png" /></div>
+      
+       - Below is the data before being updated.
+          <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update1%20(1).png" /></div>
+       - Below is the data after being updated.
+           <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update1%20(2).png" /></div>
+            <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update1%20(4).png" /></div>
+         
+     - Update Many Documents
+        - The code below allows to update many documents at a time.
+           ```
+             db.col_stories.updateMany({ media: "news" },{ $set: { media: "images" } })
+            ```
+           
+             
+         <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update2%20(2).png" /></div>
+      
+       - Below is the data before being updated.
+          <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update2%20(1).png" /></div>
+       - Below is the data after being updated.
+           <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update2%20(3).png" /></div>
+            <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update2%20(4).png" /></div>
    - Delete
 
 ## Contribution 🛠️
