@@ -44,6 +44,7 @@ Create a new database named aa_project in MySQL database. Includes the code belo
 <p align="center">
   <img height="100px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question1/files/images/Screenshot%202023-06-26%20173526.png" />
 </p>
+
 ```
 DATABASES = {
     'default': {
