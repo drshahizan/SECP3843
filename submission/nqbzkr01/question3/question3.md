@@ -20,23 +20,23 @@ Don't forget to hit the :star: if you like this repo.
 - <strong>Creating a Virtual Environment for Django Project</strong>
   - A virtual environment allows you to isolate your current project dependencies from the rest of packages installed globally on your system or in the other virtual environments. You can either use `virtualenv` which needs to be installed on your system or the `venv` module available as a module in recent versions of Python 3.
   - Type this in command prompt:
-  ```
-  $ python -m venv env
-  ```
+    ```
+    $ python -m venv env
+    ```
   - Next, activate the virtual environment using:
-  ```
-  $ source env/bin/activate
-  ```
+    ```
+    $ source env/bin/activate
+    ```
   > Note: please note that on Windows, need to use `source env/Scripts/activate` in order to activate the virtual environment.
   - After activating the environment, you need to proceed by installing Django using `pip`:
-  ```python
-  $ pip install django
-  ```
+    ```python
+    $ pip install django
+    ```
   - If the framework is successfully installed, the Django management commands now can be used to create and work with the Django project.
   - Next, install mysql-client using:
-  ```python
-  $ pip install mysqlclient
-  ```
+    ```python
+    $ pip install mysqlclient
+    ```
 
 
 ## Question 3 (b)
