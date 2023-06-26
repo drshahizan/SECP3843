@@ -27,13 +27,24 @@ py -m venv env
 env\Scripts\activate
 ```
 
-2. Once you’ve created and activated your Python virtual environment, you can install Django into this dedicated development workspace using `pip install django`. <br>
+2. Once you’ve created and activated your Python virtual environment, you can install Django into this dedicated development workspace using ```python 
+pip install django 
+```
 
-3. After you’ve successfully installed Django, you’re ready to create the scaffolding for your new web application. With your virtual environment set up and activated and Django installed, you can now create a project using `django-admin startproject AA_Goo`
+3. After you’ve successfully installed Django, you’re ready to create the scaffolding for your new web application. With your virtual environment set up and activated and Django installed, you can now create a project using 
+```python 
+django-admin startproject AA_Goo
+```
 
-4. For this project, we need to create an app contain the functionality of providing users with a platform for viewing data and executing dashboard visualizations based on JSON-provided data. You can execute the startapp command through the manage.py file using `py manage.py startapp stories` to generates a default folder structure for a Django app.
+4. For this project, we need to create an app contain the functionality of providing users with a platform for viewing data and executing dashboard visualizations based on JSON-provided data. You can execute the startapp command through the manage.py file to generates a default folder structure for a Django app using 
+```python 
+py manage.py startapp stories
+```
 
-4. Also, we need to create an app contain the functionality of providing users to login and user registration. You can execute the startapp command through the manage.py file using `py manage.py startapp user` to generates a default folder structure for a Django app.
+4. Also, we need to create an app contain the functionality of providing users to login and user registration. You can execute the startapp command through the manage.py file using 
+```python 
+py manage.py startapp user
+```
 
 ### 2. Configuring Django database settings
    1. Open the Django project's `settings.py` file.
