@@ -25,6 +25,7 @@ To carry out the tasks of this question, it it crucial to do the following:
 
 ### 1. Download JSON file provided in dataset repository
 After completing the prerequisite task, Go to Github and click the download button to download the [City Inspections](https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections) dataset into the device.
+ 
 
 ### 2. Launch MongoDB server
 Open Command Prompt and type `"mongod"` to start the MongoDB server.
@@ -37,7 +38,7 @@ In the terminal, type `mongosh` to access MongoDB shell.
 
 
 ### 4. Import Dataset into Mongodb
-In the terminal, type `mongoimport -d AA -collection "City Inspection" --file "C:\Users\user\Downloads\city_inspections.json" --jsonArray`
+In the terminal, type `mongoimport "C:\Users\user\Downloads\city_inspections.json" -d AA -collection "CityInspections" `
  to import the dataset into MongoDB. 
  The database and collection are automatically created as -d AA specifies the name of the database on which to run the mongoimport and -collection "City Inspection" specifies the collection to import.
 
