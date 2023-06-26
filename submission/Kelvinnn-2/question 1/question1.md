@@ -33,7 +33,7 @@ To integrate Django with the JSON dataset and ensure efficient data storage and 
 #### Django Installation: 
 1. Begin by installing Django on all five servers. use the pip package manager to install Django by running the following command:
 ```pip install Django```
-<img src="../files/images/installdjango.png">
+<img src="./files/images/installdjango.png">
 2. Set up Django project: Create a Django project on one of the servers. Use the following command to create a new Django project:
 ```django-admin startproject city_inspections```
 
