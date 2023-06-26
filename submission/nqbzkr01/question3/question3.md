@@ -50,14 +50,14 @@ Don't forget to hit the :star: if you like this repo.
 - <strong>Creating a Django Project</strong>
   - Let's now create the project using `django-admin.py`. In the terminal, run the following command:
     ```
-    $ django-admin.py startproject demoproject
+    $ django-admin.py startproject AA
     ```
   - Next, open the `settings.py` of your project and add the database address and credentials inside the `DATABASES` object.
     ```
     DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'mydb',
+        'NAME': 'moviedb',
         'USER': 'root',
         'PASSWORD': 'YOUR_DB_PASSWORD',
         'HOST': 'localhost',   
@@ -65,7 +65,101 @@ Don't forget to hit the :star: if you like this repo.
         }    
     }
     ```
-  - 
+- <strong>Creating the `accounts` Application for User Authentication</strong>
+  - Apps are the Django way of organizing a project. Think of them as modules. Let's encapsulate the authentication logic needed in our project into an accounts application. You obviously use any valid       name you see fit. Go to command prompt and navigate to the project's folder directory:
+    ```
+    $ cd demoproject
+    ```
+  - Next, create the application using `manage.py`:
+    ```
+    $ python manage.py startapp accounts
+    ```
+  - `manage.py` is another Django management script that may be found in the root project's folder. It's a great wrapper for the most commonly used Django administrative commands. The preceding command         will generate a Django application with a standard file structure. To include this app in your project, visit the `settings.py` file and add it to the `INSTALLED_APPS` array:
+    ```
+    INSTALLED_APPS = [
+    # [...]
+    'accounts'
+    ]
+    ```
+  - That's it, now create the database and run Django development server using the following commands:
+    ```
+    $ python manage.py migrate
+    $ python manage.py runserver
+    ```
+  - The command prompt will provide the link address at http://127.0.0.1:8000/. Paste the link address into the web browser to see the web application up and running.
+- <strong>urls.py</strong>
+  - Next, create the `urls.py` file in accounts app and add the following code:
+    ```
+    from django.contrib.auth import views
+    from django.urls import path
+    
+    urlpatterns = [
+    ]
+    ```
+  - Make sure `django.contrib.auth` is in `INSTALLED_APPS` in the `settings.py`.
+- <strong>Create the Register View</strong>
+  - Inside the `account` app, there is a file named `views.py`.
+  - The views in views.py play a crucial role in defining the application logic and controlling the behavior of the web application in response to user interactions. They bridge the gap between the URL routing, data models, and templates, enabling Django to handle requests and generate responses effectively.
+  - So let's create a simple register view first.
+    ```
+    from django.shortcuts import render, redirect
+    from django.contrib.auth import login, authenticate
+    from django.contrib import messages
+    from django.contrib.auth.forms import UserCreationForm
+    
+    def home(request):
+        return render(request, 'users/home.html')
+    
+    def register(request):
+        if request.method == 'POST':
+            form = UserCreationForm(request.POST)
+            if form.is_valid():
+                form.save()
+    
+                messages.success(request, f'Your account has been created. You can log in now!')    
+                return redirect('login')
+        else:
+            form = UserCreationForm()
+    
+        context = {'form': form}
+        return render(request, 'users/register.html', context)
+    ```
+  - <strong>Templates</strong>
+    - Inside the users app, we will create our templates. Inside the users directory, we will create a directory called templates. Then inside the templates directory, we will create another directory named users. Here we will put the html files. In this case home.html and register.html.
+    ![Screenshot 2023-06-26 205311](https://github.com/drshahizan/SECP3843/assets/92329710/ee559aa0-82e6-4d3a-bf3a-30629bc717c6)
+  - <strong>register.html</strong>
+    ![Screenshot 2023-06-26 210048](https://github.com/drshahizan/SECP3843/assets/92329710/6084c90c-7aaf-46fb-a768-56249644d999)
+  - <strong>urls.py</strong>
+    - Modify the `urls.py` in `AA`.
+    ![image](https://github.com/drshahizan/SECP3843/assets/92329710/b2d298c1-8624-4fab-8bda-25cf541122b0)
+    - Next, open the application in localhost `http://127.0.0.1:8000/`. Type the following command in terminal:
+    ```
+    python manage.py runserver
+    ```
+    - Then, navigate to `http://127.0.0.1:8000/register` to see the registration form.
+    ![image](https://github.com/drshahizan/SECP3843/assets/92329710/caf763ac-62f5-4745-8238-3e74c7221678)
+  - <strong>forms.py</strong>
+    - Create a file inside `accounts` named `forms.py`. By default, the form has username, password, and password confirmation.
+    ![image](https://github.com/drshahizan/SECP3843/assets/92329710/1f69adc7-3db9-4eb3-9d78-89470589ad57)
+  - <strong>views.py</strong>
+    - use `UserRegistrationForm` in `views.py`
+    ![image](https://github.com/drshahizan/SECP3843/assets/92329710/b8e5cc41-d864-4622-99ff-5b77e5db9459)
+    - 
+
+
+
+  
+
+
+
+
+
+
+    
+
+
+    
+    
     
     
   

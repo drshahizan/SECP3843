@@ -42,10 +42,58 @@ The interface of newly empty database will be like this.
 6. Verify the Import. Once the import process completes, MongoDB Compass will provide a summary of the imported documents. Watch for the amount of documents imported. It should be the same as number of rows when we looked at the Visual Studio Code previously. We can change the view but I prefer to observe the dataset in tabular form. 
 <div align="center"><img src="files/images/mongodb7.PNG" height="350px" /></div>
 
+7. View the summary
+We can observe the overview or summary of the dataset in Schema tab by simply importing schema.
+<div align="center"><img src="files/images/summary.PNG" height="350px" /></div>
+
 
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+In MongoDB Compass, users are able to CRUD through GUI or Mongosh (MongoDB Shell). I prefer to use Mongosh terminal to execute the queries.
+
+
+1. Create
+
+I created a new document where the details are shown below in the query. I implemented the insertOne() method. "WowMurah Grocery Store" is a new business name.
+Query:
+<div align="center"><img src="files/images/create.PNG" height="350px" /></div>
+Result:
+To view the result, I use find() method by the business_name. "WowMurah Grocery Store" business name is just created, hence we can expect the result to be found and only one. 
+<div align="center"><img src="files/images/create2.PNG" height="350px" /></div>
+
+
+2. Read
+I am curious and want to find some data that the result column is set to "Pass". Hence, I once again use the find() method. MongoDB list out several document results from the query.
+Query:
+<div align="center"><img src="files/images/read.PNG" height="350px" /></div>
+
+
+3. Update
+   
+i. I want to change the result of document with id equals to "10021-2015-ENFO" to "Out of Business". First, I extract the data by its id using find() method, then I use the updateOne() to change a part of the document.
+Query:
+<div align="center"><img src="files/images/update.PNG" height="350px" /></div>
+Result:
+As can be seen in the result, the result attributes has updated to "Out of Business", from "No Violations Issued".
+<div align="center"><img src="files/images/update2.PNG" height="350px" /></div>
+
+
+ii. For the second update operation, I am curious about the Sector attributes. Hence, I started to look at the unique values of the attributes. 
+<div align="center"><img src="files/images/update3.PNG" height="350px" /></div>
+As you can see in the result of the query, there are two values that quite similar which are "Dealer In Products For The Disabled - 119" and "Dealer in Products for the Disabled - 119". Since they are different just from the capitalization of some letters, I assumed that this is a dirty data issue where they gives the same meaning but formatting error. Hence, I can update one of it to make them as one unique value.
+
+
+
+Before that, I firstly count the amount of documents for both values. Clearly it is a formatting error since the second one has only one value. Therefore, after I have updated the one value to be formatted just like the other one, they are now considered as one unique value and the new count is 270.
+<div align="center"><img src="files/images/update4.PNG" height="350px" /></div>
+
+4. Delete
+For delete, I want to delete by the document's id "10423-2015-CMPL" since it will be easier to see the result. I firstly looked for the existence of the id. Then, I delete the specific document using deleteOne() method. Then, to make sure that it is deleted, I searched for the document again and MongoDB did not return anything which indicates that the document is no longer exists.
+<div align="center"><img src="files/images/delete.PNG" height="350px" /></div>
+
+
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
