@@ -26,7 +26,7 @@ Download and install all related software.
 ### 3. Install the dataset [Stories](https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories)
 
 ### 4. Locate the file
-Type in 'cd C:\Program Files\MongoDB\Server\6.0\bin' into the command to locate the file.
+Type in `cd C:\Program Files\MongoDB\Server\6.0\bin` into the command to locate the file.
 <img  src="https://github.com/drshahizan/SECP3843/assets/120615951/a899f41c-a6ce-460d-b54c-6413ef93b435"></img>
 
 ### 5. Launch MongoDB Server
