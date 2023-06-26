@@ -148,6 +148,12 @@ python manage.py load_data C:\Users\User\Downloads\AA_SpecialTopic\accounts.json
 
 - MongoDB
 
+Install PyMongo library
+
+```
+pip install pymongo
+```
+
 Create a new file named 'mongodb.py' in VS code to import JSON file into MongoDB database.
 
 ```
