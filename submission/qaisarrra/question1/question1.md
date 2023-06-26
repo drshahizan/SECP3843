@@ -103,7 +103,7 @@ To carry out this segment of the question, it it crucial for to do the following
      
 <br>
 
-2. Set up a virtual environment. In your current working directory, this command creates a new virtual environment called``environment``. 
+2. Set up a virtual environment. In your current working directory, this command creates a new virtual environment called ``environment``. 
 ```bash
 python -m venv environment
 ```
@@ -122,9 +122,29 @@ pip install django
 <p align="center">
    <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Django%20Installation.png">
 </p>
-<br>
+<br></br>
 
-**Create Django Project** 
+**Create A Django Project** 
+
+You can now create a project after setting up, activating your virtual environment and installing Django. To start a new Django project, open a new terminal in Visual Studio Code and run the following command. The project is named **Companies** in the code below, but it can be changed to any name you like.
+```bash
+python -m django startproject Companies
+```
+Navigate yourself to the project directory by inputing the command below:
+```bash
+cd Companies
+```
+<br></br>
+
+**Create A Django Application** 
+
+The  ``startapp `` command generates a default folder structure for a Django app. This tutorial uses **CompaniesApp** as the name for the app:
+```bash
+python manage.py startapp CompaniesApp
+```
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Create%20Django%20Project.png">
+</p>
 
 ## Question 1 (b)
 The system architecture will consist of the following components:
