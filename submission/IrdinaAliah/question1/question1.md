@@ -24,6 +24,14 @@ comprehensive explanation of the steps required to integrate Django with the JSO
 ensuring efficient data storage and retrieval from both MySQL and MongoDB databases. 
 [10 marks] 
 
+To integrate Django with a JSON dataset and enable efficient data storage and retrieval from both MySQL and MongoDB databases, you can follow these comprehensive steps:
+
+Step 1: Install Django and required packages:
+
+
+
+
+
 # Question 2(a)
 b.Design a detailed and comprehensive system architecture. Focusing on the seamless 
 integration between the web server (Django), dataset (JSON), and databases (MySQL and 
