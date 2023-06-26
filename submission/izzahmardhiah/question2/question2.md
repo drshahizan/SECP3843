@@ -22,7 +22,7 @@ Locate and download the JSON file containing the City Inspections data to our lo
 Open the JSON file using any code editor. For me, I prefer Visual Studio Code. 
 <div align="center"><img src="files/images/dataset.PNG" height="350px" /></div>
 
-2. Start MongoDB Server. Ensure that MongoDB is installed on our machine. If you do not have it installed, you can download it [here].(https://www.mongodb.com/try/download/community).
+2. Start MongoDB Server. Ensure that MongoDB is installed on our machine. If you do not have it installed, you can download it [here](https://www.mongodb.com/try/download/community)
 <div align="center"><img src="files/images/mongodb.PNG" height="350px" /></div>
 After finished configure the setup, you can proceed to install.
 <div align="center"><img src="files/images/mongodb2.PNG" height="350px" /></div>
