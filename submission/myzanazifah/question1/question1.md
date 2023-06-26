@@ -106,7 +106,9 @@ INSTALLED_APPS = [
    - Go to the 'settings.py' file in the Django project and locate the code for databases.
    - Next, edit the code by defining the connection details for both MongoDB and MySQL databases such as username, password, host, port and engine.
 <br>
+
 5. Create Django Models
+   
    - Go to the 'models.py' file and define the models which represents the data and match the structure of the JSON dataset.
    - After defining the models, run the following code to run migrations to create database tables.
 
