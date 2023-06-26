@@ -18,7 +18,7 @@ Don't forget to hit the :star: if you like this repo.
 As an IT consultant, I was responsible for guiding the technical team on how to implement a configuration that involves five servers for our latest project. For this endeavor, my team had to integrate the Django web framework with both MySQL and MongoDB databases and use a JSON dataset to create the required web pages. The five servers that we'll be leveraging for this project are:
 
 Server 1: Web Server
-A web server is required to host and manage incoming HTTP requests for the Django application. For this project, Apache was chosen as it is highly scalable, efficient, and offers excellent support for load balancing, caching, and handling HTTP requests. 
+A web server is required to host and manage incoming HTTP requests for the Django application. For this project, nginx was chosen as it is highly scalable, efficient, and offers excellent support for load balancing, caching, and handling HTTP requests. 
 
 Server 2: Django Application Server
 To effectively use Django, a reliable application server is crucial. It provides infrastructure for seamless framework operation and easy logic management. With a Django server, developers can streamline development and improve app functionality.
@@ -33,14 +33,66 @@ Server 5: Load Balancer
 It's important to have a good system for managing traffic to ensure the web server and database servers are balanced. This helps prevent overload and ensures users can access the website quickly. By monitoring traffic and making changes as needed, the system can be maintained and handles lots of traffic without problems. Also, improve performance and avoid downtime or data loss by using failover and redundancy measures.
 
 ### The steps to integrate Django with the JSON dataset.
-  **1. Setup Django**
-       i. Create a virtual environment by navigating to the project file.
+**1. Create and activate a virtual environment**
+       
+  i. Create a virtual environment by navigating to the project file.
        
        python -m venv myenv //create a virtual environment
        myenv\Scripts\activate //activate the virtual environment
 
-       ii. Install Django with the pip package manager.
+**2. Install and set up Django**
 
+   i. Install Django with the pip package manager `pip install Django`.
+   
+   <img src="https://github.com/sakinahalizzah/SECP3843/assets/99240177/e9fc62ee-df72-4bed-8ac9-05b5eb829328" />
+
+   ii. Start the Django project by executing the `django-admin startproject` command and navigate to the project directory.
+   
+   <img src="https://github.com/sakinahalizzah/SECP3843/assets/99240177/6683a49d-7ae0-46b6-bd7d-ee48ac0c5fa2" />
+   Ensure that the project file has been generated.
+   
+   <img src="https://github.com/sakinahalizzah/SECP3843/assets/99240177/7ec8a872-45de-4a93-a010-ed7c9fecbf3e" />
+    
+   iii. Create a new Django app within the analytics directory, execute the command `python manage.py startapp financialAnalytics`.
+
+   <img src="https://github.com/sakinahalizzah/SECP3843/assets/99240177/d523bb25-d9f3-4b97-903f-8452ee38584d" />
+
+**3. Configure Django Settings**
+
+   i. In order to establish connections to MySQL and MongoDB, it is necessary to gain access to the settings.py file located in the project directory and make modifications to the `DATABASES` setting.
+   
+   <img src="https://github.com/sakinahalizzah/SECP3843/assets/99240177/9f436ec6-1ff5-4623-96b9-6386b1a56fc8" />
+
+   ii. Install both djongo and mysqlclient, simply use the pip command: `pip install djongo` for djongo and `pip install mysqlclient` for mysqlclient.
+
+   <img src="https://github.com/sakinahalizzah/SECP3843/assets/99240177/5bbc6472-f34e-47bb-8f5d-11dcb56618b3" /> 
+
+   <img src="https://github.com/sakinahalizzah/SECP3843/assets/99240177/92a6752e-8f2c-4a69-8c17-2554e66badba" />
+
+**4. Define models**
+
+To define your Django models, head to the models.py file found within your app directory. Use the JSON dataset and data structure to specify fields and relationships. Within this file, create three distinct model classes: accounts, transactions, and customers.
+
+ <img src="https://github.com/sakinahalizzah/SECP3843/assets/99240177/1c32b8bb-974a-4ccc-8e17-f338c54b8c49" />
+ 
+**5. Run Migrations**
+
+   i. To add an application to your project, open the settings.py file and include its name in the INSTALLED_APPS section.
+   
+   <img src="https://github.com/sakinahalizzah/SECP3843/assets/99240177/279e0d82-7e86-42f0-8fd3-67580a773226" />
+
+   ii. To generate database migrations according to the specified models, execute the `python manage.py makemigrations` command. Subsequently, use the `python manage.py migrate` command to implement these migrations. 
+   
+   <img src="https://github.com/sakinahalizzah/SECP3843/assets/99240177/92922036-d6e2-4a97-af35-336ab10deefd" />
+   <img src="https://github.com/sakinahalizzah/SECP3843/assets/99240177/d04788ea-5681-43b5-bd87-642cb547821e" />
+
+  The table create at MySQL after the migration is as pictured below.
+  
+  <img src="https://github.com/sakinahalizzah/SECP3843/assets/99240177/a3975966-4aab-4911-b08b-8cbaa13a3c80" />
+
+**6. Load JSON Data into Databases**
+
+**5. Perform Data Retrieval**
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
