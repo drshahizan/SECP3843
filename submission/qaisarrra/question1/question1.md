@@ -43,6 +43,11 @@ While implementing **5 servers** can be highly irresistible, there are several f
 * **Complexity and Management**: Consider the difficulty of managing and maintaining several servers. More servers necessitate more effort for configuration, monitoring, and troubleshooting. Determine whether the project team has the competence and resources to efficiently manage several servers.
 > Answer: The project team does not have the competence and resources to efficiently manage several servers due to the lack of experience. The project's aim to seamlessly integrate the Django web framework, the JSON dataset, the MySQL and MongoDB database is straight-forward. Implementing additional and unnecessary servers will only **increase the project's complexity**. Managing and maintaining additional servers that are not actively used might add to the infrastructure's complexity. This complexity can lead to increased maintenance costs and possible sites of failure.
 
+To mitigate these effects, it is best to re-evaluate the server architecture and make modifications based on portal's real usage and requirements. After careful consideration, implementing **3 SERVERS** for this project is best believe a practical approach, whereby the servers are used as:
+1. **Main Web Server**: Apache (Used by Django Web Framework)
+2. **Database Server 1**: MySQL
+3. **Database Server 2**: MongoDB
+
 
 ### Integrating Django with JSON dataset
 
