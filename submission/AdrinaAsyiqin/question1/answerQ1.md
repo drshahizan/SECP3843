@@ -21,64 +21,68 @@
 1. Create a project folder and open it in Visual Studio Code
 
 2. Run the following command. `myproject` can be renamed to desired name
-
+3. 
 ```python
 django-admin.py startproject myproject
 ```
 
-3. Move into project directory using the command 
+1. Move into project directory using the command 
 ```
 cd myproject
 ```   
 
-4. Open a new terminal and install virtual environment by running the below command. `myenv` can be replaced with desired name
-
+1. Open a new terminal and install virtual environment by running the below command. `myenv` can be replaced with desired name
 ```
 virtualenv myenv
 ``` 
 
-5. Activate virtual environment by running command 
-
+1. Activate virtual environment by running command 
+```
+myenv\Scripts\activate
+``` 
 
 ### Step 3: Run server
 
-a. Go into project directory and run the command
+1. Go into project directory and run the command
 ```python
 python manage.py runserver
 ```
 
-b. Open the web browser and visit the link given
+2. Open the web browser and visit the link given
 
 ### Step 4: Install django
-a. Ensure the virtual enironment is active
+1. Ensure the virtual enironment is active
 
-b. Run command . This will download the latest stable version of django
+2. Run command . This will download the latest stable version of django
 ```python
 pip install django
 ```
 
-c. Verify installation by running python in the terminal. This will open a python shell 
+3. Verify installation by running python in the terminal. This will open a python shell 
 
-d. run `import django`
+4. run 
+```
+import django
+```
 
-e. check django version
+5. check django version
 
 ### Step 5: Configure django settings
-a. Open settings.py 
+1. Open settings.py 
 
-b. Configure DATABASES dictionary to configure both MySQL and MongoDB connections
+2. Configure DATABASES dictionary to configure both MySQL and MongoDB connections
 
-c. Update INSTALLED_APPS list to include neccessary Django apps and django_pandas
+3. Update INSTALLED_APPS list to include neccessary Django apps and django_pandas
 
 ### Step 6: Migrate database schema
-a. Run 'pyhton manage.py migrate' command to create necessary models for the database
+1. Run `pyhton manage.py migrate` command to create necessary models for the database
 
-b. Check if migration ran successfully and table created in both databases
+2. Check if migration ran successfully and table created in both databases
 
-### step 7: Import json data into databases
-a. Create a new python file named 'import_json_data.py'
+### step 7: Import sales.json data into databases
+1. Create a new python file named `import_json_data.py`
 
-b. Open file and import modules using the following command
+2. Open file and import modules using the following command
 ```python
 from django.core.management.base import BaseCommand
 from django.conf import settings
@@ -86,14 +90,14 @@ from yourapp.models import YourModel  # Replace "YourModel" with the appropriate
 import json
 ```
 
-c. Define class that inherits from BaseCommand
+3. Define class that inherits from BaseCommand
 ```python
 class Command(BaseCommand):
     help = 'Imports JSON data into the MySQL and MongoDB databases'
 
     def handle(self, *args, **options):
         # Read the JSON file
-        with open('path/to/your/json/file.json', 'r') as f:
+        with open('path/to/your/json/sales.json', 'r') as f:
             json_data = json.load(f)
 
         # Import data into MySQL
@@ -110,21 +114,21 @@ class Command(BaseCommand):
 
 ```
 
-d. Save the file
+4. Save the file
 
-e. Run management command
+5. Run management command
 ```python
 python manage.py import_json_data
 ```
 
 ### Step 7: Implement dynamic web pages
-a. create django views and templates to generate web pages based on the data stored in the databases
+1. create django views and templates to generate web pages based on the data stored in the databases
 
-b. Write django queries to retrueve data from both MySQL and MongoDB databases
+2. Write django queries to retrueve data from both MySQL and MongoDB databases
 
-c. Use the retrieved data to render dynamic content in the templates
+3. Use the retrieved data to render dynamic content in the templates
 
-d. Test the web pages to ensure the integration is working as expected.
+4. Test the web pages to ensure the integration is working as expected.
 
 
 ## Question 1 (b)
