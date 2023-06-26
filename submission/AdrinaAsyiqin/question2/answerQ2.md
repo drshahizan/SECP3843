@@ -52,6 +52,10 @@ C:\Program Files\MongoDB\Server\6.0\bin
 ```
 2. Then create a connection string using the following command 
 ```
+//connect to mongodb shell
+mongod
+
+//connect to mongodbcompass
 mongosh "mongodb+srv://cluster0.yvk5zzq.mongodb.net/" --apiVersion 1 --username adrinaasyiqin
 ```
 `cluster0.yvk5zzq.mongodb.net` : can be modified using your own connection
@@ -60,11 +64,17 @@ mongosh "mongodb+srv://cluster0.yvk5zzq.mongodb.net/" --apiVersion 1 --username 
 
 The command prompt will then ask for the password.
 
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/aca4ca77-3f28-4fa0-84fe-1f302db55741)
+
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/5fb6f9c0-cb18-4572-81d0-76968c14591a)
+
 3. Connect to a database by using the following command
 ```
 use salesdatabase
 ```
 `salesdatabase` : Can be modified using your own database name
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/ff1ef1f3-c400-4756-9794-93b78f6f86ca)
+
 
 ### Step 2: Create the queries
 1. Create
@@ -92,10 +102,14 @@ db.salessample.insertOne({
 })
 
 ```
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/3e05216d-b48b-4954-8f5a-47274c53fc7b)
+
 2. Read
 ```
 db.salessample.find({ "storeLocation": "Denver" })
 ```
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/7c14b81f-4c91-4723-9e07-1f050abb4d7c)
+
 3. Update
 ```
 db.salessample.updateOne(
@@ -103,7 +117,10 @@ db.salessample.updateOne(
   { $set: { "storeLocation": "New York" } }
 )
 ```
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/fd048863-fa38-40e9-a153-2e3d176b6bfa)
+
 4. Delete
 ```
 db.salessample.deleteOne({ "_id": ObjectId("5bd761dcae323e45a93ccfe8") })
 ```
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/4a39a065-d8d6-42dc-8c6c-870d04477de5)
