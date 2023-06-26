@@ -121,6 +121,12 @@ db.Accounts.find({
 
 >Redo step 6 to see the old and new values of `limit`
 
+```
+db.Accounts.updateOne(
+... {"account_id":101010},
+... {$set:{"limit":5200}})
+```
+
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image24.png)
 
 **Step 8**: Update Operation (2)
@@ -134,10 +140,22 @@ db.Accounts.find({
 
 >Redo step 6 to see the old and new values of `limit`
 
+```
+db.Accounts.updateMany(
+... {"limit":5200},
+... {$set:{"limit":10400}})
+```
+
 ![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image25.png)
 
+**Step 9**: Delete Operation
+>Type in the code below to delete one record from the Accounts collection
 
+>Search by `account_id`
 
+>Redo step 6 and search for previous `account_id`. As demonstrated, the `account_id` doesn't exist anymore
+
+![Q2](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%202/files/images/Q2%20image26.png)
 
 
 ## Contribution 🛠️

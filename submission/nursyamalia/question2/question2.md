@@ -36,7 +36,7 @@ Install all the following below:
 3. Access the MongoDB shell:
  - Open a new command-line interface window and access the MongoDB shell by running the following command:
      ```javascript
-     mongo
+     mongosh
      ```
 
 4. Create database and Collection:
@@ -53,7 +53,7 @@ Install all the following below:
 
 ## Question 2 (b)
 
-<p>In the MongoDB Shell, all CRUD (Create, Read, Update and Delete} quesries operations will done here.</p>
+<p>In the MongoDB Shell, all CRUD (Create, Read, Update and Delete} queries operations will done here.</p>
 
 i. Create - 1 query:
 This query creates a new document in the specified collection with the provided fields and values.
@@ -65,7 +65,8 @@ db.accounts.insertOne({
   products: ['Derivatives', 'InvestmentStock']
 })
 ```
-
+<img  src="./files/images/insert.png"></img>
+<img  src="./files/images/findinsert.png"></img>
 
 ii. Read - 1 query:
 This query retrieves the first document from the collection that matches the specified field and value.
@@ -74,7 +75,7 @@ This query retrieves the first document from the collection that matches the spe
 db.accounts.findOne({account_id: NumberInt(123456)})
 ```
 
-<img  src="./files/images/findinsert.png"></img>
+<img  src="./files/images/read.png"></img>
 
 iii. Update - 2 queries:
 - This query updates a specific field in a document that matches the specified field and value.

@@ -17,6 +17,16 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 1 (a)
 
+Server Used:
+<ul>
+	<li>Django Web Server</li>
+	<li>MySQL Database Server</li>
+	<li>JSON Dataset Server</li>
+	<li>MongoDB Database Server</li>
+	<li>Integration Script Server</li>
+</ul>
+
+
 1. Set up the virtual environment and activate the virtual environment
    
    ``` py -3 -m venv .venv ```
