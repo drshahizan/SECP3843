@@ -46,17 +46,20 @@ The JSON dataset server stores the JSON dataset that will be integrated with Dja
     ```
 
   b) Begin by installing Django using pip, the Python package installer. Run the command: `pip install Django`.
-  <img  src="./files/images/insall1.JPG"></img>
+  <img  src="./files/images/install1.JPG"></img>
 
   c) Additionally, install the necessary packages for MySQL and MongoDB connectivity: `pip install mysql-connector-python djongo pymongo`.
-  <img  src="./files/images/insall2.JPG"></img>
+  <img  src="./files/images/install2.JPG"></img>
 ### 2. Create Django project and app:
   a) Create a new Django project using the command: `django-admin startproject AA_Leejx`.
     <img  src="./files/images/create1.JPG"></img>
-  b) Then redirect to the created project (AA_Leejx) using the following commands: `cd AA_leejx`.
+    
+  b) Then redirect to the created project (AA_Leejx) using the following commands: `cd AA_leejx`. <br>
     <img  src="./files/images/create2.JPG"></img>
-  c) Create a new Django app within the project using: `python manage.py startapp appname`.
+
+  c) Create a new Django app within the project using: `python manage.py startapp appname`.                                       
      <img  src="./files/images/create3.JPG"></img>
+     
 ### 3. Configure the Django database settings:
   a) In the project's settings.py file, locate the DATABASES section.
   b) Configure the MySQL database settings, including the database name, user, password, host, and port.
@@ -123,8 +126,7 @@ class MongoDBRouter:
 
 ```
 <img  src="./files/images/router.JPG"></img>
-  ### 6. Create database tables:
-    a) 
+
 
 
 
