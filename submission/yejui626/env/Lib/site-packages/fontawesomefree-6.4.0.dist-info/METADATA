@@ -1,0 +1,21 @@
+Metadata-Version: 2.1
+Name: fontawesomefree
+Version: 6.4.0
+Summary: Font Awesome Free
+Home-page: https://github.com/FortAwesome/Font-Awesome
+Author: Font Awesome
+Author-email: hello@fontawesome.com
+License: UNKNOWN
+Keywords: pip,font,awesome
+Platform: UNKNOWN
+Description-Content-Type: text/markdown
+
+# Font Awesome Free
+
+We designed this package to be used with Django, leveraging how Django handles static files, but it can be installed for any Python project. Font Awesome free will be downloaded to your site-packages, so if you are using a framework other than Django, you will need to alter these instructions to work with what you are using.
+
+Check out the Font Awesome docs for instructions https://fontawesome.com/docs/web/use-with/python-django
+
+Check out our icons here https://fontawesome.com/icons?d=gallery.
+
+

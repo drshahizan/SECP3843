@@ -1,7 +1,4 @@
 /* DASHBOARD */
-.dashboard td, .dashboard th {
-    word-break: break-word;
-}
 
 .dashboard .module table th {
     width: 100%;
@@ -26,4 +23,5 @@ ul.actionlist li {
     list-style-type: none;
     overflow: hidden;
     text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
 }

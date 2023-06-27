@@ -10,12 +10,108 @@ Don't forget to hit the :star: if you like this repo.
 
 # Special Topic Data Engineering (SECP3843): Alternative Assessment
 
-#### Name:
-#### Matric No.:
-#### Dataset:
+#### Name: AHMAD AIMAN HAFIZI BIN MUHAMMAD
+#### Matric No.: A20EC0177
+#### Dataset: ANALYTICS DATASET
 
 ## Question 3 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+### Step 1: Navigate to Desktop
+
+```python
+cd Deskstop
+```
+
+### Step 2: Create virtual environment
+
+```python
+python -m venv envq3
+```
+
+### Step 3: Activate virtual environment
+
+```python
+myenv\Scripts\activate
+```
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image1.png)
+
+### Step 4: Create new Project and App
+
+1. Go to  command prompt to creat new Django Project. Create a new app called mflixportal inside the project
+
+2. Create project called `AnalyticsQ3`
+
+```python
+django-admin startproject AnalyticsQ3
+```
+
+3. Change directory
+
+```python
+cd AnalyticsQ3
+```
+
+4. Creata app called `AnalyticsQ3_app`
+
+```python
+py manage.py startapp AnalyticsQ3_app
+```
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image2.png)
+
+### Step 5: Configure settings.py
+
+1. Go to `Desktop` > `AnalyticsQ3` > `AnalyticsQ3` > `settings.py`
+
+2. Add `AnalyticsQ3_app` app inside *INSTALLED_APPS* section
+
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'AnalyticsQ3_app'
+]
+```
+
+3. Replace the original code with this one inside *DATABASE* section
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'analytics_q3',
+	'USER': 'root',
+	'HOST': 'localhost',
+	'PORT': '3306',
+    }
+}
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

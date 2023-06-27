@@ -16,7 +16,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 1 (a)
 
-### Solutions on implementing a configuration using five servers used in this project:
+As an IT consultant, it is crucial for me to actively participate in overviewing the critical stages and concerns involved in developing a portal that seamlessly integrates various hardware and software applications. Implementing an amount of 5 servers in this project is possible, whereby the servers are used as:
 
 a) Web Server: This server will handle incoming HTTP requests and serve the Django web application. It will run the web server software (such as Apache or Nginx) and the necessary components for Django to operate.
 
@@ -65,7 +65,7 @@ Then redirect to city_inspections using the following commands:
              'USER': 'root',
              'PASSWORD': '',
              'HOST': 'localhost',
-             'PORT': 8000,
+             'PORT': 3306,
          },
          'mongodb': {
              'ENGINE': 'djongo',
@@ -80,10 +80,36 @@ Then redirect to city_inspections using the following commands:
          }
      }
 ```
+<img src="./files/images/startapp.png">
+
 ### 3. Configuring Django models
  To define Django models that represent the structure and fields of the JSON dataset, you can open the models.py file in the city_inspectionsDataset app and define the models based on the data dictionary. Here's an example of how you can define the models:
+-  In `models.py` file, define the models according to its data structure and data types.
 
- 
+      ```python
+      from django.db import models
+      
+      class Inspection(models.Model):
+          id = models.CharField(max_length=50, primary_key=True)
+          certificate_number = models.IntegerField()
+          business_name = models.CharField(max_length=255)
+          date = models.DateField()
+          result = models.CharField(max_length=255)
+          sector = models.CharField(max_length=255)
+          city = models.CharField(max_length=255)
+          zip_code = models.IntegerField()
+          street = models.CharField(max_length=255)
+          number = models.IntegerField()
+      
+          def __str__(self):
+              return self.name
+             ```
+<img src="./files/images/models.png">
+
+### 4. Configuring Django Database Routing
+ 1. Run the following commands to create the necessary database tables for MySQL and MongoDB `python manage.py makemigrations` and `python manage.py migrate`
+<img src="./files/images/migrate.png">
+
 ## Question 1 (b)
 ### System Architecture Diagram
 Figure below shows the breakdown of the system architecture:

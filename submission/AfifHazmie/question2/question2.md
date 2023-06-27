@@ -71,7 +71,7 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
 ---
    ### Create query:
    - Run insertOne function in the terminal to insert new data into the collection.
-     ```
+     ```python
      db.Sales.insertOne({
       saleDate: ISODate("2023-07-02T16:11:59.565Z"),
       items: [
@@ -105,7 +105,7 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
    ### View Query:
    - Run the `find` in the Mongosh terminal
      
-     ```
+     ```python
      db.Sales.find ( {storeLocation: "Johor" } )
      ```
    
@@ -118,23 +118,23 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
  - `updateOne` function is used to update a single document that first match field filter and then the `$set` is used to replace the current data with new data.
  - for example: I want to update the item 1 to bookshelf with price 19.99 and item 2 change the quantity to 15
    
-  ```
+  ```python
    db.Sales.updateOne(
-  { storeLocation: "Johor" },
-  {
-    $set: {
-      "items.$[item1].name": "bookshelf",
-      "items.$[item1].price": 19.99,
-      "items.$[item2].quantity": 15
-    }
-  },
-  {
-    arrayFilters: [
-      { "item1.name": "book stand" },
-      { "item2.name": "stapler" }
-    ]
-  }
-)
+     { storeLocation: "Johor" },
+     {
+       $set: {
+         "items.$[item1].name": "bookshelf",
+         "items.$[item1].price": 19.99,
+         "items.$[item2].quantity": 15
+       }
+     },
+     {
+       arrayFilters: [
+         { "item1.name": "book stand" },
+         { "item2.name": "stapler" }
+       ]
+     }
+   )
   ```
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/updateonequery.jpg" style="width:300px; height: 600px;">
 
@@ -146,7 +146,7 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
    <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/NewData.jpg">
    
  - after that i will execute the below query which will filter data with `storeLocation="Johor"` to change it to `storeLocation = "Kuala Lumpur"`
-   ```
+   ```python
    db.Sales.updateMany(
      { storeLocation: "Johor" },
      { $set: { storeLocation: "Kuala Lumpur" } }
@@ -165,11 +165,11 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
  - To delete the data in mongodb use whether `deleteOne` to deleete first match data or `deleteMany` to delete all data that satisfied the filter.
  - Execute the below line:
 
-```
+```python
 db.Sales.deleteMany({ storeLocation: "Johor" })
 ```
 
-   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/deletequery.jpg" style="width:450px; height: 200px;">
+   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/deletequery.jpg" style="width:350px; height: 100px;">
  
  - Try filtering `storeLocation = "Kuala Lumpur"`, there will be no result shown.
 
