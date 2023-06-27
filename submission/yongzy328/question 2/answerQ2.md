@@ -13,15 +13,43 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Name: Yong Zhi Yan
 #### Matric No.: A20EC0172
-#### Datatset: City Inspections	
+#### Dataset: City Inspections	
 
 ## Question 2 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20103533.png" alt="access mongodb via cmd">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104340.png" alt="upload json file to MongoDB">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104937.png" alt="json file imported">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104656.png" alt="access mongodb shell">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104711.png" alt="show all databases">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104829.png" alt="use database AA">
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20112357.png" alt="insertone()">
 
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20112337.png" alt="view inserted data">
 
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20113120.png" alt="find()">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20113354.png" alt="view find() at mongodb compass">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20114542.png" alt="updateone()">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20114609.png" alt="view updated date">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20115838.png" alt="updatemany()">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20115823.png" alt="view updatemany data">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20115905.png" alt="double check updatemany data">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20120101.png" alt="deleteone()">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20120123.png" alt="view deleted date">
 
 
 

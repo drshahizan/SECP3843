@@ -10,12 +10,202 @@ Don't forget to hit the :star: if you like this repo.
 
 # Special Topic Data Engineering (SECP3843): Alternative Assessment
 
-#### Name:
-#### Matric No.:
-#### Dataset:
+#### Name: AHMAD AIMAN HAFIZI BIN MUHAMMAD
+#### Matric No.: A20EC0177
+#### Dataset: ANALYTICS DATASET
 
 ## Question 3 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+### Step 1: Navigate to Desktop
+
+```python
+cd Deskstop
+```
+
+### Step 2: Create virtual environment
+
+```python
+python -m venv envq3
+```
+
+### Step 3: Activate virtual environment
+
+```python
+myenv\Scripts\activate
+```
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image1.png)
+
+### Step 4: Create new Project and App
+
+1. Go to  command prompt to creat new Django Project. Create a new app called mflixportal inside the project
+
+2. Create project called `AnalyticsQ3`
+
+```python
+django-admin startproject AnalyticsQ3
+```
+
+3. Change directory
+
+```python
+cd AnalyticsQ3
+```
+
+4. Creata app called `AnalyticsQ3_app`
+
+```python
+py manage.py startapp AnalyticsQ3_app
+```
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image2.png)
+
+### Step 5: Configure settings.py
+
+1. Go to `Desktop` > `AnalyticsQ3` > `AnalyticsQ3` > `settings.py`
+
+2. Add `AnalyticsQ3_app` app inside *INSTALLED_APPS* section
+
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'AnalyticsQ3_app'
+]
+```
+
+3. Replace the original code with this one inside *DATABASE* section
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'analytics_q3',
+	'USER': 'root',
+	'HOST': 'localhost',
+	'PORT': '3306',
+    }
+}
+```
+
+### Step 6: Configure models.py
+
+1. Go to `Desktop` > `AnalyticsQ3` > `AnalyticsQ3_app` > `models.py`
+
+2. Modify the existing code with this one
+
+```python
+from django.db import models
+from django.contrib.auth.models import AbstractUser, Group, Permission
+
+class User(AbstractUser):
+    is_customer = models.BooleanField(default=False)
+    is_worker = models.BooleanField(default=False)
+    is_management = models.BooleanField(default=False)
+
+    groups = models.ManyToManyField(Group, blank=True, related_name='custom_user_set')
+
+    user_permissions = models.ManyToManyField(Permission, blank=True, related_name='custom_user_set')
+```
+
+### Step 7: Configure views.py
+
+1. Go to `Desktop`> `AnalyticsQ3` > `AnalyticsQ3_app` > `views.py`
+
+2. Open `views.py` file using Microsot Visual Studio Code
+
+3. Include the necessary library and place in at the top of the file
+
+```python
+from django.shortcuts import render, redirect
+from . forms import RegistrationForm
+from django.contrib.auth. forms import AuthenticationForm
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from .decorators import is_customer, is_worker, is_management
+from django.contrib.auth.decorators import user_passes_test
+```
+
+4. Define a function named `user_login` to handle the user login process below the library
+
+```python
+def user_login(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            print('User:', user) 
+            if user is not None:
+                login(request, user)
+                print('User logged in successfully') 
+                return redirect('dashboard')  
+    else:
+        form = AuthenticationForm()
+    return render(request, 'login.html', {'form': form})
+```
+
+5. Define a function name `register` to handle the user registration process below the `user_login` function
+
+```python
+def register(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = RegistrationForm()
+    return render(request, 'register.html', {'form': form})
+```
+
+6. Define three dashbord views page based on their respective roles below the `register` function
+
+```python
+@login_required
+def profile(request):
+    user = request.user
+    
+    return render(request, 'profile.html', {'user': user})
+
+@user_passes_test(is_customer)
+def customer_dashboard_view(request):
+    
+    return render(request, 'customer_dashboard_view.html')
+
+@user_passes_test(is_worker)
+def worker_dashboard_view(request):
+    
+    return render(request, 'worker_dashboard_view.html')
+
+@user_passes_test(is_management)
+def management_dashboard_view(request):
+    
+    return render(request, 'management_dashboard_view.html')
+```
+
+7. Define a function named `redirect_dashboard` to redirect each views page based on their respective roles
+
+```python
+def redirect_dashboard(request):
+    user = request.user
+    if user.is_customer:
+        return redirect('customer_dashboard_view')
+    elif user.is_worker:
+        return redirect('worker_dashboard_view')
+    elif user.is_management:
+        return redirect('management_dashboard_view')
+    else:
+        
+        return redirect('profile')
+```
+
+
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
