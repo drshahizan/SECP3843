@@ -347,6 +347,19 @@ def is_senior_management(user):
 
 ### Step 14: Migrate Model
 
+1. Go to command prompt.
+
+2. Make migrations for the User model
+
+```python
+py manage.py makemigrations
+```
+
+
+
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image6.png) 
+
 
 
 
