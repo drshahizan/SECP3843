@@ -30,17 +30,17 @@ This command will create a new Django project with the name "q3". You can replac
 d.Once the project is created, navigate to the project folder using the cd command. In this case, run:
 <img src="./files/image/q3.png">
 
-### MySQL setup
+### 2. MySQL setup
 
-1. To set up MySQL for your Django project, follow these steps:
+a. To set up MySQL for your Django project, follow these steps:
 
 Install the MySQL connector for Python by running the command `pip install mysql-connector-python`. This package allows Django to communicate with the MySQL database.
 
 <img src="./files/image/mysql.png">
 
-2. After the installation is complete, create a new database named q3 in phpMyAdmin. This will be the database where your Django project will store its data.
+b. After the installation is complete, create a new database named q3 in phpMyAdmin. This will be the database where the Django project will store its data.
 
-3. Open the `settings.py` file in your Django project and locate the DATABASES configuration. Modify it to match the following configuration:
+c. Open the `settings.py` file in  Django project and locate the DATABASES configuration. Modify it to match the following configuration:
 
 ```python 
 DATABASES = {
@@ -55,14 +55,15 @@ DATABASES = {
 }
 ```
 
-### Create a Django app
+### 3. Create a Django app
 
-1. Create Django app by running
+a. Open the command prompt and navigate to the root directory of  Django project. Then run the following command:
 ```bash
 python manage.py startapp q3_app
 ```
+This will create a new Django app named q3_app within the project directory. The app will have a basic structure and files.
 
-2. Go to setting and update this part:
+b. Open the settings.py file in the Django project and locate the INSTALLED_APPS configuration. Add 'q3_app' to the list of installed apps as shown below:
 ```kotlin
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -74,9 +75,12 @@ INSTALLED_APPS = [
     'q3_app',
 ]
 ```
-### Define the User model
+By adding 'q3_app' to the INSTALLED_APPS,  the q3_app Django app are registered to be used in your project.
 
-1. Go to `model.py` file in q3_app and define the User model for authentication
+
+### 4. Define the User model
+
+a. Open the models.py file in the q3_app directory and add the following code:
 
 ```ruby
 from django.db import models
@@ -107,7 +111,7 @@ class User(AbstractUser):
         verbose_name='user permissions',
     )
 ```
-2. Run the database migrations:
+b. To apply the model changes to the database, run the following commands in the command prompt:
 
 ```bash
 python manage.py makemigrations
@@ -117,9 +121,11 @@ python manage.py migrate
 
 <img src="./files/image/q3migrate.png">
 
-### Create registrations views and templates
+After running the migrations, the User model will be created in the database with the defined fields and relationships.
 
-1. Create new file called `forms.py`
+### 5. Create registrations views and templates
+
+a. Create a new file called `forms.py` in your q3_app directory. Add the following code to define the UserRegistrationForm:
 
 ```python
 from django import forms
@@ -134,7 +140,7 @@ class UserRegistrationForm(forms.ModelForm):
         fields = ['username', 'password', 'email', 'first_name', 'last_name', 'user_type']
 ```
 
-2. Create a new view in your app's views.py file to handle registration:
+b. Open app's views.py file and add the following code to create a view function for user registration:
 
 ```python
 from django.shortcuts import render, redirect
@@ -152,7 +158,7 @@ def user_registration(request):
         form = UserRegistrationForm()
     return render(request, 'user_registration.html', {'form': form})
 ```
-3. Create new direcotry and file
+c. Create new direcotry and file:
 
 ```kotlin
 q3_app/
@@ -169,7 +175,7 @@ q3_app/
         └── user_registration.html  <--- New file
 ```
 
-4. User registration form `user_registration.html`
+d.  Inside the registration directory, create a file named user_registration.html with the following content:
 
 ```html
 <form method="post">
@@ -178,7 +184,7 @@ q3_app/
   <button type="submit">Register</button>
 </form>
 ```
-5. Go to setting.py and initiallize path:
+e. In your settings.py file, update the TEMPLATES setting to include the directory where the user_registration.html template is located. Add the following paths to the DIRS list:
 
 ```rust
 TEMPLATES = [
@@ -200,17 +206,18 @@ TEMPLATES = [
     },
 ]
 ```
-### Create login views and templates
 
-1. Add a new class inside `forms.py`
+### 6. Create login views and templates
 
+a.  Inside  forms.py file, add a new class called LoginForm to handle the login form:
 ```python 
 class LoginForm(forms.Form):
     username = forms.CharField(label='username')
     password = forms.CharField(label='password', widget=forms.PasswordInput)
 ```
+The LoginForm class defines two fields, username and password, which will be displayed in the login form.
 
-2. Add a new method inside views.py file to handle login:
+b. In views.py file, add the following code to handle the login view:
 
 ```python 
 def login_view(request):
@@ -248,7 +255,7 @@ def login_view(request):
         return render(request, 'management_dashboard.html')
 ```
 
-3. Create login form:
+c. Create the login template login.html with the following content:
 
 ```html
 <div style="background-color: rgb(86, 86, 175); padding: 20px;">
@@ -289,15 +296,15 @@ def login_view(request):
 
 ```
 
-4. Create 3 dashboard for each user:
+d. Create three dashboard templates for each user type: customer_dashboard.html, technical_worker_dashboard.html, and management_dashboard.html. These templates  contain the HTML code specific to each user type's dashboard.
 
 `customer_dashboard.html`
 `management_dashboard.html`
 `technical_worker_dashboard.html`
 
-### Path setting and run the App
+### 7. Path setting and run the App
 
-1. Go to urls.py and add necessary path for each page
+a. Open the urls.py file in your Django project. This file is usually located in the main project directory. Import the views you need to map to the URL paths.
 
 ```python
 from django.contrib import admin
@@ -316,7 +323,7 @@ urlpatterns = [
 
 ```
 
-2. Open terminal and run `python manage.py runserver`
+b. Run the following command to start the Django development server: `python manage.py runserver`
 
    
 
