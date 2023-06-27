@@ -66,11 +66,11 @@ DATABASES = {
 
 ### Step 3: Create User Model
 
-> User Model uses AbstractUser class to apply the authentication and role designation feature
+1. User Model uses AbstractUser class to apply the authentication and role designation feature
 
-> Among all three JSON files, customers.json will be use for handling user authentication
+2. Among all three JSON files, customers.json will be use for handling user authentication
 
-> Go to `Desktop` > `Analytics` > `Customers` > `model.py` and update the files
+3. Go to `Desktop` > `Analytics` > `Customers` > `model.py` and update the files
 
 ```python
 from django.db import models
@@ -95,6 +95,56 @@ class User(AbstractUser):
 
     user_permission = models.ManyToManyField(Permission, blank=True, related_name='custom_user_set')
 ```
+
+### Step 4: Create new Project and App
+
+1. Go to  command prompt to creat new Django Project. Create a new app called mflixportal inside the project
+
+2. Create project called `AnalyticsQ3`
+
+```python
+django-admin startproject AnalyticsQ3
+```
+
+3. Change directory
+
+```python
+cd AnalyticsQ3
+```
+
+4. Creata app called `AnalyticsQ3_app`
+
+```python
+py manage.py startapp AnalyticsQ3_app
+```
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image2.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
