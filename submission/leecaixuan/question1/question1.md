@@ -277,7 +277,7 @@ retrieve_accounts_data()
 ## Question 1 (b)
 
 <p align="center">
-  <img height="600px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question1/files/images/System%20Architecture.png" />
+  <img height="500px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question1/files/images/System%20Architecture.png" />
 </p>
 
 The system architecture consists of Django web server, JSON dataset, MySQL and MongoDB database. The model is created and the data is loaded into MYSQL and MongoDB database. JSON file is imported into MongoDB database. User must login to the system that consists of the user interface that can interact to view the data information. To retrieve data, Django is used to process and communicate with databases that stored all the data.  
