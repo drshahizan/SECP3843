@@ -165,7 +165,7 @@ Next, choose the replication technique for each database. MySQL and MongoDB will
 
      7. Configure slave server by uncomment the second line shown below.
           <p align='center'>
-            <img width="280" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/4b6371f8-fcc4-4627-867d-446a416e9dfa">
+            <img width="400" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/4b6371f8-fcc4-4627-867d-446a416e9dfa">
          </p>
 
      8. Start a slave by running its command.
