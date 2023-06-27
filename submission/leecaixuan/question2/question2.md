@@ -26,7 +26,7 @@ Open the MongoDB Compass and it will display the interface like the image below.
 
 <h4>Step 2 - Create Database</h4>
 
-Click the  'Create Database' button to create anew database. Type in the database name, 'aa_project' and the collection name such as 'Accounts'. Click the 'Create Database' button. 
+Click the  'Create Database' button to create a new database. Type in the database name, 'aa_project' and the collection name such as 'Accounts'. Click the 'Create Database' button. 
 
 <p align="center">
   <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/create%20database.png" />
@@ -34,14 +34,16 @@ Click the  'Create Database' button to create anew database. Type in the databas
 
 <h4>Step 3 - Import Data</h4>
 
-After creating a database, import the 'Accounts.json' file into the Accounts collection. Chooes the file from your local PC. 
-
-<p align="center">
-  <img height="150px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/choosefromfile.png" />
-</p>
+After creating a database, import the 'Accounts.json' file into the Accounts collection. Click 'Import Data' button.
 
 <p align="center">
   <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import%20data.png" />
+</p>
+
+Chooes the file from your local PC. 
+
+<p align="center">
+  <img height="150px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/choosefromfile.png" />
 </p>
 
 <h4>Imported Data</h4>
