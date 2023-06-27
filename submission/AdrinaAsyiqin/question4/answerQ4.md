@@ -39,6 +39,9 @@ Don't forget to hit the :star: if you like this repo.
   df.info()
   ```
 
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/6249484b-d4f8-498d-aeb7-7893a4ed1ad9)
+
+
 - Data cleaning and preparation. Some of the data cleaning I did is `handling missing values`,`removing duplicates`, and `convert items column into seperate columns`
 
   ```py
@@ -69,7 +72,10 @@ Don't forget to hit the :star: if you like this repo.
 
   ```
 
-### Step 2 :Data viusalisation
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/28b8e649-6383-4c33-809c-7a71f0b02772)
+
+
+### Step 2 :Data visualisation
 - Create bar graph
   ```py
   import matplotlib.pyplot as plt
@@ -88,6 +94,9 @@ Don't forget to hit the :star: if you like this repo.
 
   ```
 
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/3eebbd45-3d48-4883-a183-3c9b4e7ebd92)
+
+
 - Create pie chart
   ```py
   import matplotlib.pyplot as plt
@@ -103,6 +112,9 @@ Don't forget to hit the :star: if you like this repo.
   plt.show()
 
   ```
+
+  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/d6fcb1de-eb09-437e-a10c-c1b03454acc8)
+
 
 ### Step 3:Macbine Learning
   ```py
