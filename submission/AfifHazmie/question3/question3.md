@@ -317,12 +317,12 @@ Don't forget to hit the :star: if you like this repo.
    - The master-slave replication model allows for data replication and synchronization between the master and slave databases, ensuring that changes made in the master database are propagated to the slave database.
    - This replication model is commonly used in scenarios where read scalability, high availability, and fault tolerance are required.
    - The specific steps for configuring master and slave servers may vary depending on the replication technique or tool chosen, as well as the specific configurations of the MySQL and MongoDB databases.
-   - It is recommended to refer to the documentation and resources provided by the respective database systems for detailed instructions on setting up master and slave servers.
+   - Master-slave replication enhances the reliability, scalability, and performance of database systems by providing redundancy, distributing the workload, and facilitating data backup and analytics. It is a widely adopted technique for achieving high availability and improving the overall efficiency of database operations.
 
 ---
 
 #### To set up master-slave replication between a MySQL master server and a MySQL slave server, these are the following steps:
-#####   Step 1: Configure the master server
+##### Step 1: Configure the master server
    - Open MySQL configuration on the Master server
    - Locate `[mysqld]` and add the following line:
    
@@ -340,8 +340,8 @@ Don't forget to hit the :star: if you like this repo.
    - Run the following SQL command to create a replication user
      
      ```python
-      CREATE USER 'afifhazmie'@'167.0.0.1' IDENTIFIED BY 'A@bc1234';
-      GRANT REPLICATION SLAVE ON *.* TO 'afifhazmie'@'167.0.0.1';
+      CREATE USER 'mafif'@'192.168.1.100' IDENTIFIED BY 'A@bc1234';
+      GRANT REPLICATION SLAVE ON *.* TO 'mafif'@'192.168.1.100';
       FLUSH PRIVILEGES;
      ```
      
@@ -357,9 +357,27 @@ Don't forget to hit the :star: if you like this repo.
    - Locate `[mysqld]` section and add the following lines:
      ```makefile
      server-id = 2
-     replicate-do-db = your_database_name
+     replicate-do-db = db_store
      ```
-     
+     > - `server-id` uniquely identifies the slave server.
+     > - `replicate-do-db` specifies the database(s) to be replicated from the master.
+
+##### Step 5: Start Replication on the Slave Server
+   - Log in to the MySQL command-line interface on the slave server.
+   - Run the following SQL command to configure replication:
+     ```makefile
+     CHANGE MASTER TO MASTER_HOST='192.168.1.200', MASTER_USER='mafif', MASTER_PASSWORD='A@bc1234', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=0;
+     ```
+   - Start the replication process on slave server
+     ```sql
+     START SLAVE;
+     ```
+##### Step 6: Verify Replication Status
+   - Run the following line on slave server
+     ```sql
+     SHOW SLAVE STATUS\G
+     ```
+
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
