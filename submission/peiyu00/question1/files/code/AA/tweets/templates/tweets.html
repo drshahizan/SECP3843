@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tweets</title>
+</head>
+<body>
+    <h1>Tweets from MySQL (filtered by source)</h1>
+    <ul>
+        {% for tweet in tweets_mysql %}
+            <li>{{ tweet.text }}</li>
+        {% empty %}
+            <li>No tweets found</li>
+        {% endfor %}
+    </ul>
+    
+    <h1>Tweets from MongoDB (filtered by source)</h1>
+    <ul>
+        {% for tweet in tweets_mongodb %}
+            <li>{{ tweet.text }}</li>
+        {% empty %}
+            <li>No tweets found</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
