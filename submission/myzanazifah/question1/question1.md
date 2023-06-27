@@ -94,7 +94,28 @@ Lastly, I would also recommend using reverse proxy server which incorporates loa
 
 4. Configure Database Settings
    - Go to the 'settings.py' file in the Django project and locate the code for databases.
-   - Next, edit the code by defining the connection details for both MongoDB and MySQL databases such as username, password, host, port and engine.
+   - Next, edit the code by defining the connection details for both MongoDB and MySQL databases such as username, password, host, port and engine.   
+
+     ```python
+
+      DATABASES = {
+          'default': {
+              'ENGINE': 'django.db.backends.mysql',
+              'NAME': 'storiesportal',
+              'USER': 'root',
+              'HOST': 'localhost',
+              'PORT': '3306',
+          },
+          'mongodb': {
+      		'ENGINE': 'djongo',
+              'NAME': 'storiesportal',
+              'ENFORCE_SCHEMA': False,
+              'CLIENT': {
+              'host': 'mongodb://localhost:27017/stories'
+      	    }
+          }
+      }
+      ```
 <br>
 
 5. Create Django Models
