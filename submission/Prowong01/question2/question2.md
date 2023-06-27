@@ -29,7 +29,7 @@ After download the dataset, I need to make sure that it follows the JSON syntax 
 To start MongoDB server, run the mongod command in your terminal or command prompt. This will launch the MongoDB server and listen for connections on port 27017 by default. 
 <img  src="./files/images/mongod.png"></img>
  
-### Step 3. Import Dataset
+#### Step 3. Import Dataset
 In cmd enter `mongoimport "C:\Users\Asus\Desktop\AA Special Topic\companies.json" -d test -c companies`.
 The command format is `mongoimport "dataset_location_path" -d name_of_database -c name_of_collection`
 This command will import a JSON file named companies.json into a collection named companies in a database named test
@@ -38,9 +38,13 @@ This command will import a JSON file named companies.json into a collection name
 View the collection at MongoDB Compass
 <img  src="./files/images/data.png"></img>
 
-### Step 3. Access MongoDB Shell
+#### Step 4. Access MongoDB Shell
 Enter `mongosh` in the terminal to access the MongoDB shell.
 <img  src="./files/images/mongosh.png"></img>
+
+#### Step 5. View and check the data in MongoDB
+Enter `showdbs` to view the databases in MongoDB Shell and `db.companies.find().limit(3)` is to query the first 3 data from the dataset.
+<img  src="./files/images/query.png"></img>
 
 ## Question 2 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
