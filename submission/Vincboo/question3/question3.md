@@ -183,7 +183,12 @@ path('management_dashboard/', management_dashboard_view, name='management_dashbo
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/cbb73235-1106-4aa8-8242-50b0b95782c2"/>
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### 1. Understand and Identify
+When working with both MySQL and MongoDB databases, it is important to have an understanding of the data models for each database. This knowledge helps identify the entities and data fields that need to be synchronized between the two databases to ensure data consistency. 
+
+To overcome the challenge of data replication and synchronization, developers can explore database-specific replication techniques or utilize external tools that facilitate real-time updates and seamless interaction between the databases. By following these steps, it becomes possible to effectively manage data replication and synchronization between MySQL and MongoDB databases.
+
+###2. 
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
