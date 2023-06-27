@@ -18,6 +18,7 @@ Don't forget to hit the :star: if you like this repo.
 ### 1. Install Python & Django
 - To utilize Django, a Python installation is required which can be obtained by downloading it from the [official website](https://www.python.org/downloads/).
 - Open Command Prompt and type `pip install django` to install Django.
+
 <img  src="./files/images/pip.jpg"></img>
 
 ### 2. Create & activate virtual environment
@@ -72,12 +73,12 @@ Presents the portal's visual interface to users which includes presentation of i
 - Performs data processing and transformation operations.
 - Object-Relational Mapping (ORM) layer facilitate interactions with the databases.
 
-### Dataset (JSON)
-Ingested and processed by Django app for integration with the database.
-
 ### Databases
 - MySQL: stores structured data such as users login and registration credentials.
-- MongoDB: stores unstructured or semi-structured data such as the city_inspections.json dataset.
+- MongoDB: stores unstructured or semi-structured data such as the JSON dataset.
+
+### Dataset (JSON)
+city_inspections.json is the JSON dataset used in this project.
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
