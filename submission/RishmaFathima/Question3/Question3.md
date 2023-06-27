@@ -18,36 +18,68 @@ Don't forget to hit the :star: if you like this repo.
   1. Setting up the Django Project:
      - Install Django on my web server.
      - Create a new Django project using the django-admin startproject AA_Question3 command.
+       
+        <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/2f6313177e823c8cd516bd9e08d8e37d05123d50/submission/RishmaFathima/Question3/files/images/3.1.1.png">
+          
      - Create a virtual environment for this project.
        
        ``` ruby
        python -m venv my_env
        my_env\Scripts\activate
        ```
+       
+        <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/2f6313177e823c8cd516bd9e08d8e37d05123d50/submission/RishmaFathima/Question3/files/images/3.1.2.png">
+          
      - Install package Django with the code pip install Django
+       
+        <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/12219ef33b7e27340551d65a344b034a560bd2e4/submission/RishmaFathima/Question1/files/images/1.1.1.3.png">
+          
 
   2. Creating a Django App:
      - Create a new Django app within your project using the python manage.py startapp q3 command.
+       
+        <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/2f6313177e823c8cd516bd9e08d8e37d05123d50/submission/RishmaFathima/Question3/files/images/3.1.4.png">
+          
 
 
    3. Configuring the MySQL Database:
       - Install the MySQL database connector for Python using pip install mysqlclient.
+        
+         <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/2f6313177e823c8cd516bd9e08d8e37d05123d50/submission/RishmaFathima/Question3/files/images/3.1.5.png">
+          
       - In the project's settings.py file, configure the database settings to connect to the MySQL database with the details like database name, host, port, username,           and password.
+
+         <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/2f6313177e823c8cd516bd9e08d8e37d05123d50/submission/RishmaFathima/Question3/files/images/3.1.6.png">
+          
  
    4. Designing the User Model:
-      - Define a user model class that will represent the users of the system in the q3's models.py file which include fields like username, email, password, and fields         specific to each user type (customers, technical workers, senior management).
-      - The user model should include fields like username, email, password, and additional fields specific to each user type (customers, technical workers, senior              management).
+      - Define a user model class that will represent the users of the system in the q3's models.py file which include fields like username, email, password, and              fields specific to each user type (customers, technical workers, senior management).
+      - The user model should include fields like username, email, password, and additional fields specific to each user type (customers, technical workers, senior             management)
+
+         <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/2f6313177e823c8cd516bd9e08d8e37d05123d50/submission/RishmaFathima/Question3/files/images/3.1.7.png">
+          
  
   5. Creating the Registration and Login Views:
      - Create view functions for user registration and login in the q3's views.py file.
      - The registration view will handle user sign-up, validate the input data, and create a new user instance in the database.
      - The login view will handle user authentication, verify credentials, and provide access to the system upon successful login.
+       
+        <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/2f6313177e823c8cd516bd9e08d8e37d05123d50/submission/RishmaFathima/Question3/files/images/3.1.8.png">
+          
  
   6. Implementing the Registration and Login Templates:
-     - Create HTML templates for user registration and login forms which will include input fields for the required user information, such as username, email, and              password and he login template will contain fields for username/email and password. 
+     - Create HTML templates for user registration and login forms which will include input fields for the required user information, such as username, email, and              password and he login template will contain fields for username/email and password.
+       
+        <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/2f6313177e823c8cd516bd9e08d8e37d05123d50/submission/RishmaFathima/Question3/files/images/3.1.9.png">
+
+       <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/2f6313177e823c8cd516bd9e08d8e37d05123d50/submission/RishmaFathima/Question3/files/images/3.1.10.png">
+          
  
    7. Mapping URLs to Views:
       - Defined URL patterns in the q3's urls.py file, mapping them to the registration and login views that is created earlier.
+        
+         <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/2f6313177e823c8cd516bd9e08d8e37d05123d50/submission/RishmaFathima/Question3/files/images/3.1.11.png">
+          
  
   8. Migrating the Database:
      - Run the database migrations using the python manage.py makemigrations and python manage.py migrate commands which create the necessary database tables based on          the user model defined earlier.
