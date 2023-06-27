@@ -21,7 +21,7 @@ To implement a configuration using five servers in this project, below are the b
 2.  `MySQL Database Server`<br>
  This server is responsible to host the MYSQL database. The installation and configuration of MYSQL will be done in this server. All operations such as storing and retrieving data from MYSQL will interact with this server.
 3.  `MongoDB Server`<br>
-   Since the project require MongoDB database, a dedicated server is use to host MongoDB database. The installation and configuration of MYSQL will be done in this server. All operations such as storing and retrieving data from MongoDB will interact with this server.
+   Since the project require MongoDB database, a dedicated server is use to host MongoDB database. The installation and configuration of MongoDB will be done in this server. All operations such as storing and retrieving data from MongoDB will interact with this server.
 4.  `Django Server`<br>
    The main purpose of this server is to execute the python-based Django web application framework. This server will handle the logic of our web application that includes interacting with database and processing requests.
 5.  `Load Balancer`<br>
