@@ -76,7 +76,6 @@ Don't forget to hit the :star: if you like this repo.
 ![image-3.png](ss/ss5.png)
 
 ## Question 2 (b)
-## Question 2(b)
 
 We are using \_MONGOSH for the query. First we need to use the database first.
 ```javascript
