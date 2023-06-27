@@ -411,13 +411,13 @@ py manage.py runserver
 
 **Step 1**
 
-Login to phpMyAdmin panel and then click the `replication` tab on the top ribbon
+- Login to phpMyAdmin panel and then click the `replication` tab on the top ribbon
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image12.png)
 
 **Step 2**
 
-Click on the *configure* option under the `Primary replication` section
+- Click on the *configure* option under the `Primary replication` section
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image13.png)
 
@@ -429,8 +429,16 @@ The primary replication section will expand
 
 - Then select the database named `analytics_q3` or whatever database that needs to be replicated
 
+- Copy the lines shown belown the list. In this case, this is my server-id
+
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image14.png)
 
+```python
+server-id=4833576
+log_bin=mysql-bin
+log_error=mysql-bin.err
+binlog_do_db=analytics_q3
+```
 
 
 
