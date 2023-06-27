@@ -62,7 +62,7 @@ This can be done by managing the users according to the user type. Since in this
 
 Since using MySQL database to store the user authentication information, below are the settings that should be done in settings.py:
 
-![db]()
+![db](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/db.png)
  
 #### Step 6: Perform Database Migration in Django Project
 
@@ -76,7 +76,7 @@ python manage.py migrate
 ```
 The terminal should give response when these command was executed:
 
-![migrate]()
+![migrate](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/makemigrate.png)
 
 
 ## Question 3 (b)
