@@ -14,7 +14,48 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Stories](https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories)
 
 ## Question 4
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+For the given case study, I will be using Support Vector Machine as a machine learning algorithms for text classification to automatically categorize articles into different topics or containers. This can help in organizing and recommending relevant content to users. SVM performs well in high-dimensional feature spaces, which is often the case in text classification tasks. In text classification, each word or n-gram is considered a feature, and SVM can handle a large number of features efficiently.
+
+#### Set up the environment
+
+1. Open Google Colab and create a new notebook.
+2. Import the necessary libraries.
+   ```python
+      import pandas as pd
+      import numpy as np
+      from sklearn.model_selection import train_test_split
+      from sklearn.feature_extraction.text import TfidfVectorizer
+      from sklearn.svm import SVC
+      from sklearn.metrics import classification_report
+      from pymongo import MongoClient
+   ```
+
+#### Connect to MongoDB and retrieve data
+
+1. Install the pymongo library.
+   ```python
+      !pip install pymongo
+   ```
+
+2. Set up a connection to MongoDB database and retrieve the data.
+   ```python
+      # Set up MongoDB connection
+      client = MongoClient('mongodb://your_mongodb_connection_string')
+      db = client['your_database_name']
+      collection = db['your_collection_name']
+      
+      # Retrieve data from MongoDB
+      data = list(collection.find())
+   ```
+
+#### Prepare the data
+
+1. Convert the MongoDB data into a pandas DataFrame.
+   ```python
+      df = pd.DataFrame(data)
+   ```
+
+2. Split the data into input (X) and target (y) variables.
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
