@@ -14,123 +14,152 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Supply Store
 
 ## Question 4
-   - For the given case study, a suitable machine learning approach could be `classification` using a `Decision Tree Algorithm`. Decision trees are versatile and can be used for both prediction and data analysis tasks.
-   - The decision tree classifier is a suitable choice due to its interpretability and ability to handle nonlinear relationships.
-   - Decision trees provide a clear and intuitive representation of the decision-making process, allowing to easily understand and explain the model's predictions.
-   - The resulting tree structure can be visualized, enabling to trace the path of decision-making and gain insights into the factors influencing the predictions.
+   - The machine learning approach used in this project is `logistic regression`.
+   - Logistic regression is a `classification algorithm` used to predict the probability of a binary outcome based on one or more independent variables.
+   - It is commonly used when the dependent variable is `categorical`.
+   - `Logistic regression` is a popular and interpretable algorithm for binary classification tasks.
+   - However, it assumes a linear relationship between the independent variables and the log-odds of the outcome.
 
    1. Firstly, before do any analysis, visualization or machine learning, we must first clean the data. For examples:
-      
+
+      #### Retrieve & Convert data into dataframe
       ```python
-        # Connect to MongoDB and retrieve data
-          client = pymongo.MongoClient("mongodb+srv://afifhazmiearsyad:abc123456789@noctua.bw9bvzx.mongodb.net/")
-          db = client["SupplyStore"]
-          collection = db["Sales"]
-          data = list(collection.find())
-          
-          # Convert to dataframe
-          df = pd.DataFrame(data)
-          df
-          data = df
+      # Connect to MongoDB and retrieve data
+      client = pymongo.MongoClient("mongodb+srv://afifhazmiearsyad:abc123456789@noctua.bw9bvzx.mongodb.net/")
+      db = client["SupplyStore"]
+      collection = db["Sales"]
+      data = list(collection.find())
+      
+      # Convert to dataframe
+      df1 = pd.DataFrame(data)
       ```
-      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/df.jpg">
-      
-      #### Checking null rows
-      
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/df1.jpg">
+
+      #### Splitting the Customer data from dictionary to columns
       ```python
-         data.isnull().sum()
-         data.info()
+      import numpy as np
+
+      # Splitting Customer Data
+      df1['gender'] = df1['customer'].apply(lambda x: x['gender'] if pd.notnull(x) else np.nan)
+      df1['age'] = df1['customer'].apply(lambda x: x['age'] if pd.notnull(x) else np.nan)
+      df1['email'] = df1['customer'].apply(lambda x: x['email'] if pd.notnull(x) else np.nan)
+      df1['satisfaction'] = df1['customer'].apply(lambda x: x['satisfaction'] if pd.notnull(x) else np.nan)
+      
+      # Drop the original "customer" column
+      df1.drop('customer', axis=1, inplace=True)
       ```
-      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/dfinfo.jpg">
-      
-      #### Droping rows with missing values
-      
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/customersplit.jpg">
+
+      #### Splitting the Items data from array to columns
       ```python
-         df.dropna(inplace=True)
+      df1['item_names'] = df1['items'].apply(lambda x: [item['name'] for item in x] if isinstance(x, list) else [])
+      df1['item_tags'] = df1['items'].apply(lambda x: [item['tags'] for item in x] if isinstance(x, list) else [])
+      df1['item_prices'] = df1['items'].apply(lambda x: [item['price'] for item in x] if isinstance(x, list) else [])
+      df1['item_quantities'] = df1['items'].apply(lambda x: [item['quantity'] for item in x] if isinstance(x, list) else [])
+      
+      # Drop the original "items" column
+      df1.drop('items', axis=1, inplace=True)
       ```
-      
-      #### Droping rows with missing values
-      
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/itemsplit.jpg">
+
+      #### Clean the splited items column by `removing the array bracket`, `sum up value` and `display unique value for item_names and item_tags`.
       ```python
-      # Drop unnecessary columns
-      data = data.drop(columns=["_id"])
-         
-      # Convert saleDate to datetime type
-      data["saleDate"] = pd.to_datetime(data["saleDate"])
-         
-      # Convert couponUsed to boolean type
-      data["couponUsed"] = data["couponUsed"].astype(bool)
-         
-      # Print the cleaned DataFrame
-      data.head()
+      df1['item_names'] = df1['items'].apply(lambda x: [item['name'] for item in x] if isinstance(x, list) else [])
+      df1['item_tags'] = df1['items'].apply(lambda x: [item['tags'] for item in x] if isinstance(x, list) else [])
+      df1['item_prices'] = df1['items'].apply(lambda x: [item['price'] for item in x] if isinstance(x, list) else [])
+      df1['item_quantities'] = df1['items'].apply(lambda x: [item['quantity'] for item in x] if isinstance(x, list) else [])
+      
+      # Drop the original "items" column
+      df1.drop('items', axis=1, inplace=True)
+      ```
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/itemclean.jpg">
+
+      #### Checking Null value.
+      ```python
+      df1.isnull().sum()
+      df1.info()
       ```
 
-      #### Split the Items columns into seprate column using `json_normalize`
-      
+      #### Drop row contain null value.
       ```python
-      # Convert the 'items' column into separate columns
-      df_items = pd.json_normalize(data['items'])
-         
-      # Rename the columns
-      new_columns = {}
-      for col in df_items.columns:
-          new_columns[col] = f'item{col}'
-      df_items.rename(columns=new_columns, inplace=True)
-         
-      # Merge the item columns with the original DataFrame
-      data = pd.concat([data, df_items], axis=1)
-         
-      # Drop the original 'items' column
-      data.drop('items', axis=1, inplace=True)
-         
-      data.head()
+      df1.dropna(inplace=True)
+      df1.info()
       ```
-      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/jsonnormalize.jpg">
+
+      #### Drop useless columns and convert to suitable datatype.
+      ```python
+      df1.dropna(inplace=True)
+      df1.info()
+
+      # Drop unnecessary columns
+      df1 = df1.drop(columns=["_id"])
       
-   2. Machine Learning Approach `Decision Tree`.
+      # Convert saleDate to datetime type
+      df1["saleDate"] = pd.to_datetime(df1["saleDate"])
+      
+      # Convert couponUsed to boolean type
+      df1["couponUsed"] = df1["couponUsed"].astype(bool)
+      ```
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/cleandata.jpg">
+      
+   2. Machine Learning Approach `Logistic Regression`.
       #### Import the required ML libraries
       ```python
       from sklearn.model_selection import train_test_split
-      from sklearn.tree import DecisionTreeClassifier
+      from sklearn.linear_model import LogisticRegression
       from sklearn.metrics import accuracy_score
       ```
 
-      #### Split the data into testing and training sets
+      #### Split the data into testing and training
       ```python
-      X = data[['couponUsed']]
-      y = data['purchaseMethod']
-      X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+      # Convert categorical variables to numerical representation using one-hot encoding
+      X_encoded = pd.get_dummies(X)
+      
+      # Splitting the data into training and testing sets
+      X_train, X_test, y_train, y_test = train_test_split(X_encoded, y, test_size=0.2, random_state=42)
       ```
 
       #### Training and Testing the datasets.
       ```python
-      # Create a decision tree classifier
-      clf = DecisionTreeClassifier()
+      # Initialize and train the logistic regression model
+      model = LogisticRegression()
+      model.fit(X_train, y_train)
       
-      # Train the classifier on the training data
-      clf.fit(X_train, y_train)
+      # Make predictions on the test set
+      y_pred = model.predict(X_test)
       
-      # Make predictions on the testing data
-      y_pred = clf.predict(X_test)
-      
-      # Evaluate the accuracy of the model
+      # Evaluate the model's accuracy
       accuracy = accuracy_score(y_test, y_pred)
       print("Accuracy:", accuracy)
       ```
-      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/accuracy.jpg">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/Laccuracy.jpg">
 
-      #### Visualize the decision tree classifier, you can use the `plot_tree` function from the `sklearn.tree` module.
+      #### Visualize the performance of the logistic regression model, use the `bar chart` function from the `seaborn` library.
       ```python
       import matplotlib.pyplot as plt
-      from sklearn import tree
+      import seaborn as sns
+      from sklearn.metrics import classification_report
       
-      # Visualize the decision tree
-      fig, ax = plt.subplots(figsize=(12, 12))
-      tree.plot_tree(clf, feature_names=X.columns, class_names=clf.classes_, filled=True, ax=ax)
+      # Create a classification report
+      report = classification_report(y_test, y_pred, output_dict=True)
       
+      # Extract the accuracy and other metrics from the report
+      accuracy = report['accuracy']
+      precision = report['weighted avg']['precision']
+      recall = report['weighted avg']['recall']
+      f1_score = report['weighted avg']['f1-score']
+      
+      # Create a bar plot
+      plt.figure(figsize=(8, 6))
+      metrics = ['Accuracy', 'Precision', 'Recall', 'F1-Score']
+      values = [accuracy, precision, recall, f1_score]
+      sns.barplot(x=values, y=metrics, palette='Blues')
+      plt.title("Model Performance")
+      plt.xlabel("Value")
+      plt.ylabel("Metric")
       plt.show()
       ```
-      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/dcplot.jpg">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/barchart.jpg">
 
 
 
