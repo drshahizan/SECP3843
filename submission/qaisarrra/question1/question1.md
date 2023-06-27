@@ -122,6 +122,18 @@ pip install django
 <p align="center">
    <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Django%20Installation.png">
 </p>
+<br>
+
+5. Install necessary packages. Here we are installing  packages that allows integration between our Django App and MongoDB, those packages are **MySQL Client PyMongo** and **Djongo**. Djongo is a smarter approach to database querying. It maps python objects to MongoDB documents. 
+```bash
+pip install django mysqlclient pymongo
+pip install djongo
+```
+Below are the output when running the commands:
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Install%20Django%20MySQLClient%20PyMongo.png">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Install%20Djongo.png">
+</p>
 <br></br>
 
 **Create A Django Project** 
@@ -182,12 +194,115 @@ DATABASES = {
 In the **models.py** file, define the models that represent the data and correspond to the structure of the JSON dataset.
 1. Defining  models for MySQL
 ```bash
+from django.db import models
 
+class Company(models.Model):
+    _id = models.CharField(max_length=255, primary_key=True)
+    acquisition = models.JSONField(null=True)
+    acquisitions = models.JSONField(null=True)
+    alias_list = models.JSONField(null=True)
+    blog_feed_url = models.URLField(null=True)
+    blog_url = models.URLField(null=True)
+    category_code = models.CharField(max_length=255, null=True)
+    competitions = models.JSONField(null=True)
+    created_at = models.DateTimeField(null=True)
+    crunchbase_url = models.URLField(null=True)
+    deadpooled_day = models.IntegerField(null=True)
+    deadpooled_month = models.IntegerField(null=True)
+    deadpooled_url = models.URLField(null=True)
+    deadpooled_year = models.IntegerField(null=True)
+    description = models.TextField(null=True)
+    email_address = models.EmailField(null=True)
+    external_links = models.JSONField(null=True)
+    founded_day = models.IntegerField(null=True)
+    founded_month = models.IntegerField(null=True)
+    founded_year = models.IntegerField(null=True)
+    funding_rounds = models.JSONField(null=True)
+    homepage_url = models.URLField(null=True)
+    image = models.JSONField(null=True)
+    investments = models.JSONField(null=True)
+    ipo = models.JSONField(null=True)
+    milestones = models.JSONField(null=True)
+    name = models.CharField(max_length=255)
+    number_of_employees = models.IntegerField(null=True)
+    offices = models.JSONField(null=True)
+    overview = models.TextField(null=True)
+    partners = models.JSONField(null=True)
+    permalink = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=20, null=True)
+    products = models.JSONField(null=True)
+    providerships = models.JSONField(null=True)
+    relationships = models.JSONField(null=True)
+    screenshots = models.JSONField(null=True)
+    tag_list = models.JSONField(null=True)
+    total_money_raised = models.CharField(max_length=255, null=True)
+    twitter_username = models.CharField(max_length=255, null=True)
+    updated_at = models.DateTimeField(null=True)
+    video_embeds = models.JSONField(null=True)
+
+    def __str__(self):
+        return self.name
+
+class Users(models.Model):
+    _id = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
 ```
 
 2. Defining  models for MongoDB
 ```bash
+from djongo import models
 
+class Company(models.Model):
+    _id = models.CharField(max_length=255, primary_key=True)
+    acquisition = models.JSONField(null=True)
+    acquisitions = models.JSONField(null=True)
+    alias_list = models.JSONField(null=True)
+    blog_feed_url = models.URLField(null=True)
+    blog_url = models.URLField(null=True)
+    category_code = models.CharField(max_length=255, null=True)
+    competitions = models.JSONField(null=True)
+    created_at = models.DateTimeField(null=True)
+    crunchbase_url = models.URLField(null=True)
+    deadpooled_day = models.IntegerField(null=True)
+    deadpooled_month = models.IntegerField(null=True)
+    deadpooled_url = models.URLField(null=True)
+    deadpooled_year = models.IntegerField(null=True)
+    description = models.TextField(null=True)
+    email_address = models.EmailField(null=True)
+    external_links = models.JSONField(null=True)
+    founded_day = models.IntegerField(null=True)
+    founded_month = models.IntegerField(null=True)
+    founded_year = models.IntegerField(null=True)
+    funding_rounds = models.JSONField(null=True)
+    homepage_url = models.URLField(null=True)
+    image = models.JSONField(null=True)
+    investments = models.JSONField(null=True)
+    ipo = models.JSONField(null=True)
+    milestones = models.JSONField(null=True)
+    name = models.CharField(max_length=255)
+    number_of_employees = models.IntegerField(null=True)
+    offices = models.JSONField(null=True)
+    overview = models.TextField(null=True)
+    partners = models.JSONField(null=True)
+    permalink = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=20, null=True)
+    products = models.JSONField(null=True)
+    providerships = models.JSONField(null=True)
+    relationships = models.JSONField(null=True)
+    screenshots = models.JSONField(null=True)
+    tag_list = models.JSONField(null=True)
+    total_money_raised = models.CharField(max_length=255, null=True)
+    twitter_username = models.CharField(max_length=255, null=True)
+    updated_at = models.DateTimeField(null=True)
+    video_embeds = models.JSONField(null=True)
+
+    class Meta:
+        abstract = True
+
+    def __str__(self):
+        return self.name
 ```
 <br></br>
 
