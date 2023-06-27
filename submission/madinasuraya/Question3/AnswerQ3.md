@@ -120,8 +120,10 @@ Don't forget to hit the :star: if you like this repo.
 
      
 ### Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+To maintain data consistency across both systems it is recommended to perform some data replication techniques dedicated to the specific database to facilitate real-time updates and seamless interaction between them. Here are the steps that can be used to overcome this challenges to maintain synchronization between MySQL and MongoDB.
+
+Firstly, it is advisable to choose the best replication techniques. I would recommend using **master-slave replication**. This techniques also known as single-leader replication. The master (single leader) node works as the primary databases, while the slave (one or more) will maintain copies of the master's data. To be specific, master node is re
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
