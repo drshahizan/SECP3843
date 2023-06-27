@@ -95,7 +95,7 @@ To successfully upload the sales.json dataset into MongoDB, the JSON file must h
         collection.insert_one(sale)
     ```
 ### Result
-<img width="934" alt="Screenshot 2023-06-27 at 4 42 24 PM" src="https://github.com/yanakunn/SECP3843/assets/76076543/7450197e-2461-4b02-abb8-22acbbdf11b2">
+<img width="900" alt="Screenshot 2023-06-27 at 4 42 24 PM" src="https://github.com/yanakunn/SECP3843/assets/76076543/7450197e-2461-4b02-abb8-22acbbdf11b2">
 
 ## Question 2 (b)
 
@@ -106,10 +106,10 @@ client = MongoClient('mongodb+srv://nurarissadayana:123@cluster0.x8tqfdb.mongodb
 db = client['db_stde']
 collection = db['sales']
 ```
-- Create query
+- Create query: Add new object with the id "newobject123".
 ```ruby
 sale = {
-    "_id": ObjectId(),
+    "_id": "newobject123",
     "saleDate": "1550091249812",
     "items": [
         {
@@ -137,30 +137,47 @@ sale = {
 }
 
 collection.insert_one(sale)
+print("Sale inserted successfully")
+print(sale)
 ```
+<img width="900" alt="Screenshot 2023-06-27 at 5 06 31 PM" src="https://github.com/drshahizan/SECP3843/assets/76076543/837079c2-7eba-4c06-8ae6-9572191962c8">
+
 - Read query: Print items bought by male customers at the store in Denver.
+    ```ruby
+    query = {"storeLocation": "Denver", "customer.gender": "M"}
+    results = collection.find(query)
+    for result in results:
+        print(result["items"])
+    ```
+<img width="900" alt="Screenshot 2023-06-27 at 5 00 00 PM" src="https://github.com/drshahizan/SECP3843/assets/76076543/f5edad4d-0ea5-491e-a823-772b9b55d506">
+
+- Update queries
+    - Update the value of an object's quantity
 ```ruby
-query = {"storeLocation": "Denver", "customer.gender": "M"}
-results = collection.find(query)
-for result in results:
-    print(result["items"])
-```
-- Update
-```ruby
-filter_query = {"_id": ObjectId("5bd761dcae323e45a93ccfea"), "items.name": "pens"}
+filter_query = {"_id": "5bd761dcae323e45a93ccfea", "items.name": "pens"}
 update_query = {"$inc": {"items.$.quantity": 2}}
 collection.update_one(filter_query, update_query)
+print(collection.find_one(filter_query))
 ```
+<img width="900" alt="Screenshot 2023-06-27 at 5 03 37 PM" src="https://github.com/drshahizan/SECP3843/assets/76076543/6d6b1068-82f5-4fdd-81e6-a17f8c88d860">
+
+  - Update the value of an object's purchase method
+    
 ```ruby
-filter_query = {"_id": ObjectId("5bd761dcae323e45a93ccfeb")}
+filter_query = {"_id": "5bd761dcae323e45a93ccfeb"}
 update_query = {"$set": {"purchaseMethod": "In store"}}
 collection.update_one(filter_query, update_query)
+print(collection.find_one(filter_query))
 ```
+<img width="900" alt="Screenshot 2023-06-27 at 5 12 03 PM" src="https://github.com/drshahizan/SECP3843/assets/76076543/239ef038-1eb0-4ab1-b20f-703baf75d1ee">
+
 - Delete
 ```ruby
-filter_query = {"_id": ObjectId("5bd761dcae323e45a93ccfeb")}
+filter_query = {"_id": "newobject123"}
 collection.delete_one(filter_query)
 ```
+<img width="400" alt="Screenshot 2023-06-27 at 5 10 08 PM" src="https://github.com/drshahizan/SECP3843/assets/76076543/f97707e3-4999-4859-acb5-a5cb7ba98cb1">
+
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
