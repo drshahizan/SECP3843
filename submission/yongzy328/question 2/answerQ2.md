@@ -27,7 +27,7 @@ Prerequisites: <br>
     - Under the "Advanced" section, select "Environment Variables...". <br>
     - Under the section of user variables, select "Path" and click "Edit". <br> 
     - Click "New" and paste the filepath to bin folder of MongoDB and add a "\" after it (example: "C:\Program Files\MongoDB\Server\6.0\bin\"). <br>
-    - Finally click "OK" for 3 times for each window. <br>
+    - Finally, click "OK" for each window. <br>
 <br> 
 
 1. Open the Command Prompt of system by typing "CMD" in the Windows search bar and select "Command Prompt". 
