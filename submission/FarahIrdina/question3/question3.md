@@ -26,14 +26,14 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 
 
-class CustomUser(AbstractUser):
+class User(AbstractUser):
     USER_TYPE_CHOICES = (
         ('customer', 'Customer'),
         ('technical_worker', 'Technical Worker'),
         ('senior_management', 'Senior Management'),
     )
 
-    user_type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES)
+    type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES)
 ```
 
 #### 2. Configure authentication backend
@@ -41,7 +41,7 @@ class CustomUser(AbstractUser):
 Since we will be using a custom user model, thus we need to update the AUTH_USER_MODEL inside settings.py.
 
 ```
-AUTH_USER_MODEL = 'Listings.CustomUser'
+AUTH_USER_MODEL = 'Listings.User'
 ```
 
 #### 3. Create login and register views
@@ -49,39 +49,53 @@ AUTH_USER_MODEL = 'Listings.CustomUser'
 When we runserver, views help us to open the page that we have set. Views also handle the form submission, validations and user authentication processes.
 
 ```
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import login, logout
 from django.shortcuts import render, redirect
-from .forms import RegistrationForm
+from .forms import NewUserForm
+from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
+from django.contrib import messages
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth.decorators import login_required
 
 
-def login_view(request):
-    if request.method == 'POST':
+def register_request(request):
+    if request.method == "POST":
+        form = NewUserForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            messages.success(request, "Registration successful.")
+            return render(request=request, template_name="Listings/login.html")
+        messages.error(
+            request, "Unsuccessful registration. Invalid information.")
+    form = NewUserForm()
+    return render(request=request, template_name="Listings/register.html", context={"register_form": form})
+
+
+def login_request(request):
+    if request.method == "POST":
         form = AuthenticationForm(request, data=request.POST)
         if form.is_valid():
-            user = form.get_user()
-            login(request, user)
-            # Replace 'home' with the URL name for your home page
-            return redirect('home')
-    else:
-        form = AuthenticationForm(request)
-
-    return render(request, 'templates/Listings/login.html', {'form': form})
-
-
-def register_view(request):
-    if request.method == 'POST':
-        form = RegistrationForm(request.POST)
-        if form.is_valid():
-            user = form.save()  # Save the user object
-            login(request, user)  # Log in the user
-            # Replace 'home' with the URL name for your home page
-            return redirect('home')
-    else:
-        form = RegistrationForm()
-
-    return render(request, 'templates/Listings/register.html', {'form': form})
-
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            if user is not None:
+                login(request, user)
+                messages.info(request, f"You are now logged in as {username}.")
+                if user.type == 'customer':
+                    return render(request=request, template_name="Listings/customer.html")
+                elif user.type == 'technical_worker':
+                    return render(request=request, template_name="Listings/worker.html")
+                elif user.type == 'senior_management':
+                    return render(request=request, template_name="Listings/senior.html")
+                else:
+                    return render(request=request, template_name="Listings/home.html")
+            else:
+                messages.error(request, "Invalid username or password.")
+        else:
+            messages.error(request, "Invalid username or password.")
+    form = AuthenticationForm()
+    return render(request=request, template_name="Listings/login.html", context={"login_form": form})
 ```
 
 #### 4. Define url patterns
@@ -93,10 +107,12 @@ from django.contrib import admin
 from django.urls import path
 from Listings import views
 
+app_name = "Listings"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('register/', views.register_view, name='register'),
-    path('login/', views.login_view, name='login'),
+    path("register/", views.register_request, name="register"),
+    path("login/", views.login_request, name="login")
     # Add more URL patterns as needed
 ]
 ```
@@ -108,24 +124,40 @@ Templates act as the interface that users will be accessing. Create forms inside
 ##### - login.html
 
 ```
-{% extends 'base.html' %} {% block content %}
-<h2>User Login</h2>
-<form method="POST">
-  {% csrf_token %} {{ login_form.as_p }}
-  <button type="submit">Login</button>
-</form>
+{% block content %} {% load crispy_forms_tags %}
+
+<!--Login-->
+<div class="container py-5">
+  <h1>Login</h1>
+  <form method="POST">
+    {% csrf_token %} {{ login_form|crispy }}
+    <button class="btn btn-primary" type="submit">Login</button>
+  </form>
+  <p class="text-center">
+    Don't have an account? <a href="/register">Create an account</a>.
+  </p>
+</div>
+
 {% endblock %}
 ```
 
 ##### - register.html
 
 ```
-{% extends 'base.html' %} {% block content %}
-<h2>User Registration</h2>
-<form method="POST">
-  {% csrf_token %} {{ registration_form.as_p }}
-  <button type="submit">Register</button>
-</form>
+{% block content %} {% load crispy_forms_tags %}
+
+<!--Register-->
+<div class="container py-5">
+  <h1>Register</h1>
+  <form method="POST">
+    {% csrf_token %} {{ register_form|crispy }}
+    <button class="btn btn-primary" type="submit">Register</button>
+  </form>
+  <p class="text-center">
+    If you already have an account, <a href="/login">login</a> instead.
+  </p>
+</div>
+
 {% endblock %}
 ```
 
@@ -135,15 +167,36 @@ Create a forms.py file in Django app and define the custom registration form bas
 
 ```
 from django import forms
-from .models import CustomUser
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
+User = get_user_model()
+
+# Create your forms here.
 
 
-class RegistrationForm(forms.ModelForm):
-    password = forms.CharField(widget=forms.PasswordInput)
+class NewUserForm(UserCreationForm):
+    email = forms.EmailField(required=True)
+
+    USER_TYPE_CHOICES = [
+        ('customer', 'Customer'),
+        ('technical_worker', 'Technical Worker'),
+        ('senior_management', 'Senior Management'),
+    ]
+
+    type = forms.ChoiceField(choices=USER_TYPE_CHOICES,
+                             widget=forms.RadioSelect)
 
     class Meta:
-        model = CustomUser
-        fields = ['username', 'email', 'password', 'user_type']
+        model = User
+        fields = ("username", "email", "password1", "password2", "type")
+
+    def save(self, commit=True):
+        user = super(NewUserForm, self).save(commit=False)
+        user.email = self.cleaned_data['email']
+        if commit:
+            user.save()
+        return user
 ```
 
 #### 7. Perform databsae migrations
@@ -157,6 +210,33 @@ python manage.py migrate
 
 ![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question3/files/images/three.png)
 ![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question3/files/images/three2.png)
+
+### Result
+
+#### - Register page
+
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question3/files/images/register.png)
+
+#### - Login page
+
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question3/files/images/login.png)
+
+#### - Customer page
+
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question3/files/images/customer.png)
+
+#### - Technical worker page
+
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question3/files/images/worker.png)
+
+#### - Senior management page
+
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question3/files/images/senior.png)
+
+#### - MySQL Table User
+
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question3/files/images/mysql.png)
+
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
