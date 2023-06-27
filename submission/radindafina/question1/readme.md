@@ -26,7 +26,7 @@ We will be utilizing five servers to create a robust and dynamic web application
   
   **4. Django Server:** Django is a high-level Python web framework that simplifies the development of complex web applications. It includes a built-in web server for development purposes. Django handles various tasks, such as URL routing, template rendering, database abstraction, and user authentication. It follows the Model-View-Controller (MVC) architectural pattern.
   
-  **5. Additional Suggestion:** Nginx Server - Nginx is a lightweight and high-performance web server that excels at serving static content and acting as a reverse proxy. It can efficiently handle concurrent connections and is often used to improve the performance and scalability of web applications. Nginx can also be used as a load balancer, distributing incoming requests across multiple servers to ensure high availability and fault tolerance.
+  **5. Nginx Server:** Nginx is a lightweight and high-performance web server that excels at serving static content and acting as a reverse proxy. It can efficiently handle concurrent connections and is often used to improve the performance and scalability of web applications. Nginx can also be used as a load balancer, distributing incoming requests across multiple servers to ensure high availability and fault tolerance.
 
 These servers form the backbone of many modern web applications, working together to provide a complete and reliable infrastructure for hosting and serving dynamic content.
 
