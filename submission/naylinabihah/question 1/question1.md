@@ -45,7 +45,7 @@ All the servers should be separated with different tasks and workload since it h
 
 ## Question 1 (b)
 
-![arch](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%201/files/images/arch.png)
+![arch](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%201/files/images/archi.png)
 
 
 #### User Interface
