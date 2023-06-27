@@ -10,18 +10,18 @@ To create a user registration and login module in Django using the MySQL databas
 ### 1. Configure Django to use the MySQL database:
    - Makesure the `mysqlclient` package is installed, which allows Django to interact with the MySQL database. If not, install it using pip: `pip install mysqlclient`.
    - Update the Django project's settings file (`settings.py`) to specify the MySQL database settings.
-     ```python
-     DATABASES = {
-      'default': {
-          'ENGINE': 'django.db.backends.mysql',
-          'NAME': 'analytics_mysql',
-          'USER': 'root',
-          'PASSWORD': '',
-          'HOST': 'localhost',
-          'PORT': 3306,
-      }
+  ```python
+  DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'analytics_mysql',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': 3306,
     }
-     ```
+  }
+  ```
    - Make sure the MySQL database is created with the specified name and have the necessary privileges to access it.
 
 ### 2. Create a Django app for user management:
