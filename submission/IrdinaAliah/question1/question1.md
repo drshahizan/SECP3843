@@ -30,7 +30,7 @@ Step 1: Install Django and required packages:
 <p align="center">
   <img height="200px" src="materials/install django.png" />
 </p>
-
+submission/IrdinaAliah/materials/install django.png
 
 # Question 2(a)
 b.Design a detailed and comprehensive system architecture. Focusing on the seamless 
