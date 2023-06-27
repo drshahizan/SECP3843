@@ -114,7 +114,11 @@ class User(AbstractUser):
 
 ### Step 7: Configure views.py
 
-1. Include the necessary library
+1. Go to `Desktop`> `AnalyticsQ3` > `AnalyticsQ3_app` > `views.py`
+
+2. Open `views.py` file using Microsot Visual Studio Code
+
+3. Include the necessary library and place in at the top of the file
 
 ```python
 from django.shortcuts import render, redirect
@@ -126,14 +130,41 @@ from decorators import is_customer, is_technical _worker, is_senior_management
 from django.contrib.auth.decorators import user_passes_test
 ```
 
-2. Define a function name `user_login
+4. Define a function named `user_login` to handle the user login process below the library
 
+```python
+def user_login(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            print('User:', user) 
+            if user is not None:
+                login(request, user)
+                print('User logged in successfully') 
+                return redirect('dashboard')  
+    else:
+        form = AuthenticationForm()
+    return render(request, 'login.html', {'form': form})
+```
 
+5. Define a function name `register` to handle the user registration process below the `user_login` function
 
+```python
+def register(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = RegistrationForm()
+    return render(request, 'register.html', {'form': form})
+```
 
-
-
-
+6. Define a function name `register` to handle the user registration process below the `user_login` function
 
 
 
