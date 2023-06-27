@@ -359,6 +359,9 @@ py manage.py makemigrations
 
 3. Run migrations to apply changes in the MySql database
 
+```python
+py manage.py migrate
+```
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image6.png) 
 
