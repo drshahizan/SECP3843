@@ -488,13 +488,13 @@ binlog_do_db=analytics_q3
 
 - A new table appears
 
-- Specify the User name as `slave` and host as `localhost`
+- Specify the User name as `slave` and Host as `localhost` and Password as `No password`
 
 - Then, click `Go`
 
-![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image19.png)
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image20.png)
 
-
+**Step 9**
 
 
 
