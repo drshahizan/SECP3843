@@ -35,7 +35,7 @@ py manage.py startapp app
 
 ### 2. Configure Database
 1. Create a new database in MySQL
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/51284dba-093a-426e-a396-9b50a10243c9"></img>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/51284dba-093a-426e-a396-9b50a10243c9"/>
 
 2. Configure the database setting in `setting.py` to connect with MySQL.
 ```
@@ -53,7 +53,7 @@ DATABASES = {
 
 ### 3. Define Model 
 Created a model in Django by extending the AbstractUser class. This customization allows to tailor the user model fields for three user types: customers, technical workers, and senior management.
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/cacec9c3-b84c-47ba-a2be-a534e3f4cbe4"></img>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/cacec9c3-b84c-47ba-a2be-a534e3f4cbe4"/>
 
 Then, set the model as default authentication model in `setting.py` as the following code:
 ```
@@ -68,14 +68,14 @@ python manage.py makemigrations
 python manage.py migrate
 ```
 The output from terminal:
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/fa0ff521-58ed-4785-8b97-4fab57c3d737"></img>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/fa0ff521-58ed-4785-8b97-4fab57c3d737"/>
 
 The result in MySQl:
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/85c9aa43-d8c2-4d95-968a-732e56a1b599"></img>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/85c9aa43-d8c2-4d95-968a-732e56a1b599"/>
 
 ### 5. Create Forms for User
 Create a new file named 'form.py' in the app that are newly created.
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/2fb1e2e7-60ec-4ed0-8012-563fb556aac3"></img>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/2fb1e2e7-60ec-4ed0-8012-563fb556aac3"/>
 
 ### 6. Define Views that Handle the User Registration and Login.
 These views will be responsible for managing the registration and login forms, validating user input, and interacting with the MySQL database. To begin, necessary libraries is needed to be import.
@@ -139,10 +139,10 @@ def management_dashboard_view(request):
 
 ### 7. Create Template for Create User Registration and Login
 1. Login:
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/b22cccfd-5346-4978-9265-dc54f5284716"></img>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/b22cccfd-5346-4978-9265-dc54f5284716"/>
 
 2. Register
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/5d1564f0-98ed-4e89-ae6e-a20667e96d62"></img>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/5d1564f0-98ed-4e89-ae6e-a20667e96d62"/>
 
 ### 8. Configure the URL
 1. URL path for login and user registration.
