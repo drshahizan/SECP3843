@@ -365,7 +365,9 @@ py manage.py migrate
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image6.png) 
 
+3. Check ohoMyAdmin database if there is any changes
 
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image7.png) 
 
 
 
