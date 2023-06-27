@@ -363,7 +363,7 @@ py manage.py makemigrations
 py manage.py migrate
 ```
 
-![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image6.png) 
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%204/files/images/Q3%20image6.png) 
 
 
 
