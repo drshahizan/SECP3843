@@ -18,25 +18,215 @@ Don't forget to hit the :star: if you like this repo.
 ### Step 1: Define User Model
 - in models.py define User model that extends Django's built in User model
 - Add any additional model fields for user type : customer, technical worker, and senior management
+
+```python
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from django.db import models
+from django.utils import timezone
+
+
+class UserManager(BaseUserManager):
+
+    def _create_user(self, email, password, is_staff, is_superuser, **extra_fields):
+        if not email:
+            raise ValueError('Users must have an email address')
+        now = timezone.now()
+        email = self.normalize_email(email)
+        user = self.model(
+            email=email,
+            is_customer=is_customer,
+            is_active=True,
+            is_superuser=is_superuser,
+            last_login=now,
+            date_joined=now,
+            **extra_fields
+        )
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_user(self, email=None, password=None, **extra_fields):
+        return self._create_user(email, password, False, False, **extra_fields)
+
+    def create_superuser(self, email, password, **extra_fields):
+        user = self._create_user(email, password, True, True, **extra_fields)
+        user.save(using=self._db)
+        return user
+
+
+class User(AbstractBaseUser, PermissionsMixin):
+    email = models.EmailField(max_length=254, unique=True)
+    name = models.CharField(max_length=254, null=True, blank=True)
+    is_customer = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+    last_login = models.DateTimeField(null=True, blank=True)
+    date_joined = models.DateTimeField(auto_now_add=True)
+
+    USERNAME_FIELD = 'email'
+    EMAIL_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
+    objects = UserManager()
+
+    def get_absolute_url(self):
+        return "/users/%i/" % (self.pk)
+    def get_email(self):
+        return self.email
+
+```
+- In admin.py paste the following code
+  ```py
+    # Register your models here.
+    from django.contrib import admin
+    from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+
+    from .models import User, user_type
+
+
+    class UserAdmin(BaseUserAdmin):
+        fieldsets = (
+            (None, {'fields': ('email', 'password', 'name', 'last_login')}),
+            ('Permissions', {'fields': (
+                'is_active',
+                'is_customer',
+                'is_technicalworker',
+                'groups',
+                'user_permissions',
+            )}),
+        )
+        add_fieldsets = (
+            (
+                None,
+                {
+                    'classes': ('wide',),
+                    'fields': ('email', 'password1', 'password2')
+                }
+            ),
+        )
+
+        list_display = ('email', 'name', 'is_customer', 'last_login')
+        list_filter = ('is_technicalworker', 'is_superuser', 'is_active', 'groups')
+        search_fields = ('email',)
+        ordering = ('email',)
+        filter_horizontal = ('groups', 'user_permissions',)
+
+
+    admin.site.register(User, UserAdmin)
+        
+    ```
+
+- Next, register customuser app in customuser\apps.py
+  ```py
   
-### Step 2: Create database table
-- Configure database in the settings.py
+    from django.apps import AppConfig
+
+
+    class CustomuserConfig(AppConfig):
+        name = 'customuser'
+    
   ```
-    # settings.py
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'db_sales',
-            'HOST': 'localhost',
-            'PORT': '3307',
-            'USER': 'root',
-            'PASSWORD': '',
-        }
-    }
+
+- Login a user in views.p
+  
+```py
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from customuser.models import user_type, User
+
+def signup(request):
+    if (request.method == 'POST'):
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+        cs = request.POST.get('cutomer')
+        tw = request.POST.get('technicalworker')
+        sm = request.POST.get('senior')
+        
+        user = User.objects.create_user(
+            email=email,
+        )
+        user.set_password(password)
+        user.save()
+        
+        usert = None
+        if st:
+            usert = user_type(user=user,is_student=True)
+        elif te:
+            usert = user_type(user=user,is_teach=True)
+        
+        usert.save()
+        #Successfully registered. Redirect to homepage
+        return redirect('home')
+    return render(request, 'register.html')
+    
+def login(request):
+    if (request.method == 'POST'):
+        email = request.POST.get('email') #Get email value from form
+        password = request.POST.get('password') #Get password value from form
+        user = authenticate(request, email=email, password=password)
+        
+        if user is not None:
+            login(request, user)
+            type_obj = user_type.objects.get(user=user)
+            if user.is_authenticated and type_obj.is_worker:
+                return redirect('cshome') #Go to customer home
+            elif user.is_authenticated and type_obj.is_technicalworker:
+                return redirect('twhome') #Go to technical worker home
+            elif user.is_authenticated and type_obj.is_senior:
+                return redirect('smhome') #Go to senior management home
+        else:
+            # Invalid email or password. Handle as you wish
+            return redirect('home')
+
+    return render(request, 'home.html')
+```
+
+- Access the current logged in user by calling the default request.user. We can access the curently logged in user and check the user type by querying in user_type objects.
+  ```py
+    from customuser.models import user_type
+
+    def shome(request):
+        if request.user.is_authenticated and user_type.objects.get(user=request.user).is_customer:
+            return render(request,'customer_home.html)
+        elif request.user.is_authenticated and user_type.objects.get(user=request.user).is_technicalworker:
+            return redirect('twhome')
+        elif request.user.is_authenticated and user_type.objects.get(user=request.user).is_senior:
+            return redirect('smhome')
+        else:
+            return redirect('login')
+                        
+    def twhome(request):
+        if request.user.is_authenticated and user_type.objects.get(user=request.user).is_technicalworker:
+            return render(request,'tech_home.html)
+        elif request.user.is_authenticated and user_type.objects.get(user=request.user).is_customer:
+            return redirect('cshome')
+        elif request.user.is_authenticated and user_type.objects.get(user=request.user).is_senior:
+            return redirect('smhome')
+        else:
+            return redirect('home')
 
   ```
+    
+    ### Step 2: Create database table
+    - Configure database in the settings.py
+    ``` py
+        # settings.py
+        DATABASES = {
+            'default': {
+                'ENGINE': 'django.db.backends.mysql',
+                'NAME': 'db_sales',
+                'HOST': 'localhost',
+                'PORT': '3307',
+                'USER': 'root',
+                'PASSWORD': '',
+            }
+        }
+
+  ```
+
 - generate neessary tables based on the defined models by running migrations
 - execute the following command
+  
 ```
 python manage.py makemigrations
 python manage.py migrate
@@ -47,7 +237,8 @@ python manage.py migrate
 - define views for handling user registration and login 
 - in views.py create function or classes that handle the registration and login logic
 - use Django built-in authentication views and forms for handling user authentication
-```
+
+```py
 # views.py
 
 from django.shortcuts import render, redirect
@@ -87,12 +278,12 @@ def logout_view(request):
 ### Step 5: Define URL patterns
 - Configure URL pattern in the app's urls.py to map the views with appropriate URLs
 - Define routes to user registration, login, logout
-```
+
+```py
 # urls.py
-
 from django.urls import
-
 ```
+
 ### Step 6: Integrate with frontend
 - Make appropriate HTTP request to Django endpoints for user registration and authentication. 
 
