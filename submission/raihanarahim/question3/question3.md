@@ -165,8 +165,128 @@ urlpatterns = [
 10. Lastly, test your module to ensure the login and register view are rendered correctly and the process has no error. User credentials can be stored and retrieved from database. These are the steps to create user authetication module using Django and MySQL database.
 
 ## Question 3 (b)
-### Steps to overcome the challenges of Data Replication and Synchronization between MongoDB and MySQL databases.
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ To overcome the challenges of Data Replication and Synchronization between MongoDB and MySQL databases, I will be using database-specific replications techniques. The technique I'm using is `Capturing database changes with Debezium Apache Kafka connectors`.<br>
+ Debezium is an open-source distributed platform dor change data capture(CDC) and provides connectors for various databases including MySQL and MongoDB.
+ 
+### Steps using Debezium with Apache Kafka Connectors.
+
+Consider the following scenario where the tweets data are stored in MongoDB and MySQL stores user information data. I'm going to use Debezium to capture changes made on the databases then streaming the change events to Kafka topic.
+
+1. Install Debezium using pip installer on your command prompt.
+```
+pip install debezium
+```
+2. Configure Debezium to capture changes.
+* Configuration for MongoDB
+```
+connector.class=io.debezium.connector.mongodb.MongoDbConnector
+mongodb.connection.string=mongodb://localhost:27017
+topic.prefix=tweets
+
+```
+* Configuration for MySQL
+```
+connector.class=io.debezium.connector.mysql.MySqlConnector
+database.hostname=localhost
+database.port=3306
+database.user=root
+database.password=password
+database.server.id=1
+database.server.name=my-db
+topic.prefix=my-users
+
+```
+*Start Debezium MySQL connector using the command :
+```
+./bin/connect-standalone.sh ./config/connect-standalone.properties ./config/mysql-connector.properties
+
+```
+* Configure MongoDB Sink Connector
+  * Download and install MongoDB Kafka Connector using the command :
+ ```
+confluent-hub install mongodb/kafka-connect-mongodb:1.5.2
+
+```
+* Start MongoDB Sink Connector using the following command :
+```
+./bin/connect-standalone.sh ./config/connect-standalone.properties ./config/mongodb-connector.properties
+
+```
+3. Configure Apache Kafka to receive the change events
+* Firstly, start Kafka server by running this command :
+```
+kafka-server-start /etc/kafka/server.properties
+
+```
+* Create your desired Kafka topic to store the change events.
+```
+kafka-topics --create --bootstrap-server localhost:9092 --topic tweets
+
+```
+4. Write a consumer to process the change events.
+```
+try:
+    while True:
+        msg = consumer.poll(timeout=1.0)
+
+        if msg is None:
+            continue
+        if msg.error():
+            if msg.error().code() == KafkaError._PARTITION_EOF:
+                continue
+            else:
+                print(msg.error())
+                break
+
+        print('Received message:')
+        print(f"Before: {msg.value().decode('utf-8')['before']}")
+        print(f"After: {msg.value().decode('utf-8')['after']}")
+        print(f"Source: {msg.value().decode('utf-8')['source']}")
+        print(f"Operation: {msg.value().decode('utf-8')['op']}")
+        print(f"Timestamp: {msg.value().decode('utf-8')['ts_ms']}")
+        print()
+
+except KeyboardInterrupt:
+    pass
+
+finally:
+    consumer.close()
+
+
+```
+5. Start Debezium by running this command :
+```
+debezium-server
+
+```
+Output of the Kafka consumer script to process the change events:
+```
+Received message:
+Before: {'id': 1, 'name': 'Amirah Raihanah', 'email': 'raihanah@gmail.com'}
+After: {'id': 1, 'name': 'Amirah Raihanah', 'email': 'raihanah@gmail.com'}
+Source: {'version': '1.6.1.Final', 'connector': 'mysql', 'name': 'mysql_server', 'ts_ms': 1675490511000, 'snapshot': 'false', 'db': 'aaproject', 'table': 'user', 'server_id': 1, 'gtid': None, 'file': 'mysql-bin.000001', 'pos': 154, 'row': 0, 'thread': 15, 'query': None}
+Operation: c
+Timestamp: 1675490511534
+
+Received message:
+Before: {'id': 2, 'name': 'Myza Nazifa', 'email': 'myzanazifah@gmail.com'}
+After: {'id': 2, 'name': 'Myza Nazifa', 'email': 'myzanazifah@gmail.com'}
+Source: {'version': '1.6.1.Final', 'connector': 'mysql', 'name': 'mysql_server', 'ts_ms': 1675490523000, 'snapshot': 'false', 'db': 'aaproject', 'table': 'user', 'server_id': 1, 'gtid': None, 'file': 'mysql-bin.000001', 'pos': 349, 'row': 0, 'thread': 15, 'query': None}
+Operation: c
+Timestamp: 1675490523528
+
+Received message:
+Before: {'id': 1, 'name': 'Ali Ahmad', 'email': 'aliahmad@gmail.com'}
+After: {'id': 1, 'name': 'Ali Ahmad', 'email': 'aliahmad@gmail.com'}
+Source: {'version': '1.6.1.Final', 'connector': 'mysql', 'name': 'mysql_server', 'ts_ms': 1675490537000, 'snapshot': 'false', 'db': 'aaproject', 'table': 'user', 'server_id': 1, 'gtid': None, 'file': 'mysql-bin.000001', 'pos': 536, 'row': 0, 'thread': 15, 'query': None}
+Operation: u
+Timestamp: 167549053757
+
+
+```
+
+By following the provided steps and adapting the code snippets to the specific setup and requirements, we can effectively capture data changes from your MySQL database using Debezium, replicate those changes to MongoDB through Apache Kafka, and further process them using a Kafka consumer written in Python. This approach allows for real-time data synchronization and enables to perform custom logic or transformations on the change events before updating the MongoDB database.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
