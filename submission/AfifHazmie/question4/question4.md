@@ -9,15 +9,31 @@ Don't forget to hit the :star: if you like this repo.
 
 # Special Topic Data Engineering (SECP3843): Alternative Assessment
 
-#### Name:
-#### Matric No.:
-#### Dataset:
+#### Name: Afif Hazmie Arsyad Bin Agus
+#### Matric No.: A20EC0176
+#### Dataset: Supply Store
 
-## Question 4 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Question 4
+   - For the given case study, a suitable machine learning approach would be binary classification using `Logistic Regression Algorithm`. Logistic Regression is commonly use use for classification task when the target variables have 2 classes.
+   - For example, predicting whether a customer will use a coupon or not in the future and etc...
 
-## Question 4 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+   1. Firstly, before do any analysis, visualization or machine learning, we must first clean the data. For example 
+      ```python
+        # Connect to MongoDB and retrieve data
+          client = pymongo.MongoClient("mongodb+srv://afifhazmiearsyad:abc123456789@noctua.bw9bvzx.mongodb.net/")
+          db = client["SupplyStore"]
+          collection = db["Sales"]
+          data = list(collection.find())
+          
+          # Convert to dataframe
+          df = pd.DataFrame(data)
+          df.isnull().sum()
+          df.info()
+      ```
+   2. 
+
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

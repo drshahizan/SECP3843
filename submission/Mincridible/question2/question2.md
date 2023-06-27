@@ -17,11 +17,118 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 2 (a)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+#### Prior Installation:
 
+1. Install MongoDB Shell
+2. Install MongoDB Database Tools
+3. Make sure that you add those two path into system environment variable
+
+#### Prepare the JSON file
+
+1. Go to <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/04-companies">Companies Dataset</a> and download the json file
+
+#### Start MongoDB Server
+
+1. Run `mongod` in command prompt
+<img src="../materials/Q2(a).png">
+
+#### Access MongoDB Shell
+
+1. Run the MongoDB Shell by executing the appropriate command: `mongosh`
+<img src="../materials/Q2_2.png">
+
+#### Setup Database
+
+1. Open MongoDB Compass and create new Database named 'Companies' and Collection.
+2. To switch to the intended database, execute the following command: `use Companies`
+
+#### Import Dataset
+
+1. Run this in command prompt ` mongoimport --uri mongodb+srv://mincridible:minzpro1@min.tan7fdn.mongodb.net/ --db Companies --collection CompaniesMeta --file "C:\Users\Hp\Downloads\companies.json" `
+
+<img src="../materials/Q2_3.png">
+
+2. Validate the imported dataset on MongoDB Compass
+
+<img src="../materials/Q2_4.png">
+
+
+
+
+
+#### 
 ## Question 2 (b)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### Start MongoDB Shell
+
+1. Open your terminal or command prompt
+2. Run `mongod` in the terminal
+
+<img src="../materials/Q2_5.png">
+
+
+### Create Operation
+
+1. Run `mongosh "mongodb+srv://mincridible:minzpro1@min.tan7fdn.mongodb.net/"` to make connection to MongoDB Atlas
+2. Select the intended database `use 
+3. Run this query:
+```python
+  db.CompaniesMeta.insertOne({
+  name: "Ahmad Muhaimin Bin Ahmad Hambali",
+  age: 22,
+  email: "ahmadmuhaimin135@gmail.com",
+  matricNO: "A20EC0006"
+})
+```
+
+4. Check the newly created ouput
+<img src="../materials/Q2_6.png">
+
+### Read Operation
+
+1. Run this code on command prompt or MongoDB Shell
+```python
+db.CompaniesMeta.find({}, { name: "Ahmad Muhaimin Bin Ahmad Hambali", email: "ahmadmuhaimin135@gmail.com" }) 
+```
+
+3. Check the output
+<img src="../materials/Q2_7.png">
+
+### Update Operation
+
+1. Run this to update one data
+
+```python 
+db.CompaniesMeta.updateOne(
+  { name: "Ahmad Muhaimin Bin Ahmad Hambali" },
+  { $set: { age: 23 } }
+)
+```
+<img src="../materials/Q2_8.png">
+
+2. Run this to update mulitple data
+
+```python 
+db.CompaniesMeta.updateMany(
+  { age: { $gte: 20 } },
+  { $inc: { age: 5 } }
+)
+```
+<img src="../materials/Q2_9.png">
+
+### Delete Operation
+
+1. To delete one data we can use this:
+
+```python
+  db.CompaniesMeta.deleteOne(
+  { name: "Ahmad Muhaimin Bin Ahmad Hambali" }, {age: 28}
+)
+```
+<img src="../materials/Q2_10.png">
+
+
+
 
 ## Contribution 🛠️
 

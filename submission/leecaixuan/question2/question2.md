@@ -15,10 +15,87 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Analytics Dataset
 
 ## Question 2 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<h4>Step 1 - Open MongoDB Compass</h4>
+
+Open the MongoDB Compass and it will display the interface like the image below.
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/database%20home.png" />
+</p>
+
+<h4>Step 2 - Create Database</h4>
+
+Click the  'Create Database' button to create a new database. Type in the database name, 'aa_project' and the collection name such as 'Accounts'. Click the 'Create Database' button. 
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/create%20database.png" />
+</p>
+
+<h4>Step 3 - Import Data</h4>
+
+After creating a database, import the 'Accounts.json' file into the Accounts collection. Click 'Import Data' button.
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import%20data.png" />
+</p>
+
+Chooes the file from your local PC. 
+
+<p align="center">
+  <img height="150px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/choosefromfile.png" />
+</p>
+
+- Import Accounts JSON data
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_accounts.png" />
+</p>
+
+- Import Customer JSON data
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_customer.png" />
+</p>
+
+- Import Transaction JSON data
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_transaction.png" />
+</p>
+
+
+<h4>Imported Data</h4>
+
+The images below show the data from 'Accounts.json', 'Customer.json' and 'Transactions.json' are imported into MongoDB. 
+
+- The collections are created.
+
+<p align="center">
+  <img height="150px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/collections.png" />
+</p>
+
+- Accounts JSON data is imported
+
+<p align="center">
+  <img height="250px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/accounts_input.png" />
+</p>
+
+- Customers JSON data is imported
+
+<p align="center">
+  <img height="250px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/customer.png" />
+</p>
+
+- Transactions JSON data is imported
+
+<p align="center">
+  <img height="250px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/transaction_input.png" />
+</p>
+
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 
 

@@ -14,6 +14,15 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: City Inspections	
 
 ## Question 2 (a)
+#### Prerequisites
+Download all required software:
+- [MongoDB Community Server](https://www.mongodb.com/try/download/community) (Package: msi)
+- [MongoDB Shell](https://www.mongodb.com/try/download/shell) (Package: zip)
+- [MongoDB Database Tools](https://www.mongodb.com/try/download/database-tools) (Package: msi)
+
+Once the download is complete, open the downloaded file and follow the installation wizard. Make sure to edit the system environment variables by adding MongoDB to the system path. This allows the usage of MongoDB from the command prompt.
+<img  src="./files/images/env.jpg"></img>
+
 ### 1. Prepare JSON file 
 Download the [City Inspections](https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections) dataset into the pc. 
 
@@ -22,21 +31,23 @@ Open Command Prompt and type `mongod` to start the MongoDB server.
 <img  src="./files/images/start_server.jpg"></img>
 
 ### 3. Import Dataset
-In the terminal, type `mongoimport "C:\Users\chloe\Downloads\city_inspections.json" -d AA -c City` to import the dataset into MongoDB. The database and collection are automatically created as `-d AA` specifies the name of the database on which to run the mongoimport and `-c City` specifies the collection to import.
+In the command prompt, type `mongoimport "C:\Users\chloe\Downloads\city_inspections.json" -d AA -c City` to import the dataset into MongoDB. The database and collection are automatically created as:
+`-d AA` specifies the name of the database on which to run the mongoimport.
+`-c City` specifies the collection to import.
 <img  src="./files/images/import.jpg"></img>
 
 Once the dataset is imported, it could be seen in MongoDB Compass.
 <img  src="./files/images/database.jpg"></img>
 
 ### 4. Access MongoDB shell
-In the terminal, type `mongosh` to access MongoDB shell.
+In the command prompt, type `mongosh` to access MongoDB shell.
 <img  src="./files/images/mongosh.jpg"></img>
 
 To see all available databases, type `show dbs`.<br>
 <img  src="./files/images/show_dbs.jpg"></img>
 
 ## Question 2 (b)
-In the terminal, type `use AA` to switch to the AA database.<br>
+In the command prompt, type `use AA` to switch to the AA database.<br>
 <img  src="./files/images/use_AA.jpg"></img>
 
 ### i. Create
@@ -61,7 +72,7 @@ db.City.insertOne(
 The newly created document can be found in the database:
 <img  src="./files/images/create2.jpg"></img>
 
-Or use the find method in the terminal:<br>
+Or use the find method in the command prompt:<br>
 <img  height="300px" src="./files/images/create3.jpg"></img>
 
 ### ii. Read
@@ -97,7 +108,7 @@ Before the document was updated, the address of the document that matches the qu
 After running the command, the address of the document is updated and can be found in the database:
 <img  src="./files/images/update2.jpg"></img>
 
-Or use the find method in the terminal:<br>
+Or use the find method in the command prompt:<br>
 <img  height="300px" src="./files/images/update3.jpg"></img>
 
 #### b. UpdateMany
@@ -120,7 +131,7 @@ Before the documents were updated, there are 3 documents that match the query:
 After running the command, all 3 documents are updated and can be found in the database:
 <img  src="./files/images/update5.jpg"></img>
 
-Or use the find method in the terminal:<br>
+Or use the find method in the command prompt:<br>
 <img  src="./files/images/update6.jpg"></img>
 
 ### iv. Delete

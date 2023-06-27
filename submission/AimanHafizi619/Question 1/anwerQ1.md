@@ -66,16 +66,16 @@ In the context of Django, a model represents the structure and behavior of a dat
 8. *Create models*: For every app (Accounts, Cistomers, and Transaction), locate the `models.py` file and update the models as below.
 
 ![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image13.png)
-![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image13.png)
-![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image13.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image14.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image%2015.png)
 
 When you define or modify your Django models, such as adding new fields or altering existing ones, Django needs to keep track of these changes and apply them to the database. Database migrations provide a way to manage these changes and keep the database schema synchronized with the models.
 
 Running `python manage.py makemigrations` examines the current state of your models and compares them to the existing database schema. It then generates a set of migration files that describe the required changes to be made to the database schema.
 
-9. `Register Apps`: In the `setting.py` file, locate the INSTALLED_APPS method. Add a new app below the 'django.contrib.statisfiles' called `AnalyticsDataset` so that when the mogration proses is initiated, Django web server knows which app is being updated to the MySql and MongoDB databse.
+9. `Register Apps`: In the `setting.py` file, locate the INSTALLED_APPS method. Add a new app below the 'django.contrib.statisfiles' called `Accounts`, `Customers`, and `Transactions` so that when the migration proses is initiated, Django web server knows which app is being updated to the MySql and MongoDB databse.
 
-![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image11.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image16.png)
 
 9. `Migrate database`: Type in `python manage.py makemigrations` in the command prompt. Then, run the python manage.py migrate command to apply these migrations. My Sql and MongoDB database will be updated.
 
@@ -86,9 +86,30 @@ Running `python manage.py makemigrations` examines the current state of your mod
 ![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image10.png)
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image17.png)
 
+The system architecture are as follow:
+
+**1. User Interface (Customer UI, Worker UI, Management UI)**
+
+>User interface serves as the platform through which users interact with the application, while HTTP requests are generated when users perform actions within the user interface. Django, as a web framework, receives these requests, routes them to the appropriate views, and processes them to generate responses that are sent back to the user's browser or client. This interaction between users and HTTP requests forms the foundation of user interaction in a Django web application.
+
+**2. Web Server (Django)**
+
+>Django leverages HTTP requests as the primary means of communication between clients and the web application. The framework handles incoming requests, routes them to the appropriate views, allows access to request data, and generates suitable responses. This request-response cycle forms the backbone of Django's functioning as a web framework and enables developers to build robust and dynamic web applications.
+
+**3. Database**
+
+>MongoDB and MySQL have different strengths and are suitable for different use cases within the system architecture. MongoDB excels at storing and retrieving JSON data with flexibility, while MySQL provides structured data storage with SQL querying capabilities and transactional support. By leveraging both databases, one can take advantage of their respective strengths and choose the appropriate database for each data storage and retrieval requirement in one system.
+
+**4. JSON File**
+
+>JSON file to populate the MongoDB and MySQL databases provides a convenient and flexible approach for initializing the databases with the necessary data. It allows for easy data import, compatibility with the JSON dataset, and decoupling from database-specific import methods.
+
+**5. Data Visualization**
+
+>Both Matplotlib and Seaborn can be integrated into the Django web framework to generate visualizations dynamically based on the data stored in the databases. These libraries provide a wide range of options for creating visually appealing and insightful plots, enabling users of the system to gain meaningful insights from the data and make data-driven decisions.
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
