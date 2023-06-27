@@ -415,9 +415,11 @@ Login to phpMyAdmin panel and then click the `replication` tab on the top ribbon
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image12.png)
 
+**Step 2**
 
+Click on the *configure* option under the `Primary replication` section
 
-
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image13.png)
 
 
 
