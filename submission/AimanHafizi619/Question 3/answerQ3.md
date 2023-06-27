@@ -466,6 +466,26 @@ binlog_do_db=analytics_q3
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image17.png)
 
+**Step 6**
+
+- Stop Apache and phpMyAdmin from Xampp Control Panel
+
+- Then, restart the services again
+
+**Step 7**
+
+- Refresh phpMyAdmin page
+
+- Navigate to `Replication` tab again
+
+- The `Primary replication` section has been set up succesfully
+
+- Click on the `Add replica replication user` option
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image18.png)
+
+
+
 
 
 
