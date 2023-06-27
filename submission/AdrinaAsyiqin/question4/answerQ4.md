@@ -137,6 +137,11 @@ Don't forget to hit the :star: if you like this repo.
   y_pred = model.predict(X_test)
   ```
 
+  The machine learning technique used in this code is Linear Regression. Linear regression is a supervised learning algorithm used for predicting a continuous target variable based on one or more input features. It assumes a linear relationship between the input variables and the target variable and aims to find the best-fitting line that minimizes the difference between the predicted and actual values.
+
+  In this code, the unnecessary columns are dropped from the DataFrame. The selected fields include the 'couponUsed' column, which is used as the target variable. The remaining columns are used as input features (X) for the linear regression model. The data is then split into training and testing sets using the train_test_split function. The LinearRegression model is trained on the training set using the fit method, and predictions are made on the test set using the predict method.
+
+  Finally, the performance of the model is evaluated using the mean squared error (MSE) metric, which measures the average squared difference between the predicted and actual values.
 
 
 
