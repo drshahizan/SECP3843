@@ -89,6 +89,10 @@ for i in range(0, len(data), chunk_size):
 df
 ```
 
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/1.png" />
+</p>
+
 Remove all the unwanted columns.
 
 ```
@@ -97,6 +101,10 @@ df = df.drop(columns_to_remove, axis=1)
 df
 ```
 
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/2.png" />
+</p>
+
 Remove the element in the items for each columns. For example, {'$oid': '5ca4bbc1a2dd94ee58161cb1'} will be changed into 5ca4bbc1a2dd94ee58161cb1. Make sure all the column is changed into proper format.
 
 ```
@@ -104,25 +112,45 @@ df['_id'] = df['_id'].str['$oid']
 df
 ```
 
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/2.png" />
+</p>
+
 ```
 df['account_id'] = df['account_id'].str['$numberInt']
 df
 ```
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/3.png" />
+</p>
 
 ```
 df['limit'] = df['limit'].str['$numberInt']
 df
 ```
 
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/5.png" />
+</p>
+
 ```
 df['transaction_count'] = df['transaction_count'].str['$numberInt']
 df
 ```
 
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/6.png" />
+</p>
+
 ```
 df['products'] = df['products'].astype(str).str.replace('[', '').str.replace(']', '')
 df
 ```
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/7.png" />
+</p>
 
 Convert datatype of column 'limit' and 'transaction_count' from string to float.
 
@@ -172,6 +200,10 @@ print("Mean Squared Error:", mse)
 
 Result: Mean Squared Error: 169890.65444598708
 
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/9.png" />
+</p>
+
 <h4>Step 3 - Scatterplot</h4>
 
 Install matplotlib ```!pip install matplotlib```
@@ -198,6 +230,10 @@ plt.show()
 
 Result:
 
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/10.png" />
+</p>
+
 Predict value 
 
 ```
@@ -210,6 +246,9 @@ print("Predicted value:", prediction)
 
 Result: Predicted value: [65428.603017]
 
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/11.png" />
+</p>
 
 
 
