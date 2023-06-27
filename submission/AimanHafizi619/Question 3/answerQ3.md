@@ -389,7 +389,9 @@ py manage.py runserver
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image8.png) 
 
+2. Key in credentials
 
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image10.png)
 
 
 ## Question 3 (b)
