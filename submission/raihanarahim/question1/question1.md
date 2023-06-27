@@ -27,6 +27,16 @@ To implement a configuration using five servers in this project, below are the b
 5.  `Load Balancer`<br>
     Load balancer server is important to maintain and handle the traffic between multiple instances of web server and Django server. This server would distribute traffic between the other servers, which can improve performance and availability.
 
+<br>
+Next, here are the steps required to integrate Django with the JSON dataset that are stored in both  MYSQL and MongoDB database.
+<br>
+<br>
+Figure below show the flow of Django with the JSON dataset integration : 
+<img width="655" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/4fb418d1-2295-4847-a57a-7975116740b9">
+
+### 1. Install Django
+
+
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
