@@ -355,7 +355,7 @@ def is_senior_management(user):
 py manage.py makemigrations
 ```
 
-![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image5.png) 
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q4%20image5.png) 
 
 3. Run migrations to apply changes in the MySql database
 
