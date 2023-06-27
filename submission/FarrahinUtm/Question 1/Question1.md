@@ -42,7 +42,7 @@ there will be  five server used for this project:
     env\Scripts\activate
      ```
 
-  <img height="200px" src="./Screenshot (248).png">
+  <img height="200px" src="submission/FarrahinUtm/materials/Screenshot (248).png"></img>
    
    Open Command Prompt/ terminal and type this command
    
