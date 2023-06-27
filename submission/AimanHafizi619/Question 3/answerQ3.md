@@ -49,11 +49,37 @@ DATABASES = {
 }
 ```
 
+### Step 3: Create User Model
 
+> User Model uses AbstractUser class to apply the authentication and role designation feature
 
+> Among all three JSON files, customers.json will be use for handling user authentication
 
+> Go to `Desktop` > `Analytics` > `Customers` > `model.py` and update the files
 
+```python
+from django.db import models
+from django.contrib.postgres.fields import ArrayField
+from django.contrib.auth.models import AbstractUser, Group, Permission
 
+class Customers(models.Model):
+    username = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    address = models.CharField(max_length=200)
+    birthdate = models.DateField()
+    email = models.EmailField()
+    accounts = models.ArrayField(models.IntegerField())
+    tier_and_details = models.JSONField()
+
+class User(AbstractUser):
+    customer_user = models.BooleanField(default=False)
+    worker_user = models.BooleanField(default=False)
+    management_user = models.BooleanField(default=False)
+
+    groups = models.ManyToManyField(Group, blank=True, related_name='custom_user_set')
+
+    user_permission = models.ManyToManyField(Permission, blank=True, related_name='custom_user_set')
+```
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
