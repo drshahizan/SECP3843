@@ -75,7 +75,10 @@ The similar dataset can be found in MongoDB Compass
 <img  src="https://github.com/drshahizan/SECP3843/assets/120614501/5cf55382-90be-4420-b0b2-1322c6a17172"></img>
 
 ### Step 4: Access MongoDB Shell
-Enter `cd C:\Program Files\MongoDB\Server\6.0\bin` and `mongosh` in the terminal to access the MongoDB shell
+Repen Command Prompt and paste the following code and run.
+`cd C:\Program Files\MongoDB\Server\6.0\bin` 
+
+`mongosh` in the terminal to access the MongoDB shell
 <img  src="https://github.com/drshahizan/SECP3843/assets/120614501/8b475845-844a-465c-8170-f433e1adace4"></img>
 
 The list of all databases running on MongoDB Server including default and user-defined databases can be seen with `show dbs`.
