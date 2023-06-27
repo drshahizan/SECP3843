@@ -21,7 +21,7 @@ Download and Install All Required Software including:
 3. MongoDB Community Server
 
 #### Step 1: Prepare the JSON File
-Download the dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/04-companies" >Companies Dataset</a>
+Download the dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/04-companies" >Companies Dataset</a>. <br/>
 After download the dataset, I need to make sure that it follows the JSON syntax rules and can be import into MongoDB. I use the online tools (JSON Formatter) to validate the JSON file.
 <img  src="./files/images/json_formatter.png"></img>
 
@@ -47,7 +47,102 @@ Enter `showdbs` to view the databases in MongoDB Shell and `db.companies.find().
 <img  src="./files/images/query.png"></img>
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+#### 1. Create Query
+Use `insertOne()` method to insert a new document into the collection.
+
+This is my query:
+```
+db.companies.insertOne({
+  "name": "Eddie",
+  "permalink": "link",
+  "crunchbase_url": "",
+  "homepage_url": "",
+  "blog_url": "",
+  "blog_feed_url": "",
+  "twitter_username": "Prowong01",
+  "category_code": "web",
+  "number_of_employees": 88,
+  "founded_year": 2020,
+  "founded_month": 7,
+  "founded_day": 100,
+  "deadpooled_year": 1,
+  "tag_list": "wiki",
+  "alias_list": "",
+  "email_address": "eddie@google.com",
+  "phone_number": "01118767163",
+     });
+```
+MongoDB Shell:
+<img  src="./files/images/insert.png"></img>
+
+MongoDB Compass:
+<img  src="./files/images/insert_result.png"></img>
+
+#### 2. Read Query
+Use `findOne()` method to query all documents from the collection based on the criteria
+
+This is my query:
+```
+db.companies.find({ "email_address": "eddie@google.com"});
+```
+
+MongoDB Shell:
+<img  src="./files/images/find.png"></img>
+
+MongoDB Compass:
+<img  src="./files/images/find_result.png"></img>
+
+#### 3. Update Query
+##### a) updateOne
+Use `updateOne()` method to modifies a single document in a collection that matches a filter condition.
+
+This is my query:
+```
+db.companies.updateOne({ "number_of_employees": 88}, {$set: {"number_of_employees":999}});
+```
+
+MongoDB Shell:
+<img  src="./files/images/updateone.png"></img>
+
+MongoDB Compass:
+<img  src="./files/images/updateone_result.png"></img>
+There is only 1 document is modified the number_of_employess to 999 as i use the updateOne
+
+
+##### b) updateMany
+Use `updateMany()` method to modifies one or more documents in a collection that match a filter condition.
+
+This is my query:
+```
+db.companies.updateMany({ "founded_month": 12}, 
+{$set: {"founded_month":11}});
+```
+
+MongoDB Shell:
+<img  src="./files/images/updatemany.png"></img>
+
+MongoDB Compass (Before Query):
+<img  src="./files/images/updatemanybefore_result.png"></img>
+
+MongoDB Compass (After Query):
+<img  src="./files/images/updatemanyafter_result.png"></img>
+The query updates all documents in the companies collection where the "founded_month" field is set to 11.
+
+ #### 4. Delete Query
+ Use `deleteOne()` method to delete at most one document that matches the filter condition. If multiple documents match the filter, only the first one is deleted.
+
+ This is my query:
+```
+db.companies.deleteOne({"name": "Eddie"});
+```
+MongoDB Shell:
+<img  src="./files/images/delete.png"></img>
+
+MongoDB Compass (Before Query):
+<img  src="./files/images/deletebefore_result.png"></img>
+
+MongoDB Compass (After Query):
+<img  src="./files/images/deleteafter_result.png"></img>
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
