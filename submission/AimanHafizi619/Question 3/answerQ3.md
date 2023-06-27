@@ -450,7 +450,7 @@ binlog_do_db=analytics_q3
 
 **Step 5**
 
-- A notepad will open
+- A Notepad will open
 
 - Navigate further down and look  for `log_error` parameter
 
@@ -460,7 +460,9 @@ binlog_do_db=analytics_q3
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image16.png)
 
+- Scroll down and hash (#) the `server-id` parameter
 
+- Save the Notepad
 
 
 
