@@ -90,7 +90,54 @@ use AA
 <img  src="https://github.com/drshahizan/SECP3843/assets/120614501/995d0766-a1d3-4719-91f0-83da4afbf1e6"></img>
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### i. Create 
+Use the `insertOne()` method in MongoDB to create a new document. Here's the example query:
+```
+db.db_airbnb.insertOne( {"listing_url":"https://www.airbnb.com/rooms/10075934","name":"Duplex", "summary":"Modern and convenient room ", "description":"clean and fully furnish, 2 minutes walking distance to train station", "neighbourhood_overview":"lots of skyrise buildings", "notes":"have an enjoyable shopping experience living here", "transit":"train and bicycle rental", "access":"available to help guest", "interaction":"cot-10$", "house_rules":"make home your comfort", "property_type":"duplex", "room_type":"duplex room", "bed_type":"double bed", "minimum_nights":"1", "maximum_nights":"10", "cancellation_policy":"flexible", "last_scraped":"2019-03-11T05:00:00.000+00:00", "calender_last_scraped":"2019-03-11T05:00.000+00:00", "first_review":"2012-01-03T05:00:00.000+00:00", "last_review":"2020-01-20T05:00:00.000+00:00", "accomodates":"4", "bedrooms":"2", "beds":"2"})
+```
+<img  src="https://github.com/drshahizan/SECP3843/assets/120614501/e1b7c84c-46de-4ea5-9467-fbd2e5e9eb2d"></img>
+
+Created document in the mongoDB database:
+<img  src="https://github.com/drshahizan/SECP3843/assets/120614501/c8a11ae3-71c2-4204-8738-98ddad84b80a"></img>
+
+### ii.Read
+Use db.find() method in MongoDB to find retrieve document
+For example search for the listing_url "https://www.airbnb.com/rooms/10267144":
+
+```
+db.db_airbnb.find({'listing_url' : 'https://www.airbnb.com/rooms/10267144'})
+```
+Command Prompt:
+<img  src="https://github.com/drshahizan/SECP3843/assets/120614501/b9f4f1f6-d1a8-4c7d-a13d-3300be058dc7"></img>
+
+Mongo DB:
+<img  src="https://github.com/drshahizan/SECP3843/assets/120614501/e309d39b-396f-4d52-9f50-cc3382ddd928"></img>
+
+### iii. Update
+#### a) updateOne()
+Use `updateOne()` method in MongoDB to update a single document 
+The update is for name value "IPANEMA LUXURY PENTHOUSE with MAID" and set it to "HAWAII PENTHOUSE".
+```
+db.db_airbnb.updateOne(
+  { 'name': 'IPANEMA LUXURY PENTHOUSE with MAID' }, // Specify the filter criteria to match the document
+  { $set: { 'name': 'HAWAII PENTHOUSE' }  // Update the name field
+})
+
+Command Prompt:
+```
+<img  src="https://github.com/drshahizan/SECP3843/assets/120614501/8955f15d-0413-4eb0-a587-3b30970e4dd0"></img>
+
+MongoDB before update:
+<img  src="https://github.com/drshahizan/SECP3843/assets/120614501/342573e1-f4b6-493e-9fcb-731f2d8eeb67"></img>
+
+MongoDB after update:
+<img  src="https://github.com/drshahizan/SECP3843/assets/120614501/ee8b2b26-7451-4420-bef0-07812c50aca1"></img>
+Name is changed from `IPANEMA LUXURY PENTHOUSE with MAID` to `HAWAII PENTHOUSE`
+
+#### b) updateMany()
+
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
