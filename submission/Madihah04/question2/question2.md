@@ -53,7 +53,7 @@ There are 2 ways to to import dataset.
 4. Choose Import JSON or CSV file
 5. Choose stories.json from file exporer
 
-<img src="../materials/Q2a.png">
+<img src="https://github.com/Madihah04/SECP3843/blob/dacf307b9b253e0bb7f10907c985d5f45b4f5751/submission/Madihah04/question2/files/images/Q2a.png"> 
 
 ## Question 2 (b)
 
@@ -62,7 +62,7 @@ There are 2 ways to to import dataset.
 1. Open your terminal or command prompt
 2. Run `mongod` in the terminal
 
-<img src="../materials/Q2b.png">
+<img src="https://github.com/Madihah04/SECP3843/blob/dacf307b9b253e0bb7f10907c985d5f45b4f5751/submission/Madihah04/question2/files/images/Q2b.png">
 
 
 ### Create Query
@@ -108,7 +108,7 @@ db.story.insertOne({
 ```
 
 4. Check the newly created ouput
-<img src="../materials/Q2b(1).png">
+<img src="https://github.com/Madihah04/SECP3843/blob/dacf307b9b253e0bb7f10907c985d5f45b4f5751/submission/Madihah04/question2/files/images/Q2b(1).png">
 
 ### Read Query
 
@@ -118,7 +118,7 @@ db.story.findOne({ "_id": ObjectId("4ba267dc238d3ba3ca000001") })
 ```
 
 3. Check the output
-<img src="../materials/Q2b(2).png">
+<img src="https://github.com/Madihah04/SECP3843/blob/dacf307b9b253e0bb7f10907c985d5f45b4f5751/submission/Madihah04/question2/files/images/Q2b(2).png">
 
 ### Update Query
 
@@ -127,14 +127,14 @@ db.story.findOne({ "_id": ObjectId("4ba267dc238d3ba3ca000001") })
 ```python 
 db.story.updateOne({ "_id": ObjectId("4ba267dc238d3ba3ca000001") }, { $set: { "comments": 200 } })
 ```
-<img src="../materials/Q2b(3).png">
+<img src="https://github.com/Madihah04/SECP3843/blob/dacf307b9b253e0bb7f10907c985d5f45b4f5751/submission/Madihah04/question2/files/images/Q2b(3).png">
 
 2. Run this to update data in mulitple column
 
 ```python 
 db.story.updateOne({ "_id": ObjectId("4ba267dc238d3ba3ca000001") }, { $set: { "topic.name": "Berita Terkini Popular", "topic.short_name": "berita" } })
 ```
-<img src="../materials/Q2b(4).png">
+<img src="https://github.com/Madihah04/SECP3843/blob/dacf307b9b253e0bb7f10907c985d5f45b4f5751/submission/Madihah04/question2/files/images/Q2b(4).png">
 
 ### Delete Query
 
@@ -143,7 +143,7 @@ db.story.updateOne({ "_id": ObjectId("4ba267dc238d3ba3ca000001") }, { $set: { "t
 ```python
   db.story.deleteOne({ "_id": ObjectId("4ba267dc238d3ba3ca000001") })
 ```
-<img src="../materials/Q2b(5).png">
+<img src="https://github.com/Madihah04/SECP3843/blob/dacf307b9b253e0bb7f10907c985d5f45b4f5751/submission/Madihah04/question2/files/images/Q2b(5).png">
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
