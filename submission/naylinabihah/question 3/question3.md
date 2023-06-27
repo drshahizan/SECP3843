@@ -24,7 +24,7 @@ Since in this part focuses in the authentication of users in Django project, a u
 
 This can be done by using the Django forms.  Since I had already used the built-in framework for authentication of users, the form will collect the information from the users such as username, email and password by default. As the form is submitted, Django will firstly validate the submitted data then, create a new user based on the user type that has been declared in models.py. Note that, all of these users information will be stored into MySQL database.
 
-- Create forms.py under the folder 'app' in the Django project.
+- Create forms.py under the folder 'app' in the Django project and add the code for registration form.
 
 ![forms](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/formspyreg.png)
 
@@ -40,12 +40,44 @@ This can be done by using the Django forms.  Since I had already used the built-
 
 Just as in Step 2, since I used the built-in Django authentication framework, it helps to ease the process of doing the authentications in the portal because it already include the controls for user login, logout, and session management. It also has done a pre-built views and backend authentication and authorization to handle the processes. All the authentications done by the users will be validated with MySQL database to get the credentials before access permission is granted for the users into the portal.
 
+- Under the same file forms.py, add another class for login just as below:
+
+![formslogin](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/formspylogin.png)
+
+- Update the views.py as we wanted to add the login view.
+
+  ![loginview](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/viewspylogin.png)
+  
+- Create a html file for login template.
+
+![loginhtml](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/loginhtml.png)
 
 
+#### Step 4: Manage the User Access
 
-#### Step 
-#### Step 
-#### Step 
+This can be done by managing the users according to the user type. Since in this project, there are going to be 3 users, there should be a restrictions set for each user type on the portal overall. This usually can be seen mostly on what are the limitation of each user type can do in the portal. By correctly identify the correct access permissions for each user type, it can ensure a better control on user access since not every user can change everything in the portal, some of the user can only view it and so on.
+
+
+#### Step 5: Set the Configuration of Database in Django Project
+
+Since using MySQL database to store the user authentication information, below are the settings that should be done in settings.py:
+
+![db]()
+ 
+#### Step 6: Perform Database Migration in Django Project
+
+By using the terminal in which the Django project is installed, use the below command lines:
+
+```
+python manage.py makemigrations
+```
+```
+python manage.py migrate
+```
+The terminal should give response when these command was executed:
+
+![migrate]()
+
 
 ## Question 3 (b)
 
