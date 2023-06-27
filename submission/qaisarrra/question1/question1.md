@@ -145,6 +145,58 @@ python manage.py startapp CompaniesApp
 <p align="center">
    <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Create%20Django%20Project.png">
 </p>
+<br></br>
+
+**Configure Database Connection** 
+
+Set up the MySQL and MongoDB connections. Alter the code for the databases in the Django project's'settings.py' file as shown below.
+```bash
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db_companies',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    },
+    'mongodb': {
+        'ENGINE': 'djongo',
+        'NAME': 'AA',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'localhost',
+            'port': 27017,
+            'username': 'qaisara',
+            'password': '8301',
+            'authSource': 'admin',
+            'authMechanism': 'SCRAM-SHA-1',
+        }
+    }
+}
+```
+<br></br>
+
+**Create MySQL and MongoDB Models** 
+
+In the **models.py** file, define the models that represent the data and correspond to the structure of the JSON dataset.
+1. Defining  models for MySQL
+```bash
+
+```
+
+2. Defining  models for MongoDB
+```bash
+
+```
+<br></br>
+
+**Perform Database Migration** 
+```bash
+ python manage.py makemigrations
+ python manage.py migrate
+```
+<br></br>
 
 ## Question 1 (b)
 The system architecture will consist of the following components:
