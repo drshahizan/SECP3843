@@ -421,9 +421,15 @@ Click on the *configure* option under the `Primary replication` section
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image13.png)
 
+The primary replication section will expand
 
+**Step 3**
 
+- Select the option `Ignore all database; Replicate:
 
+- Then select the database named `analytics_q3` or whatever database that needs to be replicated
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image14.png)
 
 
 
