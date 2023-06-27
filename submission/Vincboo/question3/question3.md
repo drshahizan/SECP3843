@@ -170,17 +170,17 @@ path('management_dashboard/', management_dashboard_view, name='management_dashbo
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/af501f19-f79a-4169-9b96-d269f7d623cb"/>
 
 2. Register
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/c4551943-55e4-4665-a516-19b1c4b2b25e"></img>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/c4551943-55e4-4665-a516-19b1c4b2b25e"/>
 
 #### Dashboard
 1. Customer 
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/00a01dd0-a4a2-49a4-8403-46460d70e8f6"></img>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/00a01dd0-a4a2-49a4-8403-46460d70e8f6"/>
 
 2. Technical Worker
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/ce4098cd-5872-46f4-a3a1-c31a10eaa6cb"></img>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/ce4098cd-5872-46f4-a3a1-c31a10eaa6cb"/>
 
 3. Management
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/cbb73235-1106-4aa8-8242-50b0b95782c2"></img>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/cbb73235-1106-4aa8-8242-50b0b95782c2"/>
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
