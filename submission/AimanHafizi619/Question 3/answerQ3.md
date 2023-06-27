@@ -530,9 +530,11 @@ binlog_do_db=analytics_q3
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image24.png)
 
+**Step 12**
 
+- Notice two warning messages appearing in the `Replica replication` section
 
-
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image25.png)
 
 
 

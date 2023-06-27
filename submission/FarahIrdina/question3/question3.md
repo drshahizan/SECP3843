@@ -14,7 +14,30 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: AIRBNB LISTINGS DATASET
 
 ## Question 3 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+#### 1. Define the data models
+
+By using the same file 'models.py', add two classes. Class user is for user's information with the attributes of name, email, password and type and class UserType is for user's type which only has one attribute, name.
+
+```
+class User(models.Model):
+    name = models.CharField(max_length=200)
+    email = models.CharField(max_length=200)
+    password = models.CharField(max_length=200)
+    type = models.IntegerField()
+
+class UserType(models.Model):
+    name = models.CharField(max_length=200)
+```
+
+#### 2. Migrate the data models to MySQL
+
+After that, make migration and migrate the models ito MySQL
+
+```
+python manage.py makemigrations Listings
+python manage.py migrate
+```
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
