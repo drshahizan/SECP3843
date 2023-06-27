@@ -46,6 +46,25 @@ Chooes the file from your local PC.
   <img height="150px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/choosefromfile.png" />
 </p>
 
+- Import Accounts JSON data
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_accounts.png" />
+</p>
+
+- Import Customer JSON data
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_customer.png" />
+</p>
+
+- Import Transaction JSON data
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_transaction.png" />
+</p>
+
+
 <h4>Imported Data</h4>
 
 The images below show the data from 'Accounts.json', 'Customer.json' and 'Transactions.json' are imported into MongoDB. 
@@ -55,25 +74,6 @@ The images below show the data from 'Accounts.json', 'Customer.json' and 'Transa
 <p align="center">
   <img height="150px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/collections.png" />
 </p>
-
-- The Accounts JSON data imported.
-
-<p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_accounts.png" />
-</p>
-
-- The Customers JSON data imported.
-
-<p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_customer.png" />
-</p>
-
-- The  JSON data imported.
-
-<p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_transaction.png" />
-</p>
-
 
 
 
