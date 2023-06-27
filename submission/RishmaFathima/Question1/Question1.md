@@ -31,8 +31,17 @@ Don't forget to hit the :star: if you like this repo.
         - Then, create a virtual environment for the project.
           
            <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/871e6e313e09d8f507b32aaf9d54173434080a29/submission/RishmaFathima/Question1/files/images/new%201.1.1.4.png">
+
+  2. Set up MySql Database
+        - First, need to install the MySQL database server on our system. The MySQL Community Server is downloaded from the official MySQL website                               ``(https://dev.mysql.com/downloads/)``.
+        - Download Xampp. Once the XAMPP installer is downloaded, run the executable file to start the installation process. Follow the on-screen instructions to                proceed and finish the the process
+        - Create a database called ``AA_Mysql``
           
-  2. Define Django models in models.py:
+  4. Set up MongoDB Database
+        - Go to the MongoDB website ``(https://www.mongodb.com/try/download/community)`` and select the appropriate version of MongoDB for our operating system
+        - Create a database called ``AA_Mongo``
+          
+  5. Define Django models in models.py:
         - JSON file is downloaded from the Github.
         - Django models were created based on the attributes from the downloaded JSON file which contain the dataset of ``Airbnb Listing Dataset``.
         - From the app folder created, in the ``models.py`` file, the model of the prject would be defined.
@@ -41,7 +50,7 @@ Don't forget to hit the :star: if you like this repo.
    
       
 
-  3. Configure the settings of the project:
+  6. Configure the settings of the project:
 
         - Update the ``settings.py`` file in the project folder to define the database setting for Mysql and MongoDB
            <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/c18d8db59264504dc5f34395291dfe90abb48c90/submission/RishmaFathima/Question1/files/images/1.1.3.1.png">
@@ -55,7 +64,7 @@ Don't forget to hit the :star: if you like this repo.
           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/c18d8db59264504dc5f34395291dfe90abb48c90/submission/RishmaFathima/Question1/files/images/1.1.3.2.png">
          
            
-  4. Migration of database and load the JSON file:
+  7. Migration of database and load the JSON file:
 
         - Add the command ``python manage.py makemigrations`` to migrate the database from the ``models.py``
         - Then add the command ``python manage.py migrate`` to make th emigrations work with Mysql and MongoDB
@@ -77,7 +86,7 @@ Don't forget to hit the :star: if you like this repo.
           
         - Finally python generate a script to read Django.
          
-  5. Retrieve, Update and Testing Data:
+  8. Retrieve, Update and Testing Data:
 
         - To retrieve all data from the MongoDB ``AA_Mongo`` collection:
      
@@ -101,10 +110,32 @@ Don't forget to hit the :star: if you like this repo.
         
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+System Architecture Diagram 
 
+<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/7f5702fc9817206787792eb17ce2305d156b0284/submission/RishmaFathima/Question1/files/images/1.2.1.jpg">
 
+Detailed explanations for each component:
+
+1. Web Server (Django):
+   <p>
+    The high-level Python web framework Django is used to implement the web server portion of the system design. Django covers user authentication, session                management, and the request-response cycle in addition to serving dynamic web pages. It adheres to the Model-View-Controller (MVC) architectural design paradigm,      which encourages concern separation and code reuse. Django interacts with databases via an Object-Relational Mapping (ORM) layer, which offers a practical way to      construct database models and carry out CRUD operations.
+   </p>
+ 3. Dataset (JSON):
+      <p>
+    Structured data that has been stored in JSON format makes up the dataset component. JSON (JavaScript Object Notation) is a simple data exchange format that is         simple for both people and machines to read and write. It can store complex data because it expresses data as key-value pairs and supports nested structures. The      dataset can be utilised for a number of functions, including setting up database tables, giving static data to a web application, and acting as a bridge data          format for data processing operations.
+    </p>
+ 5. Databases:
+    
+    a. MySQL:
+      <p>
+    Popular relational database management system (RDBMS) MySQL is open-source. It is renowned for its performance, dependability, and scalability. MySQL is one of        the database options utilised in the system architecture to store structured data. Data integrity and transactional consistency are ensured by its ACID                (Atomicity, Consistency, Isolation, Durability) features. Because MySQL is supported by Django's ORM, database activities can be easily managed and seamlessly         integrated.
+     </p>
+    b. MongoDB:
+      <p>
+    The  MongoDB stores data in the BSON (Binary JSON) format, which is adaptable and document-oriented. It is suitable for managing significant amounts     of            unstructured or semi-structured data because it is built for scalability and agility. MongoDB is utilised as an additional database choice in the system               architecture to store data that doesn't fit well in a relational structure or requires high scalability. Using third-party libraries like Djongo or MongoEngine,       Django connects with MongoDB and offers an ORM-like interface to communicate with the database.
+   </p>
+Finally, this system architecture allows for smooth integration of the databases (MySQL and MongoDB), the JSON dataset, and the web server (Django). It makes use of Django's robust ORM capabilities to abstract the challenges of working with databases, giving the web application a reliable and effective data access layer. The exact requirements and features of the data being kept determine whether MySQL or MongoDB should be used, allowing for flexibility and
 
 
 ## Contribution 🛠️

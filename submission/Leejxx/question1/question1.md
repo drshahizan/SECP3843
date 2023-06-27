@@ -57,7 +57,7 @@ The JSON dataset server stores the JSON dataset that will be integrated with Dja
   b) Then redirect to the created project (AA_Leejx) using the following commands: `cd AA_leejx`. <br>
     <img  src="./files/images/create2.JPG"></img>
 
-  c) Create a new Django app within the project using: `python manage.py startapp appname`.                                       
+  c) Create a new Django app within the project using: `python manage.py startapp sales`.                                       
      <img  src="./files/images/create3.JPG"></img>
      
 ### 3. Configure the Django database settings:

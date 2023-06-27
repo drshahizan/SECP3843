@@ -256,7 +256,52 @@ Don't forget to hit the :star: if you like this repo.
    ```
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+#### 1. Choose a Replication Method:
+
+- MySQL Replication: MySQL provides built-in replication features, such as master-slave replication or multi-master replication, which allow data to be automatically copied from one MySQL server (master) to another (slave) in real-time.
+- MongoDB Replication: MongoDB offers replica sets, which are a group of MongoDB instances that host the same data set. Replica sets provide automatic failover and data replication across multiple MongoDB nodes.
+
+#### 2. Configure MySQL Replication:
+
+- Set up a MySQL replication environment with a master and one or more slave servers.
+- Configure the master MySQL server by enabling binary logging in the MySQL configuration file (my.cnf). Add the following line under the [mysqld] section:
+  ```
+  log_bin = mysql-bin
+  ```
+
+- Restart the MySQL service to apply the configuration changes.
+- Create a replication user on the master server and grant the necessary replication privileges.
+- Configure the slave MySQL servers by specifying the replication settings in the MySQL configuration file (my.cnf). Add the following lines under the [mysqld] section:
+  ```
+      server-id = unique_id
+      log_bin = mysql-bin
+      relay-log = mysql-relay-bin
+  ```
+
+- Restart the MySQL service on the slave servers.
+- Use the CHANGE MASTER TO command on each slave server to specify the master server's details.
+- Start the replication process on each slave server.
+
+#### 3. Configure MongoDB Replication:
+
+- Set up a MongoDB replica set by deploying multiple MongoDB instances.
+- Initialize the replica set by connecting to one MongoDB instance and running the rs.initiate() command.
+- Add the remaining MongoDB instances to the replica set using the rs.add() command.
+- MongoDB replica sets automatically elect a primary node to handle write operations and replicate data to secondary nodes.
+
+#### 4. Implement Data Synchronization Logic:
+
+- Write application logic to listen for changes in one database and propagate them to the other database.
+- For example, in Django, you can utilize signals or database triggers to capture data changes and trigger the synchronization process.
+- When a change occurs in the MySQL database, such as an update or insertion, capture the change event and use the appropriate MongoDB driver (e.g., PyMongo) to update the corresponding data in the MongoDB database. Similarly, when a change occurs in the MongoDB database, update the corresponding data in the MySQL database using Django's ORM.
+
+#### 5. Test and Monitor the Replication:
+
+- Perform thorough testing to ensure that data changes made in one database are accurately reflected in the other.
+- Monitor the replication process to identify any potential issues or delays in data synchronization.
+- Monitor the status of MySQL replication using commands like SHOW MASTER STATUS on the master server and SHOW SLAVE STATUS on the slave servers.
+- Monitor the MongoDB replica set using commands like rs.status() to check the replication state and member status.
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

@@ -139,9 +139,8 @@ To create migrations for these models, I need to use the manage.py command with 
 python manage.py makemigrations
 ```
 
-
 ## Question 1 (b)
-
+<img  src="./files/images/system_architecture.png"></img>
 
 
 
