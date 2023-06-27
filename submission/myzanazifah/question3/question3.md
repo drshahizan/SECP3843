@@ -72,7 +72,24 @@ Don't forget to hit the :star: if you like this repo.
 14. After that, configure the url path in url.py.
 
     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/q3(14).png" /></div>
-15. Once everything has been done, open a new terminal and run the command below.    
+
+15. Go to the Django application directory and go to the integrated terminal. Run the following code to create templates directory.
+
+    ```
+      mkdir templates
+      ```
+16. In the templates directory, create five new files which are 'customer.html', 'login.html', 'register.html', 'senior.html' and lastly is 'technical.html'.
+
+    <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/g3(21).png" /></div>
+    
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/g3(22).png" /></div>
+     
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/g3(26).png" /></div>
+     
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/g3(24).png" /></div>     
+     
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/g3(25).png" /></div>
+18. Once everything has been done, open a new terminal and run the command below.    
 
     ```
       python manage.py runserver
