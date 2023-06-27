@@ -74,6 +74,8 @@ Make sure to connect to your database by typing the command ```use AnalyticsData
 
 1) Create query
 
+Create a new account_id  = 371140, limit = 10000 and products = "Derivatives".
+
 ```
 db.Accounts.insertOne({
   account_id: 371140,
@@ -96,14 +98,19 @@ Result:
 
 2) Read query
 
+Read the data where the username is equal to "fmiller" in the Customers table.
+
 ```db.Customers.find({username:"fmiller"})```
 
 Result:
+
 <p align="center">
   <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/read.png" />
 </p>
 
 3a) Update query
+
+Update the limit number to 8000 which the account_id is equal to 371138.
 
 ```
 db.Accounts.updateOne(
@@ -124,6 +131,8 @@ Result:
 
 b) Update query 
 
+Update the transaction_count to 86 which the account_id is equal to 443178.
+
 ```
 db.Transactions.updateOne(
    { account_id: 443178 },  
@@ -143,15 +152,19 @@ Result:
 
 4) Delete query
 
+Delete the data from Accounts table where the account_id is 371138.
 ```db.Accounts.deleteOne({ account_id: 371138})```
+
 <p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/delete.png" />
+  <img height="200px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/delete.png" />
 </p>
 
 Result:
 
+The result shows null after the data is deleted from the Accounts table.
+
 <p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/delete_result.png" />
+  <img height="200px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/delete_result.png" />
 </p>
 
 
