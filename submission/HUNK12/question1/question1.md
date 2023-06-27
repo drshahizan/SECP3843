@@ -17,11 +17,11 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 1 (a)
 There are several steps that are required to integrate Django with the JSON dataset, ensuring efficient data storage and retrieval from both MySQL and MongoDB databases to enable the creation of dynamic web pages. First of all, let' figure out how we can utilize and configure five(5) web servers for this project. Below are the configurations I would recommend to setup the servers:
 
-1. **Web server**: This server will host the Django application and serve the web pages to users.
-2. **MySQL server**: This server will host the MySQL database and store data that needs to be persisted.
-3. **MongoDB server**: This server will host the MongoDB database and store data that needs to be persisted.
-4. **Load balancer**: This server will distribute incoming traffic across the web servers to ensure high availability and scalability.
-5. **Backup server**: This server will store backups of the data from the MySQL and MongoDB databases to ensure data integrity and recovery in case of a disaster.
+1. `Web server`: This server will host the Django application and serve the web pages to users.
+2. `MySQL server`: This server will host the MySQL database and store data that needs to be persisted.
+3. `MongoDB server`: This server will host the MongoDB database and store data that needs to be persisted.
+4. `Load balancer`: This server will distribute incoming traffic across the web servers to ensure high availability and scalability.
+5. `Backup server`: This server will store backups of the data from the MySQL and MongoDB databases to ensure data integrity and recovery in case of a disaster.
 
 **Next, we'll need to install Django. For this case study, we'll be installing Django on a local machine instead of a server. The steps for both are relatively the same. Below are the steps to install Django on a local machine:**
    - Install Django on the the local machine where the Django web framework will be deployed by running the command `pip install django` in the commmand prompt.
@@ -47,9 +47,13 @@ Then in the phpMyAdmin page, we'll add a new database called  `db_tweets`. That'
 
 ### Setting up MongoDB database
 Install [MongoDB compass](https://www.mongodb.com/try/download/compass) 
-![image](https://github.com/drshahizan/SECP3843/assets/3646429/34fee783-a4aa-42af-a5b3-0bdb93c7e7a2)
+<img src="https://github.com/drshahizan/SECP3843/assets/3646429/34fee783-a4aa-42af-a5b3-0bdb93c7e7a2" width="400">
 
-In MongoDB Compass GUI, create a new database and collection
+In MongoDB Compass GUI, create a new database and collection.
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/90319dec-2898-4a61-80f9-ef23c6865b45)
+
+**Both the databases are now setup**
+
 IN PROGRESS
 
 ## Question 1 (b)
