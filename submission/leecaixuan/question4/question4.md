@@ -202,7 +202,7 @@ print("Mean Squared Error:", mse)
 Result: Mean Squared Error: 169890.65444598708
 
 <p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/9.png" />
+  <img height="50px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/9.png" />
 </p>
 
 <h4>Step 3 - Scatterplot</h4>
@@ -248,7 +248,7 @@ print("Predicted value:", prediction)
 Result: Predicted value: [65428.603017]
 
 <p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/11.png" />
+  <img height="50px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/11.png" />
 </p>
 
 
