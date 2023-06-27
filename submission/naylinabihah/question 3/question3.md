@@ -18,7 +18,7 @@ Don't forget to hit the :star: if you like this repo.
 
 Since in this part focuses in the authentication of users in Django project, a user model should be define in Django. In Django, there is a built-in framework specifically for authentication. By using this built-in framework, it helps to ease the processes of making models and some functionalities for user authentication management as it has already pre-built. The framework used in `django.contrib.auth.models'. Below is the code that shoul be written in models.py
 
-![model]()
+![model](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/models.png)
  
 #### Step 2: Create Registration Form for Users
 
@@ -26,17 +26,23 @@ This can be done by using the Django forms.  Since I had already used the built-
 
 - Create forms.py under the folder 'app' in the Django project.
 
-![model]()
+![forms](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/formspyreg.png)
 
 - Update the views.py as we wanted to add the registration view.
 
-  ![regview]()
+  ![regview](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/viewspyreg.png)
   
 - Create a folder named as 'template' under folder 'app' to grouped all the html files that being used in this Django project. Then create a html file for registration template.
 
-- ![reghtml]()
+![reghtml](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/reghtml.png)
 
-#### Step 
+#### Step 3: Implementation of User Authentication
+
+Just as in Step 2, since I used the built-in Django authentication framework, it helps to ease the process of doing the authentications in the portal because it already include the controls for user login, logout, and session management. It also has done a pre-built views and backend authentication and authorization to handle the processes. All the authentications done by the users will be validated with MySQL database to get the credentials before access permission is granted for the users into the portal.
+
+
+
+
 #### Step 
 #### Step 
 #### Step 
