@@ -96,7 +96,7 @@ Don't forget to hit the :star: if you like this repo.
    
    <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/q3(18).png" /></div>
 
-   Techniacal worker view after logging in:
+   Technical worker view after logging in:
    
    <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/q3(19).png" /></div>
 
