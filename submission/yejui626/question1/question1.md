@@ -27,7 +27,8 @@ py -m venv env
 env\Scripts\activate
 ```
 
-2. Once you’ve created and activated your Python virtual environment, you can install Django into this dedicated development workspace using ```python 
+2. Once you’ve created and activated your Python virtual environment, you can install Django into this dedicated development workspace using 
+```python 
 pip install django 
 ```
 
