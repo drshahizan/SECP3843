@@ -15,7 +15,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 2 (a)
 To carry out the task, we need to install [MongoDB Community Server](https://www.mongodb.com/try/download/community). To use the mongodb shell and mongoimport tool, we need to download the [MongoDB Shell](https://www.mongodb.com/try/download/shell) and [MongoDB Database Tools](https://www.mongodb.com/try/download/database-tools). After downloading the zip file and unzip the downloaded folder, copy-paste the bin folders all .exe files into the MongoDB bin folder.
-<img src="./files/images/bin.png"></img>
+<img src="./files/images/bin.png">
 
 ### Step 1: Download the JSON file
 Download the [movies.json](https://github.com/drshahizan/dataset/blob/main/mongodb/03-movie/movies.json) dataset.
@@ -26,11 +26,11 @@ Open command prompt and navigate to the MongoDB bin folder.
 cd C:\Program Files\MongoDB\Server\6.0\bin
 ```
 Then, run `mongod` to start the MongoDB server.
-<img src="./files/images/start_mongo.png"></img>
+<img src="./files/images/start_mongo.png">
 
 ### Step 3: Accessing the MongoDB shell
 After starting up MongoDB, access mongo shell by running `mongosh` command in the command prompt. This will connect to a MongoDB instance running on the localhost with default port 27017.
-<img src="./files/images/mongo_shell.png"></img>
+<img src="./files/images/mongo_shell.png">
 
 ### Step 4: Selecting the target database
 Once accessed to the Mongo Shell, the following code specify or create the database named mflix if it does not exist.
@@ -38,7 +38,7 @@ Once accessed to the Mongo Shell, the following code specify or create the datab
 use mflix
 ```
 
-<img src="./files/images/use_db.png"></img>
+<img src="./files/images/use_db.png">
 
 ### Step 5: Choosing the collection
 The following code specify the collection where we want to store our data.
@@ -46,7 +46,7 @@ The following code specify the collection where we want to store our data.
 db.movies
 ```
 
-<img src="./files/images/collection.png"></img>
+<img src="./files/images/collection.png">
 
 ### Step 6: Executing the import command
 Next, we can run the `mongoimport` command to import the dataset from json file.
@@ -57,7 +57,7 @@ mongoimport --db mflix --collection movies --file "C:\Users\hanwa\Documents\GitH
 > - The --collection flag specifies which collection within that database to import data into.
 > - The --file flag indicates where the JSON file is located.
 
-<img src="./files/images/mongoimport.png"></img>
+<img src="./files/images/mongoimport.png">
 
 ## Question 2 (b)
 
@@ -91,7 +91,7 @@ db.movies.insertOne({
   "type": "movie"
 });
 ```
-<img src="./files/images/insertone.png"></img>
+<img src="./files/images/insertone.png">
 
 ii) Read
 
@@ -99,7 +99,7 @@ Reading data from our collection can be done using `find()` function which retur
 ```
 db.movies.find({ title: "Test" });
 ```
-<img src="./files/images/find.png"></img>
+<img src="./files/images/find.png">
 
 iii) Update
 
@@ -112,7 +112,7 @@ db.movies.updateOne(
    { $set: { "num_mflix_comments": 0 } }
 );
 ```
-<img src="./files/images/updateone.png"></img>
+<img src="./files/images/updateone.png">
 
 This following query updates the "languages" field for all records having title of "Test" using `updateMany()`.
 ```
@@ -121,7 +121,7 @@ db.movies.updateMany(
    { $set: { "languages": ["English"] } }
 );
 ```
-<img src="./files/images/updatemany.png"></img>
+<img src="./files/images/updatemany.png">
 
 iv) Delete
 
@@ -131,7 +131,7 @@ The following query deletes one specific record based on its unique '_id' value 
 ```
 db.movies.deleteOne({"_id" : ObjectId("6499a1d17f2392fe4ed2d228")});
 ```
-<img src="./files/images/deleteone.png"></img>
+<img src="./files/images/deleteone.png">
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
