@@ -134,7 +134,7 @@ The result in MySQL:
 
 3. For MongoDB
 We uses `py manage.py migrate --database=mongodb` to migrate it into MongoDB.
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/e50d3c22-5eb0-4caa-8dfb-f8674358f425"></img>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/003f66a6-0135-4591-9bae-747aeb0fc404"></img>
 
 The result in MongoDB:
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/92454593-9255-4e2c-a41b-7d191c0102f5"></img>
