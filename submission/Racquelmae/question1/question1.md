@@ -86,7 +86,7 @@ Then, apply the migration by using these 2 commands:
 - MongoDB: `python manage.py migrate --database=mongodb`
 
 Results:
-<img  src="./files/images/migrate.jpg"></img>
+<img  src="./files/images/migrate.jpg"></img><br>
 <img  src="./files/images/migrate2.jpg"></img>
 
 ### 8. Load dataset
@@ -141,8 +141,8 @@ class Command(BaseCommand):
 Then, run `python manage.py load_data new_city_inspections.json` to import the JSON dataset into the databases.
 
 Results:
-<img  src="./files/images/result.jpg"></img>
-<img  src="./files/images/result.jpg"></img>
+<img  src="./files/images/result.jpg"></img><br>
+<img  src="./files/images/result2.jpg"></img>
 
 ## Question 1 (b)
 <img  src="./files/images/architecture.jpeg"></img>
