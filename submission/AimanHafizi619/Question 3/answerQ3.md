@@ -317,7 +317,7 @@ urlpatterns = [
 
 ### Step 11: Install mysqlclient
 
-1. Type in `pip install mysqlclinet` in the command prompt
+1. Type in `pip install mysqlclient` in the command prompt
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image3.png)
 

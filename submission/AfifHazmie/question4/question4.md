@@ -17,7 +17,8 @@ Don't forget to hit the :star: if you like this repo.
    - For the given case study, a suitable machine learning approach would be binary classification using `Logistic Regression Algorithm`. Logistic Regression is commonly use use for classification task when the target variables have 2 classes.
    - For example, predicting whether a customer will use a coupon or not in the future and etc...
 
-   1. Firstly, before do any analysis, visualization or machine learning, we must first clean the data. For example 
+   1. Firstly, before do any analysis, visualization or machine learning, we must first clean the data. For example
+      
       ```python
         # Connect to MongoDB and retrieve data
           client = pymongo.MongoClient("mongodb+srv://afifhazmiearsyad:abc123456789@noctua.bw9bvzx.mongodb.net/")
@@ -30,6 +31,38 @@ Don't forget to hit the :star: if you like this repo.
           df.isnull().sum()
           df.info()
       ```
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/dfinfo.jpg">
+      
+      #### Droping rows with missing values
+      
+      ```python
+         # Handle missing values (drop rows with missing values)
+         df.dropna(inplace=True)
+         df.info()
+      ```
+
+      #### Split the Items columns into seprate column
+      
+      ```python
+         # Convert the 'items' column into separate columns
+         df_items = pd.json_normalize(df['items'])
+         
+         # Rename the columns
+         new_columns = {}
+         for col in df_items.columns:
+             new_columns[col] = f'item{col}'
+         df_items.rename(columns=new_columns, inplace=True)
+         
+         # Merge the item columns with the original DataFrame
+         df = pd.concat([df, df_items], axis=1)
+         
+         # Drop the original 'items' column
+         df.drop('items', axis=1, inplace=True)
+         
+         df.head()
+      ```
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/jsonnormalize.jpg">
+      
    2. 
 
 
