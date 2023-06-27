@@ -26,6 +26,8 @@ Firstly, open command prompt and install Django. Write the code below.
 pip install Django
 ```
 
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question1/files/images/django.png)
+
 #### 2. Create a new project
 
 Then, create a new project. Write the code below.
@@ -33,6 +35,9 @@ Then, create a new project. Write the code below.
 ```
 django-admin startproject airbnb
 ```
+
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question1/files/images/project.png)
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question1/files/images/project2.png)
 
 #### 3. Configure database connections
 
@@ -152,19 +157,25 @@ class MongoDBModel (models.Model):
         db_table = 'listings'
 ```
 
-#### 5. Migrate the data models to MySQL
+#### 5. Migrate the data models to both MySQL and MongoDB
 
+Next, perform database migrations to both MySQL and MongoDB.
 
+```
+python manage.py makemigrations Listings
+python manage.py migrate
+```
 
-#### 5. Load the JSON dataset into MySQL
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question1/files/images/migrate.png)
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question1/files/images/migrate2.png)
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question1/files/images/mysql.png)
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question1/files/images/mysql2.png)
 
-#### 6. Connect Django to MongoDB
+#### 6. Load the JSON dataset into MySQL
 
-#### 7. Migrate the data models to MongoDB
+#### 7. Load the JSON dataset into MongoDB
 
-#### 8. Load the JSON dataset into MongoDB
-
-#### 9. Query and retrieve data
+#### 8. Query and retrieve data
 
 ## Question 1 (b)
 
