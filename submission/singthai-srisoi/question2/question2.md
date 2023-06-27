@@ -14,67 +14,150 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Mflix Dataset
 
 ## Question 2 (a)
-**Step 1: Create a Database in MongoDB Compass**
+Download MongoDB shell and DB Tools:
+    these tools interact with MongoDB databases from your computer. Download them for free from the MongoDB website.
+     - [MongoDB Shell](https://downloads.mongodb.com/compass/mongosh-1.10.1-win32-x64.zip)
+     - [Database tools](https://fastdl.mongodb.org/tools/db/mongodb-database-tools-windows-x86_64-100.7.2.zip)
 
-1. Launch MongoDB Compass and connect to your MongoDB server.
-2. Click on the "New Connection" button or select "New Connection" from the "File" menu to create a new connection.
-3. Fill in the necessary connection details, such as the hostname, port, authentication credentials (if required), and SSL options.
-4. Click on the "Connect" button to establish the connection to the MongoDB server.
-5. Once connected, you will see a list of databases on the left-hand side of the MongoDB Compass interface.
-6. Click on the "+" icon next to "Databases" to create a new database.
-7. Enter a name for the database and click on the "Create Database" button to create the database in MongoDB Compass.
+Extract the files from the downloaded package and put them in a folder on your computer.
+Paste file in bin into `C:\mongodb\bin`:
+```powershell
+PS C:\mongodb> tree /F
+Folder PATH listing
+Volume serial number is EE79-4E7C
+C:.
+│   LICENSE-Community.txt
+│   MPL-2
+│   README
+│   THIRD-PARTY-NOTICES
+│
+├───bin
+│       bsondump.exe
+│       InstallCompass.ps1
+│       mongod.cfg
+│       mongod.exe
+│       mongod.pdb
+│       mongodump.exe
+│       mongoexport.exe
+│       mongofiles.exe
+│       mongoimport.exe
+│       mongorestore.exe
+│       mongos.exe
+│       mongos.pdb
+│       mongosh.exe
+│       mongosh_crypt_v1.dll
+│       mongostat.exe
+│       mongotop.exe
+│
+├───data
+│   │   collection-0-7436583191903012859.wt
+│   │   collection-10-3908939732731855936.wt
+│   │   collection-2-3908939732731855936.wt
+│   │   collection-2-7436583191903012859.wt
+│   │   collection-4-3908939732731855936.wt
+│   │   collection-4-7436583191903012859.wt
+│   │   collection-6-3908939732731855936.wt
+│   │   collection-8-3908939732731855936.wt
+│   │   index-1-7436583191903012859.wt
+│   │   index-11-3908939732731855936.wt
+│   │   index-3-3908939732731855936.wt
+│   │   index-3-7436583191903012859.wt
+│   │   index-5-3908939732731855936.wt
+│   │   index-5-7436583191903012859.wt
+│   │   index-6-7436583191903012859.wt
+│   │   index-7-3908939732731855936.wt
+│   │   index-9-3908939732731855936.wt
+│   │   mongod.lock
+│   │   sizeStorer.wt
+│   │   storage.bson
+│   │   WiredTiger
+│   │   WiredTiger.lock
+│   │   WiredTiger.turtle
+│   │   WiredTiger.wt
+│   │   WiredTigerHS.wt
+│   │   _mdb_catalog.wt
+│   │
+│   ├───diagnostic.data
+│   │       metrics.2023-06-16T17-36-48Z-00000
+│   │       metrics.2023-06-18T13-04-17Z-00000
+│   │       metrics.2023-06-18T15-44-57Z-00000
+│   │       metrics.2023-06-18T21-12-11Z-00000
+│   │       metrics.2023-06-24T09-03-08Z-00000
+│   │       metrics.interim
+│   │
+│   └───journal
+│           WiredTigerLog.0000000004
+│           WiredTigerPreplog.0000000001
+│           WiredTigerPreplog.0000000002
+│
+└───log
+        mongod.log
+```
 
-**Explanation:** In this step, you are creating a new database in MongoDB Compass. The database will serve as a container for your imported data.
+Open the command prompt: 
+    This is a program that lets you type commands on your computer. You can find it by searching for "cmd" in the Start menu.
 
-**Caution:** Ensure that you have the necessary permissions to create databases on the MongoDB server. If you are using a managed MongoDB service, make sure you have the appropriate access rights to create databases.
+Go to the MongoDB bin folder: 
+    This is where the MongoDB programs are stored. You need to go there to use them. You can do this by typing `cd C:\mongodb\bin` in the command prompt and pressing Enter.
 
-![image-6.png](ss/ss1.png)
+Start the MongoDB shell: 
+    This is a program that lets you talk to MongoDB databases. You can start it by typing `mongo` in the command prompt and pressing Enter. It will connect to a MongoDB server on your computer by default.
 
----
+```powershell
+PS C:\mongodb> mongosh
+Current Mongosh Log ID: 649a8715eae2f8b464b8413c
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.10.1
+Using MongoDB:          6.0.6
+Using Mongosh:          1.10.1
 
-**Step 2: Import Data**
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
 
-1. With the newly created database selected in MongoDB Compass, click on the "Collection" button or select "Collection" from the "File" menu to create a new collection within the database.
-2. Enter a name for the collection and click on the "Create Collection" button to create the collection.
-3. Select the newly created collection from the left-hand side panel.
-4. Click on the "Add Data" button located in the collection view.
-5. Choose the JSON option from the available data import options.
+------
+   The server generated these startup warnings when booting
+   2023-06-19T05:12:09.818+08:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+------
+```
+Create mflix database: 
+    This is the database that you want to work with. It contains data about movies, theaters, users and comments. You can switch to it by typing `use mflix` in the MongoDB shell and pressing Enter.
 
-**Explanation:** In this step, you are creating a new collection within the database where you will import your JSON data.
+```powershell
+test> use mflix
+switched to db mflix
+```
 
-**Caution:** Ensure that the database and collection names are unique and follow any naming conventions or guidelines you have in place.
 
-![image-7.png](ss/ss2.png)
-![image.png](ss/ss3.png)
-![image-2.png](ss/ss4.png)
+Load JSON files into collections: 
+    You have some JSON files that contain data for each collection in the mflix database. You need to load them into the database using a program called mongoimport. This program lets you import data from different formats into MongoDB collections.
 
----
+ - `mongoimport C:\Users\User\Downloads\users.json -d mflix -c Users --drop`: This command loads the data from the `users.json` file into the Users collection in the `mflix` database. The `--drop` option deletes any existing data in the Users collection before loading.
 
-**Step 3: Choose Data File**
+ - `mongoimport C:\Users\User\Downloads\theaters.json -d mflix -c Theaters --drop`: This command loads the data from the `theaters.json` file into the Theaters collection in the `mflix` database. The `--drop` option deletes any existing data in the Theaters collection before loading.
 
-1. In the JSON import dialog, click on the "Browse" button to select the JSON file you want to import.
-2. Navigate to the directory where your JSON file is located, select the file, and click on the "Open" button.
+ - `mongoimport C:\Users\User\Downloads\comments.json -d mflix -c Comments --drop`: This command loads the data from the `comments.json` file into the Comments collection in the `mflix`database. The `--drop` option deletes any existing data in the Comments collection before loading.
 
-**Explanation:** In this step, you are selecting the JSON file that contains the data you want to import into MongoDB.
+ - `mongoimport C:\Users\User\Downloads\movies.json -d mflix -c Movies --drop`: This command loads the data from the `movies.json` file into the Movies collection in the `mflix` database. The `--drop` option deletes any existing data in the Movies collection before loading.
 
-**Caution:** Make sure you have the correct JSON file that contains the data you intend to import. Verify the file path and ensure that the file is accessible.
-
-![image-3.png](ss/ss6.png)
-
----
-
-**Step 4: Check Data**
-
-1. After selecting the JSON file, MongoDB Compass will display a preview of the imported data.
-2. Review the preview to ensure that the data appears as expected and that it matches the structure of your JSON file.
-3. Check for any errors or inconsistencies in the data preview.
-
-**Explanation:** This step allows you to inspect the data before importing it into MongoDB to ensure its accuracy and completeness.
-
-**Caution:** Pay close attention to any error messages or warnings displayed in the preview. If there are any issues with the data, you may need to address them before proceeding with the import.
-
-![image-3.png](ss/ss5.png)
-
+```powershell
+PS C:\mongodb> mongoimport C:\Users\User\Downloads\users.json -d mflix -c Users --drop
+2023-06-27T15:05:07.081+0800    connected to: mongodb://localhost/
+2023-06-27T15:05:07.191+0800    dropping: mflix.Users
+2023-06-27T15:05:07.218+0800    185 document(s) imported successfully. 0 document(s) failed to import.
+PS C:\mongodb> mongoimport C:\Users\User\Downloads\theaters.json -d mflix -c Theaters --drop
+2023-06-27T15:07:05.453+0800    connected to: mongodb://localhost/
+2023-06-27T15:07:05.494+0800    dropping: mflix.Theaters
+2023-06-27T15:07:05.578+0800    1564 document(s) imported successfully. 0 document(s) failed to import.
+PS C:\mongodb> mongoimport C:\Users\User\Downloads\comments.json -d mflix -c Comments --drop
+2023-06-27T15:08:23.658+0800    connected to: mongodb://localhost/
+2023-06-27T15:08:23.695+0800    dropping: mflix.Comments
+2023-06-27T15:08:25.041+0800    50304 document(s) imported successfully. 0 document(s) failed to import.
+PS C:\mongodb> mongoimport C:\Users\User\Downloads\movies.json -d mflix -c Movies --drop
+2023-06-27T15:09:54.850+0800    connected to: mongodb://localhost/
+2023-06-27T15:09:54.885+0800    dropping: mflix.Movies
+2023-06-27T15:09:57.415+0800    23539 document(s) imported successfully. 0 document(s) failed to import.
+```
+Import done: 
+  Each mongoimport command shows you how many documents were loaded and if there were any errors.
+  
 ## Question 2 (b)
 
 We are using \_MONGOSH for the query. First we need to use the database first.
