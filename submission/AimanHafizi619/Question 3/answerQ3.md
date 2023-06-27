@@ -371,7 +371,11 @@ py manage.py migrate
 
 ###Step 15: Go to page
 
+1. Run server at the command prompt by typing in the code below
 
+```python
+py manage.py runserver
+```
 
 
 
