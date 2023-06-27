@@ -52,7 +52,81 @@ Now if we look in MongoDB Compass, we should be able to see the imported data.
 
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### CRUD Operations
+
+**1. Create**
+
+ Let's insert a new entry into the database by using the command `insertOne()`. Below is how this method can be used to insert a single entry into the database via CLI
+```
+db.tweets.insertOne({
+  text: "This is just a demonstration to show how the inserOne() method works",
+  in_reply_to_status_id: null,
+  retweet_count: 69,
+  contributors: null,
+  created_at: "2023-06-27 15:04:00",
+  geo: null,
+  source: "Twitter",
+  coordinates: null,
+  in_reply_to_screen_name: null,
+  truncated: false,
+  entities: { mentions: [], urls: [], hashtags: [] },
+  retweeted: false,
+  place: null,
+  favorited: false,
+  in_reply_to_user_id: null
+});
+```
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/4dab4038-b999-4121-aeb6-3d6c683eb0a5)
+
+As we can see below, the entry has successfully been inserted
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/66f54390-227c-41e5-ab48-8d97fab93cab)
+
+**2. Read**
+
+Let's use the MongoDB Shell to find and read an entry in the database. We can do so by using the `find()` method. Below we can see how to use it to search for an entry with the ObjectId: `5c8eccb0caa187d17ca6240d` 
+```
+db.tweets.find({ _id: ObjectId("5c8eccb0caa187d17ca6240d") });
+```
+We can see below it successfully found the entry
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/6fbf86d4-7694-4016-b5b6-f7e25888dae9)
+
+
+**3. Update**
+
+Now, let's demonstrate two methods/queries to update an entry in the database.
+
+First I will demonstrate the use of the `updateOne()` method which is used to update the first entry found that matches the query. Below, we can see how it's used to update the `text` field of an entry
+```
+db.tweets.updateOne(
+  { text: "This is just a demonstration to show how the inserOne() method works"},
+  { $set: { text: "This text has been updated" } }
+);
+```
+As we can see, after running this query, the text has been updated
+
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/7217ee8c-fb00-4eb2-8cdb-14f9cca165a5)
+
+Next, I'll demonstrate the `updateMany()` method which is used to update **all** the entries matching the query. Below we can see how it's used to update entries with the `place` field from null to "Earth"
+```
+db.tweets.updateMany(
+  { place: null },
+  { $set: { place: "Earth" } }
+);
+```
+As we can see, the `place` field that had the value null, now has the value "Earth"
+
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/20467820-6b5d-48db-ab87-a5d4fc6a8fd6)![image](https://github.com/drshahizan/SECP3843/assets/3646429/785ad666-828c-405c-9d02-b3eb02f639d8)
+
+**4. Delete**
+
+Finally, I will demonstrate how to delete an entry using the `deleteOne()` method which deletes the first entry that matches the query. Below we can see how it’s used to delete the entry we had previously created.
+```
+db.tweets.deleteOne({ text: "This text has been updated"});
+```
+After running the command, we can see the entry can no longer be found in the database.
+
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/0531f4b5-224c-442f-9f37-33f33c2b400b)
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

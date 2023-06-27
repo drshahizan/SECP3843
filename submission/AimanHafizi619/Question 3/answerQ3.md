@@ -345,7 +345,17 @@ def is_senior_management(user):
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image4.png) 
 
-### Step 14: Migrate Model
+### Step 14: Move files
+
+1. Go to `Desktop` > `AnalyticsQ3` > `AnalyticsQ3_app`
+
+2. Creata a folder called `templates`
+
+3. Relocate the previous `registeration` and `login` files into this folder
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image9.png) 
+
+### Step 15: Migrate Model
 
 1. Go to command prompt.
 
@@ -369,14 +379,23 @@ py manage.py migrate
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image7.png) 
 
+###Step 15: Go to page
 
+1. Run server at the command prompt by typing in the code below
 
+```python
+py manage.py runserver
+```
 
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image8.png) 
 
+2. Register as a new user
 
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image10.png)
 
+3. Log in as a user
 
-
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image11.png)
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

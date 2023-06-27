@@ -129,7 +129,57 @@ def signout(request):
 
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+#### Data Schema Mapping Technique
+1. Set up database connections: Establish connections to both MySQL and MongoDB databases from our Django application. Since we already have connection with MySQL, we only need to declare connection with MongoDB here. This can be achieved by:
+```
+pip install pymongo
+import pymongo
+```
+- Set up the MongoDB connection: In the same file, establish a connection to MongoDB server by creating an instance of the MongoClient class.
+```
+client = pymongo.MongoClient('mongodb://localhost:27017/')
+```
+- Access MongoDB databases and collections: Once the connection is established, we can access databases and collections in MongoDB using the client instance.
+```
+db = client['city_inspection']
+collection = db['col_city_inspection']
+```
+
+3. Design data mapping: Define a mapping between the data models or schemas in MySQL and MongoDB. Determine how the data will be transformed and mapped from one database to the other.
+```
+class MyModel(models.Model):
+    # MySQL fields declaration
+    
+    class Meta:
+        db_table = 'tb_city_inspection'
+
+class MyMongoModel(Document):
+    # MongoDB fields declaration
+    
+    meta = {
+        'collection': 'col_city_inspection'
+    }
+
+```
+Data Migration Script:
+```
+# migration_mapping.py
+
+MYSQL_TO_MONGO_MAPPING = {
+    'tb_city_inspection': 'col_city_inspection',
+}
+
+# migration_script.py
+
+from migration_mapping import MYSQL_TO_MONGO_MAPPING
+
+def migrate_data(apps, schema_editor):
+    # Perform data migration
+    for mysql_table, mongo_collection in MYSQL_TO_MONGO_MAPPING.items():
+        # Migrate data from MySQL to MongoDB based on the mapping
+
+```
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

@@ -45,6 +45,32 @@ Required software to install and download:
 
   <img width="700" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/8535e4b8-aa84-4767-83e1-4275288fb32c">
 
+- Do data preparation **(if needed)** since the JSON dataset must be correctly formatted before import to the database.
+
+
+#### Step 3: Run MongoDB Server
+
+- Run MongoDB Community.
+  
+  <img width="387" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/68b61050-8d40-4f64-bdb7-18d8a8a06a13">
+
+- Extract both MongoDB Command Line Database Tools and MongoDB Shell file and locate in `C:\Program Files\MongoDB\Server\6.0\bin`
+  
+  <img width="758" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/e2698aa9-deb5-4242-8d9a-7420b3cc5735">
+
+
+  <img width="762" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/f2012450-b3b2-4523-9087-3bc765f24fb1">
+   
+ - Run `mongod` command to start MongoDB server
+
+   <img width="586" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/3b3ece3b-5b77-4822-b1f9-cce59497f365">
+
+#### Step 4: Access MongoDB Shell
+ - Type this command `mongosh "mongodb+srv://clustersample01.timlof9.mongodb.net/" --apiVersion 1 --username maizatul`.
+ 
+  <img width="582" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/5f78bd39-3e18-4ac8-b548-a43da17b07bd">
+
+
 <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/6de91f67-4c46-4c31-bb53-3af6f8ddaac2">
 
 
