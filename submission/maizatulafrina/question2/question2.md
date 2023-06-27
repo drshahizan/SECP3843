@@ -67,8 +67,20 @@ Required software to install and download:
 
 #### Step 4: Access MongoDB Shell
  - Type this command `mongosh "mongodb+srv://clustersample01.timlof9.mongodb.net/" --apiVersion 1 --username maizatul`.
- 
-  <img width="582" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/5f78bd39-3e18-4ac8-b548-a43da17b07bd">
+
+   <img width="582" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/5f78bd39-3e18-4ac8-b548-a43da17b07bd">
+   
+ - Select the target database and the collection
+
+   <img width="586" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/43de9791-f162-445a-af12-57aace764fb9">
+
+#### Step 5: Import Dataset
+
+   <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/17ed2ef0-bcf2-4f87-ac6f-ed1b2230c6cf">
+   <img width="426" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/9fbd49fe-0420-4464-a361-193cf8c3ccf9">
+
+
+
 
 
 <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/6de91f67-4c46-4c31-bb53-3af6f8ddaac2">

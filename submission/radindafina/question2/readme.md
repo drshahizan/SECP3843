@@ -23,14 +23,19 @@ Don't forget to hit the :star: if you like this repo.
 
 ### Steps to import JSON data to MongoDB
 
-  **Step 1: Launch MongoDB Compass** 
+  **Step 1:** Launch MongoDB Compass and conneect to localhost.
 <div align="center"><img src="files/images/compass.png" height="350px" /></div>
   
-  **Step 2:**
+  **Step 2:** Now, create database the database wih the name supplystore.
+  <div align="center"><img src="files/images/createdb.png" height="350px" /></div>
 
-  **Step 3:**
+  **Step 3:** In the Add Data section, choose Import JSON file and upload the dataset that we have downloaded.
+  <div align="center"><img src="files/images/db-1.png" height="350px" /></div>
+  <div align="center"><img src="files/images/db-2.png" height="350px" /></div>
   
-  **Step 4:**
+  **Step 4:** The uploaded JSON file shown as below.
+  <div align="center"><img src="files/images/db-3.png" height="350px" /></div>
+
 ## Question 2 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
