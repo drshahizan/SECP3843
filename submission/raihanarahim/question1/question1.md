@@ -60,17 +60,17 @@ Before moving on to the next step, we need to configure our databases server.
 - MySQL database server
   - i) Firstly, open your XAMPP controller
   - ii) Click start on both Apache and phpmyadmin
-  <br> <img width="655" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question1/files/images/integration-flow.png">
+  <br> <img width="655" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question1/files/images/xampp.png">
   - iii) Click on Admin on phpmyadmin
   - iv) You will be redirected to the page and create a new database as below :
-   <br> <img width="655" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question1/files/images/integration-flow.png">
+   <br> <img width="655" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question1/files/images/xampp2.png">
 
 - MongoDB database server
   - i) Open MongodbCompass.
   - ii) Connect to the database.
- <br>  <img width="655" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question1/files/images/integration-flow.png">
+ <br>  <img width="655" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question1/files/images/mong0.png">
   - iii) Create a new database and insert your database name with its collection name.
- <br> <img width="655" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question1/files/images/integration-flow.png">
+ <br> <img width="655" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question1/files/images/mongo2.png">
   - iv) Click on create database.
   
 ### 3. Define data model in Django
