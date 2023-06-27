@@ -45,7 +45,8 @@ Don't forget to hit the :star: if you like this repo.
 
         - Update the ``settings.py`` file in the project folder to define the database setting for Mysql and MongoDB
            <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/c18d8db59264504dc5f34395291dfe90abb48c90/submission/RishmaFathima/Question1/files/images/1.1.3.1.png">
-           
+        - Update the ``settings.py`` file to declare the created ``app``
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/bda3ad57b1a66ccf70c740ca047c30a08ee4c1c7/submission/RishmaFathima/Question1/files/images/1.1.3.3.png">
         - Install django with the command ``pip install django`` to work as database connectors
            
         - Install mysqlclient with the command ``pip install mysqlclient`` to work as database connectors
