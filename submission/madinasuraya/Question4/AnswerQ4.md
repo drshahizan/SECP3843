@@ -168,7 +168,17 @@ selected_fields.head(5)
     <img width="202" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/e7e5f162-0a11-4e92-aa15-68b10aa92a17">
     </p>
 
-#### Conclusion
+#### Conclusions
+Based on the scatter plot of the actual vs predicted total money raised, it is mostly concentrated in the range of 0 to 1. This means that the regression model is not accurately predicting the total money raised for higher values. It is proven that the input features (number_of_employees and competitions) and the target variable (total_money_raised) is not linear as the regression line does not closely align with the scatter plot.
+The metrics that we get evaluate the performance of the regression model.
+- **Means Squared Error (MSE)**: MSE measures the average squared difference between the predicted and actual values. Since the MSE is higher, it shows that the performance of the model is worse.
+- **Root Mean Squared Error (RMSE)**: RMSE is the square root of the MSE and provides a more interpretable measure of the average prediction error in the original scale of the target variable. Same as MSE, higher MSE indicates worse performance.
+- **R-squared (R^2)**: R-squared represents the proportion of the variance in the target variable (total_money_raised) that is explained by the regression model. A negative R-squared value suggests that the model's performance is worse.
+
+Based on the metrics, it shows that the linear regression model is not performing well in predicting total money raised. High MSE and RMSE indicate a large prediction error and the negative R-squared suggests that the model does not capture the underlying relationship between the input features and the target variable.
+
+Lastly, we can see that the dataset itself has limitations. There are too many fields with null values which is almost half of the records. Thus, performing feature extraction might be the best as we are not involving the data that are much likely can’t be predicted.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
