@@ -34,8 +34,22 @@ There are several steps that are required to integrate Django with the JSON data
    - Check if the system is able to run on a local server with the command `py manage.py runserver`
      ![image](https://github.com/drshahizan/SECP3843/assets/3646429/8e5ca02b-6dda-48f4-ac80-e9e1bd8588d2)
 
-**Now let's setup the databases for this project**
+**Now let's setup the databases for this project. As mentioned, we'll be using MySQL and MongoDB as the databases to store our data**
 
+### Setting up MySQL database
+I'll be using [XAMPP](https://www.apachefriends.org/index.html) to setup the MySQL database server locally.
+
+First, I'll startup the modules needed in XAMPP as seen in the figure below
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/bcf98adb-a02c-404c-8f7f-7a2b25eaebb7)
+
+Then in the phpMyAdmin page, we'll add a new database called  `db_tweets`. That's all the setting up needed for MySQL for now
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/2344ad95-588d-4c19-8ec0-54aad6a2226d)
+
+### Setting up MongoDB database
+Install [MongoDB compass](https://www.mongodb.com/try/download/compass) 
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/34fee783-a4aa-42af-a5b3-0bdb93c7e7a2)
+
+In MongoDB Compass GUI, create a new database and collection
 IN PROGRESS
 
 ## Question 1 (b)
