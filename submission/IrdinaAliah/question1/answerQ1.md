@@ -41,6 +41,8 @@ create Django apps name
 <img src ="https://github.com/drshahizan/SECP3843/blob/4633f9a0c1ac74b9b6ec37d439fca8561a4b78b3/submission/IrdinaAliah/question1/files/images/startup%20code%20sjango.jpg" 
           style ="width:700px; height: 200px;">
 
+Define Models
+<img src ="https://github.com/drshahizan/SECP3843/blob/4633f9a0c1ac74b9b6ec37d439fca8561a4b78b3/submission/IrdinaAliah/question1/files/images/create%20name%20app.jpg" style ="width:700px; height: 700px;">
 
 
 
