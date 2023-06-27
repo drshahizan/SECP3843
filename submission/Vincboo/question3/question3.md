@@ -188,7 +188,39 @@ When working with both MySQL and MongoDB databases, it is important to have an u
 
 To overcome the challenge of data replication and synchronization, developers can explore database-specific replication techniques or utilize external tools that facilitate real-time updates and seamless interaction between the databases. By following these steps, it becomes possible to effectively manage data replication and synchronization between MySQL and MongoDB databases.
 
-###2. 
+### 2. Configure Database Setting 
+We will need to define the the connection for MongoDB and MySql in `setting.py`.
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'stories',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': 3306,
+    },
+    'mongodb': {
+        'ENGINE': 'djongo',
+        'ENFORCE_SCHEMA': False,
+        'NAME': 'AA',
+        'CLIENT': {
+            'host': 'mongodb://localhost:27017/',
+            'port': 27017,
+            'username': '',
+            'password': '',
+        }
+    }
+}
+```
+
+### 3. Connection set up for both MySQL and MongoDB databases
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/03a65429-0e82-4352-92ce-fc370eaa6c27"/>
+
+### 4. Define Write Function for both MongoDB and MySql
+```
+
+```
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
