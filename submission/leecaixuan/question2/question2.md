@@ -16,10 +16,57 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 2 (a)
 
+<h4>Step 1 - Open MongoDB Compass</h4>
+
+Open the MongoDB Compass and it will display the interface like the image below.
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/database%20home.png" />
+</p>
+
+<h4>Step 2 - Create Database</h4>
+
+Click the  'Create Database' button to create anew database. Type in the database name, 'aa_project' and the collection name such as 'Accounts'. Click the 'Create Database' button. 
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/create%20database.png" />
+</p>
+
+<h4>Step 3 - Import Data</h4>
+
+After creating a database, import the 'Accounts.json' file into the Accounts collection. Chooes the file from your local PC. 
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/choosefromfile.png" />
+</p>
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import%20data.png" />
+</p>
+
+<h4>Imported Data</h4>
+
+<p align="center">
+  <img height="150px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/collections.png" />
+</p>
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_accounts.png" />
+</p>
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_customer.png" />
+</p>
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_customer.png" />
+</p>
+
+
 
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 
 
