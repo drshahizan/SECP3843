@@ -23,6 +23,7 @@ Tool used:
 
 Libraries used:
 - scikit-learn
+- matplotlib
 - pandas
 - json
 
@@ -113,7 +114,7 @@ df
 ```
 
 <p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/2.png" />
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/3.png" />
 </p>
 
 ```
@@ -122,7 +123,7 @@ df
 ```
 
 <p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/3.png" />
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question4/files/images/4.png" />
 </p>
 
 ```
