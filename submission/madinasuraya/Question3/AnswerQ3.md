@@ -186,7 +186,7 @@ Next, choose the replication technique for each database. MySQL and MongoDB will
          ```
          db.companies2.find()
          ```
-     4. Insert documents into the master. Specify the host as the master host name and only, as the database name.
+     4. Insert documents into the master. Specify the 'host' as the master host name and 'only', as the database name.
          ```
          db.companies2.insert( { host: <12.34.56.111> <,only: db_crunchbase> } );
          ```
