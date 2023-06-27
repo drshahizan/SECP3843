@@ -22,13 +22,13 @@ there will be  five server used for this project:
 
 1. Web Server
 
-2. Django Application Server
+2. Django  
 
-3. MySQL Database Server
+3. MySQL Database
 
-4. MongoDB Database Server
+4. JSON Dataset 
 
-5. JSON Dataset Server
+5. MongoDB Database 
 ## Question 1 (b)
 Design a detailed and comprehensive system architecture. Focusing on the seamless integration between the web server (Django), dataset (JSON), and databases (MySQL and MongoDB). Give detailed explanations for each component, utilizing precise terminology and suggesting acceptable terms to describe your understanding of the scenario.
 
