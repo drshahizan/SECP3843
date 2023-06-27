@@ -28,6 +28,26 @@ cd Deskstop/Analytics
 
 2. MySQL database will be use to build the user registration and login module.
 
+```python
+DATABASES = {
+     'default': {
+        'ENGINE': 'django.db.backends.mysql',
+		'NAME': 'airbnbportal',
+		'USER': 'root',
+		'HOST':'localhost',
+		'PORT':'3306',     
+        },
+
+	'mongodb': {
+		'ENGINE': 'djongo',
+        'NAME': 'airbnbportal',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+        'host': 'mongodb+srv://muhdimranh:123@sentimentanalysis.5esk2hq.mongodb.net/'
+	}
+}
+}
+```
 
 
 
