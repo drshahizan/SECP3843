@@ -377,7 +377,7 @@ py manage.py migrate
 py manage.py runserver
 ```
 
-
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image8.png) 
 
 
 
