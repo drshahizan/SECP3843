@@ -65,7 +65,7 @@ Then redirect to city_inspections using the following commands:
              'USER': 'root',
              'PASSWORD': '',
              'HOST': 'localhost',
-             'PORT': 8000,
+             'PORT': 3306,
          },
          'mongodb': {
              'ENGINE': 'djongo',
