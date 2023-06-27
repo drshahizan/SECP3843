@@ -31,6 +31,14 @@ Step 1: Install Django and required packages:
 
 Step 2 : Design and create Django Project :
 
+create new django project using cmd
+<img src ="https://github.com/drshahizan/SECP3843/blob/447b608f8a27c9a39d678f4a44ee95c96dcb6764/submission/IrdinaAliah/question1/files/images/create%20design%20django%20.jpg" style ="width:700px; height: 200px;">
+
+create Django apps name
+
+
+
+
 
           
 
