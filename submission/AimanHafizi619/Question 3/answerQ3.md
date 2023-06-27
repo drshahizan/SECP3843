@@ -345,7 +345,17 @@ def is_senior_management(user):
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image4.png) 
 
-### Step 14: Migrate Model
+### Step 14: Move files
+
+1. Go to `Desktop` > `AnalyticsQ3` > `AnalyticsQ3_app`
+
+2. Creata a folder called `templates`
+
+3. Relocate the previous `register` and `login` files into this folder
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image9.png) 
+
+### Step 15: Migrate Model
 
 1. Go to command prompt.
 
