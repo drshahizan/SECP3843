@@ -239,9 +239,21 @@ Don't forget to hit the :star: if you like this repo.
 
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+- **Client-Side**: Users access the portal through web browsers. They can communicate through the gateway by sending forms, pressing buttons, or making choices. Users can specify the parameters for data analysis by filling out a form, clicking a button to request a chart, or basing a decision on the data visualisation.
 
+- **Django Web Server**: The Django web server offers the backend for the portal. It is implemented using the Django web framework, which provides a number of tools and frameworks for creating web applications. The web server receives and processes user requests. It controls routing, which entails deciding which view or function should respond to each request based on the URL. To ensure that only authenticated users can access particular parts of the website or carry out specific actions, the Django web server also manages authentication and permission. It interacts with databases to retrieve and save data as needed.
 
+- **JSON Dataset**: The JSON dataset contains the data that is used for analysis and visualisation in the portal. It is typically saved in JSON file format, a compact and readable data interchange format. The Django web server reads the JSON dataset and processes it for analysis and visualisation. The JSON dataset provides the data that the Django web server needs, which it then transforms and presents in an understandable way.
+
+- **MySQL Database**: Django connects to the MySQL database by using the appropriate database settings specified in the project's settings file ('settings.py'). The data schema of the MySQL database is specified by Django models. They describe the tables, fields, and connections in the database. The Django ORM (Object-Relational Mapping) offers a user interface for interacting with the MySQL database. It enables developers to create, retrieve, update, and delete data using Python code rather than writing direct SQL queries.
+
+- **MongoDB Database**: Django can connect to MongoDB using third-party libraries like Djongo or MongoEngine, which provide integration with Django's ORM. Django models can be created for a MongoDB database just like they can for a MySQL database. The models define the data schema and correspond to MongoDB collections. Python code can be used by developers to carry out CRUD operations on the MongoDB database with the aid of third-party libraries and the Django ORM.
+
+- **Django Models**: The Django models define the data structures for the MySQL and MongoDB databases as a python class. Each attribute in the models for the MySQL database maps to a column in a table, making them into tables for the database. In the MongoDB database, models are transformed into collections, where each instance of the model is transformed into a document in the collection. Django models specify the fields, relationships, and behaviours of the data. They also provide tools for data manipulation and query.
+
+- **Data processing**: The fields listed in the Django models are mapped to the parsed JSON data from the dataset. The Django web server processes the data before saving it with the ORM in the proper database (MySQL or MongoDB). Executing data retrieval queries is guided by user requests or dashboard specifications. The Django ORM transforms these queries into database-specific queries (SQL or MongoDB queries), which then retrieve the necessary data.
+
+- **Dashboard Visualisation**: Data that has been retrieved from the databases is processed and transformed for visualisation purposes. Charts can be made interactive and visually appealing by using libraries like Plotly or Highcharts. With the help of HTML templates and JavaScript code, the charts are displayed on the dashboard.
 
 
 
