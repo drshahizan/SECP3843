@@ -62,7 +62,8 @@ Don't forget to hit the :star: if you like this repo.
       ```
       <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/itemsplit.jpg">
 
-      #### Clean the splited items column by `removing the array bracket`, `sum up value` and `display unique value for item_names and item_tags`.
+      #### Clean the splited items column 
+      - Clean the items_column by `removing the array bracket`, `sum up value` and `display unique value for item_names and item_tags`.
       ```python
       df1['item_names'] = df1['items'].apply(lambda x: [item['name'] for item in x] if isinstance(x, list) else [])
       df1['item_tags'] = df1['items'].apply(lambda x: [item['tags'] for item in x] if isinstance(x, list) else [])
