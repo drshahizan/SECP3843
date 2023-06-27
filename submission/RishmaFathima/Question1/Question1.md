@@ -63,7 +63,7 @@ Don't forget to hit the :star: if you like this repo.
           python manage.py makemigrations
           python manage.py migrate
           ```
-          
+        - The Mysql output from the above command:
         - Finally to get the JSON data from the dataset and to save it into MogoDB server, I need to create a script in Django.
          
   5. Update and Testing Data:
