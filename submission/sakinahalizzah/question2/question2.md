@@ -128,13 +128,52 @@ db.customers.insertOne({
    ```
    db.customers.find({ accounts: 470650 });
    ```
-   
-3. Update Queries 1:
-   
-4. Update Queries 2:
-   
-5. Delete Query:
+   Once the query above is executed, the MongoDB Shell will gather all records from the "customers" collection that have a matching value ("470650") in the "accounts" field. 
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/dd01b32e-b5ef-42b0-86d9-7fcfa980959f" />
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/b7244344-2f1a-45ed-bf6f-a85ef22b80d8" />
 
+
+3. Update Queries 1: `updateOne()` function to update a single document
+   ```
+   db.customers.updateOne(
+     { username: "sakinahalizzah" },
+     { $set: { address: "10 Tulip Street" } }
+   );
+   ```
+   The above queries is executed at the MongoDB shell
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/c598e1b7-9cff-4221-9b49-5051b1cae70e" />
+
+   Before update address:
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/78f3d4f4-0505-473c-a52a-6753687f3685" />
+
+   After update address:
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/bd72562d-7b88-43ac-8f52-3980c7d16886" />
+
+4. Update Queries 2: `updateMany()` function to update a multiple documen
+    ```
+      db.customers.updateMany(
+        { accounts: 470650 },
+        { $set: { email: "paul@gmail.com" } }
+      );
+      ```
+   The above queries is executed at the MongoDB shell
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/5a2e7ca1-deb0-461d-8e73-b3ce5e0aa400" />
+
+   Before update email for accounts: 470650:
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/a714ccdd-a5b0-4d01-b54b-2c72a617d1ff" />
+
+   After update email for accounts: 470650:
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/e7a1b80e-f46b-4f74-8550-5535e4fa2fad" />
+
+5. Delete Query: `deleteOne()` function
+   ```
+   db.customers.deleteOne({username:"sakinahalizzah"});
+   ```
+   The above queries are executed at the MongoDB shell and delete a single document that matches the specified condition.
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/97559f62-2543-44ac-b0fa-b20de38c3b30" />
+
+   If the document is deleted, searching for the username will yield no results.
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/bbb02305-699c-4ac8-8624-db680a0ef725" />
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

@@ -75,13 +75,21 @@ Required software to install and download:
    <img width="586" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/43de9791-f162-445a-af12-57aace764fb9">
 
 #### Step 5: Import Dataset
- - To import the dataset, open MonogoDB Compass click `Add Data` and Import the JSON file.
+ - To import the dataset, run this command that contains uri, collection and the path of the dataset file.
    
-   <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/17ed2ef0-bcf2-4f87-ac6f-ed1b2230c6cf">
+   ```
+   mongoimport --uri="mongodb+srv://maizatul:Afrina456@clustersample01.timlof9.mongodb.net/" --collection=city --file="D:\DATA ENGINEERING\STDE_AA\city_inspections.json"
+   ```
+   
+   <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/0fdec767-7d8f-4acc-8600-b39c12d46594">
+
    
   - Result:
 
-    <img width="426" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/9fbd49fe-0420-4464-a361-193cf8c3ccf9">
+   
+    <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/cd89804f-df14-4831-9948-cb27d7fe234b">
+
+    
 
 #### Step 6: Verify the Imported Dataset
 
@@ -90,16 +98,28 @@ Required software to install and download:
     <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/6de91f67-4c46-4c31-bb53-3af6f8ddaac2">
 
 
-
-
 ## Question 2 (b)
 
-  - Cretae query
-<img width="949" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/093d8607-24d0-403a-9ce0-65f874a8eab8">
+These are the samples that demonstrate Create, Read, Update, Delete (CRUD) operations using MongoDB functions:
 
-<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/c71eb80b-c594-4d5e-9e18-f8ae68188874">
+  - Create query
+    - To insert documents into MongoDB database, use `insertOne()` function.
 
+      <img width="949" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/093d8607-24d0-403a-9ce0-65f874a8eab8">
+      
+    - Use `db.city.find({ business_name:"ATLIXCO DELI GROCERY INC." })` to check whether the previous query is successfully executed or not.
+      
+      <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/2498e442-c829-4f4d-8e19-bf7b3d1effc0">
 
+      <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/c71eb80b-c594-4d5e-9e18-f8ae68188874">
+
+  - Read query
+
+    - Use `db.city.find({ result: "No Violation Issued" })` to read and find any query.
+
+      <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/164f3a79-e61c-44bf-8ff3-69cace510d00">
+
+  
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
