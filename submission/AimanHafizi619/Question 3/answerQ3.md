@@ -369,7 +369,7 @@ py manage.py migrate
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image7.png) 
 
-
+###Step 15: Go to page
 
 
 
