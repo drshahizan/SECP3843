@@ -70,6 +70,93 @@ To import the data, write the command ```mongoimport "C:\Users\User\Downloads\AA
 
 ## Question 2 (b)
 
+Make sure to connect to your database by typing the command ```use AnalyticsDataset```
+
+1) Create query
+
+```
+db.Accounts.insertOne({
+  account_id: 371140,
+  limit: 10000,
+  products: [
+    "Derivatives",
+  ]
+})
+```
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/create.png" />
+</p>
+
+Result:
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/create_result.png" />
+</p>
+
+2) Read query
+
+```db.Customers.find({username:"fmiller"})```
+
+Result:
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/read.png" />
+</p>
+
+3a) Update query
+
+```
+db.Accounts.updateOne(
+   { account_id: 371138 },  
+   { $set: { limit: 8000 } }  
+)
+```
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/update1.png" />
+</p>
+
+Result:
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/update1_result1.png" />
+</p>
+
+b) Update query 
+
+```
+db.Transactions.updateOne(
+   { account_id: 443178 },  
+   { $set: { transaction_count: 86 } }
+)
+```
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/update2.png" />
+</p>
+
+Result:
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/update2_result2.png" />
+</p>
+
+4) Delete query
+
+```db.Accounts.deleteOne({ account_id: 371138})```
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/delete.png" />
+</p>
+
+Result:
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/delete_result.png" />
+</p>
+
+
+
+
 
 
 
