@@ -106,6 +106,7 @@ To create a model, you need to subclass django.db.models.Model and declare the f
 
 Command:
 ```
+# Create your models here.
 from django.db import models
 
 # Create your models here.
@@ -131,13 +132,20 @@ class Company(models.Model):
     description = models.CharField(max_length=200)
     overview = models.TextField()
 
+def __str__(self):
+        return str(self.id)
+
 ```
 ### Step 7:Create Migration
 To create migrations for these models, I need to use the manage.py command with the makemigrations option.
 
 ```
 python manage.py makemigrations
+python manage.py migrate
 ```
+<img  src="./files/images/migration.png"></img>
+MYSQL:
+<img  src="./files/images/database.png"></img>
 
 ## Question 1 (b)
 <img  src="./files/images/system_architecture.png"></img>
