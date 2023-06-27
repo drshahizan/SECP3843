@@ -16,11 +16,26 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 3 (a)
 
-### Step 1: Navigate to Analytics folder
+### Step 1: Navigate to Desktop
 
 ```python
-cd Deskstop/Analytics
+cd Deskstop
 ```
+
+### Step 2: Create virtual environment
+
+```python
+python -m venv envq3
+```
+
+### Step 3: Activate virtual environment
+
+```python
+myenv\Scripts\activate
+```
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image17.png)
+
 
 ### Step 2: Setup Database
 
