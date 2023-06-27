@@ -15,9 +15,6 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Table of Contents
 - [Question 2 (a)](question-2-(a))
-- [Prerequisites](prerequisites)
-- [Step 1: Prepare the JSON File](step-1:-prepare-the-json-file)
-- [Step 2: Start the MongoDB Server](step-2:-start-the-mongodb-server)
 - [Question 2 (b)](question-2-(b))
 
 ## Question 2 (a)
@@ -45,7 +42,7 @@ Navigate to https://www.mongodb.com/try/download/database-tools and click downlo
 ### Step 1: Prepare the JSON File
 Download the dataset from <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/05-airbnb" >listingsAndReviews</a>. It is important to ensure the JSON file follows the appropriate structure for MongoDB documents. It is found that the listingsAndReviews.json file is not formatted correctly as a JSON array. Therefore, python will be used to perform data preparation by adding brackets at the beginning and end of the file. Each individual tweet object should be enclosed within square brackets '[ ]' and separated by commas ','. <br>
 
-```Data Preparation```: <a href="./files/code/DataPreparation.ipynb">Data_Preparation.ipynb</a> <br>
+```Data Preparation```: <a href="./files/code/Data_Preparation.ipynb">Data_Preparation.ipynb</a> <br>
 
 ### Step 2: Start the MongoDB Server
 After download is completed, extract and copy all the .exe files from MongoDB Shell and  MongoDB Command Line Database Tools into the MongoDB bin folder[C:\Program Files\MongoDB\Server\6.0\bin].  
