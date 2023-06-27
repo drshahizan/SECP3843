@@ -17,7 +17,16 @@ Don't forget to hit the :star: if you like this repo.
 
 To import JSON file to MongoDB database, several steps need to be done.
 
-#### Step 1: Software Installation
+#### Step 1: Software Installation and Download
+
+Required software to install and download:
+ - MongoDB Community Server
+    -  Go to https://www.mongodb.com/try/download/community and "Download".
+
+
+
+   <img width="356" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/3eb261a3-e23d-4cc2-86f7-2ceb8d87b132"><img width="356" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/08429c72-1eaa-4929-bb0c-447dcb68b8b7">
+
 
 <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/6de91f67-4c46-4c31-bb53-3af6f8ddaac2">
 
