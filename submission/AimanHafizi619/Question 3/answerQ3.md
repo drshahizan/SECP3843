@@ -32,19 +32,11 @@ cd Deskstop/Analytics
 DATABASES = {
      'default': {
         'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'airbnbportal',
+		'NAME': 'analytics',
 		'USER': 'root',
 		'HOST':'localhost',
 		'PORT':'3306',     
         },
-
-	'mongodb': {
-		'ENGINE': 'djongo',
-        'NAME': 'airbnbportal',
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
-        'host': 'mongodb+srv://muhdimranh:123@sentimentanalysis.5esk2hq.mongodb.net/'
-	}
 }
 }
 ```
