@@ -37,7 +37,7 @@ Click the  'Create Database' button to create anew database. Type in the databas
 After creating a database, import the 'Accounts.json' file into the Accounts collection. Chooes the file from your local PC. 
 
 <p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/choosefromfile.png" />
+  <img height="150px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/choosefromfile.png" />
 </p>
 
 <p align="center">
@@ -46,20 +46,30 @@ After creating a database, import the 'Accounts.json' file into the Accounts col
 
 <h4>Imported Data</h4>
 
+The images below show the data from 'Accounts.json', 'Customer.json' and 'Transactions.json' are imported into MongoDB. 
+
+- The collections are created.
+
 <p align="center">
   <img height="150px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/collections.png" />
 </p>
+
+- The Accounts JSON data imported.
 
 <p align="center">
   <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_accounts.png" />
 </p>
 
+- The Customers JSON data imported.
+
 <p align="center">
   <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_customer.png" />
 </p>
 
+- The  JSON data imported.
+
 <p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_customer.png" />
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_transaction.png" />
 </p>
 
 
