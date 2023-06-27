@@ -75,15 +75,19 @@ Required software to install and download:
    <img width="586" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/43de9791-f162-445a-af12-57aace764fb9">
 
 #### Step 5: Import Dataset
-
+ - To import the dataset, open MonogoDB Compass click `Add Data` and Import the JSON file.
+   
    <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/17ed2ef0-bcf2-4f87-ac6f-ed1b2230c6cf">
-   <img width="426" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/9fbd49fe-0420-4464-a361-193cf8c3ccf9">
+   
+  - Result:
 
+    <img width="426" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/9fbd49fe-0420-4464-a361-193cf8c3ccf9">
 
+#### Step 6: Verify the Imported Dataset
 
+  - To check whether the JSON dataset is successfully imported, run `db.city.find()` using MongoDB Shell.
 
-
-<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/6de91f67-4c46-4c31-bb53-3af6f8ddaac2">
+    <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/6de91f67-4c46-4c31-bb53-3af6f8ddaac2">
 
 
 
