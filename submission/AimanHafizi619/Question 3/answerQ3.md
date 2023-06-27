@@ -496,6 +496,38 @@ binlog_do_db=analytics_q3
 
 **Step 9**
 
+- Navigate to `Replication` tab and select the `configure` option in the `Replica replication` section
+
+- Copy the server-id located near the top of the table
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image21.png)
+
+**Step 10**
+
+- Open Xampp Control Panel
+
+- Select `Configure` button and select `my.ini` option again
+
+- Locate the `server-id` parameter that has just been hash (#) or commented before
+
+- Paste the new `server-id` from phpMyAdmin just now on top of the commented `server-id`
+
+- Save the file
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image22.png)
+
+**Step 11**
+
+- Go back to phpMyAdmin
+
+- Specify user details. Type User name as `rep` and Host as `localhost`
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image23.png)
+
+
+
+
+
 
 
 

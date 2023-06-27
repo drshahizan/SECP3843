@@ -94,6 +94,7 @@ Required software to install and download:
 
 ## Question 2 (b)
 
+  - Cretae query
 <img width="949" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/093d8607-24d0-403a-9ce0-65f874a8eab8">
 
 <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/c71eb80b-c594-4d5e-9e18-f8ae68188874">
