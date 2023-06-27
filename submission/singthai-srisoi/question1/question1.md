@@ -191,7 +191,51 @@ Don't forget to hit the :star: if you like this repo.
            password=user_data['password']
        )
    ```
+6. Retrieve Data from Databases:
 
+   - Retrieve all comments from the MySQL database:
+   ```python
+   all_comments = Comment.objects.all()
+   for comment in all_comments:
+       print(comment.text)
+   ```
+
+   - Retrieve comments associated with a specific movie from the MySQL database:
+   ```python
+   movie_id = 1  # Filter Movie id 1
+   movie_comments = Comment.objects.filter(movie_id=movie_id)
+   for comment in movie_comments:
+       print(comment.text)
+   ```
+
+   - Retrieve all movies from the MongoDB database:
+   ```python
+   all_movies = Movie.objects.using('mongodb').all()
+   for movie in all_movies:
+       print(movie.title)
+   ```
+
+   - Retrieve movies released in a specific year from the MongoDB database:
+   ```python
+   year = 2022  # Filter year
+   year_movies = Movie.objects.using('mongodb').filter(year=year)
+   for movie in year_movies:
+       print(movie.title)
+   ```
+
+   - Retrieve theaters from the MySQL database:
+   ```python
+   all_theaters = Theater.objects.all()
+   for theater in all_theaters:
+       print(theater.theaterId)
+   ```
+
+   - Retrieve users from the MySQL database:
+   ```python
+   all_users = User.objects.all()
+   for user in all_users:
+       print(user.name)
+   ```
 
 
 ## Question 1 (b)
