@@ -255,6 +255,25 @@ Don't forget to hit the :star: if you like this repo.
       python manage.py runserver
    ```
 
+#### Register
+<img src="./files/images/register.png">
+
+#### Login
+<img src="./files/images/login.png">
+
+#### Dashboard
+1. Customer
+
+<img src="./files/images/customer.png">
+
+2. Technical Worker
+
+<img src="./files/images/technical_worker.png">
+
+4. Senior Management
+
+<img src="./files/images/senior_management.png">
+
 ## Question 3 (b)
 
 #### 1. Choose a Replication Method:
