@@ -128,17 +128,52 @@ Firstly, it is advisable to choose the best replication techniques. I would reco
 Next, choose the replication technique for each database. MySQL and MongoDB will have different settings.
 
 - MySQL
-   1. Determine the master server and slave server IP address.
-   2. Open the mysql config file, and find these two lines.
+   1.  Set up virtual environment with root access
+      
+   2. Determine the master server and slave server IP address. 
+     ** Master server: 12.34.56.111
+      Slave server: 12.23.34.222**
+  
+   3. Setting up the master by finding the bind-address in the mysql config file and changing it from to the master server IP defined above.
+      <p align="center">
+         <img width="285" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/5198bb43-3c39-470b-8c86-fc30c83b9435">
+      </p>
+
+   4. Uncomment line below and restart mysql.
+      
       ```
       server-id =
       log-bin =
       ```
-  3. Uncomment the two lines as follows
+      
       <p align='center'>
          <img width="368" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/25be0bee-b336-4975-b0b3-95c5acac7b0f">
       </p>
-  4. Create new user for slave
+
+    5. Create a new user for slaves by granting replication to the slave server IP defined above.
+         ```
+         root@repl-master:~# mysql -uroot -p; 
+         mysql> CREATE USER ‘slave’@’12.34.56.789‘ IDENTIFIED BY ‘SLAVE_PASSWORD‘; 
+         mysql> GRANT REPLICATION SLAVE ON . TO ‘slave’@’12.34.56.222 ‘; 
+         mysql> FLUSH PRIVILEGES; 
+         mysql> FLUSH TABLES WITH READ LOCK;
+         ```
+     6. Move data from master to slave
+         ```
+         root@repl-master:~# mysqldump -u root -p –all-databases –master-data > data.sql
+         ```
+
+     7. Configure slave server by uncomment the second line shown below.
+          <p align='center'>
+            <img width="280" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/4b6371f8-fcc4-4627-867d-446a416e9dfa">
+         </p>
+
+     8. Start a slave by running its command.
+        ```
+        START SLAVE
+        ```
+
+
 
 
 
