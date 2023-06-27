@@ -78,7 +78,7 @@ Don't forget to hit the :star: if you like this repo.
    7. Mapping URLs to Views:
       - Defined URL patterns in the q3's urls.py file, mapping them to the registration and login views that is created earlier.
         
-         <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/2f6313177e823c8cd516bd9e08d8e37d05123d50/submission/RishmaFathima/Question3/files/images/3.1.11.png">
+         <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/ef3834690e0be6015234317098e5bf3c00d5110d/submission/RishmaFathima/Question3/files/images/3.1.18.png">
           
  
   8. Migrating the Database:
