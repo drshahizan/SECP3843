@@ -53,19 +53,29 @@ Before proceeding with the import process, ensure that you have the following pr
 
 ### Steps to create MongoDB queries for CRUD
 
-  1. To launch MongoDB Shell, simply locate the "mongosh.exe" file within the "bin" folder of your downloaded MongoDB directory and open. This is how MongoDB Shell looks like.
+1. To launch MongoDB Shell, simply locate the "mongosh.exe" file within the "bin" folder of your downloaded MongoDB directory and open. This is how MongoDB Shell looks like.
 
      <div align="center"><img src="files/images/mongosh-1.png" height="350px" /></div>
 
-  2. Run the following commands:
-   ```python
-    show databases
-   ```
-   ```python
-    use supplystore
-   ```
+2. Execute the following commands to perform CRUD operations:
+
+    a. Show available databases: 
+     ```python
+        show databases
+     ```
+  
+    This command lists all the databases present in your MongoDB server. Make sure to select the appropriate database where your collection resides or create a new database using the use command.
+    
+    b. Switch to the desired database:
+    
+     ```python
+      use supplystore
+     ```
+    We can now proceed to execute specific CRUD operations such as create, read, update, and delete on MongoDB collections within the selected database.
 
 ### Create
+
+To create a new document in the supplystore collection, we can use the insertOne() method in MongoDB. The provided code snippet demonstrates the creation of a document with sale information, item details, store location, and customer information. By executing the code, a new document will be inserted into the collection.
 
   ```python
   db.supplystore.insertOne({
@@ -100,6 +110,8 @@ Before proceeding with the import process, ensure that you have the following pr
 
 ### Read
 
+To retrieve documents from the supplystore collection, you can use the find() method in MongoDB. The code snippet showcases a query that retrieves documents matching the filter ```{ storeLocation: "Cornelia Street" }```. Executing the code will return all documents with the store location set to "Cornelia Street".
+
   ```python
   db.supplystore.find ( {storeLocation: "Cornelia Street" } )
   ```
@@ -108,33 +120,60 @@ Before proceeding with the import process, ensure that you have the following pr
 
 ### Update 
 
+To update documents in the supplystore collection, MongoDB provides various methods. The code snippet provides two examples:
+
   - Query 1: Update one column
-
-  For example, we want to change the purchase method for everyone that bought items at Cornelia Street, to "Online" method.
+      It demonstrates how to update a specific field in a document using the updateOne() method.
   
-  ```python
-  db.supplystore.updateOne({ storeLocation:"Cornelia Street" },{ $set: {"purchaseMethod": "Online"} })
-  ```
-  Before update:
-  
-  <div align="center"><img src="files/images/mongosh-5.png" height="300px" /></div>
-
-  After update:
-  
-  <div align="center"><img src="files/images/mongosh-6.png" height="300px" /></div>
+      For example, we want to change the purchase method for everyone that bought items at Cornelia Street, to "Online" method.
+      
+      ```python
+       db.supplystore.updateOne(
+        {
+          "customer.email": "gracie@gmail.com" // Update based on the customer's email
+        },
+        {
+          $set: {
+            "customer.purchaseMethod": "Online" // Set the new purchase method value
+          }
+        }
+      );
+      ```
+      Before update: 
+      
+      <div align="center"><img src="files/images/mongosh-7.png" height="300px" /></div>
+    
+      After update:
+      
+      <div align="center"><img src="files/images/mongosh-8.png" height="300px" /></div>
   
   - Query 2: Update multiple columns
-
+      It showcases how to update multiple fields in documents using the updateMany() method.
+  
       ```python
-
+      db.supplystore.updateMany(
+        { "customer.email": "gracie@gmail.com" }, // Filter for documents with the specified email
+        {
+          $set: {
+            "customer.age": 55, // Set the new age value
+            "customer.couponUsed": true // Set the new couponUsed value
+          }
+        }
+      );
       ```
+  
+    <div align="center"><img src="files/images/mongosh-9.png" height="300px" /></div>
+  
     
 ### Delete
 
-  ```python
+To remove a document from the supplystore collection, we can utilize the deleteOne() method in MongoDB. The provided code snippet utilizes the filter ```{ storeLocation: "Cornelia Street" }``` to identify a document with the store location "Cornelia Street" and delete it from the collection. Executing the code will delete a single document matching the specified filter.
 
+  ```python
+  db.supplystore.deleteOne({ storeLocation: "Cornelia Street" })
   ``` 
 
+<div align="center"><img src="files/images/mongosh-10.png" height="300px" /></div>
 
 
 ## Contribution 🛠️
