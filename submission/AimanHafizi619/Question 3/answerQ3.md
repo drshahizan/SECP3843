@@ -30,13 +30,21 @@ cd Deskstop/Analytics
 
 ```python
 DATABASES = {
-     'default': {
+    'default': {
         'ENGINE': 'django.db.backends.mysql',
-		'NAME': 'analytics',
-		'USER': 'root',
-		'HOST':'localhost',
-		'PORT':'3306',     
-        },
+        'NAME': 'analytics',
+        'USER': 'root',
+	'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    },
+     'mongodb': {
+        'ENGINE': 'django',
+        'NAME': 'Analytics',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'mongodb+srv://admin:admin@projectcluster.7sndifd.mongodb.net/',
+    }   
 }
 }
 ```
