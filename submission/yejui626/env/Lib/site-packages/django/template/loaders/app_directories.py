@@ -9,5 +9,6 @@ from .filesystem import Loader as FilesystemLoader
 
 
 class Loader(FilesystemLoader):
+
     def get_dirs(self):
-        return get_app_template_dirs("templates")
+        return get_app_template_dirs('templates')

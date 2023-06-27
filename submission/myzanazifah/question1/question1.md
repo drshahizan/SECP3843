@@ -32,29 +32,24 @@ Lastly, I would also recommend using reverse proxy server which incorporates loa
 1. Install and Set Up Django
    - Before installing Django, we need to install Python first by downloading the latest version of Python from the official website, https://www.python.org/downloads/windows/.
    - Once Python has been installed, create a virtual environment and activate it.
+     
+     ```python
 
-```python
-
-python3 -m venv myenv
-
-myenv\Scripts\activate
-
-```
+      python3 -m venv myenv
+      
+      myenv\Scripts\activate
+      ```
    - Next, we can install Django by running the following code:
+     
+     ```python
 
-```python
+      pip install django
+      ```
+   - Then, run the following code to verify installation.
+     ```python
 
-pip install django
-
-```
-
-   - Next, run the following code to verify installation
-   
-```python
-
-python -m django --version
-
-```
+      python -m django --version
+      ```
 <br>
 
 2. Create a Django project
@@ -62,44 +57,39 @@ python -m django --version
    For this part, I would recommend using Visual Studio Code.
 
    - First, open new terminal in Visual Studio Code and use the following code to create a new Django project. In the code below, I named the project as AA but can be modified with other desired name.
+     
+     ```python
 
-```python
-
-python -m django startproject AA
-
-```
+      python -m django startproject AA
+      ```
    - Next, run the code below to navigate to the project directory.
      
-```python
-
-cd AA
-
-```
+     ```python
+      cd AA
+      ```
 <br>
 
 3. Create Django Apps
    - To create a new Django application, run the following code below. The AAapp is an example of the application name and can be modified to our own preference.
-  
-```python
+     
+     ```python
 
-python manage.py startapp AAapp
-
-```
+      python manage.py startapp AAapp
+      ```
    -  After creating a new app, open the 'settings.py' file located in the AA project file and add the app to the 'INSTALLED_APPS' list. Below is an example of code:
-          
-```python
+     
+     ```python
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'AAapp',
-]
-
-```
+      INSTALLED_APPS = [
+          'django.contrib.admin',
+          'django.contrib.auth',
+          'django.contrib.contenttypes',
+          'django.contrib.sessions',
+          'django.contrib.messages',
+          'django.contrib.staticfiles',
+          'AAapp',
+      ]
+      ```
 <br>
 
 4. Configure Database Settings
@@ -111,13 +101,12 @@ INSTALLED_APPS = [
    
    - Go to the 'models.py' file and define the models which represents the data and match the structure of the JSON dataset.
    - After defining the models, run the following code to run migrations to create database tables.
+     
+     ```python
 
-```python
-
-python manage.py makemigrations
-python manage.py migrate
-
-```
+      python manage.py makemigrations
+      python manage.py migrate
+      ```
 <br>
 
 6. Load JSON data into MongoDB
@@ -129,7 +118,7 @@ python manage.py migrate
 
 ## Question 1 (b)
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/materials/SystemArchitecture.jpg" />
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question1/files/images/SystemArchitecture.jpg" />
 
 1. Client Layer
    - Dashboard

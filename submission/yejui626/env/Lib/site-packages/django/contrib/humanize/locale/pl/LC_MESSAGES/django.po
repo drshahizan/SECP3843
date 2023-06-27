@@ -5,16 +5,16 @@
 # angularcircle, 2011
 # angularcircle, 2014
 # Jannis Leidel <jannis@leidel.info>, 2011
-# m_aciek <maciej.olko@gmail.com>, 2018,2021
+# m_aciek <maciej.olko@gmail.com>, 2018
 # Piotr Meuś <piotr.meus@gmail.com>, 2014
-# Roman Barczyński, 2012
+# Roman Barczyński <rombar@gmail.com>, 2012
 # Tomasz Kajtoch <tomekkaj@tomekkaj.pl>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-04-07 14:40+0200\n"
-"PO-Revision-Date: 2021-09-23 19:40+0000\n"
+"POT-Creation-Date: 2018-05-17 11:49+0200\n"
+"PO-Revision-Date: 2018-05-19 00:03+0000\n"
 "Last-Translator: m_aciek <maciej.olko@gmail.com>\n"
 "Language-Team: Polish (http://www.transifex.com/django/django/language/pl/)\n"
 "MIME-Version: 1.0\n"
@@ -84,12 +84,28 @@ msgid "{}th"
 msgstr "{}."
 
 #, python-format
+msgid "%(value).1f million"
+msgid_plural "%(value).1f million"
+msgstr[0] "%(value).1f milion"
+msgstr[1] "%(value).1f miliony"
+msgstr[2] "%(value).1f milionów"
+msgstr[3] "%(value).1f milionów"
+
+#, python-format
 msgid "%(value)s million"
 msgid_plural "%(value)s million"
 msgstr[0] "%(value)s milion"
 msgstr[1] "%(value)s miliony"
 msgstr[2] "%(value)s milionów"
 msgstr[3] "%(value)s milionów"
+
+#, python-format
+msgid "%(value).1f billion"
+msgid_plural "%(value).1f billion"
+msgstr[0] "%(value).1f miliard"
+msgstr[1] "%(value).1f miliardy"
+msgstr[2] "%(value).1f miliardów"
+msgstr[3] "%(value).1f miliardów"
 
 #, python-format
 msgid "%(value)s billion"
@@ -100,12 +116,28 @@ msgstr[2] "%(value)s miliardów"
 msgstr[3] "%(value)s miliardów"
 
 #, python-format
+msgid "%(value).1f trillion"
+msgid_plural "%(value).1f trillion"
+msgstr[0] "%(value).1f kwintylion"
+msgstr[1] "%(value).1f biliony"
+msgstr[2] "%(value).1f kwintylionów"
+msgstr[3] "%(value).1f kwintylionów"
+
+#, python-format
 msgid "%(value)s trillion"
 msgid_plural "%(value)s trillion"
 msgstr[0] "%(value)s kwintylion"
 msgstr[1] "%(value)s biliony"
 msgstr[2] "%(value)s kwintylionów"
 msgstr[3] "%(value)s kwintylionów"
+
+#, python-format
+msgid "%(value).1f quadrillion"
+msgid_plural "%(value).1f quadrillion"
+msgstr[0] "%(value).1f kwadrylion"
+msgstr[1] "%(value).1f biliardy"
+msgstr[2] "%(value).1f kwadrylionów"
+msgstr[3] "%(value).1f kwadrylionów"
 
 #, python-format
 msgid "%(value)s quadrillion"
@@ -116,12 +148,28 @@ msgstr[2] "%(value)s kwadrylionów"
 msgstr[3] "%(value)s kwadrylionów"
 
 #, python-format
+msgid "%(value).1f quintillion"
+msgid_plural "%(value).1f quintillion"
+msgstr[0] "%(value).1f trylion"
+msgstr[1] "%(value).1f tryliony"
+msgstr[2] "%(value).1f trylionów"
+msgstr[3] "%(value).1f trylionów"
+
+#, python-format
 msgid "%(value)s quintillion"
 msgid_plural "%(value)s quintillion"
 msgstr[0] "%(value)s trylion"
 msgstr[1] "%(value)s tryliony"
 msgstr[2] "%(value)s trylionyów"
 msgstr[3] "%(value)s trylionyów"
+
+#, python-format
+msgid "%(value).1f sextillion"
+msgid_plural "%(value).1f sextillion"
+msgstr[0] "%(value).1f tryliard"
+msgstr[1] "%(value).1f tryliardy"
+msgstr[2] "%(value).1f tryliardów"
+msgstr[3] "%(value).1f tryliardów"
 
 #, python-format
 msgid "%(value)s sextillion"
@@ -132,12 +180,28 @@ msgstr[2] "%(value)s tryliardów"
 msgstr[3] "%(value)s tryliardów"
 
 #, python-format
+msgid "%(value).1f septillion"
+msgid_plural "%(value).1f septillion"
+msgstr[0] "%(value).1f septylion"
+msgstr[1] "%(value).1f septyliony"
+msgstr[2] "%(value).1f septylionów"
+msgstr[3] "%(value).1f septylionów"
+
+#, python-format
 msgid "%(value)s septillion"
 msgid_plural "%(value)s septillion"
 msgstr[0] "%(value)s septylion"
 msgstr[1] "%(value)s septyliony"
 msgstr[2] "%(value)s septylionów"
 msgstr[3] "%(value)s septylionów"
+
+#, python-format
+msgid "%(value).1f octillion"
+msgid_plural "%(value).1f octillion"
+msgstr[0] "%(value).1f kwadryliard"
+msgstr[1] "%(value).1f kwardyliardy"
+msgstr[2] "%(value).1f kwadryliardów"
+msgstr[3] "%(value).1f kwadryliardów"
 
 #, python-format
 msgid "%(value)s octillion"
@@ -148,6 +212,14 @@ msgstr[2] "%(value)s kwadryliardów"
 msgstr[3] "%(value)s kwadryliardów"
 
 #, python-format
+msgid "%(value).1f nonillion"
+msgid_plural "%(value).1f nonillion"
+msgstr[0] "%(value).1f kwintylion"
+msgstr[1] "%(value).1f kwintyliony"
+msgstr[2] "%(value).1f kwintylionów"
+msgstr[3] "%(value).1f kwintylionów"
+
+#, python-format
 msgid "%(value)s nonillion"
 msgid_plural "%(value)s nonillion"
 msgstr[0] "%(value)s kwintylion"
@@ -156,12 +228,28 @@ msgstr[2] "%(value)s kwintylionów"
 msgstr[3] "%(value)s kwintylionów"
 
 #, python-format
+msgid "%(value).1f decillion"
+msgid_plural "%(value).1f decillion"
+msgstr[0] "%(value).1f kwintyliard"
+msgstr[1] "%(value).1f kwintyliardy"
+msgstr[2] "%(value).1f kwintyliardów"
+msgstr[3] "%(value).1f kwintyliardów"
+
+#, python-format
 msgid "%(value)s decillion"
 msgid_plural "%(value)s decillion"
 msgstr[0] "%(value)s kwintyliard"
 msgstr[1] "%(value)s kwintyliardy"
 msgstr[2] "%(value)s kwintyliardów"
 msgstr[3] "%(value)s kwintyliardów"
+
+#, python-format
+msgid "%(value).1f googol"
+msgid_plural "%(value).1f googol"
+msgstr[0] "%(value).1f googol"
+msgstr[1] "%(value).1f googole"
+msgstr[2] "%(value).1f googolów"
+msgstr[3] "%(value).1f googolów"
 
 #, python-format
 msgid "%(value)s googol"
@@ -213,28 +301,67 @@ msgstr "wczoraj"
 msgid "%(delta)s ago"
 msgstr "%(delta)s temu"
 
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
+#. Translators: 'naturaltime-past' strings will be included in
+#. '%(delta)s ago'
 #, python-format
-msgid "an hour ago"
-msgid_plural "%(count)s hours ago"
-msgstr[0] "godzinę temu"
-msgstr[1] "%(count)s godziny temu"
-msgstr[2] "%(count)s godzin temu"
-msgstr[3] "%(count)s godzin temu"
+msgctxt "naturaltime-past"
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d rok"
+msgstr[1] "%d lata"
+msgstr[2] "%d lat"
+msgstr[3] "%d lat"
 
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
 #, python-format
-msgid "a minute ago"
-msgid_plural "%(count)s minutes ago"
-msgstr[0] "minutę temu"
-msgstr[1] "%(count)s minuty temu"
-msgstr[2] "%(count)s minut temu"
-msgstr[3] "%(count)s minut temu"
+msgctxt "naturaltime-past"
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d miesiąc"
+msgstr[1] "%d miesiące"
+msgstr[2] "%d miesięcy"
+msgstr[3] "%d miesięcy"
 
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
+#, python-format
+msgctxt "naturaltime-past"
+msgid "%d week"
+msgid_plural "%d weeks"
+msgstr[0] "%d tydzień"
+msgstr[1] "%d tygodnie"
+msgstr[2] "%d tygodni"
+msgstr[3] "%d tygodni"
+
+#, python-format
+msgctxt "naturaltime-past"
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d dzień"
+msgstr[1] "%d dni"
+msgstr[2] "%d dni"
+msgstr[3] "%d dni"
+
+#, python-format
+msgctxt "naturaltime-past"
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d godzinę"
+msgstr[1] "%d godziny"
+msgstr[2] "%d godzin"
+msgstr[3] "%d godzin"
+
+#, python-format
+msgctxt "naturaltime-past"
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minutę"
+msgstr[1] "%d minuty"
+msgstr[2] "%d minut"
+msgstr[3] "%d minut"
+
+msgid "now"
+msgstr "teraz"
+
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
 #, python-format
 msgid "a second ago"
 msgid_plural "%(count)s seconds ago"
@@ -243,11 +370,90 @@ msgstr[1] "%(count)s sekundy temu"
 msgstr[2] "%(count)s sekund temu"
 msgstr[3] "%(count)s sekund temu"
 
-msgid "now"
-msgstr "teraz"
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
+#, python-format
+msgid "a minute ago"
+msgid_plural "%(count)s minutes ago"
+msgstr[0] "minutę temu"
+msgstr[1] "%(count)s minuty temu"
+msgstr[2] "%(count)s minut temu"
+msgstr[3] "%(count)s minut temu"
 
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
+#, python-format
+msgid "an hour ago"
+msgid_plural "%(count)s hours ago"
+msgstr[0] "godzinę temu"
+msgstr[1] "%(count)s godziny temu"
+msgstr[2] "%(count)s godzin temu"
+msgstr[3] "%(count)s godzin temu"
+
+#. Translators: delta will contain a string like '2 months' or '1 month, 2
+#. weeks'
+#, python-format
+msgid "%(delta)s from now"
+msgstr "za %(delta)s"
+
+#. Translators: 'naturaltime-future' strings will be included in
+#. '%(delta)s from now'
+#, python-format
+msgctxt "naturaltime-future"
+msgid "%d year"
+msgid_plural "%d years"
+msgstr[0] "%d rok"
+msgstr[1] "%d lata"
+msgstr[2] "%d lat"
+msgstr[3] "%d lat"
+
+#, python-format
+msgctxt "naturaltime-future"
+msgid "%d month"
+msgid_plural "%d months"
+msgstr[0] "%d miesiąc"
+msgstr[1] "%d miesiące"
+msgstr[2] "%d miesięcy"
+msgstr[3] "%d miesięcy"
+
+#, python-format
+msgctxt "naturaltime-future"
+msgid "%d week"
+msgid_plural "%d weeks"
+msgstr[0] "%d tydzień"
+msgstr[1] "%d tygodnie"
+msgstr[2] "%d tygodni"
+msgstr[3] "%d tygodni"
+
+#, python-format
+msgctxt "naturaltime-future"
+msgid "%d day"
+msgid_plural "%d days"
+msgstr[0] "%d dzień"
+msgstr[1] "%d dni"
+msgstr[2] "%d dni"
+msgstr[3] "%d dni"
+
+#, python-format
+msgctxt "naturaltime-future"
+msgid "%d hour"
+msgid_plural "%d hours"
+msgstr[0] "%d godzinę"
+msgstr[1] "%d godziny"
+msgstr[2] "%d godzin"
+msgstr[3] "%d godzin"
+
+#, python-format
+msgctxt "naturaltime-future"
+msgid "%d minute"
+msgid_plural "%d minutes"
+msgstr[0] "%d minutę"
+msgstr[1] "%d minuty"
+msgstr[2] "%d minut"
+msgstr[3] "%d minut"
+
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
 #, python-format
 msgid "a second from now"
 msgid_plural "%(count)s seconds from now"
@@ -256,8 +462,8 @@ msgstr[1] "za %(count)s sekundy"
 msgstr[2] "za %(count)s sekund"
 msgstr[3] "za %(count)s sekund"
 
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
 #, python-format
 msgid "a minute from now"
 msgid_plural "%(count)s minutes from now"
@@ -266,8 +472,8 @@ msgstr[1] "za %(count)s minuty"
 msgstr[2] "za %(count)s minut"
 msgstr[3] "za %(count)s minut"
 
-#. Translators: please keep a non-breaking space (U+00A0) between count
-#. and time unit.
+#. Translators: please keep a non-breaking space (U+00A0)
+#. between count and time unit.
 #, python-format
 msgid "an hour from now"
 msgid_plural "%(count)s hours from now"
@@ -275,120 +481,3 @@ msgstr[0] "za godzinę"
 msgstr[1] "za %(count)s godziny"
 msgstr[2] "za %(count)s godzin"
 msgstr[3] "za %(count)s godzin"
-
-#. Translators: delta will contain a string like '2 months' or '1 month, 2
-#. weeks'
-#, python-format
-msgid "%(delta)s from now"
-msgstr "za %(delta)s"
-
-#. Translators: 'naturaltime-past' strings will be included in '%(delta)s ago'
-#, python-format
-msgctxt "naturaltime-past"
-msgid "%(num)d year"
-msgid_plural "%(num)d years"
-msgstr[0] "%(num)d rok"
-msgstr[1] "%(num)d lata"
-msgstr[2] "%(num)d lat"
-msgstr[3] "%(num)d roku"
-
-#, python-format
-msgctxt "naturaltime-past"
-msgid "%(num)d month"
-msgid_plural "%(num)d months"
-msgstr[0] "%(num)d miesiąc"
-msgstr[1] "%(num)d miesiące"
-msgstr[2] "%(num)d miesięcy"
-msgstr[3] "%(num)d miesiąca"
-
-#, python-format
-msgctxt "naturaltime-past"
-msgid "%(num)d week"
-msgid_plural "%(num)d weeks"
-msgstr[0] "%(num)d tydzień"
-msgstr[1] "%(num)d tygodnie"
-msgstr[2] "%(num)d tygodni"
-msgstr[3] "%(num)d tygodnia"
-
-#, python-format
-msgctxt "naturaltime-past"
-msgid "%(num)d day"
-msgid_plural "%(num)d days"
-msgstr[0] "%(num)d dzień"
-msgstr[1] "%(num)d dni"
-msgstr[2] "%(num)d dni"
-msgstr[3] "%(num)d dnia"
-
-#, python-format
-msgctxt "naturaltime-past"
-msgid "%(num)d hour"
-msgid_plural "%(num)d hours"
-msgstr[0] "%(num)d godzinę"
-msgstr[1] "%(num)d godziny"
-msgstr[2] "%(num)d godzin"
-msgstr[3] "%(num)d godziny"
-
-#, python-format
-msgctxt "naturaltime-past"
-msgid "%(num)d minute"
-msgid_plural "%(num)d minutes"
-msgstr[0] "%(num)d minutę"
-msgstr[1] "%(num)d minuty"
-msgstr[2] "%(num)d minut"
-msgstr[3] "%(num)d minuty"
-
-#. Translators: 'naturaltime-future' strings will be included in '%(delta)s
-#. from now'
-#, python-format
-msgctxt "naturaltime-future"
-msgid "%(num)d year"
-msgid_plural "%(num)d years"
-msgstr[0] "%(num)d rok"
-msgstr[1] "%(num)d lata"
-msgstr[2] "%(num)d lat"
-msgstr[3] "%(num)d roku"
-
-#, python-format
-msgctxt "naturaltime-future"
-msgid "%(num)d month"
-msgid_plural "%(num)d months"
-msgstr[0] "%(num)d miesiąc"
-msgstr[1] "%(num)d miesiące"
-msgstr[2] "%(num)d miesięcy"
-msgstr[3] "%(num)dmiesiąca"
-
-#, python-format
-msgctxt "naturaltime-future"
-msgid "%(num)d week"
-msgid_plural "%(num)d weeks"
-msgstr[0] "%(num)d tydzień"
-msgstr[1] "%(num)d tygodnie"
-msgstr[2] "%(num)d tygodni"
-msgstr[3] "%(num)d tygodnia"
-
-#, python-format
-msgctxt "naturaltime-future"
-msgid "%(num)d day"
-msgid_plural "%(num)d days"
-msgstr[0] "%(num)d dzień"
-msgstr[1] "%(num)d dni"
-msgstr[2] "%(num)d dni"
-msgstr[3] "%(num)d dnia"
-
-#, python-format
-msgctxt "naturaltime-future"
-msgid "%(num)d hour"
-msgid_plural "%(num)d hours"
-msgstr[0] "%(num)d godzinę"
-msgstr[1] "%(num)d godziny"
-msgstr[2] "%(num)d godzin"
-msgstr[3] "%(num)d godziny"
-
-#, python-format
-msgctxt "naturaltime-future"
-msgid "%(num)d minute"
-msgid_plural "%(num)d minutes"
-msgstr[0] "%(num)d minutę"
-msgstr[1] "%(num)d minuty"
-msgstr[2] "%(num)d minut"
-msgstr[3] "%(num)d minuty"

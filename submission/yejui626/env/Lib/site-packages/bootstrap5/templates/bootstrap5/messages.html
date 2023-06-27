@@ -1,0 +1,7 @@
+{% load i18n bootstrap5 %}
+{% for message in messages %}
+    <div class="{{ message|bootstrap_message_classes }} alert-dismissible fade show" role="alert">
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="{% trans 'close' %}"></button>
+        {{ message }}
+    </div>
+{% endfor %}

@@ -15,12 +15,39 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 2 (a)
 #### Step 1: Install MongoDB, MongoDB Shell and MongoDB Command Line Database Tools
-#### Step 2:
-#### Step 3:
-#### Step 4:
-#### Step 5:
-#### Step 6:
-#### Step 7:
+This is the step in which the required software and MongoDB tools should be installed and set up in the devices locally. These required MongoDB components can be downloaded at the [community](https://www.mongodb.com/try/download/community), [shell](https://www.mongodb.com/try/download/shell) and [tools](https://www.mongodb.com/try/download/database-tools).
+
+- MongoDB
+
+<img src="https://github.com/drshahizan/SECP3843/assets/120543271/24cd1770-2b5f-49fc-ae2d-082c28e814ae" alt="image" height="450" width="330">
+
+
+- MongoDB Shell
+
+<img src="https://github.com/drshahizan/SECP3843/assets/120543271/5463bb7a-0be1-42d5-8b93-f1ef06a0e634" alt="image" height="450" width="330">
+
+- MongoDB Command Line Database Tools
+  
+<img src="https://github.com/drshahizan/SECP3843/assets/120543271/9d395ad9-5f5a-4c24-9fe2-5c76a40f6030" alt="image" height="370" width="330">
+
+After installing these 3 components in the 'Program Files' should have MongoDB folder, in the folder, there should be 2 other folder inside it which are 'Server' and 'Tools'
+
+<img src="https://github.com/drshahizan/SECP3843/assets/120543271/b22b8437-8b6e-4350-8db0-9e7009e67db7" alt="image" height="370" width="630">
+
+These are the things that should already been installed in the Server folder under 'bin' folder:
+
+
+<img src="https://github.com/drshahizan/SECP3843/assets/120543271/1c4da0fb-9908-4e29-a729-b10e18527f62" alt="image" height="370" width="630">
+
+These are the things that should already been installed in the Tools folder under 'bin' folder:
+
+<img src="https://github.com/drshahizan/SECP3843/assets/120543271/1e4be7e4-2bf2-491d-99ec-884dac1b8271" alt="image" height="370" width="630">
+
+
+#### Step 2: Set Up Database and Collection Configation in MongoDB Shell
+#### Step 3: Use MongoDB Command Line Database Tools to Insert the JSON File into The Collection
+#### Step 4: Chack in MongoDB Atlas to Confirm if the JSON File is Stored in The Selected Collection
+
 
 
 

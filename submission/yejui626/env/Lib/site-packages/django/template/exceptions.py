@@ -24,7 +24,6 @@ class TemplateDoesNotExist(Exception):
         encapsulate multiple exceptions when loading templates from multiple
         engines.
     """
-
     def __init__(self, msg, tried=None, backend=None, chain=None):
         self.backend = backend
         if tried is None:
@@ -40,5 +39,4 @@ class TemplateSyntaxError(Exception):
     """
     The exception used for syntax errors during parsing or rendering.
     """
-
     pass
