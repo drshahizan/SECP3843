@@ -53,6 +53,7 @@ Don't forget to hit the :star: if you like this repo.
 
 
 - `Optimize data retrieval`
+  
   Retrieve only the required data for visualization instead of fetching the entire dataset. Use pagination or limit the number of records retrieved at a time based on user interactions. This can be done by incorporating server-side pagination or using API endpoints with pagination support.
     ```py
     import pymongo
@@ -86,6 +87,7 @@ Don't forget to hit the :star: if you like this repo.
     
 
 - `Indexing`
+  
   Create indexes on the fields that are frequently used for filtering or sorting. Indexing can significantly speed up query execution by allowing MongoDB to quickly locate the requested data. Use the create_index() method to create indexes on specific fields.
     ```py
     import pymongo
@@ -113,6 +115,7 @@ Don't forget to hit the :star: if you like this repo.
     ```
 
 - `Use data compression techniques`
+  
   Compress the JSON data during transmission between the server and the client using compression algorithms like gzip or deflate. This reduces the network bandwidth required to transmit the data and improves the dashboard's loading time.
 
     ```py
