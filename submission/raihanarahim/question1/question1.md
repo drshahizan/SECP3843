@@ -224,8 +224,20 @@ Next, implementing database router is important if you want to to distribute que
 Final step, to ensure a succesful integration you may test and debug your Django application by creating test cases and analyze the result. If there are no problems encountered, then you have succesfully integrate your Django application with JSON data using mySQL and MongoDB databases.
 
 ## Question 1 (b)
-<img width="900" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question1/files/images/archit.png">
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### System Architecture
+<img width="900" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question1/files/images/archit.png"><br>
+### Detailed Explanation on each component
+#### 1. User/Client
+ In the provided system architecture diagram, the User or Client represents individuals who interact with the application. They access the system using web browsers or client applications, through which they send HTTP requests to retrieve information or perform actions. In response to these requests, the User or Client receives HTTP responses that correspond to their specific requests. 
+<br>
+ For example, consider a scenario where users are using a portal to view a dashboard. When they click on a particular element or make a request, an HTTP request is sent from their web browser or client application to the system. The system processes this request and generates an appropriate HTTP response. 
+#### 2. Load Balancer
+To accomodate user's request, load balancer is implemented in the architecture that acts as a traffic distributor. This is to ensure all incoming requests are evenly distributed across the servers. It will monitor the web servers and incomin
+#### 3. Web Server
+#### 4. Django Application Server
+#### 5. MySQL Server
+#### 6. MongoDB Server
+
 
 
 
