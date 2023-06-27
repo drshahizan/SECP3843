@@ -28,9 +28,8 @@ To integrate Django with a JSON dataset and enable efficient data storage and re
 
 Step 1: Install Django and required packages:
 <p align="center">
-  <img height="200px" src="submission/IrdinaAliah/question1/files/images/install django.png" />
+  <img height="200px" src="materials\install django.png" />
 </p>
-src= "submission/IrdinaAliah/question1/files/images/install django.png"
 
 
 
