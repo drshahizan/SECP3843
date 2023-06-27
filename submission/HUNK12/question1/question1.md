@@ -52,9 +52,70 @@ Install [MongoDB compass](https://www.mongodb.com/try/download/compass)
 In MongoDB Compass GUI, create a new database and collection.
 ![image](https://github.com/drshahizan/SECP3843/assets/3646429/90319dec-2898-4a61-80f9-ef23c6865b45)
 
-**Both the databases are now setup**
+**Both the databases are now setup. Now we'll need to integrate Django with the databases by installing some packages**
 
-IN PROGRESS
+In the project folder, using the command prompt, run `pip install mysqlclient` to install the MySQL package and `pip install pymongo` to install the MongoDB package
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/6e17381f-6339-4dfb-91f8-8ac3121271ea)
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/ee292032-9698-4d66-a6bc-5c4d4efad735)
+
+Now, open the `settings.py` using VS Code and change the following database settings so that it will be able to interact with the databases we've just created
+```
+DATABASES = {
+	'default': {
+		'ENGINE': 'django.db.backends.mysql',
+		'NAME': 'db_tweets',
+		'USER': 'root',
+		'PASSWORD': '',
+		'HOST':'localhost',
+		'PORT':'3306',
+	},
+
+    'mongodb': {
+        'ENGINE': 'djongo',
+        'NAME': 'STDE',
+        'CLIENT': {
+            'host': 'mongodb+srv://mikhel:admin@cluster0.kwav8pt.mongodb.net/',
+        },
+    },
+}
+```
+After that, we need to create Django models for the data that will be stored in the MySQL and MongoDB databases. Do this in the app directory created previously in the file named `models.py`. The model will be defined based on the [data dictionary](https://github.com/drshahizan/dataset/tree/main/mongodb/06-tweets#data-dictionary). There is a possibility some changes might be needed later on.
+```
+class Tweet(models.Model):
+    _id = models.CharField(max_length=255, unique=True)
+    text = models.TextField()
+    in_reply_to_status_id = models.CharField(max_length=255, null=True, blank=True)
+    retweet_count = models.IntegerField(null=True, blank=True)
+    contributors = models.CharField(max_length=255, null=True, blank=True)
+    created_at = models.DateTimeField()
+    geo = models.CharField(max_length=255, null=True, blank=True)
+    source = models.CharField(max_length=255)
+    coordinates = models.CharField(max_length=255, null=True, blank=True)
+    in_reply_to_screen_name = models.CharField(max_length=255, null=True, blank=True)
+    truncated = models.BooleanField()
+    entities = models.JSONField()
+    retweeted = models.BooleanField()
+    place = models.CharField(max_length=255, null=True, blank=True)
+    user = models.JSONField()
+    favorited = models.BooleanField()
+    in_reply_to_user_id = models.CharField(max_length=255, null=True, blank=True)
+    id = models.CharField(max_length=255, primary_key=True)
+```
+Now, we'll migrate the model to our databases to generate the tables
+### MySQL
+We simple need to run the command `python manage.py migrate` in the command prompt. After running the command, the following tables have been generated.
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/fbca9be3-6681-4302-b8dc-1d1e0725fe1a)
+
+### MongoDB
+For MongoDB, we'll need to run a slightly different command since it is not set as the default database. Below are the list of commands needed to migrate the model to MongoDB
+```
+pip install pytz
+pip install djongo
+python manage.py migrate --database=mongodb
+```
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/726c9445-bb1f-4704-9c74-f8af7cee5c95)
+
+After this, all thats needed is to now is to populate the database with the data.
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
