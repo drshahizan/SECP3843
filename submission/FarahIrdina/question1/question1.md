@@ -112,49 +112,6 @@ class MySQLModel (models.Model):
     
     class Meta:
         db_table = 'airbnb'
-
-class MongoDBModel (models.Model):
-    _id = models.CharField(max_length=50)
-    listing_url = models.URLField()
-    name = models.CharField(max_length=200)
-    summary = models.TextField()
-    space = models.TextField()
-    description = models.TextField()
-    neighborhood_overview = models.TextField()
-    notes = models.TextField()
-    transit = models.TextField()
-    access = models.TextField()
-    interaction = models.TextField()
-    house_rules = models.TextField()
-    property_type = models.CharField(max_length=50)
-    room_type = models.CharField(max_length=50)
-    bed_type = models.CharField(max_length=50)
-    minimum_nights = models.CharField(max_length=10)
-    maximum_nights = models.CharField(max_length=10)
-    cancellation_policy = models.CharField(max_length=50)
-    last_scraped = models.DateTimeField()
-    calendar_last_scraped = models.DateTimeField()
-    accommodates = models.IntegerField()
-    bedrooms = models.IntegerField()
-    beds = models.IntegerField()
-    number_of_reviews = models.IntegerField()
-    bathrooms = models.DecimalField(max_digits=3, decimal_places=1)
-    amenities = models.JSONField()
-    price = models.DecimalField(max_digits=7, decimal_places=2)
-    weekly_price = models.DecimalField(max_digits=7, decimal_places=2)
-    monthly_price = models.DecimalField(max_digits=7, decimal_places=2)
-    cleaning_fee = models.DecimalField(max_digits=7, decimal_places=2)
-    extra_people = models.DecimalField(max_digits=7, decimal_places=2)
-    guests_included = models.IntegerField()
-    images = models.JSONField()
-    host = models.JSONField()
-    address = models.JSONField()
-    availability = models.JSONField()
-    review_scores = models.JSONField()
-    reviews = models.JSONField()
-    
-    class Meta:
-        db_table = 'listings'
 ```
 
 #### 5. Migrate the data models to both MySQL and MongoDB
@@ -171,11 +128,146 @@ python manage.py migrate
 ![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question1/files/images/mysql.png)
 ![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question1/files/images/mysql2.png)
 
-#### 6. Load the JSON dataset into MySQL
+#### 6. Load the JSON dataset into MySQL and MongoDB
 
-#### 7. Load the JSON dataset into MongoDB
+To load the JSON dataset into MySQL and MongoDB through Django is by reading the data in JSON file and assign it as array. Then, insert the array into the databases. Refer the code below. 
 
-#### 8. Query and retrieve data
+##### - MySQL
+
+```
+from django.core.management.base import BaseCommand
+from Listings.models import Listing  # Import your Listing model here
+import json
+
+
+class Command(BaseCommand):
+    help = 'Load JSON data into MySQL database'
+
+    def handle(self, *args, **options):
+        # Read the JSON file
+        with open('C:/Users/User/Downloads/listings.json', 'r', encoding='utf-8') as file:
+            data = json.load(file)
+
+        for item in data:
+            listing = Listing(
+                _id=item['_id'],
+                listing_url=item['listing_url'],
+                name=item['name'],
+                summary=item['summary'],
+                space=item['space'],
+                description=item['description'],
+                neighborhood_overview=item['neighborhood_overview'],
+                notes=item['notes'],
+                transit=item['transit'],
+                access=item['access'],
+                interaction=item['interaction'],
+                house_rules=item['house_rules'],
+                property_type=item['property_type'],
+                room_type=item['room_type'],
+                bed_type=item['bed_type'],
+                minimum_nights=item['minimum_nights'],
+                maximum_nights=item['maximum_nights'],
+                cancellation_policy=item['cancellation_policy'],
+                last_scraped=item['last_scraped'],
+                calendar_last_scraped=item['calendar_last_scraped'],
+                accommodates=item['accommodates'],
+                bedrooms=item['bedrooms'],
+                beds=item['beds'],
+                number_of_reviews=item['number_of_reviews'],
+                bathrooms=item['bathrooms'],
+                amenities=item['amenities'],
+                price=item['price'],
+                weekly_price=item['weekly_price'],
+                monthly_price=item['monthly_price'],
+                cleaning_fee=item['cleaning_fee'],
+                extra_people=item['extra_people'],
+                guests_included=item['guests_included'],
+                images=item['images'],
+                host=item['host'],
+                address=item['address'],
+                availability=item['availability'],
+                review_scores=item['review_scores'],
+                reviews=item['reviews']
+            )
+
+            listing.save()
+
+        self.stdout.write(self.style.SUCCESS(
+            'JSON data has been loaded into the database.'))
+```
+
+##### - MongoDB
+
+```
+import json
+from django.core.management.base import BaseCommand
+from Listings.models import Listing
+from pymongo import MongoClient
+
+class Command(BaseCommand):
+    help = 'Load JSON data into MongoDB'
+
+    def handle(self, *args, **options):
+        with open('C:/Users/User/Downloads/listings.json', 'r', encoding='utf-8') as file:
+            data = json.load(file)
+
+        client = MongoClient('mongodb+srv://arasayooo:<password>@listings.rdxcnj3.mongodb.net/test')
+        db = client['airbnb']
+        collection = db['listings']
+
+        for item in json_data:
+            MongoDBModel.objects.create(
+                _id=item['_id'],
+                listing_url=item['listing_url'],
+                name=item['name'],
+                summary=item['summary'],
+                space=item['space'],
+                description=item['description'],
+                neighborhood_overview=item['neighborhood_overview'],
+                notes=item['notes'],
+                transit=item['transit'],
+                access=item['access'],
+                interaction=item['interaction'],
+                house_rules=item['house_rules'],
+                property_type=item['property_type'],
+                room_type=item['room_type'],
+                bed_type=item['bed_type'],
+                minimum_nights=item['minimum_nights'],
+                maximum_nights=item['maximum_nights'],
+                cancellation_policy=item['cancellation_policy'],
+                last_scraped=item['last_scraped'],
+                calendar_last_scraped=item['calendar_last_scraped'],
+                accommodates=item['accommodates'],
+                bedrooms=item['bedrooms'],
+                beds=item['beds'],
+                number_of_reviews=item['number_of_reviews'],
+                bathrooms=item['bathrooms'],
+                amenities=item['amenities'],
+                price=item['price'],
+                weekly_price=item['weekly_price'],
+                monthly_price=item['monthly_price'],
+                cleaning_fee=item['cleaning_fee'],
+                extra_people=item['extra_people'],
+                guests_included=item['guests_included'],
+                images=item['images'],
+                host=item['host'],
+                address=item['address'],
+                availability=item['availability'],
+                review_scores=item['review_scores'],
+                reviews=item['reviews']
+            )
+            collection.insert_one(item)
+```
+
+#### 7. Query and retrieve data
+
+```
+from Listings.models import MySQLModel
+from Listings.models import MongoDBModel
+
+mysql_objects = MySQLModel.objects.all()
+mongodb_objects = MongoDBModel.objects.using('mongodb').all()
+```
 
 ## Question 1 (b)
 
