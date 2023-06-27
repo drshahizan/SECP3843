@@ -35,6 +35,14 @@ there will be  five server used for this project:
    (please make sure that you have python installed in your computer)
 
    Install the environment needed in the command prompt
+    ```
+   py -m venv env
+   ```
+    ```
+    env\Scripts\activate
+     ```
+
+  <img height="200px" src="./Screenshot (248).png">
    
    Open Command Prompt/ terminal and type this command
    
