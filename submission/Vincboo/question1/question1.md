@@ -105,7 +105,7 @@ DATABASES = {
 2. Then, we create a `.py` file named 'dbrouter.py' to route the database.
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/17f0087f-e949-4b02-97f8-9237f22afc31"></img>
 
-3. Then, we will also need to define the file.
+3. Then, we will also need to define the file in `setting.py`.
 ```
 DATABASE_APPS_MAPPING = {
     'contenttypes': 'default',
