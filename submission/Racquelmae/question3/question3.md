@@ -18,26 +18,26 @@ Continue with the project created in Question 1.
 
 ### 1. Create views
 This is created for user authentication 
-The code can be found here [views.py]("./files/code/Portal/portalproject/portalapp/views.py")
+The code can be found here [views.py](./files/code/Portal/portalproject/portalapp/views.py)
 
 ### 2. Create templates
 Create a new folder named templates in the app folder and paste all the html files used in this folder.
 
 ### 3. Create home.html
 This is created as the index page of the system.
-The code can be found here [home.html]("./files/code/Portal/portalproject/portalapp/templates/home.html")
+The code can be found here [home.html](./files/code/Portal/portalproject/portalapp/templates/home.html)
 
 ### 4. Create register.html
 This is created to allow user to register.
-The code can be found here [register.html]("./files/code/Portal/portalproject/portalapp/templates/register.html")
+The code can be found here [register.html](./files/code/Portal/portalproject/portalapp/templates/register.html)
 
 ### 5. Create login.html
 This is created to allow user to enter the username and password for login.
-The code can be found here [login.html]("./files/code/Portal/portalproject/portalapp/templates/login.html")
+The code can be found here [login.html](./files/code/Portal/portalproject/portalapp/templates/login.html)
 
 ### 6. Create profile.html
 This is created to display the user profile when the user log in the system.
-The code can be found here [profile.html]("./files/code/Portal/portalproject/portalapp/templates/profile.html")
+The code can be found here [profile.html](./files/code/Portal/portalproject/portalapp/templates/profile.html)
 
 ### 7. Create urls.py
 Add all the urls of the html files in the templates folder.
