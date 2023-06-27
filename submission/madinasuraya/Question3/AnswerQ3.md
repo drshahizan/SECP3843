@@ -102,8 +102,11 @@ Don't forget to hit the :star: if you like this repo.
     ```
 10. Create the views for user registration and login, create urls routing to the specific page and perform CRUD for each user using **request.POST** and **request.GET** method.
    <p align="center">
-      <img width="191" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/624f3bad-5f6d-426a-98d2-10daf441cc17"> <br><br>
-      <img width="131" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/b14ba069-252e-489f-8cc2-7b18dc4ffb4b">
+      <img width="389" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/45a21554-6f16-4e8d-aaea-12061a5a46ce">
+       <br><br>
+      <img width="228" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/34d325cc-a6e9-4758-a008-f5954a9f6113">
+      <br><br>
+       <img width="412" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/e6efb5fa-c714-4da8-8c9c-97cc2f00fa77">
    </p>
    
 11. The tables and its field created in mysql database are as follows:
