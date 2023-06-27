@@ -34,21 +34,24 @@ Prerequisites: <br>
 2. Access the MongoDB through CMD by giving the command <code>mongod</code>. Then wait for the system to access MongoDB, the result is expected as below.
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20103533.png" alt="access mongodb via cmd">
 
-3. Import the JSON file using the function <code>mongoimport</code> with the JSON file's filepath, database name and collection name with the format <code>mongoimport "filepath" -d "database name" -c "collection name"</code>. 
-In this case, I have saved the JSON file inside the folder Desktop/sem 6 notes/mso/ and created a database named "AA" along with a collection named "CityInspection", the code is shown as below.
+3. Import the JSON file using the function <code>mongoimport</code> with the JSON file's filepath, database name and collection name with the format <code>mongoimport "filepath" -d "database name" -c "collection name"</code>. <br>
+In this case, I have saved the JSON file inside the folder Desktop/sem 6 notes/mso/ and created a database named "AA" along with a collection named "CityInspection", the code is shown as below. <br>
 <code>mongoimport "C:\Users\yong\This PC\Desktop\sem 6 notes\mso\city_inspections.json" -d AA -c CityInspection</code>
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104340.png" alt="upload json file to MongoDB">
 The JSON file is successfully imported into MongoDB which can be viewed in MongoDB Compass.
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104937.png" alt="json file imported">
 
-4. 
+4. Access the MongoDB Shell by giving the prompt <code>mongosh</code>.
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104656.png" alt="access mongodb shell">
 
+5. View all the available databases which stored in MongoDB via the command <code>show dbs</code>.
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104711.png" alt="show all databases">
 
+6. Since I am using the database named "AA", then I access it through the code <code>use AA</code>. 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104829.png" alt="use database AA">
 
 ## Question 2 (b)
+
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20112357.png" alt="insertone()">
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20112337.png" alt="view inserted data">
