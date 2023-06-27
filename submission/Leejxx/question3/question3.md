@@ -15,7 +15,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 3 (a)
 For this question, I will used the projecy(AA_Leejx) that created in Question 1a).
-To create a user registration and login module using Django and MySQL for three types of users (customers, technical workers, and senior management), you would need to follow the following steps:
+To create a user registration and login module using Django and MySQL for three types of users (customers, technical workers, and senior management), the steps are:
 
 ### 1. Database Setup for User Authentication (MySQL)
   a) In my case, i create a new app within the project(AA_Leejx) for User Authentication purpose:
@@ -45,17 +45,44 @@ To create a user registration and login module using Django and MySQL for three 
      <img  src="./files/images/register2.JPG"></img>
      
   c) Create a registration template: Create an HTML template (register.html) that displays the registration form and handles form submission.
-      <img  src="./files/images/register3.JPG"></img>
+     <img  src="./files/images/register3.JPG"></img>
 
 ### 4. User Login
   a) Create a login form: Create a Django form (UserLoginForm) that includes fields for username and password.
-     <img  src="./files/images/login1.JPG"></img> 
+    <img  src="./files/images/login1.JPG"></img> 
 
-  b) 
+  b) Create a login view: Define a view function (user_login) that handles the login logic. In this view, validate the form data, authenticate the user using Django's authenticate() function, and log in the user using login().
+    <img  src="./files/images/login2.JPG"></img>
 
+  c) Create a login template: Create an HTML template (login.html) that displays the login form and handles form submission.
+    <img  src="./files/images/login3.JPG"></img>
 
+### 5. User Dashboard
+  a) Create dashboard templates: for me, I created three HTML templates (customer_dashboard.html, technicalWorker_dashboard.html, seniorManagement_dashboard.html) that represent the dashboards for each user type. 
+     <img  src="./files/images/dashboard1.JPG"></img>
 
-  
+  b) Create a dashboard view: Define a view function (dashboard) that checks the authenticated user's user_type attribute and renders the appropriate dashboard template based on the user type. If the user is not recognized or not authenticated, redirect them to the login page.
+    <img  src="./files/images/dashboard2.JPG"></img>
+
+### 6. URL Configuration:
+  a) Update URL patterns: Update the project's URL configuration (urls.py) to include URL patterns for user registration, login, and the dashboard view. Map the URLs to their respective views.
+     <img  src="./files/images/url1.JPG"></img>
+
+### User interfaces:
+  a) Login:
+     <img  src="./files/images/logini.JPG"></img>
+     
+  b) Register:
+     <img  src="./files/images/registeri.JPG"></img>
+
+  c) Customer's dashboard:
+    <img  src="./files/images/dashboardc.JPG"></img>
+    
+  d) Technical Worker's dahboard:
+     <img  src="./files/images/dashboardt.JPG"></img>
+
+  e) Senior Management's dahboard:
+     <img  src="./files/images/dashboards.JPG"></img>
 
 
 ## Question 3 (b)
