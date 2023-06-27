@@ -104,8 +104,8 @@ from django.contrib.auth.models import AbstractUser, Group, Permission
 
 class User(AbstractUser):
     is_customer = models.BooleanField(default=False)
-    is_technical_worker = models.BooleanField(default=False)
-    is_senior_management = models.BooleanField(default=False)
+    is_worker = models.BooleanField(default=False)
+    is_management = models.BooleanField(default=False)
 
     groups = models.ManyToManyField(Group, blank=True, related_name='custom_user_set')
 
@@ -126,7 +126,7 @@ from . forms import RegistrationForm
 from django.contrib.auth. forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from decorators import is_customer, is_technical _worker, is_senior_management
+from .decorators import is_customer, is_worker, is_management
 from django.contrib.auth.decorators import user_passes_test
 ```
 
@@ -164,12 +164,46 @@ def register(request):
     return render(request, 'register.html', {'form': form})
 ```
 
-6. Define a function name `register` to handle the user registration process below the `user_login` function
+6. Define three dashbord views page based on their respective roles below the `register` function
 
+```python
+@login_required
+def profile(request):
+    user = request.user
+    
+    return render(request, 'profile.html', {'user': user})
 
+@user_passes_test(is_customer)
+def customer_dashboard_view(request):
+    
+    return render(request, 'customer_dashboard_view.html')
 
+@user_passes_test(is_worker)
+def worker_dashboard_view(request):
+    
+    return render(request, 'worker_dashboard_view.html')
 
+@user_passes_test(is_management)
+def management_dashboard_view(request):
+    
+    return render(request, 'management_dashboard_view.html')
+```
 
+7. Define a function named `redirect_dashboard` to redirect each views page based on their respective roles
+
+```python
+def redirect_dashboard(request):
+    user = request.user
+    if user.is_customer:
+        return redirect('customer_dashboard_view')
+    elif user.is_worker:
+        return redirect('worker_dashboard_view')
+    elif user.is_management:
+        return redirect('management_dashboard_view')
+    else:
+        
+        return redirect('profile')
+```
 
 
 
