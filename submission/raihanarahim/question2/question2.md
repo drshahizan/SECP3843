@@ -19,7 +19,7 @@ Don't forget to hit the :star: if you like this repo.
 * Navigate to [Tweets Dataset](https://github.com/drshahizan/dataset/tree/main/mongodb/06-tweets) to download the dataset.
 * MongoDB has its specific document format for JSON files to be imported in the database. Therefore, it is crucial to check the documents structure before importing to the database. It is found out that the dataset file is not correctly formated. Hence, an additional step is needed to format the JSON data file.
 * To prepare the data into correct JSON array, it needs to have bracket [ at beginning and end of the file. So the object is in [] and seperated with ','. I use Python to prepare the data and Google Colab as the code editor. Below I attached the link to Google Collab and the modified dataset.
-   * Data preparation : [Data Preparation](https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question2/files/code/modifyjson.ipynb)
+   * Data preparation : [Data Preparation](https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question2/files/code/modifyjson.ipynb)<br>
       <img width="655" alt="image" src="./files/images/modifyjson.png">
    * Modified JSON file :
 2. Install the required software.
