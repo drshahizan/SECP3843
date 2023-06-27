@@ -33,6 +33,9 @@ there will be  five server used for this project:
    **SET UP DJANGO INSTALLATION**
 
    (please make sure that you have python installed in your computer)
+
+   Install the environment needed in the command prompt
+   
    Open Command Prompt/ terminal and type this command
    
    ```
