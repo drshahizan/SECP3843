@@ -17,7 +17,15 @@ Don't forget to hit the :star: if you like this repo.
 
 ### 1. To install and set up Django, follow these steps:
 
-a. Open the command prompt or terminal.
+a. Create Virtual Environment
+```
+virtualenv env
+```
+
+Once you have created the virtual environment, you can activate it by running the following command.
+```
+env\Scripts\activate
+```
 
 b. Run the command `pip install Django` to install Django using pip, the Python package manager. Make sure you have Python and pip installed on your system.
 
