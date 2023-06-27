@@ -15,25 +15,32 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Supply Store](https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales)
 
 ## Question 2 (a)
+
+Before proceeding with the import process, ensure that you have the following prerequisites in place:
+
 ### Prerequisite
 
-  1. [Supply Store Dataset](https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales)
-  2. [MongoDB Server](https://www.mongodb.com/try/download/community)
-<div align="center"><img src="files/images/dlmongodb.png" height="350px" /></div>
+  1. **Supply Store Dataset:** Download the [Supply Store Dataset](https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales).This dataset will serve as the source of the JSON data that you will import into MongoDB. It contains essential information related to sales.
+     
+     <div align="center"><img src="files/images/sales.png" height="350px" /></div>
+     
+  3. **MongoDB Server:** Install and set up the latest version of [MongoDB Server](https://www.mongodb.com/try/download/community) on your system. MongoDB Server will act as the database where you will import the JSON data.
+     
+     <div align="center"><img src="files/images/dlmongodb.png" height="350px" /></div>
 
 ### Steps to import JSON data to MongoDB
 
-  **Step 1:** Launch MongoDB Compass and conneect to localhost.
+  **Step 1:** Launch MongoDB Compass and connect to the localhost server.
 <div align="center"><img src="files/images/compass.png" height="350px" /></div>
   
-  **Step 2:** Now, create database the database wih the name supplystore.
+  **Step 2:** Create a database named "supplystore" to proceed further.
   <div align="center"><img src="files/images/createdb.png" height="350px" /></div>
 
-  **Step 3:** In the Add Data section, choose Import JSON file and upload the dataset that we have downloaded.
+  **Step 3:** In the "Add Data" section, select "Import JSON file" and upload the dataset that you have downloaded.
   <div align="center"><img src="files/images/db-1.png" height="350px" /></div>
   <div align="center"><img src="files/images/db-2.png" height="350px" /></div>
   
-  **Step 4:** The uploaded JSON file shown as below.
+  **Step 4:** Once uploaded, the JSON file will be displayed as shown below.
   <div align="center"><img src="files/images/db-3.png" height="350px" /></div>
 
 ## Question 2 (b)
