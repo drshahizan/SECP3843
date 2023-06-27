@@ -61,11 +61,8 @@ There are 2 ways to to import dataset.
 
 1. Open your terminal or command prompt
 2. Run `mongod` in the terminal
-
-<img src="../question2/files/images/Q2b.png">
-
-1. Run `mongosh "mongodb+srv://madihahzabri:admin@cluster0.xgsbper.mongodb.net/"` to make connection to MongoDB Atlas
-2. Select the intended database `use
+3. Run `mongosh "mongodb+srv://madihahzabri:admin@cluster0.xgsbper.mongodb.net/"` to make connection to MongoDB Atlas
+4. Select the intended database `use
 
 ### Create Query
 
