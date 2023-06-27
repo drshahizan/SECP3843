@@ -100,14 +100,40 @@ Before proceeding with the import process, ensure that you have the following pr
 
 ### Read
 
+  ```python
+  db.supplystore.find ( {storeLocation: "Cornelia Street" } )
+  ```
+
+<div align="center"><img src="files/images/mongosh-4.png" height="370px" /></div>
+
 ### Update 
 
-  - Query 1:
-  - Query 2:
+  - Query 1: Update one column
+
+  For example, we want to change the purchase method for everyone that bought items at Cornelia Street, to "Online" method.
+  
+  ```python
+  db.supplystore.updateOne({ storeLocation:"Cornelia Street" },{ $set: {"purchaseMethod": "Online"} })
+  ```
+  Before update:
+  
+  <div align="center"><img src="files/images/mongosh-5.png" height="300px" /></div>
+
+  After update:
+  
+  <div align="center"><img src="files/images/mongosh-6.png" height="300px" /></div>
+  
+  - Query 2: Update multiple columns
+
+      ```python
+
+      ```
     
 ### Delete
 
+  ```python
 
+  ``` 
 
 
 
