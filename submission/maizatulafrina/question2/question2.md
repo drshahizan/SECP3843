@@ -100,12 +100,23 @@ Required software to install and download:
 
 ## Question 2 (b)
 
-  - Cretae query
-<img width="949" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/093d8607-24d0-403a-9ce0-65f874a8eab8">
+These are the samples that demonstrate Create, Read, Update, Delete (CRUD) operations using MongoDB functions:
 
-<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/c71eb80b-c594-4d5e-9e18-f8ae68188874">
+  - Create query
+    - To insert documents into MongoDB database, use `insertOne()` function.
 
+      <img width="949" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/093d8607-24d0-403a-9ce0-65f874a8eab8">
+      
+    - Use `db.city.find({ business_name:"ATLIXCO DELI GROCERY INC." })` to check whether the previous query is successfully executed or not.
+      
+      <img width="947" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/2498e442-c829-4f4d-8e19-bf7b3d1effc0">
 
+      <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/c71eb80b-c594-4d5e-9e18-f8ae68188874">
+
+  - Read query
+
+    - Use `db.city.find({ business_name:"ATLIXCO DELI GROCERY INC." })` to check whether the previous query is successfully executed or not.
+  
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
