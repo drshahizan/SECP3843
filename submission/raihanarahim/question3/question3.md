@@ -165,6 +165,7 @@ urlpatterns = [
 10. Lastly, test your module to ensure the login and register view are rendered correctly and the process has no error. User credentials can be stored and retrieved from database. These are the steps to create user authetication module using Django and MySQL database.
 
 ## Question 3 (b)
+### Steps to overcome the challenges of Data Replication and Synchronization between MongoDB and MySQL databases.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## Contribution 🛠️
