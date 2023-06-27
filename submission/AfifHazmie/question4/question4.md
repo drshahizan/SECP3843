@@ -113,6 +113,10 @@ Don't forget to hit the :star: if you like this repo.
 
       #### Split the data into testing and training
       ```python
+      # Splitting the data into features (X) and target variable (y)
+      X = df1[['age', 'gender', 'purchaseMethod']]
+      y = df1['satisfaction']
+      
       # Convert categorical variables to numerical representation using one-hot encoding
       X_encoded = pd.get_dummies(X)
       
