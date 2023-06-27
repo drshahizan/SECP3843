@@ -31,8 +31,8 @@ Open Command Prompt and type `mongod` to start the MongoDB server.
 <img  src="./files/images/start_server.jpg"></img>
 
 ### 3. Import Dataset
-In the command prompt, type `mongoimport "C:\Users\chloe\Downloads\new_city_inspections.json" -d AA -c City` to import the dataset into MongoDB. The database and collection are automatically created as:
-`-d AA` specifies the name of the database on which to run the mongoimport.
+In the command prompt, type `mongoimport "C:\Users\chloe\Downloads\new_city_inspections.json" -d AA -c City` to import the dataset into MongoDB. The database and collection are automatically created as:<br>
+`-d AA` specifies the name of the database on which to run the mongoimport.<br>
 `-c City` specifies the collection to import.
 <img  src="./files/images/import.jpg"></img>
 
