@@ -31,8 +31,17 @@ Don't forget to hit the :star: if you like this repo.
         - Then, create a virtual environment for the project.
           
            <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/871e6e313e09d8f507b32aaf9d54173434080a29/submission/RishmaFathima/Question1/files/images/new%201.1.1.4.png">
+
+  2. Set up MySql Database
+        - First, need to install the MySQL database server on our system. The MySQL Community Server is downloaded from the official MySQL website                               ``(https://dev.mysql.com/downloads/)``.
+        - Download Xampp. Once the XAMPP installer is downloaded, run the executable file to start the installation process. Follow the on-screen instructions to                proceed and finish the the process
+        - Create a database called ``AA_Mysql``
           
-  2. Define Django models in models.py:
+  4. Set up MongoDB Database
+        - Go to the MongoDB website ``(https://www.mongodb.com/try/download/community)`` and select the appropriate version of MongoDB for our operating system
+        - Create a database called ``AA_Mongo``
+          
+  5. Define Django models in models.py:
         - JSON file is downloaded from the Github.
         - Django models were created based on the attributes from the downloaded JSON file which contain the dataset of ``Airbnb Listing Dataset``.
         - From the app folder created, in the ``models.py`` file, the model of the prject would be defined.
@@ -41,7 +50,7 @@ Don't forget to hit the :star: if you like this repo.
    
       
 
-  3. Configure the settings of the project:
+  6. Configure the settings of the project:
 
         - Update the ``settings.py`` file in the project folder to define the database setting for Mysql and MongoDB
            <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/c18d8db59264504dc5f34395291dfe90abb48c90/submission/RishmaFathima/Question1/files/images/1.1.3.1.png">
@@ -55,7 +64,7 @@ Don't forget to hit the :star: if you like this repo.
           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/c18d8db59264504dc5f34395291dfe90abb48c90/submission/RishmaFathima/Question1/files/images/1.1.3.2.png">
          
            
-  4. Migration of database and load the JSON file:
+  7. Migration of database and load the JSON file:
 
         - Add the command ``python manage.py makemigrations`` to migrate the database from the ``models.py``
         - Then add the command ``python manage.py migrate`` to make th emigrations work with Mysql and MongoDB
@@ -77,7 +86,7 @@ Don't forget to hit the :star: if you like this repo.
           
         - Finally python generate a script to read Django.
          
-  5. Retrieve, Update and Testing Data:
+  8. Retrieve, Update and Testing Data:
 
         - To retrieve all data from the MongoDB ``AA_Mongo`` collection:
      
