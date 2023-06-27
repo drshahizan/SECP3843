@@ -15,7 +15,23 @@ Don't forget to hit the :star: if you like this repo.
 #### Datatset: City Inspections	
 
 ## Question 1 (a)
-
+The 5 servers of this project are implemented as below:
+<table>
+  <thead>
+    <th>Server</th>
+    <th>Functionality</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Web server</td>
+      <td>Used to handle the network routings (including the incoming requests and outgoing responses) between the user's browser and the Django framework through HTTP protocols. Examples of web server services are Apache HTTP Server, Nginx, and Microsoft IIS.</td>
+    </tr>
+    <tr>
+      <td>MySQL Database Server</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153108.png" alt="activate virtual environment">
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153218.png" alt="install django mysqlclient pymongo">
