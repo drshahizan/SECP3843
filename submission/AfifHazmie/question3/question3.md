@@ -289,7 +289,7 @@ Don't forget to hit the :star: if you like this repo.
 ---
 
    #### Register Page
-  <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/register.jpg" style="width: 450px; height: 200px;">
+  <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/register.jpg" style="width: 450px; height: 300px;">
   
 ---
 
