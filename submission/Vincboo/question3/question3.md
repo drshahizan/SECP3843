@@ -167,7 +167,7 @@ path('management_dashboard/', management_dashboard_view, name='management_dashbo
 
 ### User Interface
 1. Login
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/af501f19-f79a-4169-9b96-d269f7d623cb"></img>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/af501f19-f79a-4169-9b96-d269f7d623cb"/>
 
 2. Register
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/c4551943-55e4-4665-a516-19b1c4b2b25e"></img>
