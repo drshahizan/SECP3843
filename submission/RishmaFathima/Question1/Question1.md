@@ -121,11 +121,11 @@ Detailed explanations for each component:
     a. MySQL:
       <p>
     Popular relational database management system (RDBMS) MySQL is open-source. It is renowned for its performance, dependability, and scalability. MySQL is one of        the database options utilised in the system architecture to store structured data. Data integrity and transactional consistency are ensured by its ACID                (Atomicity, Consistency, Isolation, Durability) features. Because MySQL is supported by Django's ORM, database activities can be easily managed and seamlessly         integrated.
-</p>
+     </p>
     b. MongoDB:
       <p>
     The  MongoDB stores data in the BSON (Binary JSON) format, which is adaptable and document-oriented. It is suitable for managing significant amounts     of            unstructured or semi-structured data because it is built for scalability and agility. MongoDB is utilised as an additional database choice in the system               architecture to store data that doesn't fit well in a relational structure or requires high scalability. Using third-party libraries like Djongo or MongoEngine,       Django connects with MongoDB and offers an ORM-like interface to communicate with the database.
-</p>
+   </p>
 Finally, this system architecture allows for smooth integration of the databases (MySQL and MongoDB), the JSON dataset, and the web server (Django). It makes use of Django's robust ORM capabilities to abstract the challenges of working with databases, giving the web application a reliable and effective data access layer. The exact requirements and features of the data being kept determine whether MySQL or MongoDB should be used, allowing for flexibility and
 
 
