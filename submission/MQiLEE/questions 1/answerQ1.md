@@ -135,6 +135,11 @@ pip install mysqlclient
 pip install djongo
 ```
 
+- In order to use djongo, install pytz library to provides timezone support
+```
+pip install pytz
+```
+
 Terminal:
 
 <img src="./files/images/1a5.png" />
@@ -144,7 +149,7 @@ Terminal:
 - Open the ```settings.py``` file located in the project's directory.
 - Update the ```DATABASES``` setting to configure both MySQL and MongoDB databases in ```analytics``` Django project:
 
-```
+```python
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -175,48 +180,32 @@ DATABASES = {
 
 ```python
 from django.db import models
-from django.contrib.postgres.fields import ArrayField
-
-class Customer(models.Model):
-    username = models.CharField(max_length=100)
-    name = models.CharField(max_length=100)
-    address = models.CharField(max_length=200)
-    birthdate = models.DateField()
-    email = models.EmailField()
 
 class Account(models.Model):
-    account_id = models.IntegerField(unique=True)
+    _id = models.CharField(max_length=255)
+    account_id = models.IntegerField()
     limit = models.IntegerField()
-    products = ArrayField(models.CharField(max_length=100))
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='accounts')
+    products = models.JSONField()
 
-class Tier(models.Model):
-    tier = models.CharField(max_length=100)
-    benefits = ArrayField(models.CharField(max_length=100))
-    active = models.BooleanField(default=True)
-    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='tiers')
+class Customer(models.Model):
+    _id = models.CharField(max_length=255)
+    username = models.CharField(max_length=255)
+    name = models.CharField(max_length=255)
+    address = models.CharField(max_length=255)
+    birthdate = models.BigIntegerField()
+    email = models.EmailField()
+    accounts = models.JSONField()
+    tier_and_details = models.JSONField()
 
 class Transaction(models.Model):
-    account = models.ForeignKey(Account, on_delete=models.CASCADE)
+    _id = models.CharField(max_length=255)
+    account_id = models.IntegerField()
     transaction_count = models.IntegerField()
-    bucket_start_date = models.DateField()
-    bucket_end_date = models.DateField()
-
-class TransactionDetail(models.Model):
-    transaction = models.ForeignKey(Transaction, on_delete=models.CASCADE, related_name='details')
-    date = models.DateField()
-    amount = models.IntegerField()
-    transaction_code = models.CharField(max_length=100)
-    symbol = models.CharField(max_length=100)
-    price = models.DecimalField(max_digits=20, decimal_places=10)
-    total = models.DecimalField(max_digits=20, decimal_places=10)
+    bucket_start_date = models.BigIntegerField()
+    bucket_end_date = models.BigIntegerField()
+    transactions = models.JSONField()
 ```
 
-> In the provided Django model structure, the Tier and TransactionDetail models are created as separate models because they represent related entities with a one-to-many relationship to the Customer and Transaction models, respectively.
-
-> Using separate models for related entities allows organization of data in a more efficient and maintainable way. It defines relationships between different entities and query and manipulate the data more effectively.
-
-> Additionally, creating separate models for related entities follows the principles of database normalization, which helps eliminate data redundancy and improves data integrity and consistency. It also allows for better scalability and flexibility in the future if extension or modification of the data structure is required.
 
 ## 7. Migrate
 
@@ -225,6 +214,7 @@ After creating the models, run the code below to create the models for the migra
 ```
 python manage.py makemigrations
 ```
+
 Terminal :
 
 <img src="./files/images/1a6.png" />
@@ -235,9 +225,153 @@ Run the code below to create tables in the database.
 python manage.py migrate
 ```
 
-Database :
+MySQL Database :
 
 <img src="./files/images/1a7.png" />
+
+```
+python manage.py migrate --database=mongodb
+```
+
+MongoDB Database :
+
+<img src="./files/images/1a8.png" />
+
+## 8. Load Data
+
+To load data into Django models, create a custom management command in Django.
+
+- Create a new file called `load_data.py` in your Django app's `management/commands` directory.
+
+Open the `load_data.py` file and add the following code:
+
+
+```python
+import json
+from django.core.management.base import BaseCommand
+from analytics_app.models import Account, Customer, Transaction
+
+
+class Command(BaseCommand):
+    help = 'Loads JSON data into the database.'
+
+    def handle(self, *args, **options):
+        account_file = 'C:\\Users\\Lee MQ\\Desktop\\MSO AA\\correct_accounts.json'
+        customer_file = 'C:\\Users\\Lee MQ\\Desktop\\MSO AA\\correct_customers.json'
+        transaction_file = 'C:\\Users\\Lee MQ\\Desktop\\MSO AA\\correct_transactions.json'
+
+        # Load Accounts JSON data
+        with open(account_file) as file:
+            account_data = json.load(file)
+
+            for item in account_data:
+                _id = item['_id']['$oid']
+                account_id = int(item['account_id']['$numberInt'])
+                limit = int(item['limit']['$numberInt'])
+                products = item['products']
+                account = Account(_id=_id, account_id=account_id, limit=limit, products=products)
+                account.save()
+                account.save(using='mongodb')
+
+        # Load Customers JSON data
+        with open(customer_file) as file:
+            customer_data = json.load(file)
+
+            for item in customer_data:
+                _id = item['_id']['$oid']
+                username = item['username']
+                name = item['name']
+                address = item['address']
+                birthdate = int(item['birthdate']['$date']['$numberLong'])
+                email = item['email']
+                accounts = [int(account['$numberInt']) for account in item['accounts']]
+                tier_and_details = item['tier_and_details']
+                customer = Customer(_id=_id, username=username, name=name, address=address, birthdate=birthdate, email=email, accounts=accounts, tier_and_details=tier_and_details)
+                customer.save()
+                customer.save(using='mongodb')
+
+        # Load Transactions JSON data
+        with open(transaction_file) as file:
+            transaction_data = json.load(file)
+
+            for item in transaction_data:
+                _id = item['_id']['$oid']
+                account_id = int(item['account_id']['$numberInt'])
+                transaction_count = int(item['transaction_count']['$numberInt'])
+                bucket_start_date = int(item['bucket_start_date']['$date']['$numberLong'])
+                bucket_end_date = int(item['bucket_end_date']['$date']['$numberLong'])
+                transactions = item['transactions']
+                transaction = Transaction(_id=_id, account_id=account_id, transaction_count=transaction_count, bucket_start_date=bucket_start_date, bucket_end_date=bucket_end_date, transactions=transactions)
+                transaction.save()
+                transaction.save(using='mongodb')
+
+        self.stdout.write(self.style.SUCCESS('Data loaded successfully.'))
+```
+
+- To use the load_data command, open the terminal or command prompt and navigate to the Django project directory. Run the following command to load the data:
+
+```
+python manage.py load_data
+```
+
+Terminal :
+
+<img src="./files/images/1a9.png" />
+
+MySQL Database :
+
+<img src="./files/images/1a10.png" />
+
+MongoDB Database :
+
+<img src="./files/images/1a11.png" />
+
+
+## 9. Retrieve Data
+
+To retrieve data into Django models, create a custom management command in Django.
+
+- Create a new file called `retrieve_data.py` in your Django app's `management/commands` directory.
+
+Open the `retrieve_data.py` file and add the following code:
+
+
+```python
+from django.core.management.base import BaseCommand
+from analytics_app.models import Account
+
+class Command(BaseCommand):
+    help = 'Retrieve data from MySQL and MongoDB databases.'
+
+    def handle(self, *args, **options):
+        # Retrieve data from MySQL database with a filter
+        mysql_accounts = Account.objects.using('default').filter(limit__gt=1000)
+
+        # Print MySQL data
+        print("MySQL Data:")
+        for account in mysql_accounts:
+            print(f"Account ID: {account.account_id}, Limit: {account.limit}")
+
+        # Retrieve data from MongoDB database with a filter
+        mongodb_accounts = Account.objects.using('mongodb').filter(limit__gt=1000)
+
+        # Print MongoDB data
+        print("MongoDB Data:")
+        for account in mongodb_accounts:
+            print(f"Account ID: {account.account_id}, Limit: {account.limit}")
+```
+
+> the filter() method is used with the limit__gt=1000 filter condition to retrieve accounts with a limit greater than 1000 from both MySQL and MongoDB databases.
+
+- To use the retrieve command, open the terminal or command prompt and navigate to the Django project directory. Run the following command to load the data:
+
+```
+python manage.py retrieve_data
+```
+
+Terminal :
+
+<img src="./files/images/1a12.png" />
 
 
 <hr />
