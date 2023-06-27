@@ -14,10 +14,43 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Companies
 
 ## Question 3 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+#### Step 1: Define Django Model (For User)
+
+Since in this part focuses in the authentication of users in Django project, a user model should be define in Django. In Django, there is a built-in framework specifically for authentication. By using this built-in framework, it helps to ease the processes of making models and some functionalities for user authentication management as it has already pre-built. The framework used in `django.contrib.auth.models'. Below is the code that shoul be written in models.py
+
+![model]()
+ 
+#### Step 2: Create Registration Form for Users
+
+This can be done by using the Django forms.  Since I had already used the built-in framework for authentication of users, the form will collect the information from the users such as username, email and password by default. As the form is submitted, Django will firstly validate the submitted data then, create a new user based on the user type that has been declared in models.py. Note that, all of these users information will be stored into MySQL database.
+
+- Create forms.py under the folder 'app' in the Django project.
+
+![model]()
+
+- Update the views.py as we wanted to add the registration view.
+
+  ![regview]()
+  
+- Create a folder named as 'template' under folder 'app' to grouped all the html files that being used in this Django project. Then create a html file for registration template.
+
+- ![reghtml]()
+
+#### Step 
+#### Step 
+#### Step 
+#### Step 
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+#### Step 1:
+
+
+#### Step 
+#### Step 
+#### Step 
+#### Step 
+#### Step 
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
