@@ -69,7 +69,41 @@ Don't forget to hit the :star: if you like this repo.
      <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/q3(12).png" /></div>
      
      <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/q3(13).png" /></div>
-14. 
+14. After that, configure the url path in url.py.
+
+    <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/q3(14).png" /></div>
+15. Once everything has been done, open a new terminal and run the command below.    
+
+    ```
+      python manage.py runserver
+      ```
+
+### Registration page
+
+   <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/q3(15).png" /></div>
+
+
+   Database after registering new users:
+   
+   <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/q3(16).png" /></div>
+
+### Login page
+
+   <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/q3(17).png" /></div>
+
+
+   Customer view after logging in:
+   
+   <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/q3(18).png" /></div>
+
+   Techniacal worker view after logging in:
+   
+   <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/q3(19).png" /></div>
+
+   Senior management view after logging in:
+   
+   <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question3/files/images/q3(20).png" /></div>
+     
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
