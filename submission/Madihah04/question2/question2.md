@@ -64,12 +64,12 @@ There are 2 ways to to import dataset.
 
 <img src="https://github.com/Madihah04/SECP3843/blob/dacf307b9b253e0bb7f10907c985d5f45b4f5751/submission/Madihah04/question2/files/images/Q2b.png">
 
+1. Run `mongosh "mongodb+srv://madihahzabri:admin@cluster0.xgsbper.mongodb.net/"` to make connection to MongoDB Atlas
+2. Select the intended database `use
 
 ### Create Query
 
-1. Run `mongosh "mongodb+srv://madihahzabri:admin@cluster0.xgsbper.mongodb.net/"` to make connection to MongoDB Atlas
-2. Select the intended database `use 
-3. Run this query to insert data:
+Run this query to insert data:
 ```python
 db.story.insertOne({
     "name": "Cakna Madani",
@@ -106,44 +106,40 @@ db.story.insertOne({
 ...   ]
 ... })
 ```
-
-4. Check the newly created ouput
+Ouput:
 <img src="https://github.com/Madihah04/SECP3843/blob/dacf307b9b253e0bb7f10907c985d5f45b4f5751/submission/Madihah04/question2/files/images/Q2b(1).png">
 
 ### Read Query
 
-1. Run this code on command prompt 
+Run this code on command prompt 
 ```python
 db.story.findOne({ "_id": ObjectId("4ba267dc238d3ba3ca000001") })
 ```
 
-3. Check the output
-<img src="https://github.com/Madihah04/SECP3843/blob/dacf307b9b253e0bb7f10907c985d5f45b4f5751/submission/Madihah04/question2/files/images/Q2b(2).png">
-
 ### Update Query
 
-1. Run this to update data in one column
+Run this to update data in one column
 
 ```python 
 db.story.updateOne({ "_id": ObjectId("4ba267dc238d3ba3ca000001") }, { $set: { "comments": 200 } })
 ```
-<img src="https://github.com/Madihah04/SECP3843/blob/dacf307b9b253e0bb7f10907c985d5f45b4f5751/submission/Madihah04/question2/files/images/Q2b(3).png">
 
-2. Run this to update data in mulitple column
+Run this to update data in mulitple column
 
 ```python 
 db.story.updateOne({ "_id": ObjectId("4ba267dc238d3ba3ca000001") }, { $set: { "topic.name": "Berita Terkini Popular", "topic.short_name": "berita" } })
 ```
-<img src="https://github.com/Madihah04/SECP3843/blob/dacf307b9b253e0bb7f10907c985d5f45b4f5751/submission/Madihah04/question2/files/images/Q2b(4).png">
+Ouput:
+<img src="https://github.com/Madihah04/SECP3843/blob/dacf307b9b253e0bb7f10907c985d5f45b4f5751/submission/Madihah04/question2/files/images/Q2b(2).png">
 
 ### Delete Query
 
-1. To delete data:
+To delete data:
 
 ```python
   db.story.deleteOne({ "_id": ObjectId("4ba267dc238d3ba3ca000001") })
 ```
-<img src="https://github.com/Madihah04/SECP3843/blob/dacf307b9b253e0bb7f10907c985d5f45b4f5751/submission/Madihah04/question2/files/images/Q2b(5).png">
+<img src="https://github.com/Madihah04/SECP3843/blob/dacf307b9b253e0bb7f10907c985d5f45b4f5751/submission/Madihah04/question2/files/images/Q2b(3).png">
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
