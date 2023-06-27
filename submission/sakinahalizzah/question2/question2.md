@@ -27,6 +27,7 @@ To import data from a JSON file into MongoDB, simply follow the step-by-step pro
    iii. [MongoDB Command Line Database Tools](https://www.mongodb.com/try/download/database-tools)
 
 2. **Prepare the JSON file**
+   
    Download the [Analytics dataset](https://github.com/drshahizan/dataset/tree/main/mongodb/02-analytics), it's important and ensure that the JSON file is formatted correctly for MongoDB documents. Represent each document as a JSON object within an array or newline-delimited format. Enclose each object within square brackets and separate them with commas.
 
 3. **Start the MongoDB Server**
@@ -35,6 +36,7 @@ To import data from a JSON file into MongoDB, simply follow the step-by-step pro
    <img src="https://github.com/drshahizan/SECP3843/assets/99240177/ac9bd905-ed02-402c-ba15-f5b71a91fef9" />
 
 4. **Access the MongoDB Shell**
+   
      To access the MongoDB shell, run the following command.
    
     ```
@@ -43,7 +45,8 @@ To import data from a JSON file into MongoDB, simply follow the step-by-step pro
 
     <img src="https://github.com/drshahizan/SECP3843/assets/99240177/4a5d28de-52c7-4ccc-b30f-a3ca4134d950" />
 
-6. **Select the Target Database**
+5. **Select the Target Database**
+   
    To select the desired database in the MongoDB shell, utilize this command:
 
     ```
@@ -52,8 +55,9 @@ To import data from a JSON file into MongoDB, simply follow the step-by-step pro
 
    <img src="https://github.com/drshahizan/SECP3843/assets/99240177/a51c5edf-b42b-44f4-8170-53818f00fd1b" />
 
-7. **Choose the Collection**
-Specify the collection where you wish to import the JSON data. MongoDB will automatically generate the collection if it doesn't already exist. To select the collection, use the following command:
+6. **Choose the Collection**
+    
+   Specify the collection where you wish to import the JSON data. MongoDB will automatically generate the collection if it doesn't already exist. To select the collection, use the following command:
    ```
    db.accounts
    db.customers
@@ -61,38 +65,75 @@ Specify the collection where you wish to import the JSON data. MongoDB will auto
     ```
      <img src="https://github.com/drshahizan/SECP3843/assets/99240177/294814c4-fa20-40f1-bb35-086096f4c6df" />
 
-8. **Execute the Import Command**
+7. **Execute the Import Command**
    
-   To import data from a JSON file into a chosen collection, utilize the mongoimport command as follows.
-   ```
-   mongoimport --uri="<connection_string>" --collection=<collection_name> --file="<file_path>" --jsonArray
-   ```
-   where,
-   `<connection_string>`: The MongoDB connection string
+      To import data from a JSON file into a chosen collection, utilize the mongoimport command as follows.
+      ```
+      mongoimport --uri="<connection_string>" --collection=<collection_name> --file="<file_path>" --jsonArray
+      ```
+      where,
+      `<connection_string>`: The MongoDB connection string
+      
+      `<collection_name>`: The collection name of imported JSON data
+      
+      `<file_path>`: JSON file path directory
+      
+      Replace with your data.
+      ```
+      mongoimport --uri="mongodb+srv://sakinahalizzah:Sakinah1234@clustersakinah.scfkjmg.mongodb.net/" --collection=accounts --file="C:\Users\User\OneDrive\Desktop\AA SECP3843\accounts.json" 
    
-   `<collection_name>`: The collection name of imported JSON data
+      mongoimport --uri="mongodb+srv://sakinahalizzah:Sakinah1234@clustersakinah.scfkjmg.mongodb.net/" --collection=customers --file="C:\Users\User\OneDrive\Desktop\AA SECP3843\customers.json" 
    
-   `<file_path>`: JSON file path directory
+      mongoimport --uri="mongodb+srv://sakinahalizzah:Sakinah1234@clustersakinah.scfkjmg.mongodb.net/" --collection=transactions --file="C:\Users\User\OneDrive\Desktop\AA SECP3843\transactions.json" 
+      ```
+      <img src="https://github.com/drshahizan/SECP3843/assets/99240177/8a27b4a1-2ae1-4f62-af4a-4dc9e6637fe5" />
    
-   Replace with your data.
-   ```
-   mongoimport --uri="mongodb+srv://sakinahalizzah:Sakinah1234@clustersakinah.scfkjmg.mongodb.net/" --collection=accounts --file="C:\Users\User\OneDrive\Desktop\AA SECP3843\accounts.json" 
+      Successfully import to MongoDB Compass
+      
+      <img src="https://github.com/drshahizan/SECP3843/assets/99240177/caa90567-bf62-4a81-9443-8db8ee49a8ce" />
 
-   mongoimport --uri="mongodb+srv://sakinahalizzah:Sakinah1234@clustersakinah.scfkjmg.mongodb.net/" --collection=customers --file="C:\Users\User\OneDrive\Desktop\AA SECP3843\customers.json" 
+      Successfully find the collection at command
 
-   mongoimport --uri="mongodb+srv://sakinahalizzah:Sakinah1234@clustersakinah.scfkjmg.mongodb.net/" --collection=transactions --file="C:\Users\User\OneDrive\Desktop\AA SECP3843\transactions.json" 
-   ```
-   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/8a27b4a1-2ae1-4f62-af4a-4dc9e6637fe5" />
+      <img src="https://github.com/drshahizan/SECP3843/assets/99240177/63b65816-a74a-472b-a878-c4a2bd4b3570" />
 
-   Successfully import to MongoDB Compass
-   
-   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/caa90567-bf62-4a81-9443-8db8ee49a8ce" />
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+Here are five MongoDB queries that showcase how to perform Create, Read, Update, and Delete (CRUD) operations on the documents stored in the database.
 
+1. Create (Insert) Query: `insertOne()` function
 
+```
+db.customers.insertOne({
+ "username": "sakinahalizzah",
+ "name": "Sakinah Al Izzah",
+ "address": "1 Jalan Tulip 10",
+ "birthdate": {"$date": 54439275000},
+ "email": "sakinahalizzah@gmail.com",
+ "accounts": [
+   470650,
+   443178
+ ],
+});
+```
+
+   To create a new document in the customers collection in MongoDB Shell, simply run the query. The id for each new document will be automatically generated.
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/506ebb0e-9336-4c11-a061-5cc8e1664018" />
+
+   The created document is found.
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/0fc47887-07c4-4c2b-8cfc-015e9a9ba294" />
+
+2. Read (Find) Query:`find()` function
+
+   ```
+   db.customers.find({ accounts: 470650 });
+   ```
+   
+3. Update Queries 1:
+   
+4. Update Queries 2:
+   
+5. Delete Query:
 
 
 ## Contribution 🛠️
