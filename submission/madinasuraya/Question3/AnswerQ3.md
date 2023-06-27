@@ -136,7 +136,7 @@ Next, choose the replication technique for each database. MySQL and MongoDB will
       ```
   3. Uncomment the two lines as follows
       <p align='center'>
-      <img width="368" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/10efd022-7823-467d-ad8f-490dbf0d6deb">
+         <img width="368" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/25be0bee-b336-4975-b0b3-95c5acac7b0f">
       </p>
   4. Create new user for slave
 
