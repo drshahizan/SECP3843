@@ -448,6 +448,27 @@ binlog_do_db=analytics_q3
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image15.png)
 
+**Step 5**
+
+- A notepad will open
+
+- Navigate further down and look  for `log_error` parameter
+
+- Paste the server-id code from phpMyAdmin
+
+- Change the `max_allowed-packet` from `1M` to `16M`
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image16.png)
+
+
+
+
+
+
+
+
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
