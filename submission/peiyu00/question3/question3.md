@@ -137,8 +137,57 @@ The URL for the dashboard view after login is defined as below.
 
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+It is common for web developers to work with two different databases like MySQL and MongoDB due to its efficiency and effectiveness in managing the data. However, this causes the challenge of data replication and synchronization. 
+
+There will be several ways to ensure the data consistency between both databases including exploring database-specific replication techniques or leveraging external tools that facilitate real time updates and seamless interaction between the databases. Below shows the steps to overcome the challenge. 
+
+### Step 1: Identify the Replication Strategy
+First, we need to determine the replication strategy that aligns with our requirements and the capabilities of the chosen databases. In this case, I have chosen a dual write technique to ensure that any changes made in one database are replicated and synchronized in the other database, maintaining data consistency across both systems.
+
+### Step 2: Configure the database
+The MySQL and MongoDB connection have been declared in setting.py. 
+<img  src="./files/images/db.png"></img>
+
+### Step 3: Set up connections to both MySQL and MongoDB databases
+This step is done by importing necessary libraries like MongoClient to make connections with MySQL and MongoDB.
+```
+from django.db import connections
+from pymongo import MongoClient
+
+# Establish connections to MySQL and MongoDB
+mysql_connection = connections['default']
+mongodb_client = MongoClient('mongodb+srv://cluster0.cpy5tdw.mongodb.net', username='peiyu', password='1')
+```
+
+### Step 4: Define the dual_write function 
+The dual_write function will implement the logic of synchronizing both databases during insert, update and delete. However, I will show the dual write operation for insertion in this example. 
+<img  src="./files/images/dual.png"></img>
+
+### Step 5: Define view
+In this step, create a view in the Django application that triggers the dual_write function to test it.
+<img  src="./files/images/test.png"></img>
+> The above code will pass a tweet document to dual_write function in order to test the insert operation. 
+
+
+### Step 6: Test and validate the dual write process
+Lastly, open the command prompt and execute ```py manage.py runserver```.
+
+Output: 
+
+<img  src="./files/images/success.png"></img>
+> It can be noted that the “Dual write successful!” has been printed out and this indicated the success of insertion.
+
+### Step 7: Check the data in MySQL and MongoDB
+We can find the newly inserted data in both MySQL and MongoDB.
+- MySQL
+  <img  src="./files/images/sql.png"></img>
+  
+- MongoDB
+  <p align="center">
+    <img src="./files/images/mongo.png"></img>
+  </p>
+  
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
