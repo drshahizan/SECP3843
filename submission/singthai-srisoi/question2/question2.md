@@ -76,7 +76,72 @@ Don't forget to hit the :star: if you like this repo.
 ![image-3.png](ss/ss5.png)
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Question 2(b)
+
+We are using \_MONGOSH for the query. First we need to use the database first.
+```javascript
+use mflix
+```
+![image-3.png](ss/ss23.png)
+
+
+i. Create - 1 query:
+To create a new document in the collection, you can use the `insertOne()` method. Here's an example query to create a new document in the "Users" collection:
+```javascript
+db.Users.insertOne({
+  "name": "Sansa Stark",
+  "email": "sansas@winterfell.com",
+  "password": "$2b$12$Cv4zcmn70fW9X3GVoUqwm.w2On2qkSWQvkVuALrLMxPlKGzrZimX."
+});
+```
+This query creates a new user document in the "Users" collection with the provided data.
+
+![image.png](ss/ss21.png)
+
+ii. Read - 1 query:
+To read documents from a collection, you can use the `find()` method. Here's an example query to retrieve all documents from the "Movies" collection:
+```javascript
+db.Movies.findOne({ title: "Blacksmith Scene" });
+```
+
+![image-4.png](ss/ss24.png)
+
+This query retrieves all documents from the "Movies" collection.
+
+iii. Update - 2 queries:
+To update documents in a collection, you can use the `updateOne()` method. Here are two example queries for updating documents:
+
+Example 1: Update a movie's title:
+```javascript
+db.Movies.updateOne(
+    { _id: ObjectId("573a1390f29313caabcd4135") }, 
+    { $set: { title: "Yellowsmith Scene" } })
+```
+This query updates the title of a movie document with the provided ID.
+
+![image-5.png](ss/ss25.png)
+
+Example 2: Add a new comment to a movie:
+```javascript
+db.mflix.Movies.updateOne(
+   { _id: ObjectId("573a1390f29313caabcd4135") },
+   { $push: { comments: { name: "John Doe", text: "This movie is great!" } } })
+```
+
+![image-6.png](ss/ss26.png)
+
+
+This query adds a new comment to the "comments" array field of a movie document.
+
+iv. Delete - 1 query:
+To delete a document from a collection, you can use the `deleteOne()` method. Here's an example query to delete a document from the "Theaters" collection:
+```javascript
+db.mflix.Movies.deleteOne({ _id: ObjectId("573a1390f29313caabcd4135") })
+```
+
+![image-7.png](ss/ss27.png)
+
+This query deletes a theater document with the provided ID from the "Movies" collection.
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
