@@ -5,8 +5,7 @@ class SuccessMessageMixin:
     """
     Add a success message on successful form submission.
     """
-
-    success_message = ""
+    success_message = ''
 
     def form_valid(self, form):
         response = super().form_valid(form)

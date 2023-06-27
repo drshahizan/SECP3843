@@ -1,18 +1,16 @@
 # This file is distributed under the same license as the Django package.
 #
 # Translators:
-# Batist D 🐍 <baptiste+transifex@darthenay.fr>, 2012-2013
-# Batist D 🐍 <baptiste+transifex@darthenay.fr>, 2013-2019
-# Matthieu Desplantes <matmututu@gmail.com>, 2021
-# Meiyer <interdist+translations@gmail.com>, 2022
-# Robin van der Vliet <info@robinvandervliet.com>, 2019
+# Baptiste Darthenay <baptiste+transifex@darthenay.fr>, 2012-2013
+# Baptiste Darthenay <baptiste+transifex@darthenay.fr>, 2013-2019
+# Robin van der Vliet <info@robinvandervliet.nl>, 2019
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-21 10:22+0200\n"
-"PO-Revision-Date: 2022-04-25 08:09+0000\n"
-"Last-Translator: Meiyer <interdist+translations@gmail.com>, 2022\n"
+"POT-Creation-Date: 2017-09-24 13:46+0200\n"
+"PO-Revision-Date: 2019-02-13 19:03+0000\n"
+"Last-Translator: Baptiste Darthenay <baptiste+transifex@darthenay.fr>\n"
 "Language-Team: Esperanto (http://www.transifex.com/django/django/language/"
 "eo/)\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +30,7 @@ msgstr "Gravaj datoj"
 
 #, python-format
 msgid "%(name)s object with primary key %(key)r does not exist."
-msgstr "Objekto %(name)skun ĉefŝlosilo %(key)r ne ekzistas."
+msgstr "%(name)s objekto kun ĉefŝlosilo %(key)r ne ekzistas."
 
 msgid "Password changed successfully."
 msgstr "Pasvorto suksese ŝanĝita."
@@ -56,8 +54,8 @@ msgstr "Neniu pasvorto agordita."
 msgid "Invalid password format or unknown hashing algorithm."
 msgstr "Nevalida pasvorta formato, aŭ nekonata haketa algoritmo."
 
-msgid "The two password fields didn’t match."
-msgstr "La du pasvortaj kampoj ne kongruas."
+msgid "The two password fields didn't match."
+msgstr "La du pasvotaj kampoj ne kongruas."
 
 msgid "Password"
 msgstr "Pasvorto"
@@ -69,12 +67,12 @@ msgid "Enter the same password as before, for verification."
 msgstr "Entajpu la saman pasvorton kiel supre, por konfirmo."
 
 msgid ""
-"Raw passwords are not stored, so there is no way to see this user’s "
+"Raw passwords are not stored, so there is no way to see this user's "
 "password, but you can change the password using <a href=\"{}\">this form</a>."
 msgstr ""
-"La pasvortoj ne estas konservitaj en klara formo, do ne eblas vidi la "
-"pasvorton de ĉi tiu uzanto, sed vi povas ŝanĝi la pasvorton per <a "
-"href=\"{}\">ĉi tiu formularo</a>."
+"Krudaj pasvortoj ne estas entenitaj, do ne eblas vidi la pasvorton de tiu "
+"uzanto, sed vi povas ŝanĝi la pasvorton uzante <a href=\"{}\">tiun "
+"formalaron</a>."
 
 #, python-format
 msgid ""
@@ -85,7 +83,7 @@ msgstr ""
 "povas esti usklecodistingaj."
 
 msgid "This account is inactive."
-msgstr "Ĉi tiu konto ne estas aktiva."
+msgstr "Ĉi-tiu konto ne estas aktiva."
 
 msgid "Email"
 msgstr "Retpoŝto"
@@ -125,10 +123,10 @@ msgid "version"
 msgstr "versio"
 
 msgid "memory cost"
-msgstr "memor-kosto"
+msgstr "memoria kosto"
 
 msgid "time cost"
-msgstr "tempo-kosto"
+msgstr "tempa kosto"
 
 msgid "parallelism"
 msgstr "paralelismo"
@@ -138,9 +136,6 @@ msgstr "laborfaktoro"
 
 msgid "checksum"
 msgstr "kontrolsumo"
-
-msgid "block size"
-msgstr "blok-grandeco"
 
 msgid "name"
 msgstr "nomo"
@@ -170,14 +165,14 @@ msgid ""
 "Designates that this user has all permissions without explicitly assigning "
 "them."
 msgstr ""
-"Indikas ke tiu ĉi uzanto havas ĉiujn permesojn, sen eksplicite atribui ilin."
+"Indikas ke tiu uzanto havas ĉiujn permesojn, sen eksplicite asigni ilin."
 
 msgid ""
 "The groups this user belongs to. A user will get all permissions granted to "
 "each of their groups."
 msgstr ""
-"La grupoj al kiuj tiu ĉi uzanto apartenas. Uzanto akiros ĉiujn permesojn "
-"atribuitajn al ĉiu el tiuj grupoj."
+"La grupoj en kiu tiu uzanto apartenas. Uzanto akiros ĉiuj permesoj donita al "
+"ĉiuj de iliaj grupoj."
 
 msgid "user permissions"
 msgstr "uzantaj permesoj"
@@ -216,11 +211,11 @@ msgid ""
 "Designates whether this user should be treated as active. Unselect this "
 "instead of deleting accounts."
 msgstr ""
-"Indikas ĉu la uzanto devus esti traktita kiel aktiva. Malmarku tion ĉi "
+"Indikas ĉu tiu uzanto devus esti traktita kiel aktiva. Malselekti tion ĉi "
 "anstataŭ forigi kontojn."
 
 msgid "date joined"
-msgstr "dato de aliĝo"
+msgstr "dato aliĝita"
 
 msgid "user"
 msgstr "uzanto"
@@ -252,20 +247,21 @@ msgstr[1] "Via pasvorto devas enhavi almenaŭ %(min_length)d signojn."
 msgid "The password is too similar to the %(verbose_name)s."
 msgstr "La pasvorto estas tro simila al la %(verbose_name)s."
 
-msgid "Your password can’t be too similar to your other personal information."
-msgstr "Via pasvorto ne povas esti tro simila al viaj aliaj personaj informoj."
+msgid "Your password can't be too similar to your other personal information."
+msgstr ""
+"Via pasvorto ne povas esti tro similaj al viaj aliaj personaj informoj."
 
 msgid "This password is too common."
 msgstr "Tiu pasvorto estas tro kutima."
 
-msgid "Your password can’t be a commonly used password."
-msgstr "Via pasvorto ne povas esti ofte uzata pasvorto."
+msgid "Your password can't be a commonly used password."
+msgstr "Via pasvorto ne povas esti kutime uzata pasvorto."
 
 msgid "This password is entirely numeric."
-msgstr "Tiu ĉi pasvorto konsistas nur el ciferoj."
+msgstr "Tiu pasvorto estas tute cefera."
 
-msgid "Your password can’t be entirely numeric."
-msgstr "Via pasvorto ne povas konsisti nur el ciferoj."
+msgid "Your password can't be entirely numeric."
+msgstr "Via pasvorto ne povas esti tute cifera."
 
 #, python-format
 msgid "Password reset on %(site_name)s"
@@ -275,33 +271,33 @@ msgid ""
 "Enter a valid username. This value may contain only English letters, "
 "numbers, and @/./+/-/_ characters."
 msgstr ""
-"Enigu salutnomon en ĝusta formo. Ĉi tiu valoro povas enhavi nur "
-"sensupersignajn literojn, ciferojn kaj la signojn @/./+/-/_."
+"Enigu validan uzantnomon. Ĉi tiu valoro povas enhavi nur sensupersignajn "
+"literojn, ciferojn kaj la signojn @/./+/-/_."
 
 msgid ""
 "Enter a valid username. This value may contain only letters, numbers, and "
 "@/./+/-/_ characters."
 msgstr ""
-"Enigu salutnomon en ĝusta formo. Ĉi tiu valoro povas enhavi nur literojn, "
-"ciferojn kaj la signojn @/./+/-/_."
+"Enigu validan uzantnomon. Ĉi tiu valoro povas enhavi nur literojn, ciferojn "
+"kaj la signojn @/./+/-/_."
 
 msgid "Logged out"
 msgstr "Adiaŭita"
 
 msgid "Password reset"
-msgstr "Restarigo de pasvorto"
+msgstr "Pasvorta rekomencigo"
 
 msgid "Password reset sent"
-msgstr "Restarigo de pasvorto sendita"
+msgstr "Pasvorta rekomencigo sendita"
 
 msgid "Enter new password"
 msgstr "Enigu novan pasvorton"
 
 msgid "Password reset unsuccessful"
-msgstr "Restarigo de pasvorto malsukcesa"
+msgstr "Pasvorta rekomencigo malsuksesis"
 
 msgid "Password reset complete"
-msgstr "Restarigo de pasvorto plenumita"
+msgstr "Pasvorta rekomencigo plenumita"
 
 msgid "Password change"
 msgstr "Pasvorta ŝanĝo"

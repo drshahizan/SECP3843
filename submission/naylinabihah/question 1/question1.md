@@ -17,9 +17,9 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 1 (a)
 This portal is going to implement the usage of Django, JSON, MySQL and MongoDB. To built the best portal in terms of seamless integration between these four things in five servers at most, there are many ways to do so. These are the ways that I choose to use as an IT consultant in this case.
 
-First, since using Django web framework, we should install Django framework in all 5 servers to ensure that everything is uniformed and can work properly. 'pip' can be used to install Django project in the servers as it act as a package installer for Python specifically. All servers should have the same version of Django and make sure that the version is stable and compatible with the devices and operating system. The five servers are Web Server/Hosting for the portal after publishing it live, application server is used when doing the project locally, two database server, one for each MySQL and MongoDB.....
+First, since using Django web framework, we should install Django framework in all 5 servers to ensure that everything is uniformed and can work properly. 'pip' can be used to install Django project in the servers as it act as a package installer for Python specifically. All servers should have the same version of Django and make sure that the version is stable and compatible with the devices and operating system. The five servers are Web Server/Hosting for the portal after publishing it live, application server is used when doing the project locally, and two database server, one for each MySQL and MongoDB.
 
-After installing it, build a Django project in one of five the servers that we had using the terminal (command prompt). Build the project in application server as it will act as a main server for this project
+After installing it, build a Django project in one of four the servers that we had using the terminal (command prompt). Build the project in application server as it will act as a main server for this project
 
 ```python
 !pip install django
@@ -44,7 +44,12 @@ After tables were created in the database, now the JSON file can be inserted or 
 All the servers should be separated with different tasks and workload since it holds their significant use that are unique from each other. Application server will be used as the placed where the main project is done and data processing, Web server can be used as the platform for authentication for all users, the 2 Database servers (one for MySQL and the other one is for MongoDB) will be used to manage the data retrieval and storage purposes. 
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+#### User Interface
+#### Web Server
+#### Proxy Server
+#### Application Server
+#### Database Servers (MySQL and MongoDB)
 
 
 

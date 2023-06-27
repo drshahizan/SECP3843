@@ -14,7 +14,6 @@ class BaseEmailBackend:
            # do something with connection
            pass
     """
-
     def __init__(self, fail_silently=False, **kwargs):
         self.fail_silently = fail_silently
 
@@ -57,6 +56,4 @@ class BaseEmailBackend:
         Send one or more EmailMessage objects and return the number of email
         messages sent.
         """
-        raise NotImplementedError(
-            "subclasses of BaseEmailBackend must override send_messages() method"
-        )
+        raise NotImplementedError('subclasses of BaseEmailBackend must override send_messages() method')

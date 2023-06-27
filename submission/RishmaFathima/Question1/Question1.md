@@ -15,47 +15,54 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Airbnb Listings Dataset](https://github.com/drshahizan/dataset/tree/c8e9f4a7cbdb0c1b78ca2c73915ff56ceeb50e70/mongodb/05-airbnb)
 
 ## Question 1 (a)
-   1. ``Set up the Django project``:
+   1. ``Set up the Django project with virtual environment``:
       </br>
-        - The first step is to install django in my desktop. In order to install django, I use the command  ``pip install Django`` in command prompt.
-        - Then, I created a new project b: Use the django-admin startproject command to create a new Django project from a folder I have created called ``AA_Question1``           by using the command called ``django-admin startproject AA_Question1``.
-        - After creating the project, I created the Django app by the command ``python manage.py startapp app``.
+        - The first step is to install django in my desktop. In order to install django, I use the command  ``pip install django`` in command prompt.
           
-  2. ``Define Django models``:
+          <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/12219ef33b7e27340551d65a344b034a560bd2e4/submission/RishmaFathima/Question1/files/images/1.1.1.1.png">
+          
+        - Then, I created a new project b: Use the django-admin startproject command to create a new Django project from a folder I have created called ``AA_Question1``           by using the command called ``django-admin startproject AA_Question1``.
+          
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/12219ef33b7e27340551d65a344b034a560bd2e4/submission/RishmaFathima/Question1/files/images/1.1.1.2.png">
+           
+        - After creating the project, I created the Django app by the command ``python manage.py startapp app``.
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/12219ef33b7e27340551d65a344b034a560bd2e4/submission/RishmaFathima/Question1/files/images/1.1.1.3.png">
+           
+        - Then, create a virtual environment for the project.
+          
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/871e6e313e09d8f507b32aaf9d54173434080a29/submission/RishmaFathima/Question1/files/images/new%201.1.1.4.png">
+          
+  2. ``Define Django models in models.py``:
         - JSON file is downloaded from the Github.
         - Django models were created based on the attributes from the downloaded JSON file which contain the dataset of ``Airbnb Listing Dataset``.
+        - From the app folder created, in the ``models.py`` file, the model of the prject would be defined.
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/c18d8db59264504dc5f34395291dfe90abb48c90/submission/RishmaFathima/Question1/files/images/1.1.2.png">
+          
+   
       
 
-  4. Configure databases:
+  3. ``Configure the settings of the project``:
 
-        Configure MySQL database:
-            Install MySQL: Install MySQL on your system if it's not already installed.
-            Create a MySQL database: Create a new MySQL database that will be used to store data from the JSON dataset.
-            Configure Django to use MySQL: In the Django project's settings.py file, update the DATABASES dictionary to provide the necessary connection details for the             MySQL database.
+        - Update the ``settings.py`` file in the project folder to define the database setting for Mysql and MongoDB
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/c18d8db59264504dc5f34395291dfe90abb48c90/submission/RishmaFathima/Question1/files/images/1.1.3.1.png">
+           
+        - Install django with the command ``pip install django`` to work as database connectors
+           
+        - Install mysqlclient with the command ``pip install mysqlclient`` to work as database connectors
+          <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/c18d8db59264504dc5f34395291dfe90abb48c90/submission/RishmaFathima/Question1/files/images/1.1.3.2.png">
+         
+           
+  4. ``Migration of database and load the JSON file``:
 
-  5. Configure MongoDB database:
-            Install MongoDB: Install MongoDB on your system if it's not already installed.
-            Create a MongoDB database: Create a new MongoDB database that will be used to store data from the JSON dataset.
-            Configure Django to use MongoDB: Install the djongo package using pip and follow the package documentation to configure Django's settings file (settings.py)             to connect to the MongoDB database.
+        - Add the command ``python manage.py makemigrations`` to migrate the database from the ``models.py``
+        - Then add the command ``python manage.py migrate`` to make th emigrations work with Mysql and MongoDB
+        - Finally to get the JSON data from the dataset and to save it into MogoDB server, I need to create a script in Django.
+         
+  5. ``Update and Testing Data``:
 
-  6. Import JSON data:
-        Download the JSON dataset and save it in a location accessible to your Django project.
-        Create a Django management command: Implement a custom Django management command that reads the JSON dataset and imports the data into the MySQL and MongoDB             databases. The command should handle the mapping between the JSON data structure and the Django models.
-
-  7. Store data in MySQL and MongoDB:
-        Within the custom management command, parse the JSON dataset and use the Django ORM to create instances of the defined models.
-        Save the instances in the MySQL database by calling the .save() method.
-        Save the instances in the MongoDB database by using the Django ORM and the djongo package's features for MongoDB integration.
-
-   8. Retrieve data from MySQL and MongoDB:
-        In your Django views or API endpoints, define the logic to retrieve data from both the MySQL and MongoDB databases based on user requests.
-        Use the Django ORM to query the MySQL database and retrieve the desired data.
-        Use the djongo package's features to query the MongoDB database and retrieve the required data.
-
-  9.  Optimize data storage and retrieval:
-        Implement appropriate indexing and caching mechanisms in both the MySQL and MongoDB databases to optimize data retrieval.
-        Monitor and profile the system's performance to identify any bottlenecks or areas for optimization.
-        Consider using database-specific optimizations, such as denormalization or aggregations, to improve query performance.
+        - Update the MOngoDB and Mysql everytime there is changes in dataset
+        - Finally, with testing and monitoring practices, I can ensure the reliability, performance, and stability of your Django application's integration with the               JSON dataset, MySQL, and MongoDB databases
+        
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

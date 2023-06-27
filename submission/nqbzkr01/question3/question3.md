@@ -50,7 +50,7 @@ Don't forget to hit the :star: if you like this repo.
 - <strong>Creating a Django Project</strong>
   - Let's now create the project using `django-admin.py`. In the terminal, run the following command:
     ```
-    $ django-admin.py startproject demoproject
+    $ django-admin.py startproject AA
     ```
   - Next, open the `settings.py` of your project and add the database address and credentials inside the `DATABASES` object.
     ```
@@ -131,7 +131,25 @@ Don't forget to hit the :star: if you like this repo.
     ![Screenshot 2023-06-26 210048](https://github.com/drshahizan/SECP3843/assets/92329710/6084c90c-7aaf-46fb-a768-56249644d999)
   - <strong>urls.py</strong>
     - Modify the `urls.py` in `AA`.
-      ![image](https://github.com/drshahizan/SECP3843/assets/92329710/b2d298c1-8624-4fab-8bda-25cf541122b0)
+    ![image](https://github.com/drshahizan/SECP3843/assets/92329710/b2d298c1-8624-4fab-8bda-25cf541122b0)
+    - Next, open the application in localhost `http://127.0.0.1:8000/`. Type the following command in terminal:
+    ```
+    python manage.py runserver
+    ```
+    - Then, navigate to `http://127.0.0.1:8000/register` to see the registration form.
+    ![image](https://github.com/drshahizan/SECP3843/assets/92329710/caf763ac-62f5-4745-8238-3e74c7221678)
+  - <strong>forms.py</strong>
+    - Create a file inside `accounts` named `forms.py`. By default, the form has username, password, and password confirmation.
+    ![image](https://github.com/drshahizan/SECP3843/assets/92329710/1f69adc7-3db9-4eb3-9d78-89470589ad57)
+  - <strong>views.py</strong>
+    - use `UserRegistrationForm` in `views.py`
+    ![image](https://github.com/drshahizan/SECP3843/assets/92329710/b8e5cc41-d864-4622-99ff-5b77e5db9459)
+    - 
+
+
+
+  
+
 
 
 

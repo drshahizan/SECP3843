@@ -1,11 +1,3 @@
-.dj_map_wrapper {
-    position: relative;
-    float: left;
-}
-html[dir="rtl"] .dj_map_wrapper {
-    float: right;
-}
-
 .switch-type {
     background-repeat: no-repeat;
     cursor: pointer;

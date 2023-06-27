@@ -19,7 +19,7 @@ The answer to the question is divided into the following segments:
 * [Requirements](#-requirements)
 * [Integrating Django with JSON dataset](#️-integrating-django-with-json-dataset)
 
-### Requirements
+## Requirements
 
 As an IT consultant, it is crucial for me to actively participate in overviewing the critical stages and concerns involved in developing a portal that seamlessly integrates various hardware and software applications. Implementing an amount of **5 servers** in this project is possible, whereby the servers are used as:
 
@@ -81,10 +81,246 @@ To mitigate these effects, it is best to re-evaluate the server architecture and
 </table>
 
 
-### Integrating Django with JSON dataset
+## Integrating Django with JSON dataset
+This segment of Question 1. (a) is divided into several parts:
+* [Prerequisites](#-prerequisites)
+* [Setting Up A Django Project](#️-setting-up-a-django-project)
+
+### Prerequisites
+To carry out this segment of the question, it it crucial for to do the following:
+1. Install [Python](https://www.python.org/downloads/)
+2. Install [Visual Studio Code](https://code.visualstudio.com/download)
+<br></br>
+
+### Setting Up A Django Project
+
+**Django Installation** 
+
+1. Create a Django Project Folder. For this project I created a folder named **AA** on my **Desktop**, where it is easily accessible.
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Create%20Project%20Folder.png">
+</p>
+     
+<br>
+
+2. Set up a virtual environment. In your current working directory, this command creates a new virtual environment called ``environment``. 
+```bash
+python -m venv environment
+```
+<br>
+
+3. Activate the virtual environment. When the process is finished, you must additionally activate the virtual environment.
+```bash
+environment\Scripts\activate
+```
+<br>
+   
+4. Install Django.
+```bash
+pip install django
+```
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Django%20Installation.png">
+</p>
+<br>
+
+5. Install necessary packages. Here we are installing  packages that allows integration between our Django App and MongoDB, those packages are **MySQL Client PyMongo** and **Djongo**. Djongo is a smarter approach to database querying. It maps python objects to MongoDB documents. 
+```bash
+pip install django mysqlclient pymongo
+pip install djongo
+```
+Below are the output when running the commands:
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Install%20Django%20MySQLClient%20PyMongo.png">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Install%20Djongo.png">
+</p>
+<br></br>
+
+**Create A Django Project** 
+
+You can now create a project after setting up, activating your virtual environment and installing Django. To start a new Django project, open a new terminal in Visual Studio Code and run the following command. The project is named **Companies** in the code below, but it can be changed to any name you like.
+```bash
+python -m django startproject Companies
+```
+Navigate yourself to the project directory by inputing the command below:
+```bash
+cd Companies
+```
+<br></br>
+
+**Create A Django Application** 
+
+The  ``startapp `` command generates a default folder structure for a Django app. This tutorial uses **CompaniesApp** as the name for the app:
+```bash
+python manage.py startapp CompaniesApp
+```
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Create%20Django%20Project.png">
+</p>
+<br></br>
+
+**Configure Database Connection** 
+
+Set up the MySQL and MongoDB connections. Alter the code for the databases in the Django project's'settings.py' file as shown below.
+```bash
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db_companies',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    },
+    'mongodb': {
+        'ENGINE': 'djongo',
+        'NAME': 'AA',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'localhost',
+            'port': 27017,
+            'username': 'qaisara',
+            'password': '8301',
+            'authSource': 'admin',
+            'authMechanism': 'SCRAM-SHA-1',
+        }
+    }
+}
+```
+<br></br>
+
+**Create MySQL and MongoDB Models** 
+
+1. Defining  models for MySQL. In the **models.py** file, define the models that represent the data and correspond to the structure of the JSON dataset.
+```bash
+from django.db import models
+
+class Company(models.Model):
+    _id = models.CharField(max_length=255, primary_key=True)
+    acquisition = models.JSONField(null=True)
+    acquisitions = models.JSONField(null=True)
+    alias_list = models.JSONField(null=True)
+    blog_feed_url = models.URLField(null=True)
+    blog_url = models.URLField(null=True)
+    category_code = models.CharField(max_length=255, null=True)
+    competitions = models.JSONField(null=True)
+    created_at = models.DateTimeField(null=True)
+    crunchbase_url = models.URLField(null=True)
+    deadpooled_day = models.IntegerField(null=True)
+    deadpooled_month = models.IntegerField(null=True)
+    deadpooled_url = models.URLField(null=True)
+    deadpooled_year = models.IntegerField(null=True)
+    description = models.TextField(null=True)
+    email_address = models.EmailField(null=True)
+    external_links = models.JSONField(null=True)
+    founded_day = models.IntegerField(null=True)
+    founded_month = models.IntegerField(null=True)
+    founded_year = models.IntegerField(null=True)
+    funding_rounds = models.JSONField(null=True)
+    homepage_url = models.URLField(null=True)
+    image = models.JSONField(null=True)
+    investments = models.JSONField(null=True)
+    ipo = models.JSONField(null=True)
+    milestones = models.JSONField(null=True)
+    name = models.CharField(max_length=255)
+    number_of_employees = models.IntegerField(null=True)
+    offices = models.JSONField(null=True)
+    overview = models.TextField(null=True)
+    partners = models.JSONField(null=True)
+    permalink = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=20, null=True)
+    products = models.JSONField(null=True)
+    providerships = models.JSONField(null=True)
+    relationships = models.JSONField(null=True)
+    screenshots = models.JSONField(null=True)
+    tag_list = models.JSONField(null=True)
+    total_money_raised = models.CharField(max_length=255, null=True)
+    twitter_username = models.CharField(max_length=255, null=True)
+    updated_at = models.DateTimeField(null=True)
+    video_embeds = models.JSONField(null=True)
+    class Meta:
+        db_table = 'tb_companies'
+        app_label = 'CompaniesApp'
+
+class Users(models.Model):
+    _id = models.CharField(max_length=100)
+    name = models.CharField(max_length=100)
+    email = models.CharField(max_length=100)
+    password = models.CharField(max_length=100)
+    class Meta:
+        db_table = 'tb_users'
+        app_label = 'CompaniesApp'
+```
+
+2. Defining  models for MongoDB. Create a new python file named **models_mongodb.py** under the **CompaniesApp** folder. Define the models that represent the data and correspond to the structure of the JSON dataset.
+```bash
+from djongo import models
+
+class Company(models.Model):
+    _id = models.CharField(max_length=255, primary_key=True)
+    acquisition = models.JSONField(null=True)
+    acquisitions = models.JSONField(null=True)
+    alias_list = models.JSONField(null=True)
+    blog_feed_url = models.URLField(null=True)
+    blog_url = models.URLField(null=True)
+    category_code = models.CharField(max_length=255, null=True)
+    competitions = models.JSONField(null=True)
+    created_at = models.DateTimeField(null=True)
+    crunchbase_url = models.URLField(null=True)
+    deadpooled_day = models.IntegerField(null=True)
+    deadpooled_month = models.IntegerField(null=True)
+    deadpooled_url = models.URLField(null=True)
+    deadpooled_year = models.IntegerField(null=True)
+    description = models.TextField(null=True)
+    email_address = models.EmailField(null=True)
+    external_links = models.JSONField(null=True)
+    founded_day = models.IntegerField(null=True)
+    founded_month = models.IntegerField(null=True)
+    founded_year = models.IntegerField(null=True)
+    funding_rounds = models.JSONField(null=True)
+    homepage_url = models.URLField(null=True)
+    image = models.JSONField(null=True)
+    investments = models.JSONField(null=True)
+    ipo = models.JSONField(null=True)
+    milestones = models.JSONField(null=True)
+    name = models.CharField(max_length=255)
+    number_of_employees = models.IntegerField(null=True)
+    offices = models.JSONField(null=True)
+    overview = models.TextField(null=True)
+    partners = models.JSONField(null=True)
+    permalink = models.CharField(max_length=255)
+    phone_number = models.CharField(max_length=20, null=True)
+    products = models.JSONField(null=True)
+    providerships = models.JSONField(null=True)
+    relationships = models.JSONField(null=True)
+    screenshots = models.JSONField(null=True)
+    tag_list = models.JSONField(null=True)
+    total_money_raised = models.CharField(max_length=255, null=True)
+    twitter_username = models.CharField(max_length=255, null=True)
+    updated_at = models.DateTimeField(null=True)
+    video_embeds = models.JSONField(null=True)
+
+    class Meta:
+        abstract = True
+```
+<br></br>
+
+**Perform Database Migration** 
+To perform database migration, I will have to make a migration before actually migrating the SQL commands that we have created earlier. **makemigrations** provides SQL instructions for preinstalled apps and my **CompaniesApp model**, meanwhile **migrate** runs the SQL commands stored in the database file. So, after running migrate, all of my CompaniesApp's tables are created in the database file. Please establish an empty MySQL database named **db_companies** beforehand to assure this.
+
+```bash
+ python manage.py makemigrations
+ python manage.py migrate
+```
+Check your MySQL database (XAMPP > MySQL > Start > Admin) to confirm this migration procedure. Below are the output of the commands:
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Database%20Migration.png">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Migration%20Successful.png">
+</p>
+<br></br>
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The system architecture will consist of the following components:
 
 
 

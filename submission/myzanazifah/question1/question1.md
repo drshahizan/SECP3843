@@ -32,29 +32,24 @@ Lastly, I would also recommend using reverse proxy server which incorporates loa
 1. Install and Set Up Django
    - Before installing Django, we need to install Python first by downloading the latest version of Python from the official website, https://www.python.org/downloads/windows/.
    - Once Python has been installed, create a virtual environment and activate it.
+     
+     ```python
 
-```python
-
-python3 -m venv myenv
-
-myenv\Scripts\activate
-
-```
+      python3 -m venv myenv
+      
+      myenv\Scripts\activate
+      ```
    - Next, we can install Django by running the following code:
+     
+     ```python
 
-```python
+      pip install django
+      ```
+   - Then, run the following code to verify installation.
+     ```python
 
-pip install django
-
-```
-
-   - Next, run the following code to verify installation
-   
-```python
-
-python -m django --version
-
-```
+      python -m django --version
+      ```
 <br>
 
 2. Create a Django project
@@ -62,60 +57,56 @@ python -m django --version
    For this part, I would recommend using Visual Studio Code.
 
    - First, open new terminal in Visual Studio Code and use the following code to create a new Django project. In the code below, I named the project as AA but can be modified with other desired name.
+     
+     ```python
 
-```python
-
-python -m django startproject AA
-
-```
+      python -m django startproject AA
+      ```
    - Next, run the code below to navigate to the project directory.
      
-```python
-
-cd AA
-
-```
+     ```python
+      cd AA
+      ```
 <br>
 
 3. Create Django Apps
    - To create a new Django application, run the following code below. The AAapp is an example of the application name and can be modified to our own preference.
-  
-```python
+     
+     ```python
 
-python manage.py startapp AAapp
-
-```
+      python manage.py startapp AAapp
+      ```
    -  After creating a new app, open the 'settings.py' file located in the AA project file and add the app to the 'INSTALLED_APPS' list. Below is an example of code:
-          
-```python
+     
+     ```python
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'AAapp',
-]
-
-```
+      INSTALLED_APPS = [
+          'django.contrib.admin',
+          'django.contrib.auth',
+          'django.contrib.contenttypes',
+          'django.contrib.sessions',
+          'django.contrib.messages',
+          'django.contrib.staticfiles',
+          'AAapp',
+      ]
+      ```
 <br>
 
 4. Configure Database Settings
    - Go to the 'settings.py' file in the Django project and locate the code for databases.
    - Next, edit the code by defining the connection details for both MongoDB and MySQL databases such as username, password, host, port and engine.
 <br>
+
 5. Create Django Models
+   
    - Go to the 'models.py' file and define the models which represents the data and match the structure of the JSON dataset.
    - After defining the models, run the following code to run migrations to create database tables.
+     
+     ```python
 
-```python
-
-python manage.py makemigrations
-python manage.py migrate
-
-```
+      python manage.py makemigrations
+      python manage.py migrate
+      ```
 <br>
 
 6. Load JSON data into MongoDB
@@ -126,7 +117,34 @@ python manage.py migrate
    
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question1/files/images/SystemArchitecture.jpg" />
+
+1. Client Layer
+   - Dashboard
+     - The dashboard provides a user interface for viewing and interacting with the data. It consists of visualizations such as charts and graph.
+   - Web Browser
+     - Software application used by users to access and interact with web-based portal. The web browser will send HTTP requests to retrieve web pages, send form data and others. It will also render HTML, CSS and Javascript received from server to display the user interface.
+   - UI Interface
+     - The UI Interface contains the overall design and layout of the portal. For example, it includes visual elements such as buttons and forms which will allow the users to interact with the portal's features and functionalities.
+3. Reverse Proxy
+   - It will handle incoming client requests and forward the request to the appropriate backend servers. This will ensure that the server will not become overwhelmed with traffic. In addition, it can also provide security by acting as a barrier between the clients and application servers which will make it harder for outsiders to hack the system.
+5. Django Application Layer
+   - View
+     - View will receive the HTTP request from the client layer and interact with models for data retrieval or data storage and render the appropriate template.
+   - Model
+     - Model represents the data structure of the portal and will define the database schema. Model will be interacting with the database layer.
+   - Template
+     - Templates is the structure and the overall layout of the webpages which will be displayed to the user. It contains HTML and CSS which will generate dynamic content.
+6. Database Layer
+   - Djongo
+     - It is a connector for MongoDB which will allow Django application to interact with MongoDB. This will enable users to insert, update and delete data in MongoDB.
+   - MongoDB
+     - MongoDB will store the JSON data as it provides high scalability for handling large volumes of data. It also provides flexible schema and this enables users to store semi-structured data such as JSON data.
+   - ORM
+     - ORM (Object-Relational Mapping) is a technique that lets user query and manipulate data from a database using an object-oriented concepts. It will also allow user to define the Django models which represents the database tables or collections. By utilizing the ORM, users can perform database operations by using Python code.
+   - MySQL
+     - MySQL is a reliable and widely adopted relational database management system. Hence, it will be used for storing the user credentials as it provides robust data storage, reliability and performance.
 
 
 

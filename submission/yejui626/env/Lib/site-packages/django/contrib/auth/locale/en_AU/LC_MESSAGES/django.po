@@ -1,15 +1,14 @@
 # This file is distributed under the same license as the Django package.
 #
 # Translators:
-# Tom Fifield <tom@tomfifield.net>, 2014
-# Tom Fifield <tom@tomfifield.net>, 2021
+# Tom Fifield <tom@openstack.org>, 2014
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-09-21 10:22+0200\n"
-"PO-Revision-Date: 2021-09-22 09:22+0000\n"
-"Last-Translator: Transifex Bot <>\n"
+"POT-Creation-Date: 2017-09-24 13:46+0200\n"
+"PO-Revision-Date: 2017-09-24 14:24+0000\n"
+"Last-Translator: Jannis Leidel <jannis@leidel.info>\n"
 "Language-Team: English (Australia) (http://www.transifex.com/django/django/"
 "language/en_AU/)\n"
 "MIME-Version: 1.0\n"
@@ -29,7 +28,7 @@ msgstr "Important dates"
 
 #, python-format
 msgid "%(name)s object with primary key %(key)r does not exist."
-msgstr "%(name)s object with primary key %(key)r does not exist."
+msgstr ""
 
 msgid "Password changed successfully."
 msgstr "Password changed successfully."
@@ -39,7 +38,7 @@ msgid "Change password: %s"
 msgstr "Change password: %s"
 
 msgid "Authentication and Authorization"
-msgstr "Authentication and Authorisation"
+msgstr ""
 
 msgid "password"
 msgstr "password"
@@ -53,8 +52,8 @@ msgstr "No password set."
 msgid "Invalid password format or unknown hashing algorithm."
 msgstr "Invalid password format or unknown hashing algorithm."
 
-msgid "The two password fields didn’t match."
-msgstr "The two password fields didn’t match."
+msgid "The two password fields didn't match."
+msgstr "The two password fields didn't match."
 
 msgid "Password"
 msgstr "Password"
@@ -63,14 +62,12 @@ msgid "Password confirmation"
 msgstr "Password confirmation"
 
 msgid "Enter the same password as before, for verification."
-msgstr "Enter the same password as before, for verification."
+msgstr ""
 
 msgid ""
-"Raw passwords are not stored, so there is no way to see this user’s "
+"Raw passwords are not stored, so there is no way to see this user's "
 "password, but you can change the password using <a href=\"{}\">this form</a>."
 msgstr ""
-"Raw passwords are not stored, so there is no way to see this user’s "
-"password, but you can change the password using <a href=\"{}\">this form</a>."
 
 #, python-format
 msgid ""
@@ -114,19 +111,19 @@ msgid "hash"
 msgstr "hash"
 
 msgid "variety"
-msgstr "variety"
+msgstr ""
 
 msgid "version"
-msgstr "version"
+msgstr ""
 
 msgid "memory cost"
-msgstr "memory cost"
+msgstr ""
 
 msgid "time cost"
-msgstr "time cost"
+msgstr ""
 
 msgid "parallelism"
-msgstr "parallelism"
+msgstr ""
 
 msgid "work factor"
 msgstr "work factor"
@@ -134,14 +131,11 @@ msgstr "work factor"
 msgid "checksum"
 msgstr "checksum"
 
-msgid "block size"
-msgstr ""
-
 msgid "name"
 msgstr "name"
 
 msgid "content type"
-msgstr "content type"
+msgstr ""
 
 msgid "codename"
 msgstr "codename"
@@ -172,20 +166,18 @@ msgid ""
 "The groups this user belongs to. A user will get all permissions granted to "
 "each of their groups."
 msgstr ""
-"The groups this user belongs to. A user will get all permissions granted to "
-"each of their groups."
 
 msgid "user permissions"
 msgstr "user permissions"
 
 msgid "Specific permissions for this user."
-msgstr "Specific permissions for this user."
+msgstr ""
 
 msgid "username"
 msgstr "username"
 
 msgid "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
-msgstr "Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only."
+msgstr ""
 
 msgid "A user with that username already exists."
 msgstr "A user with that username already exists."
@@ -232,36 +224,32 @@ msgid_plural ""
 "This password is too short. It must contain at least %(min_length)d "
 "characters."
 msgstr[0] ""
-"This password is too short. It must contain at least %(min_length)d "
-"character."
 msgstr[1] ""
-"This password is too short. It must contain at least %(min_length)d "
-"characters."
 
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
-msgstr[0] "Your password must contain at least %(min_length)d character."
-msgstr[1] "Your password must contain at least %(min_length)d characters."
+msgstr[0] ""
+msgstr[1] ""
 
 #, python-format
 msgid "The password is too similar to the %(verbose_name)s."
-msgstr "The password is too similar to the %(verbose_name)s."
+msgstr ""
 
-msgid "Your password can’t be too similar to your other personal information."
-msgstr "Your password can’t be too similar to your other personal information."
+msgid "Your password can't be too similar to your other personal information."
+msgstr ""
 
 msgid "This password is too common."
-msgstr "This password is too common."
+msgstr ""
 
-msgid "Your password can’t be a commonly used password."
-msgstr "Your password can’t be a commonly used password."
+msgid "Your password can't be a commonly used password."
+msgstr ""
 
 msgid "This password is entirely numeric."
-msgstr "This password is entirely numeric."
+msgstr ""
 
-msgid "Your password can’t be entirely numeric."
-msgstr "Your password can’t be entirely numeric."
+msgid "Your password can't be entirely numeric."
+msgstr ""
 
 #, python-format
 msgid "Password reset on %(site_name)s"
@@ -271,36 +259,32 @@ msgid ""
 "Enter a valid username. This value may contain only English letters, "
 "numbers, and @/./+/-/_ characters."
 msgstr ""
-"Enter a valid username. This value may contain only English letters, "
-"numbers, and @/./+/-/_ characters."
 
 msgid ""
 "Enter a valid username. This value may contain only letters, numbers, and "
 "@/./+/-/_ characters."
 msgstr ""
-"Enter a valid username. This value may contain only letters, numbers, and "
-"@/./+/-/_ characters."
 
 msgid "Logged out"
 msgstr "Logged out"
 
 msgid "Password reset"
-msgstr "Password reset"
+msgstr ""
 
 msgid "Password reset sent"
-msgstr "Password reset sent"
+msgstr ""
 
 msgid "Enter new password"
-msgstr "Enter new password"
+msgstr ""
 
 msgid "Password reset unsuccessful"
-msgstr "Password reset unsuccessful"
+msgstr ""
 
 msgid "Password reset complete"
-msgstr "Password reset complete"
+msgstr ""
 
 msgid "Password change"
-msgstr "Password change"
+msgstr ""
 
 msgid "Password change successful"
-msgstr "Password change successful"
+msgstr ""
