@@ -38,6 +38,7 @@ After creating the database in both MongoDB and MySQL database servers, install 
 - `pip install djongo`
 - `pip install mysqlclient` 
 - `pip install pytz`<br>
+
 <img  src="./files/images/package.jpg"></img>
 
 ### 5. Configure the database
