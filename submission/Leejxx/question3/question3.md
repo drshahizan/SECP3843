@@ -25,17 +25,22 @@ To create a user registration and login module using Django and MySQL for three 
   <img  src="./files/images/model1.JPG"></img>
 
   c) Specify a custom user model for the Django project. For my case:
+  
   <img  src="./files/images/model2.JPG"></img>
 
 ### 2. Database Migration
   a) Generate database migrations: Run the command `python manage.py makemigrations` to generate database migration files based on the changes made to the User model.
+  
    <img  src="./files/images/manage1.JPG"></img>
 
-  b)Apply database migrations: Run the command `python manage.py migrate` to apply the generated migrations and create the necessary tables in the MySQL database.
-   <img  src="./files/images/manaage2.JPG"></img>
+  b) Apply database migrations: Run the command `python manage.py migrate` to apply the generated migrations and create the necessary tables in the MySQL database.
+  
+   <img  src="./files/images/maange2.JPG"></img>
 
   c) Result:
-     <img  src="./files/images/manage3.JPG"></img>
+
+   <img  src="./files/images/manage3.JPG"></img>
+  
 
 ### 3. User Registration
   a) Create a registration form: Create a Django form (UserRegistrationForm) that includes fields for username, password, email. 
