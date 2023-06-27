@@ -46,7 +46,7 @@ There are 2 ways to to import dataset.
 
 1. Run this in command prompt `mongoimport --uri mongodb+srv://madihahzabri:admin@cluster0.xgsbper.mongodb.net/ --db Stories --collection story --file "C:\Users\Hp\Downloads\stories.json"`
 
-#### 1. Using command MongoDB Compass
+#### 2. Using command MongoDB Compass
 1. Open MongoDB Compass
 2. Go to Database > Stories > story (Collection)
 3. Click Add Data button
