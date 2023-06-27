@@ -141,7 +141,7 @@ def register(request):
 </form>
 
 ```
-Example of rendered Login and Register page.<br>
+Example of rendered Login page.<br>
 <img width="655" alt="image" src="./files/images/login.png"><br>
 
 
