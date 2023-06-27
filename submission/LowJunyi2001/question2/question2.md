@@ -21,31 +21,22 @@ Don't forget to hit the :star: if you like this repo.
 
 ### Prerequisites
 Download and Install All Required Software.
-- MongoDB Community Server <br>
-  Navigate to https://www.mongodb.com/try/download/community and click download button.
-  <p align="center">
-    <img height="300px" src="https://github.com/drshahizan/SECP3843/assets/120614501/adaec4b0-0a47-441b-8910-2c98f7a9d1b0"></img>
-  </p>
+- [MongoDB Community Server](https://www.mongodb.com/try/download/community)<br>
 
-- MongoDB Shell <br>
-Navigate to https://www.mongodb.com/try/download/shell and click download button.
-  <p align="center">
-    <img height="300px" src="https://github.com/drshahizan/SECP3843/assets/120614501/f34b209a-8825-4c4c-994b-49beb588c0e8"></img>
-  </p>
+- [MongoDB Shell](https://www.mongodb.com/try/download/shell) <br>
   
-- MongoDB Command Line Database Tools <br>
-Navigate to https://www.mongodb.com/try/download/database-tools and click download button.
-  <p align="center">
-    <img height="300px" src="https://github.com/drshahizan/SECP3843/assets/120614501/9031c90e-3582-445a-a2e3-b52b627a15f3"></img>
-  </p>
+- [MongoDB Command Line Database Tools](https://www.mongodb.com/try/download/database-tools) <br>
+
+
 
 ### Step 1: Prepare the JSON File
-Download the dataset from <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/05-airbnb" >listingsAndReviews</a>. It is important to ensure the JSON file follows the appropriate structure for MongoDB documents. It is found that the listingsAndReviews.json file is not formatted correctly as a JSON array. Therefore, python will be used to perform data preparation by adding brackets at the beginning and end of the file. Each individual tweet object should be enclosed within square brackets '[ ]' and separated by commas ','. <br>
+- Download the dataset <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/05-airbnb" >listingsAndReviews</a>.
+- Format the dataset as below (Each individual object should be enclosed within square brackets '[ ]' and separated by commas ','.)
 
 ```Data Preparation```: <a href="./files/code/Data_Preparation.ipynb">Data_Preparation.ipynb</a> <br>
 
 ### Step 2: Start the MongoDB Server
-After download is completed, extract and copy all the .exe files from MongoDB Shell and  MongoDB Command Line Database Tools into the MongoDB bin folder[C:\Program Files\MongoDB\Server\6.0\bin].  
+- Move all the .exe files from MongoDB Shell and  MongoDB Command Line Database Tools into the MongoDB bin folder[C:\Program Files\MongoDB\Server\6.0\bin].  
 
 The .exe file in MongoDB Shell:
 
@@ -54,7 +45,7 @@ The .exe file in MongoDB Shell:
 The .exe file in MongoDB Command Line Database Tools:
 <img src="https://github.com/drshahizan/SECP3843/assets/120614501/82b86e7a-8246-4927-9c6b-1c9de55f0615"></img>
 
-Then, open the command prompt and navigate to the MongoDB installation directory.
+- Open Command Prompt and paste the following code and run.
 ```
 cd C:\Program Files\MongoDB\Server\6.0\bin
 ```
