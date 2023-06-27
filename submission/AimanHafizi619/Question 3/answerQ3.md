@@ -24,9 +24,9 @@ cd Deskstop/Analytics
 
 ### Step 2: Setup Database
 
-> Go to `Analytics` > `Analytics` > `settings.py` and open the file
+1. Go to `Analytics` > `Analytics` > `settings.py` and open the file
 
-> MySQL database will be use to build the user registration and login module.
+2. MySQL database will be use to build the user registration and login module.
 
 
 
