@@ -531,6 +531,27 @@ mysql_connection.close()
 7.   Run the python code `python mysql_to_mongodb_replication.py`
    <img src="./files/image/synchronous.png">
 
+### Code Explaination
+The provided code performs data synchronization between a MySQL database and a MongoDB database.
+
+Firstly, the code establishes connections to both databases using the `mysql.connector` and `pymongo libraries` for MySQL and MongoDB, respectively. It then retrieves data from a specific table (`q3_app_user`) in the MySQL database.
+
+Next, the code iterates over the fetched rows and transforms the data into a suitable format for MongoDB. Each row is converted into a dictionary, with field names and corresponding values mapped accordingly.The transformed data is then inserted into a MongoDB collection named `q3user` within the` Q3` database using the `insert_one` method. As each row is inserted, the code logs the ID of the inserted row.
+
+After completing the data insertion process, the code closes the MySQL connection and re-establishes it to perform binlog monitoring. It retrieves the binary log events using the `SHOW BINLOG EVENTS` statement and filters out events related to the `q3_app_user` table. For each relevant binlog event, the code determines the type of operation (INSERT, UPDATE, DELETE) and extracts the corresponding SQL query.
+
+If the operation is an INSERT, the code parses the values from the SQL query, constructs a dictionary, and inserts the data into the MongoDB collection. The ID of the inserted row is logged.
+
+In the case of an UPDATE operation, the code extracts the SET clause and WHERE clause from the SQL query. It creates an update_data dictionary based on the SET clause and updates the matching document in the MongoDB collection using the `update_one` method.
+
+For DELETE operations, the code extracts the WHERE clause, constructs a filter_condition dictionary, and deletes the matching document from the MongoDB collection using the `delete_one` method.
+
+Throughout the process, the code logs the performed actions, including inserted, updated, or deleted rows.mFinally, the code closes the MySQL connection, ensuring the completion of the synchronization process between the two databases.
+
+Proof:
+<img src="./files/image/usersql.png">
+<img src="./files/image/usermongo.png">
+
    
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
