@@ -229,7 +229,7 @@ Terminal :
 
 <img src="./files/images/1a6.png" />
 
-For MySQL, run the code below to create tables in the ```analytics_sql``` database.
+Run the code below to create tables in the database.
 
 ```
 python manage.py migrate
