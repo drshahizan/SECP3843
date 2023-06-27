@@ -67,17 +67,17 @@ Don't forget to hit the :star: if you like this repo.
   
 ### Step 1: Connect to MongoDB
 1. Open command prompt where MongoDB is located. It is usually in the program files folder. For example mine is in 
-```
-C:\Program Files\MongoDB\Server\6.0\bin
-```
+  ```sql
+  C:\Program Files\MongoDB\Server\6.0\bin
+  ```
 2. Then create a connection string using the following command 
-```
-//connect to mongodb shell
-mongod
+  ```sql
+  //connect to mongodb shell
+  mongod
 
-//connect to mongodbcompass
-mongosh "mongodb+srv://cluster0.yvk5zzq.mongodb.net/" --apiVersion 1 --username adrinaasyiqin
-```
+  //connect to mongodbcompass
+  mongosh "mongodb+srv://cluster0.yvk5zzq.mongodb.net/" --apiVersion 1 --username adrinaasyiqin
+  ```
 `cluster0.yvk5zzq.mongodb.net` : can be modified using your own connection
 
 `adrinaasyiqin` : is the username of your MongoDB
@@ -89,9 +89,9 @@ The command prompt will then ask for the password.
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/5fb6f9c0-cb18-4572-81d0-76968c14591a)
 
 3. Connect to a database by using the following command
-```
-use salesdatabase
-```
+  ```sql
+  use salesdatabase
+  ```
 `salesdatabase` : Can be modified using your own database name
 
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/ff1ef1f3-c400-4756-9794-93b78f6f86ca)
@@ -99,36 +99,36 @@ use salesdatabase
 
 ### Step 2: Create the queries
 1. Create Query
-```
-db.salessample.insertOne({
-  "_id": ObjectId(),
-  "saleDate": { "$date": { "$numberLong": "1427144809506" } },
-  "items": [
-    {
-      "name": "printer paper",
-      "tags": ["office", "stationary"],
-      "price": { "$numberDecimal": "40.01" },
-      "quantity": { "$numberInt": "2" }
-    }
-  ],
-  "storeLocation": "Denver",
-  "customer": {
-    "gender": "M",
-    "age": { "$numberInt": "24" },
-    "email": "abc@gmail.com",
-    "satisfaction": { "$numberInt": "4" }
-  },
-  "couponUsed": false,
-  "purchaseMethod": "Online"
-})
+  ```s
+  db.salessample.insertOne({
+    "_id": ObjectId(),
+    "saleDate": { "$date": { "$numberLong": "1427144809506" } },
+    "items": [
+      {
+        "name": "printer paper",
+        "tags": ["office", "stationary"],
+        "price": { "$numberDecimal": "40.01" },
+        "quantity": { "$numberInt": "2" }
+      }
+    ],
+    "storeLocation": "Denver",
+    "customer": {
+      "gender": "M",
+      "age": { "$numberInt": "24" },
+      "email": "abc@gmail.com",
+      "satisfaction": { "$numberInt": "4" }
+    },
+    "couponUsed": false,
+    "purchaseMethod": "Online"
+  })
 
-```
+  ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/3e05216d-b48b-4954-8f5a-47274c53fc7b)
 
 2. Read Query
-```
-db.salessample.find({ "storeLocation": "Denver" })
-```
+  ```s
+  db.salessample.find({ "storeLocation": "Denver" })
+  ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/7c14b81f-4c91-4723-9e07-1f050abb4d7c)
 
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/8bd5e995-ae5c-4bfb-89ce-f673ca554b05)
@@ -137,32 +137,32 @@ db.salessample.find({ "storeLocation": "Denver" })
 3. Update Query
  - Update One
  - Update Many
-```
-#update one
-db.salessample.updateOne(
-  { "_id": ObjectId("5bd761dcae323e45a93ccfe8") },
-  { $set: { "storeLocation": "New York" } }
-)
-```
+  ```s
+  #update one
+  db.salessample.updateOne(
+    { "_id": ObjectId("5bd761dcae323e45a93ccfe8") },
+    { $set: { "storeLocation": "New York" } }
+  )
+  ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/fd048863-fa38-40e9-a153-2e3d176b6bfa)
 
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/d0de0e7f-9d1c-417c-9d4f-eac2d0914841)
 
-```
-#update many
-db.salessample.updateMany(
-  { "customer.gender": "M" },
-  { $set: { "storeLocation": "New York" } }
-)
-```
+  ```s
+  #update many
+  db.salessample.updateMany(
+    { "customer.gender": "M" },
+    { $set: { "storeLocation": "New York" } }
+  )
+  ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/4634daba-bb73-47bb-a16f-a3f14024c901)
 
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/7fe0ae53-90cd-46f1-91d4-f36561404f18)
 
 4. Delete Query
-```
-db.salessample.deleteOne({ "_id": ObjectId("5bd761dcae323e45a93ccfe8") })
-```
+  ```s
+  db.salessample.deleteOne({ "_id": ObjectId("5bd761dcae323e45a93ccfe8") })
+  ```
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/4a39a065-d8d6-42dc-8c6c-870d04477de5)
 
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/004504fd-6d37-4053-bf10-db1a43ecbded)

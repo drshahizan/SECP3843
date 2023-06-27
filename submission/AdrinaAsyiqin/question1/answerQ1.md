@@ -26,7 +26,7 @@ Don't forget to hit the :star: if you like this repo.
 4. Select option 'Add python PATH' and choose the 'Customize installation' option. In the customisation screen, ensure pip package and the 'add python to environment' variables option is selected
    
 5. Open command prompt and execute each of the following 
-   ```
+   ```s
    pip install django
    pip install pymongo
    pip install mysqlclient
@@ -45,22 +45,22 @@ Don't forget to hit the :star: if you like this repo.
 
 2. Run the following command. `myproject` can be renamed to desired name
  
-```python
-#start project
-django-admin.py startproject store
+    ```python
+    #start project
+    django-admin.py startproject store
 
-#Move into project directory using the command 
-cd store
+    #Move into project directory using the command 
+    cd store
 
-#startapp
-python manage.py startapp STDE
+    #startapp
+    python manage.py startapp STDE
 
-#Open a new terminal and install virtual environment by running the below command. `myenv` can be replaced with desired name
-virtualenv myenv
+    #Open a new terminal and install virtual environment by running the below command. `myenv` can be replaced with desired name
+    virtualenv myenv
 
-#Activate virtual environment by running command 
-myenv\Scripts\activate
-```
+    #Activate virtual environment by running command 
+    myenv\Scripts\activate
+    ```
 
 ![WhatsApp Image 2023-06-27 at 15 53 11](https://github.com/drshahizan/SECP3843/assets/96984290/0e175134-f986-4f96-aec0-bcb3a5ddb31f)
 
@@ -68,9 +68,9 @@ myenv\Scripts\activate
 ### Step 3: Run server
 
 1. Go into project directory and run the command
-```python
-python manage.py runserver
-```
+    ```python
+    python manage.py runserver
+    ```
 
 2. Open the web browser and visit the link given
    
@@ -83,28 +83,28 @@ python manage.py runserver
 2. Configure DATABASES dictionary to configure both MySQL and MongoDB connections
    
 3. Update INSTALLED_APPS list to include neccessary Django apps and django_pandas
-```
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'store',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3307',
-    },
-    'mongodb': {
-        'ENGINE': 'djongo',
-        'NAME': 'store',
-        'CLIENT': {
-            'host': 'cluster0.yvk5zzq.mongodb.net',
-            'username': 'adrinaasyiqin',
-            'password': 'Adrina857600',
-            
+    ```python
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'store',
+            'USER': 'root',
+            'PASSWORD': '',
+            'HOST': 'localhost',
+            'PORT': '3307',
+        },
+        'mongodb': {
+            'ENGINE': 'djongo',
+            'NAME': 'store',
+            'CLIENT': {
+                'host': 'cluster0.yvk5zzq.mongodb.net',
+                'username': 'adrinaasyiqin',
+                'password': 'Adrina857600',
+                
+            }
         }
     }
-}
-```
+    ```
 
 ![image](https://github.com/drshahizan/SECP3843/assets/96984290/cf239ac3-6587-4dfe-adc1-546dcabc15b6)
 
@@ -117,41 +117,41 @@ DATABASES = {
 1. Create a new python file named `import_json_data.py`
 
 2. Open file and import modules using the following command
-```python
-from django.core.management.base import BaseCommand
-from django.conf import settings
-from yourapp.models import YourModel  # Replace "YourModel" with the appropriate model name for your JSON dataset
-import json
-```
+    ```python
+    from django.core.management.base import BaseCommand
+    from django.conf import settings
+    from yourapp.models import YourModel  # Replace "YourModel" with the appropriate model name for your JSON dataset
+    import json
+    ```
 
 3. Define class that inherits from BaseCommand
-```python
-class Command(BaseCommand):
-    help = 'Imports JSON data into the MySQL and MongoDB databases'
+    ```python
+    class Command(BaseCommand):
+        help = 'Imports JSON data into the MySQL and MongoDB databases'
 
-    def handle(self, *args, **options):
-        # Read the JSON file
-        with open('path/to/your/json/sales.json', 'r') as f:
-            json_data = json.load(f)
+        def handle(self, *args, **options):
+            # Read the JSON file
+            with open('path/to/your/json/sales.json', 'r') as f:
+                json_data = json.load(f)
 
-        # Import data into MySQL
-        self.stdout.write('Importing data into MySQL...')
-        for data in json_data:
-            YourModel.objects.create(**data)
-        self.stdout.write('Data import into MySQL completed.')
+            # Import data into MySQL
+            self.stdout.write('Importing data into MySQL...')
+            for data in json_data:
+                YourModel.objects.create(**data)
+            self.stdout.write('Data import into MySQL completed.')
 
-        # Import data into MongoDB
-        self.stdout.write('Importing data into MongoDB...')
-        for data in json_data:
-            YourModel.objects.mongo_insert(data)
-        self.stdout.write('Data import into MongoDB completed.')
+            # Import data into MongoDB
+            self.stdout.write('Importing data into MongoDB...')
+            for data in json_data:
+                YourModel.objects.mongo_insert(data)
+            self.stdout.write('Data import into MongoDB completed.')
 
-```
+    ```
 
 4. Save the file and run management command
-```python
-python manage.py import_json_data
-```
+    ```s
+    python manage.py import_json_data
+    ```
 
 ### Step 7: Implement dynamic web pages
 1. create django views and templates to generate web pages based on the data stored in the databases
