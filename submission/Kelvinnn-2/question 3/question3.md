@@ -115,6 +115,7 @@ python manage.py migrate
 ```
 <img src="./files/image/migrate.png">
 
+<img src="./files/image/q3migrate.png">
 ### Create registrations views and templates
 
 1. Create new file called `forms.py`
