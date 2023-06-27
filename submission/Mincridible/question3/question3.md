@@ -421,7 +421,16 @@ urlpatterns = [
 
 ## Question 3 (b)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### Understand data models
+
+1. Since we are using MySQL and MongoDB databases, we need to understand both data models.
+2. Identify the entities and data feild that eed to be synchronized between the databases.
+
+### Choose Data Replication Approach
+
+1. In this case, we need to extract data from the source database which is MySQL and transform it according to target database (MongoDB). Therefore,we use ETL(Extract, Transform, Load) approach.
+
+
 
 ## Contribution 🛠️
 
