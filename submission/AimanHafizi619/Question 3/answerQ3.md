@@ -34,7 +34,7 @@ python -m venv envq3
 myenv\Scripts\activate
 ```
 
-![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image17.png)
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image1.png)
 
 
 ### Step 2: Setup Database
