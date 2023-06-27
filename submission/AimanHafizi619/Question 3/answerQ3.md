@@ -112,9 +112,21 @@ class User(AbstractUser):
     user_permissions = models.ManyToManyField(Permission, blank=True, related_name='custom_user_set')
 ```
 
+### Step 7: Configure views.py
 
+1. Include the necessary library
 
+```python
+from django.shortcuts import render, redirect
+from . forms import RegistrationForm
+from django.contrib.auth. forms import AuthenticationForm
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from decorators import is_customer, is_technical _worker, is_senior_management
+from django.contrib.auth.decorators import user_passes_test
+```
 
+2. Define a function name `user_login
 
 
 
