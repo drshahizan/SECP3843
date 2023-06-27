@@ -62,19 +62,27 @@ The JSON dataset server stores the JSON dataset that will be integrated with Dja
      
 ### 3. Configure the Django database settings:
   a) In the project's settings.py file, locate the DATABASES section.
+  
   b) Configure the MySQL database settings, including the database name, user, password, host, and port.
+  
   c) Configure the MongoDB database settings, including the connection URL, database name, and authentication credentials.
+  
  <img  src="./files/images/configure.JPG"></img>
 
 ### 4. Define Django models:
   a) In the app's models.py file, define the models that will represent the data from the JSON dataset.
+  
   b) Map the fields in the JSON dataset to the corresponding fields in the Django models.
+  
   c) Use Django's model fields and relationships to define the structure of data.
+  
  <img  src="./files/images/define.JPG"></img>
 
 ### 5. Set up databases routers:
   a) Create a database router to route specific models to their respective databases.
+  
   b) In this case, the MySQLRouter class is responsible for routing models related to user registration and login to the MySQL database. Meanwhile, the MongoDBRouter class is responsible for routing the sales-related models to the MongoDB database.
+  
 
   ```
 class MySQLRouter:
