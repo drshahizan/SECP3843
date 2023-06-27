@@ -18,17 +18,17 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 2 (a)
 ### Steps to Import JSON File into MongoDB Database Using Command Prompt (CMD)
 
-Prerequisites:
-✅Download MongoDB Shell
-✅Download MongoDB Command Line Database Tools
-✅Copy all the .exe file in the bin folder of the downloaded MongoDB Shell and MongoDB Command Line Database Tools and paste them in the bin folder of "MongoDB" folder which located under the "Program Files" folder. 
-✅Add new environment path to MongoDB by following the steps below:
-    - Open "Edit the system environment variables" control panel by typing env in the Window search bar.
-    - Under the "Advanced" section, select "Environment Variables...".
-    - Under the section of user variables, select "Path" and click "Edit".
-    - Click "New" and paste the filepath to bin folder of MongoDB and add a "\" after it (example: "C:\Program Files\MongoDB\Server\6.0\bin\").
-    - Finally click "OK" for 3 times for each window.
-
+Prerequisites: <br>
+✅Download MongoDB Shell <br>
+✅Download MongoDB Command Line Database Tools <br> 
+✅Copy all the .exe file in the bin folder of the downloaded MongoDB Shell and MongoDB Command Line Database Tools and paste them in the bin folder of "MongoDB" folder which located under the "Program Files" folder. <br>
+✅Add new environment path to MongoDB by following the steps below: <br>
+    - Open "Edit the system environment variables" control panel by typing env in the Window search bar. <br>
+    - Under the "Advanced" section, select "Environment Variables...". <br>
+    - Under the section of user variables, select "Path" and click "Edit". <br> 
+    - Click "New" and paste the filepath to bin folder of MongoDB and add a "\" after it (example: "C:\Program Files\MongoDB\Server\6.0\bin\"). <br>
+    - Finally click "OK" for 3 times for each window. <br>
+<br> 
 
 1. Open the Command Prompt of system by typing "CMD" in the Windows search bar and select "Command Prompt". 
 2. Access the MongoDB through CMD by giving the command <code>mongod</code>. Then wait for the system to access MongoDB, the result is expected as below.
