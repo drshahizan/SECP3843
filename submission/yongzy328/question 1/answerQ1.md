@@ -55,7 +55,7 @@ Don't forget to hit the :star: if you like this repo.
 <code>python manage.py loaddata city_inspections.json</code>
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/use%20case%20diagram%20(current%20system)%20-%20Page%203.png" alt="system architecture">
 
 
 
