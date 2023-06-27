@@ -35,6 +35,7 @@ d.Once the project is created, navigate to the project folder using the cd comma
 1. To set up MySQL for your Django project, follow these steps:
 
 Install the MySQL connector for Python by running the command `pip install mysql-connector-python`. This package allows Django to communicate with the MySQL database.
+
 <img src="./files/image/mysql.png">
 
 2. After the installation is complete, create a new database named q3 in phpMyAdmin. This will be the database where your Django project will store its data.
