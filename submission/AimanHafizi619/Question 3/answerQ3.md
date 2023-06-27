@@ -31,7 +31,7 @@ python -m venv envq3
 ### Step 3: Activate virtual environment
 
 ```python
-myenv\Scripts\activate
+envq3\Scripts\activate
 ```
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image1.png)
@@ -281,13 +281,45 @@ urlpatterns = [
 ]
 ```
 
-### Step 10: Create User Interface for `registration`, `login`, and `profile`
+### Step 10: Create User Interface
 
-1. Create a file 
+1. Go to `Desktop` > `AnalyticsQ3` > `AnalyticsQ3_app`
+   
+2. Create a file called `login.html`
 
+3. Type in the follwing code
 
+```python
+{% extends 'base.html' %} {% block content %}
+<h2>Login</h2>
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Login</button>
+</form>
+{% endblock %}
+```
 
+4. Create a file called `register.html`
 
+5. Type in the follwing code
+
+```python
+{% extends 'base.html' %} {% block content %}
+<h2>Register</h2>
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Register</button>
+</form>
+<br />
+<text>Already have an account?</text><a href="{% url 'login' %}">Sign In</a>
+{% endblock %}
+```
+
+### Step 11: Install mysqlclient
+
+1. Type in `pip install mysqlclinet` in the command prompt
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image3.png)
 
 
 ## Question 3 (b)
