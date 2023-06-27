@@ -98,8 +98,6 @@ Required software to install and download:
     <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/6de91f67-4c46-4c31-bb53-3af6f8ddaac2">
 
 
-
-
 ## Question 2 (b)
 
   - Cretae query
