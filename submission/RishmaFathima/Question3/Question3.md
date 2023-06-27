@@ -15,6 +15,9 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Airbnb Listings Dataset](https://github.com/drshahizan/dataset/tree/c8e9f4a7cbdb0c1b78ca2c73915ff56ceeb50e70/mongodb/05-airbnb)
 
 ## Question 3 (a)
+The User Management System is a web-based application created with MySQL as the database management system and the well-known Python web framework Django. Customers, technical staff, and senior management can all interact with the application through the system. User registration and login are two of the system's primary features.
+</br>
+</br>
   1. Setting up the Django Project:
      - Install Django on my web server.
      - Create a new Django project using the django-admin startproject AA_Question3 command.
@@ -100,6 +103,12 @@ Don't forget to hit the :star: if you like this repo.
          <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/3335e687c35ce6fac6dac1c3debb8a7d3ec81e50/submission/RishmaFathima/Question3/files/images/3.1.14.PNG">
            <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/3335e687c35ce6fac6dac1c3debb8a7d3ec81e50/submission/RishmaFathima/Question3/files/images/3.1.15.PNG">
 ## Question 3 (b)
+The difficulty of data synchronisation and replication across MySQL and MongoDB databases is what the project seeks to address. Applications that use SQL and NoSQL databases to store and manage their data must ensure data consistency across numerous databases. Any changes made in one database will be precisely mirrored in the other by establishing a reliable replication and synchronisation mechanism, maintaining data integrity and consistency.
+
+In order to support real-time updates and seamless communication between MySQL and MongoDB, the project will investigate database-specific replication mechanisms and make use of third parties' technologies. The project ensures that data modifications, such as inserts, updates, and deletions, are transmitted between the two databases in an effective and dependable manner by setting up replication and synchronisation mechanisms.
+
+</br></br>
+
   1. Determine the replication requirements by:
      - Determinining whether we need MySQL to MongoDB or MongoDB to MySQL) or both databases replicating to each  other and consider which database is the primary            source of data and which is the secondary.
      - Determine the level of consistency required between the databases.
