@@ -115,7 +115,10 @@ These are the samples that demonstrate Create, Read, Update, Delete (CRUD) opera
 
   - Read query
 
-    - Use `db.city.find({ business_name:"ATLIXCO DELI GROCERY INC." })` to check whether the previous query is successfully executed or not.
+    - Use `db.city.find({ result: "No Violation Issued" })` to read and find any query.
+
+      <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/164f3a79-e61c-44bf-8ff3-69cace510d00">
+
   
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
