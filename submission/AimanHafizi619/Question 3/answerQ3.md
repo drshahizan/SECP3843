@@ -536,7 +536,13 @@ binlog_do_db=analytics_q3
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image25.png)
 
+**Step 13**
 
+- Click the `Control replica` option and click `Start SQL thread only` one after the other to resolve the errors
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image26.png)
+
+- The database `analytics_q3` is replicated
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
