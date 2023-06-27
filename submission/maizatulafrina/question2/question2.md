@@ -39,6 +39,12 @@ Required software to install and download:
 
    <img width="359" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/54ab9247-ebb7-4aba-b01f-d1ba9a0e6407">
 
+#### Step 2: Download and Prepare JSON dataset
+
+- Download the JSON dataset by downloading the raw file
+
+  <img width="700" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/8535e4b8-aa84-4767-83e1-4275288fb32c">
+
 <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/6de91f67-4c46-4c31-bb53-3af6f8ddaac2">
 
 
