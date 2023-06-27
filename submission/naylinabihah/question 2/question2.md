@@ -63,7 +63,6 @@ These are the things that should already been installed in the Tools folder unde
  ```
   use admin
 ```
-![use_admin](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%202/files/images/choose_db.png)
 
 - After chose the database it will show this:
 
@@ -109,7 +108,63 @@ where, db is the name of the database selected, colection is the name of the col
 
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+All the queries can be done in MongoDB Shell. Below are the commands and the results for each query given:
+
+##### i. Create – 1 query (insertOne)
+
+```
+test>db.company.insertOne({name":contozrss","permalink":"contozrss","crunchbase_url":"https://www.crunchbase.com/company/contozrss","homepage_url":"https://www.contozrss.com","twitter_url":"https://twitter.com/contozrss"});
+```
+
+![insert](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%202/files/images/insert.png)
+
+##### ii. Read – 1 query (findOne)
+Use this command to find the specific query. In this, I searched using the _id
+
+```
+test>db.company.findOne({_id:ObjectId("6499dacd3a2303517e6f366a")})
+```
+
+The result can be seen below:
+
+![find](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%202/files/images/find.png)
+
+
+##### iii. Update – 2 queries
+##### a. updateOne
+This query is used to update the value set for the specific column in the specific row.
+
+```
+test>db.company.updateOne({_id:ObjectId("6499dacd3a2303517e6f366a")}, {$set:{name:"Babino"}})
+```
+
+From this command, for the _id = "6499dacd3a2303517e6f366a", the name column is changed to 'Babino'.
+
+![update1](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%202/files/images/update_one.png)
+
+##### b. replaceOne
+This query is used to update only the column set in the specific row and delete the one that is not specified in the replace command.
+
+```
+test>db.company.replaceOne({_id:ObjectId("6499dacd3a2303517e6f366a")}, {homepage_url:"https://www.babino.com"})
+```
+
+From this command, for the _id = "6499dacd3a2303517e6f366a", the homepage_url column is changed to 'https://www.babino.com' and all other attributes that were not specified were removed / set to be null.
+
+![update2](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%202/files/images/update_2.png)
+
+
+##### iv. Delete – 1 query
+
+This how to delete the query.
+
+```
+test>db.company.deleteOne({_id:ObjectId("6499dacd3a2303517e6f366a")})
+```
+
+This is the result if try to find the deleted row/query:
+
+![delete](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%202/files/images/delete.png)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

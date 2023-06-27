@@ -15,7 +15,27 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Tweets
 
 ## Question 1 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+To implement a configuration using five servers in this project, below are the breakdowns of each server :
+1. `Web Server`<br>
+ The web server that will be used is Apache and the purpose of this server is to handle HTTP requests from clients and send back HTTP response. This server will handle static files such as JavaScript, HTML, CSS or any media files like images. 
+2.  `MySQL Database Server`<br>
+ This server is responsible to host the MYSQL database. The installation and configuration of MYSQL will be done in this server. All operations such as storing and retrieving data from MYSQL will interact with this server.
+3.  `MongoDB Server`<br>
+   Since the project require MongoDB database, a dedicated server is use to host MongoDB database. The installation and configuration of MongoDB will be done in this server. All operations such as storing and retrieving data from MongoDB will interact with this server.
+4.  `Django Server`<br>
+   The main purpose of this server is to execute the python-based Django web application framework. This server will handle the logic of our web application that includes interacting with database and processing requests.
+5.  `Load Balancer`<br>
+    Load balancer server is important to maintain and handle the traffic between multiple instances of web server and Django server. This server would distribute traffic between the other servers, which can improve performance and availability.
+
+<br>
+Next, here are the steps required to integrate Django with the JSON dataset that are stored in both  MYSQL and MongoDB database.
+<br>
+<br>
+Figure below show the flow of Django with the JSON dataset integration : 
+<img width="655" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/4fb418d1-2295-4847-a57a-7975116740b9">
+
+### 1. Install Django
+
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

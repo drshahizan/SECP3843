@@ -154,7 +154,7 @@ def user_registration(request):
 3. Create new direcotry and file
 
 ```kotlin
-your_app/
+q3_app/
 ├── __init__.py
 ├── admin.py
 ├── apps.py
@@ -164,8 +164,8 @@ your_app/
 ├── urls.py
 ├── views.py
 └── templates/
-    └── registration/  <-- New directory
-        └── user_registration.html  <-- New file
+    └── registration/  <--- New directory
+        └── user_registration.html  <--- New file
 ```
 
 4. User registration form `user_registration.html`

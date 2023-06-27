@@ -13,15 +13,66 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Name: Yong Zhi Yan
 #### Matric No.: A20EC0172
-#### Datatset: City Inspections	
+#### Dataset: City Inspections	
 
 ## Question 2 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### Steps to Import JSON File into MongoDB Database Using Command Prompt (CMD)
+
+Prerequisites: <br>
+✅Download MongoDB Shell <br>
+✅Download MongoDB Command Line Database Tools <br> 
+✅Copy all the .exe file in the bin folder of the downloaded MongoDB Shell and MongoDB Command Line Database Tools and paste them in the bin folder of "MongoDB" folder which located under the "Program Files" folder. <br>
+✅Add new environment path to MongoDB by following the steps below: <br>
+    - Open "Edit the system environment variables" control panel by typing env in the Window search bar. <br>
+    - Under the "Advanced" section, select "Environment Variables...". <br>
+    - Under the section of user variables, select "Path" and click "Edit". <br> 
+    - Click "New" and paste the filepath to bin folder of MongoDB and add a "\" after it (example: "C:\Program Files\MongoDB\Server\6.0\bin\"). <br>
+    - Finally click "OK" for 3 times for each window. <br>
+<br> 
+
+1. Open the Command Prompt of system by typing "CMD" in the Windows search bar and select "Command Prompt". 
+2. Access the MongoDB through CMD by giving the command <code>mongod</code>. Then wait for the system to access MongoDB, the result is expected as below.
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20103533.png" alt="access mongodb via cmd">
+
+3. Import the JSON file using the function <code>mongoimport</code> with the JSON file's filepath, database name and collection name with the format <code>mongoimport "filepath" -d "database name" -c "collection name"</code>. <br>
+In this case, I have saved the JSON file inside the folder Desktop/sem 6 notes/mso/ and created a database named "AA" along with a collection named "CityInspection", the code is shown as below. <br>
+<code>mongoimport "C:\Users\yong\This PC\Desktop\sem 6 notes\mso\city_inspections.json" -d AA -c CityInspection</code>
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104340.png" alt="upload json file to MongoDB">
+The JSON file is successfully imported into MongoDB which can be viewed in MongoDB Compass.
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104937.png" alt="json file imported">
+
+4. Access the MongoDB Shell by giving the prompt <code>mongosh</code>.
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104656.png" alt="access mongodb shell">
+
+5. View all the available databases which stored in MongoDB via the command <code>show dbs</code>.
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104711.png" alt="show all databases">
+
+6. Since I am using the database named "AA", then I access it through the code <code>use AA</code>. 
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104829.png" alt="use database AA">
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20112357.png" alt="insertone()">
 
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20112337.png" alt="view inserted data">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20113120.png" alt="find()">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20113354.png" alt="view find() at mongodb compass">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20114542.png" alt="updateone()">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20114609.png" alt="view updated date">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20115838.png" alt="updatemany()">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20115823.png" alt="view updatemany data">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20115905.png" alt="double check updatemany data">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20120101.png" alt="deleteone()">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20120123.png" alt="view deleted date">
 
 
 

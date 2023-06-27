@@ -44,7 +44,19 @@ After tables were created in the database, now the JSON file can be inserted or 
 All the servers should be separated with different tasks and workload since it holds their significant use that are unique from each other. Application server will be used as the placed where the main project is done and data processing, Web server can be used as the platform for authentication for all users, the 2 Database servers (one for MySQL and the other one is for MongoDB) will be used to manage the data retrieval and storage purposes. 
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+#### User Interface
+
+#### Web Server
+
+This is where the deployment of the Django project built in Application Server were taken placed at. This server is used as a medium to deploy the portal to the user live on the internet. Thie web server will control the users requests and dispatch them to the responsible web pages responsively according to the requests.
+
+#### Load Balancing Server
+
+#### Application Server
+
+
+#### Database Servers (MySQL and MongoDB)
 
 
 

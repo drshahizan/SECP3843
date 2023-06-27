@@ -191,8 +191,7 @@ DATABASES = {
 
 **Create MySQL and MongoDB Models** 
 
-In the **models.py** file, define the models that represent the data and correspond to the structure of the JSON dataset.
-1. Defining  models for MySQL
+1. Defining  models for MySQL. In the **models.py** file, define the models that represent the data and correspond to the structure of the JSON dataset.
 ```bash
 from django.db import models
 
@@ -239,18 +238,21 @@ class Company(models.Model):
     twitter_username = models.CharField(max_length=255, null=True)
     updated_at = models.DateTimeField(null=True)
     video_embeds = models.JSONField(null=True)
-
-    def __str__(self):
-        return self.name
+    class Meta:
+        db_table = 'tb_companies'
+        app_label = 'CompaniesApp'
 
 class Users(models.Model):
     _id = models.CharField(max_length=100)
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
+    class Meta:
+        db_table = 'tb_users'
+        app_label = 'CompaniesApp'
 ```
 
-2. Defining  models for MongoDB
+2. Defining  models for MongoDB. Create a new python file named **models_mongodb.py** under the **CompaniesApp** folder. Define the models that represent the data and correspond to the structure of the JSON dataset.
 ```bash
 from djongo import models
 
@@ -300,17 +302,21 @@ class Company(models.Model):
 
     class Meta:
         abstract = True
-
-    def __str__(self):
-        return self.name
 ```
 <br></br>
 
 **Perform Database Migration** 
+To perform database migration, I will have to make a migration before actually migrating the SQL commands that we have created earlier. **makemigrations** provides SQL instructions for preinstalled apps and my **CompaniesApp model**, meanwhile **migrate** runs the SQL commands stored in the database file. So, after running migrate, all of my CompaniesApp's tables are created in the database file. Please establish an empty MySQL database named **db_companies** beforehand to assure this.
+
 ```bash
  python manage.py makemigrations
  python manage.py migrate
 ```
+Check your MySQL database (XAMPP > MySQL > Start > Admin) to confirm this migration procedure. Below are the output of the commands:
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Database%20Migration.png">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Migration%20Successful.png">
+</p>
 <br></br>
 
 ## Question 1 (b)

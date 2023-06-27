@@ -102,9 +102,15 @@ python manage.py startapp tweets
   - MongoDB:
     ```
     pip install pymongo
+    pip install djongo
     ```
     Result:
+    
+    pymongo
     <img  src="./files/images/pymongo.png"></img>
+    
+    djongo
+    <img  src="./files/images/djongo.png"></img>
     
   - Python Library to provides timezone support:
     ```

@@ -31,7 +31,7 @@ python -m venv envq3
 ### Step 3: Activate virtual environment
 
 ```python
-myenv\Scripts\activate
+envq3\Scripts\activate
 ```
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image1.png)
@@ -114,21 +114,236 @@ class User(AbstractUser):
 
 ### Step 7: Configure views.py
 
-1. Include the necessary library
+1. Go to `Desktop`> `AnalyticsQ3` > `AnalyticsQ3_app` > `views.py`
+
+2. Open `views.py` file using Microsot Visual Studio Code
+
+3. Include the necessary library and place in at the top of the file
 
 ```python
 from django.shortcuts import render, redirect
-from . forms import RegistrationForm
-from django.contrib.auth. forms import AuthenticationForm
+from .forms import RegistrationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from decorators import is_customer, is_technical _worker, is_senior_management
+from .decorators import is_customer, is_technical_worker, is_senior_management
 from django.contrib.auth.decorators import user_passes_test
 ```
 
-2. Define a function name `user_login
+4. Define a function called `user_login` to handle the user login process below the library
 
+```python
+def user_login(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            print('User:', user) 
+            if user is not None:
+                login(request, user)
+                print('User logged in successfully') 
+                return redirect('dashboard')  
+    else:
+        form = AuthenticationForm()
+    return render(request, 'login.html', {'form': form})
+```
 
+5. Define a function called `register` to handle the user registration process below the `user_login` function
+
+```python
+def register(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = RegistrationForm()
+    return render(request, 'register.html', {'form': form})
+```
+
+6. Define three dashbord views page based on their respective roles below the `register` function
+
+```python
+@login_required
+def profile(request):
+    user = request.user
+    
+    return render(request, 'profile.html', {'user': user})
+
+@user_passes_test(is_customer)
+def customer_dashboard(request):
+    
+    return render(request, 'customer_dashboard.html')
+
+@user_passes_test(is_technical_worker)
+def technical_worker_dashboard(request):
+    
+    return render(request, 'technical_worker_dashboard.html')
+
+@user_passes_test(is_senior_management)
+def senior_management_dashboard(request):
+    
+    return render(request, 'senior_management_dashboard.html')
+```
+
+7. Define a function called `redirect_dashboard` to redirect each views page based on their respective roles
+
+```python
+def redirect_dashboard(request):
+    user = request.user
+    if user.is_customer:
+        return redirect('customer_dashboard')
+    elif user.is_technical_worker:
+        return redirect('technical_worker_dashboard')
+    elif user.is_senior_management:
+        return redirect('senior_management_dashboard')
+    else:
+        
+        return redirect('profile')
+```
+
+7. Define a function called `user_logout` to handle user logging out if the system
+
+```python
+def user_logout(request):
+    logout(request)
+    return redirect('login')
+```
+
+### Step 8: Create a Registration Form
+
+1. Open Visual Studio Code and go to `Desktop` > `AnalyticsQ3` > `AnalyticsQ3_app`
+
+2. Create a new file called `forms.py`. The file must be place inside the `AnalyticsQ3_app`
+
+3. Write down the code below inside the newly created `forms.py`
+
+```python
+from django.contrib.auth.forms import UserCreationForm
+from django import forms
+from .models import User
+
+class RegistrationForm(UserCreationForm):
+    ROLE_CHOICES = [
+        ('customer', 'Customer'),
+        ('technical_worker', 'Technical Worker'),
+        ('senior_management', 'Senior Management'),
+    ]
+
+    role = forms.ChoiceField(choices=ROLE_CHOICES, widget=forms.RadioSelect)
+
+    class Meta:
+        model = User
+        fields = ('username', 'email', 'password1', 'password2', 'role')
+
+    def save(self, commit=True):
+        user = super().save(commit=False)
+        role = self.cleaned_data.get('role')
+
+        if role == 'customer':
+            user.is_customer = True
+        elif role == 'technical_worker':
+            user.is_technical_worker = True
+        elif role == 'senior_management':
+            user.is_senior_management = True
+
+        if commit:
+            user.save()
+        return user
+```
+
+### Step 9: Configure urls.py file
+
+1. Go to `Desktop` > `AnalyticsQ3` > `AnalyticsQ3`
+
+2. Open urls.py file using Microsoft Visual Studio Code
+
+3. Replace the default codes with the codes below
+   
+```python
+from django.contrib import admin
+from django.urls import path
+from AnalyticsQ3_app.views import register, user_login, redirect_dashboard, customer_dashboard, technical_worker_dashboard, senior_management_dashboard, user_logout
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', register, name='register'),
+    path('register/', register, name='register'),
+    path('login/', user_login, name='login'),
+    path('dashboard/', redirect_dashboard, name='dashboard'),
+    path('customer_dashboard/', customer_dashboard, name='customer_dashboard'),
+    path('technical_worker_dashboard/', technical_worker_dashboard, name='technical_worker_dashboard'),
+    path('senior_management_dashboard/', senior_management_dashboard, name='senior_management_dashboard'),
+    path('logout/', user_logout, name='logout'),
+]
+```
+
+### Step 10: Create User Interface
+
+1. Go to `Desktop` > `AnalyticsQ3` > `AnalyticsQ3_app`
+   
+2. Create a file called `login.html`
+
+3. Type in the follwing code
+
+```python
+{% extends 'base.html' %} {% block content %}
+<h2>Login</h2>
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Login</button>
+</form>
+{% endblock %}
+```
+
+4. Create a file called `register.html`
+
+5. Type in the follwing code
+
+```python
+{% extends 'base.html' %} {% block content %}
+<h2>Register</h2>
+<form method="post">
+  {% csrf_token %} {{ form.as_p }}
+  <button type="submit">Register</button>
+</form>
+<br />
+<text>Already have an account?</text><a href="{% url 'login' %}">Sign In</a>
+{% endblock %}
+```
+
+### Step 11: Install mysqlclient
+
+1. Type in `pip install mysqlclient` in the command prompt
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image3.png)
+
+### Step 12: Install decorators
+
+2. Type in `pip install decorator` in the command prompt
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image4.png)
+
+### Step 13: Creata decorator.py file
+
+```python
+# decorators.py
+from django.contrib.auth.decorators import user_passes_test
+
+def is_customer(user):
+    return user.is_authenticated and user.is_customer
+
+def is_technical_worker(user):
+    return user.is_authenticated and user.is_technical_worker
+
+def is_senior_management(user):
+    return user.is_authenticated and user.is_senior_management
+```
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image4.png)
 
 
 
