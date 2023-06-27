@@ -91,11 +91,11 @@ In MongoDB the are 2 methods to update your database which are<br>
  * To delete data from MongoDB, I use the `deleteOne()` method.
  * I wanted to delete this ` id : 22819397800 `from the database.
  * Below is the command to delete the id and the result:
-   <img width="655" alt="image" src="./files/images/deleteresult.png">
- * Before the delete command  :
-   <img width="655" alt="image" src="./files/images/beforedelete.png">
- * After the delete command  :
-   <img width="655" alt="image" src="./files/images/afterdelete.png">\
+    <img width="655" alt="image" src="./files/images/deleteresult.png">
+ * Before the delete command  :<br>
+    <img width="655" alt="image" src="./files/images/beforedelete.png">
+ * After the delete command  :<br>
+    <img width="655" alt="image" src="./files/images/afterdelete.png">\
  * Succesfully deleted the object!
 
 ## Contribution 🛠️
