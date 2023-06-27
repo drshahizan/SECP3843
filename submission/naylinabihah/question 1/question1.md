@@ -17,9 +17,9 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 1 (a)
 This portal is going to implement the usage of Django, JSON, MySQL and MongoDB. To built the best portal in terms of seamless integration between these four things in five servers at most, there are many ways to do so. These are the ways that I choose to use as an IT consultant in this case.
 
-First, since using Django web framework, we should install Django framework in all 5 servers to ensure that everything is uniformed and can work properly. 'pip' can be used to install Django project in the servers as it act as a package installer for Python specifically. All servers should have the same version of Django and make sure that the version is stable and compatible with the devices and operating system. The five servers are Web Server/Hosting for the portal after publishing it live, application server is used when doing the project locally, two database server, one for each MySQL and MongoDB.....
+First, since using Django web framework, we should install Django framework in all 5 servers to ensure that everything is uniformed and can work properly. 'pip' can be used to install Django project in the servers as it act as a package installer for Python specifically. All servers should have the same version of Django and make sure that the version is stable and compatible with the devices and operating system. The five servers are Web Server/Hosting for the portal after publishing it live, application server is used when doing the project locally, and two database server, one for each MySQL and MongoDB.
 
-After installing it, build a Django project in one of five the servers that we had using the terminal (command prompt). Build the project in application server as it will act as a main server for this project
+After installing it, build a Django project in one of four the servers that we had using the terminal (command prompt). Build the project in application server as it will act as a main server for this project
 
 ```python
 !pip install django
