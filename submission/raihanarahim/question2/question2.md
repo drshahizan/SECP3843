@@ -41,7 +41,62 @@ Don't forget to hit the :star: if you like this repo.
   <img width="655" alt="image" src="./files/images/impoert.png">
 * tweets JSON dataset imported succesfully!
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Five MongoDB Queries
+
+Go to command prompt and run the `mongosh` command to continue with querying MongoDB data.
+<img width="655" alt="image" src="./files/images/mongosh.png">
+
+### Create
+ * To create or insert in MongoDB there are 2 methods which are 
+	* `insertOne()` : This method insert a single object.
+	* `insertMany()` : This method insert array of objects.
+ * I will use the `insertOne()` method. Below is the command to use this method :
+   <img width="655" alt="image" src="./files/images/insertop.png">
+ * The data inserted succefully into the tweets database.
+   <img width="655" alt="image" src="./files/images/endson.png">
+
+### Read
+ * To read data from MongoDB, I use the `find()` method.
+ * I wanted to find this ` id : 22819398000 `from the database.
+ * Below is the command to find the id and results :
+   <img width="655" alt="image" src="./files/images/readop.png">
+ * To ensure that the data exist, check in MongoDB Compass :
+   <img width="655" alt="image" src="./files/images/read.png">
+   
+### Update
+In MongoDB the are 2 methods to update your database which are<br>
+	* `updateOne()` : This method update only one object.<br>
+	* `updateMany()` : This method update array of objects.<br>
+  I am going to demonstrate using both of the methods.
+
+1. Update `id : 22819398000 ` and set `contributors = 2` using `updateOne()` method <br>
+   i) In Mongosh, run the command below by specifying the id and what attributes you wish to      update :
+ <img width="655" alt="image" src="./files/images/update2.png">
+  ii) Before the update command :
+ <img width="655" alt="image" src="./files/images/bfrupdate1.png">
+  iii) After the update command :
+ <img width="655" alt="image" src="./files/images/afterupdate1.png">
+  iv) Succesfully updated the object! <br>
+ 
+2. Update ` retweet_count: null ` and set `retweet_count: 0` using `updateMany()` method <br>
+   i) In Mongosh, run the command below by specifying attributes you wish to      update :
+ <img width="655" alt="image" src="./files/images/update1.png">
+  ii) Before the update command :
+ <img width="655" alt="image" src="./files/images/beforeupdate.png">
+  iii) After the update command :
+ <img width="655" alt="image" src="./files/images/afterupdate.png">
+  iv) Succesfully updated the object!
+
+### Delete
+ * To delete data from MongoDB, I use the `deleteOne()` method.
+ * I wanted to delete this ` id : 22819397800 `from the database.
+ * Below is the command to delete the id and the result:
+   <img width="655" alt="image" src="./files/images/deleteresult.png">
+ * Before the delete command  :
+   <img width="655" alt="image" src="./files/images/beforedelete.png">
+ * After the delete command  :
+   <img width="655" alt="image" src="./files/images/afterdelete.png">\
+ * Succesfully deleted the object!
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
