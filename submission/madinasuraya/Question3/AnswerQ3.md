@@ -131,8 +131,8 @@ Next, choose the replication technique for each database. MySQL and MongoDB will
    1.  Set up virtual environment with root access
       
    2. Determine the master server and slave server IP address. 
-     ** Master server: 12.34.56.111
-      Slave server: 12.23.34.222**
+      **Master server: 12.34.56.111**
+      **Slave server: 12.23.34.222**
   
    3. Setting up the master by finding the bind-address in the mysql config file and changing it from to the master server IP defined above.
       <p align="center">
