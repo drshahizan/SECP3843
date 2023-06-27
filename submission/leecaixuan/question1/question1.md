@@ -213,7 +213,7 @@ Example: Retrieve data from the Accounts table
 
 ```
 # Import the model representing the account table
-from myapp.models import Account
+from AA_DjangoApp.models import Account
 
 def retrieve_accounts_data():
     # Retrieve all records from the account table
