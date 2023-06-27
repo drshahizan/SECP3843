@@ -76,7 +76,7 @@ Now, I double check whether all selected documents are updated or not. From here
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20115905.png" alt="double check updatemany data"><br>
 
 <b>iv. Delete <br></b>
-To perform delete operation to one specific document, I use the query "db.collection.deleteOne()". Here, I select the document with business name of "TY Home" to delete. 
+To perform delete operation to one specific document, I use the query "db.collection.deleteOne()". Here, I select the document with business name of "TY Home" to delete. <br>
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20120101.png" alt="deleteone()"><br>
 Now, I cannot find any document with business name "TY Home" since I had already successfully deleted it from the database. 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20120123.png" alt="view deleted date"><br>
