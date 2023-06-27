@@ -54,10 +54,6 @@ mongod
 Command Prompt:
 <img  src="https://github.com/drshahizan/SECP3843/assets/120614501/56d70022-c686-48cd-b7d3-83984142d527"></img>
 
-- Repen Command Prompt and paste the following code and run.
-```
-cd C:\Program Files\MongoDB\Server\6.0\bin
-```
 
 ### Step 3: Import Dataset
 In cmd enter `mongoimport "C:\Users\user\Downloads\listingsAndReviews.json" -d AA -c db_airbnb`.
