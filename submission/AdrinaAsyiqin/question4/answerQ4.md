@@ -72,7 +72,7 @@ Don't forget to hit the :star: if you like this repo.
 
   ```
 
-  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/28b8e649-6383-4c33-809c-7a71f0b02772)
+  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/aff95e19-040f-4bb5-9e77-47ae4120e7f9)
 
 
 ### Step 2 :Data visualisation
@@ -94,7 +94,7 @@ Don't forget to hit the :star: if you like this repo.
 
   ```
 
-  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/3eebbd45-3d48-4883-a183-3c9b4e7ebd92)
+  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/009620f7-ffad-4f7f-98f2-3d77596ec125)
 
 
 - Create pie chart
@@ -113,7 +113,7 @@ Don't forget to hit the :star: if you like this repo.
 
   ```
 
-  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/d6fcb1de-eb09-437e-a10c-c1b03454acc8)
+  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/3b545c61-9675-4990-aacb-057281d903c3)
 
 
 ### Step 3:Macbine Learning
