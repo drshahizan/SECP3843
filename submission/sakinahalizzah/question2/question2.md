@@ -18,13 +18,59 @@ Don't forget to hit the :star: if you like this repo.
 
 To import data from a JSON file into MongoDB, simply follow the step-by-step process detailed below:
 
-1. To get started, first must download and install all the required software listed below:
+1. To get started, first must **download** and **install** all the required software listed below:
 
-   i. MongoDB Community Server
-   ii. MongoDB Shell
-   iii. MongoDB Command Line Database Tools
-3. 
+   i. [MongoDB Community Server](https://www.mongodb.com/try/download/community-kubernetes-operator)
+   
+   ii. [MongoDB Shell](https://www.mongodb.com/try/download/shell)
+   
+   iii. [MongoDB Command Line Database Tools](https://www.mongodb.com/try/download/database-tools)
 
+2. **Prepare the JSON file**
+   Download the [Analytics dataset](https://github.com/drshahizan/dataset/tree/main/mongodb/02-analytics), it's important and ensure that the JSON file is formatted correctly for MongoDB documents. Represent each document as a JSON object within an array or newline-delimited format. Enclose each object within square brackets and separate them with commas.
+
+3. **Start the MongoDB Server**
+   
+    Open the terminal or command prompt and run the command `mongod` to start the MongoDB server.
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/ac9bd905-ed02-402c-ba15-f5b71a91fef9" />
+
+4. **Access the MongoDB Shell**
+     To access the MongoDB shell, run the following command.
+   
+    ```
+   mongosh "mongodb+srv://cluster0.cpy5tdw.mongodb.net/" --apiVersion 1 --username <username>
+    ```
+
+    <img src="https://github.com/drshahizan/SECP3843/assets/99240177/4a5d28de-52c7-4ccc-b30f-a3ca4134d950" />
+
+6. **Select the Target Database**
+   To select the desired database in the MongoDB shell, utilize this command:
+
+    ```
+    use db_analytics
+    ```
+
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/a51c5edf-b42b-44f4-8170-53818f00fd1b" />
+
+7. **Choose the Collection**
+Specify the collection where you wish to import the JSON data. MongoDB will automatically generate the collection if it doesn't already exist. To select the collection, use the following command:
+   ```
+   db.accounts
+   db.customers
+   db.transactions
+    ```
+  <img src="https://github.com/drshahizan/SECP3843/assets/99240177/294814c4-fa20-40f1-bb35-086096f4c6df" />
+
+8. **Execute the Import Command**
+   
+   To import data from a JSON file into a chosen collection, utilize the mongoimport command as follows.
+   ```
+   mongoimport --uri="<connection_string>" --collection=<collection_name> --file="<file_path>" --jsonArray
+   ```
+   Replace with your data.
+   ```
+   mongoimport --uri="mongodb+srv://sakinahalizzah:Sakinah1234@clustersakinah.scfkjmg.mongodb.net/" --collection=accounts --file="C:\Users\User\OneDrive\Desktop\AA SECP3843\accounts.json" --jsonArray
+   ```
 ## Question 2 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
