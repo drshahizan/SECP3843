@@ -327,7 +327,7 @@ urlpatterns = [
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image4.png)
 
-### Step 13: Creata decorator.py file
+### Step 13: Create decorator.py file
 
 ```python
 # decorators.py
