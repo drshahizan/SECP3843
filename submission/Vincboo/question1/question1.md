@@ -76,11 +76,68 @@ pip install pytz
 ```
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/228e7502-4807-4298-8753-62a482cb0669"></img>
 
+### 4. Confirgure Setting for Django Database
+1. The code provided below needed to place in the `setting.py` of the project for define database:
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'stories',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': 3306,
+    },
+    'mongodb': {
+        'ENGINE': 'djongo',
+        'ENFORCE_SCHEMA': False,
+        'NAME': 'AA',
+        'CLIENT': {
+            'host': 'mongodb://localhost:27017/',
+            'port': 27017,
+            'username': '',
+            'password': '',
+        }
+    }
+}
+```
 
-### 4. Migrate DAtabase
+2. Then, we create a `.py` file named 'dbrouter.py' to route the database.
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/17f0087f-e949-4b02-97f8-9237f22afc31"></img>
+
+3. Then, we will also need to define the file.
+```
+DATABASE_APPS_MAPPING = {
+    'contenttypes': 'default',
+    'auth': 'default',
+    'admin': 'default',
+    'sessions': 'default',
+    'messages': 'default',
+    'staticfiles': 'default',
+    'user': 'default',
+    'stories': 'mongodb',
+}
+
+DBROUTERS = ['AA_stories.dbrouter.DbRouter']
+```
+
+
+### 5. Migrate DAtabase
 1. First of all we will need to tell Django to create the database tables that you defined in your application with using `py manage.py makemigrations'.
 
 2. For MySQL
+We uses `py manage.py migrate` to migrate it into MySQL.
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/e50d3c22-5eb0-4caa-8dfb-f8674358f425"></img>
+
+The result in MySQL:
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/975dfc8e-e333-415c-891f-69dfa0fd0be5"></img>
+
+3. For MongoDB
+We uses `py manage.py migrate --database=mongodb` to migrate it into MongoDB.
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/e50d3c22-5eb0-4caa-8dfb-f8674358f425"></img>
+
+The result in MongoDB:
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/92454593-9255-4e2c-a41b-7d191c0102f5"></img>
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
