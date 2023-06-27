@@ -59,13 +59,6 @@ Command Prompt:
 cd C:\Program Files\MongoDB\Server\6.0\bin
 ```
 
-- Access to MongoDB Shell
-```
-mongosh
-```
-Command Prompt:
-<img  src="https://github.com/drshahizan/SECP3843/assets/120614501/3e3d8be5-369e-4817-8d57-e1697b194a01"></img>
-
 ### Step 3: Import Dataset
 In cmd enter `mongoimport "C:\Users\user\Downloads\listingsAndReviews.json" -d AA -c db_airbnb`.
 The provided command mongoimport is used to import the JSON file sales.json into a MongoDB database named AA and the data will be stored in a collection called db_airbnb.
