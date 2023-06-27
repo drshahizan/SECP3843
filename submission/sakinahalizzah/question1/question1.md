@@ -97,22 +97,20 @@ To define your Django models, head to the models.py file found within your app d
 
 ## Question 1 (b)
 
-<img src="" />
-
-Integrating a web server, dataset, and databases can be a complex process, but with the right system architecture in place, it can be seamless and efficient. The recommended architecture involves building the web server on the Django framework. Django is a popular Python-based framework for building web applications, and it provides developers with a range of useful tools and features for creating robust and scalable web applications.
-
-In this architecture, the dataset is stored in JSON format. JSON is a lightweight data format that is commonly used for transmitting and storing structured data. By using JSON, developers can ensure that their data is easily accessible and can be transmitted quickly and efficiently.
-
-To store and retrieve data, two databases are used: MySQL and MongoDB. MySQL is a popular relational database management system that is well-suited for structured data with predefined schemas. It is a reliable and robust database system that is widely used in enterprise applications. On the other hand, MongoDB is a NoSQL database that offers high scalability and flexibility for unstructured or semi-structured data. It is a popular choice for applications that require a high degree of flexibility and scalability.
-
-To integrate Django with both databases, developers use Django's Object-Relational Mapping (ORM). The ORM provides an abstraction layer that simplifies database operations, allowing developers to interact with the databases using Python objects and methods. This abstraction simplifies the process of working with databases, making it easier for developers to write code that interacts with the databases.
-
-The ORM also provides an abstraction layer between the application and the databases. This enables seamless data manipulation, ensuring that the application can interact with the databases in a seamless and efficient manner. By using the ORM, developers can ensure that their code is easily maintainable and scalable.
-
-Overall, this system architecture provides a robust and scalable solution for integrating Django, JSON datasets, and both MySQL and MongoDB databases. It ensures efficient data storage and retrieval and allows for seamless integration between the web server and the databases. With this architecture in place, developers can build robust and scalable web applications that can handle a high volume of data and traffic.
+<img src="https://github.com/drshahizan/SECP3843/assets/99240177/be5be54f-9a52-42a2-b1f4-963ae7b7997f" />
 
 
+Exploring the intricacies of the system architecture reveals the four tiers that work in perfect harmony to provide a seamless experience. Let's take a closer look at each one.
 
+Firstly, there's the client tier, the part of the system that users interact with directly. Whether using a web browser or a different client application, users send requests and receive responses through this tier. It's responsible for rendering the user interface and handling all user interactions, such as filling out forms and clicking on links.
+
+Next, there's the web tier, where all HTTP requests and responses are handled. It consists of the Django web framework and all the components that work together to make it run smoothly. When requests come in from the client tier, the web tier routes them to the appropriate views or controllers in the application tier. It also takes care of rendering templates and returning dynamic HTML or other relevant content as responses.
+
+Moving on to the application tier, we have the core processing layer of the system. It's responsible for all the business logic, communicating with the web tier, databases, and datasets. This tier defines the Django models that represent the database tables and contains all the necessary code to parse, validate, and process the JSON dataset. It also integrates with the database engines, MySQL and MongoDB, using Django's ORM to perform data storage, retrieval, and manipulation operations.
+
+Lastly, we have the portal tier, the user-facing part of the system that provides all the functionality and data visualization. It relies on the application tier to retrieve data from the databases and dataset and transform it into a suitable format for presentation. The portal tier includes all the necessary components to make the user experience as smooth as possible, such as data visualization libraries, dashboard modules, and user interface templates. It uses Django's templating system or frontend frameworks to render dynamic web pages and display the requested data in a visually appealing and interactive manner.
+
+In summary, these four tiers work together seamlessly to provide users with a great experience. With the Django web framework, the JSON dataset, and the MySQL and MongoDB databases all working together, data storage, retrieval, and visualization are efficient and effective.
 
 
 ## Contribution 🛠️
