@@ -48,13 +48,11 @@ class Command(BaseCommand):
             json_data = json.dumps(data)
 
             # Send the JSON data to the Kafka topic using the producer
-            producer.produce(topic="story-events", value=json_data)
+            producer.produce(topic="story", value=json_data)
 
             # Poll the producer to trigger delivery reports
             producer.poll(0)
 
         # Flush the producer to ensure all messages are sent
         producer.flush()
-
-        producer.close()
 

@@ -17,6 +17,7 @@ class Story(models.Model):
     user = JSONField()
     status = models.CharField(max_length=255)
     shorturl = JSONField()
+    replica = models.IntegerField(blank=True, null=True)  # Add the replica field
 
     class Meta:
         verbose_name = 'Story'

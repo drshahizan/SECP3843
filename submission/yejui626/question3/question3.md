@@ -83,7 +83,7 @@ class User(AbstractBaseUser,PermissionsMixin):
         return self.email
 ```
 
-Also, make sure thaat you have define `AUTH_USER_MODEL` as your `your_app_name.your_user_class_name`. In this case, mine is defined as below.
+Also, make sure thaat you have define `AUTH_USER_MODEL` as your `your_app_name.your_user_class_name`. In this case, mine is defined as below.<br>
 ![Alt text](./files/images/image-3.png)
 
 ### Step 3 : Implementating Registration View and Templates
@@ -259,16 +259,193 @@ admin.site.register(User, CustomUserAdmin)
 ![Alt text](./files/images/image-11.png)
 
 ## Question 3 (b)
+To ensure that changes made in one database are accurately reflected in another, I have explored a database-specific replication techniques using a third-party integration tool **Apache Kafka**. The reason that I picked Apache Kafka is because it is a free and open-source project and it suits well to perform real-time replication. 
+
+### Step 1 : Install and configuring Apache Kafka
+1. First, we need to download ![Apache Kafka](https://kafka.apache.org/downloads). Make sure that you have downloaded the correct latest version that suits your OS. Also, download the binary version of it. <br>
+![Alt text](./files/images/download.png)
+
+2.  Extract the file and move the extracted folder to the directory where you wish to keep the files. In this case, I have extracted it to `C:` and renamed it to `kafka`, making the folder path as `C:\kafka`. Copy the folder path for further use.
+
+3. Under `C:\kafka\config`, modify the `zookeeper.properties` file and change the `dataDir` to `C:\kafka\zookeeper-data`.
+![Alt text](configuration1.png)
+
+4. Under the same folder, modify the `server.properties` file. Scroll down to log.dirs and paste the path. To the path add /kafka-logs. This completes the configuration of zookeeper and kafka server.
+![Alt text](configuration2.png)
+
+### Step 2 : Running Apache Kafka (Do Not Close)
+1. Now open command prompt and change the directory to the kafka folder `C:\kafka`. First start zookeeper using the command given below:
+```python
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+```
 ![Alt text](./files/images/image.png)
-![Alt text](./files/images/image-1.png)
 
-`kafka-topics.bat --create --topic story-events --bootstrap-server localhost:9092 --partitions 5 --replication-factor 1`
+2. Then, open another command prompt and change the directory to the kafka folder `C:\kafka`. Run kafka server using the command:
+```python
+`.\bin\windows\kafka-server-start.bat .\config\server.properties`
+```
+![Alt text](./files/images/image-1.png) <br>
+Now kafka is running and ready to stream data.
+
+### Step 3 : Set up Kafka Topic
+1. Create a Kafka topic for data replication
+A topic is a category or feed name to which messages are published. The command to create a topic is `kafka-topics.bat --create --topic <event_name> --bootstrap-server localhost:9092 --partitions <partition_number> --replication-factor <replication_factor>`. In this case, I have created a Kafka event named `story-events` that will have 5 partitions. Make sure to cd to `C:\kafka\bin\windows`
+```python
+kafka-topics.bat --create --topic story-events --bootstrap-server localhost:9092 --partitions 5 --replication-factor 1
+```
+![Alt text](./files/images/topics.png)
+
+### Step 4 : Set up Kafka producer
+1. Install `confluent-kafka-python` package in your project to interact with Kafka in Python using `pip install confluent-kafka`.
+
+2. Create the producer script file `send_to_kafka.py` under the folder path `management/commands` in your application folder.
+
+```python
+from django.core.management.base import BaseCommand
+from django.conf import settings
+from confluent_kafka import Producer, KafkaError
+import json
+from user.models import Story
+
+class Command(BaseCommand):
+    help = 'Send data from Story model to Kafka topic'
+
+    def handle(self, *args, **options):
+        KAFKA_BOOTSTRAP_SERVERS = 'localhost:9092'  # Update with your Kafka bootstrap servers
+
+        # Kafka Producer configuration
+        producer_config = {
+            'bootstrap.servers': KAFKA_BOOTSTRAP_SERVERS,
+            'client.id': 'mysql_to_mongodb_producer',  # Update with a unique client ID
+        }
+
+        # Create Kafka producer instance
+        producer = Producer(producer_config)
+
+        # Fetch data from the Story model
+        stories = Story.objects.all()
+
+        # Loop over the stories and send them to Kafka
+        for story in stories:
+            # Prepare the data to be sent to Kafka
+            data = {
+                'id': story.id,
+                'href': story.href,
+                'title': story.title,
+                'comments': story.comments,
+                'container': story.container,
+                'submit_date': story.submit_date.isoformat(),
+                'topic': story.topic,
+                'promote_date': story.promote_date.isoformat(),
+                'idJSON': story.idJSON,
+                'media': story.media,
+                'diggs': story.diggs,
+                'description': story.description,
+                'link': story.link,
+                'user': story.user,
+                'status': story.status,
+                'shorturl': story.shorturl,
+            }
+
+            # Convert the data to JSON string
+            json_data = json.dumps(data)
+
+            # Send the JSON data to the Kafka topic using the producer
+            producer.produce(topic="story-events", value=json_data)
+
+            # Poll the producer to trigger delivery reports
+            producer.poll(0)
+
+        # Flush the producer to ensure all messages are sent
+        producer.flush()
+
+        producer.close()
+```
+3. Run the producer script using the command `python manage.py send_to_kafka`. <br>
 ![Alt text](./files/images/image-2.png)
-`pip install kafka-python`
+All the data in MySQL stories table is sent to the Kafka topic.
 
-`python manage.py send_to_kafka`
 
-`python manage.py consume_and_save_to_mongodb`
+### Step 5 : Set up Kafka consumer
+1. Create the consumer script file `consume_and_save_to_mongodb.py` under the folder path `management/commands` in your application folder. Replace `AA` with your database name, `stories_story` with your collection name, `mongodb://localhost:27017` with your connection string.
+
+```python
+from django.core.management.base import BaseCommand
+from kafka import KafkaConsumer
+from pymongo import MongoClient
+from django.forms.models import model_to_dict
+from stories.models import Story
+import json
+
+class Command(BaseCommand):
+    help = 'Consume data from Kafka and save it to MongoDB'
+
+    def handle(self, *args, **options):
+        # Connect to Kafka
+        consumer = KafkaConsumer(
+            'story-events',
+            bootstrap_servers=['localhost:9092'],
+            group_id=None,
+            auto_offset_reset='earliest',
+        )
+
+        # Connect to MongoDB
+        client = MongoClient('mongodb://localhost:27017')
+        db = client['AA']
+
+        # Consume messages from Kafka and save to MongoDB
+        for message in consumer:
+            data = message.value.decode('utf-8')  # Decode the bytes to a string
+            data_dict = json.loads(data)  # Parse the JSON string to a dictionary
+            # Exclude the ModelState field
+            data_dict.pop('_state', None)
+
+            # Get the document id
+            document_id = data_dict.get('id')
+
+            # Check if a document with the same id already exists in the collection
+            existing_story = db.stories_story.find_one({'id': document_id})
+            existing_story_1 = db.stories_story_1.find_one({'id': document_id})
+            if not existing_story:
+                data_dict['replica'] = None
+            elif not existing_story_1:
+                data_dict['replica'] = 1
+            else:
+                data_dict['replica'] = 2
+
+            story = Story(**data_dict)  # Create a Story object using the dictionary
+            story_dict = model_to_dict(story)  # Convert the Story object to a dictionary
+
+            # Get the replica information
+            replica = data_dict.get('replica')
+
+            # Determine the collection name based on the replica information
+            if replica:
+                collection_name = f'stories_story_{replica}'
+            else:
+                collection_name = 'stories_story'
+
+            collection = db[collection_name]
+            collection.insert_one(story_dict)
+
+        # Close connections
+        consumer.close()
+        client.close()
+```
+3. Run the consumer script using the command `python manage.py consume_and_save_to_mongodb`. <br>
+![Alt text](./files/images/consumer.png)<br>
+
+#### First Replica
+![Alt text](./files/images/consumer1.png)<br>
+
+#### Second Replica
+![Alt text](./files/images/consumer3.png)
+
+#### Third Replica
+![Alt text](./files/images/consumer4.png)
+
+
+![Alt text](./files/images/consumer2.png)<br>
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
