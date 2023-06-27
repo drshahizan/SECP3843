@@ -1,4 +1,4 @@
-<a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
+![image](https://github.com/drshahizan/SECP3843/assets/120615951/45885157-677f-434a-98d1-b274d3f72876)<a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/network/members"><img src="https://img.shields.io/github/forks/drshahizan/SECP3843" alt="Forks Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/pulls"><img src="https://img.shields.io/github/issues-pr/drshahizan/SECP3843" alt="Pull Requests Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/issues"><img src="https://img.shields.io/github/issues/drshahizan/SECP3843" alt="Issues Badge"/></a>
@@ -19,33 +19,68 @@ The following steps outline the process of setting up a configuration to seamles
 
 ### 1. Install Django
 To install Django using `pip` on a terminal or command prompt, then execute the provided command:
-```pip install django```
+```
+pip install django
+```
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/450f9692-82d7-4369-bfd9-839ad30ab0d5"></img>
 
 ### 2. Set up Django Server
-1. Create a Virtual Environment:
-```py -m venv myenv```
+1. Create a Virtual Environment
+```
+py -m venv myenv
+```
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/487a673a-93b1-47cc-96ca-3586f83d06a7"></img>
 
-2. Activate the virtual environment:
-```myenv\Scripts\activate```
+2. Activate the virtual environment
+After the virtual environment was created, activate it by running the code:
+```
+myenv\Scripts\activate
+```
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/dd99ae8d-bd7b-4275-a612-ca84e6335554"></img>
 
-3. Create new Django project:
-```django-admin startproject AA_stories```
+3. Create new Django project with the following code
+After it was activated, we proceed to create a project filewith the provided code:
+```
+django-admin startproject AA_stories
+```
 
-4. Create new App in the created project:
-```py manage.py startapp stories```
+4. Create new App in the created project
+Then, app is create in the same directory inside the project file.
+```
+py manage.py startapp stories
+```
 
 ### 3. Install All Needed Package:
+Given the requirement to integrate Django with both MySQL and MongoDB databases, it will be necessary to install multiple packages to facilitate this integration.
 1. MySQL
-```pip install mysqlclient```
+```
+pip install mysqlclient
+```
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/3680612f-d051-47c8-8ffe-9b424f2269c9"></img>
 
 2. MongoDB
-```pip install pymongo```
+```
+pip install pymongo
+```
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/5dc3e3f0-03e4-4978-a930-cdf3448a8ee3"></img>
 
 3. Djongo
-```pip install djongo```
+```
+pip install djongo
+```
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/7b590887-4f7e-4e08-bffc-1b5aa924d6c5"></img>
 
 4. Python Library for timezone support:
-```pip install pytz```
+```
+pip install pytz
+```
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/228e7502-4807-4298-8753-62a482cb0669"></img>
+
+
+### 4. Migrate DAtabase
+1. First of all we will need to tell Django to create the database tables that you defined in your application with using `py manage.py makemigrations'.
+
+2. For MySQL
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
