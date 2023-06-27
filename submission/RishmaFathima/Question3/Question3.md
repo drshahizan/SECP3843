@@ -100,8 +100,85 @@ Don't forget to hit the :star: if you like this repo.
          <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/3335e687c35ce6fac6dac1c3debb8a7d3ec81e50/submission/RishmaFathima/Question3/files/images/3.1.14.PNG">
            <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/3335e687c35ce6fac6dac1c3debb8a7d3ec81e50/submission/RishmaFathima/Question3/files/images/3.1.15.PNG">
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  1. Determine the replication requirements by:
+     - Determinining whether we need MySQL to MongoDB or MongoDB to MySQL) or both databases replicating to each  other and consider which database is the primary            source of data and which is the secondary.
+     - Determine the level of consistency required between the databases.
+     - Determine how often data is updated in our databases.
+     - Identify the specific tables or collections that need to be replicated between the databases.
+     - Determine if there are any dependencies between tables or collections that require maintaining data integrity during replication.
 
+  2. Replication technique:
+     - MySQL Replication:
+       - Master-Slave replication
+         -  In Master-Slave replication, there is one master database and one or more slave databases.
+         -  The master database is the primary source of data, and any changes made to it are replicated to the slave database
+         -  The slave databases are read-only copies of the master and can be used for various purposes like scaling read operations or providing backup options.
+       - Master-Master Replication
+         - Master-Master replication, also known as circular or bidirectional replication, allows multiple MySQL databases to act as both master and slave                        simultaneously
+         - Each database in the replication setup can accept read and write operations and replicate changes to other databases.
+          
+     - MongoDB Replication
+       - Replica sets are a feature offered by MongoDB. Multiple MongoDB instances, comprising a primary node and one or more secondary nodes, make up a replica set.           All write activities are received by the primary node, and the modifications are then automatically replicated to the secondary nodes.
+       - The replication process in MongoDB is asynchronous.
+         
+  3. Set up replication for MySQL:
+     - Enable binary logging in the MySQL configuration file (my.cnf or my.ini), ensure that binary logging is enabled. 
+       ```ruby
+       log_bin = /path/to/binary/log
+       ```
+     - Configure the master database: On the master database, create a replication user and grant the necessary privileges for replication.
+     - Configure the slave database: On the slave database, configure the replication settings to connect to the master database.
+     
+       ```ruby
+       server-id = unique_slave_id
+       relay-log = /path/to/relay/log
+       ```
+     - Connect Slave to the Master
+       ```ruby
+       CHANGE MASTER TO MASTER_HOST = 'master_ip',
+       MASTER_USER = 'root',
+       MASTER_PASSWORD = '',
+       MASTER_LOG_FILE = 'bin_log_file',
+       MASTER_LOG_POS = bin_log_position;
+       ```
+
+
+  6. Set up replication for MongoDB:
+     - Create a replica set by Initializing a MongoDB replica set by starting a MongoDB instance with the 
+     - Add secondary nodes by Connecting to the primary node and add secondary nodes to the replica set. Each secondary node will replicate changes from the primary.
+
+  7. Implement data synchronization logic by:
+     - Determine the direction of synchronization: one-way (MySQL to MongoDB or MongoDB to MySQL) or bi-directional.
+     - Decide on the synchronization frequency, such as real-time or scheduled intervals.
+     - Establish connections to both the MySQL and MongoDB databases using drivers or connectors.
+       ```ruby
+       import mysql.connector
+       from pymongo import MongoClient
+
+        # Connect to MySQL
+        mysql_conn = mysql.connector.connect(
+            host="localhost",
+            user="root",
+            password="",
+            database="AA_STDE"
+          )
+          
+          # Connect to MongoDB
+          mongo_client = MongoClient("mongodb://localhost:27017/")
+          mongo_db = mongo_client["AA_STDE"]
+       ```
+     - Fetch the data from the source database based on the synchronization approach
+         ```ruby
+         mysql_cursor = mysql_conn.cursor()
+         mysql_cursor.execute("SELECT * FROM Airbnb")
+         mysql_data = mysql_cursor.fetchall()
+        ```
+     - Apply the data changes to the MySQL or MongoDB based on the synchronization approach. For one-way synchronization, insert, update, or delete data accordingly.         For bi-directional synchronization, implement logic to determine the source and target databases for each change.
+        ```ruby
+         mongo_collection = mongo_db["AA"]
+         mongo_collection.insert_many(mongo_documents)
+        ```
+  10. Test and monitor the replication and synchronization: Verify that the replication and synchronization processes are working as expected. 
 
 
 
