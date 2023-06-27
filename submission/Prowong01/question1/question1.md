@@ -61,15 +61,16 @@ Next, create a new Django project with the name AA_project. This will create a A
 
 Command: 
 ```
-cd AA_project
-python manage.py startapp companies_analytics
+django-admin startproject AA_project
+
 ```
 
  Before create the Django app, cd to the project directory and this will be the container for the project and its apps. This will create a polls directory with some files inside it, such as models.py, views.py, tests.py, admin.py, apps.py, and migrations. These files are responsible for defining your app's data models, views, tests, admin interface, configuration, and database migrations.
 
 Command:
 ```
-django-admin startproject AA_project
+cd AA_project
+python manage.py startapp companies_analytics
 ```
 <img  src="./files/images/create_project.png"></img>
 
@@ -100,7 +101,7 @@ DATABASES = {
 }
 ```
 
-### Step 5: Defind Django Models
+### Step 6: Define Django Models
 To create a model, you need to subclass django.db.models.Model and declare the fields as class attributes. Open the models.py file in ```companies_analytics``` app directory.
 
 Command:
@@ -131,7 +132,7 @@ class Company(models.Model):
     overview = models.TextField()
 
 ```
-### Step 6:Create Migration
+### Step 7:Create Migration
 To create migrations for these models, I need to use the manage.py command with the makemigrations option.
 
 ```
