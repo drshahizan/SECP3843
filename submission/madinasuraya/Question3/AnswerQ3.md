@@ -78,7 +78,7 @@ Don't forget to hit the :star: if you like this repo.
            <img width="162" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/af17e0cd-33c6-4216-9f79-50e4941f4f75">
       </p>
 
-8. Open **models.py** in the **signup** folder and start making user authentication. To perform this, firstly, define django authentication models and import it. Then, define the class for each user needed. In here, there will be three users which are customers, technical workers, and senior management. This also means that each user will have their own table in the database. Since we use some common fields such as **first_name, last_name, email, username, and password**, we dont have to specify it in the class as the django authentication model already include this.
+8. Open **models.py** in the **signup** folder and start making user authentication. To perform this, firstly, define django authentication models and import it. Then, define the class for each user needed. In here, there will be three users which are customers, technical workers, and senior management. This also means that each user type will have their own table in the database. Since we use some common fields such as **first_name, last_name, email, username, and password**, we dont have to specify it in the class as the django authentication model already include this.
    ```
    from django.contrib.auth.models import AbstractUser
    ```
