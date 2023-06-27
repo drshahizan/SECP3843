@@ -227,7 +227,30 @@ Server Used:
 
 ## Question 1 (b)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ <img src="https://github.com/drshahizan/SECP3843/blob/ca87b2313a9579a7de089133b55c080755f239bc/submission/Jokeryde/question1/files/images/Question%201.jpg">
+
+1. User Interface (UI):
+The UI is the visual interface that allows users to interact with the application. It facilitates communication between users and the web server by sending HTTP/HTTPS requests.
+
+2. Web Server (Django):
+The web server acts as the central component of the application. It receives incoming HTTP/HTTPS requests from the UI and handles them. The web server consists of various layers, including the application layer, models layer, visualization module, and JSON dataset.
+
+3. Application Layer:
+The application layer comprises forms, templates, and view functions responsible for processing requests and generating responses. It interacts with the models layer to retrieve data and present it to the user.
+
+4. Models Layer:
+The models layer represents the database of the application. It consists of two databases, namely MySQL DB and MongoDB. Django's ORM is used to store and retrieve data from these databases. The bidirectional arrows indicate that data synchronization can occur between the models layer and JSON datasets, ensuring consistent and updated data.
+
+5. JSON Datasets:
+The JSON datasets contain the movies, comments, users and theaters dataset used for analysis in the application. These datasets serve as a source of data for the application's functionality.
+
+6. Data Synchronization:
+Data synchronization involves keeping the data consistent and up to date between the models layer (databases) and the JSON datasets. This ensures that any changes made in either storage option are reflected in the other.
+
+7. Data Presentation:
+Data presentation involves the generation of visualizations and the display of data to the user. This component includes the dashboard and visualization modules, which utilize the retrieved data to present meaningful insights to the user.
+ 
+
 
 ## Contribution 🛠️
 
