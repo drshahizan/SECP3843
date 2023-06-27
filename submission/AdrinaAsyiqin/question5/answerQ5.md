@@ -47,8 +47,10 @@ Don't forget to hit the :star: if you like this repo.
     print(df.head())
     df.info()
 
-
     ```
+    ![image](https://github.com/drshahizan/SECP3843/assets/96984290/b03660a4-53ae-4aa4-8720-535924142231)
+
+
 
 - `Optimize data retrieval`
   Retrieve only the required data for visualization instead of fetching the entire dataset. Use pagination or limit the number of records retrieved at a time based on user interactions. This can be done by incorporating server-side pagination or using API endpoints with pagination support.
@@ -81,6 +83,7 @@ Don't forget to hit the :star: if you like this repo.
     print(df.head())
     df.info()
     ```
+    
 
 - `Indexing`
   Create indexes on the fields that are frequently used for filtering or sorting. Indexing can significantly speed up query execution by allowing MongoDB to quickly locate the requested data. Use the create_index() method to create indexes on specific fields.
