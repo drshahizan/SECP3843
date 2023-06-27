@@ -45,6 +45,23 @@ Required software to install and download:
 
   <img width="700" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/8535e4b8-aa84-4767-83e1-4275288fb32c">
 
+- Do data preparation **(if needed)** since the JSON dataset must be correctly formatted before import to the database.
+
+
+#### Step 3: Run MongoDB Server
+
+- Run MongoDB Community.
+  
+  <img width="387" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/68b61050-8d40-4f64-bdb7-18d8a8a06a13">
+
+
+  <img width="758" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/e2698aa9-deb5-4242-8d9a-7420b3cc5735">
+
+
+  <img width="762" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/f2012450-b3b2-4523-9087-3bc765f24fb1">
+
+
+
 <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/6de91f67-4c46-4c31-bb53-3af6f8ddaac2">
 
 
