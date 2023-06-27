@@ -88,7 +88,7 @@ Then, apply the migration by using these 2 commands:
 <img  src="./files/images/migrate.jpg"></img>
 
 ### 8. Load dataset
-Modify the city_inspections.json dataset in Jupyter notebook to convert the format into JSON array structure and download the [new_city_inspections.json]("./files/code/new_city_inspections.json").
+Modify the city_inspections.json dataset in Jupyter notebook to convert the format into JSON array structure and download the [new_city_inspections.json](./files/code/new_city_inspections.json).
 ```
 import json
 
