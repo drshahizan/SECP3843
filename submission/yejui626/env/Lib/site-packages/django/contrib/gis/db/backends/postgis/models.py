@@ -10,7 +10,6 @@ class PostGISGeometryColumns(models.Model):
     The 'geometry_columns' view from PostGIS. See the PostGIS
     documentation at Ch. 4.3.2.
     """
-
     f_table_catalog = models.CharField(max_length=256)
     f_table_schema = models.CharField(max_length=256)
     f_table_name = models.CharField(max_length=256)
@@ -20,12 +19,12 @@ class PostGISGeometryColumns(models.Model):
     type = models.CharField(max_length=30)
 
     class Meta:
-        app_label = "gis"
-        db_table = "geometry_columns"
+        app_label = 'gis'
+        db_table = 'geometry_columns'
         managed = False
 
     def __str__(self):
-        return "%s.%s - %dD %s field (SRID: %d)" % (
+        return '%s.%s - %dD %s field (SRID: %d)' % (
             self.f_table_name,
             self.f_geometry_column,
             self.coord_dimension,
@@ -39,7 +38,7 @@ class PostGISGeometryColumns(models.Model):
         Return the name of the metadata column used to store the feature table
         name.
         """
-        return "f_table_name"
+        return 'f_table_name'
 
     @classmethod
     def geom_col_name(cls):
@@ -47,7 +46,7 @@ class PostGISGeometryColumns(models.Model):
         Return the name of the metadata column used to store the feature
         geometry column.
         """
-        return "f_geometry_column"
+        return 'f_geometry_column'
 
 
 class PostGISSpatialRefSys(models.Model, SpatialRefSysMixin):
@@ -55,7 +54,6 @@ class PostGISSpatialRefSys(models.Model, SpatialRefSysMixin):
     The 'spatial_ref_sys' table from PostGIS. See the PostGIS
     documentation at Ch. 4.2.1.
     """
-
     srid = models.IntegerField(primary_key=True)
     auth_name = models.CharField(max_length=256)
     auth_srid = models.IntegerField()
@@ -63,8 +61,8 @@ class PostGISSpatialRefSys(models.Model, SpatialRefSysMixin):
     proj4text = models.CharField(max_length=2048)
 
     class Meta:
-        app_label = "gis"
-        db_table = "spatial_ref_sys"
+        app_label = 'gis'
+        db_table = 'spatial_ref_sys'
         managed = False
 
     @property

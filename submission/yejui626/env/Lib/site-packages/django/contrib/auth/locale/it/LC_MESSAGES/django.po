@@ -1,23 +1,21 @@
 # This file is distributed under the same license as the Django package.
 #
 # Translators:
-# Davide Targa <davide.targa@gmail.com>, 2021
 # Federico Capoano <federico.capoano@teletu.it>, 2011
 # Flavio Curella <flavio.curella@gmail.com>, 2013-2014
 # Jannis Leidel <jannis@leidel.info>, 2011
 # Luciano De Falco Alfano, 2016
 # Marco Bonetti, 2014
-# palmux <palmux@gmail.com>, 2015,2019
-# Paolo Melchiorre <paolo@melchiorre.org>, 2023
+# palmux <palmux@gmail.com>, 2015
 # Mattia Procopio <promat85@gmail.com>, 2015
 # Stefano Brentegani <sbrentegani@gmail.com>, 2015,2017
 msgid ""
 msgstr ""
 "Project-Id-Version: django\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-03-17 03:19-0500\n"
-"PO-Revision-Date: 2023-04-25 08:09+0000\n"
-"Last-Translator: Paolo Melchiorre <paolo@melchiorre.org>, 2023\n"
+"POT-Creation-Date: 2017-09-24 13:46+0200\n"
+"PO-Revision-Date: 2017-11-16 13:37+0000\n"
+"Last-Translator: palmux <palmux@gmail.com>\n"
 "Language-Team: Italian (http://www.transifex.com/django/django/language/"
 "it/)\n"
 "MIME-Version: 1.0\n"
@@ -61,7 +59,7 @@ msgstr "Nessuna password impostata."
 msgid "Invalid password format or unknown hashing algorithm."
 msgstr "Formato di password non valido o algoritmo di hash sconosciuto."
 
-msgid "The two password fields didn’t match."
+msgid "The two password fields didn't match."
 msgstr "I due campi password non corrispondono."
 
 msgid "Password"
@@ -74,12 +72,12 @@ msgid "Enter the same password as before, for verification."
 msgstr "Inserisci la stessa password inserita sopra, come verifica."
 
 msgid ""
-"Raw passwords are not stored, so there is no way to see this user’s "
+"Raw passwords are not stored, so there is no way to see this user's "
 "password, but you can change the password using <a href=\"{}\">this form</a>."
 msgstr ""
-"Le password grezze non vengono salvate, quindi non è possibile visualizzare "
-"la password di questo utente, ma è possibile modificarla utilizzando <a "
-"href=\"{}\">questo form</a>."
+"Le password non vengono conservate nella forma originale, quindi non è "
+"possibile visualizzare la password di questo utente, ma è possibile "
+"cambiarla usando <a href=\"{}\">questo modulo</a>."
 
 #, python-format
 msgid ""
@@ -143,9 +141,6 @@ msgstr "work factor"
 
 msgid "checksum"
 msgstr "checksum"
-
-msgid "block size"
-msgstr "dimensione del blocco"
 
 msgid "name"
 msgstr "nome"
@@ -247,22 +242,18 @@ msgstr[0] ""
 msgstr[1] ""
 "Questa password è troppo corta. Deve contenere almeno %(min_length)d "
 "caratteri."
-msgstr[2] ""
-"Questa password è troppo corta. Deve contenere almeno %(min_length)d "
-"caratteri."
 
 #, python-format
 msgid "Your password must contain at least %(min_length)d character."
 msgid_plural "Your password must contain at least %(min_length)d characters."
 msgstr[0] "La tua password deve contenere almeno %(min_length)d carattere."
 msgstr[1] "La tua password deve contenere almeno %(min_length)d caratteri."
-msgstr[2] "La tua password deve contenere almeno %(min_length)d caratteri."
 
 #, python-format
 msgid "The password is too similar to the %(verbose_name)s."
 msgstr "La password è troppo simile a %(verbose_name)s."
 
-msgid "Your password can’t be too similar to your other personal information."
+msgid "Your password can't be too similar to your other personal information."
 msgstr ""
 "La tua password non può essere troppo simile alle altre tue informazioni "
 "personali."
@@ -270,13 +261,13 @@ msgstr ""
 msgid "This password is too common."
 msgstr "Questa password è troppo comune."
 
-msgid "Your password can’t be a commonly used password."
+msgid "Your password can't be a commonly used password."
 msgstr "La tua password non può essere una password comunemente usata."
 
 msgid "This password is entirely numeric."
 msgstr "Questa password è interamente numerica."
 
-msgid "Your password can’t be entirely numeric."
+msgid "Your password can't be entirely numeric."
 msgstr "La tua password non può essere interamente numerica."
 
 #, python-format
@@ -284,11 +275,11 @@ msgid "Password reset on %(site_name)s"
 msgstr "Password reset su %(site_name)s"
 
 msgid ""
-"Enter a valid username. This value may contain only unaccented lowercase a-z "
-"and uppercase A-Z letters, numbers, and @/./+/-/_ characters."
+"Enter a valid username. This value may contain only English letters, "
+"numbers, and @/./+/-/_ characters."
 msgstr ""
-"Inserisci un nome utente valido. Questo valore può contenere solo lettere "
-"non accentate minuscole a-z e maiuscole A-Z, numeri ed i caratteri @/./+/-/_."
+"Immetti un nome utente valido. Questo campo può contenere solo lettere "
+"dell'alfabeto inglese, numeri e caratteri @/./+/-/_ ."
 
 msgid ""
 "Enter a valid username. This value may contain only letters, numbers, and "

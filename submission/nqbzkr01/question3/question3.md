@@ -21,17 +21,23 @@ Don't forget to hit the :star: if you like this repo.
   - A virtual environment allows you to isolate your current project dependencies from the rest of packages installed globally on your system or in the other virtual environments. You can either use `virtualenv` which needs to be installed on your system or the `venv` module available as a module in recent versions of Python 3.
   - Type this in command prompt:
     ```
-    $ python -m venv env
+    $ python -m venv venv
     ```
+    ![image](https://github.com/drshahizan/SECP3843/assets/92329710/d2c8c33b-2e87-424f-a1b6-3de07e508fd3)
+
   - Next, activate the virtual environment using:
     ```
-    $ source env/bin/activate
+    $ source env/Scripts/activate.bat
     ```
+    ![image](https://github.com/drshahizan/SECP3843/assets/92329710/75762a4f-881e-4c54-b1e5-5b2fbac52eb8)
+
   > Note: please note that on Windows, need to use `source env/Scripts/activate` in order to activate the virtual environment.
   - After activating the environment, you need to proceed by installing Django using `pip`:
     ```python
     $ pip install django
     ```
+    ![image](https://github.com/drshahizan/SECP3843/assets/92329710/fed732ad-4e93-4466-9613-49bd6c320b0c)
+
   - If the framework is successfully installed, the Django management commands now can be used to create and work with the Django project.
   - Next, install mysql-client using:
     ```python
@@ -45,93 +51,218 @@ Don't forget to hit the :star: if you like this repo.
   - The command prompt will ask the MySQL password then enter the password and hit Enter.
   - After that, run the following SQL statement to create a database:
     ```
-    mysql> create database moviedb;
+    mysql> create database dbAA;
     ```
 - <strong>Creating a Django Project</strong>
   - Let's now create the project using `django-admin.py`. In the terminal, run the following command:
     ```
-    $ django-admin.py startproject demoproject
+    $ django-admin.py startproject AA
     ```
   - Next, open the `settings.py` of your project and add the database address and credentials inside the `DATABASES` object.
     ```
     DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'moviedb',
-        'USER': 'root',
-        'PASSWORD': 'YOUR_DB_PASSWORD',
-        'HOST': 'localhost',   
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dbauth',
+        'HOST': 'localhost',
         'PORT': '3306',
-        }    
+        'USER': 'root',
     }
+}
     ```
-- <strong>Creating the `accounts` Application for User Authentication</strong>
+- <strong>Creating the `users` Application for User Authentication</strong>
   - Apps are the Django way of organizing a project. Think of them as modules. Let's encapsulate the authentication logic needed in our project into an accounts application. You obviously use any valid       name you see fit. Go to command prompt and navigate to the project's folder directory:
     ```
-    $ cd demoproject
+    $ cd authsysproject
     ```
   - Next, create the application using `manage.py`:
     ```
-    $ python manage.py startapp accounts
+    $ python manage.py startapp users
     ```
+- <strong>Configure models.py</strong>
+  - Next, configure the `models.py` file in users app and add the following code:
+    ```
+    from django.db import models
+    from django.contrib.auth.models import AbstractUser, Group, Permission
+    # Create your models here.
+    
+    class User(AbstractUser):
+        is_customers = models.BooleanField(default=False)
+        is_technical_workers = models.BooleanField(default=False)
+        is_senior_management = models.BooleanField(default=False)
+    
+        groups = models.ManyToManyField(Group, blank=True, related_name='custom_user_set')
+    
+        user_permissions = models.ManyToManyField(Permission, blank=True, related_name='custom_user_set')
+
+    ```
+  - Make sure `django.contrib.auth` is in `INSTALLED_APPS` in the `settings.py`.
   - `manage.py` is another Django management script that may be found in the root project's folder. It's a great wrapper for the most commonly used Django administrative commands. The preceding command         will generate a Django application with a standard file structure. To include this app in your project, visit the `settings.py` file and add it to the `INSTALLED_APPS` array:
     ```
     INSTALLED_APPS = [
     # [...]
-    'accounts'
+    'users'
     ]
     ```
   - That's it, now create the database and run Django development server using the following commands:
     ```
+    $ python manage.py makemigrations
     $ python manage.py migrate
     $ python manage.py runserver
     ```
   - The command prompt will provide the link address at http://127.0.0.1:8000/. Paste the link address into the web browser to see the web application up and running.
 - <strong>urls.py</strong>
-  - Next, create the `urls.py` file in accounts app and add the following code:
+  - Next, configure the `urls.py` file in users app and add the following code:
     ```
-    from django.contrib.auth import views
     from django.urls import path
+    from . import views
+    from django.contrib.auth import views as auth_view
     
     urlpatterns = [
+      path('', views.home, name='home'),
+      path('register/', views.register, name='register'),
+      path('profile/', views.profile, name='profile'),
+      path('login/', views.user_login, name='login'),
+      path('customerindex/', views.customerindex, name='customerindex'),
+      path('technicalindex/', views.technicalindex, name='technicalindex'),
+      path('seniorindex/', views.seniorindex, name='seniorindex'),
+      path('logout/', auth_view.LogoutView.as_view(template_name='users/logout.html'), name='logout'),
     ]
     ```
   - Make sure `django.contrib.auth` is in `INSTALLED_APPS` in the `settings.py`.
-- <strong>Create the Register View</strong>
-  - Inside the `account` app, there is a file named `views.py`.
-  - The views in views.py play a crucial role in defining the application logic and controlling the behavior of the web application in response to user interactions. They bridge the gap between the URL routing, data models, and templates, enabling Django to handle requests and generate responses effectively.
-  - So let's create a simple register view first.
+- <strong>views.py</strong>
+  - Next, configure the `views.py` file in users app and add the following code:
     ```
     from django.shortcuts import render, redirect
-    from django.contrib.auth import login, authenticate
-    from django.contrib import messages
     from django.contrib.auth.forms import UserCreationForm
+    from . forms import UserRegisterForm
+    from django.contrib import messages
+    from django.contrib.auth.decorators import login_required
+    from django.contrib.auth import authenticate, login
+    # Create your views here.
+    
     
     def home(request):
         return render(request, 'users/home.html')
     
-    def register(request):
-        if request.method == 'POST':
-            form = UserCreationForm(request.POST)
-            if form.is_valid():
-                form.save()
-    
-                messages.success(request, f'Your account has been created. You can log in now!')    
+    def user_login(request):
+        if request.method == "POST":
+            username = request.POST['username']
+            password = request.POST['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                username = user.username
+                message = f"Hello {username}!"
+                if user.is_customers == 1:
+                    messages.success(request, message)
+                    return redirect('customerindex')
+                elif user.is_technical_workers == 1:
+                    messages.success(request, message)
+                    return redirect('technicalindex')
+                elif user.is_senior_management == 1:
+                    # Redirect to a success page.
+                    messages.success(request, message)
+                    return redirect('seniorindex')
+            else:
+                # Return an 'invalid login' error message.
+                ...
+                messages.success(request, "Wrong Username or Password!")
                 return redirect('login')
         else:
-            form = UserCreationForm()
+            return render(request, 'users/login.html', {})
     
-        context = {'form': form}
-        return render(request, 'users/register.html', context)
+    def register(request):
+        if request.method == "POST":
+            form = UserRegisterForm(request.POST)
+            if form.is_valid():
+                form.save()
+                username = form.cleaned_data.get('username')
+                messages.success(request, f'Hi {username}, your account was created successfully')
+                return redirect('home')
+        else:
+            form = UserRegisterForm()
+        return render(request, 'users/register.html', {'form': form})
+    
+    @login_required()
+    def profile(request):
+        return render(request, 'users/profile.html')
+    
+    def customerindex(request):
+        return render(request, 'users/customerindex.html')
+    
+    def technicalindex(request):
+        return render(request, 'users/technicalindex.html')
+    
+    def seniorindex(request):
+        return render(request, 'users/seniorindex.html')
     ```
-  - <strong>Templates</strong>
-    - Inside the users app, we will create our templates. Inside the users directory, we will create a directory called templates. Then inside the templates directory, we will create another directory named users. Here we will put the html files. In this case home.html and register.html.
-    ![Screenshot 2023-06-26 205311](https://github.com/drshahizan/SECP3843/assets/92329710/ee559aa0-82e6-4d3a-bf3a-30629bc717c6)
-  - <strong>register.html</strong>
-    ![Screenshot 2023-06-26 210048](https://github.com/drshahizan/SECP3843/assets/92329710/6084c90c-7aaf-46fb-a768-56249644d999)
-  - <strong>urls.py</strong>
-    - Modify the `urls.py` in `AA`.
-      ![image](https://github.com/drshahizan/SECP3843/assets/92329710/b2d298c1-8624-4fab-8bda-25cf541122b0)
+- <strong>Register Page</strong>
+  - So let's create a simple register view first.
+  - Create `register.html` under `templates/users` folder.
+    ```
+    {% extends 'users/base.html' %}
+    {% load crispy_forms_tags %}
+    {% load static %}
+    
+    
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <div class="container" style="margin-top: 30px;">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4" style="color: white;">Join Now</legend>
+              {{ form|crispy }}
+          </fieldset>
+          <div class="form-group" id="signup-button">
+              <button class="btn ">Sign Up</button>
+          </div>
+          <div class="form-group">
+              <small class="text-muted ml-3" >Already have an account? <a href="">Sign In</a></small>
+          </div>
+        </form>
+        </div>
+    {% endblock content %}
+    ```
+  - Here is how the register looks like:
+  ![image](https://github.com/drshahizan/SECP3843/assets/92329710/280af21e-4c74-473e-9ee2-0b11641f3b85)
+- <strong>Login Page</strong>
+  - So let's create a simple login view first.
+  - Create `login.html` under `templates/users` folder.
+    ```
+    {% extends 'users/base.html' %}
+    {% load crispy_forms_tags %}
+    {% load static %}
+    
+    
+    {% block content %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+        <div class="container" style="margin-top: 30px;">
+        <form action="" method="POST">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4" style="color: white;">Join Now</legend>
+              {{ form|crispy }}
+          </fieldset>
+          <div class="form-group" id="signup-button">
+              <button class="btn ">Sign Up</button>
+          </div>
+          <div class="form-group">
+              <small class="text-muted ml-3" >Already have an account? <a href="">Sign In</a></small>
+          </div>
+        </form>
+        </div>
+    {% endblock content %}
+    ```
+  - Here is how the login page looks like:
+  ![image](https://github.com/drshahizan/SECP3843/assets/92329710/2d01b714-7ad2-42e6-8cb8-c575a41a01bd)
+
+
+
+
+  
+
 
 
 

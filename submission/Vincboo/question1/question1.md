@@ -10,12 +10,42 @@ Don't forget to hit the :star: if you like this repo.
 
 # Special Topic Data Engineering (SECP3843): Alternative Assessment
 
-#### Name:
-#### Matric No.:
-#### Dataset:
+#### Name: Vincent Boo Ee Khai
+#### Matric No.: A20EC0231
+#### Dataset: [Stories](https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories)
 
 ## Question 1 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The following steps outline the process of setting up a configuration to seamlessly integrate Django with a JSON dataset, allowing for effective storage and retrieval of data from both MySQL and MongoDB databases. The primary components involved in this configuration are a web server, a MySQL database server, and a MongoDB database server.
+
+### 1. Install Django
+To install Django using `pip` on a terminal or command prompt, then execute the provided command:
+```pip install django```
+
+### 2. Set up Django Server
+1. Create a Virtual Environment:
+```py -m venv myenv```
+
+2. Activate the virtual environment:
+```myenv\Scripts\activate```
+
+3. Create new Django project:
+```django-admin startproject AA_stories```
+
+4. Create new App in the created project:
+```py manage.py startapp stories```
+
+### 3. Install All Needed Package:
+1. MySQL
+```pip install mysqlclient```
+
+2. MongoDB
+```pip install pymongo```
+
+3. Djongo
+```pip install djongo```
+
+4. Python Library for timezone support:
+```pip install pytz```
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

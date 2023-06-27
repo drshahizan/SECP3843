@@ -14,10 +14,48 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: City Inspections
 
 ## Question 2 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+To import JSON file to MongoDB database, several steps need to be done.
+
+#### Step 1: Software Installation and Download
+
+Required software to install and download:
+ - MongoDB Community Server
+    -  Go to https://www.mongodb.com/try/download/community and "Download".
+
+
+
+   <img width="356" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/3eb261a3-e23d-4cc2-86f7-2ceb8d87b132"><img width="356" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/08429c72-1eaa-4929-bb0c-447dcb68b8b7">
+
+
+- MongoDB Shell
+    -  Go to https://www.mongodb.com/try/download/shell and "Download".
+
+   <img width="321" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/b26193fd-2135-4aab-9dc6-3a610adcaad1">
+
+
+- MongoDB Command Line Database Tools
+    -  Go to https://www.mongodb.com/try/download/database-tools and "Download".
+
+   <img width="359" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/54ab9247-ebb7-4aba-b01f-d1ba9a0e6407">
+
+#### Step 2: Download and Prepare JSON dataset
+
+- Download the JSON dataset by downloading the raw file
+
+  <img width="700" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/8535e4b8-aa84-4767-83e1-4275288fb32c">
+
+<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/6de91f67-4c46-4c31-bb53-3af6f8ddaac2">
+
+
+
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<img width="949" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/093d8607-24d0-403a-9ce0-65f874a8eab8">
+
+<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/c71eb80b-c594-4d5e-9e18-f8ae68188874">
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

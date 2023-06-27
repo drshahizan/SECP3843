@@ -17,11 +17,9 @@ from django.db.backends.dummy.features import DummyDatabaseFeatures
 
 
 def complain(*args, **kwargs):
-    raise ImproperlyConfigured(
-        "settings.DATABASES is improperly configured. "
-        "Please supply the ENGINE value. Check "
-        "settings documentation for more details."
-    )
+    raise ImproperlyConfigured("settings.DATABASES is improperly configured. "
+                               "Please supply the ENGINE value. Check "
+                               "settings documentation for more details.")
 
 
 def ignore(*args, **kwargs):
@@ -46,6 +44,7 @@ class DatabaseIntrospection(BaseDatabaseIntrospection):
     get_table_description = complain
     get_relations = complain
     get_indexes = complain
+    get_key_columns = complain
 
 
 class DatabaseWrapper(BaseDatabaseWrapper):

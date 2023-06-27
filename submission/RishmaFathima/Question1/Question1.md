@@ -15,7 +15,90 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Airbnb Listings Dataset](https://github.com/drshahizan/dataset/tree/c8e9f4a7cbdb0c1b78ca2c73915ff56ceeb50e70/mongodb/05-airbnb)
 
 ## Question 1 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+   1. Set up the Django project with virtual environment:
+      </br>
+        - The first step is to install django in my desktop. In order to install django, I use the command  ``pip install django`` in command prompt.
+          
+          <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/12219ef33b7e27340551d65a344b034a560bd2e4/submission/RishmaFathima/Question1/files/images/1.1.1.1.png">
+          
+        - Then, I created a new project b: Use the django-admin startproject command to create a new Django project from a folder I have created called ``AA_Question1``           by using the command called ``django-admin startproject AA_Question1``.
+          
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/12219ef33b7e27340551d65a344b034a560bd2e4/submission/RishmaFathima/Question1/files/images/1.1.1.2.png">
+           
+        - After creating the project, I created the Django app by the command ``python manage.py startapp app``.
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/12219ef33b7e27340551d65a344b034a560bd2e4/submission/RishmaFathima/Question1/files/images/1.1.1.3.png">
+           
+        - Then, create a virtual environment for the project.
+          
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/871e6e313e09d8f507b32aaf9d54173434080a29/submission/RishmaFathima/Question1/files/images/new%201.1.1.4.png">
+          
+  2. Define Django models in models.py:
+        - JSON file is downloaded from the Github.
+        - Django models were created based on the attributes from the downloaded JSON file which contain the dataset of ``Airbnb Listing Dataset``.
+        - From the app folder created, in the ``models.py`` file, the model of the prject would be defined.
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/c18d8db59264504dc5f34395291dfe90abb48c90/submission/RishmaFathima/Question1/files/images/1.1.2.png">
+          
+   
+      
+
+  3. Configure the settings of the project:
+
+        - Update the ``settings.py`` file in the project folder to define the database setting for Mysql and MongoDB
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/c18d8db59264504dc5f34395291dfe90abb48c90/submission/RishmaFathima/Question1/files/images/1.1.3.1.png">
+        - Update the ``settings.py`` file to declare the created ``app``
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/bda3ad57b1a66ccf70c740ca047c30a08ee4c1c7/submission/RishmaFathima/Question1/files/images/1.1.3.3.png">
+        - Install django with the command ``pip install django`` to work as database connectors
+        -  Install another package ``pip install pymongo`` for MongoDB
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/1713eba60cac85222b200ca02917e21d4d29ac00/submission/RishmaFathima/Question1/files/images/1.1.3.4.png">
+           
+        - Install mysqlclient with the command ``pip install mysqlclient`` to work as database connectors
+          <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/c18d8db59264504dc5f34395291dfe90abb48c90/submission/RishmaFathima/Question1/files/images/1.1.3.2.png">
+         
+           
+  4. Migration of database and load the JSON file:
+
+        - Add the command ``python manage.py makemigrations`` to migrate the database from the ``models.py``
+        - Then add the command ``python manage.py migrate`` to make th emigrations work with Mysql and MongoDB
+
+          ```ruby
+          python manage.py makemigrations
+          python manage.py migrate
+          ```
+        - The Mysql output from the above command:
+
+          <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/0992b610b05bfd19edb75c9e0c3d0cfb2dbb5431/submission/RishmaFathima/Question1/files/images/1.1.4.1.png">
+          
+        - TheMongoDB output:
+          
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/0992b610b05bfd19edb75c9e0c3d0cfb2dbb5431/submission/RishmaFathima/Question1/files/images/1.1.4.2.png">
+     
+      
+          
+          
+        - Finally python generate a script to read Django.
+         
+  5. Retrieve, Update and Testing Data:
+
+        - To retrieve all data from the MongoDB ``AA_Mongo`` collection:
+     
+          ```ruby
+
+            from app.models import AA_Mongo
+            aa_Mongo = AA_Mongo.objects.all()
+
+          ```
+        - To retrieve all data from the MongoDB ``AA_Mysql`` collection:
+          
+          ```ruby
+
+          from app.models import AA_Mysql
+          aa_Mysql = AA_Mysql.objects.all()
+
+          ```
+           
+        - Update the MOngoDB and Mysql everytime there is changes in dataset
+        - Finally, with testing and monitoring practices, I can ensure the reliability, performance, and stability of your Django application's integration with the               JSON dataset, MySQL, and MongoDB databases
+        
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

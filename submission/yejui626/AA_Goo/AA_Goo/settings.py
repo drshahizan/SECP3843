@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'stories',
+    'user',
 ]
 
 MIDDLEWARE = [
@@ -81,7 +82,7 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
-        'PORT': 8000,
+        'PORT': 3306,
     },
     'mongodb': {
         'ENGINE': 'djongo',
@@ -95,6 +96,18 @@ DATABASES = {
         }
     }
 }
+
+DATABASE_APPS_MAPPING = {
+    'contenttypes': 'default',
+    'auth': 'default',
+    'admin': 'default',
+    'sessions': 'default',
+    'messages': 'default',
+    'staticfiles': 'default',
+    'user': 'default',
+    'stories': 'mongodb',
+}
+
 
 DATABASE_ROUTERS = ['AA_Goo.database_router.DatabaseRouter']
 

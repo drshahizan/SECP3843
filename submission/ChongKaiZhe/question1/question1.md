@@ -15,7 +15,19 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Analytics
 
 ## Question 1 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+1. Install Django
+  ![image](https://github.com/drshahizan/SECP3843/assets/120616074/5922c29c-6335-4713-9b47-4f3e5b3769d3)
+2. Create Django project
+   ![image](https://github.com/drshahizan/SECP3843/assets/120616074/498a9fc7-7b0c-4bc1-97ad-d462cb06dd36)
+3. Open Visual Studio project
+   ![image](https://github.com/drshahizan/SECP3843/assets/120616074/c506b0a7-9d21-4a56-80be-8366723b07d4)
+4. Connect to MySQL database
+   ![image](https://github.com/drshahizan/SECP3843/assets/120616074/d48f6159-5fe7-4f54-b9cc-32bb72e264f0)
+5. Define Django Models
+   ![image](https://github.com/drshahizan/SECP3843/assets/120616074/93b00fca-ce9c-4b9c-8e0a-30e632047069)
+6. Migration
+   ![image](https://github.com/drshahizan/SECP3843/assets/120616074/ccdac7df-7fc2-4d85-9097-4a28b32da34d)
+  
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
