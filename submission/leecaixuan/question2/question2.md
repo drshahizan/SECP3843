@@ -75,6 +75,23 @@ The images below show the data from 'Accounts.json', 'Customer.json' and 'Transa
   <img height="150px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/collections.png" />
 </p>
 
+- Accounts JSON data is imported
+
+<p align="center">
+  <img height="150px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/accounts_input.png" />
+</p>
+
+- Customers JSON data is imported
+
+<p align="center">
+  <img height="150px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/customer.png" />
+</p>
+
+- Transactions JSON data is imported
+
+<p align="center">
+  <img height="150px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/transaction_input.png" />
+</p>
 
 
 ## Question 2 (b)
