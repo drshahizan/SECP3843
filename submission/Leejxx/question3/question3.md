@@ -37,6 +37,22 @@ To create a user registration and login module using Django and MySQL for three 
   c) Result:
      <img  src="./files/images/manage3.JPG"></img>
 
+### 3. User Registration
+  a) Create a registration form: Create a Django form (UserRegistrationForm) that includes fields for username, password, email. 
+     <img  src="./files/images/register1.JPG"></img>
+     
+  b) Create a registration view: Define a view function (register) that handles the registration logic. In this view, validate the form data, create a new User instance, save it to the database.
+     <img  src="./files/images/register2.JPG"></img>
+     
+  c) Create a registration template: Create an HTML template (register.html) that displays the registration form and handles form submission.
+      <img  src="./files/images/register3.JPG"></img>
+
+### 4. User Login
+  a) Create a login form: Create a Django form (UserLoginForm) that includes fields for username and password.
+     <img  src="./files/images/login1.JPG"></img> 
+
+  b) 
+
 
 
   
