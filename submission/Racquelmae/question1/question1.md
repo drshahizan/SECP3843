@@ -15,41 +15,32 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: City Inspections	
 
 ## Question 1 (a)
-<<<<<<< Updated upstream
-### 1. Install Python & Django
-- To utilize Django, a Python installation is required which can be obtained by downloading it from the [official website](https://www.python.org/downloads/).
-- Open Command Prompt and type `pip install django` to install Django.
-
-<img  src="./files/images/pip.jpg"></img>
-=======
 #### Prerequisites
 To utilize Django, a Python installation is required which can be obtained by downloading it from the [official website](https://www.python.org/downloads/).
->>>>>>> Stashed changes
 
 ### 1. Create & activate virtual environment
 To create a virtual environment, run `python -m venv env` in your command prompt. Once the virtual environment is created, activate it by typing `env\Scripts\activate`.
 <img  src="./files/images/env.jpg"></img>
 
-### 1. Install Django
+### 2. Install Django
 With the virtual environment activated, type `pip install django` to install Django.
 <img  src="./files/images/pip.jpg"></img>
 
-### 4. Create project & app
+### 3. Create project & app
 Use `django-admin startproject portalproject` to create the Django project. Then, navigate to the project directory and create a new app by running `python manage.py startapp portalapp`. 
 <img  src="./files/images/project.jpg"></img>
 
-Once the app is created, add the app name in the INSTALLED_APPS array of settings.py file.
+Once the app is created, add the app name in the INSTALLED_APPS array of settings.py file.<br>
 <img  src="./files/images/portalapp.jpg"></img>
 
-### 3. Install package 
-Install the required package by running these 3 commands: 
+### 4. Install package 
+After creating the database in both MongoDB and MySQL database servers, install the required package by running these 3 commands: 
 - `pip install djongo`
 - `pip install mysqlclient` 
 - `pip install pytz`
-after creating the database in both MongoDB and MySQL database servers.
 <img  src="./files/images/package.jpg"></img>
 
-### 4. Configure the database
+### 5. Configure the database
 To use MongoDB and MYSQL as the database, modify the settings.py file in the project folder.
 ```
 DATABASES = {
@@ -71,7 +62,7 @@ DATABASES = {
 }
 ```
 
-### 4. Define model
+### 6. Define model
 In the models.py, define the model that represents the data in Django.
 ```
 from django.db import models
@@ -87,17 +78,15 @@ class City(models.Model):
     address = models.JSONField()
 ```
 
-### 4. Migrate database
+### 7. Migrate database
 Once the models are defined, create the database tables by running `python manage.py makemigrations`.
 
 Then, apply the migration by using these 2 commands:
-- MySQL  
-`python manage.py migrate`
-- MongoDB
-`python manage.py migrate --database=mongodb`
+- MySQL: `python manage.py migrate`
+- MongoDB: `python manage.py migrate --database=mongodb`
 <img  src="./files/images/migrate.jpg"></img>
 
-### 5. Load dataset
+### 8. Load dataset
 Modify the city_inspections.json dataset in Jupyter notebook to convert the format into JSON array structure and download the [new_city_inspections.json]("./files/code/new_city_inspections.json").
 ```
 import json
@@ -148,7 +137,7 @@ class Command(BaseCommand):
 
 Then, run `python manage.py load_data new_city_inspections.json` to import the JSON dataset into the databases.
 
-### 5. Data retrieval
+### 9. Data retrieval
 Run the following code to retrieve data from the databases:
 ```
 AA_mysql = City.objects.using('default').get(id="34557-2015-ENFO")
@@ -172,17 +161,10 @@ Presents the portal's visual interface to users which includes presentation of i
 
 ### Databases
 - MySQL: stores structured data such as users login and registration credentials.
-<<<<<<< Updated upstream
-- MongoDB: stores unstructured or semi-structured data such as the JSON dataset.
-
-### Dataset (JSON)
-city_inspections.json is the JSON dataset used in this project.
-=======
 - MongoDB: stores unstructured or semi-structured data such as the new_city_inspections.json dataset.
 
 ### Dataset (JSON)
 The new_city_inspections.json is the JSON dataset used in this project and is processed by Django app for integration with the database.
->>>>>>> Stashed changes
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
