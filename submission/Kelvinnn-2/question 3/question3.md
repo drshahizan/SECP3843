@@ -548,7 +548,8 @@ For DELETE operations, the code extracts the WHERE clause, constructs a filter_c
 
 Throughout the process, the code logs the performed actions, including inserted, updated, or deleted rows.mFinally, the code closes the MySQL connection, ensuring the completion of the synchronization process between the two databases.
 
-Proof:
+### Proof:
+
 ### Figure below shows data in mysql
 <img src="./files/image/usersql.png">
 
