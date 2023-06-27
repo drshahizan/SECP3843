@@ -24,7 +24,7 @@ Once the download is complete, open the downloaded file and follow the installat
 <img  src="./files/images/env.jpg"></img>
 
 ### 1. Prepare JSON file 
-Download the new modified [City Inspections]("./files/code/new_city_inspections.json") dataset into the pc. 
+Download the new modified [City Inspections](./files/code/new_city_inspections.json) dataset into the pc. 
 
 ### 2. Start MongoDB server
 Open Command Prompt and type `mongod` to start the MongoDB server.
