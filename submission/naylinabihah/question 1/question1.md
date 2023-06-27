@@ -46,9 +46,16 @@ All the servers should be separated with different tasks and workload since it h
 ## Question 1 (b)
 
 #### User Interface
+
 #### Web Server
-#### Proxy Server
+
+This is where the deployment of the Django project built in Application Server were taken placed at. This server is used as a medium to deploy the portal to the user live on the internet. Thie web server will control the users requests and dispatch them to the responsible web pages responsively according to the requests.
+
+#### Load Balancing Server
+
 #### Application Server
+
+
 #### Database Servers (MySQL and MongoDB)
 
 
