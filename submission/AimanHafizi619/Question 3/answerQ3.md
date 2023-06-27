@@ -496,7 +496,11 @@ binlog_do_db=analytics_q3
 
 **Step 9**
 
+- Navigate to `Replication` tab and select the `configure` option in the `Replica replication` section
 
+- Copy the server-id located near the top of the table
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image20.png)
 
 
 
