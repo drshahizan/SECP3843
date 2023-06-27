@@ -106,6 +106,7 @@ Don't forget to hit the :star: if you like this repo.
     ```
   - That's it, now create the database and run Django development server using the following commands:
     ```
+    $ python manage.py makemigrations
     $ python manage.py migrate
     $ python manage.py runserver
     ```
