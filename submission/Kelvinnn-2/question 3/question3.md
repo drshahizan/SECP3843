@@ -335,13 +335,21 @@ b. Run the following command to start the Django development server: `python man
 <img src="./files/image/runserver.png">
 
 ### Results:   
-Register:
+- Register:
 <img src="./files/image/register.png">
-Login:
-<img src="./files/image/login.png">
-Customer:
-<img src="./files/image/customer.png">
 
+- Login:
+<img src="./files/image/login.png">
+
+- Customer Dashboard:
+<img src="./files/image/customer.png">
+<img src="./files/image/customerdashboard.png">
+
+- Technical Worker Dashboard:
+<img src="./files/image/technicalworkerdashboard.png">
+
+- Senior Management Dashboard:
+<img src="./files/image/seniormanagementdashboard.png">
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
