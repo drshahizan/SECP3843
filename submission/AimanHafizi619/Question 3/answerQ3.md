@@ -343,7 +343,7 @@ def is_senior_management(user):
     return user.is_authenticated and user.is_senior_management
 ```
 
-![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image4.png)
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image4.png) 
 
 
 
