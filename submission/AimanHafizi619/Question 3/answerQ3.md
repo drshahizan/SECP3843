@@ -484,7 +484,15 @@ binlog_do_db=analytics_q3
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image18.png)
 
+**Step 8**
 
+- A new table appears
+
+- Specify the User name as `slave` and host as `localhost`
+
+- Then, click `Go`
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image19.png)
 
 
 
