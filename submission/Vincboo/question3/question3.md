@@ -53,7 +53,7 @@ DATABASES = {
 
 ### 3. Define Model 
 Created a model in Django by extending the AbstractUser class. This customization allows to tailor the user model fields for three user types: customers, technical workers, and senior management.
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/3df02aa1-bd8a-4ed5-81be-7e9ee5b5f010"></img>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/cacec9c3-b84c-47ba-a2be-a534e3f4cbe4"></img>
 
 Then, set the model as default authentication model in `setting.py` as the following code:
 ```
@@ -63,14 +63,15 @@ AUTH_USER_MODEL = 'app.User'
 ### 4. Migrate Database
 Migrate and create the databse table with these code:
 ```
-python manage.py makemigrations
+python manage.py makemigrations 
+
 python manage.py migrate
 ```
 The output from terminal:
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/fa0ff521-58ed-4785-8b97-4fab57c3d737"></img>
 
 The result in MySQl:
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/4a587214-d774-4e51-86ee-5b5d9d047c4a"></img>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/85c9aa43-d8c2-4d95-968a-732e56a1b599"></img>
 
 ### 5. Create Forms for User
 Create a new file named 'form.py' in the app that are newly created.
