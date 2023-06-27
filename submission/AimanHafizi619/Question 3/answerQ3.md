@@ -36,66 +36,6 @@ myenv\Scripts\activate
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image1.png)
 
-
-### Step 2: Setup Database
-
-1. Go to `Analytics` > `Analytics` > `settings.py` and open the file
-
-2. MySQL database will be use to build the user registration and login module.
-
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'analytics',
-        'USER': 'root',
-	'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    },
-     'mongodb': {
-        'ENGINE': 'django',
-        'NAME': 'Analytics',
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
-            'host': 'mongodb+srv://admin:admin@projectcluster.7sndifd.mongodb.net/',
-    }   
-}
-}
-```
-
-### Step 3: Create User Model
-
-1. User Model uses AbstractUser class to apply the authentication and role designation feature
-
-2. Among all three JSON files, customers.json will be use for handling user authentication
-
-3. Go to `Desktop` > `Analytics` > `Customers` > `model.py` and update the files
-
-```python
-from django.db import models
-from django.contrib.postgres.fields import ArrayField
-from django.contrib.auth.models import AbstractUser, Group, Permission
-
-class Customers(models.Model):
-    username = models.CharField(max_length=100)
-    name = models.CharField(max_length=100)
-    address = models.CharField(max_length=200)
-    birthdate = models.DateField()
-    email = models.EmailField()
-    accounts = models.ArrayField(models.IntegerField())
-    tier_and_details = models.JSONField()
-
-class User(AbstractUser):
-    customer_user = models.BooleanField(default=False)
-    worker_user = models.BooleanField(default=False)
-    management_user = models.BooleanField(default=False)
-
-    groups = models.ManyToManyField(Group, blank=True, related_name='custom_user_set')
-
-    user_permission = models.ManyToManyField(Permission, blank=True, related_name='custom_user_set')
-```
-
 ### Step 4: Create new Project and App
 
 1. Go to  command prompt to creat new Django Project. Create a new app called mflixportal inside the project
@@ -120,10 +60,37 @@ py manage.py startapp AnalyticsQ3_app
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image2.png)
 
+### Step 5: Configure settings.py
 
+1. Go to `Desktop` > `AnalyticsQ3` > `AnalyticsQ3` > `settings.py`
 
+2. Add `AnalyticsQ3_app` app inside *INSTALLED_APPS* section
 
+```python
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'AnalyticsQ3_app'
+]
+```
 
+3. Replace the original code with this one inside *DATABASE* section
+
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'analytics_q3',
+	'USER': 'root',
+	'HOST': 'localhost',
+	'PORT': '3306',
+    }
+}
+```
 
 
 
