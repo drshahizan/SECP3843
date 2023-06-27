@@ -14,10 +14,12 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Supply Store
 
 ## Question 4
-   - For the given case study, a suitable machine learning approach would be binary classification using `Logistic Regression Algorithm`. Logistic Regression is commonly use use for classification task when the target variables have 2 classes.
-   - For example, predicting whether a customer will use a coupon or not in the future and etc...
+   - For the given case study, a suitable machine learning approach could be `classification` using a `Decision Tree Algorithm`. Decision trees are versatile and can be used for both prediction and data analysis tasks.
+   - The decision tree classifier is a suitable choice due to its interpretability and ability to handle nonlinear relationships.
+   - Decision trees provide a clear and intuitive representation of the decision-making process, allowing to easily understand and explain the model's predictions.
+   - The resulting tree structure can be visualized, enabling to trace the path of decision-making and gain insights into the factors influencing the predictions.
 
-   1. Firstly, before do any analysis, visualization or machine learning, we must first clean the data. For example
+   1. Firstly, before do any analysis, visualization or machine learning, we must first clean the data. For examples:
       
       ```python
         # Connect to MongoDB and retrieve data
@@ -28,43 +30,107 @@ Don't forget to hit the :star: if you like this repo.
           
           # Convert to dataframe
           df = pd.DataFrame(data)
-          df.isnull().sum()
-          df.info()
+          df
+          data = df
+      ```
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/df.jpg">
+      
+      #### Checking null rows
+      
+      ```python
+         data.isnull().sum()
+         data.info()
       ```
       <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/dfinfo.jpg">
       
       #### Droping rows with missing values
       
       ```python
-         # Handle missing values (drop rows with missing values)
          df.dropna(inplace=True)
-         df.info()
       ```
-
-      #### Split the Items columns into seprate column
+      
+      #### Droping rows with missing values
       
       ```python
-         # Convert the 'items' column into separate columns
-         df_items = pd.json_normalize(df['items'])
+      # Drop unnecessary columns
+      data = data.drop(columns=["_id"])
          
-         # Rename the columns
-         new_columns = {}
-         for col in df_items.columns:
-             new_columns[col] = f'item{col}'
-         df_items.rename(columns=new_columns, inplace=True)
+      # Convert saleDate to datetime type
+      data["saleDate"] = pd.to_datetime(data["saleDate"])
          
-         # Merge the item columns with the original DataFrame
-         df = pd.concat([df, df_items], axis=1)
+      # Convert couponUsed to boolean type
+      data["couponUsed"] = data["couponUsed"].astype(bool)
          
-         # Drop the original 'items' column
-         df.drop('items', axis=1, inplace=True)
+      # Print the cleaned DataFrame
+      data.head()
+      ```
+
+      #### Split the Items columns into seprate column using `json_normalize`
+      
+      ```python
+      # Convert the 'items' column into separate columns
+      df_items = pd.json_normalize(data['items'])
          
-         df.head()
+      # Rename the columns
+      new_columns = {}
+      for col in df_items.columns:
+          new_columns[col] = f'item{col}'
+      df_items.rename(columns=new_columns, inplace=True)
+         
+      # Merge the item columns with the original DataFrame
+      data = pd.concat([data, df_items], axis=1)
+         
+      # Drop the original 'items' column
+      data.drop('items', axis=1, inplace=True)
+         
+      data.head()
       ```
       <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/jsonnormalize.jpg">
       
-   2. 
+   2. Machine Learning Approach `Decision Tree`.
+      #### Import the required ML libraries
+      ```python
+      from sklearn.model_selection import train_test_split
+      from sklearn.tree import DecisionTreeClassifier
+      from sklearn.metrics import accuracy_score
+      ```
 
+      #### Split the data into testing and training sets
+      ```python
+      X = data[['couponUsed']]
+      y = data['purchaseMethod']
+      X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+      ```
+
+      #### Training and Testing the datasets.
+      ```python
+      # Create a decision tree classifier
+      clf = DecisionTreeClassifier()
+      
+      # Train the classifier on the training data
+      clf.fit(X_train, y_train)
+      
+      # Make predictions on the testing data
+      y_pred = clf.predict(X_test)
+      
+      # Evaluate the accuracy of the model
+      accuracy = accuracy_score(y_test, y_pred)
+      print("Accuracy:", accuracy)
+      ```
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/accuracy.jpg">
+
+      #### Visualize the decision tree classifier, you can use the `plot_tree` function from the `sklearn.tree` module.
+      ```python
+      import matplotlib.pyplot as plt
+      from sklearn import tree
+      
+      # Visualize the decision tree
+      fig, ax = plt.subplots(figsize=(12, 12))
+      tree.plot_tree(clf, feature_names=X.columns, class_names=clf.classes_, filled=True, ax=ax)
+      
+      plt.show()
+      ```
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/dcplot.jpg">
 
 
 
