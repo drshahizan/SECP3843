@@ -104,8 +104,8 @@ from django.contrib.auth.models import AbstractUser, Group, Permission
 
 class User(AbstractUser):
     is_customer = models.BooleanField(default=False)
-    is_worker = models.BooleanField(default=False)
-    is_management = models.BooleanField(default=False)
+    is_technical_worker = models.BooleanField(default=False)
+    is_senior_management = models.BooleanField(default=False)
 
     groups = models.ManyToManyField(Group, blank=True, related_name='custom_user_set')
 
@@ -122,11 +122,11 @@ class User(AbstractUser):
 
 ```python
 from django.shortcuts import render, redirect
-from . forms import RegistrationForm
-from django.contrib.auth. forms import AuthenticationForm
+from .forms import RegistrationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .decorators import is_customer, is_worker, is_management
+from .decorators import is_customer, is_technical_worker, is_senior_management
 from django.contrib.auth.decorators import user_passes_test
 ```
 
@@ -174,19 +174,19 @@ def profile(request):
     return render(request, 'profile.html', {'user': user})
 
 @user_passes_test(is_customer)
-def customer_dashboard_view(request):
+def customer_dashboard(request):
     
-    return render(request, 'customer_dashboard_view.html')
+    return render(request, 'customer_dashboard.html')
 
-@user_passes_test(is_worker)
-def worker_dashboard_view(request):
+@user_passes_test(is_technical_worker)
+def technical_worker_dashboard(request):
     
-    return render(request, 'worker_dashboard_view.html')
+    return render(request, 'technical_worker_dashboard.html')
 
-@user_passes_test(is_management)
-def management_dashboard_view(request):
+@user_passes_test(is_senior_management)
+def senior_management_dashboard(request):
     
-    return render(request, 'management_dashboard_view.html')
+    return render(request, 'senior_management_dashboard.html')
 ```
 
 7. Define a function called `redirect_dashboard` to redirect each views page based on their respective roles
@@ -195,11 +195,11 @@ def management_dashboard_view(request):
 def redirect_dashboard(request):
     user = request.user
     if user.is_customer:
-        return redirect('customer_dashboard_view')
-    elif user.is_worker:
-        return redirect('worker_dashboard_view')
-    elif user.is_management:
-        return redirect('management_dashboard_view')
+        return redirect('customer_dashboard')
+    elif user.is_technical_worker:
+        return redirect('technical_worker_dashboard')
+    elif user.is_senior_management:
+        return redirect('senior_management_dashboard')
     else:
         
         return redirect('profile')
@@ -229,15 +229,15 @@ from .models import User
 class RegistrationForm(UserCreationForm):
     ROLE_CHOICES = [
         ('customer', 'Customer'),
-        ('worker', 'Technical Worker'),
-        ('management', 'Senior Management'),
+        ('technical_worker', 'Technical Worker'),
+        ('senior_management', 'Senior Management'),
     ]
 
     role = forms.ChoiceField(choices=ROLE_CHOICES, widget=forms.RadioSelect)
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password', 'role')
+        fields = ('username', 'email', 'password1', 'password2', 'role')
 
     def save(self, commit=True):
         user = super().save(commit=False)
@@ -245,10 +245,10 @@ class RegistrationForm(UserCreationForm):
 
         if role == 'customer':
             user.is_customer = True
-        elif role == 'worker':
-            user.is_worker = True
-        elif role == 'management':
-            user.is_management = True
+        elif role == 'technical_worker':
+            user.is_technical_worker = True
+        elif role == 'senior_management':
+            user.is_senior_management = True
 
         if commit:
             user.save()
@@ -266,7 +266,7 @@ class RegistrationForm(UserCreationForm):
 ```python
 from django.contrib import admin
 from django.urls import path
-from AnalyticsQ3_app.views import register, user_login, redirect_dashboard, customer_dashboard, worker_dashboard, management_dashboard, user_logout
+from AnalyticsQ3_app.views import register, user_login, redirect_dashboard, customer_dashboard, technical_worker_dashboard, senior_management_dashboard, user_logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -274,9 +274,9 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('login/', user_login, name='login'),
     path('dashboard/', redirect_dashboard, name='dashboard'),
-    path('customer_dashboard_view/', customer_dashboard, name='customer_dashboard_view'),
-    path('worker_dashboard_view/', worker_dashboard, name='worker_dashboard_view'),
-    path('management_dashboard_view/', management_dashboard, name='management_dashboard_view'),
+    path('customer_dashboard/', customer_dashboard, name='customer_dashboard'),
+    path('technical_worker_dashboard/', technical_worker_dashboard, name='technical_worker_dashboard'),
+    path('senior_management_dashboard/', senior_management_dashboard, name='senior_management_dashboard'),
     path('logout/', user_logout, name='logout'),
 ]
 ```
@@ -321,9 +321,41 @@ urlpatterns = [
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image3.png)
 
+### Step 12: Install decorators
+
 2. Type in `pip install decorator` in the command prompt
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image4.png)
+
+### Step 13: Creata decorator.py file
+
+```python
+# decorators.py
+from django.contrib.auth.decorators import user_passes_test
+
+def is_customer(user):
+    return user.is_authenticated and user.is_customer
+
+def is_technical_worker(user):
+    return user.is_authenticated and user.is_technical_worker
+
+def is_senior_management(user):
+    return user.is_authenticated and user.is_senior_management
+```
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image4.png)
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
