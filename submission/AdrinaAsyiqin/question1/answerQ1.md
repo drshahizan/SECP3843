@@ -24,6 +24,19 @@ Don't forget to hit the :star: if you like this repo.
 3. Run downloaded installer .exe file
 
 4. Select option 'Add python PATH' and choose the 'Customize installation' option. In the customisation screen, ensure pip package and the 'add python to environment' variables option is selected
+   
+5. Open command prompt and execute each of the following 
+   ```
+   pip install django
+   pip install pymongo
+   pip install mysqlclient
+   ```
+![WhatsApp Image 2023-06-27 at 15 41 48](https://github.com/drshahizan/SECP3843/assets/96984290/f8fcea37-f079-4cc3-9d6f-0728c09e8a4e)
+
+![WhatsApp Image 2023-06-27 at 15 42 21](https://github.com/drshahizan/SECP3843/assets/96984290/fd84853c-1477-4711-b7de-e42f661f9c94)
+
+![WhatsApp Image 2023-06-27 at 15 42 58](https://github.com/drshahizan/SECP3843/assets/96984290/cea83ec3-0977-4671-8f77-1a8a05b424fd)
+
    <br>
 
 ### Step 2: Create Django Project Folder
@@ -34,10 +47,13 @@ Don't forget to hit the :star: if you like this repo.
  
 ```python
 #start project
-django-admin.py startproject myproject
+django-admin.py startproject store
 
 #Move into project directory using the command 
-cd myproject
+cd store
+
+#startapp
+python manage.py startapp STDE
 
 #Open a new terminal and install virtual environment by running the below command. `myenv` can be replaced with desired name
 virtualenv myenv
@@ -45,6 +61,9 @@ virtualenv myenv
 #Activate virtual environment by running command 
 myenv\Scripts\activate
 ```
+
+![WhatsApp Image 2023-06-27 at 15 53 11](https://github.com/drshahizan/SECP3843/assets/96984290/0e175134-f986-4f96-aec0-bcb3a5ddb31f)
+
 
 ### Step 3: Run server
 
@@ -54,33 +73,47 @@ python manage.py runserver
 ```
 
 2. Open the web browser and visit the link given
+   
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/92a6f40c-1769-4b1b-8aa0-494ab73b1562)
 
-### Step 4: Install django
-1. Ensure the virtual enironment is active
 
-2. Run command . This will download the latest stable version of django
-```python
-pip install django
-```
-
-3. Verify installation by running python in the terminal. This will open a python shell and run
-```
-import django
-```
-
-### Step 5: Configure django settings
+### Step 4: Configure django settings
 1. Open settings.py 
 
 2. Configure DATABASES dictionary to configure both MySQL and MongoDB connections
-
+   
 3. Update INSTALLED_APPS list to include neccessary Django apps and django_pandas
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'store',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3307',
+    },
+    'mongodb': {
+        'ENGINE': 'djongo',
+        'NAME': 'store',
+        'CLIENT': {
+            'host': 'cluster0.yvk5zzq.mongodb.net',
+            'username': 'adrinaasyiqin',
+            'password': 'Adrina857600',
+            
+        }
+    }
+}
+```
 
-### Step 6: Migrate database schema
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/cf239ac3-6587-4dfe-adc1-546dcabc15b6)
+
+### Step 5: Migrate database schema
 1. Run `python manage.py migrate` command to create necessary models for the database
 
 2. Check if migration ran successfully and table created in both databases
 
-### Step 7: Import sales.json data into databases
+### Step 6: Import sales.json data into databases
 1. Create a new python file named `import_json_data.py`
 
 2. Open file and import modules using the following command
@@ -120,7 +153,7 @@ class Command(BaseCommand):
 python manage.py import_json_data
 ```
 
-### Step 8: Implement dynamic web pages
+### Step 7: Implement dynamic web pages
 1. create django views and templates to generate web pages based on the data stored in the databases
 
 2. Write django queries to retrueve data from both MySQL and MongoDB databases
