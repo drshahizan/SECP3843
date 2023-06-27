@@ -30,8 +30,8 @@ To start MongoDB server, run the mongod command in your terminal or command prom
 <img  src="./files/images/mongod.png"></img>
  
 #### Step 3. Import Dataset
-In cmd enter `mongoimport "C:\Users\Asus\Desktop\AA Special Topic\companies.json" -d test -c companies`.
-The command format is `mongoimport "dataset_location_path" -d name_of_database -c name_of_collection`
+In cmd enter `mongoimport "C:\Users\Asus\Desktop\AA Special Topic\companies.json" -d test -c companies`.<br/>
+The command format is `mongoimport "dataset_location_path" -d name_of_database -c name_of_collection`.<br/>
 This command will import a JSON file named companies.json into a collection named companies in a database named test
 <img  src="./files/images/mongoimport.png"></img>
 
@@ -86,10 +86,10 @@ This is my query:
 db.companies.find({ "email_address": "eddie@google.com"});
 ```
 
-MongoDB Shell:
+MongoDB Shell: <br/>
 <img  src="./files/images/find.png"></img>
 
-MongoDB Compass:
+MongoDB Compass: <br/>
 <img  src="./files/images/find_result.png"></img>
 
 #### 3. Update Query
@@ -101,10 +101,10 @@ This is my query:
 db.companies.updateOne({ "number_of_employees": 88}, {$set: {"number_of_employees":999}});
 ```
 
-MongoDB Shell:
+MongoDB Shell: <br/>
 <img  src="./files/images/updateone.png"></img>
 
-MongoDB Compass:
+MongoDB Compass: <br/>
 <img  src="./files/images/updateone_result.png"></img>
 There is only 1 document is modified the number_of_employess to 999 as i use the updateOne
 
@@ -118,13 +118,13 @@ db.companies.updateMany({ "founded_month": 12},
 {$set: {"founded_month":11}});
 ```
 
-MongoDB Shell:
+MongoDB Shell: <br/>
 <img  src="./files/images/updatemany.png"></img>
 
-MongoDB Compass (Before Query):
+MongoDB Compass (Before Query): <br/>
 <img  src="./files/images/updatemanybefore_result.png"></img>
 
-MongoDB Compass (After Query):
+MongoDB Compass (After Query): <br/>
 <img  src="./files/images/updatemanyafter_result.png"></img>
 The query updates all documents in the companies collection where the "founded_month" field is set to 11.
 
@@ -135,13 +135,13 @@ The query updates all documents in the companies collection where the "founded_m
 ```
 db.companies.deleteOne({"name": "Eddie"});
 ```
-MongoDB Shell:
+MongoDB Shell: <br/>
 <img  src="./files/images/delete.png"></img>
-
-MongoDB Compass (Before Query):
+ 
+MongoDB Compass (Before Query): <br/>
 <img  src="./files/images/deletebefore_result.png"></img>
 
-MongoDB Compass (After Query):
+MongoDB Compass (After Query): <br/>
 <img  src="./files/images/deleteafter_result.png"></img>
 
 ## Contribution 🛠️
