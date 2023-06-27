@@ -12,13 +12,69 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Name: Eddie Wong Chung Pheng
 #### Matric No.: A20EC0031
-#### Dataset: Companies
+#### Dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/04-companies" >Companies</a>
 
 ## Question 1 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### Step 1. Install Python & Django
+Install Python 3 from the <a href=" www.python.org"> official website </a> according to your operating system. <br/>
+Command: 
+```
+python 
+```
+
+Open cmd and  verify that Django is installed by importing it in Python and printing its version.
+Command: 
+```
+python
+>>> import django
+>>> print(django.get_version())
+```
+<img  src="./files/images/install.png"></img>
+
+### Step 2. Create & activate virtual environment
+After successfully installed Python and Django. I need to create Django project and activate virtual environment. <br/>
+
+Direct to project directory first and create a virtual environment for your Django project.
+
+Command: 
+```
+python -m venv env
+```
+
+Activate your virtual environment. This will ensure that any packages you install will be isolated from the rest of your system
+
+Command: 
+```
+env\Scripts\activate
+```
+
+### Step 3. Install Django Package 
+After activate virtual environment, next is to install Django by using the pip command and install the latest Django release from the Python
+
+Command: 
+```
+pip install django
+```
+<img  src="./files/images/install_django.png"></img>
+
+### Step 4. Create Django Project & App
+create a new Django project with the name AA_project. This will create a AA_project directory with some files inside it, such as manage.py, settings.py, urls.py, asgi.py, and wsgi.py. These files are responsible for configuring the project and setting up the web server interface.
+
+Command: 
+```
+django-admin startproject AA_project
+```
+
+ Before create the Django app, cd to the project directory and this will be the container for the project and its apps. This will create a polls directory with some files inside it, such as models.py, views.py, tests.py, admin.py, apps.py, and migrations. These files are responsible for defining your app's data models, views, tests, admin interface, configuration, and database migrations.
+
+ Command:
+```
+django-admin startproject AA_project
+```
+<img  src="./files/images/create_project.png"></img>
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 
 
