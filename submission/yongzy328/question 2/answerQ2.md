@@ -37,7 +37,7 @@ Prerequisites: <br>
 3. Import the JSON file using the function <code>mongoimport</code> with the JSON file's filepath, database name and collection name with the format <code>mongoimport "filepath" -d "database name" -c "collection name"</code>. <br>
 In this case, I have saved the JSON file inside the folder Desktop/sem 6 notes/mso/ and created a database named "AA" along with a collection named "CityInspection", the code is shown as below. <br>
 <code>mongoimport "C:\Users\yong\This PC\Desktop\sem 6 notes\mso\city_inspections.json" -d AA -c CityInspection</code>
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104340.png" alt="upload json file to MongoDB">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104340.png" alt="upload json file to MongoDB"><br>
 The JSON file is successfully imported into MongoDB which can be viewed in MongoDB Compass.
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104937.png" alt="json file imported">
 
@@ -51,36 +51,35 @@ The JSON file is successfully imported into MongoDB which can be viewed in Mongo
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104829.png" alt="use database AA">
 
 ## Question 2 (b)
-i. Create <br>
+<b>i. Create <br></b>
 To insert a single document into the collection "CityInspection", use the query "db.collection.insertOne()" as shown as below.
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20112357.png" alt="insertone()">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20112357.png" alt="insertone()"><br>
 The inserted document can be viewed in MongoDB Compass.
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20112337.png" alt="view inserted data">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20112337.png" alt="view inserted data"><br>
 
-ii. Read <br>
+<b>ii. Read <br></b>
 To find documents with the sector of "Mobile Food Vendor - 881" and result as "Closed", I use the query "db.collection.find()" to perform the searching. The results are shown as below.
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20113120.png" alt="find()">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20113120.png" alt="find()"><br>
 This find() operation can also be performed in the MongoDB Compass.
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20113354.png" alt="view find() at mongodb compass">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20113354.png" alt="view find() at mongodb compass"><br>
 
-iii. Update <br>
+<b>iii. Update <br></b>
 To update only one selected document, the operation "db.collection.updateOne()" is used. Here, I choose to update the zip code and street name of the business "TY Home".
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20114542.png" alt="updateone()">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20114542.png" alt="updateone()"><br>
 The updated document can also be viewed in MongoDB Compass.
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20114609.png" alt="view updated data">
-
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20114609.png" alt="view updated data"><br>
 To update many documents, the operation "db.collection.updateMany()" can be used. Here, I choose to update the business name to "Truck Service Inc" for all businesses which do not have a name and in the "Tow Truck Company - 124" sector. 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20115838.png" alt="updatemany()">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20115838.png" alt="updatemany()"><br>
 The updated documents can be viewed in MongoDB Compass.
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20115823.png" alt="view updatemany data">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20115823.png" alt="view updatemany data"><br>
 Now, I double check whether all selected documents are updated or not. From here, I can tell that they are all updated, since there is no business under the "Tow Truck Company - 124" sector which does not has a name. 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20115905.png" alt="double check updatemany data">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20115905.png" alt="double check updatemany data"><br>
 
-iv. Delete <br>
+<b>iv. Delete <br></b>
 To perform delete operation to one specific document, I use the query "db.collection.deleteOne()". Here, I select the document with business name of "TY Home" to delete. 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20120101.png" alt="deleteone()">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20120101.png" alt="deleteone()"><br>
 Now, I cannot find any document with business name "TY Home" since I had already successfully deleted it from the database. 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20120123.png" alt="view deleted date">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20120123.png" alt="view deleted date"><br>
 
 
 
