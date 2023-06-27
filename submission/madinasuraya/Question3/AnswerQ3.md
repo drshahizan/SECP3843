@@ -64,19 +64,38 @@ Don't forget to hit the :star: if you like this repo.
         'OPTIONS': {
                 'unix_socket': 'C:/xampp/mysql/mysql.sock',}}}
       ```
-  6. Apply migrations
+      
+6. Apply migrations
      ```
      python manage.py makemigrations
      ```
      ```
      python manage.py migrate
      ```
-  7. Open localhost and create new database. I created my folder as 'aa'.
+     
+7. Open localhost and create new database. I created my folder as 'aa'.
       <p align="center">
            <img width="162" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/af17e0cd-33c6-4216-9f79-50e4941f4f75">
       </p>
 
-8. Open **signup** folder and start creating the views.
+8. Open **models.py** in the **signup** folder and start making user authentication. To perform this, firstly, define django authentication models and import it. Then, define the class for each user needed. In here, there will be three users which are customers, technical workers, and senior management. This also means that each user will have their own table in the database. Since we use some common fields such as email, username, and password, we dont have to specify it in the class as the user authentication model already include this.
+   ```
+   from django.contrib.auth.models import AbstractUser
+   ```
+   ```
+   class Customer(AbstractUser):
+       pass
+
+   class TechnicalWorker(AbstractUser):
+       pass
+   
+   class SeniorManagement(AbstractUser):
+       pass
+   ```
+
+   
+   
+
      
 ### Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
