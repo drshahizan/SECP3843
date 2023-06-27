@@ -16,12 +16,32 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: City Inspections	
 
 ## Question 2 (a)
+### Steps to Import JSON File into MongoDB Database Using Command Prompt (CMD)
+
+Prerequisites:
+✅Download MongoDB Shell
+✅Download MongoDB Command Line Database Tools
+✅Copy all the .exe file in the bin folder of the downloaded MongoDB Shell and MongoDB Command Line Database Tools and paste them in the bin folder of "MongoDB" folder which located under the "Program Files" folder. 
+✅Add new environment path to MongoDB by following the steps below:
+    - Open "Edit the system environment variables" control panel by typing env in the Window search bar.
+    - Under the "Advanced" section, select "Environment Variables...".
+    - Under the section of user variables, select "Path" and click "Edit".
+    - Click "New" and paste the filepath to bin folder of MongoDB and add a "\" after it (example: "C:\Program Files\MongoDB\Server\6.0\bin\").
+    - Finally click "OK" for 3 times for each window.
+
+
+1. Open the Command Prompt of system by typing "CMD" in the Windows search bar and select "Command Prompt". 
+2. Access the MongoDB through CMD by giving the command <code>mongod</code>. Then wait for the system to access MongoDB, the result is expected as below.
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20103533.png" alt="access mongodb via cmd">
 
+3. Import the JSON file using the function <code>mongoimport</code> with the JSON file's filepath, database name and collection name with the format <code>mongoimport "filepath" -d "database name" -c "collection name"</code>. 
+In this case, I have saved the JSON file inside the folder Desktop/sem 6 notes/mso/ and created a database named "AA" along with a collection named "CityInspection", the code is shown as below.
+<code>mongoimport "C:\Users\yong\This PC\Desktop\sem 6 notes\mso\city_inspections.json" -d AA -c CityInspection</code>
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104340.png" alt="upload json file to MongoDB">
-
+The JSON file is successfully imported into MongoDB which can be viewed in MongoDB Compass.
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104937.png" alt="json file imported">
 
+4. 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104656.png" alt="access mongodb shell">
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104711.png" alt="show all databases">
