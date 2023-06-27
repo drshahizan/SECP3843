@@ -335,6 +335,10 @@ b. Run the following command to start the Django development server: `python man
 <img src="./files/image/runserver.png">
 
 ### Results:   
+Register:
+<img src="./files/image/register.png">
+Login:
+<img src="./files/image/login.png">
 Customer:
 <img src="./files/image/customer.png">
 
