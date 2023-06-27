@@ -228,19 +228,32 @@ Final step, to ensure a succesful integration you may test and debug your Django
 <img width="900" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question1/files/images/archit.png"><br>
 ### Detailed Explanation on each component
 #### 1. User/Client
+
  In the provided system architecture diagram, the User or Client represents individuals who interact with the application. They access the system using web browsers or client applications, through which they send HTTP requests to retrieve information or perform actions. In response to these requests, the User or Client receives HTTP responses that correspond to their specific requests. 
 <br>
  For example, consider a scenario where users are using a portal to view a dashboard. When they click on a particular element or make a request, an HTTP request is sent from their web browser or client application to the system. The system processes this request and generates an appropriate HTTP response. 
 #### 2. Load Balancer
-To accomodate user's request, load balancer is implemented in the architecture that acts as a traffic distributor. This is to ensure all incoming requests are evenly distributed across the servers. It will monitor the web servers and incomin
+
+A load balancer has been integrated into the architecture to serve as a traffic distributor. Its primary function is to evenly distribute incoming requests among the servers, effectively ensuring fair allocation of workload. The load balancer actively monitors the web servers and routes each incoming request to the most suitable server.
 #### 3. Web Server
+
+The web server, Apache, is selected in this architecture to handle the Django application. It is responsible for managing HTTP requests from the load balancer, processing them, and generating responses to be sent back to the client/user. Additionally, the web server efficiently handles static files like HTML, CSS, and JavaScript to serve the web content.
 #### 4. Django Application Server
+
+The Django application server takes on the responsibility of handling the Django application, encompassing all aspects related to Django within this specific server. It interprets and executes the Python code responsible for handling requests and generating responses, as Django is a Python framework. Additionally, this server interacts with the application's logic, renders dynamic pages (user interface), and communicates with the database to store or retrieve data. Furthermore, the Django application server can concurrently communicate with both the web server and the load balancer to receive incoming requests and respond to them accordingly.
+<br>
+Django uses MVT framework which is Models, Views and Templates.
+- Models - used to represent data and database schema of the application.
+- Views - handles the logic and processing request which acts as the middleware between template and models.
+- Templates - display how data are presented and rendered to the client/user.
+- URL - use to map incoming HTTP requests to the appropriate View functions. In Django it is usually defined in the urls.py file where all routings of the application can be found here.
 #### 5. MySQL Server
+
+The MySQL server, in conjunction with the Django ORM (Object-Relational Mapping), is responsible for handling the relational database used to store structured data. With the help of the Django ORM, the system can perform CRUD operations (create, read, update, and delete) and execute queries efficiently. Django's ORM acts as an intermediary layer between the application and the database, enabling seamless interaction and abstraction of database operations. This allows Django to store various types of data, including user information, within predefined schemas, ensuring data accuracy and maintaining relationships between different entities.
+
 #### 6. MongoDB Server
 
-
-
-
+The MongoDB server is a NoSQL document database that is utilized for storing flexible and schema-less data. It operates by storing data in JSON-like documents, which enables the storage of dynamic and nested data structures. Django interacts with the MongoDB server using MongoDB's query language or through the utilization of an Object-Document Mapping (ODM) tool such as Djongo. This allows Django to store and retrieve data from MongoDB. The MongoDB server offers high scalability and flexibility, making it well-suited for handling unstructured or evolving data requirements.
 
 
 ## Contribution 🛠️

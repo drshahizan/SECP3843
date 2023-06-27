@@ -522,9 +522,13 @@ binlog_do_db=analytics_q3
 
 - Specify user details. Type User name as `rep` and Host as `localhost`
 
+- Click `Go`
+
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image23.png)
 
+- This message should appear on top
 
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image24.png)
 
 
 
