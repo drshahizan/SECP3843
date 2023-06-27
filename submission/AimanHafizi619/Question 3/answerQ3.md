@@ -440,9 +440,13 @@ log_error=mysql-bin.err
 binlog_do_db=analytics_q3
 ```
 
+**Step 4**
 
+- Open Xampp Control Panel
 
+- Click the `Config` button and choose the `my.ini` option
 
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image15.png)
 
 
 ## Contribution 🛠️
