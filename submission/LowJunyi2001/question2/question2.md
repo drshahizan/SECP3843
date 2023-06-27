@@ -56,28 +56,37 @@ Command Prompt:
 
 
 ### Step 3: Import Dataset
-In cmd enter 
-```mongoimport "C:\Users\user\Downloads\listingsAndReviews.json" -d AA -c db_airbnb```
-The provided command mongoimport is used to import the JSON file listingsAndReviews.json into a MongoDB database named AA and the data will be stored in a collection called db_airbnb.
+- The provided command mongoimport is used to import the JSON file listingsAndReviews.json into a MongoDB database named AA and the data will be stored in a collection called db_airbnb.
+```
+mongoimport "C:\Users\user\Downloads\listingsAndReviews.json" -d AA -c db_airbnb
+```
 <img  src="https://github.com/drshahizan/SECP3843/assets/120614501/4fdcd2b0-638f-49d3-bec8-0d6dd8b340ab"></img>
 
-The similar dataset can be found in MongoDB Compass
+- The similar dataset can be found in MongoDB Compass
 <img  src="https://github.com/drshahizan/SECP3843/assets/120614501/5cf55382-90be-4420-b0b2-1322c6a17172"></img>
 
 ### Step 4: Access MongoDB Shell
-Repen Command Prompt and paste the following code and run.
-```cd C:\Program Files\MongoDB\Server\6.0\bin```
+- Repen Command Prompt and paste the following code and run.
+```
+cd C:\Program Files\MongoDB\Server\6.0\bin
+```
 
-To access the MongoDB shell, insert
-```mongosh``` 
+- To access the MongoDB shell, insert
+```
+mongosh
+``` 
 <img  src="https://github.com/drshahizan/SECP3843/assets/120614501/8b475845-844a-465c-8170-f433e1adace4"></img>
 
-The list of all databases running on MongoDB Server including default and user-defined databases can be seen with 
-``` show dbs``` 
+- The list of all databases running on MongoDB Server including default and user-defined databases can be seen with 
+```
+show dbs
+``` 
 <img  src="https://github.com/drshahizan/SECP3843/assets/120614501/2c3f4fe0-4db9-4e20-97d5-45905df7b75c"></img>
 
-Then enter the following code to switch to the desired database where we want.
-```use AA``` 
+- Then enter the following code to switch to the desired database where we want.
+```
+use AA
+``` 
 <img  src="https://github.com/drshahizan/SECP3843/assets/120614501/995d0766-a1d3-4719-91f0-83da4afbf1e6"></img>
 
 ## Question 2 (b)
