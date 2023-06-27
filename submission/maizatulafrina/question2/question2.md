@@ -28,6 +28,17 @@ Required software to install and download:
    <img width="356" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/3eb261a3-e23d-4cc2-86f7-2ceb8d87b132"><img width="356" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/08429c72-1eaa-4929-bb0c-447dcb68b8b7">
 
 
+- MongoDB Shell
+    -  Go to https://www.mongodb.com/try/download/shell and "Download".
+
+   <img width="321" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/b26193fd-2135-4aab-9dc6-3a610adcaad1">
+
+
+- MongoDB Command Line Database Tools
+    -  Go to https://www.mongodb.com/try/download/database-tools and "Download".
+
+   <img width="359" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/54ab9247-ebb7-4aba-b01f-d1ba9a0e6407">
+
 <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/6de91f67-4c46-4c31-bb53-3af6f8ddaac2">
 
 
