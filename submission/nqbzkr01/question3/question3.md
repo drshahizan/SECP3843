@@ -21,17 +21,23 @@ Don't forget to hit the :star: if you like this repo.
   - A virtual environment allows you to isolate your current project dependencies from the rest of packages installed globally on your system or in the other virtual environments. You can either use `virtualenv` which needs to be installed on your system or the `venv` module available as a module in recent versions of Python 3.
   - Type this in command prompt:
     ```
-    $ python -m venv env
+    $ python -m venv venv
     ```
+    ![image](https://github.com/drshahizan/SECP3843/assets/92329710/d2c8c33b-2e87-424f-a1b6-3de07e508fd3)
+
   - Next, activate the virtual environment using:
     ```
-    $ source env/bin/activate
+    $ source env/Scripts/activate.bat
     ```
+    ![image](https://github.com/drshahizan/SECP3843/assets/92329710/75762a4f-881e-4c54-b1e5-5b2fbac52eb8)
+
   > Note: please note that on Windows, need to use `source env/Scripts/activate` in order to activate the virtual environment.
   - After activating the environment, you need to proceed by installing Django using `pip`:
     ```python
     $ pip install django
     ```
+    ![image](https://github.com/drshahizan/SECP3843/assets/92329710/fed732ad-4e93-4466-9613-49bd6c320b0c)
+
   - If the framework is successfully installed, the Django management commands now can be used to create and work with the Django project.
   - Next, install mysql-client using:
     ```python
@@ -45,7 +51,7 @@ Don't forget to hit the :star: if you like this repo.
   - The command prompt will ask the MySQL password then enter the password and hit Enter.
   - After that, run the following SQL statement to create a database:
     ```
-    mysql> create database moviedb;
+    mysql> create database dbAA;
     ```
 - <strong>Creating a Django Project</strong>
   - Let's now create the project using `django-admin.py`. In the terminal, run the following command:
