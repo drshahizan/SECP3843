@@ -16,3 +16,6 @@ django-bootstrap-v5
 pytz
 pymongo==3.12.3
 mysqlclient
+confluent-kafka
+dnspython
+jsonfield
