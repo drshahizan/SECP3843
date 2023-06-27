@@ -92,8 +92,25 @@ DATABASES = {
 }
 ```
 
+### Step 6: Configure models.py
 
+1. Go to `Desktop` > `AnalyticsQ3` > `AnalyticsQ3_app` > `models.py`
 
+2. Modify the existing code with this one
+
+```python
+from django.db import models
+from django.contrib.auth.models import AbstractUser, Group, Permission
+
+class User(AbstractUser):
+    is_customer = models.BooleanField(default=False)
+    is_technical_worker = models.BooleanField(default=False)
+    is_senior_management = models.BooleanField(default=False)
+
+    groups = models.ManyToManyField(Group, blank=True, related_name='custom_user_set')
+
+    user_permissions = models.ManyToManyField(Permission, blank=True, related_name='custom_user_set')
+```
 
 
 
