@@ -172,7 +172,23 @@ Next, choose the replication technique for each database. MySQL and MongoDB will
         ```
         START SLAVE
         ```
-
+- MongoDB
+     1. Define master  host name and open mongo shell.
+  
+         **Master server: 12.34.56.111**
+        
+     2. Switch context to the local database.
+        ```
+        use local
+        ```
+     3. Get the collection and ensure that there are no documents in the collection.
+         ```
+         db.companies2.find()
+         ```
+     4. Insert documents into the master. Specify the host as the master host name and only, as the database name.
+         ```
+         db.companies2.insert( { host: <12.34.56.111> <,only: db_crunchbase> } );
+         ```
 
 
 
