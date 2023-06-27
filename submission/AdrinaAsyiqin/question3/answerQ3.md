@@ -285,6 +285,9 @@ Don't forget to hit the :star: if you like this repo.
 
 ### Step 6: Integrate with frontend
 - Make appropriate HTTP request to Django endpoints for user registration and authentication. 
+- Runserver and a login form should be created
+
+    ![image](https://github.com/drshahizan/SECP3843/assets/96984290/7e8817a7-7938-4778-84f8-dee638b8134c)
 
  
 ## Question 3 (b)

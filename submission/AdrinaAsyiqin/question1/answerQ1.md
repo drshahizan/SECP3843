@@ -163,6 +163,8 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 1 (b)
 
+### System Architecture
+
 ```
 +----------------------+
 |   User Interface     |
