@@ -27,6 +27,9 @@ ensuring efficient data storage and retrieval from both MySQL and MongoDB databa
 To integrate Django with a JSON dataset and enable efficient data storage and retrieval from both MySQL and MongoDB databases, you can follow these comprehensive steps:
 
 Step 1: Install Django and required packages:
+<p align="center">
+  <img height="200px" src="images/install django.png" />
+</p>
 src= "submission/IrdinaAliah/question1/files/images/install django.png"
 
 
