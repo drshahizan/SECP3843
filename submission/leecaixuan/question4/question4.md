@@ -14,11 +14,211 @@ Don't forget to hit the :star: if you like this repo.
 #### Matric No.: A20EC0062
 #### Dataset: Analytics Dataset
 
-## Question 4 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Question 4
 
-## Question 4 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The machine learning used in this case study is linear regression. It is to see the relationship of the training dataset and test dataset for the 'limit' attribute in the Accounts table.
+
+Tool used:
+- Jupyter Notebook
+
+Libraries used:
+- scikit-learn
+- pandas
+- json
+
+<h4>Step 1 - Data Preprocessing and Cleaning</h4>
+
+Open the JSON file 
+
+```
+#Open JSON file
+with open('accounts.json') as f1:
+    data1 = json.load(f1)
+
+with open('transactions.json') as f2:
+    data2 = json.load(f2)
+```
+
+Both JSON file can be joined by the same account_id.
+
+```
+#From accounts JSON file
+join_dict = {}
+for item in data1:
+    account_id = str(item['account_id'])  # Convert to string
+    join_dict[account_id] = item
+```
+
+```
+#From transactions JSON file
+joined_data = []
+for item in data2:
+    account_id = str(item['account_id'])  # Convert to string
+    if account_id in join_dict:
+        joined_item = {**join_dict[account_id], **item}
+        joined_data.append(joined_item)
+```
+
+Then, the joined data can be written in a file, 'joined_data.json'
+
+```
+with open('joined_data.json', 'w') as outfile:
+    json.dump(joined_data, outfile, indent=4)
+```
+
+Convert it into pandas dataframe
+
+```
+import pandas as pd
+import json
+
+# Load joined JSON data from file
+with open('joined_data.json') as f:
+    data = json.load(f)
+
+# Create an empty DataFrame
+df = pd.DataFrame()
+
+# Read data in chunks from the JSON file and concatenate into the DataFrame
+chunk_size = 1000  # Adjust the chunk size as needed
+for i in range(0, len(data), chunk_size):
+    chunk = data[i:i + chunk_size]
+    df = pd.concat([df, pd.DataFrame(chunk)], ignore_index=True)
+
+# Display the DataFrame
+df
+```
+
+Remove all the unwanted columns.
+
+```
+columns_to_remove = ['bucket_start_date', 'bucket_end_date', 'transactions']
+df = df.drop(columns_to_remove, axis=1)
+df
+```
+
+Remove the element in the items for each columns. For example, {'$oid': '5ca4bbc1a2dd94ee58161cb1'} will be changed into 5ca4bbc1a2dd94ee58161cb1. Make sure all the column is changed into proper format.
+
+```
+df['_id'] = df['_id'].str['$oid']
+df
+```
+
+```
+df['account_id'] = df['account_id'].str['$numberInt']
+df
+```
+
+```
+df['limit'] = df['limit'].str['$numberInt']
+df
+```
+
+```
+df['transaction_count'] = df['transaction_count'].str['$numberInt']
+df
+```
+
+```
+df['products'] = df['products'].astype(str).str.replace('[', '').str.replace(']', '')
+df
+```
+
+Convert datatype of column 'limit' and 'transaction_count' from string to float.
+
+```
+df['limit'] = df['limit'].astype(float)
+df
+```
+
+```
+df['transaction_count'] = df['transaction_count'].astype(float)
+df
+```
+
+<h4>Machine Learning - Linear Regression</h4>
+
+Import the sklearn library.
+
+```
+import pandas as pd
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import mean_squared_error
+```
+
+Perform linear regression by splitting the data in to 20 and 80 percent using the column, 'limit'.
+
+```
+X = df.drop(columns=['limit'])  # Features (without 'limit' column)
+y = df['limit']  # Target variable ('limit' column)
+
+# Split the data into training and testing sets
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+# Create a linear regression model
+model = LinearRegression()
+
+# Train the model using the training data
+model.fit(X_train, y_train)
+
+# Make predictions on the test data
+y_pred = model.predict(X_test)
+
+# Evaluate the model using mean squared error
+mse = mean_squared_error(y_test, y_pred)
+print("Mean Squared Error:", mse)
+```
+
+Result: Mean Squared Error: 169890.65444598708
+
+<h4>Step 3 - Scatterplot</h4>
+
+Install matplotlib ```!pip install matplotlib```
+
+Plot the scatterplot
+
+```
+#Scatterplot
+import matplotlib.pyplot as plt
+
+plt.scatter(y_test, y_pred)
+
+# Add labels and title
+plt.xlabel('Training Data')
+plt.ylabel('Test Data')
+plt.title('Scatterplot of Training Data vs. Test Data')
+
+# Add a diagonal line representing perfect predictions
+plt.plot([min(y_test), max(y_test)], [min(y_test), max(y_test)], 'r--')
+
+# Display the plot
+plt.show()
+```
+
+Result:
+
+Predict value 
+
+```
+new_data = [[10000, 20000]]  # Example input data
+prediction = model.predict(new_data)
+
+# Print the predicted value
+print("Predicted value:", prediction)
+```
+
+Result: Predicted value: [65428.603017]
+
+
+
+
+
+
+
+
+
+
 
 
 
