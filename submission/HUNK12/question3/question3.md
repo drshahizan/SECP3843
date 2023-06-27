@@ -262,7 +262,78 @@ Below this are screenshots showing the pages working as it should
 
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Step 1: Identify the replication requirements
+- Determine the specific data that needs to be replicated between the MySQL and MongoDB databases. Consider which tables or collections, fields, and events (inserts, updates, deletes) need to be synchronized.
+
+Step 2: Choose a replication method for MySQL
+- Select the most suitable replication method based on your requirements. For now, we'll use the master-slave replication technique.
+
+Step 3: Configure MySQL master-slave replication
+- Configure the master database to log changes and the slave database to replicate those changes.
+- On the MySQL master:
+  - Open the MySQL configuration file (e.g., my.cnf or my.ini).
+  - Enable binary logging by adding or uncommenting the following line:
+    ```
+    log_bin = /var/log/mysql/mysql-bin.log
+    ```
+  - Restart the MySQL service to apply the configuration.
+
+- On the MySQL slave:
+  - Open the MySQL configuration file.
+  - Configure the slave to replicate from the master. Below is an example of how it would be used:
+    ```
+    server-id = 2
+    log_bin = /var/log/mysql/mysql-bin.log
+    relay_log = /var/log/mysql/mysql-relay-bin.log
+    relay_log_index = /var/log/mysql/mysql-relay-bin.index
+    replicate_do_db = db_tweets
+    ```
+  - Restart the MySQL service to apply the configuration.
+
+Step 4: Verify MySQL replication
+- Check the MySQL replication status to ensure it's working correctly. Use the following command on the slave:
+```
+SHOW SLAVE STATUS\G
+  ```
+
+Step 5:  Using Apache Kafka for MySQL to MongoDB replication
+- Install and configure Apache Kafka as a data streaming platform between MySQL and MongoDB. Follow the official Kafka documentation for installation and setup instructions.
+
+Step 6: Create a Kafka producer for MySQL
+- Write a custom script or application that acts as a Kafka producer. This script should read the MySQL replication logs, convert the events into Kafka messages, and publish them to a Kafka topic. Below is an example:
+
+```python
+from debezium import connector
+
+config = {
+    "name": "mysql-connector",
+    "connector.class": "io.debezium.connector.mysql.MySqlConnector",
+    "tasks.max": "1",
+    "database.hostname": "localhost",
+    "database.port": "3306",
+    "database.user": "your_username",
+    "database.password": "your_password",
+    "database.server.id": "1",
+    "database.server.name": "your_database_name",
+    "table.whitelist": "your_table_name",
+    "database.history.kafka.bootstrap.servers": "localhost:9092",
+    "database.history.kafka.topic": "dbhistory.your_database_name"
+}
+
+connector.run(config)
+```
+
+Step 7: Create a Kafka consumer for MongoDB
+- Write another script or application that acts as a Kafka consumer. This consumer should subscribe to the Kafka topic where MySQL events are published, process the Kafka messages, and apply the corresponding changes to the MongoDB database:
+
+```python
+from kafka import KafkaConsumer
+from pymongo import MongoClient
+
+consumer = KafkaConsumer(
+    'your_kafka_topic',
+    bootstrap
+```
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
