@@ -118,9 +118,51 @@ python manage.py migrate --database=mongodb
 After this, all thats needed is to now is to populate the database with the data.
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+```mermaid
+graph LR
+    subgraph Web Server
+        A(Django)
+    end
 
+    subgraph MySQL Server
+        C(MySQL Database)
+    end
 
+    subgraph MongoDB Server
+        D(MongoDB Database)
+    end
+
+    subgraph Load Balancer
+        E(Load Balancer)
+    end
+
+    subgraph Backup Server
+        F(Backup Server)
+    end
+
+    B(JSON)
+
+    B -- Import data into --> C
+    B -- Import data into --> D
+    A -- Fetches data from --> C
+    A -- Fetches data from --> D
+    E -- Distributes traffic to --> A
+    C -- Replicates data to --> F
+    D -- Replicates data to --> F
+```
+- The `Web Server` component represents Django, which hosts the Django application responsible for serving web pages to users.
+- The `MySQL Server` component represents the MySQL database server, which stores the JSON data in a structured manner.
+- The `MongoDB Server` component represents the MongoDB database server, which stores the JSON data in a flexible, schema-less manner.
+- The `Load Balancer` component distributes incoming traffic across multiple instances of the Django application running on Web Servers to ensure high availability and scalability.
+- The `Backup Server` component stores backups of the data from both the MySQL and MongoDB databases to ensure data integrity and provide recovery options in case of a disaster.
+- The `JSON` component represents the JSON dataset, which is imported into the MySQL and MongoDB databases.
+
+The arrows in the diagram represent the flow of data and actions:
+
+- The JSON dataset is imported into both the MySQL and MongoDB databases, populating the databases with the JSON data.
+- The Django application running on the Web Server fetches the data from both the MySQL and MongoDB databases to retrieve the JSON data for rendering web pages.
+- The Load Balancer distributes incoming traffic to multiple instances of the Django application running on Web Servers to ensure high availability and scalability.
+- The MySQL and MongoDB databases replicate data to the Backup Server, providing backup copies of the JSON data for disaster recovery purposes.
 
 
 
