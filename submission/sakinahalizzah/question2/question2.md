@@ -59,7 +59,7 @@ Specify the collection where you wish to import the JSON data. MongoDB will auto
    db.customers
    db.transactions
     ```
-  <img src="https://github.com/drshahizan/SECP3843/assets/99240177/294814c4-fa20-40f1-bb35-086096f4c6df" />
+     <img src="https://github.com/drshahizan/SECP3843/assets/99240177/294814c4-fa20-40f1-bb35-086096f4c6df" />
 
 8. **Execute the Import Command**
    
@@ -67,10 +67,27 @@ Specify the collection where you wish to import the JSON data. MongoDB will auto
    ```
    mongoimport --uri="<connection_string>" --collection=<collection_name> --file="<file_path>" --jsonArray
    ```
+   where,
+   `<connection_string>`: The MongoDB connection string
+   
+   `<collection_name>`: The collection name of imported JSON data
+   
+   `<file_path>`: JSON file path directory
+   
    Replace with your data.
    ```
-   mongoimport --uri="mongodb+srv://sakinahalizzah:Sakinah1234@clustersakinah.scfkjmg.mongodb.net/" --collection=accounts --file="C:\Users\User\OneDrive\Desktop\AA SECP3843\accounts.json" --jsonArray
+   mongoimport --uri="mongodb+srv://sakinahalizzah:Sakinah1234@clustersakinah.scfkjmg.mongodb.net/" --collection=accounts --file="C:\Users\User\OneDrive\Desktop\AA SECP3843\accounts.json" 
+
+   mongoimport --uri="mongodb+srv://sakinahalizzah:Sakinah1234@clustersakinah.scfkjmg.mongodb.net/" --collection=customers --file="C:\Users\User\OneDrive\Desktop\AA SECP3843\customers.json" 
+
+   mongoimport --uri="mongodb+srv://sakinahalizzah:Sakinah1234@clustersakinah.scfkjmg.mongodb.net/" --collection=transactions --file="C:\Users\User\OneDrive\Desktop\AA SECP3843\transactions.json" 
    ```
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/8a27b4a1-2ae1-4f62-af4a-4dc9e6637fe5" />
+
+   Successfully import to MongoDB Compass
+   
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/caa90567-bf62-4a81-9443-8db8ee49a8ce" />
+
 ## Question 2 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
