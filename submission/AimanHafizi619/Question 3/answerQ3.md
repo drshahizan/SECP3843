@@ -407,9 +407,11 @@ py manage.py runserver
 
 > The result is a distributed database in which users can access data relevant to their tasks without interfering with the work of others.
 
-> **Step 1**
+**Step 1**
 
+Login to phpMyAdmin panel and then click the `replication` tab on the top ribbon
 
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image12.png)
 
 
 
