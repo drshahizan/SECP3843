@@ -177,13 +177,27 @@ Below is the system architecture for the integration between the web server (Dja
 ### Detailed Explanations of System Architecture
 
 #### 1. User
-User 
+User is the one who will be using this system. For this project, the users are customers, technical workers and senior management.
+
 #### 2. User Interface
 The user interface layer represents the frontend components that users interact with, including web pages such as home and dashboard pages, forms such as register and login forms, and user inputs. It is responsible for rendering the views and capturing user actions.
 
 #### 3. Web Server
 
+##### - URLs
+The URL maps URLs to the corresponding views. It determines which view should handle a particular request based on the URL patterns defined in the Django project's URL configuration.
+
+##### - Views
+Views handle user requests and serve as the intermediary between the user interface and the backend. It will receive HTTP requests from the user interface, process the data, interact with the models and databases, and generate appropriate responses.
+
+##### - Models
+Models represent the data structure and define how data is stored in the database. Models are typically defined as Python classes using Django's ORM, which abstracts the database operations.
+
+##### - Templates
+Templates provide the structure and layout for the generated web pages. They utilize Django's template system, which allows embedding dynamic content and data retrieved from the backend into the HTML pages.
+
 #### 4. Database Server
+The database component stores the application's data persistently. In the provided architecture, it represents a relational database system (RDBMS) such as MySQL and MongoDB. Django's ORM handles the communication with the database, allowing developers to work with data using Python objects instead of writing raw SQL queries.
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
