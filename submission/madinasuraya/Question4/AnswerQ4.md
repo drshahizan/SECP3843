@@ -167,6 +167,9 @@ selected_fields.head(5)
     <p align='center'>
     <img width="202" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/e7e5f162-0a11-4e92-aa15-68b10aa92a17">
     </p>
+
+#### Conclusion
+
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
