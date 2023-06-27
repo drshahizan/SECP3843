@@ -16,44 +16,57 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 2 (a)
 
-<h4>Step 1 - Open MongoDB Compass</h4>
+<h4>Step 1 - Install MongoDB Shell and MongoDB database tools</h4>
+
+Download the MongoDB Shell and MongoDB database tools:
+
+[MongoDB Shell](https://downloads.mongodb.com/compass/mongosh-1.10.1-win32-x64.zip).
+
+[MongoDB Database Tools](https://fastdl.mongodb.org/tools/db/mongodb-database-tools-windows-x86_64-100.7.2.zip).
+
+
+<h4>Step 2 - MongoDB Shell and Database Tools Setup</h4>
+
+Copy the all the files from the bin file in MongoDB Shell and MongoDB Database Tools that you downloaded to the bin file of MongoDB in your PC. All the files will be shown in the bin file of MongoDB like the image below.
 
 <p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/database%20home.png" />
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/bin.png" />
 </p>
 
-<h4>Step 2 - Create Database</h4>
+Open the 'Edit Environment Variables For You Account' by searching it in your window search bar. Add a new path of by copying the bin file of MongoDB to the environment variables and click 'OK'. The MongoDB Shell and Database Tools are setup.
 
 <p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/create%20database.png" />
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/env.png" />
 </p>
 
 <h4>Step 3 - Import Data</h4>
+
+To import the data, write the command ```mongoimport "C:\Users\User\Downloads\AA_SpecialTopic\accounts.json" -d AnalyticsDataset -c Accounts``` in your command prompt. ```-d AnalyticsDataset``` means your database name and ```-c Accounts``` is your collection name.
 
 <p align="center">
   <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import%20data.png" />
 </p>
 
+
 <h4>Imported Data</h4>
+
+- Accounts JSON imported
 
 <p align="center">
   <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/collections.png" />
 </p>
 
-<p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_accounts.png" />
-</p>
+- Customers JSON imported
 
 <p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_customer.png" />
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/cust.png" />
 </p>
+
+-Transactions JSON imported
 
 <p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import_customer.png" />
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/trans.png" />
 </p>
-
-
-
 
 ## Question 2 (b)
 
