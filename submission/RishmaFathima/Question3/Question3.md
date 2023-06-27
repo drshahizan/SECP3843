@@ -70,9 +70,9 @@ Don't forget to hit the :star: if you like this repo.
   6. Implementing the Registration and Login Templates:
      - Create HTML templates for user registration and login forms which will include input fields for the required user information, such as username, email, and              password and he login template will contain fields for username/email and password.
        
-        <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/2f6313177e823c8cd516bd9e08d8e37d05123d50/submission/RishmaFathima/Question3/files/images/3.1.9.png">
+          <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/3335e687c35ce6fac6dac1c3debb8a7d3ec81e50/submission/RishmaFathima/Question3/files/images/3.1.17.PNG">
 
-       <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/2f6313177e823c8cd516bd9e08d8e37d05123d50/submission/RishmaFathima/Question3/files/images/3.1.10.png">
+         <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/3335e687c35ce6fac6dac1c3debb8a7d3ec81e50/submission/RishmaFathima/Question3/files/images/3.1.16.PNG">
           
  
    7. Mapping URLs to Views:
@@ -95,6 +95,10 @@ Don't forget to hit the :star: if you like this repo.
         ```ruby
         python manage.py runserver
         ```
+      - The output:
+        
+         <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/3335e687c35ce6fac6dac1c3debb8a7d3ec81e50/submission/RishmaFathima/Question3/files/images/3.1.14.PNG">
+           <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/3335e687c35ce6fac6dac1c3debb8a7d3ec81e50/submission/RishmaFathima/Question3/files/images/3.1.15.PNG">
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
