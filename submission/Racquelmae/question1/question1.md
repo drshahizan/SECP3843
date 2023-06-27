@@ -26,6 +26,7 @@ To create a virtual environment, run `python -m venv env` in your command prompt
 
 ### 3. Install package 
 With the virtual environment activated, install the required package by running these 2 commands: `pip install djongo` and `pip install mysqlclient`.
+<img  src="./files/images/package.jpg"></img>
 
 ### 4. Create project & app
 Use `django-admin startproject portalproject` to create the Django project. Then, navigate to the project directory and create a new app by running `python manage.py startapp portalapp`.
@@ -58,7 +59,7 @@ Create database tables `python manage.py makemigrations`
 Once you have created the migration file, you can apply the migrations `python manage.py migrate`
 
 ## Question 1 (b)
-<img  src="./files/images/architecture.jpg"></img>
+<img  src="./files/images/architecture.jpeg"></img>
 
 ### User
 Have access to the portal and contribute to the driving of flow as well as functionality of the application by performing tasks within the system.
