@@ -101,7 +101,70 @@ Open `urls.py` and insert both paths for login and register as such:
 ![Q3](file/image/q3_path.png)
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Step 1: Master Database
+Head over to your MySQL configuration file `my.cnf`. 
+
+![Q3](file/image/q3b1.png)
+
+Open the file and set the `server_id` = 1 as such:
+
+![Q3](file/image/q3b2.png)
+
+Enable binary logging by uncommenting the line:
+
+![Q3](file/image/q3b3.png)
+
+Specify the database to be replicated:
+
+![Q3](file/image/q3b4.png)
+
+Step 2: Slave Database
+
+Set your `server_id`:
+
+![Q3](file/image/q3b5.png)
+
+Navigate to the `[mysqld]` section and insert these lines as seen below. You can set the parameters according to your preference.
+
+![Q3](file/image/q3b6.png)
+
+Step 3: Import Data
+
+Open a command prompt and run the following command (change `admin` depending on your username):
+```
+mysql -u admin1 -p
+```
+Create the database, you can name it according to your preference
+```
+CREATE DATABASE aa;
+```
+Step 4: Replicate
+Connect to MySQL shell on master instance:
+```
+mysql -u admin -p
+```
+Run the following command, note down the binary file and position as it will be needed later
+```
+SHOW MASTER STATUS;
+```
+Connect to the MySQL shell on slave instance:
+```
+mysql -u admin1 -p
+```
+Configure the replication details, your log file and position might be different from the one shown in the example below:
+```
+CHANGE MASTER TO
+MASTER_HOST = 'localhost',
+MASTER_USER = 'admin',
+MASTER_PASSWORD = 'admin',
+MASTER_LOG_FILE = `mysql-bin.000001',
+MASTER_LOG_POS = 1234;
+```
+Start replication on slave:
+```
+START SLAVE;
+```
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

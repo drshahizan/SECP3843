@@ -90,6 +90,7 @@ db.sales.insertOne({
 ```
 
 Output:
+
 <img src="..\Question 2\files\images\create.png">
 
 I will show the record created in the read query part later.
@@ -100,10 +101,11 @@ I will show the record created in the read query part later.
 
 To perform the read operation to read the record created just now, run the command below:
 ```
-db.sales.find({ "_id": ObjectId("649a953805e47cff7c6ec795") });
+db.sales.find({ "_id": ObjectId("649aa01e05e47cff7c6ec796") });
 ```
 
 Output:
+
 <img src="..\Question 2\files\images\read.png">
 
 3.Update query
@@ -111,12 +113,10 @@ Output:
 To perform the update operation, run the command below:
 
 First query: updateOne()
-This query will change the `storeLocation` of the record with id equals to `649a953805e47cff7c6ec795` to `Malaysia`.
+This query will change the `storeLocation` of the record with id equals to `649aa01e05e47cff7c6ec796` to `Malaysia`.
 ```
-use salesdb;
-
 db.sales.updateOne(
-  { "_id": ObjectId("649a953805e47cff7c6ec795") },
+  { "_id": ObjectId("649aa01e05e47cff7c6ec796") },
   { $set: { "storeLocation": "Malaysia" } }
 );
 ```
@@ -124,8 +124,6 @@ db.sales.updateOne(
 Second query: updateMany()
 This query will change all the `storeLocation` which is equals to `Denver` to `Malaysia`.
 ```
-use salesdb;
-
 db.sales.updateMany(
   { "storeLocation": "Denver" },
   { $set: { "storeLocation": "Malaysia" } }
@@ -135,6 +133,7 @@ db.sales.updateMany(
 Output
 
 First query: updateOne()
+
 <img src="..\Question 2\files\images\updateOne.png">
 
 You can see the `storeLocation` is changed from New York to Malaysia.
@@ -143,20 +142,19 @@ You can see the `storeLocation` is changed from New York to Malaysia.
 
 Second query: updateMany()
 
+You can see there is a total record of 1549 is being modified.
+
 <img src="..\Question 2\files\images\updateMany.png">
-
-You can see the `storeLocation` is changed from New York to Malaysia.
-
-<img src="..\Question 2\files\images\rupdateMany.png">
 
 4.Delete query
 
 To perform the delete operation, run the command below:
 ```
-
+db.sales.deleteOne({ "_id": ObjectId("649aa01e05e47cff7c6ec796") });
 ```
 
 Output:
+
 <img src="..\Question 2\files\images\delete.png">
 
 ## Contribution 🛠️
