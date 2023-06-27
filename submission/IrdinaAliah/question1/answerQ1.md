@@ -44,7 +44,11 @@ create Django apps name
 Upload Dataset on MongoDB
 <img src ="https://github.com/drshahizan/SECP3843/blob/c105e82a6852438db464b942f279678cdca23094/submission/IrdinaAliah/question1/files/images/upload%20dataset%20in%20mongodb.png" style ="width:700px; height: 700px;">
 
-Define Modes
+Define Models
+<img src ="https://github.com/drshahizan/SECP3843/blob/e8dd321d92b76dc24090ed4aa4d98408d77ea20b/submission/IrdinaAliah/question1/files/images/define%20model.jpg" style ="width:700px; height: 700px;">
+
+
+
 
 
 
