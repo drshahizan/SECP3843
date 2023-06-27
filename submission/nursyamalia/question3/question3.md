@@ -178,7 +178,7 @@ class Meta:
     fields = ['username', 'password', 'email', 'first_name', 'last_name', 'user_type']
 ```
 
-.html for:
+- .html for:
    - User registration page:
    
    <img  src="./files/images/reg.png"></img>
@@ -255,25 +255,112 @@ python manage.py runserver
   <img  src="./files/images/login.png"></img>
 
 ## Question 3 (b)
-The challenges in addressing Data Replication and Synchronization between MySQL and MongoDB:
-1. Evaluate Database-Specific Replication Techniques:
-- Research and evaluate database-specific replication techniques provided by MySQL and MongoDB.
-- Determine if their built-in replication mechanisms meet the project requirements.
-- Identify the replication type, such as master-slave replication, multi-master replication, or sharding.
+<p>When working with two different databases, such as MySQL and MongoDB, there are several approaches to address the challenge of data replication and synchronization. 
+One possible solution is to use an external tool or library that facilitates real-time updates and seamless interaction between the databases. 
+Here's a general outline of the steps involved in implementing such a solution:</p>
 
-2. Select an External Tool:
-- Explore external tools that facilitate real-time updates and seamless interaction between MySQL and MongoDB.
-- Identify tools such as Apache Kafka, Debezium, or similar solutions that support data replication and synchronization.
+1. Install related packages. As, we already build connection to MySQL from previous question, we need to install MongoDB related packages in the command.
+ ```python
+ pip install pymongo
+ import pymongo
+ ```
+2. Configure the database by openning in ('settings.py') in DATABASES:
+   <img  src="./files/images/mg.png"></img>
 
-3. Implement Replication Solution:
-- Install and configure the selected tool or replication mechanism on the server.
-- Configure the replication settings to connect to both MySQL and MongoDB databases.
-- Specify the replication rules, such as which tables or collections need to be synchronized.
+3. Access MongoDB databases and collections: Once the connection is established, we can access databases and collections in MongoDB using the client instance.
+ ```python
+ db = client['analytics']
+ collection1 = db['accounts']
+ collection2 = db['customers']
+ collection3 = db['transactions']
+ ```
+4. Design data mapping by creating a mapping between MySQL and MongoDB data models or schemas. Determine how data from one database will be translated and mapped to another.
 
-4. Test and Monitor:
-- Execute tests to verify the replication and synchronization process.
-- Monitor the replication process for any errors or inconsistencies.
-- Set up monitoring tools or alerts to ensure data consistency and identify any issues promptly.
+For MySQL (Django models):
+```python
+class MyModelAccounts(models.Model):
+    # MySQL fields declaration
+    
+    class Meta:
+        db_table = 'tb_accounts'
+
+class MyModelCustomers(models.Model):
+    # MySQL fields declaration
+    
+    class Meta:
+        db_table = 'tb_customers'
+
+class MyModelTransactions(models.Model):
+    # MySQL fields declaration
+    
+    class Meta:
+        db_table = 'tb_transactions'
+```
+
+For MongoDB (MongoDB models):
+```python
+class MyMongoModelAccounts(Document):
+    # MongoDB fields declaration
+    
+    meta = {
+        'collection': 'col_accounts'
+    }
+
+class MyMongoModelCustomers(Document):
+    # MongoDB fields declaration
+    
+    meta = {
+        'collection': 'col_customers'
+    }
+
+class MyMongoModelTransactions(Document):
+    # MongoDB fields declaration
+    
+    meta = {
+        'collection': 'col_transactions'
+    }
+```
+
+5. Add data migration scripts:
+```python
+from app.models import MyModelAccounts, MyModelCustomers, MyModelTransactions
+from app.mongo_models import MyMongoModelAccounts, MyMongoModelCustomers, MyMongoModelTransactions
+
+def migrate_data():
+    # Fetch data from MySQL models
+    mysql_accounts = MyModelAccounts.objects.all()
+    mysql_customers = MyModelCustomers.objects.all()
+    mysql_transactions = MyModelTransactions.objects.all()
+    
+    # Transfer data to MongoDB models
+    for mysql_account in mysql_accounts:
+        mongo_account = MyMongoModelAccounts()
+        # Set MongoDB fields using MySQL data
+        mongo_account.field1 = mysql_account.field1
+        mongo_account.field2 = mysql_account.field2
+        # ...
+        mongo_account.save()
+    
+    for mysql_customer in mysql_customers:
+        mongo_customer = MyMongoModelCustomers()
+        # Set MongoDB fields using MySQL data
+        mongo_customer.field1 = mysql_customer.field1
+        mongo_customer.field2 = mysql_customer.field2
+        # ...
+        mongo_customer.save()
+    
+    for mysql_transaction in mysql_transactions:
+        mongo_transaction = MyMongoModelTransactions()
+        # Set MongoDB fields using MySQL data
+        mongo_transaction.field1 = mysql_transaction.field1
+        mongo_transaction.field2 = mysql_transaction.field2
+        # ...
+        mongo_transaction.save()
+
+# Run the migration script
+migrate_data()
+```
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
