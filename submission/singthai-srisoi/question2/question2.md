@@ -59,7 +59,7 @@ Don't forget to hit the :star: if you like this repo.
 
 **Caution:** Make sure you have the correct JSON file that contains the data you intend to import. Verify the file path and ensure that the file is accessible.
 
-![image-3.png](ss/ss5.png)
+![image-3.png](ss/ss6.png)
 
 ---
 
@@ -73,7 +73,7 @@ Don't forget to hit the :star: if you like this repo.
 
 **Caution:** Pay close attention to any error messages or warnings displayed in the preview. If there are any issues with the data, you may need to address them before proceeding with the import.
 
-![image-8.png](ss/ss6.png)
+![image-3.png](ss/ss5.png)
 
 ## Question 2 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
