@@ -15,29 +15,35 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 3 (a)
 
-#### 1. Define the data models
+#### 1. Define the user models
 
-By using the same file 'models.py', add two classes. Class user is for user's information with the attributes of name, email, password and type and class UserType is for user's type which only has one attribute, name.
+By using the same file 'models.py', add a new class. This class is about the information of the users. Since this project requires three types of users which are customers, technical workers and senior management, thus creating a custom user model is essential. 
 
 ```
-class User(models.Model):
-    name = models.CharField(max_length=200)
-    email = models.CharField(max_length=200)
-    password = models.CharField(max_length=200)
-    type = models.IntegerField()
+from django.contrib.auth.models import AbstractUser
+from django.db import models
 
-class UserType(models.Model):
-    name = models.CharField(max_length=200)
+
+class CustomUser(AbstractUser):
+    USER_TYPE_CHOICES = (
+        ('customer', 'Customer'),
+        ('technical_worker', 'Technical Worker'),
+        ('senior_management', 'Senior Management'),
+    )
+
+    user_type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES)
 ```
 
-#### 2. Migrate the data models to MySQL
+#### 2. Configure authentication backend
 
-After that, make migration and migrate the models ito MySQL
+Since we will be using authentication backends, 
 
 ```
 python manage.py makemigrations Listings
 python manage.py migrate
 ```
+
+
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
