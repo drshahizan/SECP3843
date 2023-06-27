@@ -464,7 +464,7 @@ binlog_do_db=analytics_q3
 
 - Save the Notepad
 
-
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image17.png)
 
 
 
