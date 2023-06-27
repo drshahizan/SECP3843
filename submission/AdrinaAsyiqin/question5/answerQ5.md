@@ -17,6 +17,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 5 (a)
 ### Ways to optimize performance when dealing with large volumes of JSON data
 - `Load and preprocess data efficiently`
+  
   Use streaming or chunked processing techniques to load and preprocess the JSON data in smaller portions rather than loading the entire dataset into memory at once. This can be done using libraries like pandas with the read_json function and specifying the lines=True parameter for reading JSON files line by line.
     ```py
     import pymongo
