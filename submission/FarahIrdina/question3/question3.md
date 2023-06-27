@@ -15,6 +15,8 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 3 (a)
 
+### Steps to create this module on Django web server by using MySql database server
+
 #### 1. Define the user models
 
 By using the same file 'models.py', add a new class. This class is about the information of the users. Since this project requires three types of users which are customers, technical workers and senior management, thus creating a custom user model is essential. 
@@ -127,7 +129,24 @@ Templates act as the interface that users will be accessing. Create forms inside
 {% endblock %}
 ```
 
-#### 6. Perform databsae migrations
+#### 6. Create forms.py file
+
+Create a forms.py file in Django app and define the custom registration form based on our user model. We can use ModelForm to simplify the form creation process.
+
+```
+from django import forms
+from .models import CustomUser
+
+
+class RegistrationForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput)
+
+    class Meta:
+        model = CustomUser
+        fields = ['username', 'email', 'password', 'user_type']
+```
+
+#### 7. Perform databsae migrations
 
 Lastly, we need to perform a database migration to update the database schema.
 
@@ -136,8 +155,8 @@ python manage.py makemigrations Listings
 python manage.py migrate
 ```
 
-
-
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question1/files/images/three.png)
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question1/files/images/three2.png)
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
