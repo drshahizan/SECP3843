@@ -128,7 +128,7 @@ Output :
 
 <br>
 
-<img  src="./files/images/1_server1_3_configuring_sql3.jpg"></img>
+<img  src="./files/images/1_server1_3_configuring_sql3.jpg" style="max-width: 60%; display: block; margin: 0 auto;"></img>
 
 <br>
 
@@ -170,7 +170,7 @@ Output :
 
 <br>
 
-<img  src="./files/images/1_server1_4_configuring_mongodB3.jpg"></img>
+<img  src="./files/images/1_server1_4_configuring_mongodB3.jpg" style="max-width: 30%; display: block; margin: 0 auto;"></img>
 
 
 #### Server 2: MySQL Database Server Integration
@@ -190,7 +190,7 @@ Open up XAMPP, and just start **Apache** module and **MySQL** Module. There you 
 
 <br>
 
-<img  src="./files/images/1_server2_1.jpg"></img>
+<img  src="./files/images/1_server2_1.jpg" style="max-width: 40%; display: block; margin: 0 auto;"></img>
 
 <br>
 
@@ -200,7 +200,7 @@ Now just click on Admin under **MySQL** Module and create your database, remembe
 
 <br>
 
-<img  src="./files/images/1_server2_2.jpg"></img>
+<img  src="./files/images/1_server2_2.jpg"  style="max-width: 40%; display: block; margin: 0 auto;"></img>
 
 
 #### Server 3: MongoDB Database Server Integration
@@ -220,7 +220,7 @@ In **MongoDB Atlas** you have to create a database of your choice, remember to m
 
 <br>
 
-<img  src="./files/images/1_server3_1.jpg"></img>
+<img  src="./files/images/1_server3_1.jpg" style="max-width: 40%; display: block; margin: 0 auto;"></img>
 
 <br>
 
@@ -230,14 +230,14 @@ Now you have to download **MongoDB Compass** and copy and paste the connection s
 
 <br>
 
-<img  src="./files/images/1_server3_2.jpg"></img>
+<img  src="./files/images/1_server3_2.jpg"  style="max-width: 50%; display: block; margin: 0 auto;"></img>
 
 
 ## Question 1 (b)
 
 ### Portal : Architecture
 
-<img  src="./files/images/Portal_Architecture.png"></img>
+<img  src="./files/images/Portal_Architecture.jpg" style="max-width: 30%; display: block; margin: 0 auto;"></img>
 
 From the figure above, we can see how the 5 servers are interconnected with each other. A brief overview of the Architecture :
 
@@ -260,7 +260,7 @@ From the figure above, we can see how the 5 servers are interconnected with each
 
 ### Portal : Flow of Requests
 
-<img  src="./files/images/Portal_Flow.png"></img>
+<img  src="./files/images/Portal_Flow.jpg" style="max-width: 30%; display: block; margin: 0 auto;"></img>
 
 How will the flow look like :
 
