@@ -11,13 +11,132 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Name: Madihah binti Che Zabri
 #### Matric No.: A20EC0074
-#### Dataset: stories.json
+#### Dataset: <a href="https://github.com/drshahizan/dataset/blob/c8e9f4a7cbdb0c1b78ca2c73915ff56ceeb50e70/mongodb/07-stories/stories.json">stories.json</a>
 
 ## Question 2 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+a.	You have been given a JSON file that contains data that must be imported into a MongoDB database. The JSON file must follows the appropriate structure for MongoDB documents. Your task is to outline the step-by-step process to add the data from the JSON file into MongoDB. Provide a detailed explanation of each step involved in the process with screenshots, including any necessary commands. Ensure that your answer covers the preparation of the JSON file, starting the MongoDB server, accessing the MongoDB shell, selecting the target database, choosing the collection, and executing the import command.
+#### Prerequisites:
+
+1. Install MongoDB Community Server (*required)
+2. Install MongoDB Shell (*required)
+3. Install MongoDB Database Tools (optional)
+   
+#### Download the JSON file
+
+1. Go to <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories">stories.json</a> and download the json file
+
+#### Start MongoDB Server
+
+1. Run `mongod` in command prompt
+
+#### Access MongoDB Shell
+
+1. Run the MongoDB Shell by executing the appropriate command: `mongosh`
+
+#### Setup Database
+
+1. Open MongoDB Compass and create new DB named `Stories` under Collection `Story`.
+2. To switch to the intended database, execute the following command: `use Stories`
+
+#### Import Dataset
+
+There are 2 ways to to import dataset.
+
+#### 1. Using command prompt
+
+1. Run this in command prompt `mongoimport --uri mongodb+srv://madihahzabri:admin@cluster0.xgsbper.mongodb.net/ --db Stories --collection story --file "C:\Users\Hp\Downloads\stories.json"`
+
+#### 2. Using command MongoDB Compass
+1. Open MongoDB Compass
+2. Go to Database > Stories > story (Collection)
+3. Click Add Data button
+4. Choose Import JSON or CSV file
+5. Choose stories.json from file exporer
+
+<img src="../question2/files/images/Q2a.png"> 
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+### Start MongoDB Shell
+
+1. Open your terminal or command prompt
+2. Run `mongod` in the terminal
+3. Run `mongosh "mongodb+srv://madihahzabri:admin@cluster0.xgsbper.mongodb.net/"` to make connection to MongoDB Atlas
+4. Select the intended database `use
+
+### Create Query
+
+Run this query to insert data:
+```python
+db.story.insertOne({
+    "name": "Cakna Madani",
+...   "href": "https://www.utusan.com.my/nasional",
+...   "title": "Belia boleh tuntut RM200 eBeliaRahmah.",
+...   "comments": 0,
+...   "container": {
+...     "short_name": "ekonomi"
+...   },
+...   "submit_date": 1654321123,
+...   "topic": {
+...     "name": "Ekonomi",
+...     "short_name": "eco"
+...   },
+...   "promote_date": 1654321124,
+...   "id": "123456",
+...   "media": "image",
+...   "diggs": 10,
+...   "description": "BELIA dan pelajar institut pengajian tinggi boleh mula mendaftar untuk menerima kredit RM200 menerusi program eBeliaRahmah mulai Isnin ini",
+...   "link": "https://www.utusan.com.my/nasional/2023/06/belia-boleh-tuntut-rm200-ebeliarahmah-isnin-ini/",
+...   "user": {
+...     "name": "HUSNI",
+...     "registered": 1654321125,
+...     "fullname": "MOHD. HUSNI MOHD. NOOR",
+...     "icon": "https://www.utusan.com.my/nasional/avatar.jpg",
+...     "profileviews": 100
+...   },
+...   "status": "active",
+...   "shorturl": [
+...     {
+...       "short_url": "https://www.utusan.com.my/belia-boleh-tuntut-rm200-ebeliarahmah-isnin-ini",
+...       "view_count": 5
+...     }
+...   ]
+... })
+```
+Ouput:
+<img src="../question2/files/images/Q2b(1).png">
+
+### Read Query
+
+Run this code on command prompt 
+```python
+db.story.findOne({ "_id": ObjectId("4ba267dc238d3ba3ca000001") })
+```
+
+### Update Query
+
+Run this to update data in one column
+
+```python 
+db.story.updateOne({ "_id": ObjectId("4ba267dc238d3ba3ca000001") }, { $set: { "comments": 200 } })
+```
+
+Run this to update data in mulitple column
+
+```python 
+db.story.updateOne({ "_id": ObjectId("4ba267dc238d3ba3ca000001") }, { $set: { "topic.name": "Berita Terkini Popular", "topic.short_name": "berita" } })
+```
+Ouput:
+<img src="../question2/files/images/Q2b(2).png">
+
+### Delete Query
+
+To delete data:
+
+```python
+  db.story.deleteOne({ "_id": ObjectId("4ba267dc238d3ba3ca000001") })
+```
+<img src="../question2/files/images/Q2b(3).png">
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

@@ -9,15 +9,164 @@ Don't forget to hit the :star: if you like this repo.
 
 # Special Topic Data Engineering (SECP3843): Alternative Assessment
 
-#### Name:
-#### Matric No.:
-#### Dataset:
+#### Name: Afif Hazmie Arsyad Bin Agus
+#### Matric No.: A20EC0176
+#### Dataset: Supply Store
 
-## Question 4 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Question 4
+   - The machine learning approach used in this project is `logistic regression`.
+   - Logistic regression is a `classification algorithm` used to predict the probability of a binary outcome based on one or more independent variables.
+   - It is commonly used when the dependent variable is `categorical`.
+   - `Logistic regression` is a popular and interpretable algorithm for binary classification tasks.
+   - However, it assumes a linear relationship between the independent variables and the log-odds of the outcome.
 
-## Question 4 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+   1. Firstly, before do any analysis, visualization or machine learning, we must first clean the data. For examples:
+
+      #### Retrieve & Convert data into dataframe
+      ```python
+      # Connect to MongoDB and retrieve data
+      client = pymongo.MongoClient("mongodb+srv://afifhazmiearsyad:abc123456789@noctua.bw9bvzx.mongodb.net/")
+      db = client["SupplyStore"]
+      collection = db["Sales"]
+      data = list(collection.find())
+      
+      # Convert to dataframe
+      df1 = pd.DataFrame(data)
+      ```
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/df1.jpg">
+
+      #### Splitting the Customer data from dictionary to columns
+      ```python
+      import numpy as np
+
+      # Splitting Customer Data
+      df1['gender'] = df1['customer'].apply(lambda x: x['gender'] if pd.notnull(x) else np.nan)
+      df1['age'] = df1['customer'].apply(lambda x: x['age'] if pd.notnull(x) else np.nan)
+      df1['email'] = df1['customer'].apply(lambda x: x['email'] if pd.notnull(x) else np.nan)
+      df1['satisfaction'] = df1['customer'].apply(lambda x: x['satisfaction'] if pd.notnull(x) else np.nan)
+      
+      # Drop the original "customer" column
+      df1.drop('customer', axis=1, inplace=True)
+      ```
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/customersplit.jpg">
+
+      #### Splitting the Items data from array to columns
+      ```python
+      df1['item_names'] = df1['items'].apply(lambda x: [item['name'] for item in x] if isinstance(x, list) else [])
+      df1['item_tags'] = df1['items'].apply(lambda x: [item['tags'] for item in x] if isinstance(x, list) else [])
+      df1['item_prices'] = df1['items'].apply(lambda x: [item['price'] for item in x] if isinstance(x, list) else [])
+      df1['item_quantities'] = df1['items'].apply(lambda x: [item['quantity'] for item in x] if isinstance(x, list) else [])
+      
+      # Drop the original "items" column
+      df1.drop('items', axis=1, inplace=True)
+      ```
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/itemsplit.jpg">
+
+      #### Clean the splited items column 
+      - Clean the items_column by `removing the array bracket`, `sum up value` and `display unique value for item_names and item_tags`.
+      ```python
+      df1['item_names'] = df1['items'].apply(lambda x: [item['name'] for item in x] if isinstance(x, list) else [])
+      df1['item_tags'] = df1['items'].apply(lambda x: [item['tags'] for item in x] if isinstance(x, list) else [])
+      df1['item_prices'] = df1['items'].apply(lambda x: [item['price'] for item in x] if isinstance(x, list) else [])
+      df1['item_quantities'] = df1['items'].apply(lambda x: [item['quantity'] for item in x] if isinstance(x, list) else [])
+      
+      # Drop the original "items" column
+      df1.drop('items', axis=1, inplace=True)
+      ```
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/itemclean.jpg">
+
+      #### Checking Null value.
+      ```python
+      df1.isnull().sum()
+      df1.info()
+      ```
+
+      #### Drop row contain null value.
+      ```python
+      df1.dropna(inplace=True)
+      df1.info()
+      ```
+
+      #### Drop useless columns and convert to suitable datatype.
+      ```python
+      df1.dropna(inplace=True)
+      df1.info()
+
+      # Drop unnecessary columns
+      df1 = df1.drop(columns=["_id"])
+      
+      # Convert saleDate to datetime type
+      df1["saleDate"] = pd.to_datetime(df1["saleDate"])
+      
+      # Convert couponUsed to boolean type
+      df1["couponUsed"] = df1["couponUsed"].astype(bool)
+      ```
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/cleandata.jpg">
+      
+   2. Machine Learning Approach `Logistic Regression`.
+      #### Import the required ML libraries
+      ```python
+      from sklearn.model_selection import train_test_split
+      from sklearn.linear_model import LogisticRegression
+      from sklearn.metrics import accuracy_score
+      ```
+
+      #### Split the data into testing and training
+      ```python
+      # Splitting the data into features (X) and target variable (y)
+      X = df1[['age', 'gender', 'purchaseMethod']]
+      y = df1['satisfaction']
+      
+      # Convert categorical variables to numerical representation using one-hot encoding
+      X_encoded = pd.get_dummies(X)
+      
+      # Splitting the data into training and testing sets
+      X_train, X_test, y_train, y_test = train_test_split(X_encoded, y, test_size=0.2, random_state=42)
+      ```
+
+      #### Training and Testing the datasets.
+      ```python
+      # Initialize and train the logistic regression model
+      model = LogisticRegression()
+      model.fit(X_train, y_train)
+      
+      # Make predictions on the test set
+      y_pred = model.predict(X_test)
+      
+      # Evaluate the model's accuracy
+      accuracy = accuracy_score(y_test, y_pred)
+      print("Accuracy:", accuracy)
+      ```
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/Laccuracy.jpg">
+
+      #### Visualize the performance of the logistic regression model, use the `bar chart` function from the `seaborn` library.
+      ```python
+      import matplotlib.pyplot as plt
+      import seaborn as sns
+      from sklearn.metrics import classification_report
+      
+      # Create a classification report
+      report = classification_report(y_test, y_pred, output_dict=True)
+      
+      # Extract the accuracy and other metrics from the report
+      accuracy = report['accuracy']
+      precision = report['weighted avg']['precision']
+      recall = report['weighted avg']['recall']
+      f1_score = report['weighted avg']['f1-score']
+      
+      # Create a bar plot
+      plt.figure(figsize=(8, 6))
+      metrics = ['Accuracy', 'Precision', 'Recall', 'F1-Score']
+      values = [accuracy, precision, recall, f1_score]
+      sns.barplot(x=values, y=metrics, palette='Blues')
+      plt.title("Model Performance")
+      plt.xlabel("Value")
+      plt.ylabel("Metric")
+      plt.show()
+      ```
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/barchart.jpg">
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

@@ -17,120 +17,153 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 1 (a)
 ### Step 1: Install and Configure Django
    
-1. Install python from official Python Website (https://www.python.org/downloads/) and follow instructions for operating system. 
+- Install python from official Python Website (https://www.python.org/downloads/) and follow instructions for operating system. 
 
-2. Download latest version of Python for windows by clicking on 'Download Python'
+- Download latest version of Python for windows by clicking on 'Download Python'
 
-3. Run downloaded installer .exe file
+- Run downloaded installer .exe file
 
-4. Select option 'Add python PATH' and choose the 'Customize installation' option. In the customisation screen, ensure pip package and the 'add python to environment' variables option is selected
-   <br>
+- Select option 'Add python PATH' and choose the 'Customize installation' option. In the customisation screen, ensure pip package and the 'add python to environment' variables option is selected
+   
+- Open command prompt and execute each of the following 
+    ```s
+    pip install django
+    pip install pymongo
+    pip install mysqlclient
+    ```
+    ![WhatsApp Image 2023-06-27 at 15 41 48](https://github.com/drshahizan/SECP3843/assets/96984290/f8fcea37-f079-4cc3-9d6f-0728c09e8a4e)
+
+    ![WhatsApp Image 2023-06-27 at 15 42 21](https://github.com/drshahizan/SECP3843/assets/96984290/fd84853c-1477-4711-b7de-e42f661f9c94)
+
+    ![WhatsApp Image 2023-06-27 at 15 42 58](https://github.com/drshahizan/SECP3843/assets/96984290/cea83ec3-0977-4671-8f77-1a8a05b424fd)
 
 ### Step 2: Create Django Project Folder
 
-1. Create a project folder and open it in Visual Studio Code
+- Create a project folder and open it in Visual Studio Code
 
-2. Run the following command. `myproject` can be renamed to desired name
+- Run the following command. `myproject` can be renamed to desired name
  
-```python
-#start project
-django-admin.py startproject myproject
+    ```python
+    #start project
+    django-admin.py startproject store
 
-#Move into project directory using the command 
-cd myproject
+    #Move into project directory using the command 
+    cd store
 
-#Open a new terminal and install virtual environment by running the below command. `myenv` can be replaced with desired name
-virtualenv myenv
+    #startapp
+    python manage.py startapp STDE
 
-#Activate virtual environment by running command 
-myenv\Scripts\activate
-```
+    #Open a new terminal and install virtual environment by running the below command. `myenv` can be replaced with desired name
+    virtualenv myenv
 
-### Step 3: Run server
+    #Activate virtual environment by running command 
+    myenv\Scripts\activate
+    ```
 
-1. Go into project directory and run the command
-```python
-python manage.py runserver
-```
+    ![WhatsApp Image 2023-06-27 at 15 53 11](https://github.com/drshahizan/SECP3843/assets/96984290/0e175134-f986-4f96-aec0-bcb3a5ddb31f)
 
-2. Open the web browser and visit the link given
 
-### Step 4: Install django
-1. Ensure the virtual enironment is active
+### Step 3: Run Server
 
-2. Run command . This will download the latest stable version of django
-```python
-pip install django
-```
+- Go into project directory and run the command
+    ```python
+    python manage.py runserver
+    ```
 
-3. Verify installation by running python in the terminal. This will open a python shell and run
-```
-import django
-```
+- Open the web browser and visit the link given
+   
+    ![image](https://github.com/drshahizan/SECP3843/assets/96984290/92a6f40c-1769-4b1b-8aa0-494ab73b1562)
 
-### Step 5: Configure django settings
-1. Open settings.py 
 
-2. Configure DATABASES dictionary to configure both MySQL and MongoDB connections
+### Step 4: Configure Django Settings
+- Open settings.py 
 
-3. Update INSTALLED_APPS list to include neccessary Django apps and django_pandas
+- Configure DATABASES dictionary to configure both MySQL and MongoDB connections
+   
+- Update INSTALLED_APPS list to include neccessary Django apps and django_pandas
+    ```python
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'store',
+            'USER': 'root',
+            'PASSWORD': '',
+            'HOST': 'localhost',
+            'PORT': '3307',
+        },
+        'mongodb': {
+            'ENGINE': 'djongo',
+            'NAME': 'store',
+            'CLIENT': {
+                'host': 'cluster0.yvk5zzq.mongodb.net',
+                'username': 'adrinaasyiqin',
+                'password': 'Adrina857600',
+                
+            }
+        }
+    }
+    ```
 
-### Step 6: Migrate database schema
-1. Run `python manage.py migrate` command to create necessary models for the database
+    ![image](https://github.com/drshahizan/SECP3843/assets/96984290/cf239ac3-6587-4dfe-adc1-546dcabc15b6)
 
-2. Check if migration ran successfully and table created in both databases
+### Step 5: Migrate Database Schema
+- Run `python manage.py migrate` command to create necessary models for the database
 
-### Step 7: Import sales.json data into databases
-1. Create a new python file named `import_json_data.py`
+- Check if migration ran successfully and table created in both databases
 
-2. Open file and import modules using the following command
-```python
-from django.core.management.base import BaseCommand
-from django.conf import settings
-from yourapp.models import YourModel  # Replace "YourModel" with the appropriate model name for your JSON dataset
-import json
-```
+### Step 6: Import sales.json Into Databases
+- Create a new python file named `import_json_data.py`
 
-3. Define class that inherits from BaseCommand
-```python
-class Command(BaseCommand):
-    help = 'Imports JSON data into the MySQL and MongoDB databases'
+- Open file and import modules using the following command
+    ```python
+    from django.core.management.base import BaseCommand
+    from django.conf import settings
+    from yourapp.models import YourModel  # Replace "YourModel" with the appropriate model name for your JSON dataset
+    import json
+    ```
 
-    def handle(self, *args, **options):
-        # Read the JSON file
-        with open('path/to/your/json/sales.json', 'r') as f:
-            json_data = json.load(f)
+- Define class that inherits from BaseCommand
+    ```python
+    class Command(BaseCommand):
+        help = 'Imports JSON data into the MySQL and MongoDB databases'
 
-        # Import data into MySQL
-        self.stdout.write('Importing data into MySQL...')
-        for data in json_data:
-            YourModel.objects.create(**data)
-        self.stdout.write('Data import into MySQL completed.')
+        def handle(self, *args, **options):
+            # Read the JSON file
+            with open('path/to/your/json/sales.json', 'r') as f:
+                json_data = json.load(f)
 
-        # Import data into MongoDB
-        self.stdout.write('Importing data into MongoDB...')
-        for data in json_data:
-            YourModel.objects.mongo_insert(data)
-        self.stdout.write('Data import into MongoDB completed.')
+            # Import data into MySQL
+            self.stdout.write('Importing data into MySQL...')
+            for data in json_data:
+                YourModel.objects.create(**data)
+            self.stdout.write('Data import into MySQL completed.')
 
-```
+            # Import data into MongoDB
+            self.stdout.write('Importing data into MongoDB...')
+            for data in json_data:
+                YourModel.objects.mongo_insert(data)
+            self.stdout.write('Data import into MongoDB completed.')
 
-4. Save the file and run management command
-```python
-python manage.py import_json_data
-```
+    ```
 
-### Step 8: Implement dynamic web pages
-1. create django views and templates to generate web pages based on the data stored in the databases
+- Save the file and run management command
+    ```s
+    python manage.py import_json_data
+    ```
 
-2. Write django queries to retrueve data from both MySQL and MongoDB databases
+### Step 7: Implement Dynamic Web Pages
+- create django views and templates to generate web pages based on the data stored in the databases
 
-3. Use the retrieved data to render dynamic content in the templates
+- Write django queries to retrueve data from both MySQL and MongoDB databases
 
-4. Test the web pages to ensure the integration is working as expected.
+- Use the retrieved data to render dynamic content in the templates
+
+- Test the web pages to ensure the integration is working as expected.
 
 
 ## Question 1 (b)
+
+### System Architecture
 
 ```
 +----------------------+
@@ -170,29 +203,29 @@ python manage.py import_json_data
 ```
 1. <b>User Interface</b>
    
-The User Interface is responsible for the presentation layer of the system, allowing users to interact with the application. It is developed using web technologies such as HTML, CSS, and JavaScript, along with any relevant frontend frameworks or libraries. Users interact with the interface by inputting data, clicking buttons, or navigating through different pages. The User Interface communicates with the Django web server by sending HTTP requests, which trigger server-side processing and generate responses to be displayed back to the user.
+    The User Interface is responsible for the presentation layer of the system, allowing users to interact with the application. It is developed using web technologies such as HTML, CSS, and JavaScript, along with any relevant frontend frameworks or libraries. Users interact with the interface by inputting data, clicking buttons, or navigating through different pages. The User Interface communicates with the Django web server by sending HTTP requests, which trigger server-side processing and generate responses to be displayed back to the user.
 
 2. <b>Django Web Server</b>
    
-The Django Web Server, an advanced Python web framework, acts as the core component of the system. It manages the server-side logic and handles incoming HTTP requests from the User Interface. With its robust functionality, the web server processes these requests, executing necessary operations, and generating appropriate responses. It seamlessly integrates with the databases, enabling smooth data operations such as data retrieval and modification. Additionally, the Django Web Server takes charge of URL routing, request management, and template rendering, ensuring efficient handling of user interactions and dynamic content generation for the User Interface.
+    The Django Web Server, an advanced Python web framework, acts as the core component of the system. It manages the server-side logic and handles incoming HTTP requests from the User Interface. With its robust functionality, the web server processes these requests, executing necessary operations, and generating appropriate responses. It seamlessly integrates with the databases, enabling smooth data operations such as data retrieval and modification. Additionally, the Django Web Server takes charge of URL routing, request management, and template rendering, ensuring efficient handling of user interactions and dynamic content generation for the User Interface.
 
 3. <b>MySQL Database</b>
    
-The MySQL Database is a widely used relational database management system known for its reliability and scalability. It stores data in a structured manner, organized in tables with predefined schemas. In the context of our system, Django interacts with the MySQL Database through the Django ORM (Object-Relational Mapping). The Django ORM facilitates seamless communication between the web server and the database by mapping database tables to Django models. This abstraction layer allows developers to define models that represent the database tables and provides a convenient interface for performing queries and manipulating data. Through the Django ORM, the MySQL Database efficiently handles data storage and retrieval operations, ensuring the integrity and consistency of the system's data.
+    The MySQL Database is a widely used relational database management system known for its reliability and scalability. It stores data in a structured manner, organized in tables with predefined schemas. In the context of our system, Django interacts with the MySQL Database through the Django ORM (Object-Relational Mapping). The Django ORM facilitates seamless communication between the web server and the database by mapping database tables to Django models. This abstraction layer allows developers to define models that represent the database tables and provides a convenient interface for performing queries and manipulating data. Through the Django ORM, the MySQL Database efficiently handles data storage and retrieval operations, ensuring the integrity and consistency of the system's data.
 
 4. <b>MongoDB Database</b>
    
-MongoDB is a versatile NoSQL document-oriented database that excels at handling unstructured or semi-structured data. It utilizes a JSON-like document format with dynamic schemas, offering flexibility in data representation and evolution. In our system, Django communicates with MongoDB through suitable database connectors or libraries. This integration enables Django to utilize MongoDB as an alternative database backend, empowering developers to define models and perform CRUD operations on the data. By leveraging MongoDB's scalability and flexibility, our system can effectively store and retrieve data, adapting to the changing requirements of the application.
+    MongoDB is a versatile NoSQL document-oriented database that excels at handling unstructured or semi-structured data. It utilizes a JSON-like document format with dynamic schemas, offering flexibility in data representation and evolution. In our system, Django communicates with MongoDB through suitable database connectors or libraries. This integration enables Django to utilize MongoDB as an alternative database backend, empowering developers to define models and perform CRUD operations on the data. By leveraging MongoDB's scalability and flexibility, our system can effectively store and retrieve data, adapting to the changing requirements of the application.
 
 ### The Flow
-1. User interacts with the User Interface and triggers an HTTP request.
-2. The request is sent to the Django web server.
-3. Django processes the request and performs necessary operations.
-4. For data operations, Django interacts with both the MySQL and MongoDB databases.
-5. Django queries the MySQL database using the Django ORM for relational data needs.
-6. Django queries the MongoDB database using appropriate connectors or libraries for NoSQL data needs.
-7. The databases process the queries and return the results to Django.
-8. Django generates the appropriate response and sends it back to the User Interface.
+   1. User interacts with the User Interface and triggers an HTTP request.
+   2. The request is sent to the Django web server.
+   3. Django processes the request and performs necessary operations.
+   4. For data operations, Django interacts with both the MySQL and MongoDB databases.
+   5. Django queries the MySQL database using the Django ORM for relational data needs.
+   6. Django queries the MongoDB database using appropriate connectors or libraries for NoSQL data needs.
+   7. The databases process the queries and return the results to Django.
+   8. Django generates the appropriate response and sends it back to the User Interface.
 
 
 ## Contribution 🛠️

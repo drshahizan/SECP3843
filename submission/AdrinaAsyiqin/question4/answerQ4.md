@@ -15,26 +15,134 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: sales.json
 
 ## Question 4 
-### Macbine Learning Approach
-#### Decision Tree
-- Data preparation
-  - Software that will be used is Alteryx
-  - Preprocess the sales data. Ensure the data is in a structured format with relevant features and a target variable (e.g., sales amount, customer category).
-  - Split the data into training and testing sets. The training set will be used to build the decision tree model, while the testing set will be used to evaluate its performance.
-- Feature selection
-  - Identify the features from the sales data that are most relevant to predicting the target variable. This can involve analyzing the correlation between features and the target, performing statistical tests, or using domain knowledge.
-  - Select the subset of features that will be used to build the decision tree model.
+
+### Step 1:Data Cleaning
+- In this part, I execute all code in Google Colab
+- Load sales.json data from mongodb
+  ```py
+  !pip install pymongo
+  import pymongo
+  import pandas as pd
+
+  # Connect to MongoDB and retrieve data
+  password = "Adrina857600"
+  client = pymongo.MongoClient("mongodb+srv://cluster0.yvk5zzq.mongodb.net/", username="adrinaasyiqin", password=password)
+  db = client["salesdatabase"]
+  collection = db["salessample"]
+  data = list(collection.find())
+
+  # Convert to DataFrame
+  df = pd.DataFrame(data)
+
+  # Check the DataFrame
+  print(df.head())
+  df.info()
+  ```
+
+  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/6249484b-d4f8-498d-aeb7-7893a4ed1ad9)
 
 
-#### Time Series Analysis
-Step 1: Data preparation
-Step 2: Data Exploration
-Step 3: Time Series Decomposition
-Step 4: Stationary Testing
-Step 5: Model Selection
-Step 6: Model Fitting and Parameter Estimation
-Step 7: Model Validation
-Step 8: Forecasting
+- Data cleaning and preparation. Some of the data cleaning I did is `handling missing values`,`removing duplicates`, and `convert items column into seperate columns`
+
+  ```py
+  # Handling Missing Values
+  # Drop rows with missing values
+  df.dropna(inplace=True)
+
+  # Replace missing values with a specified value
+  df.fillna(value=0, inplace=True)
+
+  # Removing Duplicates
+  df.drop_duplicates(subset='_id', inplace=True)
+
+  # Convert the 'items' column into separate columns
+  df_items = pd.json_normalize(df['items'])
+
+  # Rename the columns
+  new_columns = {}
+  for col in df_items.columns:
+      new_columns[col] = f'item{col}'
+  df_items.rename(columns=new_columns, inplace=True)
+
+  # Merge the item columns with the original DataFrame
+  df = pd.concat([df, df_items], axis=1)
+
+  # Drop the original 'items' column
+  df.drop('items', axis=1, inplace=True)
+
+  ```
+
+  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/aff95e19-040f-4bb5-9e77-47ae4120e7f9)
+
+
+### Step 2 :Data visualisation
+- Create bar graph
+  ```py
+  import matplotlib.pyplot as plt
+
+  # Count the number of sales by store location
+  sales_by_location = df['storeLocation'].value_counts()
+
+  # Create a bar chart
+  plt.figure(figsize=(10, 6))
+  plt.bar(sales_by_location.index, sales_by_location.values)
+  plt.xlabel('Store Location')
+  plt.ylabel('Number of Sales')
+  plt.title('Sales Distribution by Store Location')
+  plt.xticks(rotation=45)
+  plt.show()
+
+  ```
+
+  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/009620f7-ffad-4f7f-98f2-3d77596ec125)
+
+
+- Create pie chart
+  ```py
+  import matplotlib.pyplot as plt
+
+  # Count the number of sales by purchase method
+  sales_by_purchase_method = df['purchaseMethod'].value_counts()
+
+  # Create a pie chart
+  plt.figure(figsize=(8, 8))
+  plt.pie(sales_by_purchase_method.values, labels=sales_by_purchase_method.index, autopct='%1.1f%%', startangle=90)
+  plt.axis('equal')
+  plt.title('Sales Distribution by Purchase Method')
+  plt.show()
+
+  ```
+
+  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/3b545c61-9675-4990-aacb-057281d903c3)
+
+
+### Step 3:Macbine Learning
+  ```py
+  # Drop the unnecessary columns
+  df.drop(['item1','item2','item3','item4','item5','item6','item7','item8','item9','item0'], axis=1, inplace=True)
+  df.info()
+
+  from sklearn.model_selection import train_test_split
+  from sklearn.linear_model import LinearRegression
+  from sklearn.metrics import mean_squared_error
+
+  selected_fields = df[['couponUsed']]
+
+  X = selected_fields.drop('couponUsed', axis=1)
+  y = selected_fields['couponUsed']
+  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+  model = LinearRegression()
+  model.fit(X_train, y_train)
+  y_pred = model.predict(X_test)
+  ```
+
+  The machine learning technique used in this code is Linear Regression. Linear regression is a supervised learning algorithm used for predicting a continuous target variable based on one or more input features. It assumes a linear relationship between the input variables and the target variable and aims to find the best-fitting line that minimizes the difference between the predicted and actual values.
+
+  In this code, the unnecessary columns are dropped from the DataFrame. The selected fields include the 'couponUsed' column, which is used as the target variable. The remaining columns are used as input features (X) for the linear regression model. The data is then split into training and testing sets using the train_test_split function. The LinearRegression model is trained on the training set using the fit method, and predictions are made on the test set using the predict method.
+
+  Finally, the performance of the model is evaluated using the mean squared error (MSE) metric, which measures the average squared difference between the predicted and actual values.
+
 
 
 ## Contribution 🛠️

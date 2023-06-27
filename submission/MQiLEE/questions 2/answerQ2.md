@@ -38,7 +38,7 @@
 
   > If the results return false, it means that the json files are in wrong structure, whereas true, the json files are in correct structure. Unfortunately, 3 of the json files return files in this case.
 
-  <img src="../questions%201/files/images/1a1.png" />
+  <img src="./files/images/1a1.png" />
 
   c. After checking the json files, all the files are not formatted correctly as json array files. The files are missing the opening square bracket "[" and a closing square bracket "]" to denote an array. Each line of the data will be seperated with a comma ",". Hence, the code below is used to modified the json files into correct json array format.
 
@@ -85,7 +85,7 @@ print(f"Modified transactions.json structure is valid: {is_modified_transactions
 
 > This time, all the files return true, which means all of the json files are in correct format and ready to be imported into mongodb.
 
-<img src="../questions%201/files/images/1a2.png" />
+<img src="./files/images/1a2.png" />
 
 - Notebook for json preparation : [json_validation.ipynb](./files/source-code/json_validation.ipynb)
 - Modified accounts.json : [accounts.json](./files/source-code/correct_accounts.json)
@@ -112,7 +112,7 @@ mongod
 
 Command Prompt:
 
-<img src="../questions%201/files/images/1a3.png" />
+<img src="./files/images/1a3.png" />
 
 <hr />
    
@@ -126,7 +126,7 @@ mongosh
 
 Command Prompt:
 
-<img src="../questions%201/files/images/1a4.png" />
+<img src="./files/images/1a4.png" />
 
 <hr />
    
@@ -139,7 +139,7 @@ use analytics
 
 MongoDB Shell:
 
-<img src="../questions%201/files/images/1a5.png" />
+<img src="./files/images/1a5.png" />
 
 <hr />
 
@@ -162,7 +162,7 @@ Use ```show collections``` to view all the collections in the database.
 
 MongoDB Shell:
 
-<img src="../questions%201/files/images/1a6.png" />
+<img src="./files/images/1a6.png" />
 
 <hr />
    
@@ -186,7 +186,7 @@ mongoimport --db analytics --collection transactions --file "C:\Users\Lee MQ\Doc
 All of the documents are imported successfully!
 
 Command Prompt:
-<img src="../questions%201/files/images/1a7.png" />
+<img src="./files/images/1a7.png" />
 
 <hr />
 <hr />
@@ -216,11 +216,11 @@ db.accounts.insertOne({
 
 Mongodb Shell:
 
-<img src="../questions%201/files/images/2b1.png" />
+<img src="./files/images/2b1.png" />
 
 Mongodb Compass:
 
-<img src="../questions%201/files/images/2b2.png" />
+<img src="./files/images/2b2.png" />
 
 <hr />
 
@@ -239,11 +239,11 @@ db.customers.findOne({
 
 Mongodb Shell:
 
-<img src="../questions%201/files/images/2b3.png" />
+<img src="./files/images/2b3.png" />
 
 Mongodb Compass:
 
-<img src="../questions%201/files/images/2b4.png" />
+<img src="./files/images/2b4.png" />
 
 <hr />
 
@@ -263,11 +263,11 @@ db.accounts.updateOne(
 
 Mongodb Shell:
 
-<img src="../questions%201/files/images/2b5.png" />
+<img src="./files/images/2b5.png" />
 
 Mongodb Compass:
 
-<img src="../questions%201/files/images/2b6.png" />
+<img src="./files/images/2b6.png" />
 
 
 In the code below, ```updateMany()``` is used to find all the documents in the accounts collection where limit is less than 10000 and increment their limit field by 5000.
@@ -281,11 +281,11 @@ db.accounts.updateMany(
 
 Mongodb Shell:
 
-<img src="../questions%201/files/images/2b7.png" />
+<img src="./files/images/2b7.png" />
 
 Mongodb Compass:
 
-<img src="../questions%201/files/images/2b8.png" />
+<img src="./files/images/2b8.png" />
 
 > There is no account with the limit that is below 5000 as all of them are increment by 5000.
 
@@ -307,10 +307,10 @@ db.accounts.deleteOne({
 
 Mongodb Shell:
 
-<img src="../questions%201/files/images/2b9.png" />
+<img src="./files/images/2b9.png" />
 
 Mongodb Compass:
 
-<img src="../questions%201/files/images/2b10.png" />
+<img src="./files/images/2b10.png" />
 
 > The newly created account "123456789" in the first step is deleted and cannot be found in the collection.

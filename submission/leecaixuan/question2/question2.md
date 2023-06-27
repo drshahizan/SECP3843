@@ -15,10 +15,161 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Analytics Dataset
 
 ## Question 2 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<h4>Step 1 - Install MongoDB Shell and MongoDB database tools</h4>
+
+Download the MongoDB Shell and MongoDB database tools:
+
+[MongoDB Shell](https://downloads.mongodb.com/compass/mongosh-1.10.1-win32-x64.zip)
+
+[MongoDB Database Tools](https://fastdl.mongodb.org/tools/db/mongodb-database-tools-windows-x86_64-100.7.2.zip)
+
+
+<h4>Step 2 - MongoDB Shell and Database Tools Setup</h4>
+
+Copy the all the files from the bin file in MongoDB Shell and MongoDB Database Tools that you downloaded to the bin file of MongoDB in your PC. All the files will be shown in the bin file of MongoDB like the image below.
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/bin.png" />
+</p>
+
+Open the 'Edit Environment Variables For You Account' by searching it in your window search bar. Add a new path of by copying the bin file of MongoDB to the environment variables and click 'OK'. The MongoDB Shell and Database Tools are setup.
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/env.png" />
+</p>
+
+<h4>Step 3 - Import Data</h4>
+
+To import the data, write the command ```mongoimport "C:\Users\User\Downloads\AA_SpecialTopic\accounts.json" -d AnalyticsDataset -c Accounts``` in your command prompt. ```-d AnalyticsDataset``` means your database name and ```-c Accounts``` is your collection name.
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/import%20data.png" />
+</p>
+
+
+<h4>Imported Data</h4>
+
+- Accounts JSON imported
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/acc.png" />
+</p>
+
+- Customers JSON imported
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/cust.png" />
+</p>
+
+-Transactions JSON imported
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/trans.png" />
+</p>
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Make sure to connect to your database by typing the command ```use AnalyticsDataset```
+
+1) Create query
+
+Create a new account_id  = 371140, limit = 10000 and products = "Derivatives".
+
+```
+db.Accounts.insertOne({
+  account_id: 371140,
+  limit: 10000,
+  products: [
+    "Derivatives",
+  ]
+})
+```
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/create.png" />
+</p>
+
+Result:
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/create_result.png" />
+</p>
+
+2) Read query
+
+Read the data where the username is equal to "fmiller" in the Customers table.
+
+```db.Customers.find({username:"fmiller"})```
+
+Result:
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/read.png" />
+</p>
+
+3a) Update query
+
+Update the limit number to 8000 which the account_id is equal to 371138.
+
+```
+db.Accounts.updateOne(
+   { account_id: 371138 },  
+   { $set: { limit: 8000 } }  
+)
+```
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/update1.png" />
+</p>
+
+Result:
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/update1_result1.png" />
+</p>
+
+b) Update query 
+
+Update the transaction_count to 86 which the account_id is equal to 443178.
+
+```
+db.Transactions.updateOne(
+   { account_id: 443178 },  
+   { $set: { transaction_count: 86 } }
+)
+```
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/update2.png" />
+</p>
+
+Result:
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/update2_result2.png" />
+</p>
+
+4) Delete query
+
+Delete the data from Accounts table where the account_id is 371138.
+```db.Accounts.deleteOne({ account_id: 371138})```
+
+<p align="center">
+  <img height="200px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/delete.png" />
+</p>
+
+Result:
+
+The result shows null after the data is deleted from the Accounts table.
+
+<p align="center">
+  <img height="200px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/delete_result.png" />
+</p>
+
+
+
+
 
 
 

@@ -36,7 +36,7 @@ Follow the steps below to connect Django with the JSON dataset and ensure effect
 
 #### Define models for MySQL and MongoDB:
 
-1. Create a new file named `models_mysql.py` and define the models for MySQL
+1. define json structure into `models.py` and define the models for MySQL
 
 ```python from django.db import models
 
@@ -174,7 +174,7 @@ class Company(models.Model):
 #### Migrate the databases :
 
 1. Run the following commands to create the necessary database tables for MySQL and MongoDB `python manage.py makemigrations` and `python manage.py migrate`
-<img src="../materials/Django5.png">
+<img src="../materials/Django7.png">
 
 #### Import JSON dataset into the models
 

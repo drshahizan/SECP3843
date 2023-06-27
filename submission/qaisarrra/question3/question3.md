@@ -14,10 +14,117 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: 04 - Companies
 
 ## Question 3 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+This segment of Question 3. (a) is similar to Question 1. (a) and is divided into several parts:
+* [Prerequisites](#-prerequisites)
+* [Setting Up A Django Project](#️-setting-up-a-django-project)
+
+### Prerequisites
+To carry out this segment of the question, it it crucial for to do the following:
+1. Install [Python](https://www.python.org/downloads/)
+2. Install [Visual Studio Code](https://code.visualstudio.com/download)
+<br></br>
+
+### Setting Up A Django Project
+
+**Django Installation** 
+
+1. Create a Django Project Folder. For this project I created a folder named **AA** on my **Desktop**, where it is easily accessible.
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/Create%20Project%20Folder.png">
+</p>
+     
+<br>
+
+2. Set up a virtual environment. In your current working directory, this command creates a new virtual environment called ``environment``. 
+```bash
+python -m venv environment
+```
+<br>
+
+3. Activate the virtual environment. When the process is finished, you must additionally activate the virtual environment.
+```bash
+environment\Scripts\activate
+```
+<br>
+   
+4. Install Django.
+```bash
+pip install django
+```
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/Django%20Installation.png">
+</p>
+<br>
+
+5. Install necessary packages. Here we are installing  packages that allows integration between our Django App and MongoDB, those packages are **MySQL Client PyMongo** and **Djongo**. Djongo is a smarter approach to database querying. It maps python objects to MongoDB documents. 
+```bash
+pip install django mysqlclient pymongo
+pip install djongo
+```
+Below are the output when running the commands:
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/Install%20Django%20MySQLClient%20PyMongo.png">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/Install%20Djongo.png">
+</p>
+<br></br>
+
+**Create A Django Project** 
+
+You can now create a project after setting up, activating your virtual environment and installing Django. To start a new Django project, open a new terminal in Visual Studio Code and run the following command. The project is named **Companies** in the code below, but it can be changed to any name you like.
+```bash
+python -m django startproject Companies
+```
+Navigate yourself to the project directory by inputing the command below:
+```bash
+cd Companies
+```
+
+<br></br>
+
+**Create A Django Application** 
+
+The  ``startapp `` command generates a default folder structure for a Django app. This tutorial uses **CompaniesApp** as the name for the app:
+```bash
+python manage.py startapp CompaniesApp
+```
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/Create%20Django%20Project.png">
+</p>
+<br></br>
+
+**Configure Database Connection** 
+
+Set up the MySQL and MongoDB connections. Alter the code for the databases in the Django project's'settings.py' file as shown below.
+```bash
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db_companies',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    },
+    'mongodb': {
+        'ENGINE': 'djongo',
+        'NAME': 'AA',
+        'ENFORCE_SCHEMA': False,
+        'CLIENT': {
+            'host': 'localhost',
+            'port': 27017,
+            'username': 'qaisara',
+            'password': '8301',
+            'authSource': 'admin',
+            'authMechanism': 'SCRAM-SHA-1',
+        }
+    }
+}
+```
+<br></br>
+
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

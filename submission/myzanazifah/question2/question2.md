@@ -147,8 +147,63 @@ Don't forget to hit the :star: if you like this repo.
       <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/create(2).png" /></div>
      
    - Read
+     - Read operation is to find and retrieve certain data from database. The code below is for finding one data from the database.
+         
+       ```python
+   
+          db.col_stories.find({ id:"19972758" })
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/read(1).png" /></div>
+     - After running the code, check whether the data exist in the database. Below shows that the data exist in the database.
+     
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/read(2).png" /></div>
    - Update
+     
+     Updates operation is used to modify existing documents in a collection. For Updates, we can do two different queries where we can update only one document or many documents.
+
+     - Update One Document
+       - The code below only allows to edit one document at a time.
+           ```
+            db.col_stories.updateOne({ id:"19970018" },{ $set: {"status": "famous"} })
+            ```
+           
+             
+         <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update1%20(3).png" /></div>
+      
+       - Below is the data before being updated.
+          <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update1%20(1).png" /></div>
+       - Below is the data after being updated.
+           <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update1%20(2).png" /></div>
+            <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update1%20(4).png" /></div>
+         
+     - Update Many Documents
+        - The code below allows to update many documents at a time.
+           ```
+             db.col_stories.updateMany({ media: "news" },{ $set: { media: "images" } })
+            ```
+           
+             
+         <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update2%20(2).png" /></div>
+      
+       - Below is the data before being updated.
+          <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update2%20(1).png" /></div>
+       - Below is the data after being updated.
+           <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update2%20(3).png" /></div>
+            <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/update2%20(4).png" /></div>
    - Delete
+
+     Delete operation is for removing documents from a collection in the database.
+
+     - The code below is for removing one document from the database.
+       ```
+        db.col_stories.deleteOne({ id: "19971854" })
+       ```
+           
+             
+         <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/delete%20(2).png" /></div>
+     - Below is the data before being removed.
+       <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/delete%20(1).png" /></div>
+     - Below is the data after being removed.
+       <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question2/files/images/delete%20(3).png" /></div>
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
