@@ -19,8 +19,27 @@ Don't forget to hit the :star: if you like this repo.
 * Navigate to [Tweets Dataset](https://github.com/drshahizan/dataset/tree/main/mongodb/06-tweets) to download the dataset.
 * MongoDB has its specific document format for JSON files to be imported in the database. Therefore, it is crucial to check the documents structure before importing to the database. It is found out that the dataset file is not correctly formated. Hence, an additional step is needed to format the JSON data file.
 * To prepare the data into correct JSON array, it needs to have bracket [ at beginning and end of the file. So the object is in [] and seperated with ','. I use Python to prepare the data and Google Colab as the code editor. Below I attached the link to Google Collab and the modified dataset.
-   * Data preparation :
-   * Modified JSON file : 
+   * Data preparation : [Data Preparation](https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question2/files/code/modifyjson.ipynb)
+      <img width="655" alt="image" src="./files/images/modifyjson.png">
+   * Modified JSON file :
+2. Install the required software.
+* MongoDB Community Server Download : [Link](https://www.mongodb.com/try/download/community)
+* MongoDB Shell Download : [Link](https://www.mongodb.com/try/download/shell)
+* MongoDB Command Line Database Tools Download : [Link](https://www.mongodb.com/try/download/database-tools)
+3. Start the MongoDB server
+* After downloading the software, copy the files and paste into `C:\Program Files\MongoDB\Server\6.0\bin`. It should look like this :
+  <img width="655" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question2/files/images/downloadserver.png">
+* Next, navigate to your local command prompt and go to Mongodb Server directory `C:\Program Files\MongoDB\Server\6.0\bin`.
+  <img width="655" alt="image" src="./files/images/goserver.png">
+* Then, type `mongosh` in command prompt as below : 
+  <img width="655" alt="image" src="./files/images/mongosh.png">
+* Change the database used by running this command `use tweets`. 
+  <img width="655" alt="image" src="./files/images/tweets.png">
+* Then, proceed to importing the JSON file by using this `mongoimport` command. In the command we specify the database : `tweets` and the collections : `tweetsdata` 
+  <img width="655" alt="image" src="./files/images/import.png">
+* Check in Mongodb Compass to ensure the file have been imported succesfully.
+  <img width="655" alt="image" src="./files/images/impoert.png">
+* tweets JSON dataset imported succesfully!
 ## Question 2 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
