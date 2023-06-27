@@ -67,6 +67,9 @@ print(df2.head(20))
 df2.head()
 ```
 
+![Q4](files/images/q4.1.png)
+
+
 ### Step 3: Data Pre-Processing 
 
 The NLTK library is utilized for text preprocessing. Special characters, digits, and stopwords are removed from the comments using regular expressions and tokenization. Lemmatization is applied to obtain the base form of words. The preprocessing function is then applied to the 'comments' column.
@@ -133,6 +136,8 @@ df2.dropna(subset=['comments'], inplace=True)
 print(df2['comments'])
 ```
 
+![Q4](files/images/q4.2.png)
+
 
 ### Step 5: Duplicate Dataframe
 
@@ -168,6 +173,9 @@ def preprocess_text(text):
 # Apply preprocessing to the 'comments' column in df3
 df3['comments'] = df3['comments'].apply(preprocess_text)
 ```
+
+![Q4](files/images/q4.3.png)
+![Q4](files/images/q4.4.png)
 
 ### Step 7: Using VADER to automatically label sentiment.
 
@@ -219,6 +227,8 @@ sentiment_df.to_csv('sentiment_analysis_results.csv', index=False)
 
 ```
 
+![Q4](files/images/q4.5.png)
+
 ### Step 8: Model Training 
 
 The scikit-learn library is used to build a logistic regression model for sentiment classification. The labeled DataFrame is loaded from the sentiment analysis results CSV file. Rows with missing values in the preprocessed text are dropped. The data is split into training and testing sets. A TF-IDF vectorizer is initialized and fitted on the training data. The logistic regression model is trained, and predictions are made on the testing data. A classification report is printed, showing the precision, recall, and F1-score of the model.
@@ -258,6 +268,7 @@ report_imbalanced = classification_report(y_test, y_pred1)
 print(report_imbalanced)
 ```
 
+![Q4](files/images/q4.6.png)
 
 
 ### Step 9: Handling Class Imbalance
@@ -303,6 +314,9 @@ report_balanced = classification_report(y_test, y_pred2)
 print(report_balanced)
 
 ```
+
+![Q4](files/images/q4.7.png)
+
 
 ### Step 10: Model Evaluation and Visualization
 
@@ -394,6 +408,10 @@ plt.show()
 
 ```
 
+![Q4](files/images/q4.8.png)
+![Q4](files/images/q4.9.png)
+![Q4](files/images/q4.10.png)
+
 ### Step 11: Generating Word Clouds
 
 Word clouds are generated to visualize the most frequent words in each sentiment category. The preprocessed texts are separated based on sentiment, combined into separate strings, and passed to the WordCloud library. The word clouds are displayed for negative, neutral, and positive sentiments.
@@ -439,6 +457,18 @@ plt.tight_layout()
 plt.show()
 ```
 
+> Wordcloud for Negative Sentiment
+
+![Q4](files/images/wordcloud_negative.png)
+
+> Wordcloud for Neutral Sentiment
+
+![Q4](files/images/wordcloud_neutral.png)
+
+> Wordcloud for Positive Sentiment
+
+![Q4](files/images/wordcloud_positive.png)
+
 
 
 ### Step 12: Generating bar chart for top 20 words.
@@ -483,6 +513,9 @@ plt.tight_layout()
 plt.show()
 
 ```
+
+![Q4](files/images/bar_charts.png)
+
 
 Overall, the project utilizes machine learning techniques, specifically sentiment analysis, to analyze customer reviews.
 
