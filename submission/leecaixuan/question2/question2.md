@@ -20,9 +20,9 @@ Don't forget to hit the :star: if you like this repo.
 
 Download the MongoDB Shell and MongoDB database tools:
 
-[MongoDB Shell](https://downloads.mongodb.com/compass/mongosh-1.10.1-win32-x64.zip).
+[MongoDB Shell](https://downloads.mongodb.com/compass/mongosh-1.10.1-win32-x64.zip)
 
-[MongoDB Database Tools](https://fastdl.mongodb.org/tools/db/mongodb-database-tools-windows-x86_64-100.7.2.zip).
+[MongoDB Database Tools](https://fastdl.mongodb.org/tools/db/mongodb-database-tools-windows-x86_64-100.7.2.zip)
 
 
 <h4>Step 2 - MongoDB Shell and Database Tools Setup</h4>
@@ -53,7 +53,7 @@ To import the data, write the command ```mongoimport "C:\Users\User\Downloads\AA
 - Accounts JSON imported
 
 <p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/collections.png" />
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question2/files/images/acc.png" />
 </p>
 
 - Customers JSON imported
