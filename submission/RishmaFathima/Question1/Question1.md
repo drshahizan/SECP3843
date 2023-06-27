@@ -66,8 +66,25 @@ Don't forget to hit the :star: if you like this repo.
         - The Mysql output from the above command:
         - Finally to get the JSON data from the dataset and to save it into MogoDB server, I need to create a script in Django.
          
-  5. Update and Testing Data:
+  5. Retrieve, Update and Testing Data:
 
+        - To retrieve all data from the MongoDB ``AA_Mongo`` collection:
+     
+          ```ruby
+
+            from app.models import AA_Mongo
+            aa_Mongo = AA_Mongo.objects.all()
+
+          ```
+        - To retrieve all data from the MongoDB ``AA_Mysql`` collection:
+          
+          ```ruby
+
+          from app.models import AA_Mysql
+          aa_Mysql = AA_Mysql.objects.all()
+
+          ```
+           
         - Update the MOngoDB and Mysql everytime there is changes in dataset
         - Finally, with testing and monitoring practices, I can ensure the reliability, performance, and stability of your Django application's integration with the               JSON dataset, MySQL, and MongoDB databases
         
