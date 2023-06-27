@@ -97,9 +97,9 @@ To define your Django models, head to the models.py file found within your app d
 
 ## Question 1 (b)
 
-<img src="https://github.com/sakinahalizzah/SECP3843/assets/99240177/7d918d46-0aff-4e93-a0bf-d0bf57cfa040" />
+<img src="" />
 
-Integrating a web server, dataset, and databases can be a complex process, but with the right system architecture in place, it can be seamless and efficient. The architecture that we recommend involves building the web server on the Django framework. Django is a popular Python-based framework for building web applications, and it provides developers with a range of useful tools and features for creating robust and scalable web applications.
+Integrating a web server, dataset, and databases can be a complex process, but with the right system architecture in place, it can be seamless and efficient. The recommended architecture involves building the web server on the Django framework. Django is a popular Python-based framework for building web applications, and it provides developers with a range of useful tools and features for creating robust and scalable web applications.
 
 In this architecture, the dataset is stored in JSON format. JSON is a lightweight data format that is commonly used for transmitting and storing structured data. By using JSON, developers can ensure that their data is easily accessible and can be transmitted quickly and efficiently.
 
