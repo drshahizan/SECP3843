@@ -140,9 +140,33 @@ The result in MongoDB:
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/92454593-9255-4e2c-a41b-7d191c0102f5"></img>
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/1fc6cd76-1929-46d7-a133-a7c987f932e6"></img>
 
 
+## Explanation for All Component
+### 1. User
+User, the person who interacts with the user interface, initiates requests and utilizes the portal.
+
+### 2. User Interface (UI)
+The user interface, also known as the front end, encompasses the development of visually appealing and interactive web pages using HTML/CSS/JavaScript. It serves as the medium through which users interact with the portal, accessing both the user interface and the dashboard. The user interface enhances user experience, allowing for easier data interpretation through the inclusion of statistics, graphs, and tables summarizing the data, aiding in decision-making processes.
+
+### 3. Web Application
+A web application is a software application designed to be accessed through a web browser or a web-based interface. In our case, we will be utilizing Django, a Python web framework, as the backend for handling requests, processing data, and interacting with databases. 
+
+Django follows the Model-View-Template (MVT) design pattern, where the Model represents the data structure and defines how data is stored in databases. The View receives requests from the user interface, retrieves and manipulates data from the models, and renders appropriate templates to generate HTML or other response formats. The Template, on the other hand, is responsible for describing how the result should be presented, generating the user interface, and displaying data to the user.
+
+### 4. Database
+It handles various operations related to data storage, retrieval, and management.
+1. MySQL: Utilized to store structured data, particularly for user authentication purposes such as user registration and login.
+2. MongoDB : A NoSQL document database that provides a flexible and scalable solution for storing and managing unstructured data e.g. a JSON-like format.
+
+### 5. Dataset
+In this project, the dataset [Stories](https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories), is in JSON format and is stored and located locally after being downloaded from GitHub.
+
+### 6. External Database Integration Libraries.
+1. ORM: An abstract layer that allows developers to perform database operations, including inserting, updating, deleting, and querying data, using Python code. This eliminates the necessity of writing raw SQL queries and provides a more convenient and Pythonic approach to interact with the database.
+
+2. Djongo: An external library that offers integration capabilities between Django and MongoDB. It enables the seamless connection and interaction between Django's web framework and MongoDB's NoSQL database.
 
 
 
