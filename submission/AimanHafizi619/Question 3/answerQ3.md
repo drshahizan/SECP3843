@@ -351,7 +351,7 @@ def is_senior_management(user):
 
 2. Creata a folder called `templates`
 
-3. Relocate the previous `register` and `login` files into this folder
+3. Relocate the previous `registeration` and `login` files into this folder
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image9.png) 
 
