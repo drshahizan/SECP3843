@@ -36,12 +36,106 @@ class CustomUser(AbstractUser):
 
 #### 2. Configure authentication backend
 
-Since we will be using authentication backends, 
+Since we will be using a custom user model, thus we need to update the AUTH_USER_MODEL inside settings.py.
+
+```
+AUTH_USER_MODEL = 'Listings.CustomUser'
+```
+
+#### 3. Create login and register views
+
+When we runserver, views help us to open the page that we have set. Views also handle the form submission, validations and user authentication processes.
+
+```
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import login, logout
+from django.shortcuts import render, redirect
+from .forms import RegistrationForm
+
+
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request, data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request, user)
+            # Replace 'home' with the URL name for your home page
+            return redirect('home')
+    else:
+        form = AuthenticationForm(request)
+
+    return render(request, 'templates/Listings/login.html', {'form': form})
+
+
+def register_view(request):
+    if request.method == 'POST':
+        form = RegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save()  # Save the user object
+            login(request, user)  # Log in the user
+            # Replace 'home' with the URL name for your home page
+            return redirect('home')
+    else:
+        form = RegistrationForm()
+
+    return render(request, 'templates/Listings/register.html', {'form': form})
+
+```
+
+#### 4. Define url patterns
+
+Open urls.py inside the project file, define both login and register views. 
+
+```
+from django.contrib import admin
+from django.urls import path
+from Listings import views
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('register/', views.register_view, name='register'),
+    path('login/', views.login_view, name='login'),
+    # Add more URL patterns as needed
+]
+```
+
+#### 5. Create templates
+
+Templates act as the interface that users will be accessing. Create forms inside both login.html and register.html files.
+
+##### - login.html
+
+```
+{% extends 'base.html' %} {% block content %}
+<h2>User Login</h2>
+<form method="POST">
+  {% csrf_token %} {{ login_form.as_p }}
+  <button type="submit">Login</button>
+</form>
+{% endblock %}
+```
+
+##### - register.html
+
+```
+{% extends 'base.html' %} {% block content %}
+<h2>User Registration</h2>
+<form method="POST">
+  {% csrf_token %} {{ registration_form.as_p }}
+  <button type="submit">Register</button>
+</form>
+{% endblock %}
+```
+
+#### 6. Perform databsae migrations
+
+Lastly, we need to perform a database migration to update the database schema.
 
 ```
 python manage.py makemigrations Listings
 python manage.py migrate
 ```
+
 
 
 
