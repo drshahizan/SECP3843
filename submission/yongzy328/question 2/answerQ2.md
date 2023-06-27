@@ -51,27 +51,35 @@ The JSON file is successfully imported into MongoDB which can be viewed in Mongo
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20104829.png" alt="use database AA">
 
 ## Question 2 (b)
-
+i. Create <br>
+To insert a single document into the collection "CityInspection", use the query "db.collection.insertOne()" as shown as below.
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20112357.png" alt="insertone()">
-
+The inserted document can be viewed in MongoDB Compass.
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20112337.png" alt="view inserted data">
 
+ii. Read <br>
+To find documents with the sector of "Mobile Food Vendor - 881" and result as "Closed", I use the query "db.collection.find()" to perform the searching. The results are shown as below.
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20113120.png" alt="find()">
-
+This find() operation can also be performed in the MongoDB Compass.
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20113354.png" alt="view find() at mongodb compass">
 
+iii. Update <br>
+To update only one selected document, the operation "db.collection.updateOne()" is used. Here, I choose to update the zip code and street name of the business "TY Home".
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20114542.png" alt="updateone()">
+The updated document can also be viewed in MongoDB Compass.
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20114609.png" alt="view updated data">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20114609.png" alt="view updated date">
-
+To update many documents, the operation "db.collection.updateMany()" can be used. Here, I choose to update the business name to "Truck Service Inc" for all businesses which do not have a name and in the "Tow Truck Company - 124" sector. 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20115838.png" alt="updatemany()">
-
+The updated documents can be viewed in MongoDB Compass.
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20115823.png" alt="view updatemany data">
-
+Now, I double check whether all selected documents are updated or not. From here, I can tell that they are all updated, since there is no business under the "Tow Truck Company - 124" sector which does not has a name. 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20115905.png" alt="double check updatemany data">
 
+iv. Delete <br>
+To perform delete operation to one specific document, I use the query "db.collection.deleteOne()". Here, I select the document with business name of "TY Home" to delete. 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20120101.png" alt="deleteone()">
-
+Now, I cannot find any document with business name "TY Home" since I had already successfully deleted it from the database. 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%202/files/images/Screenshot%202023-06-27%20120123.png" alt="view deleted date">
 
 
