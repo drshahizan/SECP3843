@@ -134,7 +134,7 @@ Next, choose the replication technique for each database. MySQL and MongoDB will
       **Master server: 12.34.56.111** <br>
       **Slave server: 12.23.34.222**
   
-   3. Setting up the master by finding the bind-address in the mysql config file and changing it from to the master server IP defined above.
+   3. Setting up the master by finding the bind-address in the mysql config file and changing it to the master server IP defined above.
       <p align="center">
          <img width="285" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/5198bb43-3c39-470b-8c86-fc30c83b9435">
       </p>
