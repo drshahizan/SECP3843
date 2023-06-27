@@ -224,6 +224,7 @@ Next, implementing database router is important if you want to to distribute que
 Final step, to ensure a succesful integration you may test and debug your Django application by creating test cases and analyze the result. If there are no problems encountered, then you have succesfully integrate your Django application with JSON data using mySQL and MongoDB databases.
 
 ## Question 1 (b)
+<img width="900" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question1/files/images/archit.png">
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 
