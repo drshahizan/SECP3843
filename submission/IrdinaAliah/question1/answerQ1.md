@@ -30,7 +30,7 @@ Step 1: Install Django and required packages:
 <p align="center">
   <img height="200px" src="images/install django.jpg" />
 </p>
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA1.jpg" style="width: 700px; height: 200px;">
+<img src="https://github.com/drshahizan/SECP3843/blob/1c35a280cab92f8375cb0166bfc1a615c4eeb699/submission/IrdinaAliah/question1/files/images/install%20django.jpg" style="width: 700px; height: 200px;">
 
           
 
