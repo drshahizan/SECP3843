@@ -283,8 +283,11 @@ JSON represents the file type used in the project. It contains unstructured or s
 ### 5. User
 The user refers to the individuals who interact with the portal.
 
-### 6. User Interface:
+### 6. User Interface
 The user interface is the front-end component of the web application that allows users to interact with the system. It includes elements such as HTML, CSS, and JavaScript that define the visual layout, design, and interactivity of the web pages.
 
-### 7. Memcached:
+### 7. Memcached
 Memcached is a widely used open-source caching system that improves the performance and scalability of web applications. It serves as a distributed in-memory cache, storing frequently accessed data and reducing the load on the backend systems, such as databases.
+
+### 8. Load Balancer (Nginx)
+NGINX is a popular open-source web server and reverse proxy server that can also act as a load balancer. Its primary function as a load balancer is to distribute incoming network traffic across multiple servers to ensure optimal resource utilization, improved scalability, and high availability of web applications.
