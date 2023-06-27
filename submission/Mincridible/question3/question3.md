@@ -609,7 +609,7 @@ mysql_connection.close()
 
 6. Run the python code `python mysql_to_mongodb_replication.py`
 
-<img src="../material/Q3b_4.png">
+<img src="../materials/Q3b_4.png">
 
 ### Explanation:
 
@@ -617,11 +617,11 @@ In the above code, firstly I imported my current data from MySQL table to my new
 
 #### MySQL data:
 
-<img src="../material/Q3b_2.png">
+<img src="../materials/Q3b_2.png">
 
 #### MongoDB view: 
 
-<img src="../material/Q3b_3.png">
+<img src="../materials/Q3b_3.png">
 
 Afterwards, the purpose of the code is to initiate an action whenever data is inserted, updated, or deleted from MySQL. This action ensures that the MongoDB database is automatically updated.
 
