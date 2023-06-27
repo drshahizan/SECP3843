@@ -500,7 +500,29 @@ binlog_do_db=analytics_q3
 
 - Copy the server-id located near the top of the table
 
-![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image20.png)
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image21.png)
+
+**Step 10**
+
+- Open Xampp Control Panel
+
+- Select `Configure` button and select `my.ini` option again
+
+- Locate the `server-id` parameter that has just been hash (#) or commented before
+
+- Paste the new `server-id` from phpMyAdmin just now on top of the commented `server-id`
+  
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image22.png)
+
+
+
+
+
+
+
+
+
+
 
 
 
