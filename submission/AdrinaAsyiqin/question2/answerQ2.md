@@ -129,9 +129,9 @@ Don't forget to hit the :star: if you like this repo.
   ```s
   db.salessample.find({ "storeLocation": "Denver" })
   ```
-![image](https://github.com/drshahizan/SECP3843/assets/96984290/7c14b81f-4c91-4723-9e07-1f050abb4d7c)
+  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/7c14b81f-4c91-4723-9e07-1f050abb4d7c)
 
-![image](https://github.com/drshahizan/SECP3843/assets/96984290/8bd5e995-ae5c-4bfb-89ce-f673ca554b05)
+  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/8bd5e995-ae5c-4bfb-89ce-f673ca554b05)
 
 
 - Update Query
