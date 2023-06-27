@@ -65,6 +65,8 @@ Don't forget to hit the :star: if you like this repo.
           python manage.py migrate
           ```
         - The Mysql output from the above command:
+          <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/5a9a13d9b09707921ce913c3ff66890b7e995267/submission/RishmaFathima/Question1/files/images/1.1.4.1.png">
+          
         - Finally python generate a script to read Django.
          
   5. Retrieve, Update and Testing Data:
