@@ -102,7 +102,7 @@ Don't forget to hit the :star: if you like this repo.
     ```
 10. Create the views for user registration and login, create urls routing to the specific page and perform CRUD for each user using **request.POST** and **request.GET** method.
    <p align="center">
-      <img width="191" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/624f3bad-5f6d-426a-98d2-10daf441cc17"> <br>
+      <img width="191" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/624f3bad-5f6d-426a-98d2-10daf441cc17"> <br><br>
       <img width="131" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/b14ba069-252e-489f-8cc2-7b18dc4ffb4b">
    </p>
    
