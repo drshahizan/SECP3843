@@ -37,7 +37,7 @@ Once the app is created, add the app name in the INSTALLED_APPS array of setting
 After creating the database in both MongoDB and MySQL database servers, install the required package by running these 3 commands: 
 - `pip install djongo`
 - `pip install mysqlclient` 
-- `pip install pytz`
+- `pip install pytz`<br>
 <img  src="./files/images/package.jpg"></img>
 
 ### 5. Configure the database
