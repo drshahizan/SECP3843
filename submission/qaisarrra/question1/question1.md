@@ -306,6 +306,7 @@ class Company(models.Model):
 <br></br>
 
 **Perform Database Migration** 
+
 To perform database migration, I will have to make a migration before actually migrating the SQL commands that we have created earlier. **makemigrations** provides SQL instructions for preinstalled apps and my **CompaniesApp model**, meanwhile **migrate** runs the SQL commands stored in the database file. So, after running migrate, all of my CompaniesApp's tables are created in the database file. Please establish an empty MySQL database named **db_companies** beforehand to assure this.
 
 ```bash
@@ -318,6 +319,11 @@ Check your MySQL database (XAMPP > MySQL > Start > Admin) to confirm this migrat
    <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/Migration%20Successful.png">
 </p>
 <br></br>
+
+**Load Data from JSON**
+
+1. **In Django**, create a script or management command that allows the application to read the Companies JSON dataset. For this task, we will be utilizing the Django Object Relational Mapping (ORM) which is widely used to perform CRUD operations on the database object.
+2. **In MongoDB**, create a new database and load the JSON file. Ensure that your connection with MongoDB is perfectly established.
 
 ## Question 1 (b)
 The system architecture will consist of the following components:

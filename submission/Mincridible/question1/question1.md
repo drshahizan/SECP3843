@@ -190,24 +190,24 @@ class Command(BaseCommand):
     help = 'Import data from companies.json'
 
     def handle(self, *args, **options):
-        # Get the path to the JSON file
+        
         json_file = os.path.join(settings.BASE_DIR, 'data', 'companies.json')
 
-        # Read the JSON file
+       
         with open(json_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
-        # Process and import the data into the database
+        
         for item in data:
-            # Create a Company object and set its attributes
+           
             company = Company()
             company._id = item['_id']
             company.acquisition = item['acquisition']
             company.acquisitions = item['acquisitions']
             company.alias_list = item['alias_list']
-            # Set other attributes based on the JSON structure
+            
 
-            # Save the company object to the database
+
             company.save()
 
         self.stdout.write(self.style.SUCCESS('Data imported successfully.'))
@@ -217,12 +217,30 @@ class Command(BaseCommand):
 
 3. Run `python manage.py import_data`
 
-
-
-
 ## Question 1 (b)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## System Architecture Diagram
+
+The following diagram illustrates the detailed components and their relationships within the system architecture:
+<img src="../materials/Q1_b.png">
+
+### Frontend
+
+The system's user-facing frontend is referred to as things like client apps or web browsers. When rendering the user interface and interacting with the web server, it makes use of technologies including HTML, CSS, and JavaScript.
+
+### Web Server
+
+The system's backend is the web server, in this case specifically Django. It takes in requests from the front end, works with the data, and produces answers. Models create the data structure, views manage request processing, and templates produce the user interface in Django's Model-View-Template (MVT) design pattern.
+
+### Interaction with MySQL and MongoDB
+
+1. Django uses ORM (Object-Relational Mapping) for interacting with the databases. Developers can connect with databases using Python code rather than writing raw SQL queries because of the ORM.
+
+2. The Djongo library is used to integrate MongoDB. Djongo enables communication between Django and MongoDB by bridging the gap between Django models and MongoDB collections. 
+
+### Dataset
+
+In this case, we will acquire the dataset from a GitHub repository, specifically the "companies.json" file.
 
 ## Contribution 🛠️
 

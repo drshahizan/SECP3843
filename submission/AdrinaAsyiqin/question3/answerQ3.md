@@ -291,6 +291,7 @@ Don't forget to hit the :star: if you like this repo.
 
  
 ## Question 3 (b)
+
 ### Step 1: Database selection
 Choose appropriate database replication method or tool that supports both MySQL and MongoDB databases. This could involve exploring options like native replication mechanisms provided by the database themselves or utilising third-party tools specifically designed for database synchronization
 
@@ -305,6 +306,76 @@ Set up monitoring mechanisms to track the replication process and ensure its smo
 
 ### Step 4: Testing and Verification
 Thoroughly test and verify the replication setup to ensure data integrity and accuracy. Perform tests that simulate various scenarios and edge cases to validate the replication behavior.
+
+### Example
+- The following code demonstrates the basic concept of using triggers in MySQL to capture data changes and replicating to MongoDB. It is important to consider additional aspects such as error handling, data type conversions, handling updates, and deletions, conflict resolutions and monitoring the replication process.
+- The code begins by specifying the connection details for both MySQL and MongoDB databases.
+- A MySQL trigger is created using a SQL query. This trigger is set to execute after an insert operation on a specific MySQL table. In this example, the trigger captures the inserted data and inserts it into the MongoDB collection.
+- The code enters a continuous loop to monitor the MySQL database for changes. It executes a query to fetch the rows that have been inserted since the last replication timestamp. The fetched rows are then transformed into MongoDB documents and inserted into the MongoDB collection.
+- After each replication iteration, the last replication timestamp is updated to ensure that only new data is replicated in subsequent iterations.
+
+
+    ```py
+    import pymysql
+    import pymongo
+    from pymongo import MongoClient
+
+    # MySQL Connection Configuration
+    mysql_host = 'localhost'
+    mysql_port = 3306
+    mysql_user = 'root'
+    mysql_password = ''
+    mysql_database = 'db_sales'
+
+    # MongoDB Connection Configuration
+    mongo_host = 'localhost'
+    mongo_port = 27017
+    mongo_user = 'adrinaasyiqin'
+    mongo_password = 'Adrina857600'
+    mongo_database = 'salesdatabase'
+
+    # Connect to MySQL and MongoDB
+    mysql_connection = pymysql.connect(host=mysql_host, port=mysql_port, user=mysql_user, password=mysql_password, database=mysql_database)
+    mongo_client = MongoClient(f"mongodb://adrinaasyiqin:Adrina857600@cluster0.yvk5zzq.mongodb.net:27017/salesdatabase")
+    mongo_db = mongo_client[mongo_database]
+    mongo_collection = mongo_db['salessample']
+
+    # Create a trigger in MySQL to capture data changes
+    mysql_cursor = mysql_connection.cursor()
+    trigger_query = """
+        CREATE TRIGGER mysql_to_mongo_trigger AFTER INSERT ON mysql_table
+        FOR EACH ROW
+        BEGIN
+            INSERT INTO mongo_collection (field1, field2, field3)
+            VALUES (NEW.field1, NEW.field2, NEW.field3);
+        END;
+    """
+    mysql_cursor.execute(trigger_query)
+
+    # Continuously monitor the MySQL database for changes and replicate them to MongoDB
+    while True:
+        mysql_cursor.execute("SELECT * FROM mysql_table WHERE created_at > last_replication_timestamp")
+        rows = mysql_cursor.fetchall()
+        for row in rows:
+            document = {
+                'field1': row[0],
+                'field2': row[1],
+                'field3': row[2]
+            }
+            mongo_collection.insert_one(document)
+        
+        # Update the last replication timestamp
+        last_replication_timestamp = get_current_timestamp()
+
+    # Close the connections
+    mysql_cursor.close()
+    mysql_connection.close()
+    mongo_client.close()
+
+
+    ```
+
+
 
 
 ## Contribution 🛠️

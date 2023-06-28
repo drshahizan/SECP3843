@@ -21,7 +21,7 @@ Don't forget to hit the :star: if you like this repo.
 * To prepare the data into correct JSON array, it needs to have bracket [ at beginning and end of the file. So the object is in [] and seperated with ','. I use Python to prepare the data and Google Colab as the code editor. Below I attached the link to Google Collab and the modified dataset.
    * Data preparation : [Data Preparation](https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question2/files/code/modifyjson.ipynb)<br>
       <img width="655" alt="image" src="./files/images/modifyjson.png">
-   * Modified JSON file :
+   * Modified JSON file :[modifiedtweets.json](https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question2/files/modifiedtweets.json)<br>
 2. Install the required software.
 * MongoDB Community Server Download : [Link](https://www.mongodb.com/try/download/community)
 * MongoDB Shell Download : [Link](https://www.mongodb.com/try/download/shell)

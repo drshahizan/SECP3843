@@ -15,7 +15,37 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [City Inspections Dataset](https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections)
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+One of many ways to optimize the performance of our portal in dealing with large data especially when we would like to visualize dashboard is by <b>data aggregation.</b> 
+
+Data aggregation is done on the server-side before sending it to the client for visualization. Use Django's query aggregation functions to calculate summaries, counts, averages, or other aggregated values based on our visualization requirements. This reduces the amount of data transferred and processed on the client-side.
+
+Fortunately, using MongoDB Compass, we are able to perfom data aggregation easily! This is becuase MongoDB Compass offers a feature where we can build aggregation pipeline. Below, I will describe the step-by-step on how we can aggregate our data using a pipeline:-
+
+1. Click on the "Aggregations" tab in MongoDB Compass.
+<div align="center"><img src="images/optimize.PNG" height="350px" /></div>
+
+2. In the Aggregations tab, we can construct the aggregation pipeline using various stages such as $match, $group, $project, $sort, etc. In this case, I created 2 stages and use $group and $sort operations.
+
+3. First Stage: $group
+- Use $group to group documents and perform aggregation operations.
+- I group the documents based on 'result' column and calculate the count of documents in each group.
+
+<div align="center"><img src="images/optimize2.PNG" height="350px" /></div>
+
+4. Second Stage: $sort
+- $sort stage is then used to sort the results based on the count in descending order.
+
+<div align="center"><img src="images/optimize3.PNG" height="350px" /></div>
+
+5. Click 'run'. This is the output
+<div align="center"><img src="images/optimize4.PNG" height="350px" /></div>
+
+**How it helps in optimize large data?**
+
+- The code allows us to summarize the data by counting the occurrences of each distinct value in the "result" field. This provides a quick overview of the distribution of results in the dataset.
+- Aggregating data using the $group stage allows the database to perform the aggregation operation on the server-side, which can be more efficient and scalable compared to fetching the entire dataset and performing the aggregation on the client-side.
+  
+
 
 ## Question 5 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

@@ -41,13 +41,16 @@ create Django apps name
 <img src ="https://github.com/drshahizan/SECP3843/blob/4633f9a0c1ac74b9b6ec37d439fca8561a4b78b3/submission/IrdinaAliah/question1/files/images/startup%20code%20sjango.jpg" 
           style ="width:700px; height: 200px;">
 
+connect databases
+<img src ="https://github.com/drshahizan/SECP3843/blob/39026bb03211069fad0df7f2ca464e9abb02c986/submission/IrdinaAliah/question1/files/images/connect%20databases.jpg" style ="width:700px; height: 700px;">
 Upload Dataset on MongoDB
 <img src ="https://github.com/drshahizan/SECP3843/blob/c105e82a6852438db464b942f279678cdca23094/submission/IrdinaAliah/question1/files/images/upload%20dataset%20in%20mongodb.png" style ="width:700px; height: 700px;">
 
 Define Models
 <img src ="https://github.com/drshahizan/SECP3843/blob/e8dd321d92b76dc24090ed4aa4d98408d77ea20b/submission/IrdinaAliah/question1/files/images/define%20model.jpg" style ="width:700px; height: 700px;">
 
-
+Migration
+<img src ="https://github.com/drshahizan/SECP3843/blob/e58ea60a721b301aa3f7badd77f298f8bbd8b2a8/submission/IrdinaAliah/question1/files/images/migration%20database.jpg" style ="width:700px; height: 700px;">
 
 
 

@@ -24,20 +24,19 @@ To create a virtual environment, run `python -m venv env` in your command prompt
 
 ### 2. Install Django
 With the virtual environment activated, type `pip install django` to install Django.
-<img  src="./files/images/pip.jpg"></img>
+<img  src="./files/images/django.jpg"></img>
 
 ### 3. Create project & app
 Use `django-admin startproject portalproject` to create the Django project. Then, navigate to the project directory and create a new app by running `python manage.py startapp portalapp`. 
-<img  src="./files/images/project.jpg"></img>
+<img  src="./files/images/start.jpg"></img>
 
 Once the app is created, add the app name in the INSTALLED_APPS array of settings.py file.<br>
 <img  src="./files/images/portalapp.jpg"></img>
 
 ### 4. Install package 
-After creating the database in both MongoDB and MySQL database servers, install the required package by running these 3 commands: 
+After creating the database in both MongoDB and MySQL database servers, install the required package by running these 2 commands: 
 - `pip install djongo`
-- `pip install mysqlclient` 
-- `pip install pytz`<br>
+- `pip install mysqlclient`<br>
 
 <img  src="./files/images/package.jpg"></img>
 
@@ -85,7 +84,10 @@ Once the models are defined, create the database tables by running `python manag
 Then, apply the migration by using these 2 commands:
 - MySQL: `python manage.py migrate`
 - MongoDB: `python manage.py migrate --database=mongodb`
-<img  src="./files/images/migrate.jpg"></img>
+
+Results:
+<img  src="./files/images/migrate.jpg"></img><br>
+<img  src="./files/images/migrate2.jpg"></img>
 
 ### 8. Load dataset
 Modify the city_inspections.json dataset in Jupyter notebook to convert the format into JSON array structure and download the [new_city_inspections.json](./files/code/new_city_inspections.json).
@@ -138,13 +140,9 @@ class Command(BaseCommand):
 
 Then, run `python manage.py load_data new_city_inspections.json` to import the JSON dataset into the databases.
 
-### 9. Data retrieval
-Run the following code to retrieve data from the databases:
-```
-AA_mysql = City.objects.using('default').get(id="34557-2015-ENFO")
-AA_mongodb = City.objects.using('mongodb').get(id="34557-2015-ENFO")
-```
-<img  src="./files/images/retrieve.jpg"></img>
+Results:
+<img  src="./files/images/result.jpg"></img><br>
+<img  src="./files/images/result2.jpg"></img>
 
 ## Question 1 (b)
 <img  src="./files/images/architecture.jpeg"></img>
@@ -166,6 +164,7 @@ Presents the portal's visual interface to users which includes presentation of i
 
 ### Dataset (JSON)
 The new_city_inspections.json is the JSON dataset used in this project and is processed by Django app for integration with the database.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

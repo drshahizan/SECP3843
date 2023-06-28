@@ -15,13 +15,36 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Dataset: MFLIX DATASET
 
-## Question 4 (a)
+## Question 4
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The approach I used is form of content-based filtering, which is a type of recommendation system. Content-based filtering recommends items (in this case, movies) to users based on the similarity of their attributes or content. In this case, I used the movie genres, cast, directors, and plot as the attributes to calculate the similarity between movies and generate recommendations.
 
-## Question 4 (b)
+Install the necessary libraries:
+```
+    pip install pymongo
+    pip install pandas
+```
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  1. Retrieve the Mflix datatset from MongoDB
+     The code will retrieve the movies data from MongoDB collection named `mflixx`, iterates over each movie and extracts the rating from `imdb` field. It stores all the ratings of the movie. I used the `json_normalize` function that will extract the "rating" attribute from the "imdb" field.
+
+
+
+
+
+
+
+   
+
+     2. Data Cleaning & Data Preprocessing
+
+         i. Remove the unnecessary clomuns by removing the columns that are not relevant for the recommendation system. Drop teh columns by using the `dropna()` function.
+
+        
+
+      
+     
+
 
 ## Contribution 🛠️
 

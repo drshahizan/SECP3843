@@ -118,25 +118,26 @@ System Architecture Diagram
 Detailed explanations for each component:
 
 1. Web Server (Django):
-   <p>
-    The high-level Python web framework Django is used to implement the web server portion of the system design. Django covers user authentication, session                management, and the request-response cycle in addition to serving dynamic web pages. It adheres to the Model-View-Controller (MVC) architectural design paradigm,      which encourages concern separation and code reuse. Django interacts with databases via an Object-Relational Mapping (ORM) layer, which offers a practical way to      construct database models and carry out CRUD operations.
+   <p align="justify">
+    The web server component of the system design is implemented using the high-level Python web framework Django. Along with serving dynamic web pages, Django also       handles user authentication, session management, and the request-response cycle. It follows the Model-View-Controller (MVC) architectural design paradigm, which       promotes problem-solving by separating concerns and reusing code. Django uses an Object-Relational Mapping (ORM) layer to communicate with databases. This layer       provides a useful method for building database models and performing CRUD activities.
    </p>
  3. Dataset (JSON):
-      <p>
-    Structured data that has been stored in JSON format makes up the dataset component. JSON (JavaScript Object Notation) is a simple data exchange format that is         simple for both people and machines to read and write. It can store complex data because it expresses data as key-value pairs and supports nested structures. The      dataset can be utilised for a number of functions, including setting up database tables, giving static data to a web application, and acting as a bridge data          format for data processing operations.
-    </p>
+      <p align="justify">
+      The dataset component consists of structured data that has been saved in the JSON format. A straightforward data communication format that is easy for both            humans and robots to read and write is JSON (JavaScript Object Notation). Because it encodes data as key-value pairs and enables layered structures, it can            store complex data. The dataset is useful for building up database tables, providing static data to a web application, and serving as a bridge data format for         data processing processes, among other things.
+       </p>
  5. Databases:
     
     a. MySQL:
-      <p>
-    Popular relational database management system (RDBMS) MySQL is open-source. It is renowned for its performance, dependability, and scalability. MySQL is one of        the database options utilised in the system architecture to store structured data. Data integrity and transactional consistency are ensured by its ACID                (Atomicity, Consistency, Isolation, Durability) features. Because MySQL is supported by Django's ORM, database activities can be easily managed and seamlessly         integrated.
-     </p>
+       <p align="justify">
+       Open-source MySQL is a well-known relational database management system (RDBMS). Performance, dependability, and scalability are its three most famous                 qualities. One database choice used in the system architecture to store structured data is MySQL. Database activities can be readily controlled and seamlessly         integrated because Django's ORM supports MySQL.
+        </p>
     b. MongoDB:
-      <p>
-    The  MongoDB stores data in the BSON (Binary JSON) format, which is adaptable and document-oriented. It is suitable for managing significant amounts     of            unstructured or semi-structured data because it is built for scalability and agility. MongoDB is utilised as an additional database choice in the system               architecture to store data that doesn't fit well in a relational structure or requires high scalability. Using third-party libraries like Djongo or MongoEngine,       Django connects with MongoDB and offers an ORM-like interface to communicate with the database.
-   </p>
-Finally, this system architecture allows for smooth integration of the databases (MySQL and MongoDB), the JSON dataset, and the web server (Django). It makes use of Django's robust ORM capabilities to abstract the challenges of working with databases, giving the web application a reliable and effective data access layer. The exact requirements and features of the data being kept determine whether MySQL or MongoDB should be used, allowing for flexibility and
-
+         <p align="justify">
+         The flexible and document-oriented BSON (Binary JSON) format is used by MongoDB to store data. Due to its scalability and agility, it is appropriate for               managing huge amounts of unstructured or semi-structured data. The system architecture uses MongoDB as an extra database option to store data that doesn't             fit well in a relational structure or requires high scalability. Django connects to MongoDB via third-party libraries like Djongo or MongoEngine and provides          an ORM-like interface for interacting with the database.
+      </p>
+    <p align="justify">
+Finally, the integration of the databases (MySQL and MongoDB), the JSON dataset, and the web server (Django) is made possible by the system design. In order to abstract the difficulties of interacting with databases, it makes use of Django's strong ORM capabilities, providing the web application with a dependable and efficient data access layer. Whether MySQL or MongoDB should be utilised depends on the precise specifications and characteristics of the data being stored, providing for flexibility and
+  </p>
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

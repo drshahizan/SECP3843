@@ -27,7 +27,8 @@ py -m venv env
 env\Scripts\activate
 ```
 
-2. Once you’ve created and activated your Python virtual environment, you can install Django into this dedicated development workspace using ```python 
+2. Once you’ve created and activated your Python virtual environment, you can install Django into this dedicated development workspace using 
+```python 
 pip install django 
 ```
 
@@ -83,68 +84,30 @@ To allow seamless integration between Django and the databases, we need to defin
    1. Open the stories app's `models.py` file.
    2. Define Django models that represent the structure and fields of the JSON dataset according to the data dictionary  the User class for user authentication and login.
    ``` python
-        from django.db import models
-        ###MONGODB
-        class Container(models.Model):
-            name = models.CharField(max_length=255)
-            short_name = models.CharField(max_length=255)
+    from django.db import models
+    from jsonfield import JSONField
 
-            class Meta:
-                verbose_name = 'Container'
-                app_label = 'stories'
+    class Story(models.Model):
+        href = models.URLField()
+        title = models.CharField(max_length=255)
+        comments = models.IntegerField()
+        container = JSONField()
+        submit_date = models.DateTimeField()
+        topic = JSONField()
+        promote_date = models.DateTimeField()
+        idJSON = models.CharField(max_length=255)
+        media = models.CharField(max_length=255)
+        diggs = models.IntegerField()
+        description = models.TextField()
+        link = models.URLField()
+        user = JSONField()
+        status = models.CharField(max_length=255)
+        shorturl = JSONField()
+        replica = models.IntegerField(blank=True, null=True)  # Add the replica field
 
-
-        class Topic(models.Model):
-            name = models.CharField(max_length=255)
-            short_name = models.CharField(max_length=255)
-
-            class Meta:
-                verbose_name = 'Topic'
-                app_label = 'stories'
-
-
-        class UserJSON(models.Model):
-            name = models.CharField(max_length=255)
-            registered = models.DateTimeField()
-            fullname = models.CharField(max_length=255)
-            icon = models.URLField()
-            profileviews = models.IntegerField()
-
-            class Meta:
-                verbose_name = 'UserJSON'
-                app_label = 'stories'
-
-
-        class ShortURL(models.Model):
-            short_url = models.URLField()
-            view_count = models.IntegerField()
-
-            class Meta:
-                verbose_name = 'ShortURL'
-                app_label = 'stories'
-
-
-        class Story(models.Model):
-            href = models.URLField()
-            title = models.CharField(max_length=255)
-            comments = models.IntegerField()
-            container = models.ForeignKey(Container, on_delete=models.CASCADE)
-            submit_date = models.DateTimeField()
-            topic = models.ForeignKey(Topic, on_delete=models.CASCADE)
-            promote_date = models.DateTimeField()
-            idJSON = models.CharField(max_length=255)
-            media = models.CharField(max_length=255)
-            diggs = models.IntegerField()
-            description = models.TextField()
-            link = models.URLField()
-            user = models.ForeignKey(UserJSON, on_delete=models.CASCADE)
-            status = models.CharField(max_length=255)
-            shorturl = models.ManyToManyField(ShortURL)
-
-            class Meta:
-                verbose_name = 'Story'
-                app_label = 'stories'
-
+        class Meta:
+            verbose_name = 'Story'
+            app_label = 'stories'
    ```
    3. Open the user app's `models.py` file.
    4. Define Django models that represent the User class for user authentication and login.
@@ -298,14 +261,15 @@ This system architecture focuses on the seamless integration between the web ser
       - **MongoDB:**
       It is a NoSQL database server which used to store JSON data. In this project, it is used to store the JSON dataset (Stories dataset).
 
-   - **External Libraries for database integration**
+   - **External Libraries/Tools for database integration and replication**
+        - **Apache Kafka**: 
+        Apache Kafka can be used as a message broker to publish database changes as events, which can then be consumed by other databases for synchronization purposes. In this project, Apache Kafka can do data replication and synchronization between MySQL and MongoDB, ensuring that changes made in one database are accurately reflected in the other.
+
         - **ORM**: 
-         To perform interaction between Django models and MySQL, Django's ORM (Object-Relational Mapping) provides an abstraction layer that allows us to work with MySQL using Python classes and methods, making it easier to perform database operations. In this project, it is used to interact with the user app's model.
+        To perform interaction between Django models and MySQL, Django's ORM (Object-Relational Mapping) provides an abstraction layer that allows us to work with MySQL using Python classes and methods, making it easier to perform database operations. In this project, it is used to interact with the user app's model.
 
         - **Djongo**: 
         Django can serve as the MongoDB connector when integrating it with MongoDB. Djongo enables interaction between Django models and MongoDB collections. In this project, it is used to interact with the stories app's model.
-
-    
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

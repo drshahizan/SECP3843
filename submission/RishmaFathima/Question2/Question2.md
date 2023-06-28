@@ -15,54 +15,55 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Airbnb Listings Dataset](https://github.com/drshahizan/dataset/tree/c8e9f4a7cbdb0c1b78ca2c73915ff56ceeb50e70/mongodb/05-airbnb)
 
 ## Question 2 (a)
+In this case, a JSON file with data that needs to be imported into a MongoDB database has been provided. The JSON file is structured in a way that is appropriate for MongoDB documents, with each document being represented by a different object. The JSON file must be ready before the MongoDB server is launched, the MongoDB shell is accessed, the target database is chosen, the collection is selected, and the import command is run. 
+</br></br>
 1. Opened the dataset which was assigned to me in Github which was entitled ``Airbnb Listing Dataset``.
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.1.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.1.png">
 2. Download the raw file and save it as ``listingAndReviews.json`` from the Github before working on it.
 
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.2.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.2.png">
 3. The file is opened through visual studio code to see if the data is available and ready to be used in MongoDB.
 
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a90bbeb3cda83a1b6b9ba3097a2902cfe62dd494/submission/RishmaFathima/Question2/files/images/2.1.11.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a90bbeb3cda83a1b6b9ba3097a2902cfe62dd494/submission/RishmaFathima/Question2/files/images/2.1.11.png">
 
 4.  I navigated to MongoDB Compass on my device and opened it. I had to connect to deployment containing the collections I wish to import my dataset into. I left the connection string (URI) as default as ``mongodb://localhost:2017`` and connect to it.
 
-
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.3.png">
+      <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.3.png">
 
 5. After the connection is successful, I could view the MongoDB Compass User interface as below. Then, I clicked on the small ``+`` icon on database to add a database.
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.4.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.4.png">
 
 6. Then, I created a new database with the database name as ``AA`` and Collection Name as ``Airbnb``.
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.5.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.5.png">
 
 7. After the database is successfully created, I could see the collection and database created.
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.6.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.6.png">
 
 8. Then, I could view the collection created with its details in MongoDB Compass.
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.7.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.7.png">
 
 9. Then, to import the data, I clicked on the ``Import Data`` icon and it redirect to my file explorer for me to select the file which I wish to import. Then I selected the file which I downloaded from Github named ``listingAndReviews.json``
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.8.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.8.png">
 
 10. After the file is successfully imported, I could view a small notification at the bottom left indicating that the import is completed with 5555 documents imported.
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.9.png">
+      <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.9.png">
 
 11. The output of imported document is shown below:
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.10.png">
+      <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/a45e09ab5dc208d5d0ae4d8774e37694bafbdadb/submission/RishmaFathima/Question2/files/images/2.1.10.png">
    
 ## Question 2 (b)
 
 
-1. ``Create Query``
+#### 1. Create Query
    </br>
  
 
@@ -94,13 +95,13 @@ Don't forget to hit the :star: if you like this repo.
    ```
 The following figure shows the code in the MongoDB shell terminal and the output from the terminal:
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.3.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.3.png">
 
 The following figure shows the output in the MongoDb Compass where a data is added when the Airbnb collection is filtered with a filter of ``{name:'Rich Duplex'}`` :
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.4.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.4.png">
 
-2. ``Read Query 1``
+#### 2. Read Query 1
     </br>
 
 
@@ -110,13 +111,13 @@ The following figure shows the output in the MongoDb Compass where a data is add
 
 The following figure shows the code in the MongoDB shell terminal:
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.5.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.5.png">
 
 The following figure shows the output from the terminal of MongoDB shell:
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.6.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.6.png">
 
- ``Read Query 2``
+ #### Read Query 2
  </br>
 
    
@@ -126,7 +127,7 @@ The following figure shows the output from the terminal of MongoDB shell:
 
 The following figure shows the code in the MongoDB shell terminal and the output from the terminal: 
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.7.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.7.png">
 
  ``Read Query 3``
  </br>
@@ -138,9 +139,9 @@ The following figure shows the code in the MongoDB shell terminal and the output
 
 The following figure shows the code in the MongoDB shell terminal and the output from the terminal: 
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.8.png">
+ <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.8.png">
 
-3. ``Update Query 1``
+#### 3. Update Query 1
     </br>
 
 
@@ -153,13 +154,13 @@ The following figure shows the code in the MongoDB shell terminal and the output
    
 The following figure shows the code in the MongoDB shell terminal and the output from the terminal:
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.9.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.9.png">
 
 The following figure shows the output in the MongoDb Compass where a data is added when the Airbnb collection is filtered with a filter of ``{name:'Rich Double Duplex'}`` :
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.10.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.10.png">
 
-``Update Query 2``
+#### Update Query 2
     </br>
 
 
@@ -173,13 +174,13 @@ The following figure shows the output in the MongoDb Compass where a data is add
 
 The following figure shows the code in the MongoDB shell terminal and the output from the terminal:
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.11.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.11.png">
 
 The following figure shows the output in the MongoDb Compass where a data is added when the Airbnb collection is filtered with a filter of ``{name:'Rich Double Duplex'}`` :
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.12.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.12.png">
 
-4. ``Delete Query``
+#### 4. Delete Query
     </br>
 
 
@@ -189,11 +190,11 @@ The following figure shows the output in the MongoDb Compass where a data is add
    ```
 The following figure shows the code in the MongoDB shell terminal and the output from the terminal:
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.13.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.13.png">
 
 The following figure shows that there is no output in the MongoDb Compass when the Airbnb collection is filtered with a filter of ``{name:'Rich Double Duplex'}`` because the data is deleted:
 
-<img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.14.png">
+   <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/447ca61d982b3267202ef5c42a6c443f23fa53f3/submission/RishmaFathima/Question2/files/images/2.2.14.png">
 
 
 
