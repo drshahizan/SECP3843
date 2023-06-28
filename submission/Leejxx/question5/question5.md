@@ -10,12 +10,41 @@ Don't forget to hit the :star: if you like this repo.
 
 # Special Topic Data Engineering (SECP3843): Alternative Assessment
 
-#### Name:
-#### Matric No.:
-#### Dataset:
+#### Name: Lee Jia Xian
+#### Matric No.: A20EC0200
+#### Dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" >Supply Store Dataset</a>
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  When dealing with large volumes of JSON data for dashboard visualizations, the performance of the portal can be adversely affected due to the time-consuming process of fetching and processing the data from the dataset.
+
+### Solution : Caching
+  Implement caching mechanisms to store pre-rendered visualizations or intermediate data results. This way, subsequent requests for the same data can be served from the cache, reducing processing time and improving overall performance.The objective is to optimize the performance by implementing a caching mechanism that stores the fetched data in memory, reducing the need for repetitive database queries and improving the response time for subsequent requests.
+
+  #### Step 1: Implement Caching
+    Use the Django caching framework to store and retrieve data from cache. The caching framework provides various cache backends such as in-memory cache, file-based cache, or database cache. In this example, we will use the in-memory cache backend.
+   <img  src="./files/images/code1.JPG"></img>
+
+  #### Step 2: Retrieve Data from Cache or Database
+    Implement a function to retrieve data from cache. First, check if the data is available in the cache. If so, return the cached data. If not, retrieve the data from the database and store it in the cache for future use.<br>
+  <img  src="./files/images/code2.JPG"></img>
+
+  #### Step 3: Retrieve and Render Data in Dashboard
+  In the view function for the dashboard, call the function to retrieve data from cache or database. Pass the retrieved data, along with other relevant information such as the total sales to the template for rendering.
+   <img  src="./files/images/code3.JPG"></img>
+
+### Screenshot:
+  - Screenshot 1: Dashboard with data fetched from the database. <br>
+   <img  src="./files/images/data1.JPG"></img>
+   
+  - Screenshot 2: Dashboard with data fetched from cache. <br>
+    <img  src="./files/images/data2.JPG"></img>
+
+### Conclusion
+  By implementing a caching mechanism, the performance of the portal can be significantly improved when dealing with large volumes of JSON data during dashboard visualizations. Caching reduces the need for repetitive database queries, resulting in faster response times and an overall optimized user experience.
+
+
+
+    
 
 ## Question 5 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
