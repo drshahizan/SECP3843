@@ -58,9 +58,11 @@ The 5 servers of this project are implemented as below:
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015852.png" alt="mysql after migration">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20153924.png" alt="loaddata1">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20153924.png" alt="loaddata.py">
 
-<img src="" alt="loaddata2">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20162050.png" alt="loaddata json">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20162035.png" alt="load data success">
 
 
 
