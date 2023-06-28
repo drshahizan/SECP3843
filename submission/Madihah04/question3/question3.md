@@ -299,11 +299,11 @@ urlpatterns = [
 
 #### Login Page
 
-<img src="../question3/files/images/Q3_4.png">
+<img src="../question3/files/images/Q3b(2).png">
 
 #### Registeration Page
 
-<img src="../question3/files/images/Q3_5.png">
+<img src="../question3/files/images/Q3b(1).png">
 
 #### Customer Dashboard
 
