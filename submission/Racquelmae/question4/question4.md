@@ -15,6 +15,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 4 (a)
 K-modes clustering algorithm is the machine learning technique applied in this case study as the majority of the data types in this dataset are categorical. K-modes is used to partition the dataset into clusters where each cluster is characterized by the most frequent categorical value in the cluster.
+
 Code: [ML.ipynb](./files/code/ML.ipynb)
 ### 1. Import data into Pandas dataframe
 ```
