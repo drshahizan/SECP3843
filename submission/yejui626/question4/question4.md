@@ -23,7 +23,7 @@ To perform machine learning, we need to install the `scikit-learn` library to ou
 ```python
 pip install scikit-learn
 ```
-![Alt text](image.png)
+![Alt text](./files/images/image.png)
 #### Step 2 : Define the machine learning function in the Django view
 Inside the Django view, I have define a function named `customer` that will connect to the stories collection from MongoDB and do prediction about the instance from user input.
 ```python
@@ -82,11 +82,11 @@ def customer(request):
 
 #### Step 3 : Define template
 Define a template that will render the function. <br>
-![Alt text](image-5.png)
-![Alt text](image-1.png)
-![Alt text](image-2.png)
-![Alt text](image-3.png)
-![Alt text](image-4.png)
+![Alt text](./files/images/image-5.png)
+![Alt text](./files/images/image-1.png)
+![Alt text](./files/images/image-2.png)
+![Alt text](./files/images/image-3.png)
+![Alt text](./files/images/image-4.png)
 <br>
 
 ### Potential Usage of this feature
