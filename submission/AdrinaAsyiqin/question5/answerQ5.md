@@ -180,7 +180,8 @@ Don't forget to hit the :star: if you like this repo.
 
 
 ## Final Dashboard 
-    ![image](https://github.com/drshahizan/SECP3843/assets/96984290/00388f29-4a67-4fc4-9eb4-6033771b2b83)
+
+   ![image](https://github.com/drshahizan/SECP3843/assets/96984290/00388f29-4a67-4fc4-9eb4-6033771b2b83)
 
 
 
