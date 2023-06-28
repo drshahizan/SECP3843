@@ -23,7 +23,7 @@ Based on the tables you provided in the JSON files, it seems like a structured d
 
 - `drshahizan` > `SECP3843` > `submission` > `AimanHafizi619` > `Question 4` > `files` > `source-code`
 
-**Step 2: Start Coding**
+**Step 2: Start Performing Data Cleaning**
 
 1. Install pymongo
 
@@ -91,11 +91,15 @@ grouped_data.columns = [f"{tier} ({age_group})" for tier, age_group in zip(group
 print(grouped_data)
 ```
 
+**Step 3: Start Performing KMeans Clustering**
 
+1.  Import the necessary libraries:  
 
-   
-
-
+```python
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
+```
 
 
 
