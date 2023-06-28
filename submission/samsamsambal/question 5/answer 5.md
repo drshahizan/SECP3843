@@ -32,18 +32,24 @@ Select a data source. We will be using our mflix database. Then you can start bu
 
 ---
 #### Charts and Dashboard Development
+
 ![Q5](file/image/q53.png)
+
 The chart above shows IMDB rating, Tomatoes rating, and Metacritic rating all put together in a stacked column to be compared over the years.
 
 ![Q5](file/image/q54.png)
+
 The chart above shows Top 10 languages with the highest sum of IMDB ratings.
 
 ![Q5](file/image/q56.png)
+
 The chart above shows the Number of ratings based on genres.
 
 ![Q5](file/image/qq5.png)
+
 The chart above shows the Countries with the most wins. USA has the most wins with 93, second place tied by both India and Japan with 32 wins 
 
+![Q5](file/image/q5d.png)
 
 Dashboard
 ## Contribution 🛠️
