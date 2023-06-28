@@ -14,10 +14,6 @@ Don't forget to hit the :star: if you like this repo.
 #### Matric No.: A20EC0071
 #### Dataset: [Airbnb](https://github.com/drshahizan/dataset/tree/main/mongodb/05-airbnb)
 
-## Table of Contents
-- [Prerequisites](prerequisites)
-- [Question 2 (a)](question-2-(a))
-- [Question 2 (b)](question-2-(b))
 
 ### Prerequisites
 Download and Install All Required Software.
