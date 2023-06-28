@@ -15,6 +15,7 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: sales.json
 
 ## Question 2 (a)
+### Step By Step Process To Add Json File Into MongoDB
 
 ### Requirements
 - `MongoDB Compass`
@@ -60,6 +61,7 @@ Don't forget to hit the :star: if you like this repo.
 
 
 ## Question 2 (b)
+### 5 MongoDB Queries (Create, Read, Update, Delete)
 ### Requirements
 - `MongoDB Compass`
 - `MongoDB Tools`

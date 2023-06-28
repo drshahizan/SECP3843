@@ -148,7 +148,45 @@ Don't forget to hit the :star: if you like this repo.
     ```
 
 ## Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### MongoDB Atlas Charts
+- MongoDB Atlas Charts is a powerful data visualization tool provided by MongoDB Atlas, a fully managed database service. It allows you to create and customize various types of charts based on your MongoDB data.
+- Some of the functionalities are:  
+  - MongoDB Atlas Charts seamlessly connects to your MongoDB Atlas cluster, allowing you to directly access and visualize your data from the database securely and efficiently.
+  - MongoDB Atlas Charts offers a variety of chart types, such as line charts, bar charts, scatter plots, pie charts, and more. You can select the most suitable chart type based on your data and visualization requirements.
+  - If your MongoDB data is continuously updated, MongoDB Atlas Charts can reflect those updates in real-time. This ensures that your charts always provide the latest information, allowing for dynamic insights into your data.
+  - The user interface of MongoDB Atlas Charts utilizes a drag-and-drop approach, making it easy for you to choose fields from your MongoDB collection and effortlessly create visualizations by dropping them onto the chart canvas.
+
+
+### Creating Dashboard Using MongoDB Charts.
+- Go to `MongoDB Atlas Charts` and sign into your account --> https://www.mongodb.com/products/charts
+- Use the connection where sales.json data is uploaded previously
+- Click on 'Charts' from the tab menu in the connection
+  ![Alt text](files/images/image.png)
+  ![Alt text](files/images/image-1.png)
+  
+- Choose your database, I has previously created a database collection named `salessample` under `salesdatabase`
+
+  ![Alt text](files/images/image-2.png)
+
+- Once data source has been chosen, now it is up to ones creativity to visualise the dashboard and charts. I had created four charts using all the tools the MongoDB charts had prepared. It is as easy because users only need to drag and drop to axis and worksheet.
+
+  ![Alt text](files/images/image-3.png)
+
+- Once a chart had been created, at the top right corner click on `Save and Close` to save the chart. This will then lead us to the main dashboard. Simply click on `Add Chart` to create a new chart. In the dashboard, admin users can adjust the size of each charts and drag them to locate them anywhere in the sheet. In the dashboard, to edit existing chart just hover on the chart. There will be an option to edit chart
+
+  ![Alt text](files/images/image-4.png)
+
+  ![Alt text](files/images/image-6.png)
+
+
+## Final Dashboard 
+
+   ![image](https://github.com/drshahizan/SECP3843/assets/96984290/00388f29-4a67-4fc4-9eb4-6033771b2b83)
+
+
+
+
+
 
 
 ## Contribution 🛠️

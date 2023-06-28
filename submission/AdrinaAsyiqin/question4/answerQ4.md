@@ -16,10 +16,13 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 4 
 
-### Step 1:Data Cleaning
+### Choosing An Appropriate Machine Learning And How To Use It
+
+### Step 1: Data Cleaning
 - In this part, I execute all code in Google Colab
-- Load sales.json data from mongodb
+- Firstly , load sales.json data from mongodb
   ```py
+  # Connect to MongoDB and retrieve data
   !pip install pymongo
   import pymongo
   import pandas as pd
@@ -31,51 +34,55 @@ Don't forget to hit the :star: if you like this repo.
   collection = db["salessample"]
   data = list(collection.find())
 
-  # Convert to DataFrame
+  # Convert to dataframe
   df = pd.DataFrame(data)
 
   # Check the DataFrame
   print(df.head())
   df.info()
   ```
-
-  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/6249484b-d4f8-498d-aeb7-7893a4ed1ad9)
-
-
+  
 - Data cleaning and preparation. Some of the data cleaning I did is `handling missing values`,`removing duplicates`, and `convert items column into seperate columns`
 
   ```py
-  # Handling Missing Values
-  # Drop rows with missing values
-  df.dropna(inplace=True)
+  #split customer and items columns, where dict data into appropriate values and columns
+  import numpy as np
 
-  # Replace missing values with a specified value
-  df.fillna(value=0, inplace=True)
+  df['satisfaction'] = df['customer'].apply(lambda x: x['satisfaction'] if pd.notnull(x) else np.nan)
+  df['gender'] = df['customer'].apply(lambda x: x['gender'] if pd.notnull(x) else np.nan)  
+  df['email'] = df['customer'].apply(lambda x: x['email'] if pd.notnull(x) else np.nan)
+  df['age'] = df['customer'].apply(lambda x: x['age'] if pd.notnull(x) else np.nan) 
+  
+  df.drop('customer', axis=1, inplace=True)
 
-  # Removing Duplicates
-  df.drop_duplicates(subset='_id', inplace=True)
+  df['item_names'] = df['items'].apply(lambda x: [item['name'] for item in x] if isinstance(x, list) else [])
+  df['item_tags'] = df['items'].apply(lambda x: [item['tags'] for item in x] if isinstance(x, list) else [])
+  df['item_prices'] = df['items'].apply(lambda x: [item['price'] for item in x] if isinstance(x, list) else [])
+  df['item_quantities'] = df['items'].apply(lambda x: [item['quantity'] for item in x] if isinstance(x, list) else [])
 
-  # Convert the 'items' column into separate columns
-  df_items = pd.json_normalize(df['items'])
-
-  # Rename the columns
-  new_columns = {}
-  for col in df_items.columns:
-      new_columns[col] = f'item{col}'
-  df_items.rename(columns=new_columns, inplace=True)
-
-  # Merge the item columns with the original DataFrame
-  df = pd.concat([df, df_items], axis=1)
-
-  # Drop the original 'items' column
   df.drop('items', axis=1, inplace=True)
 
+  df.head()
   ```
 
-  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/aff95e19-040f-4bb5-9e77-47ae4120e7f9)
+  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/f30e5411-4fe6-4a3f-8851-a823c7c82e01)
 
 
-### Step 2 :Data visualisation
+  ```py
+  #clean data
+  df.isnull().sum()
+
+  df.dropna(inplace=True)
+
+  df["couponUsed"] = df["couponUsed"].astype(bool)
+
+  df.info()
+  ```
+
+  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/d3785b80-e69d-405f-b2b4-a28f013083cd)
+
+
+### Step 2: Data Visualisation
 - Create bar graph
   ```py
   import matplotlib.pyplot as plt
@@ -86,8 +93,10 @@ Don't forget to hit the :star: if you like this repo.
   # Create a bar chart
   plt.figure(figsize=(10, 6))
   plt.bar(sales_by_location.index, sales_by_location.values)
+
   plt.xlabel('Store Location')
   plt.ylabel('Number of Sales')
+  
   plt.title('Sales Distribution by Store Location')
   plt.xticks(rotation=45)
   plt.show()
@@ -116,34 +125,93 @@ Don't forget to hit the :star: if you like this repo.
   ![image](https://github.com/drshahizan/SECP3843/assets/96984290/3b545c61-9675-4990-aacb-057281d903c3)
 
 
-### Step 3:Macbine Learning
+### Step 3: Macbine Learning
+
+1. The code prints the accuracy of the model on the test set. The accuracy value indicates how well the model performed in predicting coupon usage. A higher accuracy value suggests that the model made more correct predictions. However, it's important to consider other evaluation metrics and the specific requirements of the task to fully assess the model's performance.
   ```py
-  # Drop the unnecessary columns
-  df.drop(['item1','item2','item3','item4','item5','item6','item7','item8','item9','item0'], axis=1, inplace=True)
-  df.info()
-
+  import pandas as pd
   from sklearn.model_selection import train_test_split
-  from sklearn.linear_model import LinearRegression
-  from sklearn.metrics import mean_squared_error
+  from sklearn.ensemble import RandomForestClassifier
+  from sklearn.metrics import accuracy_score
+  from sklearn.preprocessing import LabelEncoder
+  # Step 1: Load the dataset
+  data = df.drop(columns=['age','email','satisfaction','saleDate','item_names','item_tags','item_prices','item_quantities'])
 
-  selected_fields = df[['couponUsed']]
+  # Step 2: Preprocessing
+  label_encoder = LabelEncoder()
+  data["storeLocation"] = label_encoder.fit_transform(data["storeLocation"])
+  data["purchaseMethod"] = label_encoder.fit_transform(data["purchaseMethod"])
+  data["gender"] = label_encoder.fit_transform(data["gender"])
 
-  X = selected_fields.drop('couponUsed', axis=1)
-  y = selected_fields['couponUsed']
+  # Step 3: Splitting the data into train and test sets
+  X = data.drop(["couponUsed"], axis=1)
+  y = data["couponUsed"]
   X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
 
-  model = LinearRegression()
+  # Step 4: Selecting a model and training
+  model = RandomForestClassifier()
   model.fit(X_train, y_train)
+
+  # Step 5: Evaluating the model
   y_pred = model.predict(X_test)
+  accuracy = accuracy_score(y_test, y_pred)
+  print("Accuracy:", accuracy)
   ```
 
-  The machine learning technique used in this code is Linear Regression. Linear regression is a supervised learning algorithm used for predicting a continuous target variable based on one or more input features. It assumes a linear relationship between the input variables and the target variable and aims to find the best-fitting line that minimizes the difference between the predicted and actual values.
-
-  In this code, the unnecessary columns are dropped from the DataFrame. The selected fields include the 'couponUsed' column, which is used as the target variable. The remaining columns are used as input features (X) for the linear regression model. The data is then split into training and testing sets using the train_test_split function. The LinearRegression model is trained on the training set using the fit method, and predictions are made on the test set using the predict method.
-
-  Finally, the performance of the model is evaluated using the mean squared error (MSE) metric, which measures the average squared difference between the predicted and actual values.
+  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/b126eb3d-b738-47ee-9f3a-519b229221fa)
 
 
+2. The accuracy of the model is calculated using the accuracy_score function from scikit-learn. It compares the predicted coupon usage labels (y_pred) with the actual labels from the test set (y_test). The accuracy represents the proportion of correctly predicted instances out of the total instances in the test set.
+   - The resulting bar graph visually represents the accuracy of the machine learning model in predicting coupon usage. The height of the bar represents the accuracy value, indicating how well the model performed. By examining the bar's height, you can quickly determine the accuracy score of the model.
+  ```py
+  import matplotlib.pyplot as plt
+
+  # Calculate the accuracy of the model
+  accuracy = accuracy_score(y_test, y_pred)
+
+  # Create a bar graph
+  plt.bar(["Accuracy"], [accuracy])
+  plt.ylim(0, 1)  # Set the y-axis limit from 0 to 1
+  plt.ylabel("Accuracy")  # Label for the y-axis
+  plt.title("Model Accuracy")  # Title of the graph
+
+  # Display the graph
+  plt.show()
+
+  ```
+
+  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/a5fd9bab-c1d3-42fe-be4a-e6922a72f0e8)
+
+3. The provided code generates a bar graph to visualize the counts of true positives, true negatives, false positives, and false negatives in the prediction results.
+   - The resulting bar graph visually represents the counts of true positives, true negatives, false positives, and false negatives in the prediction results. Each bar represents the count of a specific category, providing insights into the model's performance in predicting coupon usage. By examining the heights of the bars, we can compare the number of correctly and incorrectly predicted instances for each category.
+   - This visualization helps in understanding the model's performance in differentiating between coupon used and not used instances. It provides a more detailed perspective beyond overall accuracy and can be useful for assessing the model's strengths and weaknesses in specific prediction categories.
+
+  ```py
+  import matplotlib.pyplot as plt  
+
+  # Calculate the number of true positives, true negatives, false positives, and false negatives
+  tp = ((y_pred == 1) & (y_test == 1)).sum()
+  tn = ((y_pred == 0) & (y_test == 0)).sum()
+  fp = ((y_pred == 1) & (y_test == 0)).sum()
+  fn = ((y_pred == 0) & (y_test == 1)).sum()
+
+  # Create a bar graph
+  labels = ['True Positives', 'True Negatives', 'False Positives', 'False Negatives']
+  values = [tp, tn, fp, fn]
+  plt.bar(labels, values)
+  plt.ylabel('Count')
+  plt.title('Bar Graph of Prediction Results')
+
+  # Display the bar graph
+  plt.show()
+
+  ```
+
+  ![Alt text](files/images/image.png)
+  ![image](https://github.com/drshahizan/SECP3843/assets/96984290/48e42ccd-3bae-4e7a-97a9-80a552f0df43)
+
+
+  
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

@@ -17,10 +17,10 @@ Don't forget to hit the :star: if you like this repo.
 
 Let’s dissect this question, by the end of this question I should have imported the tweets.json into a MongoDB database. There are 2 types of deployment for MongoDB, one of them through MongoDB Atlas and another by installing a local MongoDB deployment. Therefore, I am going to choose to use the MongoDB Atlas deployment. Below are the steps I followed to import my tweets.json into MongoDB Atlas.
 
-* [Install Prerequisites](#Installing_Prerequisites)
+* [Install Prerequisites](#Installing-Prerequisites)
 * [Configurating](#Configurating)
-* [Preparing the JSON file](#Preparing_the_JSON_file)
-* [Importing the Prepared JSON file to MongoDB](Importing_the_Prepared_JSON_file_to_MongoDB)
+* [Preparing the JSON file](#Preparing-the-JSON-file)
+* [Importing the Prepared JSON file to MongoDB](#Importing-the-Prepared-JSON-file-to-MongoDB)
 
 <br>
 
@@ -154,10 +154,10 @@ After pasting your syntax, hit `Enter` and watch your atlas collection fill up w
 
 ### Content
 
-* [Insert Query](Insert_Query)
-* [Read Query](Read_Query)
-* [Update Query](Update_Query)
-* [Delete Query](Delete_Query)
+* [Insert Query](#Insert-Query)
+* [Read Query](#Read-Query)
+* [Update Query](#Update-Query)
+* [Delete Query](#Delete-Query)
 
 
 ### Insert Query
@@ -168,11 +168,11 @@ There are two common queries methods to insert data into MongoDB:
 
 Input inside command prompt:
 
-<p align="center"><img width="50%" src="./files/images/Create_Input.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/Create_Input.jpg"></img></p>
 
 Output in Atlas:
 
-<p align="center"><img width="50%" src="./files/images/Create_Output.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/Create_Output.jpg"></img></p>
 
 ### Read Query
 
@@ -182,7 +182,7 @@ There are two common queries methods to insert data into MongoDB:
 
 Input inside command prompt:
 
-<p align="center"><img width="50%" src="./files/images/Read.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/Read.jpg"></img></p>
 
 
 ### Update Query
@@ -193,19 +193,19 @@ There are two common queries methods to insert data into MongoDB:
 
 Input inside command prompt for `updateOne`:
 
-<p align="center"><img width="50%" src="./files/images/UpdateOne_Input.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/UpdateOne_Input.jpg"></img></p>
 
 Output in Atlas for `updateOne`:
 
-<p align="center"><img width="50%" src="./files/images/UpdateOne_Output.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/UpdateOne_Output.jpg"></img></p>
 
 Input inside command prompt for `updateMany`:
 
-<p align="center"><img width="50%" src="./files/images/UpdateMany_Input.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/UpdateMany_Input.jpg"></img></p>
 
 Output in Atlas for `updateMany`:
 
-<p align="center"><img width="50%" src="./files/images/UpdateMany_Output.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/UpdateMany_Output.jpg"></img></p>
 
 
 ### Delete Query
@@ -216,11 +216,11 @@ There are two common queries methods to insert data into MongoDB:
 
 Input inside command prompt:
 
-<p align="center"><img width="50%" src="./files/images/Delete_Input.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/Delete_Input.jpg"></img></p>
 
 Output in Atlas:
 
-<p align="center"><img width="50%" src="./files/images/Delete_Output.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/Delete_Output.jpg"></img></p>
 
 
 ## Contribution 🛠️

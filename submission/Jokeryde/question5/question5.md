@@ -17,11 +17,44 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 5 (a)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+ 5A terbaikk
 
 ## Question 5 (b)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  For the visualization part, I decided to use the MongoDB Atlas Chart.
+
+  1. First open MongoDB Atlas at web browser and login.
+  2. Then click on the `charts` tab to open Atlas Charts Page.
+  3. Next Click the Add New Dashboard to create the dashboard.
+  4. I have created 5 charts:
+
+       a. Heatmap for Theaters which represent the theaters location.
+
+        <img src="https://github.com/drshahizan/SECP3843/blob/709665215c0dc312e46abee64d7b4b90af82c84e/submission/Jokeryde/question5/images/heatmap.png">
+
+        b. Doughnut Chart which represent the number of award nomination gain by each genres
+
+       <img src="https://github.com/drshahizan/SECP3843/blob/709665215c0dc312e46abee64d7b4b90af82c84e/submission/Jokeryde/question5/images/donut.png">
+
+
+        c. Area chart that shows the number of movie produced from 1891-2020
+
+     <img src="https://github.com/drshahizan/SECP3843/blob/709665215c0dc312e46abee64d7b4b90af82c84e/submission/Jokeryde/question5/images/movie%20produced.jpg">
+    
+
+     d. Bar Chart that shows which state in United States of America has the most number of theaters.
+
+     <img src="https://github.com/drshahizan/SECP3843/blob/709665215c0dc312e46abee64d7b4b90af82c84e/submission/Jokeryde/question5/images/theaterss.jpg">
+
+     e. Map Chart that shows the total number of awards won by each countries.
+
+     <img src="https://github.com/drshahizan/SECP3843/blob/709665215c0dc312e46abee64d7b4b90af82c84e/submission/Jokeryde/question5/images/awards.jpg">
+
+
+<h2>DASHBOARD</h2>
+
+  <img src="https://github.com/drshahizan/SECP3843/blob/072eddf89c6bc5c7fadd5b2d8f3ac6547bef2e9c/submission/Jokeryde/question5/images/dashboard.jpg">
+
 
 ## Contribution 🛠️
 
