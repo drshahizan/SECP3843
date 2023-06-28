@@ -105,6 +105,7 @@ The machine learning that I will implement for my dataset is K-Means Clustering.
       %matplotlib inline
       from sklearn.metrics import silhouette_samples, silhouette_score
       from yellowbrick.cluster import KElbowVisualizer, SilhouetteVisualizer
+      from sklearn.preprocessing import StandardScaler
       ```  
 
 
