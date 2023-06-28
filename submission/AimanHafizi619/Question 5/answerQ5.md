@@ -26,7 +26,9 @@ Using appropriate indexing techniques on the large dataset to optimize up data r
 ## Question 5 (b)
 Use MongoDB Atlass to visualize the JSON files
 
+1. Open MongoDB Atlass. Click `Browse Collections` button
 
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image1.png)
 
 
 
