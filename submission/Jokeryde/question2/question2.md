@@ -84,7 +84,7 @@ Don't forget to hit the :star: if you like this repo.
 
      <img rc="https://github.com/drshahizan/SECP3843/blob/2bfdac31d9e2d308440f320ba27d5f7030b08d5c/submission/Jokeryde/question2/files/images/updateone.jpg">
 
-  7. For the second UPDATE queries, I've used the ```updateMany()``` method to update few record simultaneously.
+  8. For the second UPDATE queries, I've used the ```updateMany()``` method to update few record simultaneously.
 
 <img src="https://github.com/drshahizan/SECP3843/blob/f2ce59043557cf14ba46fbafe26b78c3c828bba4/submission/Jokeryde/question2/files/images/updatemany.jpg">
 
