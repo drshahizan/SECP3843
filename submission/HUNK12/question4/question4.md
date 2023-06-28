@@ -92,7 +92,7 @@ Results:
 
 Below this are the results of the analysis visualized in a bar chart.
 
-![image](https://github.com/drshahizan/SECP3843/assets/3646429/2e053729-e144-4af9-9ad6-3726418f2f5d)
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/9529266e-4b6e-41d4-b1b3-65a07e794a57)
 
 #### *Why are there so many neutral results compared to the other sentiments?*
 
