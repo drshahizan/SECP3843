@@ -22,7 +22,7 @@ Data aggregation is done on the server-side before sending it to the client for 
 Fortunately, using MongoDB Compass, we are able to perfom data aggregation easily! This is becuase MongoDB Compass offers a feature where we can build aggregation pipeline. Below, I will describe the step-by-step on how we can aggregate our data using a pipeline:-
 
 1. Click on the "Aggregations" tab in MongoDB Compass.
-<div align="center"><img src="files/images/optimize.PNG" height="350px" /></div>
+<div align="center"><img src="images/optimize.PNG" height="350px" /></div>
 
 2. In the Aggregations tab, we can construct the aggregation pipeline using various stages such as $match, $group, $project, $sort, etc. In this case, I created 2 stages and use $group and $sort operations.
 
@@ -30,7 +30,14 @@ Fortunately, using MongoDB Compass, we are able to perfom data aggregation easil
 - Use $group to group documents and perform aggregation operations.
 - I group the documents based on 'result' column and calculate the count of documents in each group.
 
-<div align="center"><img src="files/images/optimize2.PNG" height="350px" /></div>
+<div align="center"><img src="images/optimize2.PNG" height="350px" /></div>
+
+4. Second Stage: $sort
+- $sort stage is then used to sort the results based on the count in descending order.
+
+<div align="center"><img src="images/optimize3.PNG" height="350px" /></div>
+
+**How it helps in optimize large data?**
 
 - The code allows us to summarize the data by counting the occurrences of each distinct value in the "result" field. This provides a quick overview of the distribution of results in the dataset.
 - Aggregating data using the $group stage allows the database to perform the aggregation operation on the server-side, which can be more efficient and scalable compared to fetching the entire dataset and performing the aggregation on the client-side.
