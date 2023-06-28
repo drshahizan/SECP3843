@@ -240,10 +240,10 @@ sns.heatmap(confusion_matrix(y_test, predictions), annot=True, cmap="jet")
 ```
 <img width="459" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/1783de86-007d-4908-8fce-6baeee0e32ef">
 
-> True Negative (TN): 1762 - The number of instances that were correctly predicted as the negative class.
-False Positive (FP): 763 - The number of instances that were incorrectly predicted as the positive class when they were actually negative.
-False Negative (FN): 1046 - The number of instances that were incorrectly predicted as the negative class when they were actually positive.
-True Positive (TP): 1396 - The number of instances that were correctly predicted as the positive class.
+> True Negative (TN): 1762 - The number of instances that were correctly predicted as the negative class.<br>
+False Positive (FP): 763 - The number of instances that were incorrectly predicted as the positive class when they were actually negative.<br>
+False Negative (FN): 1046 - The number of instances that were incorrectly predicted as the negative class when they were actually positive.<br>
+True Positive (TP): 1396 - The number of instances that were correctly predicted as the positive class.<br>
 
 ## Google Collab Code
 
