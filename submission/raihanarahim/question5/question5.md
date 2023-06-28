@@ -236,15 +236,15 @@ Referring to the dashboard above there are 7 visualizations.
 2. Users by Location
    
 * This visualization mainly focuses on analyzing Users and its location. Based on the graph, we can see that the highest Twitter Users are from Brazil with 472 records and the lowest one is from Toronto with 43 records. 
-<img width="263" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/12055bcd-6d53-4d21-a76a-3db7ec44ce39">
-<img width="403" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/1425bff9-8393-4ab0-80f8-53094c5b5f1a"><br>
+<img width="500px" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/12055bcd-6d53-4d21-a76a-3db7ec44ce39"><br>
+<img width="500px" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/1425bff9-8393-4ab0-80f8-53094c5b5f1a"><br>
 
 3. Distribution of Users
    
 * Next, we will get more detailed view on the distribution of users. As you can see from the visualization above, the distribution is represented by heatmap. The darker the purple colour, the bigger the  user distribution are in that place. As you can tell, the users are widely distributed in South America which correlate with our users by location graph. This is because Brasil in in South America.
 
 * You can also see detailed location of a user by filtering to `Jimmmy Carr`. Then the map will show exact location of the user :
- <img width="285" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/b502c5ab-b798-43c0-b9a4-d71348776d32">
+ <img width="500px" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/b502c5ab-b798-43c0-b9a4-d71348776d32">
 
 4. Tweet Word Cloud
    
@@ -261,17 +261,19 @@ Referring to the dashboard above there are 7 visualizations.
 
 * Next, we will analyze User Followers to determine which user has the highest followers. 
 It is found out that Gary Vaynerchuk has the highest followers, 854199 compared to the other users. This visualization is important to help us get insights on what makes the particular user has many followers.<br>
-<img width="324" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/22962f22-b71b-454d-8d04-4671626d3b08">
+<img width="500px" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/22962f22-b71b-454d-8d04-4671626d3b08">
 
 6. Tweets Languages
     
 * Since there are worlwide users in Twitter. I wanted to know what are the most used language in Twiter. To accomplish this, I use column `user.lang` and `user.name`. Pie chart is choosen to visualize the data and it shows that English is the main language used in Twitter.<br>
-  <img width="315" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/50d5abf5-5d99-41df-8fa3-68916b95a8bd">
+  <img width="500px" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/50d5abf5-5d99-41df-8fa3-68916b95a8bd">
 
 7. Active Users
 * Lastly, I would like to analyze on which users are active and which are not. To accomplish this, I used `user.favourites` and `user.following` as our features. Assumption made is: if the user has higher number of favourites  have higher following count the user is considered as active.This is because if user spend more time on Twitter, they will likely have more following and higher number of favourites.<br>
-<img width="275" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/4426f80c-575a-4d9b-a7a3-80ead7ae57bf">
+<img width="500px" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/4426f80c-575a-4d9b-a7a3-80ead7ae57bf">
 
+## Dashboard file
+[Complete Dashboard on PowerBI](https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question5/files/AAQ5.pbix)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

@@ -22,7 +22,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ## [Dashboard - Click here to view interactive dashboard](https://muhdimranh.github.io/dashboard)
 
-![Q5](files/images/q5.3.png)
+[![Q5](files/images/q5.3.png)](https://muhdimranh.github.io/dashboard)
 
 Above is the completed dashboard, like Tableau, MongoDB allows real-time dashboard filtering. In the above picture, the filter is on the right side of the dashboard and we can customize to whatever filter we intend to use.
 
