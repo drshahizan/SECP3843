@@ -57,7 +57,7 @@ $ source .venv/bin/activate
 In your web browser, navigate to http://127.0.0.1:8000/ and you should see the Django Welcome Page.
 
 ## Question 1 (b)
-<img width="1000" alt="Screenshot 2023-06-28 at 9 12 35 AM" src="https://github.com/drshahizan/special-topic-data-engineering/assets/76076543/33c4f78f-7895-4a8b-b520-96f6bf66dd0a">
+<img width="1000" alt="Screenshot 2023-06-28 at 12 11 32 PM" src="https://github.com/drshahizan/special-topic-data-engineering/assets/76076543/de697f28-c2e8-4809-95d7-c4be00f5f974">
 
 The system architecture seamlessly integrates Django with MySQL and MongoDB databases to create a dashboard visualization and data viewing platform. It consists of several tiers and components:
 
