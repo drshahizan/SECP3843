@@ -17,7 +17,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 4 
 For this case study, I have chosen to perform sentiment analysis on the dataset as it's the most appropriate approach for this type of dataset. The goal is to determine whether each tweet has a positive, negative, or neutral sentiment. I have used Google Colab to perform the sentiment analysis due to it's convenience. Below are the steps taken to perform the sentiment analysis.
 
-You may find the full coding for this sentiment analysis [here](https://github.com/drshahizan/SECP3843/blob/main/submission/HUNK12/question4/files/code/AA_STDE_Q5.ipynb)
+You may find the full coding for this sentiment analysis [here](https://github.com/drshahizan/SECP3843/blob/main/submission/HUNK12/question4/files/code/AA_STDE_Q4.ipynb)
 
 ### Step 1: Install and import the required libraries
 ```py
@@ -92,7 +92,7 @@ Results:
 
 Below this are the results of the analysis visualized in a bar chart.
 
-![image](https://github.com/drshahizan/SECP3843/assets/3646429/2e053729-e144-4af9-9ad6-3726418f2f5d)
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/9529266e-4b6e-41d4-b1b3-65a07e794a57)
 
 #### *Why are there so many neutral results compared to the other sentiments?*
 

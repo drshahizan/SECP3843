@@ -45,21 +45,114 @@ If Python is not installed, you can download and install it from the   official 
 python -m venv myenv
 myenv\Scripts\activate
 ```
-  3.  Install Django.
+  3.  Install Django and related packages.
 With the virtual environment activated, run the following command to install Django using pip, the Python package installer:
 
-```
-pip install django
-```
-  4. Verify the Installation.
-To verify that Django has been installed successfully, run the following command:
+  ```
+  pip install django
+  ```
+  <div align="center"><img src="files/images/django-1.png" height="200px" /></div>
+  
+  ```
+  pip install pymongo
+  ```
+   <div align="center"><img src="files/images/django-2.png" height="150px" /></div>
+   
+  ```
+  pip install mysqlclient
+  ```
 
-```
-django-admin --version
-```
+  <div align="center"><img src="files/images/django-3.png" height="150px" /></div>
+  
+  ```
+  pip install djongo
+  ```
+ 
+  4. Setup Project in Django
+
+  ```
+  django-admin startproject supplystore
+  cd supplystore
+  ```
+ <div align="center"><img src="files/images/django-4.png" height="70px" /></div>
+ 
+  ```
+  python manage.py startapp supplystoreapp   
+  ```
+
+ <div align="center"><img src="files/images/django-5.png" height="200px" /></div>
+
+- Define connection details for MySQL and MongoDB.
+  
+  - In settings.py,
+    
+  ```python
+     DATABASES = {
+      'default': {
+          'ENGINE': 'django.db.backends.mysql',
+          'NAME': 'supplystore',
+          'USER' : 'root',
+          'PASSWORD' : '',
+          'HOST' : 'localhost',
+          'PORT' : '3306',
+      },
+  
+      'mongodb': {
+          'ENGINE': 'django.db.backends.mysql',
+          'NAME': 'supplystore',
+          'CLIENT' : {
+              'host' : 'mongodb://localhost:27017',
+              'username' : '',
+              'password' : '',
+              'authSource' : 'admin',
+              'authMechanism' : 'SCRAM-SHA-1',
+          }
+      }
+  }
+  ```
+  - In models.py,
+    
+  ```python
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'supplystore',
+            'USER' : 'root',
+            'PASSWORD' : '',
+            'HOST' : 'localhost',
+            'PORT' : '3306',
+        },
+    
+        'mongodb': {
+                'ENGINE': 'djongo',
+                'NAME': 'AA',
+                'ENFORCE_SCHEMA': False,
+                'CLIENT': {
+                    'host': 'localhost',
+                    'port': 27017,
+                    'username': 'dafina',
+                    'password': 'dafina123',
+                    'authSource': 'admin',
+                    'authMechanism': 'SCRAM-SHA-1',
+                }
+            }
+    }
+  ```
+
+5. Run database migration for Mysql and MongoDB
+ 
+   MySQL: ``python manage.py migrate``
+   
+  <div align="center"><img src="files/images/mysql-migrate.png" height="350px" /></div>
+  
+   MongoDB: ``python manage.py migrate --database=mongodb``
+
+   <div align="center"><img src="files/images/mongo-migrate.png" height="350px" /></div>
+
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+### System Architecture
 
 
 

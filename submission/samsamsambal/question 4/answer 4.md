@@ -13,11 +13,80 @@ Don't forget to hit the :star: if you like this repo.
 #### Matric No.: A20EC0202
 #### Dataset: 03 - Movies
 
-## Question 4 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Question 4 
+Import the necessary libraries
+```python
+import pandas as pd
+import pymongo
+import json
+```
+Retrieve the data and put into a dataframe
+```python
+client = pymongo.MongoClient("mongodb://localhost:27017/")
+db = client["mflix"]
+collection = db["movies"]
 
-## Question 4 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+data = list(collection.find())
+df = pd.DataFrame(data)
+```
+Removing nulls
+```python
+df = df.dropna()
+df.isnull().sum()
+```
+![Q3](file/image/q41.png)
+
+Import libraries for machine learning
+```python
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+```
+Prepare the data 
+```python
+imdb_rating = df['imdb'].apply(lambda x: float(x.get('rating', {}).get('$numberDouble', 0)))
+viewer_rating = df['tomatoes'].apply(lambda x: float(x.get('viewer', {}).get('rating', {}).get('$numberDouble', 0)))
+```
+Split the data and train the model
+```python
+X_train, X_test, y_train, y_test = train_test_split(imdb_rating, viewer_rating, test_size=0.2, random_state=42)
+model = LinearRegression()
+
+model.fit(X_train.values.reshape(-1, 1), y_train.values.reshape(-1, 1))
+
+# Make predictions
+y_pred = model.predict(X_test.values.reshape(-1, 1))
+
+# Evaluate the model
+mse = mean_squared_error(y_test, y_pred)
+r_squared = model.score(X_test.values.reshape(-1, 1), y_test.values.reshape(-1, 1))
+
+print("Mean Squared Error:", mse)
+print("R-squared:", r_squared)
+```
+![Q3](file/image/q42.png)
+
+Visualize the result
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+coefficients = np.polyfit(imdb_rating, viewer_rating, 1)
+p = np.poly1d(coefficients)
+trend_line = np.linspace(min(imdb_rating), max(imdb_rating), 100)
+
+# Plotting the scatter plot
+plt.scatter(imdb_rating, viewer_rating)
+plt.xlabel('IMDb Rating')
+plt.ylabel('Tomatoes Viewer Rating')
+plt.title('IMDb Rating vs Tomatoes Viewer Rating')
+plt.plot(trend_line, p(trend_line), color='r', label='Trend Line')
+
+
+# Displaying the plot
+plt.show()
+```
+![Q3](file/image/q43.png)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

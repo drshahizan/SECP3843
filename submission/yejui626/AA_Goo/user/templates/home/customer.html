@@ -81,7 +81,6 @@
                 <div class="card">
                     <div class="card-title">
                         <h4>Fee Collections and Expenses</h4>
-
                     </div>
                     <div class="card-body">
                         <div class="ct-bar-chart m-t-30"></div>
@@ -91,9 +90,26 @@
 
             <div class="col-lg-4">
                 <div class="card">
-
+                    <div class="card-title">
+                        <h4>Topic Predictions</h4>
+                    </div>
                     <div class="card-body">
-                        <div class="ct-pie-chart"></div>
+                        
+                        <form method="POST" action="{% url 'customer' %}">
+                            {% csrf_token %}
+                            <input type="text" name="instance" placeholder="Enter word here">
+                            <button type="submit">Predict</button>
+                        </form>
+                        <br>
+                        {% if predicted_topics %}
+                            <h5>Predicted Topics:</h5>
+                            <ul>
+                            {% for topic in predicted_topics %}
+                                <li>{{ topic }}</li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                        <!-- <div class="ct-pie-chart"></div> -->
                     </div>
                 </div>
             </div>

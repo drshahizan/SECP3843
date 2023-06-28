@@ -158,8 +158,27 @@ The machine learning that I will implement for my dataset is K-Means Clustering.
 
    ### Optimal Clusters
 
-   Once we have done K-Means Clustering, we need to know the optimal value of k.
+   Once we have done K-Means Clustering, we need to know the optimal value of k. 
    #### Elbow Method
+   - For Elbow method, it is basically comparing the inertia between the clusters, k. Inertia is something that can indicate how well the data points within each cluster are grouped together.
+
+     ```
+      range_of_k = range(2,15)
+
+      values = []
+      for k in range_of_k:
+          kmeans = KMeans(n_clusters=k, init="random", random_state=42)
+          kmeans.fit(scaled_features)
+          values.append(kmeans.inertia_)
+      
+      plt.plot(range_of_k, values, marker='o')
+      plt.xlabel('Number of Clusters (k)')
+      plt.ylabel('Inertia')
+      plt.title('K-means Inertia')
+      plt.show()
+      ``` 
+
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(11).png" /> 
    #### Silhouette Method
 
 

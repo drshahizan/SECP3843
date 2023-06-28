@@ -72,7 +72,7 @@ Don't forget to hit the :star: if you like this repo.
           )
    
           user_permissions = models.ManyToManyField(
-           'Permission,
+           Permission,
             verbose_name='user permissions',
             related_name='customUser_set',
             blank=True,
@@ -87,6 +87,269 @@ Don't forget to hit the :star: if you like this repo.
 - To do migration, run `python manage.py makemigrations` command and `python manage.py migrate` command. 
 
     <img width="626" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/373af744-c84a-4df6-914b-c53d6ca621f8">
+
+    Result:
+
+    <img width="814" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/0884fd8b-e96a-40cd-826c-ae3f0f4f6005">
+
+**5. Create User Registration and Login Views**
+
+- Create new file name `register.py` to define user input
+
+  ```
+  from django import forms
+  from .models import User
+   
+  class UserRegistrationForm(forms.ModelForm):
+       password = forms.CharField(widget=forms.PasswordInput)
+       user_type = forms.ChoiceField(choices=User.USER_TYPES)
+   
+       class Meta:
+           model = User
+           fields = ['username', 'password', 'email', 'first_name', 'last_name', 'user_type']
+   
+  class LoginForm(forms.Form):
+       username = forms.CharField(label='username')
+       password = forms.CharField(label='password', widget=forms.PasswordInput)
+    ```
+
+ - Create `views.py` file to define action for both Registration Form and Login Form as well as define the path to redirect to their respective dashboard page.
+
+   ```
+   from django.shortcuts import render
+   from django.contrib.auth import authenticate, login
+   from .register import UserRegistrationForm, LoginForm
+   
+   
+   
+   def user_register(request):
+       if request.method == 'POST':
+           form = UserRegistrationForm(request.POST)
+           if form.is_valid():
+               user = form.save(commit=False)
+               user.set_password(form.cleaned_data['password'])
+               user.save()
+               return redirect('login')
+       else:
+           form = UserRegistrationForm()
+       return render(request, 'user_register.html', {'register': form})
+   
+   
+   def login_view(request):
+       if request.method == 'POST':
+           username = request.POST.get('username')
+           password = request.POST.get('password')
+           user = authenticate(request, username=username, password=password)
+   
+           if user is not None:
+               login(request, user)
+               print(f"Logged in as {username}")
+               print(f"User type: {user.user_type}")
+               
+               if user.user_type == 'customer':
+                   print("Redirecting to customer dashboard")
+                   return redirect('cust_dashboard')
+               elif user.user_type == 'technical_worker':
+                   print("Redirecting to technical worker dashboard")
+                   return redirect('tech_dashboard')
+               elif user.user_type == 'senior_management':
+                   print("Redirecting to management dashboard")
+                   return redirect('management_dashboard')
+           else:
+               messages.error(request, 'Invalid username or password.')
+       
+       return render(request, 'login.html')
+   
+   def customer_dashboard_view(request): return render(request, 'cust_dashboard.html')
+   
+   def technical_worker_dashboard_view(request): return render(request, 'tech_dashboard.html')
+       
+   def management_dashboard_view(request): return render(request, 'management_dashboard.html')
+   
+   ```
+ - Create Registration Form `user_register.html`.
+
+   ```
+   <style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .form-label {
+        min-width: 100px;
+        text-align: right;
+        margin-right: 10px;
+    }
+
+    .form-input {
+        min-width: 200px;
+    }
+   </style>
+   
+   <h1>Register</h1>
+   <form method="POST" action="{% url 'login' %}" class="form-container">
+       <div class="form-row">
+           <label for="id_email" class="form-label">Email:</label>
+           <input type="text" id="id_email" name="email" class="form-input">
+       </div>
+   
+       <div class="form-row">
+           <label for="id_username" class="form-label">Username:</label>
+           <input type="text" id="id_username" name="username" class="form-input">
+       </div>
+   
+       <div class="form-row">
+           <label for="id_password" class="form-label">Password:</label>
+           <input type="password" id="id_password" name="password" class="form-input">
+       </div>
+   
+       <div class="form-row">
+           <label for="id_role" class="form-label">Role:</label>
+           <select id="id_role" name="role" class="form-input">
+               <option value="customer">Customer</option>
+               <option value="senior_management">Senior Management</option>
+               <option value="technical_worker">Technical Worker</option>
+           </select>
+       </div>
+   
+       <div class="form-row">
+           <input type="submit" value="Register">
+       </div>
+   </form>
+   ```
+   Result:
+
+   <img width="707" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/6b2ae578-22f6-4caf-b418-b9b449aad2d5">
+
+- Create Login Form `login.html`.
+
+  ```
+  <h1>Login</h1>
+   <form style="align-content: center;" method="POST" action="{% url 'login' %}">
+      
+    
+       <div>
+          <label for="id_username">Username:</label>
+          <input type="text" id="id_username" name="username">
+       </div>
+    
+       <div>
+          <label for="id_password">Password:</label>
+          <input type="password" id="id_password" name="password">
+       </div>
+    
+       <div>
+          <input type="submit" value="Login">
+       </div>
+    
+    </form>
+  ```
+
+  Result:
+
+  <img width="607" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/d93b1367-ff03-4bc0-8a8e-10a7b275cc05">
+
+- Create dashboard page for each users `cust_dashboard.html`, `tech_dashboard.html` and `management_dashboard.html`.
+
+  **cust_dashboard.html**
+
+  ```
+  <!DOCTYPE html>
+   <html>
+   
+   <head>
+      <title>Dashboard</title>
+      <style>
+         .dash {
+            font-size: 80px;
+            text-align: center;
+            margin-top: 200px;
+         }
+      </style>
+   </head>
+   
+   <body>
+      <div class="dash">
+         Customer Dashboard
+      </div>
+   </body>
+   
+   </html>
+  ```
+
+  Result:
+
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/e1ab96f7-7dce-481e-8d2a-997351846924">
+  
+  **tech_dashboard.html**
+
+  ```
+  <!DOCTYPE html>
+   <html>
+   
+   <head>
+      <title>Dashboard</title>
+      <style>
+         .dash {
+            font-size: 80px;
+            text-align: center;
+            margin-top: 200px;
+         }
+      </style>
+   </head>
+   
+   <body>
+      <div class="dash">
+         Technical Worker Dashboard
+      </div>
+   </body>
+   
+   </html>
+  ```
+
+   Result:
+
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/edf15a6b-7064-4a8c-9679-3dbe5980cbef">
+
+  
+  **management_dashboard.html**
+
+  ```
+  <!DOCTYPE html>
+   <html>
+   
+   <head>
+      <title>Dashboard</title>
+      <style>
+         .dash {
+            font-size: 80px;
+            text-align: center;
+            margin-top: 200px;
+         }
+      </style>
+   </head>
+   
+   <body>
+      <div class="dash">
+         Management Dashboard
+      </div>
+   </body>
+   
+   </html>
+  ```
+
+  Result:
+
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/f56c424e-1160-4042-b538-90126d27a952">
+
 
 
 ## Question 3 (b)
