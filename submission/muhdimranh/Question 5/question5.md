@@ -58,7 +58,11 @@ Open the [MongoDB website](https://account.mongodb.com/account/login?_ga=2.62663
 
 ### Charts and Dashboard Development.
 
+
+
 ![Q5](files/images/chart1.png)
+
+> Above chart shows average monthly room price for each property type. But before visualization can be made,
 
 ![Q5](files/images/chart3.png)
 
