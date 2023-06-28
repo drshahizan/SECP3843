@@ -232,7 +232,7 @@ Don't forget to hit the :star: if you like this repo.
 > Coupon used by customer according to their age
 > it is safe to say that most of the customer in this dataset does not used coupons when buying items
 
-> Second chart `Headtmap`.
+> Second chart `Heatmap`.
 > Customer Age and their Satisfaction
 > The heatmap shows that custoer within the age group 40 - 50 are very satisfied with thier purchase.
 
