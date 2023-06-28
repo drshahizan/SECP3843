@@ -52,7 +52,8 @@ Fortunately, using MongoDB Compass, we are able to perfom data aggregation easil
   <a href="https://app.powerbi.com/view?r=eyJrIjoiOWY2Y2VhYzctZTRmNC00ZDY2LThkYWYtZDI0YTRkMzAxNGEzIiwidCI6IjBlMGRiMmFkLWM0MTYtNDdjNy04OGVjLWNlYWM0ZWU3Njc2NyIsImMiOjEwfQ%3D%3D">
   <img src="images/dashboard.PNG" height="500px" />
   </a>
-  [Click on the image to directly go to the dashboard]
+  
+[Click on the image to directly go to the dashboard]
 </div>
 
 ### City Inspection Dashboard
