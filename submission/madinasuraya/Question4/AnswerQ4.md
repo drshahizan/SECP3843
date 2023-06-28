@@ -169,7 +169,7 @@ selected_fields.head(5)
     </p>
 
 #### Conclusions
-Based on the scatter plot of the actual vs predicted total money raised, it is mostly concentrated in the range of 0 to 1. This means that the regression model is not accurately predicting the total money raised for higher values. It is proven that the input features (number_of_employees and competitions) and the target variable (total_money_raised) is not linear as the regression line does not closely align with the scatter plot.
+Based on the scatter plot of the **actual vs predicted total money raised**, it is mostly concentrated in the range of 0 to 1. This means that the regression model is not accurately predicting the total money raised for higher values. It is proven that the input features (number_of_employees and competitions) and the target variable (total_money_raised) is not linear as the regression line does not closely align with the scatter plot.
 The metrics that we get evaluate the performance of the regression model.
 - **Means Squared Error (MSE)**: MSE measures the average squared difference between the predicted and actual values. Since the MSE is higher, it shows that the performance of the model is worse.
 - **Root Mean Squared Error (RMSE)**: RMSE is the square root of the MSE and provides a more interpretable measure of the average prediction error in the original scale of the target variable. Same as MSE, higher MSE indicates worse performance.
