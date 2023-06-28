@@ -87,7 +87,6 @@ class User(AbstractUser):
         ('senior_management', 'Senior Management'),
     )
     user_type = models.CharField(max_length=20, choices=USER_TYPES)
-    # Add any additional fields you need for each user type
 
     groups = models.ManyToManyField(
         'auth.Group',
@@ -201,7 +200,6 @@ TEMPLATES = [
 ```
 
 
-### Create login views and templates
 
 1. Add new class inside `forms.py`
 
