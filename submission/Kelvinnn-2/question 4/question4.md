@@ -227,7 +227,7 @@ print('Predicted Sector:', predicted_sector)
 ```
 <img src="./files/image/predicted.png">
 
-f. Calculate the accuracy of the model (assuming model is referring to the Decision Tree classifier):
+f. Calculate the accuracy of the model:
 ```python
 accuracy = classifier.score(business_features, sector_names)
 print('Accuracy:', accuracy)
