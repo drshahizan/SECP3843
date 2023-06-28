@@ -72,7 +72,7 @@ Don't forget to hit the :star: if you like this repo.
           )
    
           user_permissions = models.ManyToManyField(
-           'Permission,
+           Permission,
             verbose_name='user permissions',
             related_name='customUser_set',
             blank=True,
