@@ -56,32 +56,9 @@ Use MongoDB Atlass to visualize the JSON files
 
 ![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image8.png)  
 
+9. The above chart can be done by implementing the options below
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image9.png) 
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
