@@ -84,7 +84,7 @@ cols_drop = ['funding_rounds', 'investments', 'acquisition', 'acquisitions', 'of
 com.drop(cols_drop, axis=1, inplace=True)
 ```
 
-#### Step
+#### Step 4: Manipulate the Column
 #### Step
 #### Step
 #### Step
