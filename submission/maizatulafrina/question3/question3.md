@@ -15,7 +15,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 3 (a)
 
-**1. Django**
+**1. Django Installation**
    - Open Command Prompt and run `pip install Django` command.
      
      <img width="761" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/de153eb9-991a-4ff8-90c5-274078679718">
@@ -40,8 +40,13 @@ Don't forget to hit the :star: if you like this repo.
    -  In `settings.py` file, define the connection details for both MySQL and MongoDB database which include database name, username, password, host and others.
      
       <img width="499" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/de4a6b80-cecb-4912-8f8c-0b3aece9f262">
+      
+      Ensure the settings for Installed Apps is correct.
 
-**3. Define models for Django**
+      <img width="615" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/fbc54a40-c0b7-4fc5-8e99-acebd7a0757d">
+
+
+**3. Define Models**
 
 -  In `models.py` file, define the models according to its data structure and data types.
 
@@ -70,7 +75,6 @@ Don't forget to hit the :star: if you like this repo.
 
     <img width="626" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/373af744-c84a-4df6-914b-c53d6ca621f8">
 
-    <img width="717" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a915e9c8-4928-4671-b284-0bdb19fb431f">
 
 ## Question 3 (b)
 
