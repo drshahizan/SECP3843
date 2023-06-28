@@ -171,8 +171,107 @@ register.html
   <div align="center"><img src="files/images/register.png" height="500px" /></div>
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### Challenges of Data Replication between Mysql and MongoDB
 
+Replicating and synchronizing data between MySQL and MongoDB databases poses challenges due to differences in data models, query languages, and replication mechanisms. Mapping and transforming data, handling schema inconsistencies, ensuring consistent queries, managing conflicts, and monitoring replication are key challenges. Addressing them requires a well-planned replication strategy, leveraging database-specific mechanisms or external tools for real-time updates. Overcoming these challenges ensures data consistency and reliability across the databases. However, there are several approaches to address this challenge. 
+
+### Steps to maintain data consistency across both systems
+
+  1. Install the required database connectors: Django supports MySQL through the mysqlclient package and MongoDB through the djongo package. Install them using pip.
+     
+     ```python
+     pip install mysqlclient djongo
+     pip install djongo pymongo
+     ```
+     
+  1. Identify the Replication Requirements: Determine which data needs to be replicated between the MySQL and MongoDB databases. Not all data may require synchronization, so it's essential to define the scope of replication.
+     
+  3. Configure both database: Open Django project's settings file (settings.py) and configure the databases section to include both MySQL and MongoDB settings. For example:
+
+     ```python
+           DATABASES = {
+          'default': {
+              'ENGINE': 'django.db.backends.mysql',
+              'NAME': 'supplystore',
+              'USER' : 'root',
+              'PASSWORD' : '',
+              'HOST' : 'localhost',
+              'PORT' : '3306',
+          },
+      
+          'mongodb': {
+                      'ENGINE': 'djongo',
+                      'NAME': 'AA',
+                      'ENFORCE_SCHEMA': False,
+                      'CLIENT': {
+                          'host': 'localhost',
+                          'port': 27017,
+                          'username': 'dafina',
+                          'password': 'dafina123',
+                          'authSource': 'admin',
+                          'authMechanism': 'SCRAM-SHA-1',
+                      }
+                  }
+      }
+     ```
+  3. Define models for both databases: Create separate model classes for MySQL and MongoDB in Django app's models.py file. Annotate the models with the database routing information to specify which database to use for each model.
+       ```python
+      from django.db import models
+      from djongo import models as djongo_models
+      
+      
+      class MySQLSale(models.Model):
+          _id = models.CharField(max_length=255, primary_key=True)
+          saleDate = models.DateTimeField(db_column='sale_date')
+          storeLocation = models.CharField(max_length=100, db_column='store_location')
+          customerGender = models.CharField(max_length=1, db_column='customer_gender')
+          customerAge = models.PositiveIntegerField(db_column='customer_age')
+          customerEmail = models.EmailField(db_column='customer_email')
+          satisfaction = models.PositiveSmallIntegerField()
+          couponUsed = models.BooleanField(db_column='couponUsed')
+          purchaseMethod = models.CharField(max_length=100, db_column='purchase_method')
+      ```
+  5. Define the synchronization functions in sync.py:
+     
+       ```python
+         from pymongo import MongoClient
+         from .models import Sale, CustomUser
+        
+        def sync_mysql_to_mongodb_sale(sale_instance):
+            client = MongoClient('mongodb://localhost:27017/')
+            db = client['AA']
+            collection = db['sale']
+        
+            # Create or update the document in MongoDB
+            collection.update_one({'_id': sale_instance._id}, {'$set': sale_instance.__dict__}, upsert=True)
+        
+        def sync_mysql_to_mongodb_customuser(customuser_instance):
+            client = MongoClient('mongodb://localhost:27017/')
+            db = client['AA']
+            collection = db['customuser']
+        
+            # Create or update the document in MongoDB
+            collection.update_one({'_id': customuser_instance.id}, {'$set': customuser_instance.__dict__}, upsert=True)
+       ```
+  6. Call the synchronization functions to synchronize the data
+
+      ```python
+  
+      from .models import Sale, CustomUser
+      from .sync import sync_mysql_to_mongodb_sale, sync_mysql_to_mongodb_customuser
+      
+      def create_sale(request):
+          # Create a Sale instance in MySQL
+          sale = Sale(_id='123', saleDate='2023-06-30', storeLocation='New York', customerGender='M',
+                      customerAge=25, customerEmail='example@example.com', satisfaction=5,
+                      couponUsed=True, purchaseMethod='Online')
+          sale.save()
+      
+          # Synchronize the Sale instance to MongoDB
+          sync_mysql_to_mongodb_sale(sale)
+      
+          # Redirect or return a response
+      ```
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
