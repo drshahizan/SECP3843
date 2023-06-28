@@ -58,6 +58,26 @@ there will be  five server used for this project:
    ```
   python manage.py startapp AA
    ```
+**MANAGE DATABASE**
+
+To configure the database connections, open the settings.py file in your project folder in Visual Studio Code.
+DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.mysql',
+         'NAME': 'Mflix',
+         'USER': 'root',
+         'HOST': 'localhost',
+         'PORT': '3306',
+     },
+     'mongodb': {
+ 		'ENGINE': 'djongo',
+         'NAME': 'Mflix',
+         'ENFORCE_SCHEMA': False,
+         'CLIENT': {
+         'host': 'mongodb://localhost:27017/Mflix'
+ 	    }
+     }
+ }
    **Construct Django Model**
 
   Enter the'models.py' file and specify the models that reflect the data and correspond to the JSON dataset's structure.
