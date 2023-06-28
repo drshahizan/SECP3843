@@ -15,29 +15,41 @@ import urllib
 import base64
 from django.http import HttpResponse
 from django.template import loader
+from django.core.cache import cache
+from cachetools import cached, TTLCache
 
-import matplotlib.pyplot as plt
-import pandas as pd
-from pymongo import MongoClient
+result_by_sector_cache = TTLCache(maxsize=1, ttl=3600)  # Cache for inspections_by_sector
+inspections_by_month_cache = TTLCache(maxsize=1, ttl=3600)  # Cache for inspections_by_month
+
 
 def inspections_by_sector(request):
-    # Create a MongoClient instance
-    client = MongoClient('mongodb+srv://Kelvin2001:Ooiyj0131@cluster0.cokgc4s.mongodb.net/')
+     # Check if cached data is available
+    cached_data = cache.get('inspections_by_sector')
+    if cached_data:
+        print("Using cached data")
+        result_by_sector = cached_data
+    else:
+        print("Generating new data")
+        # Create a MongoClient instance
+        client = MongoClient('mongodb+srv://Kelvin2001:Ooiyj0131@cluster0.cokgc4s.mongodb.net/')
 
-    # Access the MongoDB database
-    db = client['AA']
+        # Access the MongoDB database
+        db = client['AA']
 
-    # Access the collection named "city_inspectionsDataset"
-    collection = db['city_inspectionsDataset']
+        # Access the collection named "city_inspectionsDataset"
+        collection = db['city_inspectionsDataset']
 
-    # Query the collection and retrieve the JSON data
-    data = list(collection.find())
+        # Query the collection and retrieve the JSON data
+        data = list(collection.find())
 
-    # Create a DataFrame from the JSON data
-    df = pd.DataFrame(data)
+        # Create a DataFrame from the JSON data
+        df = pd.DataFrame(data)
 
-    # Calculate the result_by_sector DataFrame
-    result_by_sector = df.groupby(['sector', 'result']).size().unstack().fillna(0)
+        # Calculate the result_by_sector DataFrame
+        result_by_sector = df.groupby(['sector', 'result']).size().unstack().fillna(0)
+
+        # Cache the result for future use
+        cache.set('inspections_by_sector', result_by_sector)
 
     # Select top 5 results
     top_results = result_by_sector.sum().nlargest(5).index
@@ -61,7 +73,7 @@ def inspections_by_sector(request):
     plt.subplots_adjust(bottom=0.25, left=0.1, right=0.9, top=0.9)  # Adjust the margins as needed
 
     # Save the chart to a file
-    chart_path = 'q3_app/static/images/chart.png' 
+    chart_path = 'q3_app/static/images/chart.png'
     plt.savefig(chart_path)
 
     # Pass the chart path to the template
@@ -70,7 +82,10 @@ def inspections_by_sector(request):
     # Render the template with the data
     return render(request, 'registrations/management_dashboard.html', context)
 
+@cached(inspections_by_month_cache)
 def inspections_by_month(request):
+    
+
     # Create a MongoClient instance
     client = MongoClient('mongodb+srv://Kelvin2001:Ooiyj0131@cluster0.cokgc4s.mongodb.net/')
 
