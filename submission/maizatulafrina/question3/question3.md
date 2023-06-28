@@ -88,6 +88,13 @@ Don't forget to hit the :star: if you like this repo.
 
     <img width="626" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/373af744-c84a-4df6-914b-c53d6ca621f8">
 
+    Result:
+
+    <img width="814" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/0884fd8b-e96a-40cd-826c-ae3f0f4f6005">
+
+**5. Create User Registration and Login Views**
+
+
 
 ## Question 3 (b)
 
