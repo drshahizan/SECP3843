@@ -15,6 +15,65 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 4
 
+Based on the tables you provided in the JSON files, it seems like a structured data that involves numerical and categorical features. In this case, `Logistic Regression` may be the most suitable machine learning algorithm as it is primarily used for predicting continuous numeric values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
