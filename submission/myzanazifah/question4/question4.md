@@ -14,7 +14,7 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Stories
 
 ## Question 4 (a)
-The machine learning that I will implement for my dataset is K-Means Clustering which is an unsupervised machine learning algorithm used to group a dataset into k clusters. For this project, I will be using Colab.
+The machine learning that I will implement for my dataset is K-Means Clustering which is an unsupervised machine learning algorithm used to group a dataset into k clusters. For this project, I will be using Colab to do the code. The file is attached [here](https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/code/q4.ipynb).
 
 1. Import Database
    - Install pymongo by running the code below:
@@ -215,7 +215,6 @@ The machine learning that I will implement for my dataset is K-Means Clustering 
       cluster_labels = kmeans.labels_
       features['cluster_label'] = cluster_labels
       
-      # Visualize the clusters
       plt.scatter(df['comments'], features['diggs'], c=features['cluster_label'], cmap='viridis')
       plt.xlabel('Number of Comments')
       plt.ylabel('Number of Diggs')
