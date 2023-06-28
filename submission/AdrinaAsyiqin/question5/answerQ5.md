@@ -148,7 +148,29 @@ Don't forget to hit the :star: if you like this repo.
     ```
 
 ## Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+I created this dashboard using MongoDB Charts.
+- Go to `MongoDB Atlas Charts` and sign into your account --> https://www.mongodb.com/products/charts
+- Go to your connection. Mine is named cluster 0
+
+- Click on 'Charts' from the tab menu in the connection
+  ![Alt text](image.png)
+
+  ![Alt text](image-1.png)
+- Choose your database
+
+  ![Alt text](image-2.png)
+
+  ![Alt text](image-3.png)
+
+  ![Alt text](image-4.png)
+
+  ![Alt text](image-5.png)
+
+  
+
+
+
+
 
 
 ## Contribution 🛠️

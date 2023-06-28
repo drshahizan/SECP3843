@@ -72,8 +72,6 @@ Don't forget to hit the :star: if you like this repo.
 
   df.dropna(inplace=True)
 
-  df = df.drop(columns=["_id"])
-
   df["couponUsed"] = df["couponUsed"].astype(bool)
 
   df.info()
@@ -93,8 +91,10 @@ Don't forget to hit the :star: if you like this repo.
   # Create a bar chart
   plt.figure(figsize=(10, 6))
   plt.bar(sales_by_location.index, sales_by_location.values)
+
   plt.xlabel('Store Location')
   plt.ylabel('Number of Sales')
+  
   plt.title('Sales Distribution by Store Location')
   plt.xticks(rotation=45)
   plt.show()
