@@ -15,21 +15,26 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Analytics](https://github.com/drshahizan/dataset/tree/main/mongodb/02-analytics)
 
 ## Question 1 (a)
-As an IT consultant, I was responsible for guiding the technical team on how to implement a configuration that involves five servers for our latest project. For this endeavor, my team had to integrate the Django web framework with both MySQL and MongoDB databases and use a JSON dataset to create the required web pages. The five servers that we'll be leveraging for this project are:
+As an IT consultant, I was responsible for guiding the technical team on how to implement a configuration that involved five servers for our latest project. For this endeavor, my team had to integrate the Django web framework with both MySQL and MongoDB databases and use a JSON dataset to create the required web pages. The five servers that we'll be leveraging for this project are:
 
 Server 1: Web Server
-A web server is required to host and manage incoming HTTP requests for the Django application. For this project, nginx was chosen as it is highly scalable, efficient, and offers excellent support for load balancing, caching, and handling HTTP requests. 
+
+To host and manage incoming HTTP requests for the Django application, usually using Nginx or Apache. 
 
 Server 2: Django Application Server
+
 To effectively use Django, a reliable application server is crucial. It provides infrastructure for seamless framework operation and easy logic management. With a Django server, developers can streamline development and improve app functionality.
 
 Server 3: MySQL Database Server
+
 MySQL is a great way to store relational data from the portal. It's a powerful database management system offers secure and efficient storage, optimal performance, and seamless integration with Django through the Django-MySQL package. 
 
 Server 4: MongoDB Database Server
+
 This project will be using MongoDB Compass or Atlass to manage JSON datasets. MongoDB's document-based approach is great for unstructured data and allows for scalability and advanced queries. For Django integration, we suggest using Django MongoDB Engine. MongoDB Compass or Atlass are flexible and reliable tools for managing JSON datasets.
 
 Server 5: Load Balancer
+
 It's important to have a good system for managing traffic to ensure the web server and database servers are balanced. This helps prevent overload and ensures users can access the website quickly. By monitoring traffic and making changes as needed, the system can be maintained and handles lots of traffic without problems. Also, improve performance and avoid downtime or data loss by using failover and redundancy measures.
 
 ### The steps to integrate Django with the JSON dataset.
