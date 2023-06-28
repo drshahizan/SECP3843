@@ -14,8 +14,10 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: City Inspections
 
 ## Question 4 : <b> A.Implementation of Machine Learning in Django </b>
+Accurate classification of businesses into the respective sectors is crucial for various applications such as market analysis, investment decisions, and business recommendations. In this report, I will explore the use of a Decision Tree Classifier to predict business sectors based on their names. The solution is implemented in `q3` project `q3_app` where it is continuous coding from the previous question.
+
 ### 1 : Install required libraries
-To perform machine learning, we need to install the `scikit-learn` library to our project using 
+To perform machine learning, install the `scikit-learn` library to our project using the following commands:
 ```python
 pip install scikit-learn
 ```
@@ -75,6 +77,7 @@ def customer_dashboard(request):
     # Render the initial customer template
     return render(request, 'registrations/customer_dashboard.html', context)
 ```
+
 #### 3. Add form into `customer_dashboard.html` 
 ```python
 <form method="post" action="{% url 'customer_predict' %}">
