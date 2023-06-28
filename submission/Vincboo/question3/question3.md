@@ -229,6 +229,8 @@ Open MongDB and create a database named `Question3` and collection as `q3`.
 ### 5. Create a New folder and File
 New folder name as `MySQL-to-MongoDB-Replication` and a new python file as `mysql_to_mongodb_replication.py`
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/300e1bb7-434c-4aa2-b577-61e48be99f75"/>
+
+### 6. Code Explaination 
 There are two techniques that had been used in this file is MySQL binary log replication and MySQL triggers.
 MySQL binary log replication is a feature in MySQL that allows you to replicate changes made to a MySQL database from one server to another.
 MySQL triggers are database objects that are associated with a table and automatically execute in response to specific events or actions performed on that table.
@@ -377,13 +379,13 @@ mysql_connection.close()
 mongo_client.close()
 ```
 
-### 6. Run the program
+### 7. Run the program
 1. Before we run the program, we will need to download the package `pip install mysql-connector-python`
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/e6409e6a-d5da-4567-908d-1038b41c611b"/>
 2. Use the code to run python file `mysql_to_mongodb_replication.py`
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/7d0c4a91-4ffe-4f1e-8f97-c91080cf4cd4"/>
 
-### Results
+### 8. Results
 #### 1. MySQL
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/fc58be3b-097d-477b-bdf1-2543b0f4eba1"/>
 
