@@ -130,7 +130,11 @@ The Geo Choropleth chart above describes the average room price per night accros
 
 The chart suggests that United States Airbnb listings charge the most money per night at USD185.77 while Turkey is the cheapest at only USD14.36 per night.
 
-There are not as many choices for cheap
+
+<img src="files/images/usa.airbnb.png" align="left">
+<img src="files/images/turkiye.airbnb.png" align="right">
+
+From above search queries in Airbnb website, there are not as many choices for cheap rooms in the USA aside from campsites.
 
 Query:
 
@@ -287,13 +291,22 @@ Query:
 
 ![Q5](files/images/chart6.png)
 
+Heatmap chart above shows the number of reviews given on each day of the week over the years.
 
 ![Q5](files/images/chart8.png)
 
+Donut chart above shows the distribution of property type in listings. It suggests that apartment has the most listings.
+
 ![Q5](files/images/chart9.png)
 
+Scatter plot above describes the relationship between review ratings and number of reviews for listings. The higher the number of reviews tends to result in higher review ratings.
 
 
+### Dashboard
+
+![Q5](files/images/q5.3.png)
+
+Above is the completed dashboard, like Tableau, MongoDB allows real-time dashboard filtering 
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
