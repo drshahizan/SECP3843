@@ -25,17 +25,32 @@ Based on the tables you provided in the JSON files, it seems like a structured d
 
 **Step 2**
 
-- Import pymongo
+- Install pymongo
 
   ```python
   !pip install pymongo
   ```
 
+- Import these libraries
 
+```python
+import pandas as pd
+import datetime as dt
+import pymongo
+```
 
+- Retrieve `customers.json` from MongoDB Compass
 
+```python
+# Connect to MongoDB and retrieve data
+client = pymongo.MongoClient("mongodb+srv://admin:admin@projectcluster.7sndifd.mongodb.net/")
+db = client["Analytics"]
+collection = db["Customers"]
+data = list(collection.find())
 
-
+# Convert to dataframe
+df1 = pd.DataFrame(data)
+```
 
 
 
