@@ -170,17 +170,17 @@ path('management_dashboard/', management_dashboard_view, name='management_dashbo
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/af501f19-f79a-4169-9b96-d269f7d623cb"/>
 
 2. Register
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/c4551943-55e4-4665-a516-19b1c4b2b25e"/>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/eba581cf-fc31-4ddc-bc04-9ecabb6d1893"/>
 
 #### Dashboard
 1. Customer 
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/00a01dd0-a4a2-49a4-8403-46460d70e8f6"/>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/64288463-6c87-4cce-b310-2ba60731b547"/>
 
 2. Technical Worker
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/ce4098cd-5872-46f4-a3a1-c31a10eaa6cb"/>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/7777fa27-3c8f-4b90-8b24-2618f883f8f7"/>
 
-3. Management
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/cbb73235-1106-4aa8-8242-50b0b95782c2"/>
+3. Senior Manager
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/f15969d5-411a-4443-892e-d9b4c4307b88"/>
 
 ## Question 3 (b)
 ### 1. Understand and Identify
