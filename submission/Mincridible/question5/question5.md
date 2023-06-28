@@ -52,9 +52,26 @@ In this Chart, I am using two fields from the json file. For X Axis is `name` at
 
 <img src="../materials/Q5b_6.png">
 
-In this Heatmap, I am linking the two fields which are `founded_year` and `deadpooled_year`. For X Axis I use `deadpooled_year` while for Y Axis I use `founded_year` and the intensity is `id` set it to count. I use 20 Years interval for `each deadpooled_year` and `founded_year`.
+In this Heatmap, I am linking the two fields which are `founded_year` and `deadpooled_year`. For X Axis I use `deadpooled_year` while for Y Axis I use `founded_year` and the intensity is `id` set it to count. I use 20 Years interval for `each deadpooled_year` and `founded_year`. The `NaN` value on the X Axis indicates that the company is still alive or that the `deadpooled_year` is missing from the fields.
 
-### 
+
+### Cumulative Acquisition Amount By Sector
+
+<img src="../materials/Q5b_9.png">
+
+For this specific graph, I use a discrete line chart with the Y Axis set to `category_code` and the Y Axis set to `price amount` under the acquisition field. Then, in the Aggregate box, I select `SUM` to total all of the `price amount`. I also exclude `NULL and EMPTY STRING` and set the Min Option for `price_amount` to 1. The chart's discrete design highlights the various categories, making the differences between them easier to read and analyse.
+
+
+### Acquisition Price by Year and Acquiring Company
+
+<img src="../materials/Q5b_8.png">
+
+In the making of chart, I use `accquired_year` as my X Axis and `price_amount` as my Y Axis and `name` as Series. I filter `acquired_year` and set min to `1992` and `price_amount` to 1. This graph displays the relationship between acquisition price, acquisition year, and acquiring company names.
+
+### Dashboard
+
+<img src="../materials/Q5b_7.png">
+
 
 
 
