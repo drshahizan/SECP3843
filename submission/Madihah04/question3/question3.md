@@ -335,7 +335,7 @@ Uncomment `log-bin=mysql-bin`. Also, change the port to availble and unused port
 3. Create folder `replicationDB` and a python file  `replicationDB.py`
    
 ```kotlin
-Destop/
+Desktop/
 ├── myenv/
 ├── project/
 ├── stories/
