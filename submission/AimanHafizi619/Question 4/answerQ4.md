@@ -85,7 +85,11 @@ grouped_data = df.groupby([age_groups, 'tier']).size().unstack().reindex(columns
 grouped_data.columns = [f"{tier} ({age_group})" for tier, age_group in zip(grouped_data.columns, age_group_labels)]
 ```
 
+7. print(grouped_data)
 
+```python
+print(grouped_data)
+```
 
 
 
