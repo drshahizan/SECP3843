@@ -34,6 +34,8 @@ Removing nulls
 df = df.dropna()
 df.isnull().sum()
 ```
+![Q3](file/image/q41.png)
+
 Import libraries for machine learning
 ```python
 from sklearn.model_selection import train_test_split
@@ -62,6 +64,7 @@ r_squared = model.score(X_test.values.reshape(-1, 1), y_test.values.reshape(-1, 
 print("Mean Squared Error:", mse)
 print("R-squared:", r_squared)
 ```
+![Q3](file/image/q42.png)
 
 Visualize the result
 ```python
@@ -83,7 +86,7 @@ plt.plot(trend_line, p(trend_line), color='r', label='Trend Line')
 # Displaying the plot
 plt.show()
 ```
-
+![Q3](file/image/q43.png)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
