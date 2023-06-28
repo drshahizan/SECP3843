@@ -14,10 +14,98 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: City Inspections
 
 ## Question 3 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+**1. Django Installation**
+   - Open Command Prompt and run `pip install Django` command.
+     
+     <img width="761" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/de153eb9-991a-4ff8-90c5-274078679718">
+
+   - Then, run `django-admin startproject inspection` command to create Django project.
+     
+     <img width="436" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/0fd1bd51-bc43-45ff-9b77-310da84583e6">
+
+   - Next step, in order to create a django app inside the folder, run `python manage.py startapp inspectionApp`. This is where we can define all the models for MySQL and MongoDB.
+
+     <img width="465" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/3aa6d421-d49d-4332-813d-bb60aff4f53e">
+
+   - The other packages that need to be installed are mysqlclient and djongo. To install mysqlclient, run `pip install django mysqlclient pymongo` command.
+     
+     <img width="415" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/aaddfea3-909f-4de1-b7a3-ca1570a8bf53">
+
+   - For djongo, run `pip install djongo` command.
+
+     <img width="415" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/ca408d19-7517-4282-b26b-86746daaff01">
+
+**2. Define Connection Details for MySQL and MongoDB**
+   -  In `settings.py` file, define the connection details for both MySQL and MongoDB database which include database name, username, password, host and others.
+     
+      <img width="499" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/de4a6b80-cecb-4912-8f8c-0b3aece9f262">
+      
+      Ensure the settings for Installed Apps is correct.
+
+      <img width="615" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/fbc54a40-c0b7-4fc5-8e99-acebd7a0757d">
+
+
+**3. Define Models**
+
+-  In `models.py` file, define the models according to its data structure and data types.
+
+      ```python
+      from django.db import models
+      from django.contrib.auth.models import AbstractUser, Group, Permission
+      
+      class User(AbstractUser):
+          USER_TYPE_CHOICES = (
+              ('customer', 'Customer'),
+              ('technical_worker', 'Technical Worker'),
+              ('senior_management', 'Senior Management'),
+          )
+          
+          user_type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES)
+      
+          groups = models.ManyToManyField(
+           Group,
+           verbose_name='groups',
+           related_name='customUser_set',
+           blank=True,
+           
+          )
+   
+          user_permissions = models.ManyToManyField(
+           Permission,
+            verbose_name='user permissions',
+            related_name='customUser_set',
+            blank=True,
+          )
+
+          def _str_(self):
+               return self.username 
+    
+
+**4. Migrate the Models**
+
+- To do migration, run `python manage.py makemigrations` command and `python manage.py migrate` command. 
+
+    <img width="626" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/373af744-c84a-4df6-914b-c53d6ca621f8">
+
+    Result:
+
+    <img width="814" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/0884fd8b-e96a-40cd-826c-ae3f0f4f6005">
+
+**5. Create User Registration and Login Views**
+
+<img width="355" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a2823276-392b-4c80-87ad-3135792755f5">
+
+
+<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/e1ab96f7-7dce-481e-8d2a-997351846924">
+
+<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/edf15a6b-7064-4a8c-9679-3dbe5980cbef">
+
+<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/f56c424e-1160-4042-b538-90126d27a952">
+
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

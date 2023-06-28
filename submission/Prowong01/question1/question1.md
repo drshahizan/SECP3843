@@ -15,8 +15,24 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/04-companies" >Companies</a>
 
 ## Question 1 (a)
+Below are the brief introduction of the 5 servers. 
+
+1. Django Application Server:<br>
+   This is a server that runs your Django web application using a Python web framework. It handles requests from clients, executes your code, and returns responses. You can use different web servers to run your Django app, such as Apache, Nginx, Gunicorn, or uWSGI
+
+2. MySQL Database Server:<br>
+   This is a server that runs MySQL, a relational database management system (RDBMS) that uses SQL (Structured Query Language) to store and manipulate data. MySQL is one of the most popular and widely used databases in the world. It can handle large amounts of data and support transactions, replication, and backup.
+
+3. MongoDB Database Server:<br>
+   This is a server that runs MongoDB, a document-oriented database that stores data in JSON-like documents. MongoDB is a NoSQL database that is designed for high performance, scalability, and flexibility. MongoDB can handle unstructured and semi-structured data, such as chats, real-time streams, feeds, and surveys.
+
+4. Caching Server:<br>
+   This is a server that stores frequently accessed data or web pages in memory for faster retrieval. A caching server can reduce the latency and bandwidth consumption of your web application by serving cached data instead of requesting it from the origin server every time. A caching server can also improve the user experience and SEO (Search Engine Optimization) of your web application by delivering faster responses.
+
+5. Load Balancer or Reverse Proxy:<br>
+   This is a server that distributes incoming requests to multiple backend servers based on various criteria, such as load, availability, or location. A load balancer or reverse proxy can improve the performance, reliability, and security of your web application by reducing the load on individual servers, preventing server overload or failure, and providing encryption or authentication.
 ### Step 1: Install Python & Django
-Install Python 3 from the <a href=" www.python.org"> official website </a> according to your operating system. <br/>
+Install Python 3 from the <a href=" www.python.org"> official website </a> according to your operating system and verify that Python is installed <br/>
 Command: 
 ```
 python --version
@@ -46,6 +62,7 @@ Command:
 ```
 env\Scripts\activate
 ```
+<img  src="./files/images/activate.png"></img>
 
 ### Step 3: Install Django Package 
 After activate virtual environment, next is to install Django by using the pip command and install the latest Django release from the Python
@@ -157,8 +174,8 @@ User can send requests to the web server, such as viewing a web page, submitting
 This is the component that handles the requests from the clients and serves the web pages or API responses. You can use Django as your web framework to build your web server, as it provides a high-level abstraction of common web development tasks, such as URL routing, template rendering, authentication, etc. Django also supports multiple database backends, which allows you to use MySQL and MongoDB in your system.
 
 #### Database (MySQL & MongoDB)
-These are the components that persistently store and manage data.
--MySQL: MySQL is a relational database that uses tables, rows, and columns to store structured data. It supports SQL queries, transactions, and joins, which can be useful for performing complex operations on data.
+These are the components that persistently store and manage data. </br>
+-MySQL: MySQL is a relational database that uses tables, rows, and columns to store structured data. It supports SQL queries, transactions, and joins, which can be useful for performing complex operations on data.</br>
 -MongoDB: MongoDB is a document database that uses collections, documents, and fields to store unstructured or semi-structured data. It supports dynamic schemas, flexible queries, and aggregation pipelines, which can be useful for handling large amounts of data or data with varying structures.
 
 #### Dataset (JSON)

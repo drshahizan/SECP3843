@@ -15,10 +15,100 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Airbnb Listings Dataset](https://github.com/drshahizan/dataset/tree/c8e9f4a7cbdb0c1b78ca2c73915ff56ceeb50e70/mongodb/05-airbnb)
 
 ## Question 4 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  1. Data packages and import library
+      ```ruby
+      !pip install pymongo
 
-## Question 4 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      import pandas as pd
+      import numpy as np
+      import pymongo
+      ```
+     
+  3. Get data from MongoDB
+     ```ruby
+      client = pymongo.MongoClient("mongodb+srv://rf_user:rishma3112@newcluster.vekvrpq.mongodb.net/test")
+      db = client["AA_STDE"]
+      dataCollection = db["Question4"]
+      data = list(dataCollection.find())
+      ```
+
+     
+  5. Preprocessing of data by dropping irrelevant columns and handle missing values
+     ```ruby
+      df = pd.DataFrame(data)
+
+      ```
+     ```ruby
+     df.head(10)
+
+      ```
+     ```ruby
+
+     columns_to_drop = ['images', 'host', 'address']
+     df = df.drop(columns_to_drop, axis=1)
+
+      ```
+     ```ruby
+
+     df = df.fillna('') 
+      ```
+
+  7. TF-IDF feature extraction from scikit-learn by using ``TfidfVectorizer``.
+      ```ruby
+
+      from sklearn.feature_extraction.text import TfidfVectorizer
+
+      # Combine text-based attributes into a single attribute
+      text_attributes = ['name', 'summary', 'space', 'description', 'neighborhood_overview', 'notes', 'transit', 'access']
+      df['combined_text'] = df[text_attributes].apply(lambda x: ' '.join(x), axis=1)
+      
+      # Perform TF-IDF feature extraction
+      vectorizer = TfidfVectorizer()
+      features = vectorizer.fit_transform(df['combined_text'])
+      ```
+  9. Train a k-means clustering model with a specified number of clusters ``(num_clusters)`` and the fit() function is used to fit the model to the TF-IDF features.
+      ```ruby
+
+       from sklearn.cluster import KMeans
+      
+      # Train a k-means clustering model
+      num_clusters = 5
+      kmeans = KMeans(n_clusters=num_clusters)
+      kmeans.fit(features)
+      ```
+  11. Assign clusters to data points by using ``predict()`` function on the k-means model.
+      ```ruby
+
+      # Assign clusters to data points
+      df['cluster_label'] = kmeans.predict(features)
+      ```
+  13. Analyze and visualize clusters
+       ```ruby
+
+      # Analyze clusters
+      cluster_counts = df['cluster_label'].value_counts()
+      print(cluster_counts)
+      
+      # Visualize clusters
+      import matplotlib.pyplot as plt
+      
+      plt.bar(cluster_counts.index, cluster_counts.values)
+      plt.xlabel('Cluster')
+      plt.ylabel('Number of Listings')
+      plt.title('Distribution of Listings across Clusters')
+      plt.show()
+      ```
+  15. The output:
+      - The Code and the output can viewed in the [Google Colab file](https://github.com/drshahizan/SECP3843/blob/1171cb1329516edff8bad6fa64d7c0dd4743f734/submission/RishmaFathima/Question4/files/source-code/AA_Question4.ipynb).
+        <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/4fc1f5ec9bb57b64dae27791f218e5b22278bbae/submission/RishmaFathima/Question4/files/images/4.1.png">
+    
+  16. Why this machine learning is effective:
+      
+      Machine learning algorithms can offer users personalised recommendations by examining user behaviour and preferences. Based on the user's prior interactions,          search history, or demographic data, a portal may propose pertinent items, products, or content. By doing this, the user experience is improved and the portal         is used more frequently.
+             
+  
+
+
 
 
 

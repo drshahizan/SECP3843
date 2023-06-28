@@ -47,7 +47,9 @@ mongoimport --uri=mongodb+srv://mikhel:admin@cluster0.kwav8pt.mongodb.net/ --db=
 ![image](https://github.com/drshahizan/SECP3843/assets/3646429/662d0e92-bdda-4b28-b584-a71666bad59f)
 
 Now if we look in MongoDB Compass, we should be able to see the imported data.
-![image](https://github.com/drshahizan/SECP3843/assets/3646429/f0c7d6e4-fff6-41f6-be30-e300ea2dae73)
+
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/994d5741-3593-4c5c-89a9-b5262d8d95e1)
+
 
 
 

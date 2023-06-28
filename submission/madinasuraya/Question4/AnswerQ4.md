@@ -15,7 +15,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ### Question 4 
 
-Machine learning approach that I choose is **supervised learning** where I perform a **linear regression** to make prediction on a set of labeled data. For this dataset about companies listed in Crunchbase website, I wanted to make prediction on the total money raised by the companies with the number of employees and number of competitors that they have. Here are few steps that I used using python language:
+Machine learning approach that I choose is **supervised learning** where I perform a **linear regression** to make prediction on a set of labeled data. For this dataset about companies listed in Crunchbase website, I wanted to make prediction on the **total money raised** by the companies with the **number of employees** and **number of competitors** that they have. Here are few steps that I used using python language:
 
 #### Libraries Installation
 ```
@@ -169,7 +169,7 @@ selected_fields.head(5)
     </p>
 
 #### Conclusions
-Based on the scatter plot of the actual vs predicted total money raised, it is mostly concentrated in the range of 0 to 1. This means that the regression model is not accurately predicting the total money raised for higher values. It is proven that the input features (number_of_employees and competitions) and the target variable (total_money_raised) is not linear as the regression line does not closely align with the scatter plot.
+Based on the scatter plot of the **actual vs predicted total money raised**, it is mostly concentrated in the range of 0 to 1. This means that the regression model is not accurately predicting the total money raised for higher values. It is proven that the input features (number_of_employees and competitions) and the target variable (total_money_raised) is not linear as the regression line does not closely align with the scatter plot.
 The metrics that we get evaluate the performance of the regression model.
 - **Means Squared Error (MSE)**: MSE measures the average squared difference between the predicted and actual values. Since the MSE is higher, it shows that the performance of the model is worse.
 - **Root Mean Squared Error (RMSE)**: RMSE is the square root of the MSE and provides a more interpretable measure of the average prediction error in the original scale of the target variable. Same as MSE, higher MSE indicates worse performance.
@@ -177,7 +177,7 @@ The metrics that we get evaluate the performance of the regression model.
 
 Based on the metrics, it shows that the linear regression model is not performing well in predicting total money raised. High MSE and RMSE indicate a large prediction error and the negative R-squared suggests that the model does not capture the underlying relationship between the input features and the target variable.
 
-Lastly, we can see that the dataset itself has limitations. There are too many fields with null values which is almost half of the records. Thus, performing feature extraction might be the best as we are not involving the data that are much likely can’t be predicted.
+Lastly, we can see that the dataset itself has limitations. There are too many records with null values which are almost half of the records and the fields that can be used for prediction are also limited. Performing feature extraction might be the best as we are not involving the data that are much likely unsuitable to be predicted. However, the data that been extracted also does not support well on one another.
 
 
 ## Contribution 🛠️
