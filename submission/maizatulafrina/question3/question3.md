@@ -94,6 +94,14 @@ Don't forget to hit the :star: if you like this repo.
 
 **5. Create User Registration and Login Views**
 
+<img width="355" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a2823276-392b-4c80-87ad-3135792755f5">
+
+
+<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/e1ab96f7-7dce-481e-8d2a-997351846924">
+
+<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/edf15a6b-7064-4a8c-9679-3dbe5980cbef">
+
+<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/f56c424e-1160-4042-b538-90126d27a952">
 
 
 ## Question 3 (b)
