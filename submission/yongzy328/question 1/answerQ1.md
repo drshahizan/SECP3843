@@ -27,8 +27,12 @@ The 5 servers of this project are implemented as below:
       <td>Used to handle the network routings (including the incoming requests and outgoing responses) between the user's browser and the Django framework through HTTP protocols. Examples of web server services are Apache HTTP Server, Nginx, and Microsoft IIS.</td>
     </tr>
     <tr>
-      <td>MySQL Database Server</td>
-      <td></td>
+      <td>Database Server 1 (MySQL)</td>
+      <td>Used to host the MySQL database for the system. It is crucial in handling the client's request from the application and executing the database operations such as inserting, querying, updating and deleting through the SQL queries. Django application will connect to this database using the package <code>mysqlclient</code>.</td>
+    </tr>
+    <tr>
+      <td>Database Server 2 (MongoDB)</td>
+      <td>Used to host the MongoDB database for the system. </td>
     </tr>
   </tbody>
 </table>
@@ -46,7 +50,7 @@ The 5 servers of this project are implemented as below:
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015242.png" alt="database setting">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015505.png" alt="model">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20153939.png" alt="model">
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015411.png" alt="make migrations">
 
@@ -54,9 +58,9 @@ The 5 servers of this project are implemented as below:
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015852.png" alt="mysql after migration">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20042111.png" alt="loaddata1">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20153924.png" alt="loaddata1">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20042118.png" alt="loaddata2">
+<img src="" alt="loaddata2">
 
 
 
