@@ -99,7 +99,7 @@ Don't forget to hit the :star: if you like this repo.
       plt.show()
       ```
   15. The output:
-      - The Code and the output can viewed in the Google Colab file.
+      - The Code and the output can viewed in the [Google Colab file](https://github.com/drshahizan/SECP3843/blob/1171cb1329516edff8bad6fa64d7c0dd4743f734/submission/RishmaFathima/Question4/files/source-code/AA_Question4.ipynb).
         
     
   16. Why this machine learning is effective:
