@@ -22,6 +22,19 @@ For the portal, I have suggested using MongoDB database to store the JSON datase
   Indexes is commonly used to find documents in a collection quickly. By implementing indexes, this will enable MongoDB to find documents that match a certain query quickly even though the dataset has a large volume of datas. Not only that but indexes can help improve the performance of queries which are used to create visualizations for dashboard as using indexes will reduce the amount of data that needs to be scan and read.
 
   #### Steps to Create Indexes in MongoDB
+
+  1. Go to MongoDB Compass and navigate to the database which stores the dataset. In my case, the Stories dataset.
+        
+      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/images/q5(1).png" />
+  2. Next, click on the Indexes tab. Based on the figure below, it is shown that there's an existing indexes which is _id.        
+
+     <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/images/q5(2).png" />
+  3. Then, create a new index as shown below. Choose the column you want to become an index and for the index for submit_date, I chose the type to be descending.      
+
+     <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/images/q5(3).png" />
+  4. From the figure below, I have created four new indexes which are submit_date, promote_date which both of the indexes I have set the types as descending. Other than that is comments and diggs which I have set the types as ascending.      
+
+     <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/images/q5(4).png" />
   
   ### Aggregations
 
