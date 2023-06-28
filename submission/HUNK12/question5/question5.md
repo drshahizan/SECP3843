@@ -17,7 +17,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 5 (a)
 There are several ways to optimize performance when dealing with a large volume of JSON data. The following are a few examples on how to do so:
 
-### Data Preprocessing
+### 1. Data Preprocessing
 This is one of the easiest ways to improve performance. All thats needed to do filter and clean the JSON data to eliminate unnecessary information and then converting the JSON data into a more efficient format such as a pandas DataFrame.  In the case of the `Tweets` dataset, what I did was drop all the columns except for the `text` column since thats all is needed to perform the sentiment analysis in [Question 4](https://github.com/drshahizan/SECP3843/blob/main/submission/HUNK12/question4/question4.md#step-3-remove-other-columns) . Below is the code on how to perform the latter:
 
 ####  Upload the original dataset and check the file size
