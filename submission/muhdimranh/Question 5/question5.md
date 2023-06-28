@@ -118,10 +118,159 @@ Query:
 
 ![Q5](files/images/chart3.png)
 
+The chart above describes the average room price per night accross different countries. This will give accurate representation on how different countries' Airbnb listings prices differ from each other. Similarly, the price per night must be converted to be in USD.
+
+Query:
+
+```
+[
+  {
+    "$addFields": {
+      "converted_price": {
+        "$switch": {
+          "branches": [
+            {
+              "case": { "$eq": [ "$address.country", "Brazil" ] },
+              "then": { "$multiply": [ "$price", 0.21 ] }  // Convert BRL to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Spain" ] },
+              "then": { "$multiply": [ "$price", 1.09 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Canada" ] },
+              "then": { "$multiply": [ "$price", 0.76 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Portugal" ] },
+              "then": { "$multiply": [ "$price", 1.09 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "China" ] },
+              "then": { "$multiply": [ "$price", 0.14 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Turkey" ] },
+              "then": { "$multiply": [ "$price", 0.039 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Hong Kong" ] },
+              "then": { "$multiply": [ "$price", 0.13 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Australia" ] },
+              "then": { "$multiply": [ "$price", 0.67 ] }  // Convert CAD to USD using exchange rate
+            }
+          ],
+          "default": "$price"  // Keep the original price for other countries
+        }
+      }
+    }
+  }
+]
+```
+
 ![Q5](files/images/chart4.png)
+
+Line chart above describes price changes over the years across different countries.
 
 ![Q5](files/images/chart5.png)
 
+Scatter plot above visualizes the relationship between room cleanliness rating and cleaning fee. The result shows that higher cleaning fee tends to have higher cleanliness rating.
+
+Query:
+
+```
+[
+  {
+    "$match": {
+      "review_scores.review_scores_cleanliness": { "$ne": null }
+    }
+  },
+  {
+    "$addFields": {
+      "converted_cleaning_fee": {
+        "$switch": {
+          "branches": [
+            {
+              "case": { "$eq": [ "$address.country", "Brazil" ] },
+              "then": { "$multiply": [ "$cleaning_fee", 0.21 ] }  // Convert BRL to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Spain" ] },
+              "then": { "$multiply": [ "$cleaning_fee", 1.09 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Canada" ] },
+              "then": { "$multiply": [ "$cleaning_fee", 0.76 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Portugal" ] },
+              "then": { "$multiply": [ "$cleaning_fee", 1.09 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "China" ] },
+              "then": { "$multiply": [ "$cleaning_fee", 0.14 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Turkey" ] },
+              "then": { "$multiply": [ "$cleaning_fee", 0.039 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Hong Kong" ] },
+              "then": { "$multiply": [ "$cleaning_fee", 0.13 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Australia" ] },
+              "then": { "$multiply": [ "$cleaning_fee", 0.67 ] }  // Convert CAD to USD using exchange rate
+            }
+          ],
+          "default": "$cleaning_fee" // Keep the original cleaning fee for other countries
+        }
+      },
+      "converted_price": {
+        "$switch": {
+          "branches": [
+            {
+              "case": { "$eq": [ "$address.country", "Brazil" ] },
+              "then": { "$multiply": [ "$price", 0.21 ] }  // Convert BRL to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Spain" ] },
+              "then": { "$multiply": [ "$price", 1.09 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Canada" ] },
+              "then": { "$multiply": [ "$price", 0.76 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Portugal" ] },
+              "then": { "$multiply": [ "$price", 1.09 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "China" ] },
+              "then": { "$multiply": [ "$price", 0.14 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Turkey" ] },
+              "then": { "$multiply": [ "$price", 0.039 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Hong Kong" ] },
+              "then": { "$multiply": [ "$price", 0.13 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Australia" ] },
+              "then": { "$multiply": [ "$price", 0.67 ] }  // Convert CAD to USD using exchange rate
+            }
+          ],
+          "default": "$price" // Keep the original price for other countries
+        }
+      }
+    }
+  }
+]
+```
 
 ![Q5](files/images/chart6.png)
 
