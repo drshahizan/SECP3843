@@ -104,7 +104,73 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 3 (b)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+**MySQL Replication**
+
+  1. Open phpMyAdmin and click on the Replication tab
+
+  <img src="https://github.com/drshahizan/SECP3843/blob/24772d3c834f9ccaa5d3eae2acb660666f2a59ea/submission/Jokeryde/question3/files/images/replication.jpg">
+     
+  2. At the primary replication, click to configure the master replication
+ 
+  <img src="https://github.com/drshahizan/SECP3843/blob/7aae904e55c4b0286202cff6c4004e38ae794175/submission/Jokeryde/question3/files/images/configure%20primary.jpg">
+  
+  3. To setup the primary replication, choose ignore databases, Replicate: to ensure only aaq3 database is replicated. Copy the lines inside the red box.
+  
+  <img src="https://github.com/drshahizan/SECP3843/blob/7aae904e55c4b0286202cff6c4004e38ae794175/submission/Jokeryde/question3/files/images/primary%20setup.jpg">
+  
+  4. Open `my.ini` file, locate the `log_error` and paste the lines we just copied underneath it. Change the `max_allowed_packet` from 1M to 16M. Finally locate the `server_id` and comment that line
+  
+  <img src="https://github.com/drshahizan/SECP3843/blob/3dcf98c9f9b05c35606c81fb36e1021758de5541/submission/Jokeryde/question3/files/images/my.ini.jpg">
+
+  <img src="https://github.com/drshahizan/SECP3843/blob/c8e30fbb5be91049b499d1bed7c4401e618879ed/submission/Jokeryde/question3/files/images/paste%20ini.jpg">
+
+  <img src="https://github.com/drshahizan/SECP3843/blob/7c652aa785e322ba7e123df933a34e86c8f2781c/submission/Jokeryde/question3/files/images/16m%20ini.jpg">
+
+  <img src="https://github.com/drshahizan/SECP3843/blob/7c652aa785e322ba7e123df933a34e86c8f2781c/submission/Jokeryde/question3/files/images/comment%20server%20id.jpg">
+  
+  5. Restart both MySQL and Apache and reload the page on phpMyAdmin. Click on the replication tab and check the primary replication status.
+
+  <img src="https://github.com/drshahizan/SECP3843/blob/7c652aa785e322ba7e123df933a34e86c8f2781c/submission/Jokeryde/question3/files/images/status%20master.jpg">
+  
+  6. Next CLick `add replica` and specify the replication user and click "GO"
+  
+  <img src="https://github.com/drshahizan/SECP3843/blob/abb744e4c253128fdf17180935696e772f28c90a/submission/Jokeryde/question3/files/images/add%20replications.jpg">
+
+  <img src="https://github.com/drshahizan/SECP3843/blob/abb744e4c253128fdf17180935696e772f28c90a/submission/Jokeryde/question3/files/images/specify%20replication%20user.jpg">
+
+  <img src="https://github.com/drshahizan/SECP3843/blob/4669fac6a31144b8dd405f3491f5d6f3840dcf44/submission/Jokeryde/question3/files/images/user%20added.jpg">
+  
+  7. Back at the replication tab, click configure at the `Replica replication` and copy the `server-id` and paste it inside `my.ini`
+
+
+  <img src="https://github.com/drshahizan/SECP3843/blob/4669fac6a31144b8dd405f3491f5d6f3840dcf44/submission/Jokeryde/question3/files/images/replica%20configure.jpg">
+
+  <img src="https://github.com/drshahizan/SECP3843/blob/4669fac6a31144b8dd405f3491f5d6f3840dcf44/submission/Jokeryde/question3/files/images/replica%20specify%202.jpg">
+
+  <img src="https://github.com/drshahizan/SECP3843/blob/1ea9f7a3a774fd3fd58d736ff6868c7b2202e553/submission/Jokeryde/question3/files/images/paste%20replica.jpg">
+
+   
+  8. Specify the credentials inside replica configuration. and Click "GO"
+   
+  <img src="https://github.com/drshahizan/SECP3843/blob/1ea9f7a3a774fd3fd58d736ff6868c7b2202e553/submission/Jokeryde/question3/files/images/replica%20specify%202.jpg">
+  
+  9. Master server changed successfully and a warning message will pop out
+
+   <img src="https://github.com/drshahizan/SECP3843/blob/1ea9f7a3a774fd3fd58d736ff6868c7b2202e553/submission/Jokeryde/question3/files/images/master%20have%20changed.jpg">
+
+   <img src="https://github.com/drshahizan/SECP3843/blob/75aa9bbb3b9ce1e07e1a76e3fd756069a90c30d6/submission/Jokeryde/question3/files/images/warning%20message.jpg">
+  
+  10. Start the SQL Thread and IO Thread to disbale the errors
+   
+  <img src="https://github.com/drshahizan/SECP3843/blob/75aa9bbb3b9ce1e07e1a76e3fd756069a90c30d6/submission/Jokeryde/question3/files/images/dis%20warning.jpg">
+  
+  11. The database is successfully replicated.
+
+
+
+
+
 
 ## Contribution 🛠️
 

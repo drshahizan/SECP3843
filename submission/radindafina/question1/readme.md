@@ -16,7 +16,47 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Supply Store](https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales)
 
 ## Question 1 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+We will be utilizing five servers to create a robust and dynamic web application:
+
+  1. ``Apache Web Server:`` Apache is a widely used and powerful web server software. It handles HTTP requests from clients (such as web browsers) and delivers web pages and other content over the internet. Apache supports various technologies like PHP, Python, and Perl, making it flexible for hosting dynamic websites.
+  
+  2. ``MySQL Database Server:`` MySQL is a popular open-source relational database management system (RDBMS). It provides a robust and scalable platform for storing and managing structured data. MySQL is widely used for web applications, powering content management systems, e-commerce websites, and more.
+  
+  3. ``MongoDB Server:`` MongoDB is a NoSQL database server designed for handling unstructured and semi-structured data. It offers a flexible document-oriented data model, allowing for easy scalability and high-performance querying. MongoDB is commonly used in modern web applications that deal with large amounts of data or require flexible data schemas.
+  
+  4. ``Django Server:`` Django is a high-level Python web framework that simplifies the development of complex web applications. It includes a built-in web server for development purposes. Django handles various tasks, such as URL routing, template rendering, database abstraction, and user authentication. It follows the Model-View-Controller (MVC) architectural pattern.
+  
+  5. ``Nginx Server:`` Nginx is a lightweight and high-performance web server that excels at serving static content and acting as a reverse proxy. It can efficiently handle concurrent connections and is often used to improve the performance and scalability of web applications. Nginx can also be used as a load balancer, distributing incoming requests across multiple servers to ensure high availability and fault tolerance.
+
+### Steps to integrate JSON dataset with Django
+
+### Prerequisite
+  1. Make sure you have Python installed on your system. You can check if Python is installed by opening a terminal or command prompt and running the following command:
+
+```
+python --version
+```
+
+If Python is not installed, you can download and install it from the   official Python website (https://www.python.org).
+
+  2.  Create a Virtual Environment. Open a terminal or command prompt and run the following commands:
+```
+python -m venv myenv
+myenv\Scripts\activate
+```
+  3.  Install Django.
+With the virtual environment activated, run the following command to install Django using pip, the Python package installer:
+
+```
+pip install django
+```
+  4. Verify the Installation.
+To verify that Django has been installed successfully, run the following command:
+
+```
+django-admin --version
+```
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

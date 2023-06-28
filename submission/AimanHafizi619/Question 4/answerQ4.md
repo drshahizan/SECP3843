@@ -9,15 +9,210 @@ Don't forget to hit the :star: if you like this repo.
 
 # Special Topic Data Engineering (SECP3843): Alternative Assessment
 
-#### Name:
-#### Matric No.:
-#### Dataset:
+#### Name: AHMAD AIMAN HAFIZI BIN MUHAMMAD
+#### Matric No.: A20EC0177
+#### Dataset: ANALYTICS DATASET
 
-## Question 4 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Question 4
 
-## Question 4 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+In the customer analysis, K-means clustering is applied to group all customers based on age. The goal here is to identify unique clusters or groups of customers with same age characteristics.
+
+- Data Preparation
+
+>The numeric value used for clustering is `age`. The `age` values are extracted from the DataFrame and stored in the variable X.
+
+- Determining the Optimal Number of Clusters
+
+>The optimal number of clusters is determined using the elbow method. K-means clustering is performed for different values of k where k is number of clusters. Each clustering result will be calculated using inertia and silhouette score.
+>Inertia is the sum of squared distances between each data point and its centroid in a cluster. It measures the compactness of the clusters.
+>The silhouette score measures the quality of the clustering or indicating how well-separated the clusters are.
+
+- K-means Clustering
+
+>K-means clustering is performed using the selected k value. The K-means algorithm is applied to the standardized data (X_scaled), and distribute each customer to one of the clusters.
+
+**Step 1: Open Google Colab**
+
+- Open Google Colab. Create a file called `AnalyticsQ4`. Save a copy to `GitHub` using this path
+
+- `drshahizan` > `SECP3843` > `submission` > `AimanHafizi619` > `Question 4` > `files` > `source-code`
+
+**Step 2: Start Performing Data Cleaning**
+
+1. Install pymongo
+
+  ```python
+  !pip install pymongo
+  ```
+2. Import the necessary libraries
+
+```python
+import pandas as pd
+import numpy as np
+import pymongo
+```
+
+3. Connect to MongoDB and retrieve the data
+
+```python
+# Connect to MongoDB and retrieve data
+client = pymongo.MongoClient("mongodb+srv://admin:admin@projectcluster.7sndifd.mongodb.net/")
+db = client["Analytics"]
+collection = db["Customers"]
+data = list(collection.find())
+
+4. Convert the data into a pandas DataFrame
+
+# Convert to dataframe
+df = pd.DataFrame(data)
+```
+
+5. Extract the relevant information from the DataFrame and process the birthdate into age
+
+```python
+# Convert birthdate to datetime
+df['birthdate'] = pd.to_datetime(df['birthdate'])
+
+# Calculate age based on current date
+current_date = pd.to_datetime('today').normalize()
+df['age'] = (current_date - df['birthdate']).astype('<m8[Y]')
+
+# Extract tier and details information
+df['tier'] = df['tier_and_details'].apply(lambda x: x.get('tier') if isinstance(x, dict) else np.nan)
+df['benefits'] = df['tier_and_details'].apply(lambda x: x.get('benefits') if isinstance(x, dict) else [])
+
+# Drop unnecessary columns
+df.drop(['_id', 'tier_and_details'], axis=1, inplace=True)
+```
+
+6. Group the data by age group and tier, and count the occurrences
+
+```python
+# Define age groups
+age_groups = pd.cut(df['age'], bins=[0, 18, 30, 40, 50, 60, np.inf])
+age_group_labels = ['<18', '18-30', '31-40', '41-50', '51-60', '60+']
+
+# Group by age group and tier, and count occurrences
+grouped_data = df.groupby([age_groups, 'tier']).size().unstack().reindex(columns=['Bronze', 'Silver', 'Gold', 'Platinum'])
+
+# Add age group labels to the columns
+grouped_data.columns = [f"{tier} ({age_group})" for tier, age_group in zip(grouped_data.columns, age_group_labels)]
+```
+
+7. print(grouped_data)
+
+```python
+print(grouped_data)
+```
+
+**Step 3: Start Performing KMeans Clustering**
+
+1.  Import the necessary libraries:  
+
+```python
+from sklearn.preprocessing import StandardScaler
+from sklearn.cluster import KMeans
+from sklearn.metrics import silhouette_score
+```
+
+2. Prepare the data for clustering
+
+```python
+# Select the numerical features for clustering
+numerical_features = ['age']
+
+# Extract the numerical features from the DataFrame
+X = df[numerical_features].values
+
+# Standardize the features
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+```
+
+3. Determine the optimal number of clusters using the elbow method
+
+```python
+# Perform K-means clustering for different values of k
+k_values = range(2, 10)
+inertias = []
+silhouette_scores = []
+
+for k in k_values:
+    kmeans = KMeans(n_clusters=k, random_state=42)
+    kmeans.fit(X_scaled)
+    inertias.append(kmeans.inertia_)
+    silhouette_scores.append(silhouette_score(X_scaled, kmeans.labels_))
+
+# Plot the elbow curve
+import matplotlib.pyplot as plt
+
+plt.plot(k_values, inertias, 'bo-')
+plt.xlabel('Number of Clusters (k)')
+plt.ylabel('Inertia')
+plt.title('Elbow Curve')
+plt.show()
+```
+
+4. Based on the elbow curve, select the optimal number of clusters and perform K-means clustering
+
+```python
+# Set the optimal number of clusters
+k = 3
+
+# Perform K-means clustering
+kmeans = KMeans(n_clusters=k, random_state=42)
+kmeans.fit(X_scaled)
+
+# Assign cluster labels to the data
+cluster_labels = kmeans.labels_
+```
+
+5. Analyze the clustering results
+
+```python
+# Add the cluster labels to the DataFrame
+df['cluster'] = cluster_labels
+
+# Group the data by cluster and calculate the average age for each cluster
+cluster_averages = df.groupby('cluster')['age'].mean()
+
+# Print the cluster averages
+print(cluster_averages)
+```
+
+6. This will provide the average age for each cluster. Click [here](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%204/files/source-code/AnalyticsQ4.ipynb) to see the code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

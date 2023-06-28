@@ -35,10 +35,12 @@ Open Command Prompt and type `"mongod"` to start the MongoDB server.
 In the terminal, type `mongosh` to access MongoDB shell.
 <img  src="./files/images/mongosh.png"></img>
 
+```Data Preparation```: <a href="./files/code/DataCleaning.ipynb">DataPreparation.ipynb</a> <br>
+```Modified dataset```: <a href="./files/code/formatted_city_inspections.json">modified_tweets.json</a>
 
 
 ### 4. Import Dataset into Mongodb
-In the terminal, type `mongoimport "C:\Users\user\Downloads\city_inspections.json" -d AA -collection "CityInspections" `
+In the terminal, type `mongoimport "C:\Users\user\Downloads\formatted_city_inspections.json" -d AA -collection "CityInspections" `
  to import the dataset into MongoDB. 
  The database and collection are automatically created as -d AA specifies the name of the database on which to run the mongoimport and -collection "City Inspection" specifies the collection to import.
 

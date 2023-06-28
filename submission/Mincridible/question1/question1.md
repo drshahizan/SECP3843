@@ -190,24 +190,24 @@ class Command(BaseCommand):
     help = 'Import data from companies.json'
 
     def handle(self, *args, **options):
-        # Get the path to the JSON file
+        
         json_file = os.path.join(settings.BASE_DIR, 'data', 'companies.json')
 
-        # Read the JSON file
+       
         with open(json_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
-        # Process and import the data into the database
+        
         for item in data:
-            # Create a Company object and set its attributes
+           
             company = Company()
             company._id = item['_id']
             company.acquisition = item['acquisition']
             company.acquisitions = item['acquisitions']
             company.alias_list = item['alias_list']
-            # Set other attributes based on the JSON structure
+            
 
-            # Save the company object to the database
+
             company.save()
 
         self.stdout.write(self.style.SUCCESS('Data imported successfully.'))
@@ -216,9 +216,6 @@ class Command(BaseCommand):
 2. Create new folder named data and put the companies.json inside the folder
 
 3. Run `python manage.py import_data`
-
-
-
 
 ## Question 1 (b)
 
@@ -244,8 +241,6 @@ The system's backend is the web server, in this case specifically Django. It tak
 ### Dataset
 
 In this case, we will acquire the dataset from a GitHub repository, specifically the "companies.json" file.
-
-
 
 ## Contribution 🛠️
 

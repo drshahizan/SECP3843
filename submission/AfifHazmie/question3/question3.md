@@ -16,15 +16,17 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 3 (a)
 1. Firstly, before creating the user login, registration and users view based on techinical workers, customers and senior management.
    - configure the database to insert and use MySQL database table
-
-      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/dbconfig.jpg">
+      <p align="center">
+         <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/dbconfig.jpg">
+      </p>
+      
      
 2. Create templates
    - Create new folder and named it `templates` within app folder which mine is `AA`
    - the templates will be used to create view of each of the page.
-   - 
+     <p align="center">
        <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/templatefolder.jpg">
-     
+     </p>
 3. Model Define
 
    - define the model including the user type
@@ -50,9 +52,9 @@ Don't forget to hit the :star: if you like this repo.
 
 ---
    - this model defined will create a new database table in the MySQL
-
+   <p align="center">
        <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/dbtb.jpg">
-
+   </p>
 4. Create View
    - In Django, the `views.py` file is where we define the views for the web application. A view is a Python function or class that takes a web request and returns a web response. It contains the logic that processes the user's request, interacts with the database or other data sources, and renders the appropriate HTML templates to generate the response.
 
@@ -284,36 +286,110 @@ Don't forget to hit the :star: if you like this repo.
 8. In web views of the system.
    
    #### User table user type
-   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/usertype.jpg" style="width: 500px; height: 100px;">
+   <p align="center">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/usertype.jpg" width="500">
+   </p>
    
 ---
 
    #### Register Page
-  <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/register.jpg" style="width: 450px; height: 200px;">
+   <p align="center">
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/register.jpg" width="450"">
+  </p>
   
 ---
 
   #### Log in Page
-  <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/login.jpg" style="width: 550px; height: 180px;">
+  <p align="center">
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/login.jpg" style="width: 550px; height: 180px;">
+  </p>
   
 ---
 
   #### Customer Page
-  <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/customerd.jpg" style="width: 550px; height: 180px;">
+  <p align="center">
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/customerd.jpg" width="550">
+  </p>
   
 ---
 
   #### Technical Worker Page
-  <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/technicald.jpg" style="width: 550px; height: 180px;">
+  <p align="center">
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/technicald.jpg" width="550">
+  </p>
   
 ---
 
   #### Senior Management Page
-  <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/seniord.jpg" style="width: 550px; height: 180px;">
-
+  <p align="center">
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/seniord.jpg" width="550">
+  </p>
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+   - When addressing the challenge of data replication and synchronization between MySQL and MongoDB databases, the concept of master and slave servers can be relevant.
+   - The master-slave replication model allows for data replication and synchronization between the master and slave databases, ensuring that changes made in the master database are propagated to the slave database.
+   - This replication model is commonly used in scenarios where read scalability, high availability, and fault tolerance are required.
+   - The specific steps for configuring master and slave servers may vary depending on the replication technique or tool chosen, as well as the specific configurations of the MySQL and MongoDB databases.
+   - Master-slave replication enhances the reliability, scalability, and performance of database systems by providing redundancy, distributing the workload, and facilitating data backup and analytics. It is a widely adopted technique for achieving high availability and improving the overall efficiency of database operations.
+
+---
+
+#### To set up master-slave replication between a MySQL master server and a MySQL slave server, these are the following steps:
+##### Step 1: Configure the master server
+   - Open MySQL configuration on the Master server
+   - Locate `[mysqld]` and add the following line:
+   
+   ```makefile
+   server-id = 1
+   log_bin = mysql-bin
+   binlog_do_db = db_store
+   ```
+   > - `server-id` uniquely identifies the master server in the replication setup.
+   > - `log_bin enables` binary logging to record changes made to the data
+   > - `binlog_do_db` specifies the database(s) to be replicated.
+
+##### Step 2: Create Replication User on the Master Server
+   - Log in to the MySQL command-line interface on the master server.
+   - Run the following SQL command to create a replication user
+     
+     ```python
+      CREATE USER 'mafif'@'192.168.1.100' IDENTIFIED BY 'A@bc1234';
+      GRANT REPLICATION SLAVE ON *.* TO 'mafif'@'192.168.1.100';
+      FLUSH PRIVILEGES;
+     ```
+     
+##### Step 3: Obtain the Master Binary Log Coordinates
+   - Run the following line on master werver
+     
+   ```sql
+   SHOW MASTER STATUS;
+   ```
+
+##### Step 4: Configure the Slave Server
+   - Open the MySQL configuration file on the slave server.
+   - Locate `[mysqld]` section and add the following lines:
+     ```makefile
+     server-id = 2
+     replicate-do-db = db_store
+     ```
+     > - `server-id` uniquely identifies the slave server.
+     > - `replicate-do-db` specifies the database(s) to be replicated from the master.
+
+##### Step 5: Start Replication on the Slave Server
+   - Log in to the MySQL command-line interface on the slave server.
+   - Run the following SQL command to configure replication:
+     ```makefile
+     CHANGE MASTER TO MASTER_HOST='192.168.1.200', MASTER_USER='mafif', MASTER_PASSWORD='A@bc1234', MASTER_LOG_FILE='mysql-bin.000001', MASTER_LOG_POS=0;
+     ```
+   - Start the replication process on slave server
+     ```sql
+     START SLAVE;
+     ```
+##### Step 6: Verify Replication Status
+   - Run the following line on slave server
+     ```sql
+     SHOW SLAVE STATUS\G
+     ```
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

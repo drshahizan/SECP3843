@@ -38,7 +38,6 @@ Optional: Set up the virtual environment:
 - A virtual environment is a self-contained environment that allows you to install packages without changing the overall Python installation on your machine. Run the following command in your terminal to establish a virtual environment:
   ```python
       python -m venv myenv
-      myenv\Scripts\activate
   ```
 - Activate virtual environment
   ```python

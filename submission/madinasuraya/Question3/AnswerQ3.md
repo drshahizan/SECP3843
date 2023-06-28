@@ -125,16 +125,16 @@ To maintain data consistency across both systems it is recommended to perform so
 
 Firstly, it is advisable to choose the best replication techniques. I would recommend using **master-slave replication**. This technique is also known as single-leader replication. The master (single leader) node works as the primary database, while the slave (one or more) will maintain copies of the master's data. To be specific, master nodes handle write queries while slave nodes handle read queries. Whenever, master node performs a write operation, it will be replicated across the system to maintain data consistency. Unless the sales database is offline and there are no other slaves, master will handle the operations temporarily. These replication techniques are often being used in relational databases such MySQL and NoSQL databases, MongoDB. One thing for sure, if the leader suddenly fails, the data is available to the followers.
 
-Next, choose the replication technique for each database. MySQL and MongoDB will have different settings.
+Next, choose the replication technique for each database. MySQL and MongoDB will have different settings and replication techniques.
 
 - MySQL
    1.  Set up virtual environment with root access
       
-   2. Determine the master server and slave server IP address. 
-     ** Master server: 12.34.56.111
-      Slave server: 12.23.34.222**
+   2. Determine the master server and slave server IP address. <br>
+      **Master server: 12.34.56.111** <br>
+      **Slave server: 12.23.34.222**
   
-   3. Setting up the master by finding the bind-address in the mysql config file and changing it from to the master server IP defined above.
+   3. Setting up the master by finding the bind-address in the mysql config file and changing it to the master server IP defined above.
       <p align="center">
          <img width="285" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/5198bb43-3c39-470b-8c86-fc30c83b9435">
       </p>
@@ -165,16 +165,41 @@ Next, choose the replication technique for each database. MySQL and MongoDB will
 
      7. Configure slave server by uncomment the second line shown below.
           <p align='center'>
-            <img width="280" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/4b6371f8-fcc4-4627-867d-446a416e9dfa">
+            <img width="400" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/4b6371f8-fcc4-4627-867d-446a416e9dfa">
          </p>
 
      8. Start a slave by running its command.
         ```
         START SLAVE
         ```
+        
+- MongoDB
+     1. Define master  host name and open mongo shell.
+  
+         **Master server: 12.34.56.111**
+        
+     2. Switch context to the local database.
+        ```
+        use local
+        ```
+     3. Get the collection and ensure that there are no documents in the collection.
+         ```
+         db.companies2.find()
+         ```
+     4. Insert documents into the master. Specify the 'host' as the master host name and 'only', as the database name.
+         ```
+         db.companies2.insert( { host: <12.34.56.111> <,only: db_crunchbase> } );
+         ```
 
+Finally, monitor the replication using status page in tabular format with the following details:
 
-
+   - **File**: Present binary log
+   - **Position**: Binary log position
+   - **Io run**: Slave IO Thread Running status
+   - **Sql run**: SQL Thread Running status
+   - **MongoDB run**: MongoDB Thread Running status
+   - **ErrorNum**: Error number
+   - **ErrorMeg**: Error message
 
 
 ## Contribution 🛠️

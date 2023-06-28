@@ -14,10 +14,9 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Airbnb](https://github.com/drshahizan/dataset/tree/main/mongodb/05-airbnb)
 
 ## Table of Contents
+- [Prerequisites](prerequisites)
 - [Question 2 (a)](question-2-(a))
 - [Question 2 (b)](question-2-(b))
-
-## Question 2 (a)
 
 ### Prerequisites
 Download and Install All Required Software.
@@ -27,6 +26,9 @@ Download and Install All Required Software.
   
 - [MongoDB Command Line Database Tools](https://www.mongodb.com/try/download/database-tools) <br>
 
+
+
+## Question 2 (a)
 
 
 ### Step 1: Prepare the JSON File
@@ -115,30 +117,68 @@ Mongo DB:
 
 ### iii. Update
 #### a) updateOne()
-Use `updateOne()` method in MongoDB to update a single document 
-The update is for name value "IPANEMA LUXURY PENTHOUSE with MAID" and set it to "HAWAII PENTHOUSE".
+- Use `updateOne()` method in MongoDB to update a single document from a specify filter.
+- The update is for name value "IPANEMA LUXURY PENTHOUSE with MAID" and set it to "HAWAII PENTHOUSE".
+
 ```
 db.db_airbnb.updateOne(
-  { 'name': 'IPANEMA LUXURY PENTHOUSE with MAID' }, // Specify the filter criteria to match the document
+  { 'name': 'IPANEMA LUXURY PENTHOUSE with MAID' }, // Specify the filter criteia to match the document
   { $set: { 'name': 'HAWAII PENTHOUSE' }  // Update the name field
 })
-
-Command Prompt:
 ```
+
+- Command Prompt:
 <img  src="https://github.com/drshahizan/SECP3843/assets/120614501/8955f15d-0413-4eb0-a587-3b30970e4dd0"></img>
 
-MongoDB before update:
+- MongoDB before updateOne:
 <img  src="https://github.com/drshahizan/SECP3843/assets/120614501/342573e1-f4b6-493e-9fcb-731f2d8eeb67"></img>
 
-MongoDB after update:
+- MongoDB after updateOne:
 <img  src="https://github.com/drshahizan/SECP3843/assets/120614501/ee8b2b26-7451-4420-bef0-07812c50aca1"></img>
-Name is changed from `IPANEMA LUXURY PENTHOUSE with MAID` to `HAWAII PENTHOUSE`
+- Name is changed from `IPANEMA LUXURY PENTHOUSE with MAID` to `HAWAII PENTHOUSE`
 
 #### b) updateMany()
+- Use `updateOne()` method in MongoDB to update multiple document from the specify filters.
+- The update is for bed_type value "Real Bed" and set it to "Single Bed".
 
+```
+ db.db_airbnb.updateMany(
+ {'bed_type':'Real Bed'}, // Specify the filter criteia
+ {$set:{'bed_type':'Single Bed'}}, // Update Operation
+ )
+```
 
+- Command Prompt:
+<img  src="https://github.com/drshahizan/SECP3843/assets/120614501/00659a4f-5bbb-4b51-bb11-8006ea36ff83"></img>
 
+- MongoDB before updateMany:
+<img  src="https://github.com/drshahizan/SECP3843/assets/120614501/6dd8f4fc-b7ad-4fd0-90d1-25f9b6069e41"></img>
 
+- MongoDB after updateMany:
+<img  src="https://github.com/drshahizan/SECP3843/assets/120614501/a86dd8cd-3d74-498f-bda3-5dd313d6607a"></img>
+- bed_type is changed from `Real Bed` to `Single Bed`
+
+### iv. Delete
+- Use `deleteOne()` method in MongoDB to delete a single document from the specify filters.
+- The delete is for name value "New York City - Upper West Side Apt".
+
+```
+ db.db_airbnb.deleteOne(
+ {'name':'New York City - Upper West Side Apt'})
+```
+
+- Command Prompt:
+
+<img  src="https://github.com/drshahizan/SECP3843/assets/120614501/828f0e71-6502-4f41-b132-1138f0e8a581"></img>
+
+- Before delete(total number is 5556):
+<img  src="https://github.com/drshahizan/SECP3843/assets/120614501/2641dafb-2f19-434c-bbf1-eb470108b171"></img>
+
+- After delete(total number is 5555):
+<img  src="https://github.com/drshahizan/SECP3843/assets/120614501/828de755-49d1-46e7-9e3a-b670d1848983"></img>
+
+- Search for `{name:'New York City - Upper West Side Apt'}` also cannot be found.
+<img  src="https://github.com/drshahizan/SECP3843/assets/120614501/701c9748-c63b-40ae-a13d-1e7ef2749660"></img>
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 

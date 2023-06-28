@@ -1,5 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
+from jsonfield import JSONField
 
 ###MySQL
 class UserManager(BaseUserManager):
@@ -24,7 +25,7 @@ class UserManager(BaseUserManager):
         extra_fields.setdefault('is_superuser', True)
         return self._create_user(email, password, **extra_fields)
 
-class User(AbstractBaseUser):
+class User(AbstractBaseUser,PermissionsMixin):
     USER_TYPE_CHOICES = (
         ('customer', 'Customer'),
         ('technical_worker', 'Technical Worker'),
@@ -48,3 +49,24 @@ class User(AbstractBaseUser):
     
     def __str__(self):
         return self.email
+
+class Story(models.Model):
+    href = models.URLField()
+    title = models.CharField(max_length=255)
+    comments = models.IntegerField()
+    container = JSONField()
+    submit_date = models.DateTimeField()
+    topic = JSONField()
+    promote_date = models.DateTimeField()
+    idJSON = models.CharField(max_length=255)
+    media = models.CharField(max_length=255)
+    diggs = models.IntegerField()
+    description = models.TextField()
+    link = models.URLField()
+    user = JSONField()
+    status = models.CharField(max_length=255)
+    shorturl = JSONField()
+
+    class Meta:
+        verbose_name = 'Story'
+        app_label = 'user'

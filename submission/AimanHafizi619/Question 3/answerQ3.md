@@ -104,8 +104,8 @@ from django.contrib.auth.models import AbstractUser, Group, Permission
 
 class User(AbstractUser):
     is_customer = models.BooleanField(default=False)
-    is_worker = models.BooleanField(default=False)
-    is_management = models.BooleanField(default=False)
+    is_technical_worker = models.BooleanField(default=False)
+    is_senior_management = models.BooleanField(default=False)
 
     groups = models.ManyToManyField(Group, blank=True, related_name='custom_user_set')
 
@@ -122,11 +122,11 @@ class User(AbstractUser):
 
 ```python
 from django.shortcuts import render, redirect
-from . forms import RegistrationForm
-from django.contrib.auth. forms import AuthenticationForm
+from .forms import RegistrationForm
+from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from .decorators import is_customer, is_worker, is_management
+from .decorators import is_customer, is_technical_worker, is_senior_management
 from django.contrib.auth.decorators import user_passes_test
 ```
 
@@ -174,19 +174,19 @@ def profile(request):
     return render(request, 'profile.html', {'user': user})
 
 @user_passes_test(is_customer)
-def customer_dashboard_view(request):
+def customer_dashboard(request):
     
-    return render(request, 'customer_dashboard_view.html')
+    return render(request, 'customer_dashboard.html')
 
-@user_passes_test(is_worker)
-def worker_dashboard_view(request):
+@user_passes_test(is_technical_worker)
+def technical_worker_dashboard(request):
     
-    return render(request, 'worker_dashboard_view.html')
+    return render(request, 'technical_worker_dashboard.html')
 
-@user_passes_test(is_management)
-def management_dashboard_view(request):
+@user_passes_test(is_senior_management)
+def senior_management_dashboard(request):
     
-    return render(request, 'management_dashboard_view.html')
+    return render(request, 'senior_management_dashboard.html')
 ```
 
 7. Define a function called `redirect_dashboard` to redirect each views page based on their respective roles
@@ -195,11 +195,11 @@ def management_dashboard_view(request):
 def redirect_dashboard(request):
     user = request.user
     if user.is_customer:
-        return redirect('customer_dashboard_view')
-    elif user.is_worker:
-        return redirect('worker_dashboard_view')
-    elif user.is_management:
-        return redirect('management_dashboard_view')
+        return redirect('customer_dashboard')
+    elif user.is_technical_worker:
+        return redirect('technical_worker_dashboard')
+    elif user.is_senior_management:
+        return redirect('senior_management_dashboard')
     else:
         
         return redirect('profile')
@@ -229,15 +229,15 @@ from .models import User
 class RegistrationForm(UserCreationForm):
     ROLE_CHOICES = [
         ('customer', 'Customer'),
-        ('worker', 'Technical Worker'),
-        ('management', 'Senior Management'),
+        ('technical_worker', 'Technical Worker'),
+        ('senior_management', 'Senior Management'),
     ]
 
     role = forms.ChoiceField(choices=ROLE_CHOICES, widget=forms.RadioSelect)
 
     class Meta:
         model = User
-        fields = ('username', 'email', 'password', 'role')
+        fields = ('username', 'email', 'password1', 'password2', 'role')
 
     def save(self, commit=True):
         user = super().save(commit=False)
@@ -245,10 +245,10 @@ class RegistrationForm(UserCreationForm):
 
         if role == 'customer':
             user.is_customer = True
-        elif role == 'worker':
-            user.is_worker = True
-        elif role == 'management':
-            user.is_management = True
+        elif role == 'technical_worker':
+            user.is_technical_worker = True
+        elif role == 'senior_management':
+            user.is_senior_management = True
 
         if commit:
             user.save()
@@ -266,7 +266,7 @@ class RegistrationForm(UserCreationForm):
 ```python
 from django.contrib import admin
 from django.urls import path
-from AnalyticsQ3_app.views import register, user_login, redirect_dashboard, customer_dashboard, worker_dashboard, management_dashboard, user_logout
+from AnalyticsQ3_app.views import register, user_login, redirect_dashboard, customer_dashboard, technical_worker_dashboard, senior_management_dashboard, user_logout
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -274,9 +274,9 @@ urlpatterns = [
     path('register/', register, name='register'),
     path('login/', user_login, name='login'),
     path('dashboard/', redirect_dashboard, name='dashboard'),
-    path('customer_dashboard_view/', customer_dashboard, name='customer_dashboard_view'),
-    path('worker_dashboard_view/', worker_dashboard, name='worker_dashboard_view'),
-    path('management_dashboard_view/', management_dashboard, name='management_dashboard_view'),
+    path('customer_dashboard/', customer_dashboard, name='customer_dashboard'),
+    path('technical_worker_dashboard/', technical_worker_dashboard, name='technical_worker_dashboard'),
+    path('senior_management_dashboard/', senior_management_dashboard, name='senior_management_dashboard'),
     path('logout/', user_logout, name='logout'),
 ]
 ```
@@ -317,16 +317,232 @@ urlpatterns = [
 
 ### Step 11: Install mysqlclient
 
-1. Type in `pip install mysqlclinet` in the command prompt
+1. Type in `pip install mysqlclient` in the command prompt
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image3.png)
+
+### Step 12: Install decorators
 
 2. Type in `pip install decorator` in the command prompt
 
 ![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image4.png)
 
+### Step 13: Create decorator.py file
+
+```python
+# decorators.py
+from django.contrib.auth.decorators import user_passes_test
+
+def is_customer(user):
+    return user.is_authenticated and user.is_customer
+
+def is_technical_worker(user):
+    return user.is_authenticated and user.is_technical_worker
+
+def is_senior_management(user):
+    return user.is_authenticated and user.is_senior_management
+```
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image4.png) 
+
+### Step 14: Move files
+
+1. Go to `Desktop` > `AnalyticsQ3` > `AnalyticsQ3_app`
+
+2. Creata a folder called `templates`
+
+3. Relocate the previous `registeration` and `login` files into this folder
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image9.png) 
+
+### Step 15: Migrate Model
+
+1. Go to command prompt.
+
+2. Make migrations for the User model
+
+```python
+py manage.py makemigrations
+```
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q4%20image5.png) 
+
+3. Run migrations to apply changes in the MySql database
+
+```python
+py manage.py migrate
+```
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image6.png) 
+
+3. Check phpMyAdmin database if there is any changes
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image7.png) 
+
+###Step 15: Go to page
+
+1. Run server at the command prompt by typing in the code below
+
+```python
+py manage.py runserver
+```
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image8.png) 
+
+2. Register as a new user
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image10.png)
+
+3. Log in as a user
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image11.png)
+
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+**MySql Replication**
+
+> Data Replication is the process of storing data in more than one site or node.
+
+> It is simply copying data from a database from one server to another server so that all the users can share the same data without any inconsistency.
+
+> The result is a distributed database in which users can access data relevant to their tasks without interfering with the work of others.
+
+> Replication allows the contents of the master database server to be replicated to the other database server
+
+**Step 1**
+
+- Login to phpMyAdmin panel and then click the `replication` tab on the top ribbon
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image12.png)
+
+**Step 2**
+
+- Click on the *configure* option under the `Primary replication` section
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image13.png)
+
+The primary replication section will expand
+
+**Step 3**
+
+- Select the option `Ignore all database; Replicate:
+
+- Then select the database named `analytics_q3` or whatever database that needs to be replicated
+
+- Copy the lines shown belown the list. In this case, this is my server-id
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image14.png)
+
+```python
+server-id=4833576
+log_bin=mysql-bin
+log_error=mysql-bin.err
+binlog_do_db=analytics_q3
+```
+
+**Step 4**
+
+- Open Xampp Control Panel
+
+- Click the `Config` button and choose the `my.ini` option
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image15.png)
+
+**Step 5**
+
+- A Notepad will open
+
+- Navigate further down and look  for `log_error` parameter
+
+- Paste the server-id code from phpMyAdmin
+
+- Change the `max_allowed-packet` from `1M` to `16M`
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image16.png)
+
+- Scroll down and hash (#) the `server-id` parameter
+
+- Save the Notepad
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image17.png)
+
+**Step 6**
+
+- Stop Apache and phpMyAdmin from Xampp Control Panel
+
+- Then, restart the services again
+
+**Step 7**
+
+- Refresh phpMyAdmin page
+
+- Navigate to `Replication` tab again
+
+- The `Primary replication` section has been set up succesfully
+
+- Click on the `Add replica replication user` option
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image18.png)
+
+**Step 8**
+
+- A new table appears
+
+- Specify the User name as `slave` and Host as `localhost` and Password as `No password`
+
+- Then, click `Go`
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image20.png)
+
+**Step 9**
+
+- Navigate to `Replication` tab and select the `configure` option in the `Replica replication` section
+
+- Copy the server-id located near the top of the table
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image21.png)
+
+**Step 10**
+
+- Open Xampp Control Panel
+
+- Select `Configure` button and select `my.ini` option again
+
+- Locate the `server-id` parameter that has just been hash (#) or commented before
+
+- Paste the new `server-id` from phpMyAdmin just now on top of the commented `server-id`
+
+- Save the file
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image22.png)
+
+**Step 11**
+
+- Go back to phpMyAdmin
+
+- Specify user details. Type User name as `rep` and Host as `localhost`
+
+- Click `Go`
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image23.png)
+
+- This message should appear on top
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image24.png)
+
+**Step 12**
+
+- Notice two warning messages appearing in the `Replica replication` section
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image25.png)
+
+**Step 13**
+
+- Click the `Control replica` option and click `Start SQL thread only` one after the other to resolve the errors
+
+![Q3](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%203/files/images/Q3%20image26.png)
+
+- The database `analytics_q3` is replicated
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
