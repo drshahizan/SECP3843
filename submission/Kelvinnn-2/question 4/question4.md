@@ -106,10 +106,15 @@ b. Run the following command to start the Django development server: `python man
 
 Try entering the result and press the `Predict Sector` button.
 - Input: Ali Fastfood
+- 
 <img src="./files/image/alifastfood.png">
+
 - Input: H Bus
+- 
 <img src="./files/image/hbus.png">
+
 - Input: IJM Construction tower
+  
 <img src="./files/image/ijm.png">
 
 --------------------------------------------------------------------------------------
