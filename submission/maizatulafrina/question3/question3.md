@@ -354,6 +354,53 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 3 (b)
 
+The challenge of Data Replication and Synchronization arises between the MySQL and MongoDB databases when working with two different databases. There are few ways and steps to overcome this challenges including exploring database-specific replication techniques or leverage external tools that facilitate realtime
+updates and seamless interaction between the databases.
+
+   - Step 1: Identify the Replication Strategy
+Determining the replication direction (MySQL to MongoDB, MongoDB to MySQL, or bidirectional) and establishing the synchronisation frequency are crucial for managing data replication and synchronisation between MySQL and MongoDB. This requires taking into account elements like data volume, system performance, and real-time needs. You may make sure that the data is consistent between the two systems by choosing which database drives the replication and specifying the synchronisation frequency. It is possible to achieve accurate replication and synchronisation, maintain data integrity, and enable seamless communication between the two databases by selecting the right direction and frequency.
+
+### Step 2: Configure the database
+The MySQL and MongoDB connection have been declared in setting.py. 
+
+
+### Step 3: Set up connections to both MySQL and MongoDB databases
+This step is done by importing necessary libraries like MongoClient to make connections with MySQL and MongoDB.
+```
+from django.db import connections
+from pymongo import MongoClient
+
+# Establish connections to MySQL and MongoDB
+mysql_connection = connections['default']
+mongodb_client = MongoClient('mongodb+srv://cluster0.cpy5tdw.mongodb.net', username='peiyu', password='1')
+```
+
+### Step 4: Define the dual_write function 
+The dual_write function will implement the logic of synchronizing both databases during insert, update and delete. However, I will show the dual write operation for insertion in this example. 
+
+
+### Step 5: Define view
+In this step, create a view in the Django application that triggers the dual_write function to test it.
+
+> The above code will pass a tweet document to dual_write function in order to test the insert operation. 
+
+
+### Step 6: Test and validate the dual write process
+Lastly, open the command prompt and execute ```py manage.py runserver```.
+
+Output: 
+
+
+> It can be noted that the “Dual write successful!” has been printed out and this indicated the success of insertion.
+
+### Step 7: Check the data in MySQL and MongoDB
+We can find the newly inserted data in both MySQL and MongoDB.
+- MySQL
+  
+  
+- MongoDB
+  
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
