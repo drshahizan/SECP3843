@@ -148,6 +148,7 @@ Don't forget to hit the :star: if you like this repo.
     ```
 
 ## Question 5 (b)
+### F
 ### Creating Dashboard Using MongoDB Charts.
 - Go to `MongoDB Atlas Charts` and sign into your account --> https://www.mongodb.com/products/charts
 - Use the connection where sales.json data is uploaded previously
@@ -171,7 +172,7 @@ Don't forget to hit the :star: if you like this repo.
 
 
 ## Final Dashboard 
-![image](https://github.com/drshahizan/SECP3843/assets/96984290/00388f29-4a67-4fc4-9eb4-6033771b2b83)
+    ![image](https://github.com/drshahizan/SECP3843/assets/96984290/00388f29-4a67-4fc4-9eb4-6033771b2b83)
 
 
 
