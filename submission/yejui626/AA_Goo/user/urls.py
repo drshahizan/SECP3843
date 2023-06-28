@@ -3,8 +3,6 @@ from django.urls import re_path
 from .views import index,customer, technical_worker, senior_management
 
 
-
-
 urlpatterns = [
     path('', index, name='index'),
     path('customer/', customer, name='customer'),

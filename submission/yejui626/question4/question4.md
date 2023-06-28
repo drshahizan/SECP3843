@@ -14,10 +14,84 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Stories Dataset
 
 ## Question 4 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Based on the provided Stories Dataset, I have identified one suitable machine learning approach which is text classification using Naive Bayes Classifier. This approach helps me to analyze and categorize textual data. In this project, I am using the `topic` as the label and `description` as the feature. 
 
-## Question 4 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### Implementation of Machine Learning in Django
+
+#### Step 1 : Install required libraries
+To perform machine learning, we need to install the `scikit-learn` library to our project using 
+```python
+pip install scikit-learn
+```
+![Alt text](image.png)
+#### Step 2 : Define the machine learning function in the Django view
+Inside the Django view, I have define a function named `customer` that will connect to the stories collection from MongoDB and do prediction about the instance from user input.
+```python
+def customer(request):
+    context = {}
+    # Create a MongoClient instance
+    client = MongoClient('mongodb://localhost:27017')
+
+    # Access the MongoDB database
+    db = client['AA']
+
+    # Access the collection named "stories"
+    collection = db['stories']
+
+    # Query the collection and retrieve the JSON data
+    data = list(collection.find())
+
+    # Extract the story descriptions
+    descriptions = []
+    topic_names = []
+
+    for story in data:
+        description = story['description']
+        topic_name = story['topic']['name']
+        descriptions.append(description)
+        topic_names.append(topic_name)
+
+    # Create an instance of CountVectorizer
+    vectorizer = CountVectorizer()
+
+    # Fit the vectorizer on the descriptions and transform them into a bag-of-words representation
+    features = vectorizer.fit_transform(descriptions)
+
+    # Create an instance of the Naive Bayes classifier
+    classifier = MultinomialNB()
+
+    # Train the classifier on the features and encoded topic labels
+    classifier.fit(features, topic_names)
+
+    if request.method == 'POST':
+        # Get the user input from the form
+        new_data = [request.POST.get('instance')]
+
+        # Transform the user input using the vectorizer
+        new_features = vectorizer.transform(new_data)
+
+        # Use the trained classifier for prediction
+        predicted_topics = classifier.predict(new_features)
+
+        # Render the customer template with the prediction results
+        return render(request, 'home/customer.html', {'predicted_topics': predicted_topics})
+
+    # Render the initial customer template
+    return render(request, 'home/customer.html', context)
+```
+
+#### Step 3 : Define template
+Define a template that will render the function. <br>
+![Alt text](image-5.png)
+![Alt text](image-1.png)
+![Alt text](image-2.png)
+![Alt text](image-3.png)
+![Alt text](image-4.png)
+<br>
+
+### Potential Usage of this feature
+For further usage of this feature, it can help website provide personalized recommendations to users based on their interest or preferred categories. For example, when a user used the search bar to search for "Lebron", it will recommend more stories about the topic "Basketball" to the user.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
