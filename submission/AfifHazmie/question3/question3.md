@@ -287,37 +287,42 @@ Don't forget to hit the :star: if you like this repo.
    
    #### User table user type
    <p align="center">
-      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/usertype.jpg" style="width: 500px; height: 100px;">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/usertype.jpg" width="500">
    </p>
+   
 ---
 
    #### Register Page
    <p align="center">
-     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/register.jpg" style="width: 450px; height: 300px;">
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/register.jpg" width="450"">
   </p>
+  
 ---
 
   #### Log in Page
   <p align="center">
      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/login.jpg" style="width: 550px; height: 180px;">
   </p>
+  
 ---
 
   #### Customer Page
   <p align="center">
-     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/customerd.jpg" style="width: 550px; height: 180px;">
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/customerd.jpg" width="550">
   </p>
+  
 ---
 
   #### Technical Worker Page
   <p align="center">
-     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/technicald.jpg" style="width: 550px; height: 180px;">
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/technicald.jpg" width="550">
   </p>
+  
 ---
 
   #### Senior Management Page
   <p align="center">
-     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/seniord.jpg" style="width: 550px; height: 180px;">
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/seniord.jpg" width="550">
   </p>
 
 ## Question 3 (b)
