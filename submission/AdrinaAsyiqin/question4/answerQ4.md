@@ -16,7 +16,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 4 
 
-### Step 1:Data Cleaning
+### Step 1: Data Cleaning
 - In this part, I execute all code in Google Colab
 - Firstly , load sales.json data from mongodb
   ```py
@@ -82,7 +82,7 @@ Don't forget to hit the :star: if you like this repo.
   ![image](https://github.com/drshahizan/SECP3843/assets/96984290/d3785b80-e69d-405f-b2b4-a28f013083cd)
 
 
-### Step 2 :Data Visualisatio 
+### Step 2: Data Visualisation
 - Create bar graph
   ```py
   import matplotlib.pyplot as plt
@@ -123,7 +123,7 @@ Don't forget to hit the :star: if you like this repo.
   ![image](https://github.com/drshahizan/SECP3843/assets/96984290/3b545c61-9675-4990-aacb-057281d903c3)
 
 
-### Step 3:Macbine Learning
+### Step 3: Macbine Learning
 
 1. The code prints the accuracy of the model on the test set. The accuracy value indicates how well the model performed in predicting coupon usage. A higher accuracy value suggests that the model made more correct predictions. However, it's important to consider other evaluation metrics and the specific requirements of the task to fully assess the model's performance.
   ```py
