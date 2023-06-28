@@ -125,7 +125,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ### Step 3:Macbine Learning
 
-- The code prints the accuracy of the model on the test set. The accuracy value indicates how well the model performed in predicting coupon usage. A higher accuracy value suggests that the model made more correct predictions. However, it's important to consider other evaluation metrics and the specific requirements of the task to fully assess the model's performance.
+1. The code prints the accuracy of the model on the test set. The accuracy value indicates how well the model performed in predicting coupon usage. A higher accuracy value suggests that the model made more correct predictions. However, it's important to consider other evaluation metrics and the specific requirements of the task to fully assess the model's performance.
   ```py
   import pandas as pd
   from sklearn.model_selection import train_test_split
@@ -159,8 +159,8 @@ Don't forget to hit the :star: if you like this repo.
   ![image](https://github.com/drshahizan/SECP3843/assets/96984290/b126eb3d-b738-47ee-9f3a-519b229221fa)
 
 
-- The accuracy of the model is calculated using the accuracy_score function from scikit-learn. It compares the predicted coupon usage labels (y_pred) with the actual labels from the test set (y_test). The accuracy represents the proportion of correctly predicted instances out of the total instances in the test set.
-- The resulting bar graph visually represents the accuracy of the machine learning model in predicting coupon usage. The height of the bar represents the accuracy value, indicating how well the model performed. By examining the bar's height, you can quickly determine the accuracy score of the model.
+2. The accuracy of the model is calculated using the accuracy_score function from scikit-learn. It compares the predicted coupon usage labels (y_pred) with the actual labels from the test set (y_test). The accuracy represents the proportion of correctly predicted instances out of the total instances in the test set.
+   - The resulting bar graph visually represents the accuracy of the machine learning model in predicting coupon usage. The height of the bar represents the accuracy value, indicating how well the model performed. By examining the bar's height, you can quickly determine the accuracy score of the model.
   ```py
   import matplotlib.pyplot as plt
 
@@ -180,9 +180,9 @@ Don't forget to hit the :star: if you like this repo.
 
   ![image](https://github.com/drshahizan/SECP3843/assets/96984290/a5fd9bab-c1d3-42fe-be4a-e6922a72f0e8)
 
-- The provided code generates a bar graph to visualize the counts of true positives, true negatives, false positives, and false negatives in the prediction results.
-- The resulting bar graph visually represents the counts of true positives, true negatives, false positives, and false negatives in the prediction results. Each bar represents the count of a specific category, providing insights into the model's performance in predicting coupon usage. By examining the heights of the bars, we can compare the number of correctly and incorrectly predicted instances for each category.
-- This visualization helps in understanding the model's performance in differentiating between coupon used and not used instances. It provides a more detailed perspective beyond overall accuracy and can be useful for assessing the model's strengths and weaknesses in specific prediction categories.
+3. The provided code generates a bar graph to visualize the counts of true positives, true negatives, false positives, and false negatives in the prediction results.
+   - The resulting bar graph visually represents the counts of true positives, true negatives, false positives, and false negatives in the prediction results. Each bar represents the count of a specific category, providing insights into the model's performance in predicting coupon usage. By examining the heights of the bars, we can compare the number of correctly and incorrectly predicted instances for each category.
+   - This visualization helps in understanding the model's performance in differentiating between coupon used and not used instances. It provides a more detailed perspective beyond overall accuracy and can be useful for assessing the model's strengths and weaknesses in specific prediction categories.
 
   ```py
   import matplotlib.pyplot as plt  
