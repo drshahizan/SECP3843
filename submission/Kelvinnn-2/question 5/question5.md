@@ -20,6 +20,7 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 ## Question 5 (b)
 <b>Dashboard Created at management_dashboard.html</b>
 <img src="./files/image/barchart.png">
+<img src="./files/image/trend.png">
 
 ### Steps to create a dashboard utilizing a JSON dataset
 
@@ -29,6 +30,7 @@ pip install matplotlib
 pip install numpy
 ```
 ### 2. Create Django View function for the visualization script.
+- Bar Chart showing `Distribution of Top 5 Results by Top 5 Sectors`
 ```python
 def inspections_by_sector(request):
     # Create a MongoClient instance
@@ -80,11 +82,61 @@ def inspections_by_sector(request):
     # Render the template with the data
     return render(request, 'registrations/management_dashboard.html', context)
 ```
+
+- Line chart showing `Trends in Inspections by Month`
+```python
+def inspections_by_month(request):
+    # Create a MongoClient instance
+    client = MongoClient('mongodb+srv://Kelvin2001:Ooiyj0131@cluster0.cokgc4s.mongodb.net/')
+
+    # Access the MongoDB database
+    db = client['AA']
+
+    # Access the collection named "city_inspectionsDataset"
+    collection = db['city_inspectionsDataset']
+
+    # Query the collection and retrieve the JSON data
+    data = list(collection.find())
+
+    # Create a DataFrame from the JSON data
+    df = pd.DataFrame(data)
+
+    # Convert 'date' column to datetime
+    df['date'] = pd.to_datetime(df['date'])
+
+    # Extract the month from the 'date' column
+    df['month'] = df['date'].dt.month
+
+    # Calculate the number of inspections by month
+    inspections_by_month = df.groupby('month').size()
+
+    # Plot the line chart
+    plt.plot(inspections_by_month.index, inspections_by_month.values, marker='o')
+    plt.xlabel('Month')
+    plt.ylabel('Number of Inspections')
+    plt.title('Trends in Inspections by Month')
+    plt.xticks(range(1, 13))
+
+    # Save the chart to a file
+    chart_path = 'q3_app/static/images/inspections_by_month.png'
+    plt.savefig(chart_path)
+
+    # Pass the chart path to the template
+    context = {'chart_path': chart_path}
+
+    # Render the template with the data
+    return render(request, 'registrations/management_dashboard.html', context)
+```
+
 ### 3. Create templates for chart.
 ```python
  <h1>Number of Inspections by Sector (Top 5)</h1>
       <div class="chart-image">
          <img src="{% static 'images/chart.png' %}" alt="Inspections by Sector" />
+      </div>
+ <h1>Trends in Inspections by Month</h1>
+      <div class="chart-image">
+         <img src="{% static 'images/inspections_by_month.png' %}" alt="Inspections by Sector" />
       </div>
 ```
 
@@ -92,6 +144,7 @@ def inspections_by_sector(request):
 In `urls.py`:
 ```python
 path('inspections_by_sector/', inspections_by_sector, name='inspections_by_sector'),
+path('inspections_by_month/', inspections_by_month, name='inspections_by_month'),
 ```
 In `settings.py`:
 ```python
