@@ -100,7 +100,7 @@ Don't forget to hit the :star: if you like this repo.
       ```
   15. The output:
       - The Code and the output can viewed in the [Google Colab file](https://github.com/drshahizan/SECP3843/blob/1171cb1329516edff8bad6fa64d7c0dd4743f734/submission/RishmaFathima/Question4/files/source-code/AA_Question4.ipynb).
-        
+        <img width="600" alt="image" src="https://github.com/drshahizan/SECP3843/blob/4fc1f5ec9bb57b64dae27791f218e5b22278bbae/submission/RishmaFathima/Question4/files/images/4.1.png">
     
   16. Why this machine learning is effective:
       
