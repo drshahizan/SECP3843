@@ -25,7 +25,59 @@ MongoDB charts provide a drag-and-drop visualization creator, just like Tableau 
 
 Once JSON dataset has been uploaded, we can proceed with:
 
-### 1. 
+### 1. Go to MongoDB website.
+
+Open the [MongoDB website](https://account.mongodb.com/account/login?_ga=2.62663724.188383531.1687805900-413483686.1685199079).
+
+### 2. Click on `Charts` from the project dashboard.
+
+![Q5](files/images/q5.4.png)
+
+
+### 3. Click `Add Dashbord` if it is not already created.
+
+![Q5](files/images/q5.5.png)
+
+
+### 4. Inside the dashboard, click on Add Chart to begin visualization.
+
+![Q5](files/images/q5.6.png)
+
+
+### 5. Choose your dataset.
+
+![Q5](files/images/q5.7.png)
+
+
+### 6. Begin drag-and-drop attributes fields into chart requirement field.
+
+
+![Q5](files/images/q5.8.png)
+
+---
+
+### Charts and Dashboard Development.
+
+![Q5](files/images/chart1.png)
+
+![Q5](files/images/chart3.png)
+
+![Q5](files/images/chart4.png)
+
+![Q5](files/images/chart5.png)
+
+
+![Q5](files/images/chart6.png)
+
+![Q5](files/images/chart7.png)
+
+
+![Q5](files/images/chart8.png)
+
+![Q5](files/images/chart9.png)
+
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
