@@ -34,7 +34,9 @@ Use MongoDB Atlass to visualize the JSON files
 
 ![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image2.png)
 
+3. After that, click `Add Chart` to begin building some visualizations
 
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image3.png)
 
 
 
