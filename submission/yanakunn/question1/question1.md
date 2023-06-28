@@ -25,30 +25,144 @@ Integrating the Django framework, JSON data, MySQL, and MongoDB can be achieved 
 
 ### Steps required to integrate Django with the JSON dataset, MySQL, and MongoDB:
 
-Step 1: Install Django and setup Django project
+#### Step 1: Install Django and setup the Django project
 
-1. Create and activate a new virtual environment called .venv in the project directory.
-``` ruby
-$ python3 -m venv .venv
-$ source .venv/bin/activate
+1. Create and activate a new virtual environment called `.venv` in the Django project directory.
+  ``` ruby
+  % python3 -m venv .venv
+  % source .venv/bin/activate
 ```
-2. Install Django, then create a new project called project and start the local Django web server.
-``` ruby
-(.venv) $ python3 -m pip install django
-(.venv) $ django-admin startproject project .
-(.venv) $ python manage.py runserver
-```
-In your web browser, navigate to http://127.0.0.1:8000/ and see the Django Welcome Page.
+2. Install Django, then create a new project called `project`.
+  ``` ruby
+  (.venv) % python3 -m pip install django
+  (.venv) % django-admin startproject project
+  ```
+4. Configure the project's `settings.py` file and provide the database connection details for MySQL and MongoDB. Make sure to use MySQLClient as the database backend for your MySQL database, and utilize Djongo as the MongoDB connector for Django.
+  ```ruby
+  (.venv) project % pip3 install mysqlclient
+  (.venv) project % pip3 install djongo
+  ```
+In `settings.py`, define the databases,
+  ```ruby
+  DATABASES = {
+      'default': {
+          'ENGINE': 'django.db.backends.mysql',
+          'NAME': '<db_name>',
+          'USER': '<username>',
+          'PASSWORD': '<password>',
+          'HOST': 'localhost',
+          'PORT': '3306',
+          'OPTIONS': {
+              'unix_socket': 'your_path/to/mysql.sock',
+          },
+      },
+      'mongodb': {
+          'ENGINE': 'djongo',
+          'NAME': '<db_name>',
+          'CLIENT': {
+              'host': '<mongodb_connection_string>',
+              'username': '<username>',
+              'password': '<password>',
+              'authMechanism': 'SCRAM-SHA-1',
+              'authSource': 'admin',
+          },
+      },
+  }
+  ```
+#### Step 2: Define Django models that represent the structure of the project's data
+1. Define a Django model called `Sale` based on the given JSON data structure
+  ```ruby
+  from django.db import models
+  
+  class Sale(models.Model):
+      _id = models.CharField(max_length=24)
+      saleDate = models.DateTimeField()
+      items = models.JSONField()
+      storeLocation = models.CharField(max_length=255)
+      customer= models.JSONField()
+      couponUsed = models.BooleanField()
+      purchaseMethod = models.CharField(max_length=255)
+  
+      class Meta:
+          db_table = 'sales'
+  ```
+2. Define a model for user by extending Django's built-in AbstractUser model
+  ```ruby
+  from django.contrib.auth.models import AbstractUser
+  
+  class User(AbstractUser):
+      USER_TYPE_CHOICES = (
+          ('customer', 'Customer'),
+          ('technical_worker', 'Technical Worker'),
+          ('senior_management', 'Senior Management'),
+      )
+  
+      user_type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES)
+  
+      class Meta:
+          db_table = 'users'
+  ```
+3. Make migrations
+  ```ruby
+  (.venv) project % python3 manage.py makemigrations
+  (.venv) project % python3 manage.py migrate
+  ```
 
-3. Configure the project settings to connect to the MySQL and MongoDB databases. Modify your Django project directory's `settings.py` file and provide the necessary database connection details for MySQL and MongoDB.
-
-Step 2:
+#### Step 3: Prepare and import the JSON data file
+1. Write a Python code that transforms the JSON sales dataset into a structure compatible with MongoDB, save it to a new JSON file, and insert the data into MongoDB using the `pymongo` library.
+  ```ruby
+  from pymongo import MongoClient
+  import json
+  
+  uri = "mongodb+srv://<username>:<password>@cluster0.x8tqfdb.mongodb.net/?retryWrites=true&w=majority"
+  
+  # Read the new JSON file
+  with open('/Documents/stde/newsales.json') as file:
+      json_data = json.load(file)
+  
+  # Establish a connection to the MongoDB server
+  client = MongoClient(uri)
+  db = client['<db_name>']
+  collection = db['<collection_name>']
+  
+  # Insert each sale record into the collection
+  for sale in json_data:
+      collection.insert_one(sale)
+  ```
+#### Step 4: Build web pages for user interface
+1. Define Django views for retrieving data using Django's built-in Object-Relational Mapping system as required.
+  ```ruby
+  from app.models import Sale
+  
+  def salesReport(request):
+    # Retrieve sale
+    sales = Sale.objects.Distinct()
+    context = {
+        'sales': sales,
+    }
+  return render(request, 'pages/salesReport.html', context)
+  ```
+2. Create Django templates that define the structure and presentation of the dynamic web pages. Generate the content by retrieving data from MySQL and MongoDB databases and use it in the templates.
+  ```ruby
+  Example of displaying all of the sales store location
+  {% for s in sales %}
+  Store Location: {{s.storeLocation}}
+  {% endfor %}
+  ```
+4. Map the URLs in your Django project to the corresponding views. Update the `urls.py` file in the Django project to define the URL patterns and associate them with the appropriate views.
+  ```ruby
+  path('salesReport', views.salesReport, name='salesReport')
+  ```
+#### Step 5: Run the Django application
+  ```ruby
+  (.venv) project % python3 manage.py runserver
+  ```
 
 
 ## Question 1 (b)
 <img width="1000" alt="Screenshot 2023-06-28 at 12 11 32 PM" src="https://github.com/drshahizan/special-topic-data-engineering/assets/76076543/de697f28-c2e8-4809-95d7-c4be00f5f974">
 
-The system architecture seamlessly integrates Django with MySQL and MongoDB databases to create a dashboard visualization and data viewing platform. It consists of several tiers and components:
+This system architecture seamlessly integrates Django with MySQL and MongoDB databases to create a dashboard visualization and data viewing platform. It consists of several tiers and components:
 
 <table>
   <tr>
