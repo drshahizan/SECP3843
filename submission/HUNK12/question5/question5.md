@@ -1,4 +1,7 @@
 
+
+
+
 <a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/network/members"><img src="https://img.shields.io/github/forks/drshahizan/SECP3843" alt="Forks Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/pulls"><img src="https://img.shields.io/github/issues-pr/drshahizan/SECP3843" alt="Pull Requests Badge"/></a>
@@ -93,6 +96,22 @@ Results:
 ![image](https://github.com/drshahizan/SECP3843/assets/3646429/cfb7b091-9065-4b42-bfcc-1a44a5227113)
 
 ![image](https://github.com/drshahizan/SECP3843/assets/3646429/17000905-fd30-48e0-aa85-1cbbd0beb985)
+
+Next, go to the charts.mongodb.com and click on "Charts". Then from there, create charts based on the data that has been uploaded to MongoDB
+
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/d5f3e76c-4300-4ce3-a1dd-819ad7963c7f)
+
+Below is a dashboard I've created which consist of two charts. Why only two charts? I found that these two charts are the only ones that provide any valuable information given the nature of the case study.
+
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/d0c2d8fc-7ae4-482d-9923-5deaa230c0b2)
+
+The first chart shows a bar graph visualizing the sentiment labels. As seen, we can see that most tweets are more positive than negative. The reason for the huge number of neutral sentiments can be read [here](https://github.com/drshahizan/SECP3843/blob/main/submission/HUNK12/question4/question4.md#why-are-there-so-many-neutral-results-compared-to-the-other-sentiments)
+
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/2bf61fb3-fcb9-46e6-b7ef-426e6e34e0dc)
+
+The second chart shows the heatmap of which country the tweets originate from. We can see a huge chunk of the tweets originate somewhere in Europe as well as USA.
+
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/23da2ebf-466d-4c5d-9e3b-b375be83caf8)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
