@@ -167,7 +167,7 @@ python manage.py startapp tweets
         user = models.JSONField()
         favorited = models.BooleanField()
         in_reply_to_user_id = models.CharField(max_length=255, null=True)
-        id = models.CharField(max_length=255, unique=True)
+        id = models.CharField(max_length=255, primary_key=True)
     ```
 
 4. Migrate Database: Run the following commands to generate and apply migration  to create the necessary tables in both MySQL and MongoDB. 
