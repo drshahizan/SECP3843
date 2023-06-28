@@ -52,9 +52,9 @@ Use MongoDB Atlass to visualize the JSON files
 
 ![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image7.png)  
 
+8. Another visualization, like the donut below can also be generated. The donut chart depicts the `Distribution of Accounts by Different Category of Products`. Each individual accounts are grouped based on their product investments.
 
-
-
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image8.png)  
 
 
 
