@@ -14,7 +14,9 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Stories](https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories)
 
 ## Question 5 (a)
-In order to optimize the perfomance of a portal when dealing with large volumes of JSON data for dashboard visualizations, we can consider Data Aggregation.
+In order to optimize the perfomance of a portal when dealing with large volumes of JSON data for dashboard visualizations, we can consider certain ways.
+
+#### Convert date type
 
 1. Open MongoDB Compass.
    <img src="./files/images/mongodbCompass.png">
@@ -53,6 +55,17 @@ In order to optimize the perfomance of a portal when dealing with large volumes 
    <img src="./files/images/afteraggregate.png">
 6. The first $set stage converts the submit_date and promote_date fields to date format.
 7. The second $set stage extracts the years from the converted dates and assigns them to submit_year and promote_year fields
+
+#### Indexing
+
+1. I create indexes on fields that are frequently used for queries such as `submit_date`, `promote_date`, `comments` and `diggs`.
+   <img src="./files/images/date_indexing.png">
+
+   <img src="./files/images/promote_indexing.png">
+
+   <img src="./files/images/comments.png">
+
+   <img src="./files/images/diggs.png">
 
 ## Question 5 (b)
 
