@@ -17,34 +17,28 @@ Don't forget to hit the :star: if you like this repo.
 
 Based on the tables you provided in the JSON files, it seems like a structured data that involves numerical and categorical features. In this case, `Logistic Regression` may be the most suitable machine learning algorithm as it is primarily used for predicting continuous numeric values.
 
-**Step 1**
+**Step 1: Open Google Colab**
 
 - Open Google Colab. Create a file called `AnalyticsQ4`. Save a copy to `GitHub` using this path
 
 - `drshahizan` > `SECP3843` > `submission` > `AimanHafizi619` > `Question 4` > `files` > `source-code`
 
-**Step 2**
+**Step 2: Start Coding**
 
-- Install pymongo
+1. Install pymongo
 
   ```python
   !pip install pymongo
   ```
-
-- Import these libraries
+2. Import the necessary libraries
 
 ```python
 import pandas as pd
-import datetime as dt
-import pymongo
 import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import classification_report, confusion_matrix
+import pymongo
 ```
 
-- Retrieve `customers.json` from MongoDB Compass
+3. Connect to MongoDB and retrieve the data
 
 ```python
 # Connect to MongoDB and retrieve data
@@ -52,6 +46,8 @@ client = pymongo.MongoClient("mongodb+srv://admin:admin@projectcluster.7sndifd.m
 db = client["Analytics"]
 collection = db["Customers"]
 data = list(collection.find())
+
+4. Convert the data into a pandas DataFrame
 
 # Convert to dataframe
 df = pd.DataFrame(data)
