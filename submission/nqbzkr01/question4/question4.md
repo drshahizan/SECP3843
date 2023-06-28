@@ -41,7 +41,8 @@ Don't forget to hit the :star: if you like this repo.
      ![image](https://github.com/drshahizan/SECP3843/assets/92329710/d0da04fb-4356-422b-88c8-0908baf7037f)
 5. Data Cleaning.
    - Before start the machine learning process, the dataset need to be cleaned to get a suitable format for machine learning tasks.
-   - Here is the data cleaning proecss
+   - Here is the data cleaning process:
+   - 
 
 
 
