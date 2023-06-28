@@ -1,3 +1,4 @@
+
 <a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/network/members"><img src="https://img.shields.io/github/forks/drshahizan/SECP3843" alt="Forks Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/pulls"><img src="https://img.shields.io/github/issues-pr/drshahizan/SECP3843" alt="Pull Requests Badge"/></a>
@@ -70,7 +71,28 @@ Result:
 
 > As we can see, the original size of the dataset was 47.60MB. After preparing the data by dropping the unused columns, the new size became only 2.45MB. That's only about 5% of the orignal size! This means that less resources are needed to load the file thus improvving performance.
 
+### 2.
+
 ## Question 5 (b)
+First, let's upload the sentiment analysis data to MongoDB. Continuing from [Question 4](https://github.com/drshahizan/SECP3843/blob/main/submission/HUNK12/question4/question4.md), we'll add the code below to upload the sentiment analysis data to MongoDB:
+```py
+import json
+from pymongo import MongoClient
+
+text_df.to_json('text.json', orient='records')
+with open('text.json') as f:
+    data = json.load(f)
+    
+client = pymongo.MongoClient("mongodb+srv://mikhel:admin@cluster0.kwav8pt.mongodb.net/")
+db = client["STDE"]
+collection = db["tweets_text"]
+collection.insert_many(data)
+```
+Results:
+
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/cfb7b091-9065-4b42-bfcc-1a44a5227113)
+
+![image](https://github.com/drshahizan/SECP3843/assets/3646429/17000905-fd30-48e0-aa85-1cbbd0beb985)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
