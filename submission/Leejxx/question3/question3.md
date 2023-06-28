@@ -1,4 +1,4 @@
-<a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
+
 <a href="https://github.com/drshahizan/SECP3843/network/members"><img src="https://img.shields.io/github/forks/drshahizan/SECP3843" alt="Forks Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/pulls"><img src="https://img.shields.io/github/issues-pr/drshahizan/SECP3843" alt="Pull Requests Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/issues"><img src="https://img.shields.io/github/issues/drshahizan/SECP3843" alt="Issues Badge"/></a>
@@ -91,7 +91,49 @@ To create a user registration and login module using Django and MySQL for three 
 
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+To address the challenge of data replication and synchronization between the MySQL and MongoDB databases, we need to implement a solution that involves real-time updates and seamless interaction between the databases.Based on my case of having MySQL for user authentication and a JSON dataset (sales), along with MongoDB for another JSON dataset (sales), a suitable replication strategy would be the <b>Dual Writes </b> approach. This strategy ensures that any changes made in one database are accurately reflected in the other database.
+
+Here are the steps involved in implementing the Dual Writes strategy: 
+
+### 1. Set up the MySQL and MongoDB connections:
+  a) In the Django application's settings.py file, configure the MySQL database connection using Django's database configuration.
+  b) Establish a connection to the MongoDB database using the `pymongo` library.
+    <img  src="./files/images/setting1.JPG"></img>
+
+### 2. Define the Django model for the Sales dataset
+  a) In the Django application's models.py file, define the Sales model that represents the sales data.
+   <img  src="./files/images/design1.JPG"></img>
+
+### 3. Dual Writes Approach
+  a) Insert:
+     <img  src="./files/images/dual1.JPG"></img>
+
+  b) Update:
+    <img  src="./files/images/dual2.JPG"></img>
+
+  c) Delete:
+    <img  src="./files/images/dual3.JPG"></img>
+
+### 4. Testing and Validation
+  a) In my case i use a form page for the user to insert or update the sales in database:
+     <img  src="./files/images/sale1.JPG"></img>
+     
+  b) Input sales:
+    <img  src="./files/images/sale2.JPG"></img>
+    <img  src="./files/images/sale3.JPG"></img>
+
+  c) Output:
+
+  <b>MySQL:</b> <br>
+  <img  src="./files/images/sale4.JPG"></img>
+
+  <b>MongoDB:</b> <br>
+  <img  src="./files/images/sale5.JPG"></img>
+  
+
+
+  
+  
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
