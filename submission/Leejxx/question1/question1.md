@@ -132,9 +132,151 @@ class MongoDBRouter:
             return db == 'mongodb'
         return None
 
-```
-<img  src="./files/images/router.JPG"></img>
+  ```
+  <img  src="./files/images/router.JPG"></img>
 
+### 6. Setup MySQL Database Server
+   a) Use Xampp Controller Panel to access the MySQL
+  <img  src="./files/images/mysql1.JPG"></img>
+
+  b) Create a new database `sales` for his Django project.
+  <img  src="./files/images/mysql2.JPG"></img>
+
+  ### 7. Integration of Django
+  a) Download all the required libraires:
+  
+      pip install pymongo
+      pip install djongo
+      pip install mysqlclient
+      pip install pytz
+      
+  b) Migrate Database: Generate and apply migration to create the necessary tables in both MySQL and MongoDB database:
+    <br>
+  <b>MySQL</b><br>
+   Run the code to create model for migration process.
+     <img  src="./files/images/manage1.JPG"></img>
+
+  Run the code to create tables in the database.
+  <img  src="./files/images/manage2.JPG"></img>
+
+   Result:
+  <img  src="./files/images/manage3.JPG"></img>
+
+
+ <b>MongoDB</b><br>
+  <img  src="./files/images/manage4.JPG"></img>
+
+  Result:
+  <img  src="./files/images/manage5.JPG"></img>
+
+### Data Loading:
+  To load data into databases, I create a custom management command in Django.
+
+ a) Create a new file called insert_sales_data.py in Django app's management/commands directory.
+   <img  src="./files/images/load1.JPG"></img>
+
+  b) In the insert_sales_data.py:<br>
+  
+     
+        import json
+    from decimal import Decimal
+    from datetime import datetime
+    import pytz
+    from django.core.management.base import BaseCommand
+    from sales.models import Sales
+
+    class Command(BaseCommand):
+    help = 'Insert sales data from JSON dataset'
+
+    def handle(self, *args, **options):
+        with open('C:\\Users\\user\\AA_Leejx\\modified_sales.json') as file:
+            data = json.load(file)
+
+        # Set the desired timezone
+        tz = pytz.timezone('Asia/Kuala_Lumpur')
+
+        for document in data:
+            # Get the saleDate value as a string
+            sale_date_str = document['saleDate']['$date']['$numberLong']
+            sale_date = tz.localize(datetime.fromtimestamp(int(sale_date_str) / 1000))
+
+            # Get the items array
+            items = document['items']
+
+            # Process each item
+            item_list = []
+            for item in items:
+                item_name = item['name']
+                item_tags = item['tags']
+                item_price = float(item['price']['$numberDecimal'])
+                item_quantity = int(item['quantity']['$numberInt'])
+
+                item_data = {
+                    'name': item_name,
+                    'tags': item_tags,
+                    'price': item_price,
+                    'quantity': item_quantity
+                }
+                item_list.append(item_data)
+
+            # Get customer information
+            customer_gender = document['customer']['gender']
+            customer_age = int(document['customer']['age']['$numberInt'])
+            customer_email = document['customer']['email']
+            customer_satisfaction = int(document['customer']['satisfaction']['$numberInt'])
+
+            coupon_used = document['couponUsed']
+            purchase_method = document['purchaseMethod']
+
+            sale = Sales(
+                saleDate=sale_date,
+                items=item_list,
+                storeLocation=document['storeLocation'],
+                customerGender=customer_gender,
+                customerAge=customer_age,
+                customerEmail=customer_email,
+                customerSatisfaction=customer_satisfaction,
+                couponUsed=coupon_used,
+                purchaseMethod=purchase_method
+            )
+            sale.save()
+
+        self.stdout.write(self.style.SUCCESS('Successfully inserted sales data'))
+
+   c) Then run the command in the terminal:
+      <img  src="./files/images/insert1.JPG"></img>
+
+  d) output:<br>
+  
+   <b>MySQL</b>
+    <img  src="./files/images/insert2.JPG"></img>
+
+   <br>
+    <b>MongoDBL</b>
+     <img  src="./files/images/insert3.JPG"></img>
+
+      
+    
+     
+
+    
+
+  
+    
+
+    
+    
+
+  
+      
+
+
+  
+    
+    
+     
+
+    
 
 
 
@@ -174,8 +316,9 @@ class MongoDBRouter:
     - The Model component interacts with the MongoDB database to perform CRUD operations (Create, Read, Update, Delete).
   - MySQL:
     - MySQL is a relational database management system.
+    - It is used as the database for storing data represented in JSON format too.
     - The MySQL database is used specifically for user authentication in this architecture.
-    - It stores user-related information, such as usernames, passwords, and other authentication details.
+    - It also stores user-related information, such as usernames, passwords, and other authentication details.
     - The user authentication functionality is handled separately from the main data storage in MongoDB.
 - ### JSON Dataset (Supply Store Dataset)
    - The JSON dataset contains information about sales transactions, including items purchased, customer details, store location, coupon usage, and purchase method.
