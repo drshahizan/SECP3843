@@ -30,7 +30,7 @@ import numpy as np
 import pymongo
 ```
 
-### Step 3: Connect to MongoDB and retrieve the 
+### Step 3: Connect to MongoDB and Load Data 
 Make sure the collection does exist in the Cluster server so that the pymongo can load the data.
 <img  src="./files/images/mongodb.png"></img>
 
@@ -52,7 +52,7 @@ Checking Null Data
 ```
  df.isna().sum()
 ```
-There a lot of null data in dataset,
+
 <img  src="./files/images/before_clean.png"></img>
 
 Clean the data
@@ -128,6 +128,9 @@ Evaluate the model using mean squared error (MSE)
 mse = mean_squared_error(y_test, y_pred)
 print(f"Mean Squared Error: {mse}")
 ```
+
+Final Result: 
+<img  src="./files/images/result.png"></img>
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
