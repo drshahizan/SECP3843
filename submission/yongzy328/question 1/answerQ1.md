@@ -36,33 +36,33 @@ The 5 servers of this project are implemented as below:
     </tr>
   </tbody>
 </table>
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153108.png" alt="activate virtual environment">
+<img src="./files/images/Screenshot%202023-06-27%20153108.png" alt="activate virtual environment">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153218.png" alt="install django mysqlclient pymongo">
+<img src="./files/images/Screenshot%202023-06-27%20153218.png" alt="install django mysqlclient pymongo">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153237.png" alt="install djongo">
+<img src="./files/images/Screenshot%202023-06-27%20153237.png" alt="install djongo">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153149.png" alt="django start project">
+<img src="./files/images/Screenshot%202023-06-27%20153149.png" alt="django start project">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153205.png" alt="startapp">
+<img src="./files/images/Screenshot%202023-06-27%20153205.png" alt="startapp">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20164105.png" alt="setting.py">
+<img src="./files/images/Screenshot%202023-06-27%20164105.png" alt="setting.py">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015242.png" alt="database setting">
+<img src="./files/images/Screenshot%202023-06-28%20015242.png" alt="database setting">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20153939.png" alt="model">
+<img src="./files/images/Screenshot%202023-06-28%20153939.png" alt="model">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015411.png" alt="make migrations">
+<img src="./files/images/Screenshot%202023-06-28%20015411.png" alt="make migrations">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015441.png" alt="migrate">
+<img src="./files/images/Screenshot%202023-06-28%20015441.png" alt="migrate">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015852.png" alt="mysql after migration">
+<img src="./files/images/Screenshot%202023-06-28%20015852.png" alt="mysql after migration">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20153924.png" alt="loaddata.py">
+<img src="./files/images/Screenshot%202023-06-28%20153924.png" alt="loaddata.py">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20162050.png" alt="loaddata json">
+<img src="./files/images/Screenshot%202023-06-28%20162050.png" alt="loaddata json">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20162035.png" alt="load data success">
+<img src="./files/images/Screenshot%202023-06-28%20162035.png" alt="load data success">
 
 
 
@@ -77,7 +77,7 @@ The 5 servers of this project are implemented as below:
 <code>python manage.py loaddata city_inspections.json</code>
 
 ## Question 1 (b)
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/use%20case%20diagram%20(current%20system)%20-%20Page%203.png" alt="system architecture">
+<img src="./files/images/use%20case%20diagram%20(current%20system)%20-%20Page%203.png" alt="system architecture">
 
 
 
