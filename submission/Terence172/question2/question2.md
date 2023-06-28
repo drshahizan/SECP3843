@@ -168,11 +168,11 @@ There are two common queries methods to insert data into MongoDB:
 
 Input inside command prompt:
 
-<p align="center"><img width="50%" src="./files/images/Create_Input.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/Create_Input.jpg"></img></p>
 
 Output in Atlas:
 
-<p align="center"><img width="50%" src="./files/images/Create_Output.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/Create_Output.jpg"></img></p>
 
 ### Read Query
 
@@ -182,7 +182,7 @@ There are two common queries methods to insert data into MongoDB:
 
 Input inside command prompt:
 
-<p align="center"><img width="50%" src="./files/images/Read.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/Read.jpg"></img></p>
 
 
 ### Update Query
@@ -193,19 +193,19 @@ There are two common queries methods to insert data into MongoDB:
 
 Input inside command prompt for `updateOne`:
 
-<p align="center"><img width="50%" src="./files/images/UpdateOne_Input.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/UpdateOne_Input.jpg"></img></p>
 
 Output in Atlas for `updateOne`:
 
-<p align="center"><img width="50%" src="./files/images/UpdateOne_Output.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/UpdateOne_Output.jpg"></img></p>
 
 Input inside command prompt for `updateMany`:
 
-<p align="center"><img width="50%" src="./files/images/UpdateMany_Input.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/UpdateMany_Input.jpg"></img></p>
 
 Output in Atlas for `updateMany`:
 
-<p align="center"><img width="50%" src="./files/images/UpdateMany_Output.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/UpdateMany_Output.jpg"></img></p>
 
 
 ### Delete Query
@@ -216,11 +216,11 @@ There are two common queries methods to insert data into MongoDB:
 
 Input inside command prompt:
 
-<p align="center"><img width="50%" src="./files/images/Delete_Input.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/Delete_Input.jpg"></img></p>
 
 Output in Atlas:
 
-<p align="center"><img width="50%" src="./files/images/Delete_Output.jpg"></img></p>
+<p align="center"><img width="70%" src="./files/images/Delete_Output.jpg"></img></p>
 
 
 ## Contribution 🛠️
