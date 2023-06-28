@@ -71,7 +71,19 @@ df['benefits'] = df['tier_and_details'].apply(lambda x: x.get('benefits') if isi
 df.drop(['_id', 'tier_and_details'], axis=1, inplace=True)
 ```
 
+6. Group the data by age group and tier, and count the occurrences
 
+```python
+# Define age groups
+age_groups = pd.cut(df['age'], bins=[0, 18, 30, 40, 50, 60, np.inf])
+age_group_labels = ['<18', '18-30', '31-40', '41-50', '51-60', '60+']
+
+# Group by age group and tier, and count occurrences
+grouped_data = df.groupby([age_groups, 'tier']).size().unstack().reindex(columns=['Bronze', 'Silver', 'Gold', 'Platinum'])
+
+# Add age group labels to the columns
+grouped_data.columns = [f"{tier} ({age_group})" for tier, age_group in zip(grouped_data.columns, age_group_labels)]
+```
 
 
 
