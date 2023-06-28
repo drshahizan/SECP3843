@@ -33,7 +33,7 @@ Take this scenario where I want to analyze and visualize `user` details data fro
 Steps :
 
 i) Import the JSON file 
-```
+```py
 import pandas as pd
 
 # Load the JSON file into a DataFrame
@@ -50,7 +50,7 @@ df.head(5)
 
 ii) Check the initial JSON file size : 
 
-```
+```py
 import os
 import math
 
@@ -78,7 +78,7 @@ print(f"JSON file size: {convert_size(file_size)}")
 
 iii) Then, drop the other columns.
 
-```
+```py
 # Select only the 'user' column
 df_user = df[['user']].copy()
 
@@ -94,7 +94,7 @@ print(df_user)
 iv) After other columns has dropped, check again the file size.
 
 
-```
+```py
 # Save the DataFrame as a JSON file
 df_user.to_json('data_output2.json')
 
@@ -126,7 +126,7 @@ print(f"JSON file size: {convert_size(file_size)}")
 Steps :
 
 i) Load the JSON data.
-```
+```py
 import pandas as pd
 
 # Load the JSON file into a DataFrame
@@ -141,7 +141,7 @@ df.head(5)
 <img width="930" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/1bf218f6-ba16-4ce2-b12d-363706da5ff8">
 
 ii) Run the following code to parse the JSON file.
-```
+```py
 import json
 
 def parse_json_stream(json_data):
@@ -175,14 +175,14 @@ for obj in parse_json_stream(json_data_chunks):
 > JSON data succesfully parsed thus we can see that  less time taken needed to accomplish parsing.
 
 ### 3. Use JSON caching
-* Caching JSON data reduce the time taken to fetch data. This is because it will retrieve the data from cache instead of having to retrieve from memory. This caching method will improve portal performance significantly.
+* Caching JSON data will reduce the time taken to fetch data. This is because it will retrieve the data from cache instead of having to retrieve from memory. This caching method will improve portal performance significantly.
 <br>
 Steps :
 
 i) Choose caching mechanism
 
 * In this example, we will use Redis as our caching mechanism. The configuration is to have 100 items, time to live of 1 minute and LRU as the eviction policy.
-```
+```py
 import redis
 
 cache = redis.Redis()
@@ -201,7 +201,7 @@ ii) Use the cached memory
 
 * To use the cache memory, we will implement the code below. The code below shows that it will first check the data if it has been cached or not. If its not cached, it will retrieve from the database.
 
-```
+```py
 import redis
 
 cache = redis.Redis()
