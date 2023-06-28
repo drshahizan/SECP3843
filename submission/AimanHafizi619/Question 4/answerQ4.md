@@ -25,15 +25,13 @@ In the customer analysis, K-means clustering is applied to group all customers b
 
 >The optimal number of clusters is determined using the elbow method. K-means clustering is performed for different values of k where k is number of clusters. Each clustering result will be calculated using inertia and silhouette score.
 
->The inertia is the sum of squared distances between each data point and its centroid in a cluster. It measures the compactness of the clusters.
-The silhouette score measures the quality of the clustering, indicating how well-separated the clusters are.
-The elbow curve is plotted using the inertia values for different k values. The curve shows the trade-off between the number of clusters and the compactness of the clusters. The optimal number of clusters is typically identified at the "elbow" point, where the inertia improvement starts to diminish significantly.
+>Inertia is the sum of squared distances between each data point and its centroid in a cluster. It measures the compactness of the clusters.
+
+>The silhouette score measures the quality of the clustering or indicating how well-separated the clusters are.
 
 - K-means Clustering
 
->Based on the optimal number of clusters determined from the elbow curve, K-means clustering is performed using the selected k value.
-The K-means algorithm is applied to the standardized data (X_scaled), and it assigns each customer to one of the clusters.
-The cluster labels are stored in the variable cluster_labels.
+>K-means clustering is performed using the selected k value. The K-means algorithm is applied to the standardized data (X_scaled), and distribute each customer to one of the clusters.
 
 **Step 1: Open Google Colab**
 
