@@ -87,6 +87,7 @@ def inspections_by_sector(request):
          <img src="{% static 'images/chart.png' %}" alt="Inspections by Sector" />
       </div>
 ```
+
 ### 4. Path settings.
 In `urls.py`:
 ```python
@@ -95,6 +96,10 @@ path('inspections_by_sector/', inspections_by_sector, name='inspections_by_secto
 In `settings.py`:
 ```python
 STATIC_URL = '/static/'
+```
+In `management_dashboard.html`:
+```python
+{% load static %}
 ```
 
 ## Contribution 🛠️
