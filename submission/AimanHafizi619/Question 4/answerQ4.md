@@ -15,19 +15,17 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 4
 
-In the customer analysis, K-means clustering is applied to group customers based on their age. The goal is to identify distinct segments or clusters of customers with similar age characteristics. Here's how K-means clustering is applied in this analysis:
+In the customer analysis, K-means clustering is applied to group all customers based on age. The goal here is to identify unique clusters or groups of customers with same age characteristics.
 
 - Data Preparation
 
->The numerical feature used for clustering is "age".
-The "age" values are extracted from the DataFrame and stored in the variable X.
-The feature values are standardized using the StandardScaler to ensure that all features have the same scale.
-
+>The numeric value used for clustering is `age`. The `age` values are extracted from the DataFrame and stored in the variable X.
 
 - Determining the Optimal Number of Clusters
 
->The optimal number of clusters is determined using the elbow method. K-means clustering is performed for different values of k (number of clusters), and the inertia and silhouette score are calculated for each clustering result.
-The inertia is the sum of squared distances between each data point and its centroid in a cluster. It measures the compactness of the clusters.
+>The optimal number of clusters is determined using the elbow method. K-means clustering is performed for different values of k where k is number of clusters. Each clustering result will be calculated using inertia and silhouette score.
+
+>The inertia is the sum of squared distances between each data point and its centroid in a cluster. It measures the compactness of the clusters.
 The silhouette score measures the quality of the clustering, indicating how well-separated the clusters are.
 The elbow curve is plotted using the inertia values for different k values. The curve shows the trade-off between the number of clusters and the compactness of the clusters. The optimal number of clusters is typically identified at the "elbow" point, where the inertia improvement starts to diminish significantly.
 
