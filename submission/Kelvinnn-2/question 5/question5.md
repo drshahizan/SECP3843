@@ -15,7 +15,40 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: City Inspections
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Implement caching mechanisms to store and retrieve pre-processed data. This avoids repetitive computations and database queries, enhancing performance. Popular caching solutions include Redis or Django's built-in caching framework. 
+Steps to implement cache when dealing with large volumes of JSON data from the dataset, especially during dashboard visualization is shown below:
+
+### 1. Install all required packages by using the following commands
+```python
+pip install cachetools
+```
+### 2. Import the necessary classes and functions from cachetools in `views.py`:
+```python
+from cachetools import cached, TTLCache
+```
+### 3. Define cache instances for each function
+```python
+result_by_sector_cache = TTLCache(maxsize=1, ttl=3600)  # Cache for inspections_by_sector
+inspections_by_month_cache = TTLCache(maxsize=1, ttl=3600)  # Cache for inspections_by_month
+```
+### 4. Apply the @cached decorator to the functions
+```python
+@cached(result_by_sector_cache)
+def inspections_by_sector(request):
+    
+@cached(inspections_by_month_cache)
+def inspections_by_month(request):
+```
+### 5. Verify cache to check if cached data is available 
+```python
+
+    cached_data = cache.get('inspections_by_sector')
+    if cached_data:
+        print("Using cached data")
+        result_by_sector = cached_data
+    else:
+        print("Generating new data")
+```
 
 ## Question 5 (b)
 <b>Dashboard Created at management_dashboard.html</b>
