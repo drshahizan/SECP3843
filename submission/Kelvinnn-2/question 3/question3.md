@@ -17,30 +17,31 @@ Don't forget to hit the :star: if you like this repo.
 
 ### 1. To install and set up Django, follow these steps:
 
-a. Create Virtual Environment
+a. Create a virtual Environment
 ```
 virtualenv env
 ```
 
-Once you have created the virtual environment, you can activate it by running the following command.
+Once I created the virtual environment,  activate it by running the following command.
 ```
 env\Scripts\activate
 ```
 
-b. Run the command `pip install Django` to install Django using pip, the Python package manager. Make sure you have Python and pip installed on your system.
+b. Run the command `pip install Django` to install Django using pip, the Python package manager. 
 
-c. After the installation is complete, you can create a new Django project by running the following command:   
+c. After the installation is complete, create a new Django project by running the following command:   
 ```python
 django-admin startproject q3
 ```
-This command will create a new Django project with the name "q3". You can replace "q3" with your desired project name.
+
+This command will create a new Django project with the name "q3". 
 
 d.Once the project is created, navigate to the project folder using the cd command. In this case, run:
 <img src="./files/image/q3.png">
 
 ### 2. MySQL setup
 
-a. To set up MySQL for your Django project, follow these steps:
+a. To set up MySQL for  Django project, follow these steps:
 
 Install the MySQL connector for Python by running the command `pip install mysql-connector-python`. This package allows Django to communicate with the MySQL database.
 
@@ -312,7 +313,7 @@ d. Create three dashboard templates for each user type: customer_dashboard.html,
 
 ### 7. Path setting and run the App
 
-a. Open the urls.py file in your Django project. This file is usually located in the main project directory. Import the views you need to map to the URL paths.
+a. Open the urls.py file in q3 project. Import the views to map to the URL paths.
 
 ```python
 from django.contrib import admin

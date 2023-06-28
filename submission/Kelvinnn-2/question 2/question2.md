@@ -78,7 +78,7 @@ The newly created document can be found in the database:
 <img  src="./files/images/insertonefound.png"></img>
 
 ### ii. Read
-The db.collection.find() method in MongoDB is used to read documents from a collection. By specifying a query filter document, you can select documents that match certain conditions.
+The db.collection.find() method in MongoDB is used to read documents from a collection. By specifying a query filter document,  select documents that match certain conditions.
 
 In the case of retrieving all inspections where the id field equals "10057-2015-ENFO" from the City collection, the following query can be used:
 ```
@@ -89,7 +89,7 @@ This query instructs MongoDB to find all documents in the City collection where 
 
 ### iii. Update 
 #### Update Query 1:
-To update the result of an inspection with the id "10021-2015-ENFO" in the CityInspections collection to "Violation Issued", you can use the following update query:
+To update the result of an inspection with the id "10021-2015-ENFO" in the CityInspections collection to "Violation Issued",  use the following update query:
 ```
 db.CityInspections.updateOne(
   { id: "10021-2015-ENFO" },
