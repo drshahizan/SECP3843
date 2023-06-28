@@ -28,7 +28,7 @@ Don't forget to hit the :star: if you like this repo.
   3. Next Click the Add New Dashboard to create the dashboard.
   4. I have created 5 charts:
 
-       a. Heatmap for Theaters which represent the theaters location.
+       a. Geo Heatmap for Theaters which represent the theaters location.
 
         <img src="https://github.com/drshahizan/SECP3843/blob/709665215c0dc312e46abee64d7b4b90af82c84e/submission/Jokeryde/question5/images/heatmap.png">
 
