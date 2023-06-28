@@ -19,6 +19,14 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 ## Question 5 (b)
 
+
+## [Dashboard - Click here to view interactive dashboard](https://muhdimranh.github.io/dashboard)
+
+![Q5](files/images/q5.3.png)
+
+Above is the completed dashboard, like Tableau, MongoDB allows real-time dashboard filtering. In the above picture, the filter is on the right side of the dashboard and we can customize to whatever filter we intend to use.
+
+
 In order to create a visualization dashboard, I chose MongoDB Atlas charts. I began by uploading my JSON Airbnb dataset into the MongoDB database (using mongoimport as in Question 2).  
 
 MongoDB charts provide a drag-and-drop visualization creator, just like Tableau and PowerBI. It is very easy to use and it utilizes the JSON dataset that has been uploaded into the database.
@@ -302,11 +310,10 @@ Donut chart above shows the distribution of property type in listings. It sugges
 Scatter plot above describes the relationship between review ratings and number of reviews for listings. The higher the number of reviews tends to result in higher review ratings.
 
 
-### Dashboard
 
-![Q5](files/images/q5.3.png)
 
-Above is the completed dashboard, like Tableau, MongoDB allows real-time dashboard filtering. In the above picture, the filter is on the right side of the dashboard and we can customize to whatever filter we intend to use.
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
