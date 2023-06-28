@@ -100,7 +100,7 @@ MySQL:
  - First we need to create a new folder under the project named `template`. Then move all the template html file into the folder. 
   - Then create another folder named `static` to place all the js, css file into it.
   <p align="center">
-<img src="./files/images/mysql user.png"></img>
+<img src="./files/images/template static.png"></img>
 </p>
 
  - In the `setting` folder specify the DIRS for template path.
@@ -131,7 +131,7 @@ MySQL:
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 ```
- - Change the link format into `{% static 'assets/css/your_css'} so that the system can recognize the file path.
+ - Change the link format into `{% static 'assets/css/your_css'}` so that the system can recognize the file path.
 
  <p align="center">
 <img src="./files/images/static path.png"></img>
