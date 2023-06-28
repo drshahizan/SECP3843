@@ -96,6 +96,7 @@ The machine learning that I will implement for my dataset is K-Means Clustering.
 
      <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(5).png" />
    - Then, import all the necessary libraries to do K-Means Clustering algorithm. As I want to use the yellowbrick library, I need to install the library first.
+
      ```
       ! pip install yellowbrick
 
@@ -107,6 +108,17 @@ The machine learning that I will implement for my dataset is K-Means Clustering.
       from yellowbrick.cluster import KElbowVisualizer, SilhouetteVisualizer
       from sklearn.preprocessing import StandardScaler
       ```  
+   - Comments and Diggs are numerical features and it may have been measured in different units. With that, we need to make sure that the values for both features are the same scale. So, to transform the data into the same scale, we need to implement the StandardScaler class.
+
+     ```
+      scaler = StandardScaler()
+      scaled_features = scaler.fit_transform(features)
+      scaled_features
+      ``` 
+
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(6).png" /> 
+   - 
+
 
 
 
