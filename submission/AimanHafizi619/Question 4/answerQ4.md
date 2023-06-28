@@ -38,6 +38,10 @@ import pandas as pd
 import datetime as dt
 import pymongo
 import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import classification_report, confusion_matrix
 ```
 
 - Retrieve `customers.json` from MongoDB Compass
