@@ -25,6 +25,7 @@ In this task, I present a comparative study on the use of machine learning of cl
 !pip install pymongo
 !pip install pandas
 ```
+<img src="./files/image/install.png">
 
 ### Step 2: Retrieving Data from MongoDB
 
@@ -49,6 +50,7 @@ df = pd.DataFrame(data)
 df = json_normalize(data)
 df.head()
 ```
+<img src="./files/image/df.png">
 
 ### Step 3: Data Pre-Processing 
 Data preprocessing is a process of preparing the raw data and making it suitable for a machine learning model. It is the first and crucial step while creating a machine learning model.
@@ -60,11 +62,13 @@ a. Check null values
 # Check null values
 df.isnull().sum()
 ```
+<img src="./files/image/isnull.png">
 
 b. Check description of the data in the DataFrame
 ```
 df.describe()
 ```
+<img src="./files/image/describe.png">
 
 c. Remove outlier of results
 ```
@@ -73,7 +77,9 @@ print(result_counts)
 result_counts = df['result'].value_counts()
 outliers = result_counts[result_counts < 500].index
 df = df[~df['result'].isin(outliers)]
+df.describe()
 ```
+<img src="./files/image/describe2.png">
 
 ### Step 4: Define the machine learning function
 a. Import necessary libraries and modules:
@@ -116,11 +122,14 @@ new_business_name_vectors = vectorizer.transform(new_business_name)
 predicted_sector = classifier.predict(new_business_name_vectors)
 print('Predicted Sector:', predicted_sector)
 ```
+<img src="./files/image/predicted.png">
+
 f. Calculate the accuracy of the model (assuming model is referring to the Decision Tree classifier):
 ```python
 accuracy = classifier.score(business_features, sector_names)
 print('Accuracy:', accuracy)
 ```
+<img src="./files/image/accuracy.png">
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
