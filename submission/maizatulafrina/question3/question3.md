@@ -52,22 +52,35 @@ Don't forget to hit the :star: if you like this repo.
 
       ```python
       from django.db import models
+      from django.contrib.auth.models import AbstractUser, Group, Permission
       
-      class Inspection(models.Model):
-          id = models.CharField(max_length=50, primary_key=True)
-          certificate_number = models.IntegerField()
-          business_name = models.CharField(max_length=255)
-          date = models.DateField()
-          result = models.CharField(max_length=255)
-          sector = models.CharField(max_length=255)
-          city = models.CharField(max_length=255)
-          zip_code = models.IntegerField()
-          street = models.CharField(max_length=255)
-          number = models.IntegerField()
+      class User(AbstractUser):
+          USER_TYPE_CHOICES = (
+              ('customer', 'Customer'),
+              ('technical_worker', 'Technical Worker'),
+              ('senior_management', 'Senior Management'),
+          )
+          
+          user_type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES)
       
-          class Meta:
-           app_label = 'inspectionApp'
-           db_table = 'tb_inspection'
+          groups = models.ManyToManyField(
+           Group,
+           verbose_name='groups',
+           related_name='customUser_set',
+           blank=True,
+           
+          )
+   
+          user_permissions = models.ManyToManyField(
+           'Permission,
+            verbose_name='user permissions',
+            related_name='customUser_set',
+            blank=True,
+          )
+
+          def _str_(self):
+               return self.username 
+    
 
 **4. Migrate the Models**
 
