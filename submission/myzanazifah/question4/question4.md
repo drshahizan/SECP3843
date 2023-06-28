@@ -117,7 +117,62 @@ The machine learning that I will implement for my dataset is K-Means Clustering.
       ``` 
 
      <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(6).png" /> 
-   - 
+   - For the K-Means clustering, I want to compare between 9 different clusters. I also did not set the initialization for the centroid. Hence, I put init as random.
+
+      ```
+      k_values = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+      for k in k_values:
+          kmeans = KMeans(n_clusters=k, init="random", random_state=42)
+          kmeans.fit(scaled_features)
+      ``` 
+   - Then, get the cluster label and put it in the dataframe.
+     
+      ```
+      cluster_labels = kmeans.labels_
+      features['cluster_label'] = cluster_labels
+      features
+      ``` 
+
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(7).png" /> 
+   - To identify the centroids coordinates for each cluster, run the following code:     
+
+     ```
+      kmeans.cluster_centers_
+      ``` 
+
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(8).png" /> 
+   - Then, plot a scatter graph to visualise the K-Means clustering for Number of Comments and Number of Diggs.     
+
+     ```
+      plt.scatter(features['comments'], features['diggs'], c=features['cluster_label'], cmap='viridis')
+      plt.xlabel('Number of Comments')
+      plt.ylabel('Number of Diggs')
+      plt.title('K-means Clustering')
+      plt.colorbar(label='Cluster')
+      plt.show()
+      ``` 
+
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(9).png" /> 
+   - Lastly, I would like to compare the inertia of each clusters. Inertia is something that can indicate how well the data points within each cluster are grouped together.
+
+     ```
+      values = []
+      for k in k_values:
+          kmeans = KMeans(n_clusters=k, init="random", random_state=42)
+          kmeans.fit(scaled_features)
+          values.append(kmeans.inertia_)
+      
+      plt.plot(k_values, values, marker='o')
+      plt.xlabel('Number of Clusters (k)')
+      plt.ylabel('Inertia')
+      plt.title('K-means Inertia')
+      plt.show()
+      ``` 
+
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(10).png" /> 
+   
+
 
 
 
