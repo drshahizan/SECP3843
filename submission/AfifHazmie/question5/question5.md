@@ -22,8 +22,22 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
   - `MongoDB Charts` are MongoDB tool that help user to create or produce visualizations such as dashboard or single chart based user data stored in MongoDB.
     
 #### To utilize JSON dataset using MongoDB, we have to insert/import the data into MongoDB
+- Import json dataset file into mongoDB with Mongo Shell.
+- In the terminal with Mongo Shell active, type in the command
+  - `mongoimport --uri mongodb+srv://afifhazmiearsyad:abc123456789@noctua.bw9bvzx.mongodb.net/ --db SupplyStore --collection Sales --file "C:\Users\User\Downloads\sales.json"`
+  - `--db` = database name
+  - `--collection` = database collection name
+  - `--file` = file path to the JSON dataset file
+<p align="center">
+  <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA27.jpg" width="700">
+</p>
 
-
+#### Create Dashboard
+- Open [MongoDB Atlas](https://www.mongodb.com/atlas/database) and log in into account.
+- In the top navigation bar, there is a button link named charts, click on it to access Mongo Charts
+<p align="center">
+  <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question5/files/images/mongochart.jpg" width="300">
+</p>
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
