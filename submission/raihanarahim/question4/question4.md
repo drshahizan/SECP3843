@@ -31,6 +31,9 @@ The process involved are :
 * `Apply ML algorithm` :
 * `Analyze results` : 
 
+## Google Collab Code
+
+[Complete Machine Learning Process ](https://github.com/drshahizan/special-topic-data-engineering/issues)
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
