@@ -245,13 +245,22 @@ python manage.py startapp tweets
     - MongoDB
       <img  src="./files/images/loadmongo.png"></img>
 
-6. Query and Retrieve Data: Django’s ORM will be used to query and retrieve data from both databases.
+6. Query and Retrieve Data: Django’s ORM will be used to query and retrieve data from both databases. I have defined a view and template to see the result. 
   ```
   target_source = "web"
   tweets_mysql = Tweet.objects.using('default').filter(source=target_source)
   tweets_mongodb = Tweet.objects.using('mongodb').filter(source=target_source)
   ```
   > The above code will retrieve all the documents with source equal to "web" from MySQL and MongoDB.
+
+  Output:
+  
+  - MySQL
+    
+    <img  src="./files/images/output.png"></img>
+    
+  - MongoDB
+    <img  src="./files/images/output2.png"></img>
 
 ## Question 1 (b)
 <img  src="./files/images/architecture.png"></img>

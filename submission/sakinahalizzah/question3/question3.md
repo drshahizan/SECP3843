@@ -16,16 +16,26 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 3 (a)
 
-**Step 1: Continue the step after set up the environment, Django project, and Django App.**
+**Step 1: Start with set up the environment and Django project**
+
+i. Creating a virtual environment using the command `virtualenv env`.
+
+ii. Activating the virtual environment using the command `.\env\Scripts\activate`.
+
+iii.  Check if Django is installed using `pip show django`. If not, install it with `pip install django`.
 
 <img src="https://github.com/drshahizan/SECP3843/assets/99240177/3dfa2840-536e-4e8d-91b3-7e2f6c2b685c" />
 
-**Step 2:**
-`pip install mysql-connector-python`
+iv.  Create a new Django Project using the command `django-admin startproject financialAnalytics`
 
-<img src="https://github.com/drshahizan/SECP3843/assets/99240177/7f08dcfa-e167-4058-9151-eae923c01480" />
+**Step 2: Django Configuration**
 
-**Step 3:**
+Install the mysqlclient package using the command `pip install mysqlclient` to connect MySQL database and Python.
+
+<img src="https://github.com/drshahizan/SECP3843/assets/99240177/04c1b71f-2efe-4bbe-961f-9ca95d44506f" />
+
+**Step 3: Setting Database configuration**
+
 ```
 DATABASES = {
     'default': {
@@ -37,17 +47,6 @@ DATABASES = {
         'PORT': '3306',
         'OPTIONS': {
             'unix_socket': '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock',
-        },
-    },
-    'mongodb': {
-        'ENGINE': 'djongo',
-        'NAME': 'db_analytics',
-        'CLIENT': {
-            'host': 'mongodb+srv://clustersakinah.scfkjmg.mongodb.net',
-            'username': 'sakinahalizzah',
-            'password': 'Sakinah1234',
-            'authMechanism': 'SCRAM-SHA-1',
-            'authSource': 'admin',
         },
     },
 }

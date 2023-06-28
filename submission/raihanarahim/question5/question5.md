@@ -119,6 +119,105 @@ print(f"JSON file size: {convert_size(file_size)}")
 
 > According to the code above, after dropping the other columns the file size from `46.45MB` has reduced to `28.29MB`. Thus, this will optimize the performance of the Portal as it does not need to load large volume JSON data.
 
+### 2. Use streaming JSON parser
+
+* Instead of loading the entire JSON data, streaming parsers parse the JSON data after being received. This help to reduce memory usage and also improve the parsing speed.
+<br>
+Steps :
+
+i) Load the JSON data.
+```
+import pandas as pd
+
+# Load the JSON file into a DataFrame
+data = '/content/drive/MyDrive/tweetsmodified.json'
+df = pd.read_json(data)
+
+# View the DataFrame
+
+pd.set_option('display.max_columns', None)
+df.head(5)
+```
+<img width="930" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/1bf218f6-ba16-4ce2-b12d-363706da5ff8">
+
+ii) Run the following code to parse the JSON file.
+```
+import json
+
+def parse_json_stream(json_data):
+    parser = json.JSONDecoder()
+    buffer = ""
+    
+    for chunk in json_data:
+        buffer += chunk
+        try:
+            while buffer:
+                obj, idx = parser.raw_decode(buffer)
+                yield obj
+                buffer = buffer[idx:].lstrip()
+        except json.JSONDecodeError:
+            # Incomplete JSON, wait for more data
+            continue
+    
+    # Handle any remaining buffered data
+    if buffer:
+        obj, _ = parser.raw_decode(buffer)
+        yield obj
+
+# Example usage
+with open('/content/drive/MyDrive/tweetsmodified.json', 'r') as file:
+    json_data_chunks = file.readlines()
+
+# Simulating receiving JSON data in chunks
+for obj in parse_json_stream(json_data_chunks):
+    print(obj)
+```
+> JSON data succesfully parsed thus we can see that  less time taken needed to accomplish parsing.
+
+### 3. Use JSON caching
+* Caching JSON data reduce the time taken to fetch data. This is because it will retrieve the data from cache instead of having to retrieve from memory. This caching method will improve portal performance significantly.
+<br>
+Steps :
+
+i) Choose caching mechanism
+
+* In this example, we will use Redis as our caching mechanism. The configuration is to have 100 items, time to live of 1 minute and LRU as the eviction policy.
+```
+import redis
+
+cache = redis.Redis()
+
+# Set the size of the cache to 100 items
+cache.set_max_entries(100)
+
+# Set the time to live for cached items to 1 minute
+cache.set_expire(60)
+
+# Set the eviction policy to LRU
+cache.set_eviction_policy('lru')
+```
+
+ii) Use the cached memory
+
+* To use the cache memory, we will implement the code below. The code below shows that it will first check the data if it has been cached or not. If its not cached, it will retrieve from the database.
+
+```
+import redis
+
+cache = redis.Redis()
+
+def get_data(key):
+    data = cache.get(key)
+    if data is None:
+        data = fetch_data_from_database(key)
+        cache.set(key, data)
+    return data
+```
+> Caching data in the portal will improve performance by retrieving it much more quickly than fetching it from the database.
+
+### 4. Use suitable library to process the data
+
+
 ## Question 5 (b)
 ### Dashboard on Tweets dataset.
 
