@@ -66,7 +66,7 @@ To configure the database connections, open the settings.py file in your project
 DATABASES = {
          'default': {
              'ENGINE': 'django.db.backends.mysql',
-             'NAME': 'AA',
+             'NAME': 'Mflix',
              'USER': 'root',
              'PASSWORD': '',
              'HOST': 'localhost',
