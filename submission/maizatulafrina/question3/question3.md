@@ -426,7 +426,7 @@ updates and seamless interaction between the databases.
      test_dual_write()
      ```
 
-   - **Step 5:Test dual_write fucntion and Check Database**
+   - **Step 5:Test dual_write function and Check Database**
 
      Run `python manage.py runserver` command to test the dual_write function whether it is successfull or not.
 
@@ -435,6 +435,9 @@ updates and seamless interaction between the databases.
      <img width="792" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/31172a8b-9076-4236-b50d-3415ea8ebc9a">
 
      MongoDB Output:
+
+     <img width="811" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/ed8ac544-d0f4-4429-aeeb-4fadf74eadb8">
+
      
      
 
