@@ -226,6 +226,12 @@ print('Accuracy:', accuracy)
 ```
 <img src="./files/image/accuracy.png">
 
+## Conclusion:
+Based on the given information that the accuracy of the Decision Tree classifier is 0.8257422761882064, I can conclude that the classifier performs relatively well in predicting the sector based on the given business names. An accuracy of 0.8257422761882064 means that the classifier correctly predicts the sector for approximately 82.57% of the instances in the dataset used for training and evaluation. This indicates that the classifier has a reasonably good performance. However, further evaluation and testing are recommended to ensure its suitability for the intended application.
+
+
+## Future Work:
+Future work could involve exploring alternative models such as Random Forests or other ensemble methods, as well as investigating the integration of more comprehensive features or domain-specific knowledge to improve the accuracy of business sector predictions. Additionally, collecting a larger and more diverse dataset could help enhance the model's performance and generalization capabilities. 
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
