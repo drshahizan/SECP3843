@@ -1,4 +1,4 @@
-<a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
+![image](https://github.com/drshahizan/SECP3843/assets/97084950/2776bd74-d7b7-43bb-b37c-394f7e4b8e34)<a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/network/members"><img src="https://img.shields.io/github/forks/drshahizan/SECP3843" alt="Forks Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/pulls"><img src="https://img.shields.io/github/issues-pr/drshahizan/SECP3843" alt="Pull Requests Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/issues"><img src="https://img.shields.io/github/issues/drshahizan/SECP3843" alt="Issues Badge"/></a>
@@ -44,10 +44,46 @@ Don't forget to hit the :star: if you like this repo.
 
 
 
-    
+
 
 ## Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The dashboard is designed to provide comprehensive analysis and visualization of a JSON dataset. It offers various functionalities to explore and understand the data.
+
+### Sales Analysis
+ <img  src="./files/images/dashboard1.JPG"></img>
+  The sales analysis section provides insights into customer demographics, sales channels, and satisfaction levels. It includes the following features:
+
+  <b>-Gender Distribution</b>: A bar chart displaying the distribution of customers based on gender.<br>
+  <img  src="./files/images/graph1.JPG"></img>
+  
+  <b>-Age Distribution</b>: A bar chart representing the distribution of customers across different age groups.<br>
+  <img  src="./files/images/graph2.JPG"></img>
+  
+   <b>-Satisfaction Distribution</b>: A bar chart displaying the distribution of the customer's satisfaction leven (1-5)<br>
+  <img  src="./files/images/graph3.JPG"></img>
+  
+  <b>-Satisfaction Level</b>: Average, minimum, and maximum satisfaction levels of customers.<br>
+  <img  src="./files/images/graph5.JPG"></img>
+  
+  <b>-Sales Channel Distribution</b>: A bar chart showcasing the distribution of sales channels used by customers.<br>
+  <img  src="./files/images/graph4.JPG"></img>
+
+### Steps:
+  #### 1. Data Loading
+  The dashboard loads the JSON dataset using the MongoDB database. It retrieves the required data for analysis and processing.<br>
+    <img  src="./files/images/load.JPG"></img>
+    
+  #### 2. Data Preprocessing
+  The loaded data is processed to generate statistics and distributions for customer demographics, sales channels, and satisfaction levels. The processed data is then visualized using charts and displayed on the dashboard.<br>
+     <img  src="./files/images/process.JPG"></img>
+
+  #### 3. Visualization
+  The dashboard utilizes various charts and graphs to present the analyzed data in a visually appealing manner<br>
+      <img  src="./files/images/plot.JPG"></img><br>
+      <img  src="./files/images/html.JPG"></img>
+
+### Conclusion
+  The dashboard provides an interactive and comprehensive analysis of the JSON dataset. It enables users to explore customer demographics, sales channels, and satisfaction levels through visualizations and statistics
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
