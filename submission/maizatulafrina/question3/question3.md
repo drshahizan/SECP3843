@@ -94,18 +94,352 @@ Don't forget to hit the :star: if you like this repo.
 
 **5. Create User Registration and Login Views**
 
-<img width="355" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a2823276-392b-4c80-87ad-3135792755f5">
+- Create new file name `register.py` to define user input
 
+  ```
+  from django import forms
+  from .models import User
+   
+  class UserRegistrationForm(forms.ModelForm):
+       password = forms.CharField(widget=forms.PasswordInput)
+       user_type = forms.ChoiceField(choices=User.USER_TYPES)
+   
+       class Meta:
+           model = User
+           fields = ['username', 'password', 'email', 'first_name', 'last_name', 'user_type']
+   
+  class LoginForm(forms.Form):
+       username = forms.CharField(label='username')
+       password = forms.CharField(label='password', widget=forms.PasswordInput)
+    ```
 
-<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/e1ab96f7-7dce-481e-8d2a-997351846924">
+ - Create `views.py` file to define action for both Registration Form and Login Form as well as define the path to redirect to their respective dashboard page.
 
-<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/edf15a6b-7064-4a8c-9679-3dbe5980cbef">
+   ```
+   from django.shortcuts import render
+   from django.contrib.auth import authenticate, login
+   from .register import UserRegistrationForm, LoginForm
+   
+   
+   
+   def user_register(request):
+       if request.method == 'POST':
+           form = UserRegistrationForm(request.POST)
+           if form.is_valid():
+               user = form.save(commit=False)
+               user.set_password(form.cleaned_data['password'])
+               user.save()
+               return redirect('login')
+       else:
+           form = UserRegistrationForm()
+       return render(request, 'user_register.html', {'register': form})
+   
+   
+   def login_view(request):
+       if request.method == 'POST':
+           username = request.POST.get('username')
+           password = request.POST.get('password')
+           user = authenticate(request, username=username, password=password)
+   
+           if user is not None:
+               login(request, user)
+               print(f"Logged in as {username}")
+               print(f"User type: {user.user_type}")
+               
+               if user.user_type == 'customer':
+                   print("Redirecting to customer dashboard")
+                   return redirect('cust_dashboard')
+               elif user.user_type == 'technical_worker':
+                   print("Redirecting to technical worker dashboard")
+                   return redirect('tech_dashboard')
+               elif user.user_type == 'senior_management':
+                   print("Redirecting to management dashboard")
+                   return redirect('management_dashboard')
+           else:
+               messages.error(request, 'Invalid username or password.')
+       
+       return render(request, 'login.html')
+   
+   def customer_dashboard_view(request): return render(request, 'cust_dashboard.html')
+   
+   def technical_worker_dashboard_view(request): return render(request, 'tech_dashboard.html')
+       
+   def management_dashboard_view(request): return render(request, 'management_dashboard.html')
+   
+   ```
+ - Create Registration Form `user_register.html`.
 
-<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/f56c424e-1160-4042-b538-90126d27a952">
+   ```
+   <style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .form-row {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .form-label {
+        min-width: 100px;
+        text-align: right;
+        margin-right: 10px;
+    }
+
+    .form-input {
+        min-width: 200px;
+    }
+   </style>
+   
+   <h1>Register</h1>
+   <form method="POST" action="{% url 'login' %}" class="form-container">
+       <div class="form-row">
+           <label for="id_email" class="form-label">Email:</label>
+           <input type="text" id="id_email" name="email" class="form-input">
+       </div>
+   
+       <div class="form-row">
+           <label for="id_username" class="form-label">Username:</label>
+           <input type="text" id="id_username" name="username" class="form-input">
+       </div>
+   
+       <div class="form-row">
+           <label for="id_password" class="form-label">Password:</label>
+           <input type="password" id="id_password" name="password" class="form-input">
+       </div>
+   
+       <div class="form-row">
+           <label for="id_role" class="form-label">Role:</label>
+           <select id="id_role" name="role" class="form-input">
+               <option value="customer">Customer</option>
+               <option value="senior_management">Senior Management</option>
+               <option value="technical_worker">Technical Worker</option>
+           </select>
+       </div>
+   
+       <div class="form-row">
+           <input type="submit" value="Register">
+       </div>
+   </form>
+   ```
+   Result:
+
+   <img width="707" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/6b2ae578-22f6-4caf-b418-b9b449aad2d5">
+
+- Create Login Form `login.html`.
+
+  ```
+  <h1>Login</h1>
+   <form style="align-content: center;" method="POST" action="{% url 'login' %}">
+      
+    
+       <div>
+          <label for="id_username">Username:</label>
+          <input type="text" id="id_username" name="username">
+       </div>
+    
+       <div>
+          <label for="id_password">Password:</label>
+          <input type="password" id="id_password" name="password">
+       </div>
+    
+       <div>
+          <input type="submit" value="Login">
+       </div>
+    
+    </form>
+  ```
+
+  Result:
+
+  <img width="607" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/d93b1367-ff03-4bc0-8a8e-10a7b275cc05">
+
+- Create dashboard page for each users `cust_dashboard.html`, `tech_dashboard.html` and `management_dashboard.html`.
+
+  **cust_dashboard.html**
+
+  ```
+  <!DOCTYPE html>
+   <html>
+   
+   <head>
+      <title>Dashboard</title>
+      <style>
+         .dash {
+            font-size: 80px;
+            text-align: center;
+            margin-top: 200px;
+         }
+      </style>
+   </head>
+   
+   <body>
+      <div class="dash">
+         Customer Dashboard
+      </div>
+   </body>
+   
+   </html>
+  ```
+
+  Result:
+
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/e1ab96f7-7dce-481e-8d2a-997351846924">
+  
+  **tech_dashboard.html**
+
+  ```
+  <!DOCTYPE html>
+   <html>
+   
+   <head>
+      <title>Dashboard</title>
+      <style>
+         .dash {
+            font-size: 80px;
+            text-align: center;
+            margin-top: 200px;
+         }
+      </style>
+   </head>
+   
+   <body>
+      <div class="dash">
+         Technical Worker Dashboard
+      </div>
+   </body>
+   
+   </html>
+  ```
+
+   Result:
+
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/edf15a6b-7064-4a8c-9679-3dbe5980cbef">
+
+  
+  **management_dashboard.html**
+
+  ```
+  <!DOCTYPE html>
+   <html>
+   
+   <head>
+      <title>Dashboard</title>
+      <style>
+         .dash {
+            font-size: 80px;
+            text-align: center;
+            margin-top: 200px;
+         }
+      </style>
+   </head>
+   
+   <body>
+      <div class="dash">
+         Management Dashboard
+      </div>
+   </body>
+   
+   </html>
+  ```
+
+  Result:
+
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/f56c424e-1160-4042-b538-90126d27a952">
+
 
 
 ## Question 3 (b)
 
+The challenge of Data Replication and Synchronization arises between the MySQL and MongoDB databases when working with two different databases. There are few ways and steps to overcome this challenges including exploring database-specific replication techniques or leverage external tools that facilitate realtime
+updates and seamless interaction between the databases.
+
+   - **Step 1: Identify the Replication Strategy**
+
+     Determining the replication direction (MySQL to MongoDB, MongoDB to MySQL, or bidirectional) and establishing the synchronisation frequency are crucial for managing data replication and synchronisation between MySQL and MongoDB. This requires taking into account elements like data volume, system performance, and real-time needs. You may make sure that the data is consistent between the two systems by choosing which database drives the replication and specifying the synchronisation frequency. It is possible to achieve accurate replication and synchronisation, maintain data integrity, and enable seamless communication between the two databases by selecting the right direction and frequency.
+
+   - **Step 2: Configure Database**
+
+      Configure the database connection for MySQL and MongoDB.
+
+     <img width="704" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/8e610e4e-30fa-46de-ae7f-1d499557bd8b">
+
+   - **Step 3: Define the dual_write function**
+      Make sure to install MongoClient and MySQL Connector before applying this part.
+     
+     ```
+     from pymongo import MongoClient
+     import mysql.connector
+      
+     def dual_write(inspection):
+      
+              # Insert into MySQL
+              mysql_insert_query = "INSERT INTO your_table_name (id, certificate_number, business_name, date, result, sector, city,zip,street,number)VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+              mysql_data=(
+              inspection['id'],
+              inspection['certificate_number'],
+              inspection['business_name'],
+              inspection['date'],document['result'],
+              inspection['sector'],
+              inspection['address']['city'],
+              inspection['address']['zip'],
+              inspection['address']['street'],
+              inspection['address']['number'])
+     
+              mysql_cursor.execute(mysql_insert_query, mysql_data)
+              mysql_connection.commit()
+      
+              # Insert into MongoDB
+              mongo_collection.insert_one(inspection)
+              
+              print("Dual write successful")
+          except Exception as e:
+              print("Error during dual write:", str(e))
+          
+        ```
+     
+   - **Step 4: Define Data**
+
+     Create a sample dat to test the dual_write fucntion.
+
+     ```
+     def test_dual_write():
+           document = {
+          "_id": { "$oid": "56d61033a378eccde8a8354f" },
+          "id": "10021-2015-ENFO",
+          "certificate_number": 9278806,
+          "business_name": "TEST BUSINESS NAME",
+          "date": "Feb 20 2015",
+          "result": "No Violation Issued",
+          "sector": "Cigarette Retail Dealer - 127",
+          "address": {
+              "city": "RIDGEWOOD",
+              "zip": 11385,
+              "street": "MENAHAN ST",
+              "number": 1712
+          }
+          dual_write(inspection)
+     
+     test_dual_write()
+     ```
+
+   - **Step 5:Test dual_write function and Check Database**
+
+     Run `python manage.py runserver` command to test the dual_write function whether it is successfull or not.
+
+     MySQL Output:
+
+     <img width="792" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/31172a8b-9076-4236-b50d-3415ea8ebc9a">
+
+     MongoDB Output:
+
+     <img width="811" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/ed8ac544-d0f4-4429-aeeb-4fadf74eadb8">
+
+     
+     
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

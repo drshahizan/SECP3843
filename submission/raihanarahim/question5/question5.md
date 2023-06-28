@@ -33,7 +33,7 @@ Take this scenario where I want to analyze and visualize `user` details data fro
 Steps :
 
 i) Import the JSON file 
-```
+```py
 import pandas as pd
 
 # Load the JSON file into a DataFrame
@@ -50,7 +50,7 @@ df.head(5)
 
 ii) Check the initial JSON file size : 
 
-```
+```py
 import os
 import math
 
@@ -78,7 +78,7 @@ print(f"JSON file size: {convert_size(file_size)}")
 
 iii) Then, drop the other columns.
 
-```
+```py
 # Select only the 'user' column
 df_user = df[['user']].copy()
 
@@ -94,7 +94,7 @@ print(df_user)
 iv) After other columns has dropped, check again the file size.
 
 
-```
+```py
 # Save the DataFrame as a JSON file
 df_user.to_json('data_output2.json')
 
@@ -126,7 +126,7 @@ print(f"JSON file size: {convert_size(file_size)}")
 Steps :
 
 i) Load the JSON data.
-```
+```py
 import pandas as pd
 
 # Load the JSON file into a DataFrame
@@ -141,7 +141,7 @@ df.head(5)
 <img width="930" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/1bf218f6-ba16-4ce2-b12d-363706da5ff8">
 
 ii) Run the following code to parse the JSON file.
-```
+```py
 import json
 
 def parse_json_stream(json_data):
@@ -175,14 +175,14 @@ for obj in parse_json_stream(json_data_chunks):
 > JSON data succesfully parsed thus we can see that  less time taken needed to accomplish parsing.
 
 ### 3. Use JSON caching
-* Caching JSON data reduce the time taken to fetch data. This is because it will retrieve the data from cache instead of having to retrieve from memory. This caching method will improve portal performance significantly.
+* Caching JSON data will reduce the time taken to fetch data. This is because it will retrieve the data from cache instead of having to retrieve from memory. This caching method will improve portal performance significantly.
 <br>
 Steps :
 
 i) Choose caching mechanism
 
 * In this example, we will use Redis as our caching mechanism. The configuration is to have 100 items, time to live of 1 minute and LRU as the eviction policy.
-```
+```py
 import redis
 
 cache = redis.Redis()
@@ -201,7 +201,7 @@ ii) Use the cached memory
 
 * To use the cache memory, we will implement the code below. The code below shows that it will first check the data if it has been cached or not. If its not cached, it will retrieve from the database.
 
-```
+```py
 import redis
 
 cache = redis.Redis()
@@ -220,6 +220,60 @@ def get_data(key):
 
 ## Question 5 (b)
 ### Dashboard on Tweets dataset.
+
+In my case, I am assigned to Tweets Dataset. The dataset consist of  data regarding tweets such as user who posted it, when the tweet's posted, engagement on the tweet and user's details. I decided to create a dashboard to analyze user's data. The title of my dashboard is `Twitter User Analysis Dashboard`.
+<br>
+<div align="center">
+  <img src="images/dashboard.png" height="500px" />
+</div>
+<br>
+Referring to the dashboard above there are 7 visualizations.
+
+1. Total Users
+
+* This card represent the number of users in the dataset. The analysis is based on these 24,8300 Twitter users.
+  
+2. Users by Location
+   
+* This visualization mainly focuses on analyzing Users and its location. Based on the graph, we can see that the highest Twitter Users are from Brazil with 472 records and the lowest one is from Toronto with 43 records. 
+<img width="500px" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/12055bcd-6d53-4d21-a76a-3db7ec44ce39"><br>
+<img width="500px" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/1425bff9-8393-4ab0-80f8-53094c5b5f1a"><br>
+
+3. Distribution of Users
+   
+* Next, we will get more detailed view on the distribution of users. As you can see from the visualization above, the distribution is represented by heatmap. The darker the purple colour, the bigger the  user distribution are in that place. As you can tell, the users are widely distributed in South America which correlate with our users by location graph. This is because Brasil in in South America.
+
+* You can also see detailed location of a user by filtering to `Jimmmy Carr`. Then the map will show exact location of the user :
+ <img width="500px" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/b502c5ab-b798-43c0-b9a4-d71348776d32">
+
+4. Tweet Word Cloud
+   
+* The word cloud is to analyze what are the most used word in user's Tweet. The word cloud above has filtered out stop words. Since not all users uses the same language so we cannot get a good word cloud.
+
+* The most used word are :
+  * `The`
+  * `to`
+  * `MY`
+  * `You`
+  * `HTTP`
+    
+5. User Followers
+
+* Next, we will analyze User Followers to determine which user has the highest followers. 
+It is found out that Gary Vaynerchuk has the highest followers, 854199 compared to the other users. This visualization is important to help us get insights on what makes the particular user has many followers.<br>
+<img width="500px" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/22962f22-b71b-454d-8d04-4671626d3b08">
+
+6. Tweets Languages
+    
+* Since there are worlwide users in Twitter. I wanted to know what are the most used language in Twiter. To accomplish this, I use column `user.lang` and `user.name`. Pie chart is choosen to visualize the data and it shows that English is the main language used in Twitter.<br>
+  <img width="500px" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/50d5abf5-5d99-41df-8fa3-68916b95a8bd">
+
+7. Active Users
+* Lastly, I would like to analyze on which users are active and which are not. To accomplish this, I used `user.favourites` and `user.following` as our features. Assumption made is: if the user has higher number of favourites  have higher following count the user is considered as active.This is because if user spend more time on Twitter, they will likely have more following and higher number of favourites.<br>
+<img width="500px" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/4426f80c-575a-4d9b-a7a3-80ead7ae57bf">
+
+## Dashboard file
+[Complete Dashboard on PowerBI](https://github.com/drshahizan/SECP3843/blob/main/submission/raihanarahim/question5/files/AAQ5.pbix)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

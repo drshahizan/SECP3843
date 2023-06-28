@@ -1,4 +1,4 @@
-<a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
+
 <a href="https://github.com/drshahizan/SECP3843/network/members"><img src="https://img.shields.io/github/forks/drshahizan/SECP3843" alt="Forks Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/pulls"><img src="https://img.shields.io/github/issues-pr/drshahizan/SECP3843" alt="Pull Requests Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/issues"><img src="https://img.shields.io/github/issues/drshahizan/SECP3843" alt="Issues Badge"/></a>
@@ -11,7 +11,7 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Name: Lee Jia Xian
 #### Matric No.: A20EC0200
-#### Dataset:
+#### Dataset:  <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" >Supply Store Dataset</a>
 
 ## Question 3 (a)
 For this question, I will used the projecy(AA_Leejx) that created in Question 1a).
@@ -91,7 +91,69 @@ To create a user registration and login module using Django and MySQL for three 
 
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+To address the challenge of data replication and synchronization between the MySQL and MongoDB databases, we need to implement a solution that involves real-time updates and seamless interaction between the databases.Based on my case of having MySQL for user authentication and a JSON dataset (sales), along with MongoDB for another JSON dataset (sales), a suitable replication strategy would be the <b>Dual Writes </b> approach. This strategy ensures that any changes made in one database are accurately reflected in the other database.
+
+The dual write approach is a strategy used in database management systems to ensure data consistency across multiple systems or databases. It involves simultaneously writing data to two or more separate data stores, typically with different underlying technologies or purposes.
+
+The main goal of the dual write approach is to maintain synchronized data between multiple systems in real-time or near-real-time. Here's a brief explanation of how the dual write approach works:
+
+1. Capture the data: When new data is generated or updated in the system, it is captured by the application or service responsible for handling the data changes.
+
+2. Transform the data: Before writing the data to multiple data stores, it may undergo some transformations or mappings to ensure compatibility with the target systems. This step is necessary when the data models or schemas of the target systems differ.
+
+3. Write to primary data store: The data is first written to the primary data store, which is the main source of truth for the system. This ensures that the primary data store always reflects the most up-to-date information.
+
+4. Write to secondary data store(s): After writing to the primary data store, the data is then written to one or more secondary data stores. These secondary data stores could be replicas, caches, or other databases used for specific purposes or as backup systems.
+
+5. Synchronize the data: To ensure consistency, any changes made to the primary data store are propagated or synchronized to the secondary data store(s). This can be achieved through various mechanisms such as event-driven processing, database triggers, or data replication techniques.
+
+6. Handle conflicts: In some cases, conflicts or inconsistencies may arise when writing to multiple data stores. For example, if a write operation fails in one of the data stores while succeeding in others. Conflict resolution mechanisms need to be implemented to handle such situations and ensure data integrity.
+
+The dual write approach offers several advantages, including improved fault tolerance, data redundancy, and the ability to support different system requirements or data access patterns. However, it also introduces complexities, such as increased write latency, synchronization overhead, and the need for robust conflict resolution mechanisms.
+
+Overall, the dual write approach is a powerful technique for maintaining consistent data across multiple systems, enabling organizations to leverage the strengths of different data stores while ensuring data integrity.
+
+Here are the steps involved in implementing the Dual Writes strategy: 
+
+### 1. Set up the MySQL and MongoDB connections:
+  a) In the Django application's settings.py file, configure the MySQL database connection using Django's database configuration.
+  b) Establish a connection to the MongoDB database using the `pymongo` library.
+    <img  src="./files/images/setting1.JPG"></img>
+
+### 2. Define the Django model for the Sales dataset
+  a) In the Django application's models.py file, define the Sales model that represents the sales data.
+   <img  src="./files/images/design1.JPG"></img>
+
+### 3. Dual Writes Approach
+  a) Insert: <br>
+     <img  src="./files/images/dual1.JPG"></img>
+
+  b) Update: <br>
+    <img  src="./files/images/dual2.JPG"></img>
+
+  c) Delete: <br>
+    <img  src="./files/images/dual3.JPG"></img>
+
+### 4. Testing and Validation
+  a) In my case i use a form page for the user to insert or update the sales in database:
+     <img  src="./files/images/sale1.JPG"></img>
+     
+  b) Input sales: <br>
+    <img  src="./files/images/sale2.JPG"></img> <br>
+    <img  src="./files/images/sale3.JPG"></img>
+
+  c) Output:
+
+  <b>MySQL:</b> <br>
+  <img  src="./files/images/sale4.JPG"></img>
+
+  <b>MongoDB:</b> <br>
+  <img  src="./files/images/sale5.JPG"></img>
+  
+
+
+  
+  
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
