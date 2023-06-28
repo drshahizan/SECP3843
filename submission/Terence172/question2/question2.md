@@ -20,7 +20,7 @@ Let’s dissect this question, by the end of this question I should have importe
 * [Install Prerequisites](#Installing-Prerequisites)
 * [Configurating](#Configurating)
 * [Preparing the JSON file](#Preparing-the-JSON_file)
-* [Importing the Prepared JSON file to MongoDB](Importing-the-Prepared-JSON-file-to-MongoDB)
+* [Importing the Prepared JSON file to MongoDB](#Importing-the-Prepared-JSON-file-to-MongoDB)
 
 <br>
 
