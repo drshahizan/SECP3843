@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Name: MUHAMMAD IMRAN HAKIMI BIN MOHD SHUKRI
 #### Matric No.: A20EC0213
-#### Dataset: AIRBNB
+#### Dataset: Airbnb Dataset
 
 ## Question 5 (a)
 
