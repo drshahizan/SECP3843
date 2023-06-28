@@ -122,7 +122,7 @@ Don't forget to hit the :star: if you like this repo.
      recommend("Barton Fink")
      ```
    - Here is the result:
-     ![image](https://github.com/drshahizan/SECP3843/assets/92329710/3303229b-e3a1-47bb-8b87-a47ccd77603f)
+   - ![image](https://github.com/drshahizan/SECP3843/assets/92329710/3303229b-e3a1-47bb-8b87-a47ccd77603f)
 
 
 
