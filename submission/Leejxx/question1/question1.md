@@ -169,10 +169,10 @@ class MongoDBRouter:
   Result:
   <img  src="./files/images/manage5.JPG"></img>
 
-### Data Loading:
+### 8. Data Loading:
   To load data into databases, I create a custom management command in Django.
 
- a) Create a new file called insert_sales_data.py in Django app's management/commands directory.
+ a) Create a new file called insert_sales_data.py in Django app's management/commands directory.<br>
    <img  src="./files/images/load1.JPG"></img>
 
   b) In the insert_sales_data.py:<br>
@@ -243,7 +243,7 @@ class MongoDBRouter:
 
         self.stdout.write(self.style.SUCCESS('Successfully inserted sales data'))
 
-   c) Then run the command in the terminal:
+   c) Then run the command in the terminal:<br>
       <img  src="./files/images/insert1.JPG"></img>
 
   d) output:<br>
@@ -252,7 +252,7 @@ class MongoDBRouter:
     <img  src="./files/images/insert2.JPG"></img>
 
    <br>
-    <b>MongoDBL</b>
+    <b>MongoDB</b>
      <img  src="./files/images/insert3.JPG"></img>
 
       
