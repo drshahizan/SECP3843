@@ -15,7 +15,77 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset:AIRBNB
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+To optimize the performance of the portal when dealing with large volumes of JSON data from the dataset during dashboard visualizations, I utilize MongoDB's aggregation pipeline and indexing features.
+By leveraging MongoDB's aggregation framework and indexing, we can efficiently process and retrieve data from the JSON dataset, even when dealing with large volumes. This approach allows you to perform complex aggregations, filtering, sorting, and limiting operations, ensuring optimal performance during dashboard visualizations.
+
+### 1. Import the necessary modules and connect to MongoDB database.
+
+```
+import pymongo
+
+# Connect to MongoDB and retrieve data
+client = pymongo.MongoClient("mongodb+srv://muhdimranh:123@sentimentanalysis.5esk2hq.mongodb.net/")
+db = client["airbnbportal"]
+collection = db["ListingsAndReviews"]
+
+```
+
+### 2. Define an aggregation pipeline to aggregate and process the data.
+
+```
+# Define the aggregation pipeline
+pipeline = [
+    # Stage 1: Filter relevant documents
+    {"$match": {"property_type": "Apartment"}},
+
+    # Stage 2: Group and aggregate data
+    {"$group": {
+        "_id": "$room_type",
+        "count": {"$sum": 1},
+        "average_price": {"$avg": "$price"}
+    }},
+
+    # Stage 3: Sort the data
+    {"$sort": {"count": -1}},
+
+    # Stage 4: Limit the number of results
+    {"$limit": 5}
+]
+
+# Execute the aggregation pipeline and retrieve the results
+results = collection.aggregate(pipeline)
+
+# Process the results and generate the data for visualization
+x_data = []
+y_data_count = []
+y_data_price = []
+
+for result in results:
+    x_data.append(result["_id"])
+    y_data_count.append(result["count"])
+    y_data_price.append(result["average_price"])
+```
+
+![Q5](files/images/q5.10.png)
+
+
+### 3. Implement indexing in the MongoDB database.
+
+Indexing improves query performance by creating a data structure that allows for faster data retrieval.
+
+```
+# Create indexes for the dataset attributes
+collection.create_index("property_type")
+collection.create_index("room_type")
+collection.create_index("price")
+
+# Verify the indexes
+indexes = collection.index_information()
+print(indexes)
+```
+
+
 
 ## Question 5 (b)
 
