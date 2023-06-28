@@ -24,7 +24,7 @@ Don't forget to hit the :star: if you like this repo.
 1. Upload the dataset.
    - `Google Colab` will be used as platform to implement the machine learning process using python.
    - Then upload the dataset which is `movies.json` into `Google Colab Files`.
-     ![image](https://github.com/drshahizan/SECP3843/assets/92329710/485ad071-2185-482f-8721-a3eac29a69ca)
+   ![image](https://github.com/drshahizan/SECP3843/assets/92329710/485ad071-2185-482f-8721-a3eac29a69ca)
 2. Import `pandas` library.
    - Pandas is a powerful open-source data manipulation and analysis library for Python. It provides data structures and functions to efficiently work with structured data, such as tables or spreadsheets, and perform various data operations.
    - ```
