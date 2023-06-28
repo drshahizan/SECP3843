@@ -69,13 +69,12 @@ Don't forget to hit the :star: if you like this repo.
     3. Data Indexing
        - Create indexes on the fields frequently used for querying and filtering in the JSON data.
        - Indexing helps improve the retrieval speed of data and reduces the query execution time.
-      
-       ```python
-       # Create indexes on frequently queried fields
-        collection.create_index('name')
-        collection.create_index('tag')
-        collection.create_index('price')
-       ```
+       - The easier way to create indexing expecially when using MongoDB as database is using the Index function in MongoDB Compass
+         
+        <div align="center">
+          <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question5/files/images/indexing.jpg" width="700">
+        </div>
+       
 
     4. Caching
        - Implement caching mechanisms to store the results of computationally intensive or frequently accessed queries.
