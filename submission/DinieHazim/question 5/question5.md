@@ -86,6 +86,41 @@ For this step, can refer my [Question 2(a)](https://github.com/drshahizan/SECP38
 
 #### Charts and Dashboard development
 
+<p align="center">
+   <img src="./files/images/Number%20of%20Comments%20for%20each%20Topic.png">
+</p>
+For this chart, I want to know which topic have the highest number of comments by dragging `comments` to the X-axis and `topic_name` to the Y-axis.
+
+<p align="center">
+   <img src="./files/images/Number%20of%20Stories%20in%20each%20Date%26nbsp%3B.png">
+</p>
+In this chart, I want to know the number stories submitted in each date. I put the `submit_date` in the X-axis and count the `title` in Y-axis.
+
+<p align="center">
+   <img src="./files/images/Number%20of%20Stories%20in%20each%20Media.png">
+</p>
+This pie chart will show me the number of stories in each media. This is because I want to know which media has the most uploaded stories in it.
+
+<p align="center">
+   <img src="./files/images/Relationship%20between%20number%20of%20Comments%20and%20Diggs.png">
+</p>
+This scatter plot will show the relationship between `diggs` and `comments`. From this chart, we can conclude that highest diggs will probably have the highest comments.
+
+<p align="center">
+   <img src="./files/images/Total%20Comments%20%26amp%3B%20Diggs%20for%20each%20Month.png">
+</p>
+This chart shows the total comments and diggs in each month so that I can know which month has the highest visit by the user.
+
+<p align="center">
+   <img src="./files/images/Total%20Number%20of%20Diggs%20based%20on%20Topic%20of%20Story.png">
+</p>
+For the last chart, I want to know the number of diggs based on each topic so that I can know which topic has the highest popularity.
+
+Here is my dashboard:
+<p align="center">
+   <img src="./files/images/Dinie's%20Dashboard.png">
+</p>
+
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
