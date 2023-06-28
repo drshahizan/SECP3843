@@ -13,7 +13,7 @@ Don't forget to hit the :star: if you like this repo.
 #### Matric No.: A20EC0195
 #### Dataset: City Inspections
 
-## Question 4 : Implementation of Machine Learning in Django
+## Question 4 : <b> A.Implementation of Machine Learning in Django <b>
 ### 1 : Install required libraries
 To perform machine learning, we need to install the `scikit-learn` library to our project using 
 ```python
@@ -103,9 +103,11 @@ b. Run the following command to start the Django development server: `python man
 
 Try entering the result and press the `Predict Sector` button.
 <img src="./files/image/alifastfood.png">
+<img src="./files/image/hbus.png">
+<img src="./files/image/ijm.png">
 
 --------------------------------------------------------------------------------------
-## <b>Predicting Business Sectors using Classification : Decision Trees or Random Forests in DJANGO </b>
+## <b> B. Predicting Business Sectors using Classification : Decision Trees or Random Forests in DJANGO </b>
 
 In this task, I present a comparative study on the use of machine learning of classification with decision trees and random forests for predicting business sectors. The goal is to evaluate and compare the performance of these classification algorithms in accurately predicting the sector of a business based on its name. The study utilizes a dataset consisting of business names and corresponding sectors.
 
@@ -117,7 +119,7 @@ In this task, I present a comparative study on the use of machine learning of cl
 ```
 <img src="./files/image/install.png">
 
-### Step 2: Retrieving Data from MongoDB
+### 2: Retrieving Data from MongoDB
 
 The code begins by Import necessary libraries and modules. Then, Connect to MongoDB `client = pymongo.MongoClient("mongodb+srv://Kelvin2001:Ooiyj0131@cluster0.cokgc4s.mongodb.net/")` and retrieve data from database `AA` collection `city_inspectionsDataset`. Then, Convert the data into a pandas DataFrame. Next, normalize the nested attributes in the DataFrame using json_normalize. Lastly, Check the data of first five row of table.
 
@@ -142,7 +144,7 @@ df.head()
 ```
 <img src="./files/image/df.png">
 
-### Step 3: Data Pre-Processing 
+### 3: Data Pre-Processing 
 Data preprocessing is a process of preparing the raw data and making it suitable for a machine learning model. It is the first and crucial step while creating a machine learning model.
 First, I check for null values in the DataFrame. Then , I learn the data by generate descriptive statistics for the DataFrame. Next, I perform value counts on the "result" column. Lastly , I identify outliers in the "result" column and filter the DataFrame by remove outlier of results.
 
@@ -171,7 +173,7 @@ df.describe()
 ```
 <img src="./files/image/describe2.png">
 
-### Step 4: Define the machine learning function
+### 4: Define the machine learning function
 a. Import necessary libraries and modules:
 ```python
 from sklearn.model_selection import train_test_split
