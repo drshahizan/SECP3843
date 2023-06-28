@@ -17,6 +17,14 @@ Don't forget to hit the :star: if you like this repo.
 
 Based on the tables you provided in the JSON files, it seems like a structured data that involves numerical and categorical features. In this case, `Logistic Regression` may be the most suitable machine learning algorithm as it is primarily used for predicting continuous numeric values.
 
+**Step 1**
+
+- Open Google Colab. Create a file called `AnalyticsQ4`. Save a copy to `GitHub` using this path
+
+- `drshahizan` > `SECP3843` > `submission` > `AimanHafizi619` > `Question 4` > `files` > `source-code`
+
+**Step 2**
+
 
 
 
