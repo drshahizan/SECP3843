@@ -50,7 +50,7 @@ Define Models
 <img src ="https://github.com/drshahizan/SECP3843/blob/e8dd321d92b76dc24090ed4aa4d98408d77ea20b/submission/IrdinaAliah/question1/files/images/define%20model.jpg" style ="width:700px; height: 700px;">
 
 Migration
-<img src ="" style ="width:700px; height: 700px;">
+<img src ="https://github.com/drshahizan/SECP3843/blob/e58ea60a721b301aa3f7badd77f298f8bbd8b2a8/submission/IrdinaAliah/question1/files/images/migration%20database.jpg" style ="width:700px; height: 700px;">
 
 
 
