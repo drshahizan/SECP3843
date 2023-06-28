@@ -14,10 +14,22 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Tweets
 
 ## Question 4 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### Machine Learning approach on Tweets Dataset.
+The machine learning method I chose is classification which is a supervised machine learning and I used K-Nearest Neighbours algorithm.
 
-## Question 4 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<br>
+
+For my case study, I  focused on developing a classification model to determine whether tweets will become trending or not. To obtain the result, I use the feature selection technique to obtain the best features that can contirubute in classifying the tweets. Then, I define what it means by trending or not by using the engagement ratio between `favourites_count` / `followers_count`. 
+
+<br>
+
+The process involved are :
+* `Data Cleaning` : 
+* `Data Wrangling` :
+* `Defining label for trending` :
+* `Feature Selection` :
+* `Apply ML algorithm` :
+* `Analyze results` : 
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
