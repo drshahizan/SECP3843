@@ -62,7 +62,59 @@ Open the [MongoDB website](https://account.mongodb.com/account/login?_ga=2.62663
 
 ![Q5](files/images/chart1.png)
 
-> Above chart shows average monthly room price for each property type. But before visualization can be made,
+Above chart shows average monthly room price for each property type. But before visualization can be made, we need to ensure the price currency is standard and does not follow that particular country's currency. This is to ensure accurate data visualization. In order to do that, we can standardize the currency to be in USD. For that, we will utilize the query field the chart designer.
+
+![Q5](files/images/q5.9.png)
+
+Query:
+
+```
+[
+  {
+    "$addFields": {
+      "converted_monthlyprice": {
+        "$switch": {
+          "branches": [
+            {
+              "case": { "$eq": [ "$address.country", "Brazil" ] },
+              "then": { "$multiply": [ "$monthly_price", 0.21 ] }  // Convert BRL to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Spain" ] },
+              "then": { "$multiply": [ "$monthly_price", 1.09 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Canada" ] },
+              "then": { "$multiply": [ "$monthly_price", 0.76 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Portugal" ] },
+              "then": { "$multiply": [ "$monthly_price", 1.09 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "China" ] },
+              "then": { "$multiply": [ "$monthly_price", 0.14 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Turkey" ] },
+              "then": { "$multiply": [ "$monthly_price", 0.039 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Hong Kong" ] },
+              "then": { "$multiply": [ "$monthly_price", 0.13 ] }  // Convert CAD to USD using exchange rate
+            },
+            {
+              "case": { "$eq": [ "$address.country", "Australia" ] },
+              "then": { "$multiply": [ "$monthly_price", 0.67 ] }  // Convert CAD to USD using exchange rate
+            }
+          ],
+          "default": "$monthly_price"  // Keep the original price for other countries
+        }
+      }
+    }
+  }
+]
+```
 
 ![Q5](files/images/chart3.png)
 
