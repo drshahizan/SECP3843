@@ -53,6 +53,32 @@ data = list(collection.find())
 df = pd.DataFrame(data)
 ```
 
+5. Extract the relevant information from the DataFrame and process the birthdate into age
+
+```python
+# Convert birthdate to datetime
+df['birthdate'] = pd.to_datetime(df['birthdate'])
+
+# Calculate age based on current date
+current_date = pd.to_datetime('today').normalize()
+df['age'] = (current_date - df['birthdate']).astype('<m8[Y]')
+
+# Extract tier and details information
+df['tier'] = df['tier_and_details'].apply(lambda x: x.get('tier') if isinstance(x, dict) else np.nan)
+df['benefits'] = df['tier_and_details'].apply(lambda x: x.get('benefits') if isinstance(x, dict) else [])
+
+# Drop unnecessary columns
+df.drop(['_id', 'tier_and_details'], axis=1, inplace=True)
+```
+
+
+
+
+
+
+
+   
+
 
 
 
