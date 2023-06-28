@@ -11,7 +11,7 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Name: Lee Jia Xian
 #### Matric No.: A20EC0200
-#### Dataset:
+#### Dataset:  <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" >Supply Store Dataset</a>
 
 ## Question 3 (a)
 For this question, I will used the projecy(AA_Leejx) that created in Question 1a).
