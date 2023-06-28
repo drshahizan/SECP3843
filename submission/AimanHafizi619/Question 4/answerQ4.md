@@ -24,9 +24,7 @@ In the customer analysis, K-means clustering is applied to group all customers b
 - Determining the Optimal Number of Clusters
 
 >The optimal number of clusters is determined using the elbow method. K-means clustering is performed for different values of k where k is number of clusters. Each clustering result will be calculated using inertia and silhouette score.
-
 >Inertia is the sum of squared distances between each data point and its centroid in a cluster. It measures the compactness of the clusters.
-
 >The silhouette score measures the quality of the clustering or indicating how well-separated the clusters are.
 
 - K-means Clustering
