@@ -148,19 +148,22 @@ Don't forget to hit the :star: if you like this repo.
     ```
 
 ## Question 5 (b)
-I created this dashboard using MongoDB Charts.
+### Creating Dashboard Using MongoDB Charts.
 - Go to `MongoDB Atlas Charts` and sign into your account --> https://www.mongodb.com/products/charts
-- Go to your connection. Mine is named cluster 0
-
+- Use the connection where sales.json data is uploaded previously
 - Click on 'Charts' from the tab menu in the connection
-  ![Alt text](image.png)
-
+  ![Alt text](files/images/image.png)
   ![Alt text](files/images/image-1.png)
-- Choose your database
+  
+- Choose your database, I has previously created a database collection named `salessample` under `salesdatabase`
 
   ![Alt text](files/images/image-2.png)
 
+- Once data source has been chosen, now it is up to ones creativity to visualise the dashboard and charts. I had created four charts using all the tools the MongoDB charts had prepared. It is as easy because users only need to drag and drop to axis and worksheet.
+
   ![Alt text](files/images/image-3.png)
+
+- Once a chart had been created, at the top right corner click on `Save and Close` to save the chart. This will then lead us to the main dashboard. Simply click on `Add Chart` to create a new chart. In the dashboard, admin users can adjust the size of each charts and drag them to locate them anywhere in the sheet.
 
   ![Alt text](files/images/image-4.png)
 
