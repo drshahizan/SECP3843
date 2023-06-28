@@ -13,7 +13,7 @@ Don't forget to hit the :star: if you like this repo.
 #### Matric No.: A20EC0195
 #### Dataset: City Inspections
 
-## Question 4 : <b> A.Implementation of Machine Learning in Django </ b>
+## Question 4 : <b> A.Implementation of Machine Learning in Django </b>
 ### 1 : Install required libraries
 To perform machine learning, we need to install the `scikit-learn` library to our project using 
 ```python
