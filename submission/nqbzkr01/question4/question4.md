@@ -13,11 +13,37 @@ Don't forget to hit the :star: if you like this repo.
 #### Matric No.: A20BE0161
 #### Dataset: 03 - Movie
 
-## Question 4 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Question 4
 
-## Question 4 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+- The machine learning approach used in this project is `Content-Based Filtering`.
+- `Content-Based Filtering` is a machine learning approach used in recommendation system that focuses on the characteristics and features of items (in this case, `movies`) to make recommendations.
+- It analyzes the content or attributes of movies to identify similaritites and make personalized recommnedations to users.
+- In this case, `movies.json` dataset will be used to create the movie recommendation system and will be focused on some attributes that available in the dataset which is `title`, `plot` and `genres`.
+- So here are the steps on how to implement the machine learning approach:
+
+1. Upload the dataset.
+   - `Google Colab` will be used as platform to implement the machine learning process using python.
+   - Then upload the dataset which is `movies.json` into `Google Colab Files`.
+     ![image](https://github.com/drshahizan/SECP3843/assets/92329710/485ad071-2185-482f-8721-a3eac29a69ca)
+2. Import `pandas` library.
+   - Pandas is a powerful open-source data manipulation and analysis library for Python. It provides data structures and functions to efficiently work with structured data, such as tables or spreadsheets, and perform various data operations.
+   - ```
+     import pandas as pd
+     ```
+     ![image](https://github.com/drshahizan/SECP3843/assets/92329710/b63c76ba-5f02-4ade-96e8-707b144e62cd)
+3. Read the json file.
+   - Read the `movies.json` that you have been uploaded into Google Colab file.
+   - ```
+     dataset_path = 'movies.json'
+     data = pd.read_json(dataset_path, lines=True)
+     ```
+     ![image](https://github.com/drshahizan/SECP3843/assets/92329710/d0da04fb-4356-422b-88c8-0908baf7037f)
+5. Data Cleaning.
+   - Before start the machine learning 
+
+
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
