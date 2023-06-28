@@ -65,7 +65,7 @@ Then redirect to city_inspections using the following commands:
              'USER': 'root',
              'PASSWORD': '',
              'HOST': 'localhost',
-             'PORT': 8000,
+             'PORT': 3306,
          },
          'mongodb': {
              'ENGINE': 'djongo',
@@ -103,12 +103,47 @@ Then redirect to city_inspections using the following commands:
       
           def __str__(self):
               return self.name
-             ```
+             
 <img src="./files/images/models.png">
 
 ### 4. Configuring Django Database Routing
- 1. Run the following commands to create the necessary database tables for MySQL and MongoDB `python manage.py makemigrations` and `python manage.py migrate`
+ a. Run the following commands to create the necessary database tables for MySQL and MongoDB `python manage.py makemigrations` and `python manage.py migrate`
 <img src="./files/images/migrate.png">
+b. Load JSON Data into Databases: A Python script has been declared to read the JSON dataset and populate the Django models.
+    ```python
+class Command(BaseCommand):
+    help = 'Load JSON data into Django models'
+
+    def add_arguments(self, parser):
+        parser.add_argument('json_file', type=str, help='Path to the JSON file')
+
+    def handle(self, *args, **options):
+        json_file = options['json_file']
+        with open(json_file, 'r') as file:
+            data = json.load(file)
+
+            for item in data:
+                # Convert the 'date' field to a datetime object
+                date = datetime.strptime(item['date'], "%Y-%m-%d").date()
+
+                inspection = Inspection(
+                    id=item['id'],
+                    certificate_number=item['certificate_number'],
+                    business_name=item['business_name'],
+                    date=date,
+                    result=item['result'],
+                    sector=item['sector'],
+                    city=item['city'],
+                    zip_code=item['zip_code'],
+                    street=item['street'],
+                    number=item['number']
+                )
+                inspection.save()
+
+        self.stdout.write(self.style.SUCCESS('Data loaded successfully.'))
+        
+Then, run the following command to import JSON file into MySQL and MongoDB database:
+`python manage.py load_data city_inspections.json`
 
 ## Question 1 (b)
 ### System Architecture Diagram

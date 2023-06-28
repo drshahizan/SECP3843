@@ -15,10 +15,63 @@ Don't forget to hit the :star: if you like this repo.
 #### Datatset: City Inspections	
 
 ## Question 1 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The 5 servers of this project are implemented as below:
+<table>
+  <thead>
+    <th>Server</th>
+    <th>Functionality</th>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Web server</td>
+      <td>Used to handle the network routings (including the incoming requests and outgoing responses) between the user's browser and the Django framework through HTTP protocols. Examples of web server services are Apache HTTP Server, Nginx, and Microsoft IIS.</td>
+    </tr>
+    <tr>
+      <td>MySQL Database Server</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153108.png" alt="activate virtual environment">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153218.png" alt="install django mysqlclient pymongo">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153237.png" alt="install djongo">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153149.png" alt="django start project">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153205.png" alt="startapp">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20164105.png" alt="setting.py">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015242.png" alt="database setting">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015505.png" alt="model">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015411.png" alt="make migrations">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015441.png" alt="migrate">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015852.png" alt="mysql after migration">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20042111.png" alt="loaddata1">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20042118.png" alt="loaddata2">
+
+
+
+
+
+
+
+
+
+
+
+<code>python manage.py loaddata city_inspections.json</code>
 
 ## Question 1 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/use%20case%20diagram%20(current%20system)%20-%20Page%203.png" alt="system architecture">
 
 
 

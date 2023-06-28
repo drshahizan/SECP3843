@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Airbnb Portal</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script src="{% static 'js/main.js' %}"></script>
+  </head>
+  <body>
+    <header>
+      <!-- Add your site logo, navigation menu, etc. -->
+    </header>
+
+    <nav>
+      <!-- ... -->
+      {% if user.is_authenticated and request.path != '/register/' %}
+      <a href="{% url 'logout' %}">Logout</a>
+      {% endif %}
+    </nav>
+    <div class="content">
+      {% block content %}
+      <!-- This is where the content of child templates will be inserted -->
+      {% endblock %}
+    </div>
+
+    <footer>
+      <!-- Add your footer content here -->
+    </footer>
+  </body>
+</html>
