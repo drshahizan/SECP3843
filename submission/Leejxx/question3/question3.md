@@ -1,4 +1,4 @@
-
+![image](https://github.com/drshahizan/SECP3843/assets/97084950/77a3de68-d101-40f0-a0a3-35b4d6dcbe54)
 <a href="https://github.com/drshahizan/SECP3843/network/members"><img src="https://img.shields.io/github/forks/drshahizan/SECP3843" alt="Forks Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/pulls"><img src="https://img.shields.io/github/issues-pr/drshahizan/SECP3843" alt="Pull Requests Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/issues"><img src="https://img.shields.io/github/issues/drshahizan/SECP3843" alt="Issues Badge"/></a>
@@ -105,21 +105,21 @@ Here are the steps involved in implementing the Dual Writes strategy:
    <img  src="./files/images/design1.JPG"></img>
 
 ### 3. Dual Writes Approach
-  a) Insert:
+  a) Insert: <br>
      <img  src="./files/images/dual1.JPG"></img>
 
-  b) Update:
+  b) Update: <br>
     <img  src="./files/images/dual2.JPG"></img>
 
-  c) Delete:
+  c) Delete: <br>
     <img  src="./files/images/dual3.JPG"></img>
 
 ### 4. Testing and Validation
   a) In my case i use a form page for the user to insert or update the sales in database:
      <img  src="./files/images/sale1.JPG"></img>
      
-  b) Input sales:
-    <img  src="./files/images/sale2.JPG"></img>
+  b) Input sales: <br>
+    <img  src="./files/images/sale2.JPG"></img> <br>
     <img  src="./files/images/sale3.JPG"></img>
 
   c) Output:
