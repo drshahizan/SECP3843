@@ -18,7 +18,7 @@ Don't forget to hit the :star: if you like this repo.
 Below are the brief introduction of the 5 servers. 
 
 1. Django Application Server:<br>
-   This is a server that runs your Django web application using a Python web framework. It handles requests from clients, executes your code, and returns responses. You can use different web servers to run your Django app, such as Apache, Nginx, Gunicorn, or uWSGI
+   This is a server that runs Django web application using a Python web framework. It handles requests from clients, executes your code, and returns responses. It can be use by different web servers to run Django app, such as Apache, Nginx, Gunicorn, or uWSGI
 
 2. MySQL Database Server:<br>
    This is a server that runs MySQL, a relational database management system (RDBMS) that uses SQL (Structured Query Language) to store and manipulate data. MySQL is one of the most popular and widely used databases in the world. It can handle large amounts of data and support transactions, replication, and backup.
@@ -31,6 +31,7 @@ Below are the brief introduction of the 5 servers.
 
 5. Load Balancer or Reverse Proxy:<br>
    This is a server that distributes incoming requests to multiple backend servers based on various criteria, such as load, availability, or location. A load balancer or reverse proxy can improve the performance, reliability, and security of your web application by reducing the load on individual servers, preventing server overload or failure, and providing encryption or authentication.
+
 ### Step 1: Install Python & Django
 Install Python 3 from the <a href=" www.python.org"> official website </a> according to your operating system and verify that Python is installed <br/>
 Command: 
@@ -38,7 +39,7 @@ Command:
 python --version
 ```
 
-Open cmd and  verify that Django is installed by importing it in Python and printing its version.
+Open cmd and  verify that Django is installed by importing it in Python and printing its version. <br/>
 Command: 
 ```
 python
