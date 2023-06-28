@@ -14,8 +14,98 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: City Inspections
 
 ## Question 4 : Implementation of Machine Learning in Django
+### 1 : Install required libraries
+To perform machine learning, we need to install the `scikit-learn` library to our project using 
+```python
+pip install scikit-learn
+```
+#### 2 : Define the machine learning function in the Django view
+Inside the Django `views.py`, I have define a function named `customer_dashboard` that will connect to the city inspection collection from MongoDB and do prediction about the business name from user input. The code will be further exmplain in part b.
+
+```python
+def customer_dashboard(request):
+    context = {}
+    # Create a MongoClient instance
+    client = MongoClient('mongodb+srv://Kelvin2001:Ooiyj0131@cluster0.cokgc4s.mongodb.net/')
+
+    # Access the MongoDB database
+    db = client['AA']
+
+    # Access the collection named "stories"
+    collection = db['city_inspectionsDataset']
+
+    # Query the collection and retrieve the JSON data
+    data = list(collection.find())
+
+    # Extract the story descriptions
+    business_names = []
+    sector_names = []
+
+    for shop in data:
+        business_name = shop['business_name']
+        sector_name = shop['sector']
+        business_names.append(business_name)
+        sector_names.append(sector_name)
+
+    # Create an instance of CountVectorizer
+    vectorizer = CountVectorizer()
+
+    # Fit the vectorizer on the descriptions and transform them into a bag-of-words representation
+    business_features = vectorizer.fit_transform(business_names)
+
+    # Create an instance of the Decision Tree
+    classifier = DecisionTreeClassifier()
+
+    # Train the classifier on the features and encoded topic labels
+    classifier.fit(business_features, sector_names)
+
+    if request.method == 'POST':
+        # Get the user input from the form
+        new_data = [request.POST.get('business_name')]
+
+        # Transform the user input using the vectorizer
+        new_features = vectorizer.transform(new_data)
+
+        # Use the trained classifier for prediction
+        predicted_sector = classifier.predict(new_features)
+
+        # Render the customer template with the prediction results
+        return render(request, 'registrations/customer_dashboard.html', {'predicted_sector': predicted_sector})
+
+    # Render the initial customer template
+    return render(request, 'registrations/customer_dashboard.html', context)
+```
+#### 3. Add form into `customer_dashboard.html` 
+```python
+<form method="post" action="{% url 'customer_predict' %}">
+            {% csrf_token %}
+            <label for="business_name">Business Name:</label>
+            <input type="text" id="business_name" name="business_name">
+            <input type="submit" value="Predict Sector">
+         </form>
+         
+         {% if predicted_sector %}
+         <h2>Predicted Sector: {{ predicted_sector }}</h2>
+         {% endif %}
+```
+#### 4. Path setting and run the App
+a. Open the `urls.py` file in your Django project. This file is usually located in the main project directory. Import the views you need to map to the URL paths.
+
+```python
+ from q3_app.views import user_registration, login_view, customer_dashboard_view, technical_worker_dashboard_view, management_dashboard_view,customer_dashboard
+ path('customer_predict/', customer_dashboard, name='customer_predict'),
+```
+b. Run the following command to start the Django development server: `python manage.py runserver`
+
+#### 5. Login As Customer
+- Username : eekelvin
+- Password: 123
+
+Try entering the result and press the `Predict Sector` button.
+<img src="./files/image/alifastfood.png">
+
 --------------------------------------------------------------------------------------
-## <b>Predicting Business Sectors using Classification : Decision Trees and Random Forests </b>
+## <b>Predicting Business Sectors using Classification : Decision Trees or Random Forests in DJANGO </b>
 
 In this task, I present a comparative study on the use of machine learning of classification with decision trees and random forests for predicting business sectors. The goal is to evaluate and compare the performance of these classification algorithms in accurately predicting the sector of a business based on its name. The study utilizes a dataset consisting of business names and corresponding sectors.
 
@@ -130,6 +220,7 @@ accuracy = classifier.score(business_features, sector_names)
 print('Accuracy:', accuracy)
 ```
 <img src="./files/image/accuracy.png">
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
