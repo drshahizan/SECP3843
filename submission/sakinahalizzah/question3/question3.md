@@ -235,23 +235,23 @@ urlpatterns = [
 ### User Interfaces (output)
 1. Register page
    
-   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/6fe3193d-07ca-49ce-b1f7-d9cecf6bbb75" />
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/6fe3193d-07ca-49ce-b1f7-d9cecf6bbb75" width="400" alt="Image">
    
 2. Login Page
 
-   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/f04f3db1-6ea9-48a5-b140-dbbd693b5811" />
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/f04f3db1-6ea9-48a5-b140-dbbd693b5811" width="400" alt="Image">
    
 4. Customer page
 
-   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/d0ccdec2-b757-4c7c-bc90-4e4d7bb6dd66" />
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/d0ccdec2-b757-4c7c-bc90-4e4d7bb6dd66" width="400" alt="Image">
 
 6. Technical workers page
 
-    <img src="https://github.com/drshahizan/SECP3843/assets/99240177/0aa880cc-3b5a-4415-8143-dcf9c131a9c9" />
+    <img src="https://github.com/drshahizan/SECP3843/assets/99240177/0aa880cc-3b5a-4415-8143-dcf9c131a9c9" width="400" alt="Image">
    
 8. Senior Management page
 
-    <img src="https://github.com/drshahizan/SECP3843/assets/99240177/02fbc075-83ff-4a99-b232-3a3d35add7b4" />
+    <img src="https://github.com/drshahizan/SECP3843/assets/99240177/02fbc075-83ff-4a99-b232-3a3d35add7b4" width="400" alt="Image">
    
 ## Question 3 (b)
 

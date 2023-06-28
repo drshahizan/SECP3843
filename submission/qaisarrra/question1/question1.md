@@ -328,6 +328,49 @@ Check your MySQL database (XAMPP > MySQL > Start > Admin) to confirm this migrat
 ## Question 1 (b)
 The system architecture will consist of the following components:
 
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question1/files/images/System%20Architecture.png">
+</p>
+
+<table>
+  <tr>
+    <th>No</th>
+    <th>Layer</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td>1</td>
+    <td>Client Layer</td>
+    <td>
+      <ul>
+        This is the layer that fully interacts with the user. This layer contains the portal's dashboard and user interface that accomodates to the user's easy navigation and this layer also processes all the users input. The client layer in this example is a web dashboard constructed using HTML, CSS, JavaScript, PHP and others.
+      </ul>  
+     </td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>Application Layer</td>
+    <td>
+      <ul>
+        The layer that houses the system's business logic. This layer basically works as a platform that connects both the client layer as well as the database layer. The application layer in this scenario is constructed with Django, a Python web framework. Django includes a number of capabilities that make it simple to create web applications, including:
+        <li>A Model-View-Template (MVT) architecture divides the data model, views, and templates.</li>
+        <li>A strong ORM (Object-Relational Mapping) that simplifies database interaction.</li>
+      </ul>  
+     </td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>Database Layer</td>
+    <td>
+      <ul>
+        The layer that stores the data for the system. As stated in the question, the system shall be working with the Companies dataset. The database layer in this example is made up of two databases: 
+        <li>MongoDb is used for storing massive amounts of unstructured data, in this case the JSON dataset that we have downloaded earlier. Djongo is a connector that allows Django to communicate with MongoDB.</li>
+        <li>MySQL is used for storing structured data such as the table to store different type of users. Django ORM is a connector that allows Django to communicate with MySQL.</li>
+      </ul>  
+     </td>
+  </tr>
+</table>
+
 
 
 

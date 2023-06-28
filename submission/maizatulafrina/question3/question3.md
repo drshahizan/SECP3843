@@ -354,6 +354,92 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 3 (b)
 
+The challenge of Data Replication and Synchronization arises between the MySQL and MongoDB databases when working with two different databases. There are few ways and steps to overcome this challenges including exploring database-specific replication techniques or leverage external tools that facilitate realtime
+updates and seamless interaction between the databases.
+
+   - **Step 1: Identify the Replication Strategy**
+
+     Determining the replication direction (MySQL to MongoDB, MongoDB to MySQL, or bidirectional) and establishing the synchronisation frequency are crucial for managing data replication and synchronisation between MySQL and MongoDB. This requires taking into account elements like data volume, system performance, and real-time needs. You may make sure that the data is consistent between the two systems by choosing which database drives the replication and specifying the synchronisation frequency. It is possible to achieve accurate replication and synchronisation, maintain data integrity, and enable seamless communication between the two databases by selecting the right direction and frequency.
+
+   - **Step 2: Configure Database**
+
+      Configure the database connection for MySQL and MongoDB.
+
+     <img width="704" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/8e610e4e-30fa-46de-ae7f-1d499557bd8b">
+
+   - **Step 3: Define the dual_write function**
+      Make sure to install MongoClient and MySQL Connector before applying this part.
+     
+     ```
+     from pymongo import MongoClient
+     import mysql.connector
+      
+     def dual_write(inspection):
+      
+              # Insert into MySQL
+              mysql_insert_query = "INSERT INTO your_table_name (id, certificate_number, business_name, date, result, sector, city,zip,street,number)VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+              mysql_data=(
+              inspection['id'],
+              inspection['certificate_number'],
+              inspection['business_name'],
+              inspection['date'],document['result'],
+              inspection['sector'],
+              inspection['address']['city'],
+              inspection['address']['zip'],
+              inspection['address']['street'],
+              inspection['address']['number'])
+     
+              mysql_cursor.execute(mysql_insert_query, mysql_data)
+              mysql_connection.commit()
+      
+              # Insert into MongoDB
+              mongo_collection.insert_one(inspection)
+              
+              print("Dual write successful")
+          except Exception as e:
+              print("Error during dual write:", str(e))
+          
+        ```
+     
+   - **Step 4: Define Data**
+
+     Create a sample dat to test the dual_write fucntion.
+
+     ```
+     def test_dual_write():
+           document = {
+          "_id": { "$oid": "56d61033a378eccde8a8354f" },
+          "id": "10021-2015-ENFO",
+          "certificate_number": 9278806,
+          "business_name": "TEST BUSINESS NAME",
+          "date": "Feb 20 2015",
+          "result": "No Violation Issued",
+          "sector": "Cigarette Retail Dealer - 127",
+          "address": {
+              "city": "RIDGEWOOD",
+              "zip": 11385,
+              "street": "MENAHAN ST",
+              "number": 1712
+          }
+          dual_write(inspection)
+     
+     test_dual_write()
+     ```
+
+   - **Step 5:Test dual_write function and Check Database**
+
+     Run `python manage.py runserver` command to test the dual_write function whether it is successfull or not.
+
+     MySQL Output:
+
+     <img width="792" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/31172a8b-9076-4236-b50d-3415ea8ebc9a">
+
+     MongoDB Output:
+
+     <img width="811" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/ed8ac544-d0f4-4429-aeeb-4fadf74eadb8">
+
+     
+     
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

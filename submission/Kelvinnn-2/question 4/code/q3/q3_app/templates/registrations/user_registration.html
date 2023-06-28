@@ -1,0 +1,18 @@
+<div style="background-color: black; padding: 130px;">
+   <div style="max-width: 400px; margin: 0 auto; background-color:whitesmoke; padding: 20px;">
+      <h1 style="text-align: center; font-family: 'Comic Sans MS', cursive; color: black;">Register</h1>
+
+      <form method="post">
+         {% csrf_token %}
+         {{ form.as_p }}
+
+         <div style="text-align: center;">
+            <button type="submit" style="padding: 5px 20px; background-color: black; color: white; border: none; border-radius: 5px; cursor: pointer; font-family: 'Comic Sans MS', cursive; font-size: 16px;">Register</button>
+         </div>
+         
+      </form>
+
+      <p style="text-align: center; font-family: 'Comic Sans MS', cursive; color: black;">Already have an account? <a
+            href="{% url 'login' %}">Login</a></p>
+   </div>
+</div>

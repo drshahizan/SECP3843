@@ -37,6 +37,9 @@ Fortunately, using MongoDB Compass, we are able to perfom data aggregation easil
 
 <div align="center"><img src="images/optimize3.PNG" height="350px" /></div>
 
+5. Click 'run'. This is the output
+<div align="center"><img src="images/optimize4.PNG" height="350px" /></div>
+
 **How it helps in optimize large data?**
 
 - The code allows us to summarize the data by counting the occurrences of each distinct value in the "result" field. This provides a quick overview of the distribution of results in the dataset.
@@ -45,7 +48,37 @@ Fortunately, using MongoDB Compass, we are able to perfom data aggregation easil
 
 
 ## Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<div align="center">
+  <a href="https://app.powerbi.com/view?r=eyJrIjoiOWY2Y2VhYzctZTRmNC00ZDY2LThkYWYtZDI0YTRkMzAxNGEzIiwidCI6IjBlMGRiMmFkLWM0MTYtNDdjNy04OGVjLWNlYWM0ZWU3Njc2NyIsImMiOjEwfQ%3D%3D">
+  <img src="images/dashboard.PNG" height="500px" />
+  </a>
+  
+[Click on the image to directly go to the dashboard]
+</div>
+
+### City Inspection Dashboard
+The "City Inspection Dashboard" provides an overview of inspections carried out in different cities and sectors. It includes the following components:
+
+#### <ins>Dashboard Cards</ins>
+The dashboard features several cards that provide key metrics:
+
+- Number of Cities: Displays the total number of cities involved in the inspections.
+- Sectors Involved: Highlights the sectors that are included in the inspections.
+- Inspections Carried Out: Shows the total count of inspections conducted.
+
+#### <ins>Result of Inspection Percentage (Pie Chart)</ins>
+The pie chart showcases the distribution of inspection results as a percentage. It offers insights into the outcome of the inspections.
+
+#### <ins>Inspections by Month (Line Graph)</ins>
+The line graph illustrates the number of inspections conducted over time, grouped by month. It enables the identification of inspection patterns and trends.
+
+#### <ins>Sector Frequency (Heat Map)</ins>
+The heat map represents the frequency of sectors involved in the inspections. It visually displays the sectors with higher or lower inspection frequencies.
+
+#### <ins>Cities Involved (Map)</ins>
+The map visualizes the cities that participated in the inspections. The bubble size corresponds to the frequency of inspections conducted in each city.
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
