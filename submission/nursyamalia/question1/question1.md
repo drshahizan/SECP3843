@@ -156,59 +156,14 @@ Step 7: Load the JSON dataset into databases:
 
 ## Question 1 (b)
 
-```
-            +---------------------+
-            |      Web Server     |
-            |       (Django)      |
-            +----------+----------+
-                       |
-                       |
-            +----------v----------+
-            |        JSON         |
-            |       Dataset       |
-            +----------+----------+
-                       |
-                       |
-            +----------v----------+
-            |    MySQL Database   |
-            +----------+----------+
-                       |
-                       |
-            +----------v----------+
-            |    MongoDB Database |
-            +----------+----------+
-                       |
-                       |
-            +----------v----------+
-            |    Django Models    |
-            +----------+----------+
-                       |
-                       |
-            +----------v----------+
-            | Data Processing and |
-            |    Integration      |
-            +---------------------+
-```
+  <img  src="./files/images/architecture.png"></img>
 
-In the system architecture, the web server (Django) interacts with the JSON dataset, MySQL, and MongoDB databases through appropriate connectors and libraries. Django models provide an abstraction layer to handle data operations, and data processing components ensure seamless integration between the web server and the databases. This architecture enables efficient storage, retrieval, and visualization of data from the JSON dataset using Django, MySQL, and MongoDB.
+<p>From the system architecture diagram above, I will be using 3 main servers which are Django application/web server, MySQL database server and MongoDB database server. The main reasons I choose these three main servers as it serve as the main purposes of data integration and consistency for this alternative assessment. It is also a flexible and more direct approach on the integration of these three servers. The web application produced using the Django web framework is hosted by the Django application server. It takes user requests and creates dynamic web pages in response. To access and save data, it communicates with both MySQL and MongoDB databases. Furthermore, the MySQL database server is in charge of storing structured data or relational data from JSON datasets. It responds to SQL queries from the Django application server and saves the results in tables with predefined schemas.  Finally, the MongoDB database server excels in storing semi-structured or unstructured data from JSON datasets. It organizes data into collections, which are similar to tables in a relational database.</p>
 
-1. Web Server (Django):
-The web server component is responsible for handling user requests, generating dynamic web pages, and serving the portal's functionality. Django, a Python-based web framework, is used as the foundation for the web server. It provides a high-level abstraction layer for building web applications and integrates well with both MySQL and MongoDB databases.
+<p>Firstly, the users will interact with the User interfaces(UI) layer. UI layer will help users to see the display of web application which is Django on their any screens devices for friendly user interaction. Then, any requests and processes in the Django web application server will be done here. When the users request for any data from the user interface. It will retrieve the data from the databases and display it in Django.</p>
 
-2. JSON Dataset:
-The JSON dataset contains the data that will be displayed and visualized on the portal. It consists of structured and semi-structured data that represents various entities, such as accounts, customers, and transactions. The dataset serves as the primary source of information for the portal's dashboard visualizations and data views.
+<p>Furthermore, the JSON datasets contain all the information of the accounts.json, customers.json and transactions.json as the main sources of this alternative assessment. These datasets will be stored in the MySQL database server and MongoDB database server. Lastly, the MySQL database server and MongoDB database server where all the data are stored. The MySQL database server will process and retrieve the data in structured SQL queries, while the MongoDB database server will process and retrieve the data in documents from the selected collections queries.</p>
 
-3. MySQL Database:
-MySQL is a widely used relational database management system (RDBMS) that excels at storing structured data. In this architecture, MySQL is used to store and manage structured data from the JSON dataset. Django interacts with the MySQL database using the Django ORM (Object-Relational Mapping) to perform CRUD (Create, Read, Update, Delete) operations on the data.
-
-4. MongoDB Database:
-MongoDB is a NoSQL database that specializes in storing and retrieving semi-structured and unstructured data. It is well-suited for handling the flexibility and scalability required by JSON datasets. In this architecture, MongoDB is used to store and manage the semi-structured data from the JSON dataset. Django communicates with the MongoDB database using the Djongo package, which provides a bridge between Django and MongoDB.
-
-5. Django Models:
-Django models define the structure of the data stored in the databases. Models are Python classes that map to database tables or collections. In this architecture, Django models are defined based on the structure of the JSON dataset. Each model represents an entity (e.g., accounts, customers, transactions) and its fields correspond to the attributes in the dataset. The models act as an abstraction layer between the application and the databases, allowing seamless interaction with the data.
-
-6. Data Processing and Integration:
-The integration process involves parsing the JSON dataset, transforming it into Django model instances, and storing them in the MySQL and MongoDB databases. This can be achieved by writing scripts or using Django's management commands. The data processing component reads the JSON dataset, maps its fields to the appropriate model fields, and saves the instances to the respective databases. The processing ensures that the data is correctly structured and stored in the databases for efficient retrieval.
 
 
 
