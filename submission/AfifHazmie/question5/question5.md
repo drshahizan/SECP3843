@@ -107,8 +107,6 @@ Don't forget to hit the :star: if you like this repo.
        - Apply lazy loading techniques to load additional data as the user interacts with the dashboard, reducing the initial load time.
          
        ```python
-       # Assume you are using a web framework like Flask
-
         from flask import Flask, jsonify, request
         
         app = Flask(__name__)
