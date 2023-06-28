@@ -35,8 +35,12 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 
 <img src="../materials/Q5b_2.png">
 <img src="../materials/Q5b_3.png">
+
+# Dashboard
+
+<img src="../materials/Q5b_7.png">
  
-### Category Distribution Explanation
+### Category Distribution
 
 <img src="../materials/Q5b_4.png">
 
@@ -67,12 +71,6 @@ For this specific graph, I use a discrete line chart with the Y Axis set to `cat
 <img src="../materials/Q5b_8.png">
 
 In the making of chart, I use `accquired_year` as my X Axis and `price_amount` as my Y Axis and `name` as Series. I filter `acquired_year` and set min to `1992` and `price_amount` to 1. This graph displays the relationship between acquisition price, acquisition year, and acquiring company names.
-
-### Dashboard
-
-<img src="../materials/Q5b_7.png">
-
-
 
 
 ## Contribution 🛠️
