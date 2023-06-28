@@ -25,10 +25,13 @@ Download the MongoDB Shell nad MongoDB database tools
 
 4th Step: Import data into MongoDB localhost
 ![image](https://github.com/drshahizan/SECP3843/assets/120616074/b1fdc3c5-caf7-4939-b794-c8afee927ac5)
+
  Account JSON imported
  ![image](https://github.com/drshahizan/SECP3843/assets/120616074/1399a31f-ec95-42f2-b90f-a4124b4c52b4)
- Customers JSON omported
+ 
+ Customers JSON imported
  ![image](https://github.com/drshahizan/SECP3843/assets/120616074/0c1f44df-be7d-4696-9f16-94bf608cae97)
+ 
 Transactions JSON imported
 ![image](https://github.com/drshahizan/SECP3843/assets/120616074/5c04311d-84e3-4594-ba3a-b12dea999406)
 
