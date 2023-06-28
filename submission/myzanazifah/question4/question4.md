@@ -60,7 +60,7 @@ The machine learning that I will implement for my dataset is K-Means Clustering.
      <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(2).png" />
 
      Based on the figure above, it is shown that the dataset has 9842 rows and 20 columns overall.
-   - Next, we need to identify if there are any null data in the dataset. To identify the null data, run the code below:    
+   - Next, we need to identify if there are any null data in the dataset. To identify the null data, run the code below:
 
      ```
       df.isna().sum()
@@ -69,6 +69,27 @@ The machine learning that I will implement for my dataset is K-Means Clustering.
      <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(3).png" />
 
      Based on the figure above, it is shown that the columns 'thumbnail', 'inaccurate' ,'takedowndays' and 'takedownuri' have null datas.
+   - To ensure there are no null data in the dataset, run the command below:
+
+     ```
+      df["thumbnail"].fillna("NaN", inplace = True)
+      df["inaccurate"].fillna("NaN", inplace = True)
+      df["takedowndays"].fillna("NaN", inplace = True)
+      df["takedownuri"].fillna("NaN", inplace = True)
+      ```  
+   - Then, run the code below to check if the code still have null data.
+
+     ```
+      df.isna().sum()
+      ```  
+
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(4).png" />
+     Based on the figure above, there are no longer null data in dataset.
+   - 
+
+
+
+
 
 
 ## Question 4 (b)
