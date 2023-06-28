@@ -64,6 +64,8 @@ Open the [MongoDB website](https://account.mongodb.com/account/login?_ga=2.62663
 
 Above chart shows average monthly room price for each property type. But before visualization can be made, we need to ensure the price currency is standard and does not follow that particular country's currency. This is to ensure accurate data visualization. In order to do that, we can standardize the currency to be in USD. For that, we will utilize the query field the chart designer.
 
+As we can see, cottage properties have the highest monthly price out of all property types.
+
 ![Q5](files/images/q5.9.png)
 
 Query:
@@ -116,9 +118,19 @@ Query:
 ]
 ```
 
+![Q5](files/images/chart7.png)
+
+
+Line chart above shows the number of reviews for listings over the years. It peaked in 2018 but dropped drastically in 2019. `According to The Wall Street Journal, Airbnb reportedly lost USD322 million and went unprofitable for the first 9 months of 2019`.
+
+
 ![Q5](files/images/chart3.png)
 
-The chart above describes the average room price per night accross different countries. This will give accurate representation on how different countries' Airbnb listings prices differ from each other. Similarly, the price per night must be converted to be in USD.
+The Geo Choropleth chart above describes the average room price per night accross different countries. This will give accurate representation on how different countries' Airbnb listings prices differ from each other. Similarly, the price per night must be converted to be in USD.
+
+The chart suggests that United States Airbnb listings charge the most money per night at USD185.77 while Turkey is the cheapest at only USD14.36 per night.
+
+There are not as many choices for cheap
 
 Query:
 
@@ -272,9 +284,8 @@ Query:
 ]
 ```
 
-![Q5](files/images/chart6.png)
 
-![Q5](files/images/chart7.png)
+![Q5](files/images/chart6.png)
 
 
 ![Q5](files/images/chart8.png)
