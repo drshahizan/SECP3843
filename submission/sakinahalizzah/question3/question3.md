@@ -255,7 +255,310 @@ urlpatterns = [
    
 ## Question 3 (b)
 
+Handling data replication and synchronization between separate databases, like MySQL and MongoDB, can be a challenging task. However, there are several effective strategies to address this challenge. One uses database replication techniques, and the other uses external tools for real-time updates and interaction. 
 
+I use MySQL triggers to ensure real-time updates and seamless interaction between the databases. The following are the steps involved:
+
+### Step 1: Create a MySQL Trigger
+
+Create MySQL triggers to record data changes such as INSERT, UPDATE, and DELETE operations and implement trigger logic to transmit those changes to the MongoDB database.
+
+1. In XAMPP Control Panel, go to MySQL config and open my.ini file
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/5e17b21c-d1e8-47ee-8a5f-67df26070ac2 /">
+
+2. To enable binary logging, remove the "#" symbol from the line `log-bin=mysql-bin`. After that, save the changes and restart MySQL for the configuration to take effect.
+
+   <img src="https://github.com/drshahizan/SECP3843/assets/99240177/16bfba26-bfa7-4694-b32e-605ade7baf4b/">
+
+### Step 2: Set up a replica MongoDB instance 
+
+1. To synchronize data, use MongoDB Atlas to connect with MongoDB Compass, and set them to database db_analytics.
+
+### Step 3: Download package using pip
+
+1. To use the package in your Python scripts and interact with MySQL databases, download and install it from the Python Package Index (PyPI) repository by running the following command.
+```
+pip install mysql-connector-python
+```
+
+### Step 4: Create a folder to store replication python file
+
+1. Create a new folder, name it as `replication`
+
+2. Create `replication_script.py` file and define the connection for both databases to retrieve data from the MySQL table, and inserts it into the MongoDB collection. Also, define code to read the binary logs to identify the type of operation (INSERT, UPDATE, DELETE), and performs the corresponding action on the MongoDB collection to keep it synchronized with the MySQL database. The code as below:
+
+```
+import mysql.connector
+from pymongo import MongoClient
+
+# MySQL connection
+mysql_connection = mysql.connector.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='db_analytics'
+)
+mysql_cursor = mysql_connection.cursor()
+
+# MongoDB connection
+mongo_client = MongoClient('mongodb+srv://sakinahalizzah:Sakinah123@clustersakinah.scfkjmg.mongodb.net/')
+mongo_db = mongo_client['db_analytics']
+accounts_collection = mongo_db['accounts']
+customers_collection = mongo_db['customers']
+transactions_collection = mongo_db['transactions']
+
+# Read data from the MySQL tables
+mysql_cursor.execute("SELECT * FROM accounts")
+accounts_results = mysql_cursor.fetchall()
+
+mysql_cursor.execute("SELECT * FROM customers")
+customers_results = mysql_cursor.fetchall()
+
+mysql_cursor.execute("SELECT * FROM transactions")
+transactions_results = mysql_cursor.fetchall()
+
+# Import data to MongoDB - accounts
+for account_row in accounts_results:
+    account_data = {
+        'account_id': account_row[0],
+        'limit': account_row[1],
+        'products': account_row[2].split(",")
+    }
+    accounts_collection.insert_one(account_data)
+    print("Inserted account with account_id:", account_data['account_id'])
+
+# Import data to MongoDB - customers
+for customer_row in customers_results:
+    customer_data = {
+        'username': customer_row[0],
+        'name': customer_row[1],
+        'address': customer_row[2],
+        'birthdate': customer_row[3],
+        'email': customer_row[4],
+        'accounts': customer_row[5].split(","),
+        'tier_and_details': customer_row[6]
+    }
+    customers_collection.insert_one(customer_data)
+    print("Inserted customer with username:", customer_data['username'])
+
+# Import data to MongoDB - transactions
+for transaction_row in transactions_results:
+    transaction_data = {
+        'account_id': transaction_row[0],
+        'transaction_count': transaction_row[1],
+        'bucket_start_date': transaction_row[2],
+        'bucket_end_date': transaction_row[3],
+        'transactions': transaction_row[4]
+    }
+    transactions_collection.insert_one(transaction_data)
+    print("Inserted transaction with account_id:", transaction_data['account_id'])
+
+# Log the binary log events
+mysql_cursor.execute("SHOW BINARY LOGS")
+binary_logs = mysql_cursor.fetchall()
+
+latest_log = binary_logs[-1]
+log_filename, log_position = latest_log[0], latest_log[1]
+
+mysql_cursor.execute(f"SHOW BINLOG EVENTS IN '{log_filename}' FROM {log_position}")
+for binlog_event in mysql_cursor:
+    event_type = binlog_event[7]
+
+    if event_type == 2:
+        query = binlog_event[8]
+
+        query_parts = query.split()
+        table_name = query_parts[2]
+        operation = query_parts[0].upper()
+
+        print("Binary Log Event:")
+        print("Query:", query)
+
+        if table_name == 'accounts':
+            if operation == 'INSERT':
+                values_start = query.index("VALUES") + 7
+                values_end = query.index(")", values_start)
+                values = query[values_start:values_end].split(",")
+
+                account_data = {
+                    'account_id': int(values[0]),
+                    'limit': int(values[1]),
+                    'products': [p.strip().strip("'") for p in values[2].split(",")]
+                }
+
+                accounts_collection.insert_one(account_data)
+                print("Inserted account with account_id:", account_data['account_id'])
+
+            elif operation == 'UPDATE':
+                set_start = query.index("SET") + 4
+                set_end = query.index("WHERE", set_start)
+                set_clause = query[set_start:set_end]
+
+                where_start = query.index("WHERE") + 6
+                where_clause = query[where_start:]
+
+                set_pairs = set_clause.split(",")
+                update_data = {}
+                for pair in set_pairs:
+                    column, value = pair.split("=")
+                    column = column.strip()
+                    value = value.strip("'")
+                    if column == 'products':
+                        value = [p.strip().strip("'") for p in value.split(",")]
+                    update_data[column] = value
+
+                where_parts = where_clause.split("=")
+                condition_column = where_parts[0].strip()
+                condition_value = where_parts[1].strip("'")
+
+                filter_condition = {'account_id': int(condition_value)}
+
+                accounts_collection.update_one(filter_condition, {'$set': update_data})
+                print("Updated account matching condition:", filter_condition)
+
+            elif operation == 'DELETE':
+                where_start = query.index("WHERE") + 6
+                where_clause = query[where_start:]
+
+                where_parts = where_clause.split("=")
+                condition_column = where_parts[0].strip()
+                condition_value = where_parts[1].strip("'")
+
+                filter_condition = {'account_id': int(condition_value)}
+
+                accounts_collection.delete_one(filter_condition)
+                print("Deleted account matching condition:", filter_condition)
+
+        elif table_name == 'customers':
+            if operation == 'INSERT':
+                values_start = query.index("VALUES") + 7
+                values_end = query.index(")", values_start)
+                values = query[values_start:values_end].split(",")
+
+                customer_data = {
+                    'username': values[0].strip("'"),
+                    'name': values[1].strip("'"),
+                    'address': values[2].strip("'"),
+                    'birthdate': values[3].strip("'"),
+                    'email': values[4].strip("'"),
+                    'accounts': values[5].strip("'").split(","),
+                    'tier_and_details': values[6].strip("'")
+                }
+
+                customers_collection.insert_one(customer_data)
+                print("Inserted customer with username:", customer_data['username'])
+
+            elif operation == 'UPDATE':
+                set_start = query.index("SET") + 4
+                set_end = query.index("WHERE", set_start)
+                set_clause = query[set_start:set_end]
+
+                where_start = query.index("WHERE") + 6
+                where_clause = query[where_start:]
+
+                set_pairs = set_clause.split(",")
+                update_data = {}
+                for pair in set_pairs:
+                    column, value = pair.split("=")
+                    column = column.strip()
+                    value = value.strip("'")
+                    update_data[column] = value
+
+                where_parts = where_clause.split("=")
+                condition_column = where_parts[0].strip()
+                condition_value = where_parts[1].strip("'")
+
+                filter_condition = {'username': condition_value}
+
+                customers_collection.update_one(filter_condition, {'$set': update_data})
+                print("Updated customer matching condition:", filter_condition)
+
+            elif operation == 'DELETE':
+                where_start = query.index("WHERE") + 6
+                where_clause = query[where_start:]
+
+                where_parts = where_clause.split("=")
+                condition_column = where_parts[0].strip()
+                condition_value = where_parts[1].strip("'")
+
+                filter_condition = {'username': condition_value}
+
+                customers_collection.delete_one(filter_condition)
+                print("Deleted customer matching condition:", filter_condition)
+
+        elif table_name == 'transactions':
+            if operation == 'INSERT':
+                values_start = query.index("VALUES") + 7
+                values_end = query.index(")", values_start)
+                values = query[values_start:values_end].split(",")
+
+                transaction_data = {
+                    'account_id': int(values[0]),
+                    'transaction_count': int(values[1]),
+                    'bucket_start_date': values[2].strip("'"),
+                    'bucket_end_date': values[3].strip("'"),
+                    'transactions': []
+                }
+
+                transactions_collection.insert_one(transaction_data)
+                print("Inserted transaction with account_id:", transaction_data['account_id'])
+
+            elif operation == 'UPDATE':
+                set_start = query.index("SET") + 4
+                set_end = query.index("WHERE", set_start)
+                set_clause = query[set_start:set_end]
+
+                where_start = query.index("WHERE") + 6
+                where_clause = query[where_start:]
+
+                set_pairs = set_clause.split(",")
+                update_data = {}
+                for pair in set_pairs:
+                    column, value = pair.split("=")
+                    column = column.strip()
+                    value = value.strip("'")
+                    update_data[column] = value
+
+                where_parts = where_clause.split("=")
+                condition_column = where_parts[0].strip()
+                condition_value = where_parts[1].strip("'")
+
+                filter_condition = {'account_id': condition_value}
+
+                transactions_collection.update_one(filter_condition, {'$set': update_data})
+                print("Updated transaction matching condition:", filter_condition)
+
+            elif operation == 'DELETE':
+                where_start = query.index("WHERE") + 6
+                where_clause = query[where_start:]
+
+                where_parts = where_clause.split("=")
+                condition_column = where_parts[0].strip()
+                condition_value = where_parts[1].strip("'")
+
+                filter_condition = {'account_id': condition_value}
+
+                transactions_collection.delete_one(filter_condition)
+                print("Deleted transaction matching condition:", filter_condition)
+
+# Close MySQL connection
+mysql_cursor.close()
+mysql_connection.close()
+
+# Close MongoDB connection
+mongo_client.close()
+```
+
+### Step 5: Run the file script
+
+1. Run the code directly from the file, the command is 
+```
+python replication_script.py
+```
+
+2. INSERT, UPDATE and DELETE the document in specified collection.
+   
+### Step 6: Successfully updated data at both database
 
 
 ## Contribution 🛠️
