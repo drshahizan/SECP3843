@@ -168,7 +168,7 @@ Don't forget to hit the :star: if you like this repo.
       plt.show()
       ```
       <p align="center">
-         <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/barchart.jpg">
+         <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/barchart.jpg" width="650">
       </p>
       
 
