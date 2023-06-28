@@ -140,12 +140,8 @@ With the virtual environment activated, run the following command to install Dja
 5. Run database migration for Mysql and MongoDB
  
      MySQL: ``python manage.py migrate``
-
-   <div align="center"><img src="files/images/mysql-migrate.png" height="150px" /></div>
    
      MongoDB: ``python manage.py migrate --database=mongodb``
-
-   <div align="center"><img src="files/images/mongodb-migrate.png" height="150px" /></div>
 
 ## Question 1 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
