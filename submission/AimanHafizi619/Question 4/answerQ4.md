@@ -54,7 +54,7 @@ collection = db["Customers"]
 data = list(collection.find())
 
 # Convert to dataframe
-df1 = pd.DataFrame(data)
+df = pd.DataFrame(data)
 ```
 
 
