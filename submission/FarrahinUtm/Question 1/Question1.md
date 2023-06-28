@@ -61,7 +61,9 @@ there will be  five server used for this project:
 **MANAGE DATABASE**
 
 To configure the database connections, open the settings.py file in your project folder in Visual Studio Code.
-DATABASES = {
+
+   ```
+  DATABASES = {
      'default': {
          'ENGINE': 'django.db.backends.mysql',
          'NAME': 'Mflix',
@@ -78,6 +80,8 @@ DATABASES = {
  	    }
      }
  }
+   ```
+
    **Construct Django Model**
 
   Enter the'models.py' file and specify the models that reflect the data and correspond to the JSON dataset's structure.
