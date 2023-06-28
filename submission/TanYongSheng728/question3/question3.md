@@ -103,7 +103,7 @@ MySQL:
 <img src="./files/images/template static.png"></img>
 </p>
 
- - In the `setting` folder specify the DIRS for template path.
+ - In the `setting` folder specify the DIRS for template path. 
 
  ```
  import os
