@@ -177,7 +177,7 @@ The metrics that we get evaluate the performance of the regression model.
 
 Based on the metrics, it shows that the linear regression model is not performing well in predicting total money raised. High MSE and RMSE indicate a large prediction error and the negative R-squared suggests that the model does not capture the underlying relationship between the input features and the target variable.
 
-Lastly, we can see that the dataset itself has limitations. There are too many fields with null values which is almost half of the records. Thus, performing feature extraction might be the best as we are not involving the data that are much likely can’t be predicted.
+Lastly, we can see that the dataset itself has limitations. There are too many records with null values which are almost half of the records and the fields that can be used for prediction are also limited. Performing feature extraction might be the best as we are not involving the data that are much likely unsuitable to be predicted. However, the data that been extracted also does not support well on one another.
 
 
 ## Contribution 🛠️
