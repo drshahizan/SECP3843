@@ -14,10 +14,9 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Airbnb](https://github.com/drshahizan/dataset/tree/main/mongodb/05-airbnb)
 
 ## Table of Contents
+- [Prerequisites](prerequisites)
 - [Question 2 (a)](question-2-(a))
 - [Question 2 (b)](question-2-(b))
-
-## Question 2 (a)
 
 ### Prerequisites
 Download and Install All Required Software.
@@ -27,6 +26,9 @@ Download and Install All Required Software.
   
 - [MongoDB Command Line Database Tools](https://www.mongodb.com/try/download/database-tools) <br>
 
+
+
+## Question 2 (a)
 
 
 ### Step 1: Prepare the JSON File

@@ -20,8 +20,9 @@ Don't forget to hit the :star: if you like this repo.
    - Install and configure the 5 servers.
      - Django Web Server
        - Using `pip install django` in the command prompt
-         
-          <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA1.jpg" style="width: 700px; height: 200px;">
+         <p align="center">
+             <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA1.jpg" style="width: 700px; height: 200px;">
+         </p>
        
      - MongoDB Database Server
        - Using the command
@@ -30,16 +31,18 @@ Don't forget to hit the :star: if you like this repo.
          pip install pymongo
          
          ```
-         
-         <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA3.jpg" style="width: 700px; height: 100px;">
+         <p align="center">
+            <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA3.jpg" style="width: 700px; height: 100px;">
+         </p>
          
      - MySQL Database Server
        - Using the command
          ```python
          pip install mysqlclient
          ```
-         
-         <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA2.jpg" style="width: 550px; height: 150px;">
+         <p align="center">
+            <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA2.jpg" style="width: 550px; height: 150px;">
+         </p>
          
      - JSON Dataset Server
      - Integration Script Server
@@ -55,8 +58,9 @@ Don't forget to hit the :star: if you like this repo.
    - ```python
      django-admin startproject Store
      ```
-     
-     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA4.jpg" style="width: 600px; height: 60px;">
+     <p align="center">
+        <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA4.jpg" style="width: 600px; height: 60px;">
+     </p>
      
    - Create django app within the project with the command
    - ```python
@@ -65,15 +69,17 @@ Don't forget to hit the :star: if you like this repo.
   
 4. Define data models
    - Define models representing the JSON dataset and its fields in the Django app's `models.py` file, including the JSONField for storing JSON data.
-     
-     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA5.jpg" style="width: 300px; height: 250px;">
+     <p align="center">
+        <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA5.jpg" style="width: 300px; height: 250px;">
+     </p>
      
 5. Generate and apply migration
    - Generate the database migration file using the `python manage.py makemigration` on the Django web server.
    - Apply the migration to generate the necessary table in the database server using the command below.
    - `python manage.py migrate`
-
-      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA6.jpg" style="width: 700px; height: 100px;">
+    <p align="center">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA6.jpg" width="700">
+    </p>
    
 6. Load JSON data into the database
    - Create a script in the Django web server to fetch the JSON data from the JSON dataset server and save it into MongoDB Database server.
@@ -83,8 +89,9 @@ Don't forget to hit the :star: if you like this repo.
    - In the Django web server, find the django setting file named `settings.py`.
    - Set up the database connection for both MongoDB and MySQL database by providing the credentials such as hostname and password.
    - For example, I have set up the connections for both MySQL and MongoDB 
-
-      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA7.jpg" style="width: 650px; height: 300px;">
+   <p align="center">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA7.jpg" width="650">
+   </p>
      
 8. Testing and Monitor
    - Run the Django web server to verify the database connection.
@@ -94,8 +101,9 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 1 (b)
 ### System Architecture
  - The system architecture diagram illustrates the seamless integration between Django, a web server framework, a JSON dataset, MySQL, and MongoDB databases.
-
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/SA.jpg" >
+   <p align="center">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/SA.jpg" width="600" >
+   </p>
 
 ### Architecture Components
 1. User interface

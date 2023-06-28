@@ -16,6 +16,45 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 3 (a)
 
+**Step 1: Start with set up the environment and Django project**
+
+i. Creating a virtual environment using the command `virtualenv env`.
+
+ii. Activating the virtual environment using the command `.\env\Scripts\activate`.
+
+iii.  Check if Django is installed using `pip show django`. If not, install it with `pip install django`.
+
+<img src="https://github.com/drshahizan/SECP3843/assets/99240177/3dfa2840-536e-4e8d-91b3-7e2f6c2b685c" />
+
+iv.  Create a new Django Project using the command `django-admin startproject financialAnalytics`
+
+**Step 2: Django Configuration**
+
+Install the mysqlclient package using the command `pip install mysqlclient` to connect MySQL database and Python.
+
+<img src="https://github.com/drshahizan/SECP3843/assets/99240177/04c1b71f-2efe-4bbe-961f-9ca95d44506f" />
+
+**Step 3: Setting Database configuration**
+
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db_analytics',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'unix_socket': '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock',
+        },
+    },
+}
+```
+**Step 4:**
+
+**Step 5:**
+
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

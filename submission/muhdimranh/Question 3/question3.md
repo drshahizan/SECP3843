@@ -446,7 +446,7 @@ from django_extensions.management.jobs import HourlyJob, DailyJob
 from AirbnbBookingPortal.management.commands.replicate_data import Command as ReplicateDataCommand
 
 # Define a job class for the data replication task
-class DataReplicationJob(HourlyJob):  # Adjust the schedule as needed (e.g., HourlyJob, DailyJob)
+class DataReplicationJob(HourlyJob):  
     help = "Replicates data from MySQL to MongoDB"
     when = '*'
 

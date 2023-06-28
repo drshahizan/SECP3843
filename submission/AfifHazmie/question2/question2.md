@@ -22,24 +22,30 @@ Requirement before following the steps:
 ### Steps:
 
 1. Download and prepare the JSON data file [Supply Store](https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales) into device.
-   
-   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA24.jpg" style="width: 800px; height: 350px;">
-   
+   <p align="center">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA24.jpg" style="width: 800px; height: 350px;">
+   </p>
 2. Open Command Prompt and type the command `mongod --version` to check the mongodb version and the type the command `mongod` to start mongodb server
-   
-   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA21.jpg" style="width: 450px; height: 250px;">
+   <p align="center">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA21.jpg" style="width: 450px; height: 250px;">
+   </p>
 ---
-   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA22.jpg" style="width: 1000px; height: 600px;">
+   <p align="center">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA22.jpg" style="width: 1000px; height: 600px;">
+   </p>
    
 3. Type the command `mongosh` in command prompt to access to MongoDB shell
-   
-   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA23.jpg" style="width: 700px; height: 250px;">
+   <p align="center">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA23.jpg" style="width: 700px; height: 250px;">
+   </p>
    
 4. Select the target database and collection
    - type `use SupplyStore` in the command
    - type `db.Sales` to choose the collection
 
+   <p align="center">
      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA25.jpg" style="width: 200px; height: 100px;">
+   </p>
      
 5. Import json dataset file into mongoDB using mongo shell.
     - In the terminal with Mongo Shell active, type in the command
@@ -49,12 +55,14 @@ Requirement before following the steps:
       - `--collection` = database collection name
       - `--file` = file path to the JSON dataset file
     - The Database and collection will be automatically created as we execute the command.
-      
+   <p align="center">
     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA26.jpg" style="width:900px; height: 200px;">
+   </p>
       
 6. Successfully import JSON dataset into mongoDB
-
+<p align="center">
    <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/AA27.jpg" style="width:700px; height: 500px;">
+</p>
 
 ## Question 2 (b)
 Before start or make any queries on MongoDB, we first have to start the MongoDB server using the command `mongod`
@@ -62,8 +70,9 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
 ### Steps:
 
 1. Open MongoDB Compass. Find the MongoDB Compass terminal or in command prompt with Mongo Shell activated.
-   
+<p align="center">
    <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/mongocompass.jpg">
+</p>
    
 2. In the terminal, execute the command `use` followed by database name. For example, I will execute the command `use SupplyStore`
 
@@ -99,8 +108,9 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
       }}) 
    
    - the created data can be found inside the collecton by filtering using `{storeLocation: "Johor"}`
-
+   <p align="center">
      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/createquery.jpg" style="width:500px; height: 400px;">
+   </p>
 ---
    ### View Query:
    - Run the `find` in the Mongosh terminal
@@ -110,8 +120,9 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
      ```
    
    - the terminal will display the following data based on `find` field
-     
-     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/viewquery.jpg" style="width:350px; height: 500px;">
+     <p align="center">
+        <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/viewquery.jpg" style="width:350px; height: 500px;">
+     </p>
      
  ### Update Query 1:
  - Run the `updateOne` in the mongosh terminal with the field that I want to change
@@ -136,14 +147,18 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
      }
    )
   ```
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/updateonequery.jpg" style="width:300px; height: 600px;">
+<p align="center">
+   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/updateonequery.jpg" style="width:300px; height: 600px;">
+</p>
 
  ### Update Query 2:
  - Run the `updateMany` in the mongosh terminal with the field that I want to change
  - The `updateMany` function is used to update all the data that satisfied the filtered field.
  - For example in here I will add another data with the same store location "Johor" using the create query
-   
+
+<p align="center">
    <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/NewData.jpg">
+</p>
    
  - after that i will execute the below query which will filter data with `storeLocation="Johor"` to change it to `storeLocation = "Kuala Lumpur"`
    ```python
@@ -154,12 +169,14 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
    ```
    
  - After update the location, when filter using the `storeLocation = "Johor"`, no data will appear as I already change the location.
-   
-   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/jb.jpg" style="width:750px; height: 300px;">
+   <p align="center">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/jb.jpg" style="width:750px; height: 300px;">
+   </p>
    
  - The data will show if I filtered using `storeLocation = "Kuala Lumpur"`
-   
-   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/kl.jpg" style="width:300px; height: 300px;">
+   <p align="center">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/kl.jpg" style="width:300px; height: 300px;">
+   </p>
    
 ### Delete Query: 
  - To delete the data in mongodb use whether `deleteOne` to deleete first match data or `deleteMany` to delete all data that satisfied the filter.
@@ -168,12 +185,14 @@ Before start or make any queries on MongoDB, we first have to start the MongoDB 
 ```python
 db.Sales.deleteMany({ storeLocation: "Johor" })
 ```
-
-   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/deletequery.jpg" style="width:350px; height: 100px;">
+   <p align="center">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/deletequery.jpg" style="width:350px; height: 100px;">
+   </p>
  
  - Try filtering `storeLocation = "Kuala Lumpur"`, there will be no result shown.
-
-   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/deleteresult.jpg" style="width:600px; height: 350px;">
+   <p align="center">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question2/files/images/deleteresult.jpg" style="width:600px; height: 350px;">
+   </p>
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
