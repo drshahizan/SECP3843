@@ -153,7 +153,18 @@ kmeans.fit(X_scaled)
 cluster_labels = kmeans.labels_
 ```
 
+5. Analyze the clustering results
 
+```python
+# Add the cluster labels to the DataFrame
+df['cluster'] = cluster_labels
+
+# Group the data by cluster and calculate the average age for each cluster
+cluster_averages = df.groupby('cluster')['age'].mean()
+
+# Print the cluster averages
+print(cluster_averages)
+```
 
 
 
