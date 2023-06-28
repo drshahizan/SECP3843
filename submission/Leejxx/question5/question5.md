@@ -50,7 +50,7 @@ Don't forget to hit the :star: if you like this repo.
 The dashboard is designed to provide comprehensive analysis and visualization of a JSON dataset. It offers various functionalities to explore and understand the data.
 
 ### Sales Analysis
- <img  src="./files/images/dashboard1.JPG"></img>
+ <img  src="./files/images/dashboard1.JPG"></img><br>
   The sales analysis section provides insights into customer demographics, sales channels, and satisfaction levels. It includes the following features:
 
   <b>-Gender Distribution</b>: A bar chart displaying the distribution of customers based on gender.<br>
