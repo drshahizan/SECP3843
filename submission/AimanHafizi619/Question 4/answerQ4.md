@@ -37,6 +37,7 @@ Based on the tables you provided in the JSON files, it seems like a structured d
 import pandas as pd
 import datetime as dt
 import pymongo
+import numpy as np
 ```
 
 - Retrieve `customers.json` from MongoDB Compass
