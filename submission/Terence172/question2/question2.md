@@ -154,10 +154,10 @@ After pasting your syntax, hit `Enter` and watch your atlas collection fill up w
 
 ### Content
 
-* [Insert Query](Insert-Query)
-* [Read Query](Read-Query)
-* [Update Query](Update-Query)
-* [Delete Query](Delete-Query)
+* [Insert Query](#Insert-Query)
+* [Read Query](#Read-Query)
+* [Update Query](#Update-Query)
+* [Delete Query](#Delete-Query)
 
 
 ### Insert Query
