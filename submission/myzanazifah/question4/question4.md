@@ -95,7 +95,7 @@ The machine learning that I will implement for my dataset is K-Means Clustering.
       ```  
 
      <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(5).png" />
-   - Then, import all the necessary libraries to do K-Means Clustering algorithm. As I want to yellowbrick library. I need to install the library first.
+   - Then, import all the necessary libraries to do K-Means Clustering algorithm. As I want to use the yellowbrick library, I need to install the library first.
      ```
       ! pip install yellowbrick
 
