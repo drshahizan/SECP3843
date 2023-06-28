@@ -17,6 +17,26 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 2 (a)
 You have been given a JSON file that contains data that must be imported into a MongoDB database. The JSON file must follows the appropriate structure for MongoDB documents. Your task is to outline the step-by-step process to add the data from the JSON file into MongoDB. Provide a detailed explanation of each step involved in the process with screenshots, including any necessary commands. Ensure that your answer covers the preparation of the JSON file, starting the MongoDB server, accessing the MongoDB shell, selecting the target database, choosing the collection, and executing the import command.
 
+**PREREQUISITES**
+
+**Install each of the following:**
+
+1.Install the community server for MongoDB.
+
+2.Setup the MongoDB Shell
+
+3.Make sure that you have python installed
+
+**Retrieve and Download the dataset for Mflix;**
+
+a.users.json
+
+b.comments.json
+
+c.theaters.json
+
+d.movies.json
+
 ## Question 2 (b)
 b.	Create FIVE (5) MongoDB queries that demonstrating various Create, Read, Update, and Delete (CRUD) operations on the documents stored in the database. Ensure that you use different types of functions provided by MongoDB for each query. The breakdown for the number of queries per operation is as follows:
 
@@ -30,6 +50,7 @@ iv.	Delete – 1 query.
 
 
 For each query, include the MongoDB query itself and provide screenshots of the results obtained from executing the queries.
+
 
 
 

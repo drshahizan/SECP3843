@@ -14,7 +14,7 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Stories
 
 ## Question 4 (a)
-The machine learning that I will implement for my dataset is K-Means Clustering. For this project, I will be using Colab.
+The machine learning that I will implement for my dataset is K-Means Clustering which is an unsupervised machine learning algorithm used to group a dataset into k clusters. For this project, I will be using Colab to do the code. The file is attached [here](https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/code/q4.ipynb).
 
 1. Import Database
    - Install pymongo by running the code below:
@@ -180,9 +180,58 @@ The machine learning that I will implement for my dataset is K-Means Clustering.
 
      <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(11).png" /> 
    #### Silhouette Method
+   - Silhouette Method has the same function as Elbow method but it is more to measure of how similar a data point is from the points in its own cluster and how similar it is to data points in other clusters.
+     
+     ```
+      range_of_k = range(2, 15)
+      silhouette_scores = []
+      
+      for k in range_of_k:
+          kmeans = KMeans(n_clusters=k, random_state=42)
+          cluster_labels = kmeans.fit_predict(scaled_features)
+          silhouette_avg = silhouette_score(scaled_features, cluster_labels)
+          silhouette_scores.append(silhouette_avg)
+      
+      
+      plt.plot(range_of_k, silhouette_scores, marker='o')
+      plt.xlabel('Number of Clusters (k)')
+      plt.ylabel('Silhouette Score')
+      plt.title('Silhouette Analysis')
+      plt.show()
+      ``` 
+
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(12).png" /> 
+     
+   #### K-Means Clustering using Optimal Cluster.
+
+   Based on the Silhoutte Method, 2 is the optimal k.     
+
+   ```
+      k = 2 
+      kmeans = KMeans(n_clusters=k, random_state=42)
+      kmeans.fit(scaled_features)
+      
+      
+      cluster_labels = kmeans.labels_
+      features['cluster_label'] = cluster_labels
+      
+      plt.scatter(df['comments'], features['diggs'], c=features['cluster_label'], cmap='viridis')
+      plt.xlabel('Number of Comments')
+      plt.ylabel('Number of Diggs')
+      plt.title('K-means Clustering')
+      plt.colorbar(label='Cluster')
+      plt.show()
+      ``` 
+
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(13).png" /> 
 
 
+### Conclusion
 
+- I have made the decision to do K-Means clustering based on the features 'diggs' and 'comments'. By doing this algorithm, I can group the stories into clusters based on their popularity level.
+- As you can see in the first figure for K-Means clustering, it is not a very good visualization as we cannot see the separation clearly. With that, we need to do Elbow method or/and Silhoutte method to know the optimal k.
+- Based on the two graphs, it can be said that Silhoutte method is better than Elbow method as Silhoutte method is more clear in indicating the optimal k. Based on the graph for Elbow method, it was either 3 or 4 as those are the ones that shows most change. To know the optimal k for Elbow method, we need to identify the point which has the most drastic change. Meanwhile, to know the optimal k for Silhoutte method, we need to choose the highest silhoutte average. With that, the optimal k based on the figure for Silhoutte method is 2.
+- Lastly, I made a K-Mean clustering based on the optimal k based on the Silhoutte method which is 2. From the graph, we can see that cluster 0 is more tightly packed compared to cluster 1. This may be due to the fact that cluster 0 shares more similar characteristics compared to cluster 1.
 
 
 

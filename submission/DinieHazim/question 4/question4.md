@@ -16,7 +16,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 4
 For the given case study, I will be using K-Means Clustering Model as a machine learning algorithms. I choose it because it is an unsupervised learning algorithm used for clustering or grouping data points based on their similarities. In my case, I can use the 'diggs' and 'comments' variables as features to cluster the stories based on the number of diggs and comments they received.
 
-`Colab`: [Machine_Learning.ipynb]()
+`Colab`: [Naive_Bayes.ipynb](https://github.com/drshahizan/SECP3843/blob/4f20339748c541b7e93a10a8e2b5514f511dc2b6/submission/DinieHazim/question%204/files/code/Naive_Bayes.ipynb)
 
 #### Install pymongo
 
@@ -80,82 +80,77 @@ For the given case study, I will be using K-Means Clustering Model as a machine 
       df.isna().sum()
    ```
 
-#### K-Means Clustering Models
+#### Naive Bayes
 
-1. Extract columns 'diggs' and 'comments'.
+1. Extract the story descriptions and topic names
    ```python
-      X = df[['diggs', 'comments']]
-      X
+      descriptions = []
+      topic_names = []
+
+      for story in data:
+          description = story['description']
+          topic_name = story['topic']['name']
+          descriptions.append(description)
+          topic_names.append(topic_name)
    ```
 
-2. Run feature scaling to the feature. This is important because many machine learning algorithms, including K-Means clustering, are sensitive to the scale of the features. When the features are on different scales, it can lead to biased results, where the algorithm gives more importance to the features with larger values.
+2. Split the dataset into training and testing sets
    ```python
-      scaler = StandardScaler()
-      scaled_df = scaler.fit_transform(X)
-      scaled_df
+      X_train, X_test, y_train, y_test = train_test_split(descriptions, topic_names, test_size=0.2, random_state=42)
    ```
 
-3. Creates a KMeans object with 3 clusters.
+3. Create a CountVectorizer to convert text into numerical features
    ```python
-      kmeans = KMeans(n_clusters=3)
+      vectorizer = CountVectorizer()
+      X_train_vec = vectorizer.fit_transform(X_train)
+      X_test_vec = vectorizer.transform(X_test)
    ```
 
-5. Fits the KMeans model to the scaled data.
+5. Create a Multinomial Naive Bayes classifier
    ```python
-      kmeans.fit(scaled_df)
+      nb_classifier = MultinomialNB()
    ```
 
-7. Retrieve the cluster labels and add as a new column.
+7. Train the classifier on the training data
    ```python
-      labels = kmeans.labels_
-      X['labels'] = labels
-      X
+      nb_classifier.fit(X_train_vec, y_train)
    ```
 
-9. Retrieves the coordinates of the cluster centroids.
+9. Make predictions on the testing data
     ```python
-      centroids = kmeans.cluster_centers_
+      y_pred = nb_classifier.predict(X_test_vec)
     ```
 
-11. Plots a scatter plot of the diggs vs comments, with each point colored according to its cluster label.
+11. Evaluate the performance of the classifier
     ```python
-      plt.scatter(X['diggs'], X['comments'], c=X['labels'], cmap='viridis')
-      plt.xlabel('Diggs')
-      plt.ylabel('Comments')
-      plt.title('K-means Clustering')
-      plt.colorbar(label='Cluster')
-      plt.show()
+      accuracy = accuracy_score(y_test, y_pred)
+      print("Accuracy:", accuracy)
     ```
 
-#### Find the optimal cluster
+    ![image](https://github.com/drshahizan/SECP3843/assets/120595244/938f3963-5c99-4f85-b1aa-bbcd97086374)
 
-1. I will use silhouette model to find the optimal cluster for this dataset.
-2. Define the range of clusters values.
+
+#### Predict new text topic
+
    ```python
-      k_values = range(2, 11)
-   ```
-   
-4. Initialize variables to store the optimal values
-   ```python
-      best_k = None
-      best_silhouette_score = -1
+      new_text = 'Kevin Hart'
+      new_text_vec = vectorizer.transform([new_text])
+      predicted_topic = nb_classifier.predict(new_text_vec)
+      print("Predicted Topic:", predicted_topic)
    ```
 
-6. Iterate over each k value and calculate the average silhouette score
-   ```python
-      for k in k_values:
-       kmeans = KMeans(n_clusters=k)
-       labels = kmeans.fit_predict(X)
-       silhouette_avg = silhouette_score(X, labels)
-       
-       if silhouette_avg > best_silhouette_score:
-           best_k = k
-           best_silhouette_score = silhouette_avg
+![image](https://github.com/drshahizan/SECP3843/assets/120595244/b38953ad-1e3d-42f5-ac43-29cab9d401e0)
 
-       print("Optimal value of k:", best_k)
+
+   ```python
+      new_text = 'Jocelyn Chia'
+      new_text_vec = vectorizer.transform([new_text])
+      predicted_topic = nb_classifier.predict(new_text_vec)
+      print("Predicted Topic:", predicted_topic)
    ```
 
-7. The optimal value of k determined using the silhouette method is 7. This suggests that the data can be best divided into 7 clusters based on the 'diggs' and 'comments' features.
+![image](https://github.com/drshahizan/SECP3843/assets/120595244/8f247033-9044-405a-ad09-6cb8a4716335)
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

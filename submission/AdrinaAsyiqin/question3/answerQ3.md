@@ -15,6 +15,8 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: sales.json
 
 ## Question 3 (a)
+### Managing User Registration and Login for 3 User Types
+
 ### Step 1: Define User Model
 - in models.py define User model that extends Django's built in User model
 - Add any additional model fields for user type : customer, technical worker, and senior management
@@ -291,6 +293,7 @@ Don't forget to hit the :star: if you like this repo.
 
  
 ## Question 3 (b)
+### Steps To Overcome Data Replication and Synchronization
 
 ### Step 1: Database selection
 Choose appropriate database replication method or tool that supports both MySQL and MongoDB databases. This could involve exploring options like native replication mechanisms provided by the database themselves or utilising third-party tools specifically designed for database synchronization
