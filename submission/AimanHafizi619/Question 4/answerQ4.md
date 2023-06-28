@@ -101,8 +101,19 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import silhouette_score
 ```
 
+2. Prepare the data for clustering
 
+```python
+# Select the numerical features for clustering
+numerical_features = ['age']
 
+# Extract the numerical features from the DataFrame
+X = df[numerical_features].values
+
+# Standardize the features
+scaler = StandardScaler()
+X_scaled = scaler.fit_transform(X)
+```
 
 
 
