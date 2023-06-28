@@ -26,58 +26,39 @@ Using appropriate indexing techniques on the large dataset to optimize up data r
 ## Question 5 (b)
 Use MongoDB Atlass to visualize the JSON files
 
-1. Open MongoDB Atlass. Click `Browse Collections` button
+1. Open MongoDB Atlass.
 
-![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image1.png)
+2. Click `Charts` tabs add a new Dashboard called `Customer Analysis`
 
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image2.png)
 
+3. After that, click `Add Chart` to begin building some visualizations
 
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image3.png)
 
+4. A new tab will open. Select the cluster that will be use for visualization. In this case, the `projectCluster`. Select the database name `Analytics`. Select `Customers` collections.
 
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image4.png)
 
+5. The visualizations can be done by dragging and dropping items from `Fields` to `X Axis`, `Y Axis`, or `Series`.
 
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image5.png)
 
+6. The bar chart below depicts `Number of Transactions for each account`. It shows how many individual account that have been doing a certain time of transactions.
 
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image6.png)
 
+7. The above graph can be done by implementing the options below
 
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image7.png)  
 
+8. Another visualization, like the donut below can also be generated. The donut chart depicts the `Distribution of Accounts by Different Category of Products`. Each individual accounts are grouped based on their product investments.
 
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image8.png)  
 
+9. The above chart can be done by implementing the options below
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image9.png) 
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

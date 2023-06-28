@@ -86,7 +86,81 @@ The machine learning that I will implement for my dataset is K-Means Clustering.
      <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(4).png" />
      Based on the figure above, there are no longer null data in dataset.
 
-3. Machine Learning
+3. Machine Learning (K-Means Clustering)
+
+      ### K-Means Clustering
+
+   - First, extract the columns we want to use. For this project, I decided to use columns 'comments' and 'diggs'.
+
+     ```
+      features = df[['comments', 'diggs']]
+      features
+      ```  
+
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(5).png" />
+   - Then, import all the necessary libraries to do K-Means Clustering algorithm.
+
+     ```
+      from sklearn.cluster import KMeans
+      import seaborn as sns
+      import matplotlib.pyplot as plt
+      %matplotlib inline
+      from sklearn.metrics import silhouette_samples, silhouette_score
+      from sklearn.preprocessing import StandardScaler
+      ```  
+   - Comments and Diggs are numerical features and it may have been measured in different units. With that, we need to make sure that the values for both features are the same scale. So, to transform the data into the same scale, we need to implement the StandardScaler class.
+
+     ```
+      scaler = StandardScaler()
+      scaled_features = scaler.fit_transform(features)
+      scaled_features
+      ``` 
+
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(6).png" /> 
+   - For the K-Means clustering, I want to compare between 9 different clusters. I also did not set the initialization for the centroid. Hence, I put init as random.
+
+      ```
+      k_values = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+      for k in k_values:
+          kmeans = KMeans(n_clusters=k, init="random", random_state=42)
+          kmeans.fit(scaled_features)
+      ``` 
+   - Then, get the cluster label and put it in the dataframe.
+     
+      ```
+      cluster_labels = kmeans.labels_
+      features['cluster_label'] = cluster_labels
+      features
+      ``` 
+
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(7).png" /> 
+   - To identify the centroids coordinates for each cluster, run the following code:     
+
+     ```
+      kmeans.cluster_centers_
+      ``` 
+
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(8).png" /> 
+   - Then, plot a scatter graph to visualise the K-Means clustering for Number of Comments and Number of Diggs.     
+
+     ```
+      plt.scatter(features['comments'], features['diggs'], c=features['cluster_label'], cmap='viridis')
+      plt.xlabel('Number of Comments')
+      plt.ylabel('Number of Diggs')
+      plt.title('K-means Clustering')
+      plt.colorbar(label='Cluster')
+      plt.show()
+      ``` 
+
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(9).png" /> 
+   
+
+   ### Optimal Clusters
+
+   Once we have done K-Means Clustering, we need to know the optimal value of k.
+   #### Elbow Method
+   #### Silhouette Method
 
 
 
