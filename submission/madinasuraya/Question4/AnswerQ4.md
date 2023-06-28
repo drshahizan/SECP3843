@@ -15,7 +15,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ### Question 4 
 
-Machine learning approach that I choose is **supervised learning** where I perform a **linear regression** to make prediction on a set of labeled data. For this dataset about companies listed in Crunchbase website, I wanted to make prediction on the total money raised by the companies with the number of employees and number of competitors that they have. Here are few steps that I used using python language:
+Machine learning approach that I choose is **supervised learning** where I perform a **linear regression** to make prediction on a set of labeled data. For this dataset about companies listed in Crunchbase website, I wanted to make prediction on the **total money raised** by the companies with the **number of employees** and **number of competitors** that they have. Here are few steps that I used using python language:
 
 #### Libraries Installation
 ```
