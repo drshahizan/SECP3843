@@ -163,13 +163,16 @@ Don't forget to hit the :star: if you like this repo.
 
   ![Alt text](files/images/image-3.png)
 
-- Once a chart had been created, at the top right corner click on `Save and Close` to save the chart. This will then lead us to the main dashboard. Simply click on `Add Chart` to create a new chart. In the dashboard, admin users can adjust the size of each charts and drag them to locate them anywhere in the sheet.
+- Once a chart had been created, at the top right corner click on `Save and Close` to save the chart. This will then lead us to the main dashboard. Simply click on `Add Chart` to create a new chart. In the dashboard, admin users can adjust the size of each charts and drag them to locate them anywhere in the sheet. In the dashboard, to edit existing chart just hover on the chart. There will be an option to edit chart
 
   ![Alt text](files/images/image-4.png)
 
   ![Alt text](files/images/image-6.png)
 
-  
+
+## Final Dashboard 
+![image](https://github.com/drshahizan/SECP3843/assets/96984290/00388f29-4a67-4fc4-9eb4-6033771b2b83)
+
 
 
 
