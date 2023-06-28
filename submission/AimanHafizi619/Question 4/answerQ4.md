@@ -166,7 +166,7 @@ cluster_averages = df.groupby('cluster')['age'].mean()
 print(cluster_averages)
 ```
 
-
+6. This will provide the average age for each cluster. 
 
 
 
