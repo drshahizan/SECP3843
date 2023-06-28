@@ -16,15 +16,17 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 3 (a)
 1. Firstly, before creating the user login, registration and users view based on techinical workers, customers and senior management.
    - configure the database to insert and use MySQL database table
-
-      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/dbconfig.jpg">
+      <p align="center">
+         <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/dbconfig.jpg">
+      </p>
+      
      
 2. Create templates
    - Create new folder and named it `templates` within app folder which mine is `AA`
    - the templates will be used to create view of each of the page.
-   - 
+     <p align="center">
        <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/templatefolder.jpg">
-     
+     </p>
 3. Model Define
 
    - define the model including the user type
@@ -50,9 +52,9 @@ Don't forget to hit the :star: if you like this repo.
 
 ---
    - this model defined will create a new database table in the MySQL
-
+   <p align="center">
        <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/dbtb.jpg">
-
+   </p>
 4. Create View
    - In Django, the `views.py` file is where we define the views for the web application. A view is a Python function or class that takes a web request and returns a web response. It contains the logic that processes the user's request, interacts with the database or other data sources, and renders the appropriate HTML templates to generate the response.
 
@@ -284,33 +286,39 @@ Don't forget to hit the :star: if you like this repo.
 8. In web views of the system.
    
    #### User table user type
-   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/usertype.jpg" style="width: 500px; height: 100px;">
-   
+   <p align="center">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/usertype.jpg" style="width: 500px; height: 100px;">
+   </p>
 ---
 
    #### Register Page
-  <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/register.jpg" style="width: 450px; height: 300px;">
-  
+   <p align="center">
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/register.jpg" style="width: 450px; height: 300px;">
+  </p>
 ---
 
   #### Log in Page
-  <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/login.jpg" style="width: 550px; height: 180px;">
-  
+  <p align="center">
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/login.jpg" style="width: 550px; height: 180px;">
+  </p>
 ---
 
   #### Customer Page
-  <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/customerd.jpg" style="width: 550px; height: 180px;">
-  
+  <p align="center">
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/customerd.jpg" style="width: 550px; height: 180px;">
+  </p>
 ---
 
   #### Technical Worker Page
-  <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/technicald.jpg" style="width: 550px; height: 180px;">
-  
+  <p align="center">
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/technicald.jpg" style="width: 550px; height: 180px;">
+  </p>
 ---
 
   #### Senior Management Page
-  <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/seniord.jpg" style="width: 550px; height: 180px;">
-
+  <p align="center">
+     <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question3/files/images/seniord.jpg" style="width: 550px; height: 180px;">
+  </p>
 
 ## Question 3 (b)
    - When addressing the challenge of data replication and synchronization between MySQL and MongoDB databases, the concept of master and slave servers can be relevant.
