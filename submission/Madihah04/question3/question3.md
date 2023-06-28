@@ -25,17 +25,13 @@ C:\Users\madih\AppData\Local\Microsoft\WindowsApps\python.exe -m django startpro
 ```
 3. go to newly create project folder by typing `cd project`
 
-<img src="../question3/files/images/Q3a(1).png">
-
-
 #### Setup DB connection (MySQL)
 
 1. Install MySQL connector for Python by running `pip install mysql-connector-python`
-<img src="../materials/Q3a(2).png">
+   
+3. Create a new database named `project` in phpMyAdmin
 
-2. Create a new database named `project` in phpMyAdmin
-
-3. Go to setting.py and configure the MySQL database
+4. Go to setting.py and configure the MySQL database
 
 ```python 
 DATABASES = {
@@ -109,7 +105,6 @@ class User(AbstractUser):
 python manage.py makemigrations
 python manage.py migrate
 ```
-<img src="../materials/Q3_3.png">
 
 #### Create registrations and login views
 
@@ -319,73 +314,63 @@ urlpatterns = [
 
 #### Link to the project folder
 
-<a href="./question3">Souce Code Folder</a>
+<a href="../question3">Souce Code Folder</a>
 
 ### Question 3 (b)
-### Understand data models
 
-1. Since we are using MySQL and MongoDB databases, we need to understand both data models.
-2. Identify the entities and data feild that eed to be synchronized between the databases.
+The challenge of Data Replication and Synchronization arises between the MySQL and MongoDB databases, can be overcomedby applying database-specific replication techniques.
 
-### Choose database-specific replication techniques
+### Replicating and Synchronizing Data between MySQL and MongoDB in a Django Portal
 
-1. Database-Specific Replication Techniques (MySQL):
+#### Steps :
 
-    MySQL provides built-in replication mechanisms that can be utilized to synchronize data between MySQL and MongoDB.
+1. Configure MySQL in XAMPP Control Panel :
 
-    a. MySQL Binary Log Replication:
+Launch the XAMPP Control Panel. At MySQL, click on the Config to open the my.ini configuration file.
 
-        Enable binary logging in MySQL server configuration.
-        Set up a replica MongoDB instance.
+2. Choose DB-specific replication techniques : MySQL Binary Logging
+To enable MySQL Binary Logging, locate the section for MySQL configuration inside the my.ini file.
+Uncomment `log-bin=mysql-bin`. Also, change the port to availble and unused port if the default is used by other program. In this project, I used 3307 as port because the default is used by SQL Server Management System (SSMS). After edited,save the my.ini file.
 
-    b. MySQL Triggers:
-
-        Create triggers in MySQL to capture data changes (INSERT, UPDATE, DELETE).
-
-### Implement Logic
-
-1. Open XAMPP Controler panel and click config for MySQL to open `my.ini`
-
-2. Uncomment or add this line of code inside `my.ini` and saved the file
-
-```bash
-log-bin=mysql-bin
+3. Create folder `replicationDB` and a python file  `replicationDB.py`
+   
+```kotlin
+Destop/
+├── myenv/
+├── project/
+├── stories/
+└── replicationDB/
+    └── replicationDB.py 
 ```
 
-3. Setup a replica MongoDB instance
+3. In `replicationDB.py` file, update the content of the file to :
 
-<ul>
-<li>Connect to MongoDB Atlas</li>
-<li>Create new Database using MongoDB Compass and new Collection named Question3</li>
-</ul>
-
-4. Download necessary packages `pip install mysql-connector-python`
-
-5. Create a new folder name `MySQL-to-MongoDB-Replication` and a new python file name `mysql_to_mongodb_replication.py`
-
+- import necessary packages
 ```python
 import mysql.connector
 from pymongo import MongoClient
-
-# MySQL connection
+```
+- update the rest of the code
+  
+```python
 mysql_connection = mysql.connector.connect(
     host='localhost',
     user='root',
-    password='',
-    database='question3'
+    password='admin',
+    database='project'
 )
 mysql_cursor = mysql_connection.cursor()
 
-# MongoDB connection
-mongo_client = MongoClient('mongodb+srv://mincridible:minzpro1@min.tan7fdn.mongodb.net/')
-mongo_db = mongo_client['Question3b']
-mongo_collection = mongo_db['q3']
 
-# Read data from the MySQL table
-mysql_cursor.execute("SELECT * FROM q3_app_user")
+mongo_client = MongoClient('mongodb+srv://madihahzabri:admin@cluster0.xgsbper.mongodb.net/')
+mongo_db = mongo_client['project']
+mongo_collection = mongo_db['AA']
+
+
+mysql_cursor.execute("SELECT * FROM projectapp_user")
 results = mysql_cursor.fetchall()
 
-# Import data to MongoDB
+
 for row in results:
     row_data = {
         'id': row[0],
@@ -402,21 +387,21 @@ for row in results:
         'user_type': row[11]
     }
     mongo_collection.insert_one(row_data)
-    print("Inserted row with ID:", row[0])  # Logging statement
+    print("Inserted row with ID:", row[0]) 
 
-# Close MySQL connection
+
 mysql_cursor.close()
 mysql_connection.close()
 
-# Close MongoDB connection
+
 mongo_client.close()
 
-# Log the binary log events
+
 mysql_connection = mysql.connector.connect(
     host='localhost',
     user='root',
-    password='',
-    database='question3'
+    password='admin',
+    database='project'
 )
 mysql_cursor = mysql_connection.cursor()
 
@@ -439,7 +424,7 @@ for binlog_event in mysql_cursor:
 
         if table_name == 'q3_app_user':
             print("Binary Log Event:")
-            print("Query:", query)  # Logging statement
+            print("Query:", query)  
 
             if operation == 'INSERT':
                 values_start = query.index("VALUES") + 7
@@ -462,7 +447,7 @@ for binlog_event in mysql_cursor:
                 }
 
                 mongo_collection.insert_one(row_data)
-                print("Inserted row with ID:", row_data['id'])  # Logging statement
+                print("Inserted row with ID:", row_data['id']) 
 
             elif operation == 'UPDATE':
                 set_start = query.index("SET") + 4
@@ -487,7 +472,7 @@ for binlog_event in mysql_cursor:
                 filter_condition = {condition_column: condition_value}
 
                 mongo_collection.update_one(filter_condition, {'$set': update_data})
-                print("Updated row matching condition:", filter_condition)  # Logging statement
+                print("Updated row matching condition:", filter_condition) 
 
             elif operation == 'DELETE':
                 where_start = query.index("WHERE") + 6
@@ -500,29 +485,29 @@ for binlog_event in mysql_cursor:
                 filter_condition = {condition_column: condition_value}
 
                 mongo_collection.delete_one(filter_condition)
-                print("Deleted row matching condition:", filter_condition)  # 
+                print("Deleted row matching condition:", filter_condition) 
 
-# Close MySQL connection
+
 mysql_cursor.close()
 mysql_connection.close()
-
 ```
 
-6. Run the python code `python mysql_to_mongodb_replication.py`
+4. Register new user
 
-<img src="../question3/files/images/Q3b_4.png">
+<img src="../question3/files/images/Q3_reg.png">
+<img src="../question3/files/images/Q3_reg1.png">
 
-### Explanation:
+5.  Run the python code `python replicationDB.py`
 
-In the above code, firstly I imported my current data from MySQL table to my newly created MongoDB database.
+<img src="../question3/files/images/Q3_replicate.png">
 
 #### MySQL data:
 
-<img src="../question3/files/images/Q3b_2.png">
+<img src="../question3/files/images/Q3_result_mysql.png">
 
 #### MongoDB view: 
 
-<img src="../question3/files/images/Q3b_3.png">
+<img src="../question3/files/images/Q3_result_mongodb.png">
 
 Afterwards, the purpose of the code is to initiate an action whenever data is inserted, updated, or deleted from MySQL. This action ensures that the MongoDB database is automatically updated.
 
