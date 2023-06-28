@@ -15,7 +15,7 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Stories
 
 ## Question 5 (a)
-For the portal, I have suggested using MongoDB database to store the JSON dataset. With that, to optimiza the performance of the portal when dealing with large volumes of JSON data from MongoDB database. There are a few ways to do so which are to use indexes and aggregations.
+For the portal, I have suggested using MongoDB database to store the JSON dataset. With that, to optimize the performance of the portal when dealing with large volumes of JSON data from MongoDB database. There are a few ways to do so which are to use indexes and aggregations.
 
 ## Question 5 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
