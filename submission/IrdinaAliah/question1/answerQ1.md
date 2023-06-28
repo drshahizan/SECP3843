@@ -49,7 +49,8 @@ Upload Dataset on MongoDB
 Define Models
 <img src ="https://github.com/drshahizan/SECP3843/blob/e8dd321d92b76dc24090ed4aa4d98408d77ea20b/submission/IrdinaAliah/question1/files/images/define%20model.jpg" style ="width:700px; height: 700px;">
 
-
+Migration
+<img src ="" style ="width:700px; height: 700px;">
 
 
 
