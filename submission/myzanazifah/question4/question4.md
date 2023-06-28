@@ -87,6 +87,9 @@ The machine learning that I will implement for my dataset is K-Means Clustering.
      Based on the figure above, there are no longer null data in dataset.
 
 3. Machine Learning (K-Means Clustering)
+
+      ### K-Means Clustering
+
    - First, extract the columns we want to use. For this project, I decided to use columns 'comments' and 'diggs'.
 
      ```
@@ -95,17 +98,14 @@ The machine learning that I will implement for my dataset is K-Means Clustering.
       ```  
 
      <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(5).png" />
-   - Then, import all the necessary libraries to do K-Means Clustering algorithm. As I want to use the yellowbrick library, I need to install the library first.
+   - Then, import all the necessary libraries to do K-Means Clustering algorithm.
 
      ```
-      ! pip install yellowbrick
-
       from sklearn.cluster import KMeans
       import seaborn as sns
       import matplotlib.pyplot as plt
       %matplotlib inline
       from sklearn.metrics import silhouette_samples, silhouette_score
-      from yellowbrick.cluster import KElbowVisualizer, SilhouetteVisualizer
       from sklearn.preprocessing import StandardScaler
       ```  
    - Comments and Diggs are numerical features and it may have been measured in different units. With that, we need to make sure that the values for both features are the same scale. So, to transform the data into the same scale, we need to implement the StandardScaler class.
@@ -154,26 +154,13 @@ The machine learning that I will implement for my dataset is K-Means Clustering.
       ``` 
 
      <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(9).png" /> 
-   - Lastly, I would like to compare the inertia of each clusters. Inertia is something that can indicate how well the data points within each cluster are grouped together.
-
-     ```
-      values = []
-      for k in k_values:
-          kmeans = KMeans(n_clusters=k, init="random", random_state=42)
-          kmeans.fit(scaled_features)
-          values.append(kmeans.inertia_)
-      
-      plt.plot(k_values, values, marker='o')
-      plt.xlabel('Number of Clusters (k)')
-      plt.ylabel('Inertia')
-      plt.title('K-means Inertia')
-      plt.show()
-      ``` 
-
-     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(10).png" /> 
    
 
+   ### Optimal Clusters
 
+   Once we have done K-Means Clustering, we need to know the optimal value of k.
+   #### Elbow Method
+   #### Silhouette Method
 
 
 
