@@ -37,6 +37,9 @@ Fortunately, using MongoDB Compass, we are able to perfom data aggregation easil
 
 <div align="center"><img src="images/optimize3.PNG" height="350px" /></div>
 
+5. Click 'run'. This is the output
+<div align="center"><img src="images/optimize4.PNG" height="350px" /></div>
+
 **How it helps in optimize large data?**
 
 - The code allows us to summarize the data by counting the occurrences of each distinct value in the "result" field. This provides a quick overview of the distribution of results in the dataset.
