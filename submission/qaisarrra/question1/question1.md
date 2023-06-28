@@ -363,9 +363,9 @@ The system architecture will consist of the following components:
     <td>Database Layer</td>
     <td>
       <ul>
-        The layer that stores the data for the system. As stated in the question, the system shall be working with the **Companies** dataset. The database layer in this example is made up of two databases: 
-        <li>**MongoDb** is used for storing massive amounts of unstructured data, in this case the JSON dataset that we have downloaded earlier. **Djongo** is a connector that allows Django to communicate with MongoDB.</li>
-        <li>**MySQL** is used for storing structured data such as the table to store different type of users. **Django ORM** is a connector that allows Django to communicate with MySQL.</li>
+        The layer that stores the data for the system. As stated in the question, the system shall be working with the Companies dataset. The database layer in this example is made up of two databases: 
+        <li>MongoDb is used for storing massive amounts of unstructured data, in this case the JSON dataset that we have downloaded earlier. Djongo is a connector that allows Django to communicate with MongoDB.</li>
+        <li>MySQL is used for storing structured data such as the table to store different type of users. Django ORM is a connector that allows Django to communicate with MySQL.</li>
       </ul>  
      </td>
   </tr>
