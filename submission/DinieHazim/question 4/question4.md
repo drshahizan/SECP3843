@@ -14,7 +14,16 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Stories](https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories)
 
 ## Question 4
-For the given case study, I will be using Support Vector Machine as a machine learning algorithms for text classification to automatically categorize articles into different topics or containers. This can help in organizing and recommending relevant content to users. SVM performs well in high-dimensional feature spaces, which is often the case in text classification tasks. In text classification, each word or n-gram is considered a feature, and SVM can handle a large number of features efficiently.
+For the given case study, I will be using K-Means Clustering Model as a machine learning algorithms. I choose it because it is an unsupervised learning algorithm used for clustering or grouping data points based on their similarities. In my case, I can use the 'diggs' and 'comments' variables as features to cluster the stories based on the number of diggs and comments they received.
+
+`Colab`: [Machine_Learning.ipynb]()
+
+#### Install pymongo
+
+1.1. Install the pymongo library into your colab.
+   ```python
+      !pip install pymongo
+   ```
 
 #### Set up the environment
 
@@ -23,21 +32,16 @@ For the given case study, I will be using Support Vector Machine as a machine le
    ```python
       import pandas as pd
       import numpy as np
-      from sklearn.model_selection import train_test_split
-      from sklearn.feature_extraction.text import TfidfVectorizer
-      from sklearn.svm import SVC
-      from sklearn.metrics import classification_report
+      from sklearn.cluster import KMeans
+      from sklearn.preprocessing import StandardScaler
+      from sklearn.metrics import silhouette_score
+      import matplotlib.pyplot as plt
       from pymongo import MongoClient
    ```
 
 #### Connect to MongoDB and retrieve data
 
-1. Install the pymongo library.
-   ```python
-      !pip install pymongo
-   ```
-
-2. Set up a connection to MongoDB database and retrieve the data.
+1. Set up a connection to MongoDB database and retrieve the data.
    ```python
       # Set up MongoDB connection
       client = MongoClient('mongodb://your_mongodb_connection_string')
@@ -53,9 +57,104 @@ For the given case study, I will be using Support Vector Machine as a machine le
 1. Convert the MongoDB data into a pandas DataFrame.
    ```python
       df = pd.DataFrame(data)
+      df
    ```
 
-2. Split the data into input (X) and target (y) variables.
+#### Cleaning the data
+
+1. Identify if there are any null data in the dataset.
+   ```python
+      df.isna().sum()
+   ```
+
+2. If any, fill the null data with "NaN".
+   ```python
+      df["thumbnail"].fillna("NaN", inplace = True)
+      df["inaccurate"].fillna("NaN", inplace = True)
+      df["takedowndays"].fillna("NaN", inplace = True)
+      df["takedownuri"].fillna("NaN", inplace = True)
+   ```
+
+3. Check again either there are any null data or not.
+   ```python
+      df.isna().sum()
+   ```
+
+#### K-Means Clustering Models
+
+1. Extract columns 'diggs' and 'comments'.
+   ```python
+      X = df[['diggs', 'comments']]
+      X
+   ```
+
+2. Run feature scaling to the feature. This is important because many machine learning algorithms, including K-Means clustering, are sensitive to the scale of the features. When the features are on different scales, it can lead to biased results, where the algorithm gives more importance to the features with larger values.
+   ```python
+      scaler = StandardScaler()
+      scaled_df = scaler.fit_transform(X)
+      scaled_df
+   ```
+
+3. Creates a KMeans object with 3 clusters.
+   ```python
+      kmeans = KMeans(n_clusters=3)
+   ```
+
+5. Fits the KMeans model to the scaled data.
+   ```python
+      kmeans.fit(scaled_df)
+   ```
+
+7. Retrieve the cluster labels and add as a new column.
+   ```python
+      labels = kmeans.labels_
+      X['labels'] = labels
+      X
+   ```
+
+9. Retrieves the coordinates of the cluster centroids.
+    ```python
+      centroids = kmeans.cluster_centers_
+    ```
+
+11. Plots a scatter plot of the diggs vs comments, with each point colored according to its cluster label.
+    ```python
+      plt.scatter(X['diggs'], X['comments'], c=X['labels'], cmap='viridis')
+      plt.xlabel('Diggs')
+      plt.ylabel('Comments')
+      plt.title('K-means Clustering')
+      plt.colorbar(label='Cluster')
+      plt.show()
+    ```
+
+#### Find the optimal cluster
+
+1. I will use silhouette model to find the optimal cluster for this dataset.
+2. Define the range of clusters values.
+   ```python
+      k_values = range(2, 11)
+   ```
+   
+4. Initialize variables to store the optimal values
+   ```python
+      best_k = None
+      best_silhouette_score = -1
+   ```
+
+6. Iterate over each k value and calculate the average silhouette score
+   ```python
+      for k in k_values:
+       kmeans = KMeans(n_clusters=k)
+       labels = kmeans.fit_predict(X)
+       silhouette_avg = silhouette_score(X, labels)
+       
+       if silhouette_avg > best_silhouette_score:
+           best_k = k
+           best_silhouette_score = silhouette_avg
+
+       print("Optimal value of k:", best_k)
+   ```
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
