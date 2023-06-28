@@ -88,6 +88,8 @@ DATABASES = {
 
    **Construct Django Model**
 
+   For your app's models.py file, add a new model to provide the attributes and structure of the JSON dataset. Use the built-in field types provided by Django, such as CharField and IntegerField, to construct model fields that correspond to the attributes of the JSON dataset.
+
   Enter the'models.py' file and specify the models that reflect the data and correspond to the JSON dataset's structure.
    ```
     python manage.py makemigrations
