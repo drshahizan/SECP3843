@@ -26,9 +26,7 @@ Using appropriate indexing techniques on the large dataset to optimize up data r
 ## Question 5 (b)
 Use MongoDB Atlass to visualize the JSON files
 
-1. Open MongoDB Atlass. Click `Browse Collections` button
-
-![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image1.png)
+1. Open MongoDB Atlass.
 
 2. Click `Charts` tabs add a new Dashboard called `Customer Analysis`
 
@@ -38,7 +36,9 @@ Use MongoDB Atlass to visualize the JSON files
 
 ![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image3.png)
 
+4. A new tab will open. Select the cluster that will be use for visualization. In this case, the `projectCluster`. Select the database name `Analytics`. Select `Customers` collections.
 
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image4.png)
 
 
 
