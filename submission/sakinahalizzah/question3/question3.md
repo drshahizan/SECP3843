@@ -16,6 +16,46 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 3 (a)
 
+**Step 1: Continue the step after set up the environment, Django project, and Django App.**
+
+<img src="https://github.com/drshahizan/SECP3843/assets/99240177/3dfa2840-536e-4e8d-91b3-7e2f6c2b685c" />
+
+**Step 2:**
+`pip install mysql-connector-python`
+
+<img src="https://github.com/drshahizan/SECP3843/assets/99240177/7f08dcfa-e167-4058-9151-eae923c01480" />
+
+**Step 3:**
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'db_analytics',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'OPTIONS': {
+            'unix_socket': '/Applications/XAMPP/xamppfiles/var/mysql/mysql.sock',
+        },
+    },
+    'mongodb': {
+        'ENGINE': 'djongo',
+        'NAME': 'db_analytics',
+        'CLIENT': {
+            'host': 'mongodb+srv://clustersakinah.scfkjmg.mongodb.net',
+            'username': 'sakinahalizzah',
+            'password': 'Sakinah1234',
+            'authMechanism': 'SCRAM-SHA-1',
+            'authSource': 'admin',
+        },
+    },
+}
+```
+**Step 4:**
+
+**Step 5:**
+
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
