@@ -15,7 +15,11 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [City Inspections Dataset](https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections)
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+One of many ways to optimize the performance of our portal in dealing with large data especially when we would like to visualize dashboard is by <b>data aggregation.</b> 
+
+Data aggregation is done on the server-side before sending it to the client for visualization. Use Django's query aggregation functions to calculate summaries, counts, averages, or other aggregated values based on our visualization requirements. This reduces the amount of data transferred and processed on the client-side.
+
+Fortunately, using MongoDB Compass, we are able to perfom data aggregation easily! This is becuase MongoDB Compass offers a feature where we can build aggregation pipeline. Below, I will describe the step-by-step on how we can aggregate our data using a pipeline:-
 
 ## Question 5 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
