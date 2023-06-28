@@ -15,6 +15,62 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 3 (a)
 
+**1. Django**
+   - Open Command Prompt and run `pip install Django` command.
+     
+     <img width="761" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/de153eb9-991a-4ff8-90c5-274078679718">
+
+   - Then, run `django-admin startproject inspection` command to create Django project.
+     
+     <img width="436" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/0fd1bd51-bc43-45ff-9b77-310da84583e6">
+
+   - Next step, in order to create a django app inside the folder, run `python manage.py startapp inspectionApp`. This is where we can define all the models for MySQL and MongoDB.
+
+     <img width="465" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/3aa6d421-d49d-4332-813d-bb60aff4f53e">
+
+   - The other packages that need to be installed are mysqlclient and djongo. To install mysqlclient, run `pip install django mysqlclient pymongo` command.
+     
+     <img width="415" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/aaddfea3-909f-4de1-b7a3-ca1570a8bf53">
+
+   - For djongo, run `pip install djongo` command.
+
+     <img width="415" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/ca408d19-7517-4282-b26b-86746daaff01">
+
+**2. Define Connection Details for MySQL and MongoDB**
+   -  In `settings.py` file, define the connection details for both MySQL and MongoDB database which include database name, username, password, host and others.
+     
+      <img width="499" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/de4a6b80-cecb-4912-8f8c-0b3aece9f262">
+
+**3. Define models for Django**
+
+-  In `models.py` file, define the models according to its data structure and data types.
+
+      ```python
+      from django.db import models
+      
+      class Inspection(models.Model):
+          id = models.CharField(max_length=50, primary_key=True)
+          certificate_number = models.IntegerField()
+          business_name = models.CharField(max_length=255)
+          date = models.DateField()
+          result = models.CharField(max_length=255)
+          sector = models.CharField(max_length=255)
+          city = models.CharField(max_length=255)
+          zip_code = models.IntegerField()
+          street = models.CharField(max_length=255)
+          number = models.IntegerField()
+      
+          class Meta:
+           app_label = 'inspectionApp'
+           db_table = 'tb_inspection'
+
+**4. Migrate the Models**
+
+- To do migration, run `python manage.py makemigrations` command and `python manage.py migrate` command. 
+
+    <img width="626" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/373af744-c84a-4df6-914b-c53d6ca621f8">
+
+    <img width="717" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a915e9c8-4928-4671-b284-0bdb19fb431f">
 
 ## Question 3 (b)
 
