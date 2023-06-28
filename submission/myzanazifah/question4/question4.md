@@ -86,7 +86,7 @@ The machine learning that I will implement for my dataset is K-Means Clustering.
      <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(4).png" />
      Based on the figure above, there are no longer null data in dataset.
 
-3. Machine Learning
+3. Machine Learning (K-Means Clustering)
    - First, extract the columns we want to use. For this project, I decided to use columns 'comments' and 'diggs'.
 
      ```
