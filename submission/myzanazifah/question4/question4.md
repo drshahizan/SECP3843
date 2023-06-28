@@ -87,6 +87,25 @@ The machine learning that I will implement for my dataset is K-Means Clustering.
      Based on the figure above, there are no longer null data in dataset.
 
 3. Machine Learning
+   - First, extract the columns we want to use. For this project, I decided to use columns 'comments' and 'diggs'.
+
+     ```
+      features = df[['comments', 'diggs']]
+      features
+      ```  
+
+     <div><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/images/q4(5).png" />
+   - Then, import all the necessary libraries to do K-Means Clustering algorithm. As I want to yellowbrick library. I need to install the library first.
+     ```
+      ! pip install yellowbrick
+
+      from sklearn.cluster import KMeans
+      import seaborn as sns
+      import matplotlib.pyplot as plt
+      %matplotlib inline
+      from sklearn.metrics import silhouette_samples, silhouette_score
+      from yellowbrick.cluster import KElbowVisualizer, SilhouetteVisualizer
+      ```  
 
 
 
