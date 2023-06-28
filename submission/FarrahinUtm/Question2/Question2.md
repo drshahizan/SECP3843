@@ -27,6 +27,15 @@ You have been given a JSON file that contains data that must be imported into a 
 
 3.Make sure that you have python installed
 
+**Retrieve and Download the dataset for Mflix;**
+
+a.users.json
+
+b.comments.json
+
+c.theaters.json
+
+d.movies.json
 
 ## Question 2 (b)
 b.	Create FIVE (5) MongoDB queries that demonstrating various Create, Read, Update, and Delete (CRUD) operations on the documents stored in the database. Ensure that you use different types of functions provided by MongoDB for each query. The breakdown for the number of queries per operation is as follows:
