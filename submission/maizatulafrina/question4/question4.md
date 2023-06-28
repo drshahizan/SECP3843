@@ -15,6 +15,9 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 4 (a)
 
+<img width="548" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/f8f4fcc6-e839-4fb3-a72a-81ff0b18a2df">
+<img width="562" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a4d3abda-5010-4bcd-ad01-3cc9309a7727">
+
 
 ## Question 4 (b)
 
