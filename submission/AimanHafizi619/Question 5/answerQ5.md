@@ -30,9 +30,9 @@ Use MongoDB Atlass to visualize the JSON files
 
 ![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image1.png)
 
+2. Click `Charts` tabs add a new Dashboard called `Customer Analysis`
 
-
-
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image2.png)
 
 
 
