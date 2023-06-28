@@ -14,7 +14,45 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Stories](https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories)
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+In order to optimize the perfomance of a portal when dealing with large volumes of JSON data for dashboard visualizations, we can consider Data Aggregation.
+
+1. Open MongoDB Compass.
+   <img src="./files/images/mongodbCompass.png">
+2. Open your Mongo Shell.
+3. In my dataset, my `submit_date` and `promote_date` was in Unix timestamp.
+4. In order to change it to format that I want, I run this code below in Mongo Shell.
+   ```
+      db.Stories.updateMany(
+        {},
+        [
+          {
+            $set: {
+              submit_date: {
+                $toDate: {
+                  $multiply: ["$submit_date", 1000]
+                }
+              },
+              promote_date: {
+                $toDate: {
+                  $multiply: ["$promote_date", 1000]
+                }
+              }
+            }
+          },
+          {
+            $set: {
+              submit_year: { $year: "$submit_date" },
+              promote_year: { $year: "$promote_date" }
+            }
+          }
+        ]
+      );
+   ```
+
+5. This is the value of `submit_date` and `promote_date` that I get after run the code.
+   <img src="./files/images/afteraggregate.png">
+6. The first $set stage converts the submit_date and promote_date fields to date format.
+7. The second $set stage extracts the years from the converted dates and assigns them to submit_year and promote_year fields
 
 ## Question 5 (b)
 
