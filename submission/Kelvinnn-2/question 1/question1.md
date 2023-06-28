@@ -57,6 +57,7 @@ e. Install necessary packages by using the following command :
 ### 2. Configuring Django database settings
    a. Open the Django project's `settings.py` file.
    b. Define the database settings for both MySQL and MongoDB.
+   
 ``` python
  DATABASES = {
          'default': {
@@ -86,7 +87,7 @@ e. Install necessary packages by using the following command :
  To define Django models that represent the structure and fields of the JSON dataset, open the models.py file in the city_inspectionsDataset app and define the models based on the data dictionary. 
 -  In `models.py` file, define the models according to its data structure and data types.
 
-      ```python
+```python
       from django.db import models
 
 class Inspection (models.Model):
@@ -103,7 +104,7 @@ class Inspection (models.Model):
         
 def _str_(self): 
         return self.name
-        ```
+```
              
 <img src="./files/images/models.png">
 
