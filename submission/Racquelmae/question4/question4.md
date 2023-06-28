@@ -113,6 +113,7 @@ Keep only the result and sector columns for clustering.
 ```
 k_df = df.drop(['id', 'business_name'], axis=1)
 ```
+<img  src="./files/images/kdf.jpg"></img>
 
 #### Find optimal number of clusters
 The elbow method is used to find the optimal number of clusters (Kvalues).
