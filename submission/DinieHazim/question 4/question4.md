@@ -155,6 +155,7 @@ For the given case study, I will be using K-Means Clustering Model as a machine 
        print("Optimal value of k:", best_k)
    ```
 
+7. The optimal value of k determined using the silhouette method is 7. This suggests that the data can be best divided into 7 clusters based on the 'diggs' and 'comments' features.
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
