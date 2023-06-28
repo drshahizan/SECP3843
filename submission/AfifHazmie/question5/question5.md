@@ -118,8 +118,25 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
   <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question5/files/images/vdashboard.jpg" width="900">
 </p>
 
-> First chart `bar chart`
+> First chart `Bar Chart`.
 > Coupon used by customer according to their age
+> it is safe to say that most of the customer in this dataset does not used coupons when buying items
+
+> Second chart `Headtmap`.
+> Customer Age and their Satisfaction
+> The heatmap shows that custoer within the age group 40 - 50 are very satisfied with thier purchase.
+
+> Third chart `Donut Chart`.
+> Percentage Customer Based on Locations.
+> The highest Customer count is in `Denver` while the lowest customer count is from store in `San Diego`
+
+> Forth chart `Group Column Chart`.
+> Relation Between Store Location & Customer Satisfaction
+> Overall, we can see that Satisfaction count is increasing with the satisfaction level except for location `Denver` which the satisfaction 1 is more than satisfaction 2
+
+> Fifth chart `Coloured Column Chart`.
+> Total Items Bought by Tags and Customer Age
+> Based on the graph, the most bought item are `office` items while the lowest possible record items bought would be `electronic` item.
 
 
 ## Contribution 🛠️
