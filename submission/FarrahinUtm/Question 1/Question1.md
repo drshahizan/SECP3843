@@ -49,7 +49,13 @@ there will be  five server used for this project:
    ```
    pip install Django
    ```
-   
+
+
+   **Construct Django Model**
+
+  Enter the'models.py' file and specify the models that reflect the data and correspond to the JSON dataset's structure.
+
+
 ## Question 1 (b)
 Design a detailed and comprehensive system architecture. Focusing on the seamless integration between the web server (Django), dataset (JSON), and databases (MySQL and MongoDB). Give detailed explanations for each component, utilizing precise terminology and suggesting acceptable terms to describe your understanding of the scenario.
 
