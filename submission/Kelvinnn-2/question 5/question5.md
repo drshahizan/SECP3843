@@ -18,7 +18,7 @@ Don't forget to hit the :star: if you like this repo.
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## Question 5 (b)
-Dashboard Created at management.html
+<b>Dashboard Created at management_dashboard.html</b>
 <img src="./files/image/barchart.png">
 
 ### Steps to create a dashboard utilizing a JSON dataset
