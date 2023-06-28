@@ -24,12 +24,11 @@ For my case study, I  focused on developing a classification model to determine 
 <br>
 
 The process involved are :
-* `Data Cleaning` : 
-* `Data Wrangling` :
-* `Defining label for trending` :
-* `Feature Selection` :
-* `Apply ML algorithm` :
-* `Analyze results` : 
+* `Data Cleaning` : The data has JSON format with '{}' and ',' thus data need to be clean to remove those unwanted characters.
+* `Defining label for trending` : Defining what it means by trending by using this formula = `favourites_count` / `followers_count`.
+* `Feature Selection` : The dataset has many attributes so I choose the ones that can be a feature to identify whether the tweet will be trending or not. This method contributes to obtaining the best result in developing the machine learning model.
+* `Apply ML algorithm` : K-NN algorithm is chosen as it is the most suitable algorithm to classify tweets based on the label defined.
+* `Analyze results` : After applying the algorithm, the results are analyzed to get insights from the dataset.
 
 ## Google Collab Code
 
