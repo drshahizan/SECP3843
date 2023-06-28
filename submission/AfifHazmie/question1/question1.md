@@ -78,7 +78,7 @@ Don't forget to hit the :star: if you like this repo.
    - Apply the migration to generate the necessary table in the database server using the command below.
    - `python manage.py migrate`
     <p align="center">
-      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA6.jpg" style="width: 700px; height: 100px;">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA6.jpg" width="700">
     </p>
    
 6. Load JSON data into the database
@@ -90,7 +90,7 @@ Don't forget to hit the :star: if you like this repo.
    - Set up the database connection for both MongoDB and MySQL database by providing the credentials such as hostname and password.
    - For example, I have set up the connections for both MySQL and MongoDB 
    <p align="center">
-      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA7.jpg" style="width: 650px; height: 300px;">
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/AA7.jpg" width="650">
    </p>
      
 8. Testing and Monitor
@@ -102,7 +102,7 @@ Don't forget to hit the :star: if you like this repo.
 ### System Architecture
  - The system architecture diagram illustrates the seamless integration between Django, a web server framework, a JSON dataset, MySQL, and MongoDB databases.
    <p align="center">
-      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/SA.jpg" >
+      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question1/files/images/SA.jpg" width="600" >
    </p>
 
 ### Architecture Components
