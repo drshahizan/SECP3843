@@ -63,23 +63,27 @@ there will be  five server used for this project:
 To configure the database connections, open the settings.py file in your project folder in Visual Studio Code.
 
    ```
-  DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.mysql',
-         'NAME': 'Mflix',
-         'USER': 'root',
-         'HOST': 'localhost',
-         'PORT': '3306',
-     },
-     'mongodb': {
- 		'ENGINE': 'djongo',
-         'NAME': 'Mflix',
-         'ENFORCE_SCHEMA': False,
-         'CLIENT': {
-         'host': 'mongodb://localhost:27017/Mflix'
- 	    }
+DATABASES = {
+         'default': {
+             'ENGINE': 'django.db.backends.mysql',
+             'NAME': 'AA',
+             'USER': 'root',
+             'PASSWORD': '',
+             'HOST': 'localhost',
+             'PORT': 3306,
+         },
+         'mongodb': {
+             'ENGINE': 'djongo',
+             'ENFORCE_SCHEMA': False,
+             'NAME': 'Mflix',
+             'CLIENT': {
+                 'host': 'localhost:27017',
+                 'port': 27017,
+                 'username': '',
+                 'password': '',
+             }
+         }
      }
- }
    ```
 
    **Construct Django Model**
