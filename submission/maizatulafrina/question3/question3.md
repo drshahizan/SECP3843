@@ -357,50 +357,86 @@ Don't forget to hit the :star: if you like this repo.
 The challenge of Data Replication and Synchronization arises between the MySQL and MongoDB databases when working with two different databases. There are few ways and steps to overcome this challenges including exploring database-specific replication techniques or leverage external tools that facilitate realtime
 updates and seamless interaction between the databases.
 
-   - Step 1: Identify the Replication Strategy
-Determining the replication direction (MySQL to MongoDB, MongoDB to MySQL, or bidirectional) and establishing the synchronisation frequency are crucial for managing data replication and synchronisation between MySQL and MongoDB. This requires taking into account elements like data volume, system performance, and real-time needs. You may make sure that the data is consistent between the two systems by choosing which database drives the replication and specifying the synchronisation frequency. It is possible to achieve accurate replication and synchronisation, maintain data integrity, and enable seamless communication between the two databases by selecting the right direction and frequency.
+   - **Step 1: Identify the Replication Strategy**
 
-### Step 2: Configure the database
-The MySQL and MongoDB connection have been declared in setting.py. 
+     Determining the replication direction (MySQL to MongoDB, MongoDB to MySQL, or bidirectional) and establishing the synchronisation frequency are crucial for managing data replication and synchronisation between MySQL and MongoDB. This requires taking into account elements like data volume, system performance, and real-time needs. You may make sure that the data is consistent between the two systems by choosing which database drives the replication and specifying the synchronisation frequency. It is possible to achieve accurate replication and synchronisation, maintain data integrity, and enable seamless communication between the two databases by selecting the right direction and frequency.
 
+   - **Step 2: Configure Database**
 
-### Step 3: Set up connections to both MySQL and MongoDB databases
-This step is done by importing necessary libraries like MongoClient to make connections with MySQL and MongoDB.
-```
-from django.db import connections
-from pymongo import MongoClient
+      Configure the database connection for MySQL and MongoDB.
 
-# Establish connections to MySQL and MongoDB
-mysql_connection = connections['default']
-mongodb_client = MongoClient('mongodb+srv://cluster0.cpy5tdw.mongodb.net', username='peiyu', password='1')
-```
+     <img width="704" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/8e610e4e-30fa-46de-ae7f-1d499557bd8b">
 
-### Step 4: Define the dual_write function 
-The dual_write function will implement the logic of synchronizing both databases during insert, update and delete. However, I will show the dual write operation for insertion in this example. 
+   - **Step 3: Define the dual_write function**
+      Make sure to install MongoClient and MySQL Connector before applying this part.
+     
+     ```
+     from pymongo import MongoClient
+     import mysql.connector
+      
+     def dual_write(inspection):
+      
+              # Insert into MySQL
+              mysql_insert_query = "INSERT INTO your_table_name (id, certificate_number, business_name, date, result, sector, city,zip,street,number)VALUES(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)"
+              mysql_data=(
+              inspection['id'],
+              inspection['certificate_number'],
+              inspection['business_name'],
+              inspection['date'],document['result'],
+              inspection['sector'],
+              inspection['address']['city'],
+              inspection['address']['zip'],
+              inspection['address']['street'],
+              inspection['address']['number'])
+     
+              mysql_cursor.execute(mysql_insert_query, mysql_data)
+              mysql_connection.commit()
+      
+              # Insert into MongoDB
+              mongo_collection.insert_one(inspection)
+              
+              print("Dual write successful")
+          except Exception as e:
+              print("Error during dual write:", str(e))
+          
+        ```
+     
+   - **Step 4: Define Data**
 
+     Create a sample dat to test the dual_write fucntion.
 
-### Step 5: Define view
-In this step, create a view in the Django application that triggers the dual_write function to test it.
+     ```
+     def test_dual_write():
+           document = {
+          "_id": { "$oid": "56d61033a378eccde8a8354f" },
+          "id": "10021-2015-ENFO",
+          "certificate_number": 9278806,
+          "business_name": "TEST BUSINESS NAME",
+          "date": "Feb 20 2015",
+          "result": "No Violation Issued",
+          "sector": "Cigarette Retail Dealer - 127",
+          "address": {
+              "city": "RIDGEWOOD",
+              "zip": 11385,
+              "street": "MENAHAN ST",
+              "number": 1712
+          }
+          dual_write(inspection)
+     
+     test_dual_write()
+     ```
 
-> The above code will pass a tweet document to dual_write function in order to test the insert operation. 
+   - **Step 5:Test dual_write fucntion and Check Database**
 
+     Run `python manage.py runserver` command to test the dual_write function whether it is successfull or not.
 
-### Step 6: Test and validate the dual write process
-Lastly, open the command prompt and execute ```py manage.py runserver```.
+     MySQL Output:
 
-Output: 
+     <img width="792" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/31172a8b-9076-4236-b50d-3415ea8ebc9a">
 
-
-> It can be noted that the “Dual write successful!” has been printed out and this indicated the success of insertion.
-
-### Step 7: Check the data in MySQL and MongoDB
-We can find the newly inserted data in both MySQL and MongoDB.
-- MySQL
-  
-  
-- MongoDB
-  
-
+     MongoDB Output:
+     
+     
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
