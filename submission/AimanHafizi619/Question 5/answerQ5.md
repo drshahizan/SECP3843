@@ -40,9 +40,9 @@ Use MongoDB Atlass to visualize the JSON files
 
 ![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image4.png)
 
+5. The visualizations can be done by dragging and dropping items from `Fields` to `X Axis`, `Y Axis`, or `Series`.
 
-
-
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image5.png)
 
 
 
