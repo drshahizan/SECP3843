@@ -123,7 +123,42 @@ These are the samples that demonstrate Create, Read, Update, Delete (CRUD) opera
 
     - For update functions, there are 2 methods that can be done which are `updateOne()` and `updateMany()`.
 
-      - f
+      - updateOne()
+        
+        <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/d64c954b-9d04-403a-b635-0ad105c34243">
+        
+        Before:
+        
+        <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/18038931-aa67-468d-b6ff-f62f275b132f">
+
+     
+        Result:
+
+        <img width="958" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/e8e783a1-602c-4938-892f-94b7451bc8a5">
+
+      - updateMany()
+
+        <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/94bae15a-e7ce-44bb-922f-6d0d73bb92c5">
+
+        Before:
+     
+        <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/15e2a237-f68c-42cf-b78f-0ea0c5978abc">
+
+        Result:
+
+        <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/9daaa734-b264-459c-bfcd-94c7e9e1bd57">
+
+   - Delete Query
+     
+      - Use `deleteOne()` function.
+
+        <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/9a3d6840-37c1-4d75-93c7-d7f6a22b04b5">
+        
+        Result:
+
+        <img width="931" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/6ba04193-3184-4e9b-8297-34cbba51e44f">
+
+
 
   
 ## Contribution 🛠️
