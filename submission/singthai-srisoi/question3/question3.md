@@ -560,7 +560,9 @@ Now the system can be login by three type of `user: ['customer', 'technical work
 
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The possible approach to solve data replication and synchronization between MySQL and MongoDB would be **database-level replication** and **application-level replication**. Ths is to ensure one databse are accurately reflect in the other. Thereby, it can maintain the data consistency across both system.
+
+**Database-level replication** is when you replicate the entire database from one to another. This can ensure for simplicity and reliability, as well as ensuring data consistency in database level.
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
