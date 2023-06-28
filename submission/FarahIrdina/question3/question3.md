@@ -239,7 +239,42 @@ python manage.py migrate
 
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+#### 1. 
+
+a
+
+```
+DELIMITER $$
+
+CREATE TRIGGER insert_trigger AFTER INSERT ON listings_user
+FOR EACH ROW
+BEGIN
+    INSERT INTO listings_user_replicated (id, `password`, last_login, is_superuser, username, email, is_staff, is_active, date_joined, `type`) 
+    VALUES (NEW.id, NEW.`password`, NEW.last_login, NEW.is_superuser, NEW.username, NEW.email, NEW.is_staff, NEW.is_active, NEW.date_joined, NEW.`type`);
+END;$$
+
+DELIMITER ;
+```
+
+#### 2. 
+
+a
+
+```
+CREATE TABLE listings_user_replicated (
+    id INT PRIMARY KEY,
+    password VARCHAR(128),
+    last_login DATETIME,
+    is_superuser BOOLEAN,
+    username VARCHAR(150) NOT NULL,
+    email VARCHAR(254) NOT NULL,
+    is_staff BOOLEAN,
+    is_active BOOLEAN,
+    date_joined DATETIME,
+    type VARCHAR(20)
+);
+```
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
