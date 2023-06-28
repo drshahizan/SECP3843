@@ -15,7 +15,27 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 4
 
-Based on the tables you provided in the JSON files, it seems like a structured data that involves numerical and categorical features. In this case, `Logistic Regression` may be the most suitable machine learning algorithm as it is primarily used for predicting continuous numeric values.
+In the customer analysis, K-means clustering is applied to group customers based on their age. The goal is to identify distinct segments or clusters of customers with similar age characteristics. Here's how K-means clustering is applied in this analysis:
+
+- Data Preparation
+
+>The numerical feature used for clustering is "age".
+The "age" values are extracted from the DataFrame and stored in the variable X.
+The feature values are standardized using the StandardScaler to ensure that all features have the same scale.
+
+
+- Determining the Optimal Number of Clusters
+
+>The optimal number of clusters is determined using the elbow method. K-means clustering is performed for different values of k (number of clusters), and the inertia and silhouette score are calculated for each clustering result.
+The inertia is the sum of squared distances between each data point and its centroid in a cluster. It measures the compactness of the clusters.
+The silhouette score measures the quality of the clustering, indicating how well-separated the clusters are.
+The elbow curve is plotted using the inertia values for different k values. The curve shows the trade-off between the number of clusters and the compactness of the clusters. The optimal number of clusters is typically identified at the "elbow" point, where the inertia improvement starts to diminish significantly.
+
+- K-means Clustering
+
+>Based on the optimal number of clusters determined from the elbow curve, K-means clustering is performed using the selected k value.
+The K-means algorithm is applied to the standardized data (X_scaled), and it assigns each customer to one of the clusters.
+The cluster labels are stored in the variable cluster_labels.
 
 **Step 1: Open Google Colab**
 
