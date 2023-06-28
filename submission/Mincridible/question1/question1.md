@@ -190,24 +190,24 @@ class Command(BaseCommand):
     help = 'Import data from companies.json'
 
     def handle(self, *args, **options):
-        # Get the path to the JSON file
+        
         json_file = os.path.join(settings.BASE_DIR, 'data', 'companies.json')
 
-        # Read the JSON file
+       
         with open(json_file, 'r', encoding='utf-8') as f:
             data = json.load(f)
 
-        # Process and import the data into the database
+        
         for item in data:
-            # Create a Company object and set its attributes
+           
             company = Company()
             company._id = item['_id']
             company.acquisition = item['acquisition']
             company.acquisitions = item['acquisitions']
             company.alias_list = item['alias_list']
-            # Set other attributes based on the JSON structure
+            
 
-            # Save the company object to the database
+
             company.save()
 
         self.stdout.write(self.style.SUCCESS('Data imported successfully.'))
