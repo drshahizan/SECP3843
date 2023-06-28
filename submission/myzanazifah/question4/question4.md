@@ -231,7 +231,7 @@ The machine learning that I will implement for my dataset is K-Means Clustering 
 - I have made the decision to do K-Means clustering based on the features 'diggs' and 'comments'. By doing this algorithm, I can group the stories into clusters based on their popularity level.
 - As you can see in the first figure for K-Means clustering, it is not a very good visualization as we cannot see the separation clearly. With that, we need to do Elbow method or/and Silhoutte method to know the optimal k.
 - Based on the two graphs, it can be said that Silhoutte method is better than Elbow method as Silhoutte method is more clear in indicating the optimal k. Based on the graph for Elbow method, it was either 3 or 4 as those are the ones that shows most change. To know the optimal k for Elbow method, we need to identify the point which has the most drastic change. Meanwhile, to know the optimal k for Silhoutte method, we need to choose the highest silhoutte average. With that, the optimal k based on the figure for Silhoutte method is 2.
-- Lastly, I made a K-Mean clustering based on the optimal k based on the Silhoutte method which is 2. From the graph, we can see that cluster 0 is more tightly packed compared to cluster 1. This may be due to the fact that cluster 0 shares the more similar characteristics compared to cluster 1.
+- Lastly, I made a K-Mean clustering based on the optimal k based on the Silhoutte method which is 2. From the graph, we can see that cluster 0 is more tightly packed compared to cluster 1. This may be due to the fact that cluster 0 shares more similar characteristics compared to cluster 1.
 
 
 
