@@ -139,9 +139,19 @@ plt.title('Elbow Curve')
 plt.show()
 ```
 
+4. Based on the elbow curve, select the optimal number of clusters and perform K-means clustering
 
+```python
+# Set the optimal number of clusters
+k = 3
 
+# Perform K-means clustering
+kmeans = KMeans(n_clusters=k, random_state=42)
+kmeans.fit(X_scaled)
 
+# Assign cluster labels to the data
+cluster_labels = kmeans.labels_
+```
 
 
 
