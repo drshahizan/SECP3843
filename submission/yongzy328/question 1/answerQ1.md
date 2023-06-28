@@ -32,11 +32,23 @@ The 5 servers of this project are implemented as below:
     </tr>
     <tr>
       <td>Database Server 2 (MongoDB)</td>
-      <td>Used to host the MongoDB database for the system. </td>
+      <td>Used to host the MongoDB database for the system. It is significant in handling high volume of unstructured data of the Django application through the processes of storing and retrieving. The package <code>djongo</code> is applied to manage the connection between Django framework and MongoDB database.</td>
+    </tr>
+    <tr>
+      <td>File Server</td>
+      <td>Used as a file storage system that responsible for managing all the files which will be accessed by the users through the application or system over the network. Example of file servers are Server Message Block (SMB) and Network File System (NFS) which enable the files to be accessed remotely by the client.</td>
+    </tr>
+    <tr>
+      <td>Load Balancer</td>
+      <td>Used to evenly distribute the incoming and outgoing network traffic accross the available servers in order to optimize the overall performance, increase realibility and prevent overload of the Django application. </td>
     </tr>
   </tbody>
 </table>
-<img src="./files/images/Screenshot%202023-06-27%20153108.png" alt="activate virtual environment">
+
+### Steps to Integrate Django with JSON dataset
+#### 1. Set up Django Application
+Using the Command Prompt (CMD), change the directory to the created project folder's location (the AA folder in this case) and then set up a virtual environment for it by running the command <code>py -m venv env</code>. Then run the virtual environment by using the command <code>env\Scripts\activate</code>. <br>
+<img src="./files/images/Screenshot%202023-06-27%20153108.png" alt="activate virtual environment"><br>
 
 <img src="./files/images/Screenshot%202023-06-27%20153218.png" alt="install django mysqlclient pymongo">
 
