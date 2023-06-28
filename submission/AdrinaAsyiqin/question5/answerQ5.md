@@ -148,7 +148,15 @@ Don't forget to hit the :star: if you like this repo.
     ```
 
 ## Question 5 (b)
-### F
+### MongoDB Atlas Charts
+- MongoDB Atlas Charts is a powerful data visualization tool provided by MongoDB Atlas, a fully managed database service. It allows you to create and customize various types of charts based on your MongoDB data.
+- Some of the functionalities are:  
+  - MongoDB Atlas Charts seamlessly connects to your MongoDB Atlas cluster, allowing you to directly access and visualize your data from the database securely and efficiently.
+  - MongoDB Atlas Charts offers a variety of chart types, such as line charts, bar charts, scatter plots, pie charts, and more. You can select the most suitable chart type based on your data and visualization requirements.
+  - If your MongoDB data is continuously updated, MongoDB Atlas Charts can reflect those updates in real-time. This ensures that your charts always provide the latest information, allowing for dynamic insights into your data.
+  - The user interface of MongoDB Atlas Charts utilizes a drag-and-drop approach, making it easy for you to choose fields from your MongoDB collection and effortlessly create visualizations by dropping them onto the chart canvas.
+
+
 ### Creating Dashboard Using MongoDB Charts.
 - Go to `MongoDB Atlas Charts` and sign into your account --> https://www.mongodb.com/products/charts
 - Use the connection where sales.json data is uploaded previously
