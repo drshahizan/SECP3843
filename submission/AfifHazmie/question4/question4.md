@@ -137,7 +137,10 @@ Don't forget to hit the :star: if you like this repo.
       accuracy = accuracy_score(y_test, y_pred)
       print("Accuracy:", accuracy)
       ```
-      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/Laccuracy.jpg">
+      <p align="center">
+         <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/Laccuracy.jpg">
+      </p>
+      
 
       #### Visualize the performance of the logistic regression model, use the `bar chart` function from the `seaborn` library.
       ```python
@@ -164,7 +167,10 @@ Don't forget to hit the :star: if you like this repo.
       plt.ylabel("Metric")
       plt.show()
       ```
-      <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/barchart.jpg">
+      <p align="center">
+         <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/barchart.jpg">
+      </p>
+      
 
 
 
