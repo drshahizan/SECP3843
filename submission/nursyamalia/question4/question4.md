@@ -92,6 +92,7 @@ The tool that I will be using is:
   ```
 5. Preprocessing data. Before applying machine learning, I need to make sure all data is clean and make sure the necessary changes had maked.
 - Check the information of the join_data:
+
   <img  src="./files/images/info.png"></img>
 
 - Remove unnecessary columns
@@ -203,7 +204,8 @@ The tool that I will be using is:
   plt.show()
   ```
   <img  src="./files/images/ac.png"></img>
-  <img  src="./files/image/pr.png"></img>
+  
+  <img  src="./files/images/pr.png"></img>
   
 ### Result
 
