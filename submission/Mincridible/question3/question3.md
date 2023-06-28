@@ -144,7 +144,7 @@ def user_registration(request):
             user = form.save(commit=False)
             user.set_password(form.cleaned_data['password'])
             user.save()
-            return redirect('login')  # Replace 'login' with the URL name of your login page
+            return redirect('login')
     else:
         form = UserRegistrationForm()
     return render(request, 'user_registration.html', {'form': form})
@@ -464,7 +464,6 @@ log-bin=mysql-bin
 import mysql.connector
 from pymongo import MongoClient
 
-# MySQL connection
 mysql_connection = mysql.connector.connect(
     host='localhost',
     user='root',
@@ -473,16 +472,16 @@ mysql_connection = mysql.connector.connect(
 )
 mysql_cursor = mysql_connection.cursor()
 
-# MongoDB connection
+
 mongo_client = MongoClient('mongodb+srv://mincridible:minzpro1@min.tan7fdn.mongodb.net/')
 mongo_db = mongo_client['Question3b']
 mongo_collection = mongo_db['q3']
 
-# Read data from the MySQL table
+
 mysql_cursor.execute("SELECT * FROM q3_app_user")
 results = mysql_cursor.fetchall()
 
-# Import data to MongoDB
+
 for row in results:
     row_data = {
         'id': row[0],
@@ -499,16 +498,16 @@ for row in results:
         'user_type': row[11]
     }
     mongo_collection.insert_one(row_data)
-    print("Inserted row with ID:", row[0])  # Logging statement
+    print("Inserted row with ID:", row[0]) 
 
-# Close MySQL connection
+
 mysql_cursor.close()
 mysql_connection.close()
 
-# Close MongoDB connection
+
 mongo_client.close()
 
-# Log the binary log events
+
 mysql_connection = mysql.connector.connect(
     host='localhost',
     user='root',
@@ -536,7 +535,7 @@ for binlog_event in mysql_cursor:
 
         if table_name == 'q3_app_user':
             print("Binary Log Event:")
-            print("Query:", query)  # Logging statement
+            print("Query:", query)  
 
             if operation == 'INSERT':
                 values_start = query.index("VALUES") + 7
@@ -559,7 +558,7 @@ for binlog_event in mysql_cursor:
                 }
 
                 mongo_collection.insert_one(row_data)
-                print("Inserted row with ID:", row_data['id'])  # Logging statement
+                print("Inserted row with ID:", row_data['id']) 
 
             elif operation == 'UPDATE':
                 set_start = query.index("SET") + 4
@@ -584,7 +583,7 @@ for binlog_event in mysql_cursor:
                 filter_condition = {condition_column: condition_value}
 
                 mongo_collection.update_one(filter_condition, {'$set': update_data})
-                print("Updated row matching condition:", filter_condition)  # Logging statement
+                print("Updated row matching condition:", filter_condition) 
 
             elif operation == 'DELETE':
                 where_start = query.index("WHERE") + 6
@@ -597,9 +596,9 @@ for binlog_event in mysql_cursor:
                 filter_condition = {condition_column: condition_value}
 
                 mongo_collection.delete_one(filter_condition)
-                print("Deleted row matching condition:", filter_condition)  # 
+                print("Deleted row matching condition:", filter_condition) 
 
-# Close MySQL connection
+
 mysql_cursor.close()
 mysql_connection.close()
 
