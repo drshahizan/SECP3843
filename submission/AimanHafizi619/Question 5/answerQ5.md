@@ -44,9 +44,9 @@ Use MongoDB Atlass to visualize the JSON files
 
 ![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image5.png)
 
+6. The bas chart below depicts `Number of Transactions for each account`. It shows how many individual account that have been doing a certain time of transactions.
 
-
-
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image6.png)
 
 
 
