@@ -31,14 +31,14 @@ Don't forget to hit the :star: if you like this repo.
    - ```
      import pandas as pd
      ```
-     ![image](https://github.com/drshahizan/SECP3843/assets/92329710/b63c76ba-5f02-4ade-96e8-707b144e62cd)
+   - ![image](https://github.com/drshahizan/SECP3843/assets/92329710/b63c76ba-5f02-4ade-96e8-707b144e62cd)
 3. Read the json file.
    - Read the `movies.json` that you have been uploaded into Google Colab file.
    - ```
      dataset_path = 'movies.json'
      data = pd.read_json(dataset_path, lines=True)
      ```
-     ![image](https://github.com/drshahizan/SECP3843/assets/92329710/d0da04fb-4356-422b-88c8-0908baf7037f)
+   - ![image](https://github.com/drshahizan/SECP3843/assets/92329710/d0da04fb-4356-422b-88c8-0908baf7037f)
 4. Data Preprocessing.
    - Before start the machine learning process, the dataset need to be cleaned to get a suitable format for machine learning tasks.
    - Here is the steps of data pre-processing:
@@ -54,26 +54,26 @@ Don't forget to hit the :star: if you like this repo.
      data.columns
      ```
    - It gives the result:
-     ![image](https://github.com/drshahizan/SECP3843/assets/92329710/8d4db5dc-19e9-4a21-863a-4d976742a832)
+   - ![image](https://github.com/drshahizan/SECP3843/assets/92329710/8d4db5dc-19e9-4a21-863a-4d976742a832)
    - Then, choose the attribute that want to be used for machine learning process.
    - ```
      movies = data[['_id', 'plot', 'genres', 'title']]
      ```
    - The result:
-     ![image](https://github.com/drshahizan/SECP3843/assets/92329710/a3786fd9-10d9-4395-9f5a-4a114ba015bb)
+   - ![image](https://github.com/drshahizan/SECP3843/assets/92329710/a3786fd9-10d9-4395-9f5a-4a114ba015bb)
    - Next, create new column which is `tags` that is the combination of `plot` and `genres` attributes.
    - ```
      movies['genres'] = movies['genres'].apply(lambda x: ', '.join(x) if isinstance(x, list) else '')
      movies['tags']=movies['plot'] + ' ' + movies['genres']
      ```
    - Here is the result:
-     ![image](https://github.com/drshahizan/SECP3843/assets/92329710/98d52037-fdf7-4d73-813b-a1abee3736b5)
+   - ![image](https://github.com/drshahizan/SECP3843/assets/92329710/98d52037-fdf7-4d73-813b-a1abee3736b5)
    - Then, create new variable named `new _data` and assign it with `movies` and drop `plot` and `genres`.
    - ```
      new_data = movies.drop(columns=['plot', 'genres'])
      ```
    - Here is the result:
-     ![image](https://github.com/drshahizan/SECP3843/assets/92329710/66a367f9-a4ee-464c-ad5f-9b479283ecf8)
+   - ![image](https://github.com/drshahizan/SECP3843/assets/92329710/66a367f9-a4ee-464c-ad5f-9b479283ecf8)
    -So now we have all the variables that can be used for machine learning process.
 5. Machine Learning Process.
    - First of all, import the `CountVectorizer` class from `sklearn.feature_extraction.text` module library.
@@ -95,7 +95,7 @@ Don't forget to hit the :star: if you like this repo.
      vector.shape
      ```
    - The result:
-     ![image](https://github.com/drshahizan/SECP3843/assets/92329710/05a53692-df88-4a1d-989d-08992e7970b8)
+   - ![image](https://github.com/drshahizan/SECP3843/assets/92329710/05a53692-df88-4a1d-989d-08992e7970b8)
    - `vector.shape` represents the transformed data in the form of a mtrix of token counts.
    - The first value which is `10,000` represent the number of documents, while the second value represnts the number of uniqe words or tokens in the vocabulary derived from the text data.
    - Next, import the `cosine_similarity` from `sklearn.metrics.pairwise` library.
@@ -107,7 +107,7 @@ Don't forget to hit the :star: if you like this repo.
      similarity = cosine_similarity(vector)
      ```
    - The result:
-     ![image](https://github.com/drshahizan/SECP3843/assets/92329710/b9c2e5a5-df69-4060-b3d6-a724d488455e)
+   - ![image](https://github.com/drshahizan/SECP3843/assets/92329710/b9c2e5a5-df69-4060-b3d6-a724d488455e)
    - Here can see that `cosine_similarity` generates a similarity matrix.
    - ```
      def recommend(movies):
