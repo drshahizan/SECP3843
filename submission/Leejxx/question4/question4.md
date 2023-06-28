@@ -11,7 +11,7 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Name: Lee Jia Xian
 #### Matric No.: A20EC0200
-#### Dataset:
+#### Dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" >Supply Store Dataset</a>
 
 ## Question 4 
 
@@ -23,32 +23,34 @@ Don't forget to hit the :star: if you like this repo.
 
 ### Data Preprocessing 
   The sales data collected from the portal is initially stored in a MongoDB database. To prepare the data for the machine learning model, it is extracted from the database and converted into a pandas DataFrame. Categorical columns are one-hot encoded, and irrelevant columns are dropped to create a clean and suitable dataset for training the model.
-  <img  src="./files/images/cleaning1"></img>
+  <img  src="./files/images/cleaning1.JPG"></img>
 
   result:
-  <img  src="./files/images/cleaning2"></img>
+  <img  src="./files/images/cleaning2.JPG"></img>
 
 ### Training the Model
   The dataset is split into training and test sets using the train_test_split function from the sklearn.model_selection module. The Random Forest Classifier model is then instantiated and trained on the training data using the fit method.
-  <img  src="./files/images/train1"></img>
+  <img  src="./files/images/train1.JPG"></img>
 
 ### Prediction
   To predict customer satisfaction, user input is collected from the portal's form, including features like customer gender, age, coupon usage, purchase method, and store location. The user input is then converted into a DataFrame, one-hot encoded, and aligned with the trained model's columns. Finally, the model's predict method is used to make the prediction.
-    <img  src="./files/images/predict1"></img>
+    <img  src="./files/images/predict1.JPG"></img>
 
 ### Result and Visualization
   The predicted customer satisfaction label is obtained from the model, and a human-readable label is mapped to it. This result is then displayed on the portal's form page, providing immediate feedback to the user.
 
   form.html:
-  <img  src="./files/images/form1"></img>
+  <img  src="./files/images/form1.JPG"></img>
 
   interface:
-  <img  src="./files/images/interface1"></img>
+  <img  src="./files/images/interface1.JPG"></img>
 
-  Result:
-   <img  src="./files/images/result1"></img>
-   <img  src="./files/images/result2"></img>
-   <img  src="./files/images/result3"></img>
+ Result 1: <br>
+   <img  src="./files/images/result1.JPG"></img> 
+ <br> Result 2: <br>
+   <img  src="./files/images/result2.JPG"></img>
+<br>  Result 3: <br>
+   <img  src="./files/images/result3.JPG"></img>
 
 ### Conclusion
   By utilizing machine learning techniques, specifically the Random Forest Classifier algorithm, I have developed a solution to predict customer satisfaction based on various features collected from the portal. This predictive capability can help businesses gain insights into customer preferences and make informed decisions to enhance their services and improve overall customer satisfaction.
