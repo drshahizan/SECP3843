@@ -25,6 +25,11 @@ Based on the tables you provided in the JSON files, it seems like a structured d
 
 **Step 2**
 
+- Import pymongo
+
+  ```python
+  !pip install pymongo
+  ```
 
 
 
