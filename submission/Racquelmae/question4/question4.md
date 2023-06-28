@@ -15,7 +15,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 4 (a)
 K-modes clustering algorithm is the machine learning technique applied in this case study as the majority of the data types in this dataset are categorical. K-modes is used to partition the dataset into clusters where each cluster is characterized by the most frequent categorical value in the cluster.
-
+Code: [ML.ipynb](./files/code/ML.ipynb)
 ### 1. Import data into Pandas dataframe
 ```
 import json
@@ -72,7 +72,7 @@ pca.fit(scaled_data)
 x_pca = pca.transform(scaled_data)
 ```
 Compare array shape:
-The columns are reduced from 4 to 2.
+The columns are reduced from 4 to 2.<br>
 <img  src="./files/images/shape.jpg"></img>
 
 Ratio:
@@ -92,13 +92,13 @@ plt.ylabel('Second principle component')
 <img  src="./files/images/scatter.jpg"></img>
 
 ### 7. Perform K-modes algorithm
-#### install kmodes
+#### Install kmodes
 ```
 !pip install kmodes
 ```
 <img  src="./files/images/kmodes.jpg"></img>
 
-#### import libraries
+#### Import libraries
 ```
 import numpy as np
 
@@ -107,13 +107,13 @@ import matplotlib.pyplot as plt
 %matplotlib inline
 ```
 
-#### drop columns
+#### Drop columns
 Keep only the result and sector columns for clustering.
 ```
 k_df = df.drop(['id', 'business_name'], axis=1)
 ```
 
-#### find optimal number of clusters
+#### Find optimal number of clusters
 The elbow method is used to find the optimal number of clusters (Kvalues).
 ```
 cost = []
@@ -131,7 +131,7 @@ plt.show()
 ```
 <img  src="./files/images/elbow.jpg"></img>
 
-#### build model with 3 clusters
+#### Build model with 3 clusters
 Based on the elbow curve, the bend with a lesser cost value is at K=3 which shows that 3 is the optimal number of clusters.
 ```
 kmode = KModes(n_clusters=3, init = "random", n_init = 5, verbose=1)
@@ -140,13 +140,13 @@ clusters
 ```
 <img  src="./files/images/clusters.jpg"></img>
 
-#### map column
+#### Map column
 ```
 k_df.insert(0, "Cluster", clusters, True)
 ```
 <img  src="./files/images/map.jpg"></img>
 
-#### results
+#### Results
 ```
 k_df[k_df['Cluster']==0].head(10)
 ```
