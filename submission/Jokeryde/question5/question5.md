@@ -17,7 +17,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 5 (a)
 
-Lorem ipsum dolor sit 
+Lorem ipsum dolor 
 
 ## Question 5 (b)
 
