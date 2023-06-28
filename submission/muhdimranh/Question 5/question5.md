@@ -306,7 +306,7 @@ Scatter plot above describes the relationship between review ratings and number 
 
 ![Q5](files/images/q5.3.png)
 
-Above is the completed dashboard, like Tableau, MongoDB allows real-time dashboard filtering 
+Above is the completed dashboard, like Tableau, MongoDB allows real-time dashboard filtering. In the above picture, the filter is on the right side of the dashboard and we can customize to whatever filter we intend to use.
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
