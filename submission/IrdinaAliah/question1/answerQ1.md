@@ -54,6 +54,5 @@ Migration
 
 
 # Question 1 (b)
-
-          
+<img src ="https://github.com/drshahizan/SECP3843/blob/dabca2888cc77caf61dbdb6dda103a0ada7c8c8d/submission/IrdinaAliah/question1/files/images/Blank%20diagram%20(4).png" style ="width:700px; height: 700px;">
 
