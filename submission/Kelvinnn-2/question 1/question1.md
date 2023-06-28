@@ -161,7 +161,7 @@ class Command(BaseCommand):
                 inspection.save()
 
                 self.stdout.write(self.style.SUCCESS('Data loaded successfully'))
-```
+
         
 Then, run the following command to import JSON file into MySQL and MongoDB database:
 `python manage.py load_data city_inspections.json`
