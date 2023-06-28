@@ -49,11 +49,10 @@ Upload Dataset on MongoDB
 Define Models
 <img src ="https://github.com/drshahizan/SECP3843/blob/e8dd321d92b76dc24090ed4aa4d98408d77ea20b/submission/IrdinaAliah/question1/files/images/define%20model.jpg" style ="width:700px; height: 700px;">
 
+Migration
+<img src ="https://github.com/drshahizan/SECP3843/blob/e58ea60a721b301aa3f7badd77f298f8bbd8b2a8/submission/IrdinaAliah/question1/files/images/migration%20database.jpg" style ="width:700px; height: 700px;">
 
 
-
-
-
-
-          
+# Question 1 (b)
+<img src ="https://github.com/drshahizan/SECP3843/blob/dabca2888cc77caf61dbdb6dda103a0ada7c8c8d/submission/IrdinaAliah/question1/files/images/Blank%20diagram%20(4).png" style ="width:700px; height: 700px;">
 

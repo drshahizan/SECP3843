@@ -198,7 +198,7 @@ class room_details(models.Model):
 
 ```
 
-### Step 5: Migrate database to phpmyadmin and MongoDB
+### Step 5: Migrate database to phpmyadmin and MongoDB (Data Storage)
 a) Before migrate, make the pathway is correct in the `models.py`.
 
 
@@ -234,6 +234,109 @@ There will be changes in MongoDB:
 <img  src="https://github.com/drshahizan/SECP3843/assets/120614501/4e57fabb-5ec3-41ee-92ed-18ea535e5111"></img>
 
 
+### Step 6: Load Data 
+- To load data in Django, create a new file called `load_data.py` in the Django app's management/commands directory.
+- Insert the code below inside the `load_data.py.
+```python
+import json
+from django.core.management.base import BaseCommand
+from app.models import room_details
+
+
+class Command(BaseCommand):
+    help = 'Loads JSON data into the database.'
+
+    def handle(self, *args, **options):
+        listing_file = 'C:\\Users\\user\\Downloads\\AA MSO\\Question 1\\AA_Q1\\listingAndReviews.json'
+
+
+        # Load listing JSON data    
+        with open(listing_file) as file:
+            listing_data = json.load(file)
+
+            for item in listing_data:
+
+                _id = item['_id']['$oid']
+                listing_url = item['listing_url']
+                name = item['name']
+                summary = item['summary']
+                space = item['space']
+                description = item['description']
+                neighborhood_overview = item['neighborhood_overview']
+                notes = item['notes']
+                transit = item['transit']
+                access = item['access']
+                interaction = item['interaction']
+                house_rules = item['house_rules']
+                property_type = item['property_type']
+                room_type = item['room_type']
+                bed_type = item['bed_type']
+                minimum_nights = item['minimum_nights']
+                maximum_nights = item['maximum_nights']
+                cancellation_policy = item['cancellation_policy']
+                calendar_last_scraped = item['calendar_last_scraped']
+                first_review = item['first_review']
+                last_review = item['last_review']
+                accommodates = item['accommodates']
+                bedrooms = item['bedrooms']
+                beds = item['beds']
+                number_of_reviews = item['number_of_reviews']
+                bathrooms = item['bathrooms']
+                amenities = item['amenities']
+                price = item['price']
+                security_deposit = item['security_deposit']
+                cleaning_fee = item['cleaning_fee']
+                extra_people = item['extra_people']
+                guests_included = item['guests_included']
+                images = item['images']
+                host = item['host']
+                address = item['address']
+                availability = item['availability']
+                review_scores = item['review_scores']
+                reviews = item['reviews']
+            listing.save()
+            listing.save(using='mongodb')
+        self.stdout.write(self.style.SUCCESS('Data loaded successfully.'))
+```
+
+- Run the following command to load the data.
+```
+python manage.py load_data
+```
+
+
+### Step 7: Retrieve Data 
+- To retrieve data in Django, create a new file called `retrieve_data.py` in the Django app's management/commands directory.
+- Insert the code below inside the `retrieve_data.py.
+```python
+from django.core.management.base import BaseCommand
+from app.models import room_details
+
+class Command(BaseCommand):
+    help = 'Retrieve data from MySQL and MongoDB databases.'
+
+    def handle(self, *args, **options):
+        # Retrieve data from MySQL database with a filter
+        AAQ1 = room_details.objects.using('default').filter(limit__gt=1000)
+
+        # Print MySQL data
+        print("MySQL Data:")
+        for room_details in AAQ1:
+            print(f"room_details ID: {room_details._id}, Limit: {room_details.limit}")
+
+        # Retrieve data from MongoDB database with a filter
+        AAQ1 = room_details.objects.using('mongodb').filter(limit__gt=1000)
+
+        # Print MongoDB data
+        print("MongoDB Data:")
+        for room_details in AAQ1:
+            print(f"room_details ID: {room_details._id}, Limit: {room_details.limit}")
+```
+
+- Run the following command to retrieve the data.:
+```
+python manage.py retrieve_data
+```
 
 ## Question 1 (b)
 <img  src="https://github.com/drshahizan/SECP3843/assets/120614501/a0f4a6db-8097-4cd7-95aa-b3757f7fb76a"></img>

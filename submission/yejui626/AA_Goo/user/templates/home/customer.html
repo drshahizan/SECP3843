@@ -1,8 +1,10 @@
 {% extends "index.html" %}
-
+{% load cache %}
+{% load staticfiles %}
 {% block title %}ChatGPT Sentiment Analysis{% endblock %}
 
 {% block content %}
+{% cache 600 "my_template_fragment" %}
 <div class="container-fluid">
     <div class="row">
         <div class="col-lg-8 p-r-0 title-margin-right">
@@ -10,6 +12,8 @@
                 <div class="page-title">
                     <h1>Hello, <span>Customer ({{ user.name }})</span></h1>
                 </div>
+                <h1>Welcome to Goo Ye Jui's Dashboard!</h1>
+                <h1>{{ cache_status }}</h1>
             </div>
         </div>
         <!-- /# column -->
@@ -26,78 +30,58 @@
         <!-- /# column -->
     </div>
     <!-- /# row -->
+
     <section id="main-content">
-        <div class="row">
-            <div class="col-lg-3">
-                <div class="card">
-                    <div class="stat-widget-one">
-                        <div class="stat-icon dib"><i class="ti-money color-success border-success"></i>
-                        </div>
-                        <div class="stat-content dib">
-                            <div class="stat-text">Total Profit</div>
-                            <div class="stat-digit">1,012</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card">
-                    <div class="stat-widget-one">
-                        <div class="stat-icon dib"><i class="ti-user color-primary border-primary"></i>
-                        </div>
-                        <div class="stat-content dib">
-                            <div class="stat-text">New Customer</div>
-                            <div class="stat-digit">961</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card">
-                    <div class="stat-widget-one">
-                        <div class="stat-icon dib"><i class="ti-layout-grid2 color-pink border-pink"></i>
-                        </div>
-                        <div class="stat-content dib">
-                            <div class="stat-text">Active Projects</div>
-                            <div class="stat-digit">770</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="card">
-                    <div class="stat-widget-one">
-                        <div class="stat-icon dib"><i class="ti-link color-danger border-danger"></i></div>
-                        <div class="stat-content dib">
-                            <div class="stat-text">Referral</div>
-                            <div class="stat-digit">2,781</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
         <div class="row">
             <div class="col-lg-8">
                 <div class="card">
                     <div class="card-title">
-                        <h4>Fee Collections and Expenses</h4>
-
+                        <h4>Top 5 Topics</h4>
                     </div>
                     <div class="card-body">
-                        <div class="ct-bar-chart m-t-30"></div>
+                        <img src="{% static 'images/chart.png' %}" alt="Bar Chart">
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-title">
+                        <h4>Top 5 Story by Comments</h4>
+                    </div>
+                    <div class="card-body">
+                        <img src="{% static 'images/pie_chart.png' %}" alt="Bar Chart">
                     </div>
                 </div>
             </div>
 
             <div class="col-lg-4">
                 <div class="card">
-
+                    <div class="card-title">
+                        <h4>Topic Predictions</h4>
+                    </div>
                     <div class="card-body">
-                        <div class="ct-pie-chart"></div>
+                        
+                        <form method="POST" action="{% url 'customer' %}">
+                            {% csrf_token %}
+                            <input type="text" name="instance" placeholder="Enter word here">
+                            <button type="submit">Predict</button>
+                        </form>
+                        <br>
+                        {% if predicted_topics %}
+                            <h5>Predicted Topics:</h5>
+                            <ul>
+                            {% for topic in predicted_topics %}
+                                <li>{{ topic }}</li>
+                            {% endfor %}
+                            </ul>
+                        {% endif %}
+                        <!-- <div class="ct-pie-chart"></div> -->
                     </div>
                 </div>
             </div>
         </div>
+
         <div class="row">
             <div class="col-lg-4">
                 <div class="row">
@@ -752,4 +736,5 @@
         </div>
     </section>
 </div>
+{% endcache %}
 {% endblock %}

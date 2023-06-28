@@ -1,17 +1,13 @@
 from django.conf import settings
+import random
 
 class DatabaseRouter(object):
     def db_for_read(self, model, **hints):
-
-        if model._meta.app_label in settings.DATABASE_APPS_MAPPING:
-            return settings.DATABASE_APPS_MAPPING[model._meta.app_label]
-        return None
+        return random.choice(['default'])
 
     def db_for_write(self, model, **hints):
-
-        if model._meta.app_label in settings.DATABASE_APPS_MAPPING:
-            return settings.DATABASE_APPS_MAPPING[model._meta.app_label]
-        return None
+        # Always return the default database
+        return 'default'
 
     def allow_relation(self, obj1, obj2, **hints):
 

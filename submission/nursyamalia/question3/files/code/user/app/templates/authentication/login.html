@@ -1,0 +1,33 @@
+<div style="background-color: #98fb98; padding: 20px;">
+    <div style="max-width: 400px; margin: 0 auto; background-color: white; padding: 20px;">
+        <h1 style="text-align: center; color: #6B8E23;">Login</h1>
+
+        <form method="POST" action="{% url 'login' %}">
+            {% csrf_token %}
+
+            <div style="margin-bottom: 10px;">
+                <label for="id_username" style="display: block; color: #6B8E23;">Username:</label>
+                <input type="text" id="id_username" name="username" style="width: 100%; padding: 5px;">
+            </div>
+
+            <div style="margin-bottom: 10px;">
+                <label for="id_password" style="display: block; color: #6B8E23;">Password:</label>
+                <input type="password" id="id_password" name="password" style="width: 100%; padding: 5px;">
+            </div>
+
+            <div style="text-align: center;">
+                <input type="submit" value="Login" style="padding: 10px 20px; background-color: #6B8E23; color: white; border: none; cursor: pointer;">
+            </div>
+
+            {% if messages %}
+            <div style="text-align: center; color: red;">
+                {% for message in messages %}
+                <p>{{ message }}</p>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </form>
+
+        <p style="text-align: center; color: #6B8E23;">Don't have an account? <a href="{% url 'registration' %}">Register</a></p>
+    </div>
+</div>
