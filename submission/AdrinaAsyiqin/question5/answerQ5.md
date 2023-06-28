@@ -155,16 +155,16 @@ I created this dashboard using MongoDB Charts.
 - Click on 'Charts' from the tab menu in the connection
   ![Alt text](image.png)
 
-  ![Alt text](image-1.png)
+  ![Alt text](files/images/image-1.png)
 - Choose your database
 
-  ![Alt text](image-2.png)
+  ![Alt text](files/images/image-2.png)
 
-  ![Alt text](image-3.png)
+  ![Alt text](files/images/image-3.png)
 
-  ![Alt text](image-4.png)
+  ![Alt text](files/images/image-4.png)
 
-  ![Alt text](image-5.png)
+  ![Alt text](files/images/image-6.png)
 
   
 
