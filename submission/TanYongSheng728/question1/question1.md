@@ -217,6 +217,72 @@ python manage.py migrate --database=mongodb
     <img src="./files/images/mongodb table.png"></img>
 </p>
 
+5. <strong>Load JSON into Database</strong><br>
+To load the dataset into mysql and mongodb, we need to create a folder in the tweet app folder. The code below are the file loading function.
+```
+from django.core.management.base import BaseCommand
+import json
+from tweets.models import Tweet
+from datetime import datetime
+
+class Command(BaseCommand):
+   help = 'Loads JSON data into the Tweet model'
+
+   def add_arguments(self, parser):
+       parser.add_argument('json_file', type=str, help='Path to the JSON file')
+
+   def handle(self, *args, **options):
+       json_file = options['json_file']
+       with open(json_file, encoding='utf-8') as f:
+           data = json.load(f)
+           for item in data:
+               created_at = datetime.strptime(item['created_at'], "%a %b %d %H:%M:%S %z %Y").strftime("%Y-%m-%d %H:%M:%S")
+               tweet = Tweet(
+                   _id=item['_id'],
+                   text=item['text'],
+                   in_reply_to_status_id=item['in_reply_to_status_id'],
+                   retweet_count=item['retweet_count'],
+                   contributors=item['contributors'],
+                   created_at=created_at,
+                   geo=item['geo'],
+                   source=item['source'],
+                   coordinates=item['coordinates'],
+                   in_reply_to_screen_name=item['in_reply_to_screen_name'],
+                   truncated=item['truncated'],
+                   entities=item['entities'],
+                   retweeted=item['retweeted'],
+                   place=item['place'],
+                   user=item['user'],
+                   favorited=item['favorited'],
+                   in_reply_to_user_id=item['in_reply_to_user_id'],
+                   id=item['id']
+               )
+               tweet.save()
+               tweet.save(using='mongodb')
+               self.stdout.write(self.style.SUCCESS(f'Successfully loaded data for tweet with id {tweet.id}'))
+```
+
+Save the code above as ```load_data.py``` and open the terminal to run the following code.
+```
+python manage.py load_data modified_tweets.json
+```
+
+After running the code, the data will start to load into the database automatically. This is going to be a long process as it will load the data one by one. 
+<p align="center">
+    <img src="./files/images/load proof.png"></img>
+</p>
+
+When loading completed, navigate to MySQL and MongoDB to verify the laoding result.<br><br>
+<strong>MySQL:</strong>
+<p align="center">
+    <img src="./files/images/load mysql.png"></img>
+</p>
+
+<strong>MongoDB:</strong>
+<p align="center">
+    <img src="./files/images/load mongodb.png"></img>
+</p>
+
 #
 ## Question 1 (b)
 <p align="center">
