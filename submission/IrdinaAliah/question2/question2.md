@@ -9,15 +9,37 @@ Don't forget to hit the :star: if you like this repo.
 
 # Special Topic Data Engineering (SECP3843): Alternative Assessment
 
-#### Name:
-#### Matric No.:
-#### Dataset:
+#### Name:Nur Irdina Aliah Binti Abdul Wahab
+#### Matric No.: A20EC0115
+#### Dataset: Airbnb
 
 ## Question 2 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+You have been given a JSON file that contains data that must be imported into a MongoDB 
+database. The JSON file must follows the appropriate structure for MongoDB documents. 
+Your task is to outline the step-by-step process to add the data from the JSON file into 
+MongoDB. Provide a detailed explanation of each step involved in the process with 
+screenshots, including any necessary commands. Ensure that your answer covers the 
+preparation of the JSON file, starting the MongoDB server, accessing the MongoDB shell, 
+selecting the target database, choosing the collection, and executing the import command
+
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Create FIVE (5) MongoDB queries that demonstrating various Create, Read, Update, and 
+Delete (CRUD) operations on the documents stored in the database. Ensure that you use 
+different types of functions provided by MongoDB for each query. The breakdown for the 
+number of queries per operation is as follows: 
+i. 
+Create – 1 query 
+ii. 
+Read – 1 query 
+iii. 
+Update – 2 queries 
+iv. 
+Delete – 1 query. 
+
+For each query, include the MongoDB query itself and provide screenshots of the results 
+obtained from executing the queries.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
