@@ -14,7 +14,6 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [City Inspections Dataset](https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections)
 
 ## Question 4 
-### Supervised Learning: Classification
 **1. Load dataset**
 - Since my JSON data is stored in MongoDB Compass, I establishes a connection to a MongoDB database and retrieves the specific collection. 
 <div align="center"><img src="files/images/load.PNG" height="350px" /></div>
@@ -23,11 +22,63 @@ Don't forget to hit the :star: if you like this repo.
 **2. Transform the dataset into an appropriate manner**
 <div align="center"><img src="files/images/transform.PNG" height="350px" /></div>
 
-**2. Data Cleaning**
+**3. Data Cleaning**
 <div align="center"><img src="files/images/clean.PNG" height="350px" /></div>
 <div align="center"><img src="files/images/clean2.PNG" height="350px" /></div>
 
+**4. Machine Learning**
+### Supervised Learning: Classification
+**i. Decision Tree**
+```
+from sklearn.model_selection import train_test_split
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.metrics import classification_report
+from sklearn.preprocessing import LabelEncoder
+from sklearn.feature_extraction.text import CountVectorizer
 
+business_names = df['business_name'].tolist()
+results = df['result'].tolist()
+
+# Encode the results using LabelEncoder
+label_encoder = LabelEncoder()
+encoded_results = label_encoder.fit_transform(results)
+
+# Split the data into training and test sets
+X_train, X_test, y_train, y_test = train_test_split(business_names, encoded_results, test_size=0.2, random_state=42)
+
+# Vectorize the business_names using CountVectorizer
+vectorizer = CountVectorizer()
+X_train_vectors = vectorizer.fit_transform(X_train)
+X_test_vectors = vectorizer.transform(X_test)
+
+# Train the decision tree classifier
+classifier = DecisionTreeClassifier()
+classifier.fit(X_train_vectors, y_train)
+
+new_business_names = ['YTJT BUSINESS SOLUTIONS']
+
+# Transform the new business_names using the fitted vectorizer
+new_business_names_vectors = vectorizer.transform(new_business_names)
+
+# Predict the results for the new business_names
+predicted_results = classifier.predict(new_business_names_vectors)
+
+# Decode the predicted results back to original labels
+predicted_labels = label_encoder.inverse_transform(predicted_results)
+
+for business_names, label in zip(new_business_names, predicted_labels):
+    print(f"Business Name: {business_names}, Predicted Result: {label}")
+
+# Calculate and print the accuracy on the test set
+accuracy = classifier.score(X_test_vectors, y_test)
+print('Accuracy:', accuracy)
+```
+
+Output:
+Business Name: YTJT BUSINESS SOLUTIONS, Predicted Result: No Violation Issued
+
+
+Accuracy: 0.4431832202344232
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
