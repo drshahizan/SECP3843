@@ -147,7 +147,6 @@ Result:
 
 <img width="921" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a62c04d8-574c-4f62-b271-9054496d9249">
 
-Link to the dashboard: https://charts.mongodb.com/charts-sampleproject01-ceqje/public/dashboards/d0404223-4dd9-4b47-adec-83e7207cafd9
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
