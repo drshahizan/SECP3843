@@ -148,112 +148,126 @@ Check your MySQL database (XAMPP > MySQL > Start > Admin) to confirm this migrat
 
 <br></br>
 
-**Create Admin Site** 
 
-Go to **admin.py** to classify your own admin site. This will allow admins to register on a site of their own.
-```bash
-from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth.forms import UserChangeForm, UserCreationForm
-from .models import CustomUser
-
-
-class CustomUserAdmin(UserAdmin):
-    model = CustomUser
-    add_form = UserCreationForm
-    form = UserChangeForm
-    fieldsets = (
-        (None, {'fields': ('username', 'password')}),
-        ('Personal info', {'fields': ('user_type',)}),
-        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
-        ('Important dates', {'fields': ('last_login', 'date_joined')}),
-    )
-    add_fieldsets = (
-        (None, {
-            'fields': ('username', 'password1', 'password2')}
-        ),
-    )
-
-admin.site.register(CustomUser, CustomUserAdmin)
-```
-<br></br>
-
-**Create Registration Login View** 
+**Create Registration and Login View** 
 
 Here is the code for my DjangoApp **views.py** file that defines the user registration and login processes.
+
+The **Login** functionality
 ```bash
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.forms import LoginForm, SignUpForm
+from .forms import RegistrationForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from .decorators import is_customer, is_technical_worker, is_senior_management
+from django.contrib.auth.decorators import user_passes_test
 
-def registerUser(request):
-    msg = None
-    success = False
-
-    if request.method == "POST":
-        form = SignUpForm(request.POST)
+# Create your views here.
+def user_login(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request=request, data=request.POST)
         if form.is_valid():
-            user = form.save()
-            user.user_type = 'customer'
-            user.save()
             username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username,password=raw_password)
-
-            msg = "User created."
-            success = True
-            return redirect('login')
-        else:
-            msg = "Form is not valid."
-    else:
-        form = SignUpForm()
-
-    return render(request, "accounts/register.html", {"form": form, "msg" : msg, "success" : success})
-
-def loginView(request):
-    form = LoginForm(request.POST or None)
-    msg = None
-
-    if request.method == "POST":
-        if form.is_valid():
-            username = form.cleaned_data.get("username")
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
-
+            print('User: ', user)
             if user is not None:
-                login(request, user)
-                if user.user_type == 'customer':
-                    return redirect('customer_home')
-                elif user.user_type == 'technical_worker':
-                    return redirect('technical_worker_home')
-                elif user.user_type == 'senior_management':
-                    return redirect('management_home')
-                else:
-                    return redirect('home')
+                 login(request, user)
+                 print('User logged in')
+                 return redirect('home')
             else:
-                msg = "Invalid credentials"
-        else:
-            msg = "Error validating the form"
-
-    return render(request, "accounts/login.html", {"form": form, "msg" : msg})
-
-@login_required(login_url="/login/")
-def customer(request):
-    context = {'segment': 'index'}
-    return render(request, "home/customer_home.html", context)
-
-@login_required(login_url="/login/")
-def technical_worker(request):
-    context = {'segment': 'index'}
-    return render(request, "home/technical_worker_home.html", context)
-
-@login_required(login_url="/login/")
-def management(request):
-    context = {'segment': 'index'}
-    return render(request, "home/management_home.html", context)
+                 print("Invalid username or password.")
+                 return redirect('login')
+            
+    else:
+        form = AuthenticationForm()
+    return render(request, 'login.html', {'form': form})
 ```
 
+The **Register** functionality
+```bash
+def register(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = RegistrationForm()
+    return render(request, 'register.html', {'form': form})
+```
+
+These are other **views** processes that will help users to navigate arounf the portal
+```bash
+@login_required
+def profile(request):
+    user = request.user
+    return render(request, 'profile.html', {'user': user})
+
+@user_passes_test(is_customer)
+def customer_dashboard(request):
+    return render(request, 'customer_dashboard.html')
+
+@user_passes_test(is_technical_worker)
+def technical_worker_dashboard(request):
+    return render(request, 'technical_worker_dashboard.html')
+
+@user_passes_test(is_senior_management)
+def senior_management_dashboard(request):
+    return render(request, 'senior_management_dashboard.html')
+
+def redirect_dashboard(request):
+    user = request.user
+    if user.is_customer:
+        return redirect('customer_dashboard')
+    elif user.is_technical_worker:
+        return redirect('technical_worker_dashboard')
+    elif user.is_senior_management:
+        return redirect('senior_management_dashboard')
+    else:
+        return redirect('profile')
+    
+def user_logout(request):
+    logout(request)
+    return redirect('login')
+
+```
+
+**Create Registration Form** 
+In the DjangoApp folder, create a registration form file named **forms.py**
+```bash
+from django.contrib.auth.forms import UserCreationForm
+from django import forms
+from .models import User
+
+class RegistrationForm(UserCreationForm):
+    ROLE_CHOICES = [
+        ('customer', 'Customer'),
+        ('technical_worker', 'Technical Worker'),
+        ('senior_management', 'Senior Management'),
+    ]
+
+    role = forms.ChoiceField(choices=ROLE_CHOICES, widget=forms.RadioSelect)
+
+    class Meta:
+        model = User
+        fields = ['username', 'password1', 'password2', 'role']
+
+    def save(self, commit=True):
+        user = super(RegistrationForm, self).save(commit=False)
+        role = self.cleaned_data['role']
+        
+        if role == 'customer':
+            user.is_customer = True
+        elif role == 'technical_worker':
+            user.is_technical_worker = True
+        elif role == 'senior_management':
+            user.is_senior_management = True
+        if commit:
+            user.save()
+        return user
+```
 
 ## Question 3 (b)
 
