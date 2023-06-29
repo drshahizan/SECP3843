@@ -17,8 +17,8 @@ Don't forget to hit the :star: if you like this repo.
 To carry out the task, we need to install [MongoDB Community Server](https://www.mongodb.com/try/download/community). To use the mongodb shell and mongoimport tool, we need to download the [MongoDB Shell](https://www.mongodb.com/try/download/shell) and [MongoDB Database Tools](https://www.mongodb.com/try/download/database-tools). After downloading the zip file and unzip the downloaded folder, copy-paste the bin folders all .exe files into the MongoDB bin folder.
 <img src="./files/images/bin.png">
 
-### Step 1: Download the JSON file
-Download the [movies.json](https://github.com/drshahizan/dataset/blob/main/mongodb/03-movie/movies.json) dataset.
+### Step 1: Prepare the JSON file
+Download the [movies.json](https://github.com/drshahizan/dataset/blob/main/mongodb/03-movie/movies.json) dataset. The dataset is all set to be imported.
 
 ### Step 2: Start the MongoDB server
 Open command prompt and navigate to the MongoDB bin folder.
