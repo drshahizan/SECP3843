@@ -157,6 +157,12 @@ I used Seaborn to get better visualization
 - Support Vector Regression
   ![svr_plot](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%204/files/images/step_7c.png)
 
+Based on the results obtained from this analysis, the most reliable regression algorithm should be used in this dataset is by implementing Random Forest Regression Algorithm.
+
+#### Step 8: See the Code File
+
+To access the code file, please click [here](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%204/files/source-code/AA_STDE_by_Nayli_Nabihah.ipynb)
+
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
