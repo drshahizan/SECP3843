@@ -69,7 +69,7 @@ Create a dashboard utilizing a JSON dataset, and provide a comprehensive descrip
 functionalities. You may include relevant code snippets and screenshots that illustrate the 
 solution implemented. 
 
-<img src="https://github.com/drshahizan/SECP3843/blob/be9cdf7d0ce95b9430f35093fc1f6d47bf9abca9/submission/IrdinaAliah/question5/images/DASHBOARD.jpg" style="width: 700px; height: 200px;">
+<img src="https://github.com/drshahizan/SECP3843/blob/4a28043121dc60ae2fc133a0c13b078eb5f77a45/submission/IrdinaAliah/question5/images/FULL%20DASHBOARD.png" style="width: 700px; height: 200px;">
 
 
 
