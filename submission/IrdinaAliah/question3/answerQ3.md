@@ -225,6 +225,127 @@ time updates and seamless interaction between the databases. In your response, p
 detailed description of the steps involved in addressing this challenge. You may include 
 relevant code snippets and screenshots that illustrate the solution implemented. 
 
+To implement data replication and synchronization between MySQL and MongoDB databases in my Django Airbnb :
+
+Step 1 :Install required packages
+
+step 2 : databses connection
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'dashboard',
+        'USER': 'root',
+        'HOST' : 'localhost',
+        'PORT': '3306',
+    },
+
+
+'mongodb' : {
+    'ENGINE': 'djongo',
+    'NAME': 'Airbnb',
+    'ENFORCE_SCHEMA': False,
+    'CLIENT':{
+     'host' : 'mongodb+srv://irdinaaliah2:Freekindome_00@cluster0.o4fadwf.mongodb.net/'
+    }
+}
+}
+```
+create Django command
+```
+from django.core.management.base import BaseCommand
+from mysql.connector import connect
+from pymongo import MongoClient
+from mysql_replication import BinLogStreamReader
+from mysql_replication.row_event import WriteRowsEvent, UpdateRowsEvent, DeleteRowsEvent
+from dashboard.models import AA
+
+
+class Command(BaseCommand):
+    help = 'Replicate and synchronize data between MySQL and MongoDB'
+
+    def handle(self, *args, **options):
+        # Connect to MySQL
+        mysql_conn = connect(
+            host='localhost',
+            user='root',
+            password='', 
+            database='dashboard'
+        )
+
+        # Connect to MongoDB
+        mongo_client = MongoClient('mongodb+srv://irdinaaliah2:Freekindome_00@cluster0.o4fadwf.mongodb.net/
+
+        # Define a callback function to process MySQL events
+        def process_event(event):
+            if isinstance(event, WriteRowsEvent):
+                for row in event.rows:
+                    listing = dashboard(**row['values'])
+                    listing.save(using='mongodb')
+            elif isinstance(event, UpdateRowsEvent):
+                for row in event.rows:
+                    _id = row['after_values']['_id']
+                    listing = dashboard.objects.using('mongodb').get(_id=_id)
+                    for key, value in row['after_values'].items():
+                        setattr(listing, key, value)
+                    listing.save(using='mongodb')
+            elif isinstance(event, DeleteRowsEvent):
+                for row in event.rows:
+                    _id = row['values']['_id']
+                    dashboard.objects.using('mongodb').filter(_id=_id).delete()
+
+        # Create a binlog stream reader for MySQL changes
+        mysql_stream = BinLogStreamReader(
+            connection_settings=mysql_conn,
+            server_id=1,
+            blocking=True,
+            only_events=[WriteRowsEvent, UpdateRowsEvent, DeleteRowsEvent]
+        )
+
+        # Process MySQL events and apply changes to MongoDB
+        for binlogevent in mysql_stream:
+            process_event(binlogevent)
+
+        # Close MySQL connection and stream reader
+        mysql_stream.close()
+        mysql_conn.close()
+
+        # Retrieve MongoDB changes and apply them to MySQL
+        mongo_listings = mongodb.dashboard.find()
+        for listing in mongo_listings:
+            _id = listing['_id']
+            try:
+                mysql_listing = dashboard.objects.get(_id=_id)
+                for key, value in listing.items():
+                    setattr(mysql_listing, key, value)
+                mysql_listing.save()
+            except dashboard.DoesNotExist:
+                new_listing = dashboard(**listing)
+                new_listing.save()
+
+        # Close MongoDB connection
+        mongo_client.close()
+
+
+```
+add django extenstion
+```
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'dashboard',
+    
+
+    'django_extensions',
+]
+```
+
+configure scheduled task
+ 
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
@@ -235,5 +356,6 @@ You can also contact me using [Linkedin](https://www.linkedin.com/in/drshahizan/
 ![](https://hit.yhype.me/github/profile?user_id=81284918)
 
 
-
+Schedule Data Replication
+C:\Users\HP\AA\dashboard\Local\Programs\Python\Python311\python.exe C:\Users\HP\AA\dashboard\manage.py runjobs hourly
 
