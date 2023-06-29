@@ -18,7 +18,7 @@ Don't forget to hit the :star: if you like this repo.
 
 Data Aggrigation is the best way to optimized the performance when dealing with large volumes of JSON data from the dataset.
 
-- fvgrt
+- Go to your database and collection, select "Aggregation.
 
   <img width="959" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/10343854-7432-4dfd-bb6f-30eebee824a1">
 
