@@ -29,10 +29,10 @@ Indexing can help to optimize the database management system by minimizes the ne
 ##### 1. Topic
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/20c1a61d-1969-40c0-b5ba-04ebebb9fd92"/>
 
-##### 2. Diggs
+\ ##### 2. Diggs
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/18be9333-c79f-4065-ab88-259455bff296"/>
 
-##### 3. User
+\ ##### 3. User
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/181f42a5-dac3-44b6-9780-1bb4c395e0aa"/>
 ## Question 5 (b)
 In this section, I am going to create my dashboard using the provide servidse on MongoDB Atlas
