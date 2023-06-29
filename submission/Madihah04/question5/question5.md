@@ -18,23 +18,33 @@ Don't forget to hit the :star: if you like this repo.
 
 In order to optimize the performance of the portal when working with a lot of JSON data on the dashboard, we can do a few approach :
 
-1. Data Pagination: Instead of loading all the JSON data at once, load it in smaller chunks. This way, the initial loading time will be faster, and the dashboard will be more responsive. You can show a limited number of JSON items on each page and provide navigation links to access other pages.
+1. Data Aggregation:
+When we aggregate data, this will help speed up the rendering process on the dashboard, as we won't need to perform complex calculations each time.
+In this project, I will perform aggregate to calculate the total number of comments and total number of diggs based on topic.name. The result will contain the _id (topic name), totalComments, and totalDiggs fields.
+```
+   {
+      {
+        _id: "$topic.name",
+        totalComments: { $sum: "$comments" },
+        totalDiggs: { $sum: "$diggs" }
+      }
+   }
+```
+<p align="center">
+   <img src="../question5/files/images/q5Aggregate.png">
+</p>
 
-2. Data Aggregation: Pre-calculate and store summary data from the JSON dataset. This will help speed up the rendering process on the dashboard, as you won't need to perform complex calculations each time.
+2. Indexing:
 
-3. Indexing: Create indexes on the JSON data fields that are frequently used in queries or filters. This will improve the performance of data retrieval operations.
+When we create an index on a field, the DB system creates a separate data structure that maps the values in that field to the corresponding records or documents in the dataset, typically stored in a more efficient and optimized format. So, when we perform a query or filter based on an indexed field, the DB can quickly refer to the index to locate the relevant records or documents, rather than scanning through the entire dataset. This will definitely speeds up the data retrieval process and improves the overall performance of the queries.
 
-In the context of a JSON dataset, indexing involves identifying specific fields within the JSON data that are frequently used in queries or filters. These fields could be things like names, dates, or categories that you often search or sort by.
+In this project, The _id, submit_date, promote_date, comments and diggs are frequently used in queries, sort or filters. Since _id already created, I will create indexes on the submit_date, promote_date, comments, diggs.
 
-When you create an index on a field, the database system creates a separate data structure that maps the values in that field to the corresponding records or documents in the dataset. This index is typically stored in a more efficient and optimized format than the original JSON data.
+<p align="center">
+   <img src="../question5/files/images/q5.png">
+</p>
 
-When you perform a query or filter based on an indexed field, the database can quickly refer to the index to locate the relevant records or documents, rather than scanning through the entire dataset. This significantly speeds up the data retrieval process and improves the overall performance of the queries.
-
-To create an index, you usually need to define it at the time of creating the database table or collection. The database system will then build the index based on the specified field(s). It's important to choose the fields for indexing carefully, considering the ones that are frequently used in your queries and have a significant impact on the performance.
-
-Hence, this will optimize the data retrieval operations and the dashboard will be more responsive when dealing with large volumes of data.
-
-4. Make sure the data type is correct and efficient when performing queries and analysis.
+3. Make sure the data type is correct and efficient when performing queries and analysis.
    In stories.json, submit_date and promote_date was in Unix timestamp. Thus, in Mongo Shell, run the queries:
 ```
    use Stories
@@ -54,6 +64,9 @@ Hence, this will optimize the data retrieval operations and the dashboard will b
     });
   ```
 
+<p align="center">
+   <img src="../question5/files/images/q5Index.png">
+</p>
 
 ## Question 5 (b)
 For implementing data visualization in this project, I will use MongoDB Charts from MongoDB Atlas. From there, we will create 8 charts that will be included in Stories Dashboard.
