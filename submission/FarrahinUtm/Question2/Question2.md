@@ -1,4 +1,4 @@
-<a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
+![image](https://github.com/drshahizan/SECP3843/assets/121208097/9e9d377f-e061-420c-87de-266b1d920232)<a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/network/members"><img src="https://img.shields.io/github/forks/drshahizan/SECP3843" alt="Forks Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/pulls"><img src="https://img.shields.io/github/issues-pr/drshahizan/SECP3843" alt="Pull Requests Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/issues"><img src="https://img.shields.io/github/issues/drshahizan/SECP3843" alt="Issues Badge"/></a>
@@ -62,19 +62,11 @@ Next, inside the command type 'mongosh' to access the MongoDB Shell
 This application allows users to inspect every database and collection from MongoDB Compass.
 <img src="./image/mongodatabase.png" style="width: 500px; height: 200px;">
 ## Question 2 (b)
-b.	Create FIVE (5) MongoDB queries that demonstrating various Create, Read, Update, and Delete (CRUD) operations on the documents stored in the database. Ensure that you use different types of functions provided by MongoDB for each query. The breakdown for the number of queries per operation is as follows:
 
-i.	Create – 1 query
+1.Use the mongod command at the command prompt to launch the MongoDB server.
 
-ii.	Read – 1 query
-
-iii.	Update – 2 queries
-
-iv.	Delete – 1 query.
-
-
-For each query, include the MongoDB query itself and provide screenshots of the results obtained from executing the queries.
-
+2.To swap the database, type use mflix in the MongoDB Compass' MongoDB Shell terminal.
+<img src="./image/mongosh.png" style="width: 500px; height: 200px;">
 
 
 
