@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Landing Page{% endblock title %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6 contents">
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          <div class="form-block">
+              <div class="mb-4">
+                  <h1>Hello World</h1>
+              </div>
+              <label>Log in if you already have registered!</label>
+              <div class="form-group last mb-4">
+                  <a href=" {% url 'login_view' %} " class="btn btn-primary">login</a>
+              </div>
+              <label>If not register here!</label>
+              <div class="form-group last mb-4">
+                  <a href=" {% url 'register' %} " class="btn btn-primary">register</a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock content %}
