@@ -59,6 +59,8 @@ For this project,  to identify popular or controversial stories versus less popu
 ```
 df.head()
 ```
+<img width="858" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73293104/f1f9c4a7-99fc-478e-8b53-eb7f06748035">
+
 ```
 df.info()
 ```
@@ -79,7 +81,7 @@ df["thumbnail.contentType"].fillna("NaN", inplace=True)
 ```
 
 #### Output:
-![image](https://github.com/drshahizan/SECP3843/assets/73293104/0c200fbe-e4be-4dbc-bbd6-b951f81e557c)
+<img width="218" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73293104/447ae6c3-697e-47ec-adde-dff2df95ad1e">
 
 
 #### K-Means Clustering
@@ -114,6 +116,9 @@ plt.ylabel('Number of Diggs')
 plt.title('K-means Clustering - Comments vs Diggs')
 plt.show()
 ```
+Output:
+
+![image](https://github.com/drshahizan/SECP3843/assets/73293104/9e5497cc-2684-48d7-a884-c0e001fc8479)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
