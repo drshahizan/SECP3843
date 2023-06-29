@@ -72,6 +72,30 @@ json_file = 'movies_cleaned.json'
 # Create a download link for the JSON file
 FileLink(json_file)
 ```
+Import the file to your MongoDB
+
+Step 2: MongoDB Aggregation
+
+Head over to MongoDB Atklas. Click on "Browse Collections"
+
+![Q5](file/image/q61.png)
+
+Choose the collection that contains the data that we have cleaned. 
+
+![Q5](file/image/q62.png)
+
+Click on "Aggregation" and "Add Stage"
+
+![Q5](file/image/q63.png)
+
+Perform Aggregation accordingly, I chose to find the average of both imdb ratings and tomatoes ratings, then round them to two significant figures.
+
+![Q5](file/image/q65.png)
+
+This is the aggregation pipeline we will end up with
+
+![Q5](file/image/q64.png)
+
 ## Question 5 (b)
 I chose to visualize my dashboard with MongoDB Atlas. It has a built-in chart creator which will make our job a lot easier. It is also can be done by drag-and-drop, thus no coding is needed. The dataset is already imported as we have done so for Question 2.
 
