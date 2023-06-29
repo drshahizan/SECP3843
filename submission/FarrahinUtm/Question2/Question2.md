@@ -66,7 +66,67 @@ This application allows users to inspect every database and collection from Mong
 1.Use the mongod command at the command prompt to launch the MongoDB server.
 
 2.To swap the database, type use mflix in the MongoDB Compass' MongoDB Shell terminal.
-<img src="./image/renamedb.png" style="width: 500px; height: 200px;">
+
+<img src="./image/renamedb.png" style="width: 200px; height: 100px;">
+
+3.Next:
+- employ **db.theaters.theatres** in db.theaters using insertOne() to add new data to a JSON file in MongoDB.
+
+- The database collection is defined by the **insertOne()** method.
+
+- The function to add new data to MongoDB is **insertOne()**.
+
+  <img src="./image/create.png" style="width: 500px; height: 200px;">
+
+- To access the desired data's detail information from the MongoDB database, use **db.theaters.find()**.
+
+    <img src="./image/find.png" style="width: 500px; height: 200px;">
+    
+  - To change a single piece of data in MongoDB, use **db.theaters.updateOne()**.
+    
+    <img src="./image/updateone.png" style="width: 500px; height: 200px;">
+    
+- this is the data for id 1010 before update
+
+    <img src="./image/beforeupdate.png" style="width: 500px; height: 200px;">
+
+    - this is the data for id 1010 after update
+    
+    <img src="./image/afterupdate.png" style="width: 500px; height: 200px;">
+
+
+    - To change a many piece of data in MongoDB, use **db.theaters.updateMany()**.
+
+ ![updatemany1](https://github.com/drshahizan/SECP3843/assets/121208097/51145969-8598-4821-a5a2-0a43976e61ba)
+
+In the mongoDB database collection, it specifies the location.address.city = Permaisuri where the city is "Permaisuri" and edits the   information for location.address.street1 and location.address.zipcode as seen above.
+
+
+Before it is updated, this
+
+![afterupdate](https://github.com/drshahizan/SECP3843/assets/121208097/9ecba090-0c6b-461e-ab8b-d21ad367921d)
+
+
+After it is updated, this
+
+![updatemany](https://github.com/drshahizan/SECP3843/assets/121208097/13871127-ede9-4e8a-b46e-61c300156635)
+
+
+- **Remove (1 inquiry)**
+employ db.theaters.Delete one piece of data from MongoDB using **deleteOne()**
+
+![Screenshot (276)](https://github.com/drshahizan/SECP3843/assets/121208097/956e01e9-10aa-4f1d-8bb0-cbed07add055)
+
+before deletion:
+
+![Screenshot (277)](https://github.com/drshahizan/SECP3843/assets/121208097/7c26b158-58cb-43e6-b85b-e68ab5dc30aa)
+
+after deletion:
+
+![Screenshot (278)](https://github.com/drshahizan/SECP3843/assets/121208097/220556b0-7f06-4ed8-a952-9e57ad1f94d9)
+
+
+
 
 
 

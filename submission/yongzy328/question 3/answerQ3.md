@@ -17,68 +17,78 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 3 (a)
 ### Steps to implement registration and login function in Django application using MySQL
 
-<img src="./files/images/Screenshot%202023-06-27%20161044.png" alt="startproject">
+#### 1. Set up Django application
+Set up virtual environment in the directory of the project using the command <code>py -m venv env</code>. Activate the virtual environment by running <code>env\Scripts\activate</code>. Then start a new project using the command <code>django-admin startproject AA_Q3</code>. <br>
+<img src="./files/images/Screenshot%202023-06-27%20161044.png" alt="startproject"><br>
+Next, install Django package in the project file by running <code>pip install django</code>. <br>
+<img src="./files/images/Screenshot%202023-06-29%20004253.png" alt="install django"><br>
+Create a Django application through the code <code>python manage.py startapp Q3_APP</code>. <br>
+<img src="./files/images/Screenshot%202023-06-27%20161552.png" alt="startapp"><br>
+Then, install all necessary packages for this application, such as "mysql-connector-python" and "mysqlclient". The code for installations are <code>pip install mysql-connector-python</code> and <code>pip install mysqlclient</code>. <br>
+<img src="./files/images/Screenshot%202023-06-27%20161129.png" alt="mysql=connector=python"><br>
+<img src="./files/images/Screenshot%202023-06-29%20004303.png" alt="install mysqlclient"><br>
+Update the installed app information in the settings.py file. <br>
+<img src="./files/images/Screenshot%202023-06-27%20161546.png" alt="setting app"><br>
+Update the database information in the settings.py file. <br>
+<img src="./files/images/Screenshot%202023-06-27%20161742.png" alt="setting db"><br>
 
-<img src="./files/images/Screenshot%202023-06-27%20161552.png" alt="startapp">
-
-<img src="./files/images/Screenshot%202023-06-29%20003312.png" alt="virtual env">
-
-<img src="./files/images/Screenshot%202023-06-29%20004253.png" alt="install django">
-
-<img src="./files/images/Screenshot%202023-06-27%20161129.png" alt="mysql=connector=python">
-
-<img src="./files/images/Screenshot%202023-06-29%20004303.png" alt="install mysqlclient">
-
-<img src="./files/images/Screenshot%202023-06-27%20161546.png" alt="setting app">
-
-<img src="./files/images/Screenshot%202023-06-27%20161742.png" alt="setting db">
-
-<img src="./files/images/Screenshot%202023-06-29%20024111.png" alt="models.py">
-
-<img src="./files/images/Screenshot%202023-06-29%20004330.png" alt="makemigrations">
-
-<img src="./files/images/Screenshot%202023-06-29%20004400.png" alt="migrate">
-
-<img src="./files/images/Screenshot%202023-06-29%20004419.png" alt="db migrated">
-
-<img src="./files/images/Screenshot%202023-06-29%20023915.png" alt="form.py">
-
-<img src="./files/images/Screenshot%202023-06-29%20010513.png" alt="add template folder">
-
-<img src="./files/images/Screenshot%202023-06-29%20023901.png" alt="register.html">
-
-<img src="./files/images/Screenshot%202023-06-29%20010602.png" alt="views.py register">
-
-<img src="./files/images/Screenshot%202023-06-29%20023852.png" alt="login.html">
-
-<img src="./files/images/Screenshot%202023-06-29%20023822.png" alt="views.py login">
-
-<img src="./files/images/Screenshot%202023-06-29%20010908.png" alt="settings.py template">
-
-<img src="./files/images/Screenshot%202023-06-29%20023728.png" alt="url.py">
-
-<img src="./files/images/Screenshot%202023-06-29%20023611.png" alt="runserver">
-
-<img src="./files/images/Screenshot%202023-06-29%20023436.png" alt="register page">
-
-<img src="./files/images/Screenshot%202023-06-29%20023454.png" alt="login page">
-
-<img src="./files/images/Screenshot%202023-06-29%20023337.png" alt="result cust">
-
-<img src="./files/images/Screenshot%202023-06-29%20023409.png" alt="result tech worker">
-
-<img src="./files/images/Screenshot%202023-06-29%20023422.png" alt="result snr manage">
+#### 2. Set up the model of the application
+The model of the application is created in the models.py file under the directory of Q3_APP as shown as below. <br>
+<img src="./files/images/Screenshot%202023-06-29%20024111.png" alt="models.py"><br>
 
 
+#### 3. Migrate to MySQL database
+To implement the created model, migrations to the MySQL database is done via the commands <code>python manage.py makemigrations</code> and <code>python manage.py migrate</code>. <br>
+<img src="./files/images/Screenshot%202023-06-29%20004330.png" alt="makemigrations"><br>
+<img src="./files/images/Screenshot%202023-06-29%20004400.png" alt="migrate"><br>
+The updated database is shown as below. <br>
+<img src="./files/images/Screenshot%202023-06-29%20004419.png" alt="db migrated"><br>
 
+#### 4. Set up the registration and login function
+Create the classes for user registration and login purposes and store them in a file named "form.py" under the directory of Q3_APP as shown as below. <br>
+<img src="./files/images/Screenshot%202023-06-29%20023915.png" alt="form.py"><br>
+Create a new folder named "templates" along with subfolder named "registration" under the directory of Q3_APP. <br>
+<img src="./files/images/Screenshot%202023-06-29%20010513.png" alt="add template folder"><br>
+Create registration form named "register.html" inside the "registration" folder, and write code to implement the default form generated by Django as shown as below. <br>
+<img src="./files/images/Screenshot%202023-06-29%20023901.png" alt="register.html"><br>
+Update the "Views.py" file with the user registration function to handle the data collected from the registration form. <br>
+<img src="./files/images/Screenshot%202023-06-29%20010602.png" alt="views.py register"><br>
+For login page, implement the form in the login.html file. <br>
+<img src="./files/images/Screenshot%202023-06-29%20023852.png" alt="login.html"><br>
+Update the "Views.py" file with the user login function. <br>
+<img src="./files/images/Screenshot%202023-06-29%20023822.png" alt="views.py login"><br>
+
+
+#### 5. Implement the templates and define paths
+Update the DIRS information in the "settings.py" file with the newly created file paths which directed to the templates file. <br>
+<img src="./files/images/Screenshot%202023-06-29%20010908.png" alt="settings.py template"><br>
+Update the urlpatterns in the "url.py" file. <br>
+<img src="./files/images/Screenshot%202023-06-29%20023728.png" alt="url.py"><br>
+
+
+#### 6. Run the application
+The application now can be run by using the command <code>python manage.py runserver</code>. <br>
+<img src="./files/images/Screenshot%202023-06-29%20023611.png" alt="runserver"> <br>
+The user interfaces of this application are shown as below: <br>
+Registration page: <br>
+<img src="./files/images/Screenshot%202023-06-29%20023436.png" alt="register page"><br>
+Login page: <br>
+<img src="./files/images/Screenshot%202023-06-29%20023454.png" alt="login page"><br>
+Customer dashboard: <br>
+<img src="./files/images/Screenshot%202023-06-29%20023337.png" alt="result cust"><br>
+Technical worker dashboard: <br>
+<img src="./files/images/Screenshot%202023-06-29%20023409.png" alt="result tech worker"><br>
+Senior management dashboard: <br>
+<img src="./files/images/Screenshot%202023-06-29%20023422.png" alt="result snr manage"><br>
 
 
 
 ## Question 3 (b)
+### Steps to implement data replication and synchronization between MySQL and MongoDB
 
 <img src="./files/images/Screenshot%202023-06-29%20024629.png" alt="xampp">
 
-<img src="./files/images/Screenshot%202023-06-29%20024803.png" alt="my.ini xampp"
+<img src="./files/images/Screenshot%202023-06-29%20024803.png" alt="my.ini xampp">
 
 <img src="./files/images/Screenshot%202023-06-29%20025342.png" alt="mkdir">
 

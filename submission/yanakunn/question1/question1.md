@@ -38,7 +38,7 @@ Integrating the Django framework, JSON data, MySQL, and MongoDB can be achieved 
   (.venv) % django-admin startproject project
   ```
 
-3. To use MySQL and MongoDB in this Django project, we will utilized XAMPP's phpmyadmin and MongoDB Atlas. There are other options besides XAMPP for setting up your Django project such as installing the MySQL server separately and configuring it within the project's settings.
+3. To use MySQL and MongoDB in this Django project, we will utilized XAMPP's PHPMyAdmin and MongoDB Atlas. There are other options besides XAMPP for setting up your Django project such as installing the MySQL server separately and configuring it within the project's settings.
 
 - XAMPP
   - Open `http://localhost/phpmyadmin/` and create a new database.
