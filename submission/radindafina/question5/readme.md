@@ -66,6 +66,17 @@ By creating appropriate indexes and using aggregation pipelines, we can optimize
   </a>
 </div>
 
+
+   **Graph 1:** The stacked column chart reveals an interesting trend among different age categories. It indicates that the majority of individuals across all age groups prefer to make their purchases online, rather than through in-store or phone methods. This suggests a shift towards digital shopping habits, which could be attributed to factors such as convenience, wider product selection, and the ease of comparing prices online. This trend is especially prominent among younger age groups, such as those in their 20s, who show a significantly higher preference for online shopping compared to other age categories.
+   
+   **Graph 2:** The pie chart displaying purchase methods provides an overview of the overall distribution. Surprisingly, despite the preference for online shopping among different age groups, the highest proportion of purchases is still made in-store. This finding indicates that while online shopping is growing in popularity, traditional brick-and-mortar stores remain relevant and continue to attract a significant portion of consumers. This might be due to factors such as the need for immediate gratification, the ability to physically examine products, or simply personal preferences.
+   
+   **Graph 3:** The clustered bar chart focuses on customer satisfaction ratings across different locations. It highlights that customers in Denver have the highest levels of satisfaction compared to other locations. This suggests that the services, products, or overall shopping experience in Denver might be particularly well-received by customers. It could be valuable to investigate the reasons behind this higher satisfaction level, such as exceptional customer service, well-maintained facilities, or targeted marketing strategies, in order to replicate and improve upon these practices in other locations.
+   
+   **Graph 4:**  The stacked bar chart represents coupon usage based on gender. Interestingly, the data reveals that females tend to use coupons more frequently than males. This could be attributed to various factors, including differences in shopping behaviors, preferences for seeking discounts, or the types of products typically purchased by each gender. Understanding these gender-based differences in coupon usage can provide insights for targeted marketing campaigns and promotional strategies to cater to the specific needs and preferences of different customer segments.
+   
+   **Graph 5:** The heatmap visualizes the relationship between items and categories. The intensity of color in each cell provides insights into the association or relevance between specific items and categories. Darker shades indicate a stronger connection, suggesting that those items are highly associated with the corresponding category. This information can be valuable for inventory management, product placement strategies, and identifying potential cross-selling or upselling opportunities. By analyzing the heatmap, patterns and trends can be identified, enabling businesses to make data-driven decisions regarding their product offerings and category management strategies.
+
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
