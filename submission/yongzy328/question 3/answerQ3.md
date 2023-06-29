@@ -86,27 +86,39 @@ Senior management dashboard: <br>
 ## Question 3 (b)
 ### Steps to implement data replication and synchronization between MySQL and MongoDB
 
-<img src="./files/images/Screenshot%202023-06-29%20024629.png" alt="xampp">
+#### 1. Enable binary logging for MySQL Server
+Open Xampp Control Panel, select the "Config" button of MySQL, click "my.ini" to open the file and enable the MySQL binary logging, which enable the server to generate binary log files that capture all the data changes. <br>
+<img src="./files/images/Screenshot%202023-06-29%20024629.png" alt="xampp"><br>
+Enable the binary logging function by uncommentting the line <code>log-bin=mysql-bin</code>.<br>
+<img src="./files/images/Screenshot%202023-06-29%20024803.png" alt="my.ini xampp"><br>
+Restart the MySQL server to implement the changes.
 
-<img src="./files/images/Screenshot%202023-06-29%20024803.png" alt="my.ini xampp">
+#### 2. Set up the replica MongoDB instance using MongoDB Atlas
+<li>Connect to MongoDB Atlas.</li>
+<li>Create new database named "AA" and collection named "Q3". </li>
+<li>Create a new user named "1" with password "1" and grant access to the database. </li>
+<li>Copy the mongodb+srv connection string of user "1" to clipboard. </li>
 
-<img src="./files/images/Screenshot%202023-06-29%20025342.png" alt="mkdir">
+#### 3. Create file for data replication and install necessary package
+In the directory of "AA_Q3", create a new folder named "Replication". <br>
+<img src="./files/images/Screenshot%202023-06-29%20025342.png" alt="mkdir"><br>
+In the "Replication" folder, install the <code>mysql-connector-python</code> and <code>pymongo</code> package. <br>
+<img src="./files/images/Screenshot%202023-06-29%20025528.png" alt="mysql-connector-python"><br>
+<img src="./files/images/Screenshot%202023-06-29%20025629.png" alt="pymongo"><br>
 
-<img src="./files/images/Screenshot%202023-06-29%20025528.png" alt="mysql-connector-python">
+#### 4. Write code for data replication process
+The code is written and saved as "replication.py" as shown below. <br>
+<img src="./files/images/Screenshot%202023-06-29%20101607.png" alt="rep code1"><br>
+<img src="./files/images/Screenshot%202023-06-29%20101642.png" alt="rep code2"><br>
+<img src="./files/images/Screenshot%202023-06-29%20101653.png" alt="rep code3"><br>
 
-<img src="./files/images/Screenshot%202023-06-29%20025629.png" alt="pymongo">
-
-<img src="./files/images/Screenshot%202023-06-29%20101607.png" alt="rep code1">
-
-<img src="./files/images/Screenshot%202023-06-29%20101642.png" alt="rep code2">
-
-<img src="./files/images/Screenshot%202023-06-29%20101653.png" alt="rep code3">
-
-<img src="./files/images/Screenshot%202023-06-29%20034350.png" alt="replication.py">
-
-<img src="./files/images/Screenshot%202023-06-29%20024510.png" alt="mysql db">
-
-<img src="./files/images/Screenshot%202023-06-29%20034255.png" alt="mongodb">
+#### 5. Run the data replication code
+The written code is run by using the command <code>python replication.py</code>. <br>
+<img src="./files/images/Screenshot%202023-06-29%20034350.png" alt="replication.py"><br>
+Results: <br>
+Data in MySQL database successfully replicated into the MongoDB database. <br>
+<img src="./files/images/Screenshot%202023-06-29%20024510.png" alt="mysql db"><br>
+<img src="./files/images/Screenshot%202023-06-29%20034255.png" alt="mongodb"><br>
 
 
 
