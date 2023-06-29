@@ -15,13 +15,23 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: City Inspections	
 
 ## Question 3 (a)
+### Steps to implement registration and login function in Django application using MySQL
+
+<img src="./files/images/Screenshot%202023-06-27%20161044.png" alt="startproject">
+
+<img src="./files/images/Screenshot%202023-06-27%20161552.png" alt="startapp">
+
 <img src="./files/images/Screenshot%202023-06-29%20003312.png" alt="virtual env">
 
 <img src="./files/images/Screenshot%202023-06-29%20004253.png" alt="install django">
 
+<img src="./files/images/Screenshot%202023-06-27%20161129.png" alt="mysql=connector=python">
+
 <img src="./files/images/Screenshot%202023-06-29%20004303.png" alt="install mysqlclient">
 
-<img src="./files/images/Screenshot%202023-06-29%20010908.png" alt="settings.py">
+<img src="./files/images/Screenshot%202023-06-27%20161546.png" alt="setting app">
+
+<img src="./files/images/Screenshot%202023-06-27%20161742.png" alt="setting db">
 
 <img src="./files/images/Screenshot%202023-06-29%20024111.png" alt="models.py">
 
@@ -42,6 +52,8 @@ Don't forget to hit the :star: if you like this repo.
 <img src="./files/images/Screenshot%202023-06-29%20023852.png" alt="login.html">
 
 <img src="./files/images/Screenshot%202023-06-29%20023822.png" alt="views.py login">
+
+<img src="./files/images/Screenshot%202023-06-29%20010908.png" alt="settings.py template">
 
 <img src="./files/images/Screenshot%202023-06-29%20023728.png" alt="url.py">
 
