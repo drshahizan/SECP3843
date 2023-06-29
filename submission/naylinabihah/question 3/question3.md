@@ -87,7 +87,7 @@ When it comes to working with different databases in one project, it may cause s
 
 I created a folder named as `replication`. This is where the data synchronization and replication will be done at.
 
-![folder]()
+![folder](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/3b1.png)
 
 #### Step 2: Install the REQUIRED Library
 
@@ -101,29 +101,29 @@ pip install mysql-connector-python
 pip install pymongo
 ```
 
-![lib1]()
+![lib1](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/lib1.png)
 
-![lib2]()
+![lib2](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/lib2.png)
 
 #### Step 3: Change Navigation Settings in XAMPP
 
 Since using MySQL in XAMPP, there is a need to change the navigation configuration in file named `my.ini` and don't forget to save it after do the changes. The changes is shown below:
 
-![ini1]()
+![ini1](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/ini1.png)
 
-![ini2]()
+![ini2](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/ini2.png)
 
 #### Step 4: Make an Replication Instance in MongoDB
 
 Using existing or new database will brought the same result. I had chosen to create a new database named `q3` and the collection is named as `b`.
 
-![db1]()
+![db1](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/db1.png)
 
 #### Step 5: Make a Python file to Place the Coding for Data Replication
 
 I created the file using command prompt.
 
-![py]()
+![py](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/py.png)
 
 This is the code in the python file:
 
@@ -269,17 +269,17 @@ mysql_connection.close()
 
 To check either it is working or not, supposedly we should check it by running it. I have set that if the replication is successfully performed, then a script says 'Inserted to row: [id]' will be displayed.
 
-![res]()
+![res](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/res.png)
 
 #### Step 7: Check Back Both Databases to Validate it
 
 This is in MySQL:
 
-![res1]()
+![res1](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/res1.png)
 
 This is in MongoDB:
 
-![res2]()
+![res2](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%203/files/images/res2.png)
 
 
 ## Contribution 🛠️
