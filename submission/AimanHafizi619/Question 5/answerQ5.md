@@ -23,6 +23,16 @@ Performing data preprocessing steps to reduce the data size and improve data qua
 >*Data Indexing*:
 Using appropriate indexing techniques on the large dataset to optimize up data retrieval and querying. Indexing helps to quickly locating and accessing specific records, reducing the processing time for filtering and searching operations.
 
+```python
+collection.create_index("Customer")
+
+query = {"username": "glopez"}
+result = collection.find(query)
+
+for doc in result:
+    print(doc)
+```
+
 >*Import Libraries*
 Using the correct libraries refers getting the required software packages or modules to be use in the code. Libraries provide pre-written functions and tools that help ease complex tasks and enable efficient data processing.
 
