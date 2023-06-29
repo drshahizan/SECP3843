@@ -16,46 +16,24 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 5 (a)
 
-When working with a large amount of JSON data that requires display on a dashboard, optimizing portal performance is essential. To achieve this, consider the following approach as a recommendation:
+Optimizing portal performance is essential when working with a large amount of JSON data that requires display on a dashboard. To achieve this, consider the following approach as a recommendation:
 
-1. Data Preprocessing and Aggregation
+### 1. Data Preprocessing and Aggregation
 
-When creating a dashboard, it is critical to conduct a thorough analysis of the requirements and identify the essential data that needs to be visualized. To achieve this, the JSON data must be preprocessed to extract and transform the relevant information needed for the dashboard. This can be done by aggregating the data to reduce its volume and complexity. By summarizing or grouping the data at appropriate levels, unnecessary details can be avoided during visualization. As an example, consider the aggregation of data in a transactions dataset. 
-```
-# Extract and transform relevant columns information for visualization
-processed_data = []
-for transaction in transactions:
-    account_id = transaction['account_id']
-    date = transaction['date']
-    amount = transaction['amount']
-    processed_item = {
-        'account_id': account_id,
-        'date': date,
-        'amount': amount
-    }
-    processed_data.append(processed_item)
+When creating a dashboard, it is critical to thoroughly analyze the requirements and identify the essential data that needs to be visualized. To achieve this, the JSON data must be preprocessed to extract and transform the relevant information needed for the dashboard. This can be done by aggregating the data to reduce its volume and complexity. Summarizing or grouping the data appropriately can avoid unnecessary details during visualization. For example, consider the aggregation of data in an accounts dataset using MongoDB. 
 
-# Aggregate the data
-aggregated_data = {}
-for item in processed_data:
-    account_id = item['account_id']
-    amount = item['amount']
-    
-    if account_id in aggregated_data:
-        aggregated_data[account_id] += amount
-    else:
-        aggregated_data[account_id] = amount
+<img src="https://github.com/drshahizan/SECP3843/assets/99240177/6af727be-64f2-4b0c-81f8-77ad4c3b4dd7" />
 
-# Print the aggregated data
-for account_id, total_amount in aggregated_data.items():
-    print(f"Account ID: {account_id}, Total Amount: {total_amount}")
-```
+The output of group by limit and sort the count in descending order.
 
-By following these steps, one can create a well-organized and informative dashboard that effectively communicates the necessary data.
+<img src="https://github.com/drshahizan/SECP3843/assets/99240177/45258a38-d311-4b26-b764-c80ae48730ac" />
 
 
-2. 
+### 2. Data Indexing
 
+For optimal performance in retrieving and filtering JSON data, it is highly recommended to establish indexes on the commonly used query fields. This process greatly decreases the time it takes to execute queries and improves the overall efficiency of the database. MongoDB, for instance, offers the Index function in MongoDB Compass, which is a user-friendly way to create indexes. By utilizing this feature, you can easily and conveniently create indexes that will enhance the performance of your MongoDB database.
+
+<img src="https://github.com/drshahizan/SECP3843/assets/99240177/8d44b737-1785-4b79-86cf-8cf862b19e7b" />
 
 ## Question 5 (b)
 
