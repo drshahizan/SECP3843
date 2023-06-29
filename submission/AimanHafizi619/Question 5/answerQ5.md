@@ -26,6 +26,19 @@ Using appropriate indexing techniques on the large dataset to optimize up data r
 >*Import Libraries*
 Using the correct libraries refers getting the required software packages or modules to be use in the code. Libraries provide pre-written functions and tools that help ease complex tasks and enable efficient data processing.
 
+```python
+!pip install pymongo
+
+import pandas as pd
+import numpy as np
+import pymongo
+
+client = pymongo.MongoClient("mongodb+srv://admin:admin@projectcluster.7sndifd.mongodb.net/")
+db = client["Analytics"]
+collection = db["Customers"]
+data = list(collection.find())
+```
+
 ## Question 5 (b)
 Use MongoDB Atlass to visualize the JSON files
 
