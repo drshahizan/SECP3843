@@ -225,11 +225,12 @@ urlpatterns = [
      ```
      python manage.py makemigrations
     python manage.py migrate
-```
- 
-## Question 2 (b)
+
+
+## Question 3(b)
 
 The difficulty of Data Replication and Synchronisation between the MySQL and MongoDB databases occurs while working with two separate databases. To ensure data consistency between the two systems, it is necessary to make sure that any changes made in one database are appropriately reflected in the other. It is advised to investigate database-specific replication solutions or make use of outside tools that provide real-time updates and flawless communication across the databases in order to resolve this problem. Give a thorough breakdown of the procedures you used to solve this problem in your response. You can add pertinent screenshots and snippets of code that show how the solution was used.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
