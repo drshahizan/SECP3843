@@ -23,11 +23,9 @@ When we aggregate data, this will help speed up the rendering process on the das
 In this project, I will perform aggregate to calculate the total number of comments and total number of diggs based on topic.name. The result will contain the _id (topic name), totalComments, and totalDiggs fields.
 ```
    {
-      {
-        _id: "$topic.name",
-        totalComments: { $sum: "$comments" },
-        totalDiggs: { $sum: "$diggs" }
-      }
+      _id: "$topic.name",
+      totalComments: { $sum: "$comments" },
+      totalDiggs: { $sum: "$diggs" }
    }
 ```
 <p align="center">
