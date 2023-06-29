@@ -81,7 +81,7 @@ This is the full dashboard view I had done.
 
 
 #### Additional Charts
-I also had made some additional charts using python in google colab. To view it, click [here]().
+I also had made some additional charts using python in google colab. To view it, click [here](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%205/files/source-code/q5.ipynb).
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
