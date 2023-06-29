@@ -37,19 +37,26 @@ Add Chart\
 
 ### Results:
 1. Media published by Top 10 Writters
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/f7f66aba-8e97-475a-95f3-24594ff89627"/>\
-2. Comment by Media\
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/701b1c48-6843-4c83-b1ba-d8a01c779c93"/>\
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/f7f66aba-8e97-475a-95f3-24594ff89627"/>
+\
+2. Comment by Media
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/701b1c48-6843-4c83-b1ba-d8a01c779c93"/>
+\
 3. Comments by Topics\
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/ab2dfe5a-7202-4b41-bb41-24bbefc180c9"/>\
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/ab2dfe5a-7202-4b41-bb41-24bbefc180c9"/>
+\
 4. Stories by Media\
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/1f9980ad-f046-4ef9-9d78-9197c43c413d"/>\
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/1f9980ad-f046-4ef9-9d78-9197c43c413d"/>
+\
 5. Vote by Media\
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/971a505f-3bcc-4cad-9b6e-42db19615564"/>\
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/971a505f-3bcc-4cad-9b6e-42db19615564"/>
+\
 5. Vote for Media in each Topic\
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/5f25cc90-b0f2-4150-8b15-f5cecb114176"/>\
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/5f25cc90-b0f2-4150-8b15-f5cecb114176"/>
+\
 6. Dashboard\
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/880867f7-a519-49fc-ad20-8ead932dafac"/>
+\
 
 
 
