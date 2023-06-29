@@ -17,6 +17,7 @@ Don't forget to hit the :star: if you like this repo.
 There are many ways to optimize the performance of the portal when dealing with large volumes of JSON data from the dataset. Here I will explain 4 ways of performance optimization:
 
 1.Chuncking
+
 When importing the large dataset to perform operations such data preprocessing, data wrangling and data cleaning, it is important to use the chunking technique to minimize the time take for processing. This method will take the dataset and cut it into pieces of chunk for further processing. The number of chunk can be defined by the users. The code are as follows:
 ```
 import pandas as pd
@@ -50,6 +51,7 @@ df
 ```
 
 2.Data Filtering and Aggregation
+
 It is a good practice to implement filetering and aggregation when fetching and processing the dataset. If we take the whole dataset at once, it will increase the processing time due to the large amount of data which may cause the portal inefficient or not responding.
 ```
 filtered_data = df.loc[df['storeLocation'] == 'Denver']
@@ -59,6 +61,7 @@ aggregated_data
 ```
 
 3.Data Pagination
+
 Data pagination is one of the ways to load and process the data in smaller chunk. In this example, I have set the page to display 100 records only instead of the default display setting which will display up to thousands of records.
 ```
 import pandas as pd
@@ -74,6 +77,7 @@ page_data = df.iloc[start_index:end_index]
 ```
 
 4.Data Compression and Chunked Responses
+
 This method helps a lot when one is trying to export the dataset. Sometime when the dataset is too large, it takes up couples of hours to finish exporting. To solve this problem, we can compress the data using GZIP before exporting it.
 ```
 # Example: Compressing JSON data with gzip
@@ -93,31 +97,38 @@ with open('compressed_data.json.gz', 'wb') as file:
     file.write(compressed_data)
 ```
 
-Please refer to [Q5_SourceCode]() to see the output of the coding.
+Please refer to [Q5_SourceCode](https://github.com/drshahizan/SECP3843/blob/main/submission/jrkong2001utm/Question%205/files/source-code/Q5a_DealingWithLargeDataset.ipynb) to see the output of the coding.
 
 ## Question 5 (b)
 
 <img src="..\Question 5\files\images\dashboard.png">
 
-Bar Chart 1: Total Sales of each Purchase Method
+### Bar Chart 1: Total Sales of each Purchase Method
+
 This chart shows the total sales of each purchase method. From the chart, we can conclude that most of the customer purchase method are in store. The least purchase method is using phone.
 
-Pie Chart 2: Total Item Sold by Item Name
+### Pie Chart 2: Total Item Sold by Item Name
+
 This pie chart shows the percentage and the total number of the item sold categorize by item name. The item that has the highest sales is binder while the least is laptop.
 
-Table 3: Customer Satisfaction
+### Table 3: Customer Satisfaction
+
 This table shows the customer satisfaction on the product they purchased. 1 indicates the lowest level of satisfaction. It can be concluded that half of the customer are satisfied with their services.
 
-Bar Chart 4: Total Sales of the Store in Different Country
+### Bar Chart 4: Total Sales of the Store in Different Country
+
 This bar chart shows the total sales record of the store group by country. Denver has the highest sales record while the San Diego has the least sales record.
 
-Card 5: Total Sales Record
+### Card 5: Total Sales Record
+
 This card shows the accumulate daily sales record.
 
-Card 6: Total of Coupon Used
+### Card 6: Total of Coupon Used
+
 This card shows the accumulate number of coupons that have been used by the customers.
 
-Card 7: Store Location by Country
+### Card 7: Store Location by Country
+
 This card shows the total country where the store/merchant is located.
 
 
