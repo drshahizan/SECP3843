@@ -18,6 +18,11 @@ Don't forget to hit the :star: if you like this repo.
 
 Data Aggrigation is the best way to optimized the performance when dealing with large volumes of JSON data from the dataset.
 
+- fvgrt
+
+  <img width="959" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/10343854-7432-4dfd-bb6f-30eebee824a1">
+
+
 ## Question 5 (b)
 
 To create a dashboard using JSON dataset, there are several platforms that can be used which are Power BI, Tableau as well as MongoDB Atlas Charts. However, it was found out that MongoDB Atlas Charts is best option for this task compared to Power BI and Tableau. One of the main reasons is Seamless Integration with MongoDB since it allows direct connection from the dataset. This can make the loading and transform process become smoother.
@@ -54,8 +59,7 @@ To create a dashboard using JSON dataset, there are several platforms that can b
   <br>
   <h2 ><b>Final Dashboard</b></h2>
 
-  <img width="900" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/48bd3f2a-ae6f-47a3-9bee-bc148cd4f561">
-
+  <img width="900" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/263525c6-684a-4b99-b935-7f4d4d1204cf">
 
 
 ## Contribution 🛠️
