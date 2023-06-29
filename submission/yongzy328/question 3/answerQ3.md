@@ -21,6 +21,8 @@ Don't forget to hit the :star: if you like this repo.
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20004303.png" alt="install mysqlclient">
 
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20010908.png" alt="settings.py">
+
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20024111.png" alt="models.py">
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20004330.png" alt="makemigrations">
@@ -29,15 +31,13 @@ Don't forget to hit the :star: if you like this repo.
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20004419.png" alt="db migrated">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20010513.png" alt="add template folder">
-
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20023915.png" alt="form.py">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20010602.png" alt="views.py register">
-
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20010908.png" alt="settings.py">
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20010513.png" alt="add template folder">
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20023901.png" alt="register.html">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20010602.png" alt="views.py register">
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20023852.png" alt="login.html">
 
@@ -47,15 +47,17 @@ Don't forget to hit the :star: if you like this repo.
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20023611.png" alt="runserver">
 
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20023436.png" alt="register page">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20023454.png" alt="login page">
+
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20023337.png" alt="result cust">
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20023409.png" alt="result tech worker">
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20023422.png" alt="result snr manage">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20023436.png" alt="register page">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20023454.png" alt="login page">
 
 
 
@@ -71,6 +73,12 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20025528.png" alt="mysql-connector-python">
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20025629.png" alt="pymongo">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20101607.png" alt="rep code1">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20101642.png" alt="rep code2">
+
+<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20101653.png" alt="rep code3">
 
 <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%203/files/images/Screenshot%202023-06-29%20034350.png" alt="replication.py">
 
