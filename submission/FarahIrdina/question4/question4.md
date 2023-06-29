@@ -205,7 +205,7 @@ print("Predicted Price: $", np.round(abs(predicted_price[0]), 2))
 
 ### Result
 
-Run the code [here](https://github.com/drshahizan/special-topic-data-engineering/issues) and insert the values that you want to predict. Then, it will display the predicted price.
+Run the code [here](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question5/files/code/Question_4.ipynb) and insert the values that you want to predict. Then, it will display the predicted price.
 
 ![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question4/files/images/prediction.png)
 
