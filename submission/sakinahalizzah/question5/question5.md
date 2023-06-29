@@ -41,10 +41,27 @@ For optimal performance in retrieving and filtering JSON data, it is highly reco
 ## Question 5 (b)
 
 ### Dashboard
+I created the dashboard visualization using MongoDB Atlas. The graph was generated from an analytics dataset and provides useful insights about the data.
+
+### Dashboard
 
 <img src="https://github.com/drshahizan/SECP3843/assets/99240177/961ee63b-46db-4919-bf33-a92b5a062843" />
 
 <img src="https://github.com/drshahizan/SECP3843/assets/99240177/09a064df-5032-4f83-9ec6-ff1cc8b40369" />
+
+Graph Explanation
+
+1. A visual representation of the distribution of accounts based on different products is shown through a pie chart. The count of accounts for each product category such as CurrencyService, Commodity, and InvestmentStock is displayed accordingly.
+
+2. A histogram that exhibits the age distribution of our esteemed customers. This graphical representation is highly beneficial in providing insight into the demographic composition of our customer base. By analyzing this data, we can make informed decisions about our marketing strategies and tailor our products and services to better serve our valued customers.
+
+3. A heatmap is a graphical representation that displays the number of limit products. It is a useful tool that allows users to quickly and easily analyze data and identify patterns or trends in the distribution of limit products. By providing a clear visual representation of the data, a heatmap can help users make informed decisions and take action based on the insights gained from the analysis.
+
+4. A bar graph that displays the total number of transactions according to a specific code. This code serves to indicate whether the customer is making a purchase or selling a product or service. The graph provides a clear and concise overview of the transactional activity, allowing for easy analysis and interpretation of the data.
+
+View the interactive graph:
+
+https://charts.mongodb.com/charts-project-0-xxllg/public/dashboards/649d2c45-66f3-48ea-80e8-9a860b2955ad
 
 
 
