@@ -36,11 +36,11 @@ Source link: [https://github.com/drshahizan/dataset/tree/main/mongodb/03-movies]
 
 | No | Answer | File |
 | :-----: | ---------------------------------------------------- | :------: |
-| 1 | Question 1 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/singthai-srisoi/question1"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 2 | Question 2 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/singthai-srisoi/question2"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 3 | Question 3 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/singthai-srisoi/question3"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 4 | Question 4 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/singthai-srisoi/question4"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 5 | Question 5 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/singthai-srisoi/question5"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 1 | Question 1 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/singthai-srisoi/question1/question1.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 2 | Question 2 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/singthai-srisoi/question2/question2.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 3 | Question 3 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/singthai-srisoi/question3/question3.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 4 | Question 4 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/singthai-srisoi/question4/question4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 5 | Question 5 | <a href="https://github.com/drshahizan/SECP3843/tree/main/submission/singthai-srisoi/question5/question5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
 
 
 
