@@ -15,8 +15,23 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Companies
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+There are many ways to ensure an optimized performance of a website/portal when working with large volume of data in a JSON file. Either using pagination, indexing, caching, data ingestion and storage and many more.
 
+The focused technique used in this answer is by using the data ingestion and storage. The storage used is stored in MongoDB and MySQL.
+These are the steps that should be considered:
+
+1. Import the needed libraries, then create a connection to the Databases.
+   ![1]()
+  
+2. Store the JSON file in MongoDB.
+   ![1]()
+   
+3. Take the data from MongoDB to do the dashboard visualization.
+   ![1]()
+   
+4. In MySQL, all transformed data from the MongoDB will be collected and stored there to ensure    better efficency of data retrieval and querying.
+   ![1]()
+   
 ## Question 5 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
