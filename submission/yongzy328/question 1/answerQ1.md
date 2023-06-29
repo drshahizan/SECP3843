@@ -86,7 +86,14 @@ The loaded JSON data can be viewed in the database. <br>
 
 
 ## Question 1 (b)
-<img src="./files/images/use%20case%20diagram%20(current%20system)%20-%20Page%203.png" alt="system architecture">
+<img src="./files/images/use%20case%20diagram%20(current%20system)%20-%20Page%203.png" alt="system architecture"><br>
+
+The diagram above shows the system architecture of the application. The structure of this system can be viewed from a few perspectives, which are the end-users, front-end architecture and back-end architecture. 
+
+#### End-user
+The end-users of this system include the customers, technical workers and senior management team. The users are able to register and login into the system in order to access the information stored in the system, and also make modifications towards the data, such as inserting new data, updating existing data, or deleting unwanted data. 
+
+#### Front-end architecture
 
 
 
