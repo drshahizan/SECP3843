@@ -165,11 +165,11 @@ k_df[k_df['Cluster']==2].head(10)
 <img  src="./files/images/cluster2.jpg"></img>
 
 ### Conclusion
-- Based on the results, it shows that the clustering is applied based on the results of inspections in different sectors. 
+Based on the results, it shows that the clustering is applied based on the results of inspections in different sectors. 
 - In cluster 0, the mode is `Violation Issued`. 
 - In cluster 1, the mode is `Pass`.
 - In cluster 2, the mode is `No Violation Issued`.
-- Therefore, clustering helps to identify sectors that needs more inspections. For example, sectors in cluster 0 require further monitoring and implement effective solutions to reduce the violation issues in those sectors. 
+In summary, clustering helps to identify sectors that needs more inspections. For example, sectors in cluster 0 require further monitoring and implement effective solutions to reduce the violation issues in those sectors. 
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
