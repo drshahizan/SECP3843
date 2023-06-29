@@ -23,10 +23,10 @@ In this section, I am going to crete my dashboard using the provide servidse on 
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/2abffb6f-befa-4c77-9a40-8d9c167be5de"/>
 
 ### 3. Create New Dashboard and click on 'Add Chart'
-Create dashboard
+Create dashboard\
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/ecece719-b236-4c84-84c5-0a8832479c32"></img>
 
-Add Chart
+Add Chart\
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/ff3edd76-3303-40a1-bc67-e0f7b951fa7f"/>
 
 ### 4. Select the collection that wanted to be use in the project.
