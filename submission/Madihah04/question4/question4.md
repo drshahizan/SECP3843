@@ -14,10 +14,105 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: <a href="https://github.com/drshahizan/dataset/blob/c8e9f4a7cbdb0c1b78ca2c73915ff56ceeb50e70/mongodb/07-stories/stories.json">stories.json</a>
 
 ## Question 4 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-## Question 4 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+For this project,  to identify popular or controversial stories versus less popular ones, I will use K-Means Clustering to group similar stories based on the engagement they received in terms of comments and diggs. As a result, it can help us to identify popular or controversial stories versus less popular ones.
+
+#### Import Dataset
+
+1. Open Google Colab and create a new notebook.
+2. Install the pymongo.
+   ```python
+      !pip install pymongo
+   ```
+3. Import the necessary libraries.
+   ```python
+      # Import libraries
+      import pandas as pd
+      import numpy as np
+      import seaborn as sns
+      import matplotlib.pyplot as plt
+      from pymongo import MongoClient
+      from sklearn.cluster import KMeans
+      from sklearn.preprocessing import StandardScaler
+      from sklearn.metrics import silhouette_score, silhouette_samples
+      import matplotlib.pyplot as plt  
+      %matplotlib inline
+   ```
+4. Set up a connection to MongoDB database and retrieve the data.
+   ```python
+      # Set up MongoDB connection
+      client = MongoClient('mongodb+srv://madihahzabri:admin@cluster0.xgsbper.mongodb.net/')
+      # Access the database and collection
+      db = client['Stories']
+      collection = db['story']
+      
+      # Retrieve data from collection
+      data = list(collection.find())
+
+       # Convert data to a dataframe
+       df = pd.DataFrame(data)
+       df    
+   ```
+
+#### Data Preparation & Cleaning 
+
+```
+df.head()
+```
+```
+df.info()
+```
+```
+df.isna().sum()
+```
+Remove column that contain na value     
+
+```
+df["description"].fillna("NaN", inplace=True)
+df["user.fullname"].fillna("NaN", inplace=True)
+df["thumbnail.originalheight"].fillna("NaN", inplace=True)
+df["thumbnail.originalwidth"].fillna("NaN", inplace=True)
+df["thumbnail.src"].fillna("NaN", inplace=True)
+df["thumbnail.height"].fillna("NaN", inplace=True)
+df["thumbnail.width"].fillna("NaN", inplace=True)
+df["thumbnail.contentType"].fillna("NaN", inplace=True)
+```
+
+#### Output:
+
+
+#### K-Means Clustering
+
+For this project, I decided to use columns "comments" and "diggs" as these columns represent the number of comments and diggs (votes) received by each story. Both columns are numeric and can be used for clustering. By using both features, we can group similar stories based on the engagement they received in terms of comments and diggs. As a result, it can help us to identify popular or controversial stories versus less popular ones.
+
+```
+ data = df[['comments', 'diggs']]
+ data
+```
+```
+# Perform feature scaling
+scaler = StandardScaler()
+data_scaled = scaler.fit_transform(data)
+
+# Perform k-means clustering
+k = 3  # Number of clusters
+kmeans = KMeans(n_clusters=k, random_state=42)
+kmeans.fit(data_scaled)
+
+# Get the cluster labels
+labels = kmeans.labels_
+
+# Add the cluster labels to the DataFrame
+df['cluster'] = labels
+```
+```
+# Visualize the clusters
+plt.scatter(data['comments'], data['diggs'], c=labels)
+plt.xlabel('Number of Comments')
+plt.ylabel('Number of Diggs')
+plt.title('K-means Clustering - Comments vs Diggs')
+plt.show()
+```
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
