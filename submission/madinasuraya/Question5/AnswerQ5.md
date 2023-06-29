@@ -113,7 +113,7 @@ The performance of the portal need to be optimized when dealing with large volum
       <img width="595" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/e066becb-c322-4478-ba2b-793681fa08a7"><br>
         <img width="602" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/8bf787ac-0bb0-4f3c-a71a-7cfc99b712f9">
    </p>
-i
+
  6. To further reducing the volume of the data, I will perform aggregation pipeline in MongoDB Atlas. In the new collection, choose **Aggregation**.
     <p align='center'>
        <img width="598" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/ec1b392c-6cea-48c6-a0de-99545b40e8ce">
