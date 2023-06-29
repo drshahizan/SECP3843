@@ -12,10 +12,28 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Name: Yong Zhi Yan
 #### Matric No.: A20EC0172
-#### Datatset: City Inspections	
+#### Dataset: City Inspections	
 
 ## Question 4
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<img src="./files/images/Screenshot%202023-06-29%20130113.png" alt="install">
+
+<img src="./files/images/Screenshot%202023-06-29%20130129.png" alt="import">
+
+<img src="./files/images/Screenshot%202023-06-29%20130143.png" alt="describe">
+
+<img src="./files/images/Screenshot%202023-06-29%20130154.png" alt="info">
+
+<img src="./files/images/Screenshot%202023-06-29%20130215.png" alt="business null">
+
+<img src="./files/images/Screenshot%202023-06-29%20130226.png" alt="sector null">
+
+<img src="./files/images/Screenshot%202023-06-29%20141951.png" alt="sector count">
+
+<img src="./files/images/Screenshot%202023-06-29%20142837.png" alt="filter df">
+
+<img src="./files/images/Screenshot%202023-06-29%20142035.png" alt="ml1">
+
+<img src="./files/images/Screenshot%202023-06-29%20142043.png" alt="ml2">
 
 
 
