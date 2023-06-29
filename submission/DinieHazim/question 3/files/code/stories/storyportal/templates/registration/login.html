@@ -1,0 +1,29 @@
+      <h1>Login</h1>
+
+      <form method="POST" action="{% url 'login' %}">
+         {% csrf_token %}
+
+         <div>
+            <label for="id_username">Username:</label>
+            <input type="text" id="id_username" name="username">
+         </div>
+
+         <div>
+            <label for="id_password">Password:</label>
+            <input type="password" id="id_password" name="password">
+         </div>
+
+         <div>
+            <input type="submit" value="Login">
+         </div>
+
+         {% if messages %}
+         <div style="text-align: center; color: red;">
+            {% for message in messages %}
+            <p>{{ message }}</p>
+            {% endfor %}
+         </div>
+         {% endif %}
+      </form>
+
+      <p>Don't have an account? <a href="{% url 'user_registration' %}">Register</a></p>
