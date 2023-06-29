@@ -15,7 +15,13 @@ Don't forget to hit the :star: if you like this repo.
 #### Datatset: City Inspections	
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<img src="./files/images/Screenshot%202023-06-29%20155117.png" alt="import">
+
+<img src="./files/images/Screenshot%202023-06-29%20155131.png" alt="date id">
+
+<img src="./files/images/Screenshot%202023-06-29%20155141.png" alt="drop">
+
+<img src="./files/images/Screenshot%202023-06-29%20155058.png" alt="csv">
 
 ## Question 5 (b)
 I have utilized Microsoft Power BI to create the dashboard for city_inspection dataset. First, open Microsoft Power BI and import the JSON file which contain the cleaned data into the Power BI. I have changed the format of column "date" form text to date, and for other columns, the format are remained as text. 
