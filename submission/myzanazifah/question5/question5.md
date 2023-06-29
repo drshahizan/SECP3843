@@ -63,9 +63,11 @@ For the portal, I have suggested using MongoDB database to store the JSON datase
      
 ## Question 5 (b)
 
-For the dashboard, I have created it using Tableau. You can view the Interactive Dashboard in Tableau Public, [Interactive Dashboard](https://public.tableau.com/views/AA_16880213009910/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link).
+For the dashboard, I have created it using Tableau. You can view the Interactive Dashboard in Tableau Public by clicking the picture below.
 You can also download the file [here](https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/files/dashboardq5.twb).
 
+
+[![Dashboard Screenshot](./images/db(9).png)](https://public.tableau.com/views/AA_16880213009910/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
 
 
 
