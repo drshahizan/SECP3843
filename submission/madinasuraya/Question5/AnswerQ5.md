@@ -207,17 +207,46 @@ In conclusion, we can see that after cleaning and aggregating the data, the stor
   
 
 
-   
-
-
-    
-      
-
-
-
-
 ### Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+After performing data cleaning and aggregation, I can use this newly created collection to create charts by utilizing MongoDB Atlas features, to visualize it in a portal. Charts in a dashboard can be created using all the collections in the database. There are a total of 3 collections that I created including the raw, cleaned, and aggregate. By clicking ‘Visualize Your Data’ option, I can create charts and a dashboard based on data in this database.
+
+<p align='center'>
+   <img width="615" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/515f7ee1-b3ba-4148-bb78-f406b041fed3">
+</p>
+
+I can choose my desired collections to be used as a data source for a particular chart.
+<p align='center'>
+   <img width="576" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/9af78a37-76ef-4753-a89b-d3b1aab0435d">
+</p>
+
+There are a total of 5 charts that I create based on this database.
+
+1. **Stacked Column** - Number of Competitors and Employees based on Category
+   <p align='center'>
+    <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/240ed9d6-93e2-457b-9adc-25f2a9a1930d">
+   </p>
+   The Crunchbase dataset's competitiveness and employee counts are shown in this graph for each category. It offers a comparison of the competitors and emploee  size across various industry sectors. We can see the link between the number of competitors and the employees in each category by providing us with new information about the level of competition and the nature of employment across different industries. Businesses may use this data to analyze competition possibilities, and make reasoned judgements about market positioning.
+
+   As we can see from the chart, software companies acquire employees the most while web companies get the most competitors among its industry sector.
+
+  
+2. **Bar graph** - Top 10 Category with Highest Number of Employees
+   <p align='center'>
+      <img width="956" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/3bfccb42-b2a8-4a4c-8517-f1e42129cfdb">
+   </p>
+   This graph displays the top 10 industry categories with the most number of employees. The most popular sectors are highlighted, together with information on their potential for hiring. We can determine the industries with the greatest employment levels by illustrating this data, which may be useful for industry research and talent acquisition.
+   
+   Based on the chart, we can conclude that finance records the highest average number of employees with more than 20,000 people.
+
+
+3. **Heatmap** - Employee Distribution by Category and Country
+   <p align='center'>
+      <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/dfee17de-cc39-4aa2-973b-977c3ad26ca5">
+   </p>
+   Based on the total number of workers, the heatmap visualisation shows how the categories are distributed throughout different countries. The heatmap shows every category's number of employees in detail and draws attention to any geographical differences. This data may be useful for making strategic decisions, such as finding nations with a large pool of talent or analysing market potential in particular business sectors.
+
+   Based on the heatmap, we can see that USA records the highest number of employees in hardware and software sectors while IND provides one of the highest consulting services.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

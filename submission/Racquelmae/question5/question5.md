@@ -16,6 +16,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 5 (a)
 The large dataset is handle with the following steps to optimized the performancce of portal.<br>
+
 Code: [Optimize.ipynb](./files/code/Optimize.ipynb)
 
 ### 1. Import data into Pandas dataframe
@@ -83,7 +84,7 @@ df.to_csv(r'C:\Users\chloe\Desktop\City.csv', index=False)
 <img  src="./files/images/board.jpg"></img>
 
 ### City Business Inspections Dashboard
-The dashboard above displays the overview of the business inspections results in different cities and sectors.
+The [dashboard](./files/code/City%20Business%20Inspections%20Dashboard.pbix) above is created using Power BI by importing the processed dataset and it displays the overview of the business inspections results in different cities and sectors.
 
 #### Filter
 The drop down columns of sector and city are filters of the dashboard to view specific results based on sector or city.
@@ -98,7 +99,7 @@ The drop down columns of sector and city are filters of the dashboard to view sp
 - Certificate Count by ID: Total number of certificates issued based on ID such as ENFO, CMPL, UNIT, ASLS, AMND, DRT, ATTC and ASWC. This shows that the majority businesses are issued with the certificate of ID type `ENFO`. 
 
 #### Line chart
-- Certificate Issuance by Month: Total number of certificates issued based on month. From the chart, it visualises that the month `January` has the most number of certificates issued.
+- Certificate Issuance by Month: Total number of certificates issued based on month. From the chart, it visualises that the month `January` has the most number of certificates issued while `November` has the least number of certificates issued.
 
 #### Table
 - Result of Inspection: Total number of results after inspections in descending order. This illustrates that the `no violation issued` result is the most common result after inspection as the majority of businesses follows the rules.
