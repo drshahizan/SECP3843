@@ -180,17 +180,23 @@ Rename the column of the table.
 
 - Count of limit by transaction count
 
+This graph shows that the account limit does not restrict the user to make transaction as we can see as the account limit increases, the transaction count increases too. 
+
 <p align="center">
   <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question5/images/page1.png" />
 </p>
   
 - Sum of transaction.price by products
 
+The graph below shows that the product 'investmentStock'  has the highest transaction price compared to the others. The other products have almost the same amount of transaction price.
+
 <p align="center">
   <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question5/images/page2.png" />
 </p>
 
 - Count of product by transaction code
+
+There are two types of transaction code which are sell and buy. Based on the bar chart below, the products that are sold is slightly higher that the products that are bought which is 50.02% higher than 49.98%.
 
 <p align="center">
   <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question5/images/page3.png" />
