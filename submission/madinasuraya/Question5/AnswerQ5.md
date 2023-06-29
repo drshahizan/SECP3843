@@ -230,6 +230,13 @@ There are a total of 5 charts that I create based on this database.
    As we can see from the chart, software companies acquire employees the most while web companies get the most competitors among its industry sector.
 
   
+2. **Bar graph** - Top 10 Category with Highest Number of Employees
+   <p align='center'>
+      <img width="956" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/3bfccb42-b2a8-4a4c-8517-f1e42129cfdb">
+   </p>
+   This graph displays the top 10 industry categories with the most number of employees. The most popular sectors are highlighted, together with information on their potential for hiring. The category names are shown on the x-axis, while the y-axis shows the number of workers. We can determine the industries with the greatest employment levels by illustrating this data, which may be useful for industry research and talent acquisition.
+   
+   Based on the chart, we can conclude that finance records the highest average number of employees with more than 20,000 people.
 
 
 
