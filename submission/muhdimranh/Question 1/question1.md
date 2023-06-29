@@ -116,33 +116,50 @@ From all the steps above, there are some steps that I may skip in case I already
 
 ## Question 1 (b)
 
-![Q1](files/images/q1_17.png)
+![Q1](files/images/q1.10.png)
 
 ### 1. User Interface (Application UI, Admin UI, Dashboard):
 
-This is the interface through which users interact with the application. It sends HTTP/HTTPS requests to the web server.
+- This is the interface through which users interact with the application. It sends HTTP/HTTPS requests to the web server.
+- The User Interface (UI) sends HTTP requests to the Web Server (Apache) when a user interacts with the web application.
+- These requests can include actions like submitting a form, clicking a button, or navigating to a specific URL.
 
-### 2. Web Server (Django):
 
-Acts as the central hub of the application. Handles incoming HTTP/HTTPS requests from the user interface. Contains the application layer, models layer, visualization module and JSON dataset.
+### 2. Web Server (Apache):
 
-### 3. Application Layer:
+Apache is a widely used open-source web server that can be used to serve Django applications. It acts as the communication bridge between the client's web browser and the Django application. Apache is responsible for handling the HTTP/HTTPS requests and responses, as well as managing the secure communication through HTTPS.
+
+- The Web Server (Apache) receives the HTTP requests from the User Interface (UI).
+- It processes these requests and generates HTTP responses.
+- The generated responses contain the requested data or instructions for the User Interface (UI) to display or perform certain actions.
+- The Web Server (Apache) sends these HTTP responses back to the User Interface (UI).
+
+### 3. Web Framework (Django)
+
+Django is a web framework that acts as the central hub of the application. It handles incoming HTTP/HTTPS requests from the user interface and provides a set of tools and functionality to build web applications.
+
+- The Web Server (Apache) acts as an intermediary between the User Interface (UI) and the Web Framework (Django).
+- When the Web Server (Apache) receives an HTTP request, it forwards the request to the appropriate Web Framework (Django) application.
+- The Web Framework (Django) processes the request, performs the necessary computations, retrieves data from a database if needed, and generates an appropriate HTTP response.
+- The Web Framework (Django) then sends the HTTP response back to the Web Server (Apache).
+
+### 4. Application Layer:
 
 Includes forms, template and view function responsible for handling requests and generating responses. Communicates with the models layer and retrieves data for presentation.
 
-### 4. Models Layer:
+### 5. Models Layer:
 
 Represents the database layer of the application. Consists of two databases: MySQL DB and MongoDB. Stores and retrieves data using Django's ORM (Object-Relational Mapping). By including bidirectional arrows between the Models Layer and JSON Datasets components, I indicate that data synchronization can occur in both directions. This means that updates made in the models layer can be reflected in the JSON datasets, and vice versa. This ensures data synchronization.
 
-### 5. JSON Datasets:
+### 6. JSON Datasets:
 
 Contains the dataset the Airbnb dataset provided for analysis. These datasets serve as a source of data for the application.
 
-### 6. Data Synchronization:
+### 7. Data Synchronization:
 
 Involves the synchronization of data between the models layer (databases) and the JSON datasets. Ensures that the data remains consistent and up to date in both storage options.
 
-### 7. Data Presentation:
+### 8. Data Presentation:
 
 Involves the generation of visualizations and the presentation of data to the user. This component includes the dashboard and visualization modules.
 
