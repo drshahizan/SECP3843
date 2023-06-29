@@ -199,6 +199,7 @@ def register(request):
 ```
 
 These are other **views** processes that will help users to navigate arounf the portal
+
 ```bash
 @login_required
 def profile(request):
@@ -235,6 +236,7 @@ def user_logout(request):
 ```
 
 **Create Registration Form** 
+
 In the DjangoApp folder, create a registration form file named **forms.py**
 ```bash
 from django.contrib.auth.forms import UserCreationForm
@@ -270,6 +272,7 @@ class RegistrationForm(UserCreationForm):
 ```
 
 ## Question 3 (b)
+The difficulty of Data Replication and Synchronisation between the MySQL and MongoDB databases occurs while working with two separate databases. This issue entails making sure that any changes made in one database are appropriately mirrored in the other, ensuring data consistency across both systems. To address this issue, I:
 
 
 ## Contribution 🛠️
