@@ -281,10 +281,123 @@ python manage.py runserver
 <img src="./files/images/mysql tweets.png"></img>
 </p>
 
-### <a href=''>Source Code</a>
+### <a href='https://github.com/drshahizan/SECP3843/tree/main/submission/TanYongSheng728/question3/files/code'>Source Code</a>
 
 #
 ## Question 3 (b)
+It is challenging to deal with multiple dataset when comes to data replications. In order to syncronize the database in this project which is MySQL and MongoDB, we need to apply the steps below when addressing the challenge.
+
+1. <strong>Database Configuration</strong><br>
+Configure both MySQL and MongoDB databases separately with their respective connection settings, credentials, and other necessary configurations.
+
+<p align="center">
+<img src="./files/images/setting db.png"></img>
+</p>
+
+2. <strong>Choose Replication Logic</strong><br>
+Select a replication method based on the specific requirements and constraints of your project. There are a few different approaches and we are going to use dual write approach.
+
+3. <strong>Dual Write</strong><br>
+To implement the dual write. we need to add code in `model.py` to handle this process.
+
+```
+from pymongo import MongoClient
+
+def save(self, *args, **kwargs):
+        # Perform dual write
+        self.dual_write()
+        super(Tweet, self).save(*args, **kwargs)
+
+    def dual_write(self):
+        # Get the MongoDB connection
+        client = MongoClient('mongodb+srv://tys072801:alextys072801AB@tyscluster.tyt40lp.mongodb.net/')
+        db = client['AA']
+        collection = db['tweets_tweet']
+
+        # Create or update document in MongoDB
+        document = {
+            '_id': str(self._id),
+            'text': self.text,
+            'in_reply_to_status_id': str(self.in_reply_to_status_id),
+            'retweet_count': self.retweet_count,
+            'contributors': str(self.contributors),
+            'created_at': self.created_at,
+            'geo': str(self.geo),
+            'source': str(self.source),
+            'coordinates': str(self.coordinates),
+            'in_reply_to_screen_name': str(self.in_reply_to_screen_name),
+            'truncated': self.truncated,
+            'entities': self.entities,
+            'retweeted': self.retweeted,
+            'place': str(self.place),
+            'user': self.user,
+            'favorited': self.favorited,
+            'in_reply_to_user_id': str(self.in_reply_to_user_id),
+            'id': str(self.id),
+        }
+        db.accounts.update_one({'_id': str(self._id)}, {'$set': document}, upsert=True)
+
+        # Close the MongoDB connection
+        client.close()
+```
+
+4. <strong>Testing and Validate</strong><br>
+In order to test the data we need to create a new file named `dual_write_test.py` under the app folder. Below are the code in the file.
+
+```
+from django.core.management.base import BaseCommand
+from django.utils import timezone
+from tweets.models import Tweet
+
+class Command(BaseCommand):
+   help = 'Run dual write test'
+
+   def handle(self, *args, **options):
+      # Instantiate a Transaction object and save it to trigger the dual write process
+      tweet = Tweet(
+            _id = '5c8eccb0caa187d17ca623ff',
+            text = 'First week of school is over :P',
+            in_reply_to_status_id = 'null',
+            retweet_count = 0,
+            contributors = 'null',
+            created_at = '2010-09-02 18:11:25.000000',
+            geo = 'null',
+            source = 'web',
+            coordinates = 'null',
+            in_reply_to_screen_name = 'null',
+            truncated = False,
+            entities = {},
+            retweeted = False,
+            place = 'null',
+            user = {},
+            favorited = False,
+            in_reply_to_user_id = 'null',
+            id = '22819398300'
+      )
+      tweet.save()
+
+      self.stdout.write(self.style.SUCCESS('Dual write test completed successfully.'))
+```
+
+ - After done run the terminal using the code below.
+ ```
+ python manage.py dual_write_test
+ ```
+
+  - Terminal:
+  <p align="center">
+<img src="./files/images/dual write proof.png"></img>
+</p>
+
+ - MySQL:
+ <p align="center">
+<img src="./files/images/mysql dual.png"></img>
+</p>
+
+ - MongoDB:
+ <p align="center">
+<img src="./files/images/mongo dual.png"></img>
+</p>
 
 
 ## Contribution 🛠️

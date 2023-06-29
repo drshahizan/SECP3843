@@ -14,7 +14,43 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/04-companies" >Companies</a>
 
 ## Question 3 (a)
+### Step 1: Set up Django Project & App
+To set up Django project & app, I need to create and activate the virtual environment first
 
+```
+python -m venv env
+env\Scripts\activate
+```
+
+Then, install the django package
+```
+pip install django
+```
+
+Create new Django project called question 3 and a new app called q3 through command prompt.
+```
+django-admin startproject question3
+cd question3
+python manage.py startapp q3
+```
+
+Command Prompt:
+<img  src="./files/images/django.png"></img>
+
+### Step 2: Install MySQL Python Driver & Configure Database Setting
+Install the mysqlclient as this is a library that allows Django to connect and communicate with the MySQL database.
+```
+pip install mysqlclient
+```
+<img  src="./files/images/mysqlclient.png"></img>
+
+Next, update the settings.py file in question3 project folder. I change the DATABASES dictionary to configure the MySQL database values.
+<img  src="./files/images/setting.png"></img>
+
+
+### Step 3: Configure models.py
+I need to define the models for q3 app that represent the data that I want to store in the database.
+<img  src="./files/images/model.png"></img>
 
 ## Question 3 (b)
 

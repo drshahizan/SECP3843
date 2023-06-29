@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Name: Yong Zhi Yan
 #### Matric No.: A20EC0172
-#### Datatset: City Inspections	
+#### Dataset: City Inspections	
 
 ## Question 1 (a)
 The 5 servers of this project are implemented as below:
@@ -86,8 +86,32 @@ The loaded JSON data can be viewed in the database. <br>
 
 
 ## Question 1 (b)
-<img src="./files/images/use%20case%20diagram%20(current%20system)%20-%20Page%203.png" alt="system architecture">
+<img src="./files/images/use%20case%20diagram%20(current%20system)%20-%20Page%203.png" alt="system architecture"><br>
 
+The diagram above shows the system architecture of the application. The structure of this system can be viewed from a few perspectives, which are the end-users, front-end architecture and back-end architecture. 
+
+#### End-user
+The end-users of this system include the customers, technical workers and senior management team. The users are able to register and login into the system in order to access the information stored in the system, and also make modifications towards the data, such as inserting new data, updating existing data, or deleting unwanted data. 
+
+#### Front-end architecture
+The front-end of the system consisits of the user interfaces where the users can access to the system. The user interfaces link the users together with the back-end of the system, the Django application, using HTML web pages, where users can view and make changes to the application through HTML forms. 
+
+#### Back-end archituecture
+The back-end of the system is the core of the Django application, which consists of the application itself in the structure of Model-View-Template (MVT), MySQL database, MongoDB database and the JSON dataset. 
+
+1. Django framework: <br>
+<li>Model: The component where the data structure of the application is defined. Connect to databases via the database connector such as <code>mysqlclient</code> and <code>djongo</code>. </li>
+<li>View: The place where data is proceesed and retireved from the databases. Acts as the intermediate connection between the model and template. </li>
+<li>Template: Consists of HTML-based structure which is integrated along with the render of Django to generate a dynamic content to the user. </li>
+
+2. MySQL database: <br>
+Used to store data and manage user credential information securely. Connected to the Django framework using the package <code>mysqlclient</code>.
+
+3. MongoDB database: <br>
+Used to handle (store and manipulation) the unstructured or semi-structured data of the application. The JSON file is stored in this database. Connected to the application using <code>djongo</code>.
+
+4. JSON file: <br>
+Consists of the dataset which stored in JSON format. 
 
 
 
