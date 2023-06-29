@@ -275,6 +275,16 @@ There are a total of 5 charts that I create based on this database.
       <img width="951" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/033de277-8ced-42e4-a659-0bf5755c1c6a">
    </p>
 
+To visualize this dashboard in a website, I can use this embedded code and insert it into the portal's coding.
+ <p align='center'>
+     <img width="246" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/92c2efc2-dd25-40d1-95a8-a2424a6b8362"><br>
+    <img width="586" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/9642b77b-0964-434f-a366-69ffcfcd6eab">
+   </p>
+
+This is the final result, in the website.
+ <p align='center'>
+      <img width="822" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/f242f53a-1b43-4ef0-939e-9f428da57833">
+   </p>
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
