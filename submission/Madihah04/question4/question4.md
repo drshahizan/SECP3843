@@ -79,6 +79,7 @@ df["thumbnail.contentType"].fillna("NaN", inplace=True)
 ```
 
 #### Output:
+![image](https://github.com/drshahizan/SECP3843/assets/73293104/0c200fbe-e4be-4dbc-bbd6-b951f81e557c)
 
 
 #### K-Means Clustering
