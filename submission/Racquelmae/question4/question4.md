@@ -81,7 +81,7 @@ The first column is capturing 27% of useful information while the second column 
 <img  src="./files/images/ratio.jpg"></img>
 
 ### 6. Plot graph
-The scatter graph is plotted based on the result data. 
+The scatter graph is plotted based on the `result` data and the colors in the graph indicates the different clusters available in the dataset.
 ```
 import matplotlib.pyplot as plt
 
