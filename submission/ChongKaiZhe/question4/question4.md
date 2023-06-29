@@ -96,25 +96,31 @@ X_scaled = scaler.fit_transform(X)
 
 # Perform K-means clustering for different values of k
 ```python
-k_values = range(2, 10)
-inertias = []
-silhouette_scores = []
+np.random.seed(0)
+n_samples = 200
+n_clusters = 3
 
-for k in k_values:
-    kmeans = KMeans(n_clusters=k, random_state=42)
-    kmeans.fit(X_scaled)
-    inertias.append(kmeans.inertia_)
-    silhouette_scores.append(silhouette_score(X_scaled, kmeans.labels_))
+# Generate random data points in two dimensions
+X = np.random.rand(n_samples, 2)
 
-import matplotlib.pyplot as plt
+# Perform K-means clustering
+kmeans = KMeans(n_clusters=n_clusters)
+kmeans.fit(X)
 
-plt.plot(k_values, inertias, 'bo-')
+# Get cluster labels and cluster centers
+cluster_labels = kmeans.labels_
+cluster_centers = kmeans.cluster_centers_
+
+# Visualize the clusters
+plt.scatter(X[:, 0], X[:, 1], c=cluster_labels, cmap='viridis')
+plt.scatter(cluster_centers[:, 0], cluster_centers[:, 1], marker='x', c='red', label='Cluster Centers')
 plt.xlabel('Number of Clusters (k)')
 plt.ylabel('Inertia')
-plt.title('Elbow Curve')
+plt.title('K-means Clustering')
+plt.legend()
 plt.show()
 ```
-![image](https://github.com/drshahizan/SECP3843/assets/120616074/b0d8e2b9-8d64-4f2c-9017-330c74f4d622)
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/7399dc7d-60bd-4807-9db9-07fc952f4854)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
