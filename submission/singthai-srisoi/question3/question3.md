@@ -564,6 +564,104 @@ The possible approach to solve data replication and synchronization between MySQ
 
 **Database-level replication** is when you replicate the entire database from one to another. This can ensure for simplicity and reliability, as well as ensuring data consistency in database level.
 
+To implement this, in a Django project connect to both database in setting:
+```python
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "dinner",
+        "USER": "root",
+        "PASSWORD": "",
+        "HOST": "localhost",
+        "PORT": "3306",
+    },
+    'mongodb': {
+        'ENGINE': 'djongo',
+        'ENFORCE_SCHEMA': False,
+        'NAME': 'dinner',
+        'CLIENT': {
+            'host': 'localhost:27017',
+            'port': 27017,
+        },
+    },
+}
+```
+
+Create a model in the app:
+```python
+class Meal(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    quantity = models.IntegerField()
+    datetime = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+```
+
+create a function that save data in both database:
+```python
+def saveObj(meal):
+    meal.save()
+    meal.save(using='mongodb')
+```
+
+create a form for adding the Meal data:
+```python
+class MealForm(forms.ModelForm):
+    class Meta:
+        model = Meal
+        fields = ['name', 'quantity']
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Name'}),
+            'quantity': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Quantity'}),
+        }
+```
+
+
+```python
+def index(request):
+    if request.method == 'POST':
+        form = MealForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            quantity = form.cleaned_data['quantity']
+            meal = Meal(name=name, quantity=quantity)
+            # save into both databases
+            saveObj(meal)
+            # redirect
+            return redirect('index')
+    else:
+        form = MealForm()   
+    context = {'form': form}
+    return render(request, 'index.html', context)
+```
+
+```html
+<!-- add meal form -->
+{% extends 'base.html' %}
+{% block title %}Dinner{% endblock title %}
+{% block content %}
+<h2>Add meal for dinner</h2>
+<a class="badge bg-success link-offset-2 link-underline link-underline-opacity-0" href=" {% url 'meals' %} ">Meal List</a>
+<hr>
+<form method="post">
+    {% csrf_token %}
+    {{ form.name.label }}: {{ form.name }}
+    <br>
+    {{ form.quantity.label }}: {{ form.quantity }}
+    <br>
+    <input type="submit" value="Submit" class="btn btn-primary">
+</form>
+{% endblock content %}
+```
+
+at this point, the data will add to database via passing throught `saveObj()` method. By using this, it will synchronous both database by replicating the data.
+
+![image.png](ss/ss32.png)
+
+![image-2.png](ss/ss33.png)
+
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
