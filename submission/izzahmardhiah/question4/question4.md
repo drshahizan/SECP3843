@@ -14,6 +14,7 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [City Inspections Dataset](https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections)
 
 ## Question 4 
+The document can be referred [here](https://github.com/drshahizan/SECP3843/blob/main/submission/izzahmardhiah/question4/files/code/AA_City_Inspection.ipynb)
 **1. Load dataset**
 - Since my JSON data is stored in MongoDB Compass, I establishes a connection to a MongoDB database and retrieves the specific collection. 
 <div align="center"><img src="files/images/load.PNG" height="350px" /></div>
