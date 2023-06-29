@@ -101,7 +101,7 @@ Restart the MySQL server to implement the changes.
 
 #### 3. Create file for data replication and install necessary package
 In the directory of "AA_Q3", create a new folder named "Replication". <br>
-<img src="./files/images/Screenshot%202023-06-29%20025342.png" alt="mkdir">
+<img src="./files/images/Screenshot%202023-06-29%20025342.png" alt="mkdir"><br>
 In the "Replication" folder, install the <code>mysql-connector-python</code> and <code>pymongo</code> package. <br>
 <img src="./files/images/Screenshot%202023-06-29%20025528.png" alt="mysql-connector-python"><br>
 <img src="./files/images/Screenshot%202023-06-29%20025629.png" alt="pymongo"><br>
