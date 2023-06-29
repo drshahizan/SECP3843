@@ -225,7 +225,7 @@ There are a total of 5 charts that I create based on this database.
    <p align='center'>
     <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/240ed9d6-93e2-457b-9adc-25f2a9a1930d">
    </p>
-   The Crunchbase dataset's competitiveness and employee counts are shown in this graph for each category. It offers a comparison of the competitors and emploee  size across various industry sectors. The x-axis lists the category names, while the y-axis counts the number of employees and competitors. We can see the link between the number of competitors and the employees in each category by providing us with new information about the level of competition and the nature of employment across different industries. Businesses may use this data to analyze competition possibilities, and make reasoned judgements about market positioning.
+   The Crunchbase dataset's competitiveness and employee counts are shown in this graph for each category. It offers a comparison of the competitors and emploee  size across various industry sectors. We can see the link between the number of competitors and the employees in each category by providing us with new information about the level of competition and the nature of employment across different industries. Businesses may use this data to analyze competition possibilities, and make reasoned judgements about market positioning.
 
    As we can see from the chart, software companies acquire employees the most while web companies get the most competitors among its industry sector.
 
@@ -234,12 +234,18 @@ There are a total of 5 charts that I create based on this database.
    <p align='center'>
       <img width="956" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/3bfccb42-b2a8-4a4c-8517-f1e42129cfdb">
    </p>
-   This graph displays the top 10 industry categories with the most number of employees. The most popular sectors are highlighted, together with information on their potential for hiring. The category names are shown on the x-axis, while the y-axis shows the number of workers. We can determine the industries with the greatest employment levels by illustrating this data, which may be useful for industry research and talent acquisition.
+   This graph displays the top 10 industry categories with the most number of employees. The most popular sectors are highlighted, together with information on their potential for hiring. We can determine the industries with the greatest employment levels by illustrating this data, which may be useful for industry research and talent acquisition.
    
    Based on the chart, we can conclude that finance records the highest average number of employees with more than 20,000 people.
 
 
+3. **Heatmap** - Employee Distribution by Category and Country
+   <p align='center'>
+      <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/dfee17de-cc39-4aa2-973b-977c3ad26ca5">
+   </p>
+   Based on the total number of workers, the heatmap visualisation shows how the categories are distributed throughout different countries. The heatmap shows every category's number of employees in detail and draws attention to any geographical differences. This data may be useful for making strategic decisions, such as finding nations with a large pool of talent or analysing market potential in particular business sectors.
 
+   Based on the heatmap, we can see that USA records the highest number of employees in hardware and software sectors while IND provides one of the highest consulting services.
 
 
 ## Contribution 🛠️

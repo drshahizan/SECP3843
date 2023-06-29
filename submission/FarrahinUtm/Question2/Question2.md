@@ -38,7 +38,8 @@ c.theaters.json
 d.movies.json
 
 **Connect to MongoDB server** -Open the command prompt and type mongod
-<img src="./image/mongod.png" style="width: 500px; height: 200px;">
+![mongod](https://github.com/drshahizan/SECP3843/assets/121208097/60685a66-3f6f-4555-aadc-eb497c38fd4e)
+
 
 **Import the JSON file into MongoDB**
 
@@ -49,7 +50,8 @@ mongoimport "C:\Users\Acer\Desktop\AA\users.json" -d Mflix -c users
 mongoimport "C:\Users\Acer\Desktop\AA\comments.json" -d Mflix -c comments
 mongoimport "C:\Users\Acer\Desktop\AA\movies.json" -d Mflix -c movies
 ```
-<img src="./image/jsonimport.png" style="width: 500px; height: 200px;">
+![jsonimport](https://github.com/drshahizan/SECP3843/assets/121208097/b1919690-e88c-43dc-914b-def423d78397)
+
 -The -d movie specifies the name of the database, which in MongoDB localhost is movie database.
 
 -theatres is defined as the specified collection in the movie database using the -c option.
@@ -57,17 +59,20 @@ mongoimport "C:\Users\Acer\Desktop\AA\movies.json" -d Mflix -c movies
 **Accessing the MongoDB Shell**
 
 Next, inside the command type 'mongosh' to access the MongoDB Shell
-<img src="./image/mongosh.png" style="width: 500px; height: 200px;">
+![mongosh](https://github.com/drshahizan/SECP3843/assets/121208097/56a7de40-05ad-43b3-aa77-3618494c2458)
+
 
 This application allows users to inspect every database and collection from MongoDB Compass.
-<img src="./image/mongodatabase.png" style="width: 500px; height: 200px;">
+![mongodatabase](https://github.com/drshahizan/SECP3843/assets/121208097/f96a3844-0833-4939-b504-839a855005b9)
+
 ## Question 2 (b)
 
 1.Use the mongod command at the command prompt to launch the MongoDB server.
 
 2.To swap the database, type use mflix in the MongoDB Compass' MongoDB Shell terminal.
 
-<img src="./image/renamedb.png" style="width: 200px; height: 100px;">
+![renamedb](https://github.com/drshahizan/SECP3843/assets/121208097/b75b473a-f235-43b6-9bdc-d4902925eeee)
+
 
 3.Next:
 - employ **db.theaters.theatres** in db.theaters using insertOne() to add new data to a JSON file in MongoDB.
@@ -76,23 +81,28 @@ This application allows users to inspect every database and collection from Mong
 
 - The function to add new data to MongoDB is **insertOne()**.
 
-  <img src="./image/create.png" style="width: 500px; height: 200px;">
+![create](https://github.com/drshahizan/SECP3843/assets/121208097/15c7f5a8-423b-4c6e-96dd-a70023d7ac18)
+
 
 - To access the desired data's detail information from the MongoDB database, use **db.theaters.find()**.
 
-    <img src="./image/find.png" style="width: 500px; height: 200px;">
+  ![find](https://github.com/drshahizan/SECP3843/assets/121208097/b3e50c84-5c53-417f-a310-c82b2cf77280)
+
     
   - To change a single piece of data in MongoDB, use **db.theaters.updateOne()**.
     
-    <img src="./image/updateone.png" style="width: 500px; height: 200px;">
+    ![updateone](https://github.com/drshahizan/SECP3843/assets/121208097/3dc928eb-0313-4a0f-963c-cc2795f25c43)
+
     
 - this is the data for id 1010 before update
 
-    <img src="./image/beforeupdate.png" style="width: 500px; height: 200px;">
+   ![beforeupdate](https://github.com/drshahizan/SECP3843/assets/121208097/8500ff27-f493-49a9-af87-44c51415dd95)
+
 
     - this is the data for id 1010 after update
     
-    <img src="./image/afterupdate.png" style="width: 500px; height: 200px;">
+    ![afterupdate](https://github.com/drshahizan/SECP3843/assets/121208097/4b68eeaa-331f-481e-b2ca-f530123ddd23)
+
 
 
     - To change a many piece of data in MongoDB, use **db.theaters.updateMany()**.
