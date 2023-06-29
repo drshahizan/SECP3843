@@ -32,7 +32,7 @@ The process involved are :
 
 ## Data Cleaning
 1. Import the JSON file
-```
+```py
 import pandas as pd
 
 # Load the JSON file into a DataFrame
@@ -59,7 +59,7 @@ df.head(5)
 * tweet length from column text
 * Hence, other columns will be drop.
 
-```
+```py
 drop_cols = ['in_reply_to_status_id', 'geo', 'source', 'coordinates','in_reply_to_screen_name','truncated','place','favorited','in_reply_to_user_id']
 df = df.drop(drop_cols, axis=1)
 df
@@ -68,7 +68,7 @@ df
 
 4. Remove the unwanted {} and element name in column _id, entities, user, id and retweeted status
 
-```
+```py
 df['_id'] = df['_id'].str['$oid']
 df
 ```
@@ -76,7 +76,7 @@ df
 
 5. Seperate items in entities into columns.
 
-```
+```py
 df['user_mentions'] = df['entities'].apply(lambda x: x.get('user_mentions', []))
 df['urls'] = df['entities'].apply(lambda x: x.get('urls', []))
 df['hashtags'] = df['entities'].apply(lambda x: x.get('hashtags', []))
@@ -86,20 +86,20 @@ print(df.head())
 <img width="467" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/4829cbc4-e637-4294-8fd4-e3cb53581338">
 
 6. Then, entities column can be dropped.
-```
+```py
 drop_cols = ['entities']
 df = df.drop(drop_cols, axis=1)
 df
 ```
 7. Check items in column user.
-```
+```py
 df.iloc[0]["user"]
 ```
 <img width="527" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/b58107c6-ab1b-4eb0-9e20-abad5cdf9b2c">
 
 8. Since we want to use `friends_count` , `favourites_count` and `followers_count` , extract from column user.
    
-```
+```py
 df['friends_count'] = df['user'].apply(lambda x: x.get('friends_count', []))
 df['followers_count'] = df['user'].apply(lambda x: x.get('followers_count', []))
 df['favourites_count'] = df['user'].apply(lambda x: x.get('favourites_count', []))
@@ -110,7 +110,7 @@ print(df.head())
 
 9. Remove unwanted characters from  `friends_count` , `favourites_count` and `followers_count`.
     
-```
+```py
 df['friends_count'] = df['friends_count'].str['$numberInt']
 df['followers_count'] = df['followers_count'].str['$numberInt']
 df["words_count"] = df.apply(lambda tweet: len(tweet["text"].split()),axis=1)
@@ -121,7 +121,7 @@ df
 
 10. Next, we will create column hashtag_count, word_count and links_count retrieve from text column.
 
-```
+```py
 df["hashtag_count"] = df.apply(lambda tweet: tweet["text"].count("#"),axis=1)
 df["links_count"] = df.apply(lambda tweet: tweet["text"].count("http"),axis=1)
 df['id'] = df['id'].str['$numberLong']
@@ -130,7 +130,7 @@ df
 ```
 11. Next, we will combine all features in one table.
     
-```
+```py
 features = df[["tweet_length","followers_count","favourites_count","friends_count","links_count","words_count","hashtag_count"]]
 features
 ```
@@ -142,7 +142,7 @@ features
 <br>
 Firstly, change the datatype for both attributes.
 
-```
+```py
 # Convert columns to numeric data types
 df['favourites_count'] = pd.to_numeric(df['favourites_count'])
 df['followers_count'] = pd.to_numeric(df['followers_count'])
@@ -152,14 +152,14 @@ df['engagement_ratio_favorites']
 <img width="456" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/4a1ce584-f9fa-496a-807e-0755ff43010a">
 
 2. Find median of the ratio.
-```
+```py
 df['engagement_ratio_favorites'] .median()
 ```
 `median` : 0.005714285714285714
 
 3. Then, compare the ratio and the median to obtain whether the record is classified as `is_trending` .
    
-```
+```py
 import numpy as np # linear algebra
 df["is_trending"] = np.where(df["engagement_ratio_favorites"]>df["engagement_ratio_favorites"].median(), 1, 0)
 df["is_trending"]
@@ -168,7 +168,7 @@ df["is_trending"]
 
 5. Define `is_trending`as labels.
 
-```
+```py
 labels = df["is_trending"]
 labels
 ```
@@ -177,7 +177,7 @@ labels
 
 1. Firstly, implement standardization process where the mean of each feature has been subtracted, and the result has been divided by the standard deviation. This is usefuwhen working with features that have different scales or units.
 
-```
+```py
 from sklearn.preprocessing import StandardScaler
 scaler = StandardScaler()
 scaled_features = scaler.fit_transform(features)
@@ -187,7 +187,7 @@ scaled_features
 
 2. Now we will divide the data to Training set and Test set.
 
-```
+```py
 from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(scaled_features, labels, test_size=0.2)
 print(X_train.shape)
@@ -198,7 +198,7 @@ print(y_test.shape)
 <img width="277" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/3b7d737c-5326-4cd0-bfa2-2839b67c33da">
 
 3. Implement K-NN algorithm to the model and plot scatter plot to view the result.
-```
+```py
 from sklearn.neighbors import KNeighborsClassifier
 import matplotlib.pyplot as plt
 scores = list()
@@ -218,7 +218,7 @@ plt.show()
 
 3. Print the classification report to analyze the machine learning result.
    
-```
+```py
 from sklearn.metrics import classification_report, confusion_matrix
 knn=KNeighborsClassifier(n_neighbors=3)
 knn.fit(X_train,y_train)
@@ -231,7 +231,7 @@ print(classification_report(y_test, predictions))
 
 3. Print the confusion matrix and visualize in heatmap.
    
-```
+```py
 print(confusion_matrix(y_test, predictions))
 import seaborn as sns
 plt.figure(figsize=(12,10))
@@ -244,6 +244,8 @@ sns.heatmap(confusion_matrix(y_test, predictions), annot=True, cmap="jet")
 False Positive (FP): 763 - The number of instances that were incorrectly predicted as the positive class when they were actually negative.<br>
 False Negative (FN): 1046 - The number of instances that were incorrectly predicted as the negative class when they were actually positive.<br>
 True Positive (TP): 1396 - The number of instances that were correctly predicted as the positive class.<br>
+
+> Based on these findings, the model has a moderate level of accuracy (63%) in predicting whether or not tweets would go trending. However, the number of false negatives (1046) is rather large, showing that the model struggles to correctly detect positive events. This shows that the model's performance need to be improved, in terms of lowering false negatives and improving recall.
 
 ## Google Collab Code
 
