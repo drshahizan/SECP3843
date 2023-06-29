@@ -92,3 +92,76 @@ Result after Caching :
 
 ## Question 5 (b)
 
+- Install the required dependacies.
+
+```
+pip install matplotlib
+```
+
+<img src="./files/images/5b1.png" />
+
+- In `views.py`, create the graphs
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+def chart(request):
+    # Retrieve data from MongoDB collections
+    accounts = db.analytics_app_account.find()
+    customers = db.analytics_app_customer.find()
+    transactions = db.analytics_app_transaction.find()
+
+    # Count of Each Table
+    table_names = ['Accounts', 'Customers', 'Transactions']
+    table_counts = [len(list(accounts)), len(list(customers)), len(list(transactions))]
+
+    # Create a bar graph for count of each table
+    plt.bar(table_names, table_counts)
+    plt.xlabel('Table')
+    plt.ylabel('Count')
+    plt.title('Count of Each Table')
+
+    # Save the graph to a file
+    graph_path = 'C:/Users/Lee MQ/Desktop/MSO AA/analytics/dashboard_app/static/graph.png'
+    plt.savefig(graph_path)
+
+    # Pass the graph path and data to the template
+    return render(request, 'dashboard.html', {
+        'graph_path': graph_path,
+        'table_names': table_names,
+        'table_counts': table_counts
+    })
+```
+
+- Create the template for the graph `dashboard.html`.
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+</head>
+<body>
+    {% load static %}
+    <img src="{% static 'graph.png' %}" alt="Data Summary">
+</body>
+</html>
+```
+
+- Add the path in `urls.py`
+
+<img src="./files/images/5b2.png" />
+
+
+- Open the terminal and navigate to the project directory. To test and validate the dashboard, run the command below.
+
+```
+python manage.py runserver
+```
+
+- Bar Chart Count of data in each datasets
+
+<img src="./files/images/5b3.png" />
+
+> Knowing the count of each dataset in a MongoDB collection can provide valuable insights and serve various purposes in data analysis and visualization. Here are some reasons why it is important to know the count of each dataset. The count of each dataset gives a high-level overview of the size and volume of data in the collection. It helps in understanding the scale and scope of the data being analyzed.
