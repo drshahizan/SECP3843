@@ -29,7 +29,6 @@ In this part, I need to create a login and registration function for three types
     - [Configuring URLs](#configuring-urls)
     - [Demo](#demo)
   - [Question 3 (b)](#question-3-b)
-  - [Contribution 🛠️](#contribution-️)
 
 
 ### Pre-Requisites
