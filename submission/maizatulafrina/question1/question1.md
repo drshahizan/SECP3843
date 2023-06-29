@@ -81,7 +81,7 @@ project, and the MySQL and MongoDB databases, few servers need to be setup and c
 
 - Load the JSON Dataset into database
 
-<img width="697" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/8a30261c-88c1-4e25-b902-850a4c4b284a">
+  <img width="697" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/8a30261c-88c1-4e25-b902-850a4c4b284a">
 
 
 ## Question 1 (b
