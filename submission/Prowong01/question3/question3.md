@@ -68,16 +68,16 @@ Import the User model from  models.py file, which defines the attributes and met
 <img  src="./files/images/forms.png"></img>
 
 ### Step 6: Create View File and Template
-Define a login_view function 
+#### Define a login_view function 
 <img  src="./files/images/login_view.png"></img>
 
-Define a user_registration function 
+#### Define a user_registration function 
 <img  src="./files/images/user_register.png"></img>
 
-Locate each user type to view to the related the template.
+#### Locate each user type to view to the related the template.
 <img  src="./files/images/all.png"></img>
 
-Create new directories at the app and put all the template inside one folder.
+#### Create new directories at the app and put all the template inside one folder.
 <img  src="./files/images/template.png"></img>
 
 In your settings.py file, update the TEMPLATES setting to include the directory and remember to import the os module also.
