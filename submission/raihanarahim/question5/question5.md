@@ -172,7 +172,7 @@ with open('/content/drive/MyDrive/tweetsmodified.json', 'r') as file:
 for obj in parse_json_stream(json_data_chunks):
     print(obj)
 ```
-> JSON data succesfully parsed thus we can see that  less time taken needed to accomplish parsing.
+> JSON data succesfully parsed thus less time taken needed to accomplish parsing.
 
 ### 3. Use JSON caching
 * Caching JSON data will reduce the time taken to fetch data. This is because it will retrieve the data from cache instead of having to retrieve from memory. This caching method will improve portal performance significantly.
