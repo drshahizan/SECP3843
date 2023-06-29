@@ -15,10 +15,24 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: SALES
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+When dealing with large volumes of JSON data in a portal and aiming to optimize performance during dashboard visualizations, there are several strategies to employ:
+
+1. Data Aggregation
+
+Rather than processing the complete dataset for each visualization, pre-calculate and save the aggregated values for the dashboard.
+
+3. Pagination and Lazy Loading
+
+To enhance the performance of the Django application, we can implement pagination or lazy loading. The application will load and display a smaller amount of data first, reducing the load time and improving the responsiveness.
+
+5. Client-Side Data Processing
+
+Libraries like Chart.js can help with data manipulations and visualizations, which reduces the amount of data transferred between the server and the client. 
+
 
 ## Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<img width="1440" alt="Screenshot 2023-06-29 at 1 09 38 PM" src="https://github.com/drshahizan/special-topic-data-engineering/assets/76076543/ba676357-c89e-4241-98f2-064b775f8842">
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
