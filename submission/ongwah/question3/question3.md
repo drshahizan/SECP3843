@@ -33,7 +33,7 @@ python manage.py startapp accounts
 <img src="./files/images/databases.png">
 
 4. Define the User model in the `models.py` of the accounts app.
-```
+```py
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -60,7 +60,7 @@ python manage.py migrate
 
 
 6. Create a registration and login form by putting the following code into a new file called `forms.py` in the `account`s app.
-```
+```py
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from .models import User
@@ -84,7 +84,7 @@ class LoginForm(forms.Form):
 ```
 
 7. Update `views.py` in the `accounts` app to handle user registration and login functionality.
-```
+```py
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .forms import RegistrationForm, LoginForm
@@ -121,7 +121,7 @@ def sign_out(request):
 
 8. Next, we need to create necessary html files for the views. Inside the `accounts` directory, create a directory called `templates`. Then inside the templates directory, create another directory named `accounts` and put the html files in it.
 - `home.html`
-```
+```html
 {% if user.is_authenticated %}
     <div class="alert alert-success" role="alert">
         <h3>Welcome {{ user.username }}!</h3>
@@ -137,7 +137,7 @@ def sign_out(request):
 ```
 
 - `register.html`
-```
+```html
 <h3>Register here</h3>
 <hr>
 
@@ -151,7 +151,7 @@ def sign_out(request):
 ```
 
 - `login.html`
-```
+```html
 <h3>Login</h3>
 <hr>
 
@@ -165,7 +165,7 @@ def sign_out(request):
 ```
 
 9. Define the routes in the `urls.py` file.
-```
+```py
 from django.contrib import admin
 from django.urls import path
 from accounts import views as accounts_views
@@ -180,7 +180,55 @@ urlpatterns = [
 ```
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+1. Install necessary libraries.
+```
+pip install mysql-connector 
+pip install pymongo
+```
+
+2. Create a new python script named `sql_to_mongo.py` to replicate the data from MySQL to MongoDB.
+```py
+import mysql.connector 
+import pymongo
+ 
+delete_existing_documents = True
+ 
+mysql_host="localhost" 
+mysql_database="db_mflix" 
+mysql_user="root" 
+mysql_password=""
+ 
+mongodb_host = "mongodb://localhost:27017/" 
+mongodb_dbname = "mflix"
+mongodb_col = "accounts_user"
+ 
+mysqldb = mysql.connector.connect( 
+   host=mysql_host, 
+   database=mysql_database, 
+   user=mysql_user, 
+   password=mysql_password 
+)
+
+mycursor = mysqldb.cursor(dictionary=True) 
+mycursor.execute("SELECT * from accounts_user;") 
+myresult = mycursor.fetchall()
+ 
+myclient = pymongo.MongoClient(mongodb_host) 
+mydb = myclient[mongodb_dbname] 
+mycol = mydb[mongodb_col]
+ 
+if len(myresult) > 0: 
+       x = mycol.insert_many(myresult) #myresult comes from mysql cursor 
+       print(len(x.inserted_ids), "inserted")
+```
+
+Run the code to execute the script.
+```
+python sql_to_mongo.py
+```
+
+<img src="./files/images/sql_to_mongo.png">
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

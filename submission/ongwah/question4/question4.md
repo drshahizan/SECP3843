@@ -98,7 +98,7 @@ def index(request):
 
 4. Next, we need to create the html file for the recommender view. Inside the `recommender` directory, create a directory called `templates`. Then inside the templates directory, create another directory named `recommender` and put the html files in it.
 - `index.html`
-```
+```html
 <h3>Movie Recommender</h3>
 
 <form action="" method="POST">
@@ -135,7 +135,7 @@ def index(request):
 ```
 
 5. Add the route to the `urls.py` file.
-```
+```py
 ...
 from recommender import views as recommender_views
 

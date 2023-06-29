@@ -35,14 +35,14 @@ python manage.py startapp dashboard
 ```
 
 2. Update the code in the `views.py` file of `dashboard` app.
-```
+```py
 from django.shortcuts import render
 
 def index(request):
     return render(request, "dashboard/index.html")
 ```
 
-3. Build the dashboard using MongoDB Atlas Charts. Login to MongoDB Atlas and navigate to Charts to create a dashboard. The dashboard is built with several charts including:
+3. Build the dashboard using **MongoDB Atlas Charts**. Login to MongoDB Atlas and navigate to Charts to create a dashboard. The dashboard is built with several charts including:
 
 - A card that show the total number of movies.
 
@@ -98,7 +98,7 @@ def index(request):
 
 
 5. Add the route to the `urls.py` file.
-```
+```py
 ...
 from dashboard import views as dashboard_views
 
