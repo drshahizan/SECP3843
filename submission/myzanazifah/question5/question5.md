@@ -62,7 +62,12 @@ For the portal, I have suggested using MongoDB database to store the JSON datase
      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/images/q5(10).png" />   
      
 ## Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<body>
+  <!-- Tableau Embed Code -->
+  <iframe src="https://public.tableau.com/app/profile/myza.nazifa.binti.nazry/viz/AA_16880213009910/Dashboard1?publish=yes" width="800" height="600"></iframe>
+</body>
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
