@@ -383,28 +383,28 @@ python manage.py runserver
 
 Control+Click on the link.
 
-<img src="..\Question 3\files\images\index.png.png">
+<img src="..\Question 3\files\images\index.png.png" width=60%>
 
 Output:
 Login page
 
-<img src="..\Question 3\files\images\index.png.png" >
+<img src="..\Question 3\files\images\index.png.png" width=60%>
 
 Sign up page (Customer, Senior Management, Technical Staff)
 
-<img src="..\Question 3\files\images\signup.png.png" >
+<img src="..\Question 3\files\images\signup.png.png" width=60%>
 
 Customer index page after login
 
-<img src="..\Question 3\files\images\cust_index.png">
+<img src="..\Question 3\files\images\cust_index.png" width=60%>
 
 Senior Management index page after login
 
-<img src="..\Question 3\files\images\senior_index.png">
+<img src="..\Question 3\files\images\senior_index.png" width=60%>
 
 Technical Staff index page after login
 
-<img src="..\Question 3\files\images\tech_index.png">
+<img src="..\Question 3\files\images\tech_index.png" width=60%>
 
 ## Question 3 (b)
 To ensure that the any changes made in one database are accurately reflected in the other, I use dual write method.
