@@ -63,10 +63,71 @@ For the portal, I have suggested using MongoDB database to store the JSON datase
      
 ## Question 5 (b)
 
-For the dashboard, I have created it using Tableau. You can view the Interactive Dashboard in Tableau Public, [Interactive Dashboard](https://public.tableau.com/views/AA_16880213009910/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link).
+[![Dashboard Screenshot](./images/db(9).png)](https://public.tableau.com/views/AA_16880213009910/Dashboard1?:language=en-US&publish=yes&:display_count=n&:origin=viz_share_link)
+
+### Stories Dashboard
+The Stories dashboard gives you a comprehensive oversight of user activities and posted stories on the Diggs social media platform, offering valuable insights and analytics. View the Interactive Dashboard in Tableau Public by clicking the picture above.
 You can also download the file [here](https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/files/dashboardq5.twb).
 
+#### Components in Stories Dashboard
 
+1. Number of Users, Profile Views and Comments    
+
+     <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/images/db(2).png" /></div>
+
+     - Number of Users: Displays the total count of users registered on the Diggs social media. 
+     - Number of Profile Views: Displays the total number of views received on user profiles
+     - Number of Comments: Displays the total count of comments posted by users on various stories.
+
+2. Title Stories   
+
+     <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/images/db(3).png" /></div>
+
+     The Title Stories section displays the story titles posted by users which shows the diverse range of content shared on the platform.
+       
+3. Number of Comments by Topics   
+
+     <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/images/db(4).png" /></div>
+
+     The chart above displays the visual representation of the engagement levels by the number of comments across different discussion topics. Hence, this will enable us to easily compare and analyze the popularity surrounding various subjects within the Diggs community.
+
+4. Number of Social Engagements by Categories   
+
+     <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/images/db(5).png" /></div>
+
+     The Bar Chart above showcases the Number of Social Engagements by Categories which presents the level of engagement within each category based on the number of comments and digg votes. Hence, provide valuable insights into the popularity of different content categories.
+
+5. User Engagement Trends over Time
+For this chart, you can choose to see either the Comments chart, Diggs chart or Profile Views chart by selecting using the dropdown.
+
+     - Number of Comments by Days   
+
+     <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/images/db(6).png" /></div>
+     
+     The graph above display the number of comments users submit on certain days.
+     
+     - Number of Diggs by Days  
+
+     <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/images/db(7).png" /></div>
+
+
+     The graph above display the number of digg votes users submit on certain days.
+
+   
+     - Number of Profile Views by Days  
+
+
+     <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/images/db(8).png" /></div>
+
+
+     The graph above display the number of profile views users gain on days they submit stories or posts.
+
+6. Filters
+   
+   You can see the datas based on certain users as shown in picture below by selecting the username in the dropdown.  
+
+     <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/images/db(1).png" /></div>
+   
 
 
 ## Contribution 🛠️

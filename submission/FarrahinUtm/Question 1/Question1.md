@@ -103,7 +103,21 @@ Design a detailed and comprehensive system architecture. Focusing on the seamles
 
 We will concentrate on achieving seamless integration between the web server, dataset, and databases in the system architecture. Django will act as the web server in this architecture, and MySQL and MongoDB will function as the databases. The dataset will be in JSON format. Here is a thorough breakdown of each element:
 
+1.Django-based web server
 
+Model-View-Controller (MVC) architecture is used by the high-level Python web framework Django.
+
+2.Sets of data (JSON)
+
+JSON (JavaScript Object Notation) is a lightweight, simple-to-understand data exchange format.
+
+3.(MySQL and MongoDB) databases:
+
+A well-known relational database management system (RDBMS) with open-source code is MySQL, which stores structured data in tables with preset schemas.
+
+MongoDB is a document-oriented NoSQL database that stores data in adaptable, self-descriptive documents that resemble JSON.
+
+It is suited for managing unstructured or rapidly changing data due to its great performance, scalability, and adaptability.
 
 
 

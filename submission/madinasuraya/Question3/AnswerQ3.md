@@ -72,12 +72,11 @@ Don't forget to hit the :star: if you like this repo.
      ```
      python manage.py migrate
      ```
-     
-7. Open localhost and create new database. I created my folder as 'aa'.
-      <p align="center">
-           <img width="162" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/af17e0cd-33c6-4216-9f79-50e4941f4f75">
-      </p>
-
+7. Open localhost and add new database as below.
+   <p align='center'>
+      <img width="146" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/b9ae24e3-2c1d-4bda-bc1d-59a97ffb858c">
+   </p>
+   
 8. Open **models.py** in the **signup** folder and start making user authentication. To perform this, firstly, define django authentication models and import it. Then, define the class for each user needed. In here, there will be three users which are customers, technical workers, and senior management. This also means that each user type will have their own table in the database. Since we use some common fields such as **first_name, last_name, email, username, and password**, we dont have to specify it in the class as the django authentication model already include this.
    ```
    from django.contrib.auth.models import AbstractUser
@@ -121,7 +120,7 @@ Don't forget to hit the :star: if you like this repo.
      
 ### Question 3 (b)
 
-To maintain data consistency across both systems it is recommended to perform some data replication techniques dedicated to the specific database to facilitate real-time updates and seamless interaction between them. Here are the steps that can be used to overcome this challenges to maintain synchronization between MySQL and MongoDB.
+To maintain data consistency across both systems it is recommended to perform data replication technique dedicated to the specific database to facilitate real-time updates and seamless interaction between them. Here are the steps that can be used to overcome this challenges to maintain synchronization between MySQL and MongoDB.
 
 Firstly, it is advisable to choose the best replication techniques. I would recommend using **master-slave replication**. This technique is also known as single-leader replication. The master (single leader) node works as the primary database, while the slave (one or more) will maintain copies of the master's data. To be specific, master nodes handle write queries while slave nodes handle read queries. Whenever, master node performs a write operation, it will be replicated across the system to maintain data consistency. Unless the sales database is offline and there are no other slaves, master will handle the operations temporarily. These replication techniques are often being used in relational databases such MySQL and NoSQL databases, MongoDB. One thing for sure, if the leader suddenly fails, the data is available to the followers.
 

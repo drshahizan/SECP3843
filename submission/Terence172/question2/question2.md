@@ -142,7 +142,7 @@ mongoimport --uri="mongodb+srv://<connection-string>" --collection=aa_collection
 In my case it looked like this:
 
 ```bash
-mongoimportmongoimport --uri="mongodb+srv://terence:<Password Here>@learningcluster.p8bbacm.mongodb.net/" --collection=aa_collection --file="E:\Downloads\new_data.json" --jsonArray
+mongoimport --uri="mongodb+srv://terence:<Password Here>@learningcluster.p8bbacm.mongodb.net/" --collection=aa_collection --file="E:\Downloads\new_data.json" --jsonArray
 ```
 
 After pasting your syntax, hit `Enter` and watch your atlas collection fill up with data from your json file.

@@ -17,17 +17,13 @@ Don't forget to hit the :star: if you like this repo.
 
 In this part I decided to perform sentiment analysis to classify tweets as positive, negative, or neutral based on their content. The chosen machine learning approach for sentiment analysis is the Naive Bayes algorithm. This algorithm will give me insightful analysis of the dataset, as for the portal it will enable the users to gain valuable insights from the tweets. Later on, I will visualise and descrie how well this model performed.
 
-- [Special Topic Data Engineering (SECP3843): Alternative Assessment](#special-topic-data-engineering-secp3843-alternative-assessment)
-      - [Name: Terence Loorthanathan](#name-terence-loorthanathan)
-      - [Matric No.: A20EC0165](#matric-no-a20ec0165)
-      - [Dataset: tweets.json](#dataset-tweetsjson)
+
   - [Question 4](#question-4)
     - [Import the Data](#import-the-data)
     - [Preparing the Data](#preparing-the-data)
     - [Preparing to Train the Model](#preparing-to-train-the-model)
     - [Train \& Evaluate the Naive Bayes Model](#train--evaluate-the-naive-bayes-model)
     - [Visualising the Dataset \& Performance of the Model](#visualising-the-dataset--performance-of-the-model)
-  - [Contribution 🛠️](#contribution-️)
 
 
 Want a better look at how i coded this? Click <a href="./files/code/Question4_STDE_AA_TerenceLoorthanathan.ipynb">Here</a>

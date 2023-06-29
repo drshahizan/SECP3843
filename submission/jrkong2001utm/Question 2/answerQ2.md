@@ -39,7 +39,7 @@ Choose the variable "Path" and click edit.
 Click "New" and paste the folder path of the bin folder of MongoDB Compass (GUI) that we have copied earlier. Then, click "Ok".
 
 Go to your Command Prompt. Type the command "mongod". You will see the output as follows:
-<img src="..\Question 2\files\images\mongod.png">
+<img src="..\Question 2\files\images\mongod.png" width=80%>
 
 # Import the database
 Now, we can start to import the database using the JSON file given.
@@ -51,11 +51,11 @@ mongoimport "C:\Users\User\OneDrive\Documents\Apowersoft\Desktop\WBL\STDE\sales.
 
 The first part of the code is the file path where the json file located. The `-d` indicates the database name while the `-c` indicates the collection name. When the database has been successfully imported, it is expected to see the output as below:
 
-<img src="..\Question 2\files\images\import.png">
+<img src="..\Question 2\files\images\import.png" width=80%>
 
 To double-check on your database has been successfully imported or not, open your MongoDB Compass. You will see the data displayed in the database you have created just now.
 
-<img src="..\Question 2\files\images\mongodb.png">
+<img src="..\Question 2\files\images\mongodb.png" width=80%>
 
 <br>
 
@@ -91,7 +91,7 @@ db.sales.insertOne({
 
 Output:
 
-<img src="..\Question 2\files\images\create.png">
+<img src="..\Question 2\files\images\create.png" width=40%>
 
 I will show the record created in the read query part later.
 <br>
@@ -106,7 +106,7 @@ db.sales.find({ "_id": ObjectId("649aa01e05e47cff7c6ec796") });
 
 Output:
 
-<img src="..\Question 2\files\images\read.png">
+<img src="..\Question 2\files\images\read.png" width=40%>
 
 3.Update query
 
@@ -134,17 +134,17 @@ Output
 
 First query: updateOne()
 
-<img src="..\Question 2\files\images\updateOne.png">
+<img src="..\Question 2\files\images\updateOne.png" width=40%>
 
 You can see the `storeLocation` is changed from New York to Malaysia.
 
-<img src="..\Question 2\files\images\rupdateOne.png">
+<img src="..\Question 2\files\images\rupdateOne.png" width=40%>
 
 Second query: updateMany()
 
 You can see there is a total record of 1549 is being modified.
 
-<img src="..\Question 2\files\images\updateMany.png">
+<img src="..\Question 2\files\images\updateMany.png" width=40%>
 
 4.Delete query
 
@@ -155,7 +155,7 @@ db.sales.deleteOne({ "_id": ObjectId("649aa01e05e47cff7c6ec796") });
 
 Output:
 
-<img src="..\Question 2\files\images\delete.png">
+<img src="..\Question 2\files\images\delete.png" width=40%>
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

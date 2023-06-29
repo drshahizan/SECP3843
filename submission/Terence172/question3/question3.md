@@ -16,10 +16,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 3 (a)
 In this part, I need to create a login and registration function for three types of users: customers, technical workers, and senior management. I also need to implement separate welcome pages and functionalities for each user type. All of these should be done using django framework, with mySQL as the database.
 
-- [Special Topic Data Engineering (SECP3843): Alternative Assessment](#special-topic-data-engineering-secp3843-alternative-assessment)
-      - [Name: Terence Loorthanathan](#name-terence-loorthanathan)
-      - [Matric No.: A20EC0165](#matric-no-a20ec0165)
-      - [Dataset: tweets.json](#dataset-tweetsjson)
+
   - [Question 3 (a)](#question-3-a)
     - [Pre-Requisites](#pre-requisites)
     - [Defining User Model](#defining-user-model)
@@ -29,7 +26,6 @@ In this part, I need to create a login and registration function for three types
     - [Configuring URLs](#configuring-urls)
     - [Demo](#demo)
   - [Question 3 (b)](#question-3-b)
-  - [Contribution 🛠️](#contribution-️)
 
 
 ### Pre-Requisites

@@ -16,6 +16,108 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 5 (a)
 
+<h4>Step 1 - Import data</h4>
+
+Import Accounts and Transaction data
+
+```
+import pandas as pd
+
+df_acc = pd.read_json('accounts.json')
+
+df_acc = pd.DataFrame(df_acc)
+
+# View the DataFrame as a table
+df_acc
+```
+
+```
+import pandas as pd
+
+df_trans = pd.read_json('transactions.json')
+
+df_trans = pd.DataFrame(df_trans)
+
+# View the DataFrame as a table
+df_trans
+```
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question5/images/1.png" />
+</p>
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question5/images/5.png" />
+</p>
+
+<h4>Step 2 - Remove unwanted elements for value in the column</h4>
+
+```
+df_acc['_id'] = df_acc['_id'].str['$oid']
+df_acc['account_id'] = df_acc['account_id'].str['$numberInt']
+df_acc['limit'] = df_acc['limit'].str['$numberInt']
+df_acc
+```
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question5/images/3.png" />
+</p>
+
+```
+df_acc['products'] = df_acc['products'].astype(str).str.replace('[', '').str.replace(']', '')
+df_acc
+```
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question5/images/4.png" />
+</p>
+
+```
+df_trans['_id'] = df_trans['_id'].str['$oid']
+df_trans['account_id'] = df_trans['account_id'].str['$numberInt']
+df_trans['transaction_count'] = df_trans['transaction_count'].str['$numberInt']
+df_trans['bucket_start_date'] = df_trans['bucket_start_date'].str['$date']
+df_trans['bucket_end_date'] = df_trans['bucket_end_date'].str['$date']
+df_trans
+```
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question5/images/6.png" />
+</p>
+
+```
+df_trans['bucket_start_date'] = df_trans['bucket_start_date'].str['$numberLong']
+df_trans['bucket_end_date'] = df_trans['bucket_end_date'].str['$numberLong']
+df_trans
+```
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question5/images/7.png" />
+</p>
+
+<h4>Step 3 - Remove unwanted column</h4>
+
+```
+columns_to_remove = ['transactions']
+df_trans = df_trans.drop(columns_to_remove, axis=1)
+df_trans
+```
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question5/images/8.png" />
+</p>
+
+<h4>Step 4 - Concat both Accounts and Transactions Table</h4>
+
+```
+df= pd.concat([df_acc, df_trans])
+df
+```
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question5/images/9.png" />
+</p>
+
 ## Question 5 (b)
 
 ## Creating dashboard using Power BI
@@ -78,17 +180,23 @@ Rename the column of the table.
 
 - Count of limit by transaction count
 
+This graph shows that the account limit does not restrict the user to make transaction as we can see as the account limit increases, the transaction count increases too. 
+
 <p align="center">
   <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question5/images/page1.png" />
 </p>
   
 - Sum of transaction.price by products
 
+The graph below shows that the product 'investmentStock'  has the highest transaction price compared to the others. The other products have almost the same amount of transaction price.
+
 <p align="center">
   <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question5/images/page2.png" />
 </p>
 
 - Count of product by transaction code
+
+There are two types of transaction code which are sell and buy. Based on the bar chart below, the products that are sold is slightly higher that the products that are bought which is 50.02% higher than 49.98%.
 
 <p align="center">
   <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question5/images/page3.png" />

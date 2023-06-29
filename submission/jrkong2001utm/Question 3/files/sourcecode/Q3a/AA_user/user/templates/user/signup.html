@@ -1,0 +1,14 @@
+<html>
+ <head>
+    <title>
+        More than one user
+    </title>
+</head>
+<body>
+    <form method="POST" accept-charset="utf-8">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="Submit" name="submit" value="Signup">
+    </form>
+</body>
+</html>

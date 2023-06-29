@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Dinner{% endblock title %}
+{% block content %}
+<h2>Add meal for dinner</h2>
+<a class="badge bg-success link-offset-2 link-underline link-underline-opacity-0" href=" {% url 'meals' %} ">Meal List</a>
+<hr>
+<form method="post">
+    {% csrf_token %}
+    {{ form.name.label }}: {{ form.name }}
+    <br>
+    {{ form.quantity.label }}: {{ form.quantity }}
+    <br>
+    <input type="submit" value="Submit" class="btn btn-primary">
+</form>
+{% endblock content %}

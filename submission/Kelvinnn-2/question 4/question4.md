@@ -104,7 +104,7 @@ b. Run the following command to start the Django development server: `python man
 - Username : eekelvin
 - Password: 123
 
-Try entering the result and press the `Predict Sector` button.
+Try entering the new business name and press the `Predict Sector` button. The predicted sector will be shown
 - Input: Ali Fastfood
   
 <img src="./files/image/alifastfood.png">

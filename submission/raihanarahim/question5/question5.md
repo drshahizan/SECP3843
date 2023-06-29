@@ -172,7 +172,7 @@ with open('/content/drive/MyDrive/tweetsmodified.json', 'r') as file:
 for obj in parse_json_stream(json_data_chunks):
     print(obj)
 ```
-> JSON data succesfully parsed thus we can see that  less time taken needed to accomplish parsing.
+> JSON data succesfully parsed thus less time taken needed to accomplish parsing.
 
 ### 3. Use JSON caching
 * Caching JSON data will reduce the time taken to fetch data. This is because it will retrieve the data from cache instead of having to retrieve from memory. This caching method will improve portal performance significantly.
@@ -215,7 +215,7 @@ def get_data(key):
 ```
 > Caching data in the portal will improve performance by retrieving it much more quickly than fetching it from the database.
 
-### 4. Use suitable library to process the data
+
 
 
 ## Question 5 (b)
@@ -256,6 +256,9 @@ Referring to the dashboard above there are 7 visualizations.
   * `MY`
   * `You`
   * `HTTP`
+
+  *<img width="500" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/ca01d643-ef43-48f0-8ee8-5fede0951d17">
+
     
 5. User Followers
 

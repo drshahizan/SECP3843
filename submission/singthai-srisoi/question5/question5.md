@@ -117,7 +117,20 @@ encoded_data = bson.dumps(df.to_dict())
 ```
 
 ## Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+[Movie Dashboard](https://singthai-srisoi.github.io/singthai.github.io/AAdashboard)
+![image](https://github.com/drshahizan/SECP3843/assets/84219904/95b06b1b-b518-46da-bc7d-519835c5929c)
+1. Bar Chart for Genres:
+This graph provides insights into the distribution of movies across different genres. The X-axis represents the genres, such as action, comedy, drama, etc. The Y-axis represents the count of movies belonging to each genre. The height of each bar indicates the number of movies in that genre. This chart helps visualize the popularity or prevalence of different genres in the dataset.
+
+2. Scatter Plot for Runtime vs. IMDb Rating:
+This graph explores the relationship between the runtime of movies and their IMDb ratings. The X-axis represents the runtime of movies in minutes. The Y-axis represents the IMDb rating of movies. Each data point in the scatter plot represents a movie, with its position determined by its runtime and IMDb rating. This chart helps identify any correlation or patterns between the runtime and IMDb ratings of movies.
+
+3. Pie Chart for Country Distribution:
+This graph provides a visual representation of the distribution of movies across different countries.Each country is represented as a slice of the pie chart. The size of each slice corresponds to the proportion of movies produced in that country. This chart helps identify the contribution of each country to the dataset and visualize any dominance or diversity in terms of movie production.
+
+4. Bar Chart for Awards:
+This graph showcases the number of wins and nominations for each movie. The X-axis represents the movie id. The Y-axis represents the count of wins and nominations. Each movie is represented by a pair of bars, one indicating the number of wins and the other indicating the number of nominations. This chart helps compare the recognition and success of different movies based on their awards.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
