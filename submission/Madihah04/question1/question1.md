@@ -66,9 +66,9 @@ For MongoDB, the tables (or collections) will be created automatically when data
                                                          +------------------------+
                                                          |  Client (Web Browser)  |
                                                          +------------------------+
-                                                                     |
-                                                                     |
-                                                                     v
+                                                                   |  ^
+                                                   HTTP Request    |  |   HTTP Response
+                                                                   v  |
                                                     +-----------------------------------+
                                                     |         Web Server Layer          |
                                                     +-----------------------------------+
