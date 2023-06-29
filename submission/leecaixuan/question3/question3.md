@@ -679,10 +679,6 @@ mongo_client.close()
 
 Then, run the command in the terminal to migrate the data. ```python C:\Users\User\Desktop\aa_system\aa_system\aa_system\mongoDB.py```
 
-<p align="center">
-  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question3/files/images/command.png" />
-</p>
-
 Result:
 
 <p align="center">
