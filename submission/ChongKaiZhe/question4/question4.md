@@ -114,6 +114,7 @@ plt.ylabel('Inertia')
 plt.title('Elbow Curve')
 plt.show()
 ```
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/b0d8e2b9-8d64-4f2c-9017-330c74f4d622)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
