@@ -53,7 +53,7 @@ new_df.describe()
 <img  src="./files/images/describe.jpg"></img>
 
 ### 4. Standard Scaler
-Reduce difference between values.
+Scales each variables to unit variance to interpret the variables on the same scale.
 ```
 from sklearn.preprocessing import StandardScaler
 
