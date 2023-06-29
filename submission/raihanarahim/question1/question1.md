@@ -37,7 +37,7 @@ Figure below show the flow of Django with the JSON dataset integration :
 ### 1. Install Django
 Begin with installing Django and other packages required such as pymongo. There are many ways of doing so and one of it is by installing packages using pip. <br>
 For example : 
-```
+```py
 pip install Django
 pip install pymongo
 pip install mysqlclient
@@ -45,13 +45,13 @@ pip install djongo
 ```
 ### 2. Setup Project in Django
 Next, create a project in Django. Open a terminal and navigate to the directory you want to store the project. Then, run the followwing command and your project file will be created :
-```
+```py
 django-admin startproject tweetsAA
 ```
 <br>
 
 Then, create an app in the project file and the directory should be in manage.py. Run the following command :
-```
+```py
 python manage.py startapp tweetsdataAA
 ```
 Lastly, in settings.py register the app created above.
@@ -75,7 +75,7 @@ Before moving on to the next step, we need to configure our databases server.
   
 ### 3. Define data model in Django
 Moving on, in the Django app created, navigate to models.py. This is where you define your models based on the JSON data you are using. Below is the example on defining tweets JSON data model in django.
-```
+```py
 from django.db import models
 
     class Tweets(models.Model):
@@ -101,8 +101,8 @@ from django.db import models
 
 ```
 ### 4. Configure Django database connections
-Next, configure your database connection to connect both MySQL and MongoDB. This is where we use our installed packages which are pymongo, djongo and mysqlclient. In your Django project file, navigate to settings.py and change the configuration as follows:
-```
+Next, configure your database connection to connect both MySQL and MongoDB. This is where we use our installed packages which are pymongo, djongo and mysqlclient. In your Django project file, navigate to settings.py and change the configuration to your credentials as follows:
+```py
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -131,21 +131,21 @@ DATABASES = {
 ### 5. Run Django database migration
 - mySQL<br>
 In  Django, to manage database schema changes we need to use migration. Firstly create an initial migrations that will analyze the models created above and create migration files using the command below :
-```
+```py
 python manage.py makemigrations
 ```
 Next, apply the migration to create tables in mySQL database.
-```
+```py
 python manage.py migrate
 ```
 - MongoDB<br>
 To apply migration to your MongoDB run the following command :
-```
+```py
 python manage.py migrate --database=mongodb
 ```
 ### 6. Import data into both databases
 After succesfully migrate to both databases, now we will import our JSON data using Django management command to create instances of our model with Python Script. 
-```
+```py
 import json
 from django.core.management.base import BaseCommand
 from tweetsdataAA.models import Tweets
@@ -193,13 +193,13 @@ class Command(BaseCommand):
 
 ```
 Next, run it using the command below :
-```
+```py
 python manage.py parse_json_dataset AA/tweets.json
 
 ```
 ### 7. Define query methods
 Then, write your query to retrive or manipulate from both databases. For instance, I want to retrieve all data from both databases using the query below :
-```
+```py
 from tweetsdataAA.models import Tweets, TweetsMongo
 
 # Retrieve tweets from MySQL database
@@ -240,7 +240,7 @@ A load balancer has been integrated into the architecture to serve as a traffic 
 The web server, Apache, is selected in this architecture to handle the Django application. It is responsible for managing HTTP requests from the load balancer, processing them, and generating responses to be sent back to the client/user. Additionally, the web server efficiently handles static files like HTML, CSS, and JavaScript to serve the web content.
 #### 4. Django Application Server
 
-The Django application server takes on the responsibility of handling the Django application, encompassing all aspects related to Django within this specific server. It interprets and executes the Python code responsible for handling requests and generating responses, as Django is a Python framework. Additionally, this server interacts with the application's logic, renders dynamic pages (user interface), and communicates with the database to store or retrieve data. Furthermore, the Django application server can concurrently communicate with both the web server and the load balancer to receive incoming requests and respond to them accordingly.
+The Django application server is responsible to handle the Django application,and all Django files are stored in this server. It interprets and executes the Python code responsible for handling requests and generating responses, as Django is a Python framework. Additionally, this server interacts with the application's logic, renders the user interface, and communicates with the database to store or retrieve data. Furthermore, the Django application server can concurrently communicate with both the web server and the load balancer to receive incoming requests and respond to them accordingly.
 <br>
 Django uses MVT framework which is Models, Views and Templates.
 - Models - used to represent data and database schema of the application.
@@ -249,11 +249,11 @@ Django uses MVT framework which is Models, Views and Templates.
 - URL - use to map incoming HTTP requests to the appropriate View functions. In Django it is usually defined in the urls.py file where all routings of the application can be found here.
 #### 5. MySQL Server
 
-The MySQL server, in conjunction with the Django ORM (Object-Relational Mapping), is responsible for handling the relational database used to store structured data. With the help of the Django ORM, the system can perform CRUD operations (create, read, update, and delete) and execute queries efficiently. Django's ORM acts as an intermediary layer between the application and the database, enabling seamless interaction and abstraction of database operations. This allows Django to store various types of data, including user information, within predefined schemas, ensuring data accuracy and maintaining relationships between different entities.
+The MySQL server, in conjunction with the Django ORM (Object-Relational Mapping), is responsible for handling the relational database used to store structured data. With the help of the Django ORM, the system can perform CRUD operations (create, read, update, and delete) and execute queries efficiently. Django's ORM acts as an intermediary layer between the application and the database, that enable interaction and abstraction of database operations. This allows Django to store various types of data, including user information, within predefined schemas, ensuring data accuracy and maintaining relationships between different entities.
 
 #### 6. MongoDB Server
 
-The MongoDB server is a NoSQL document database that is utilized for storing flexible and schema-less data. It operates by storing data in JSON-like documents, which enables the storage of dynamic and nested data structures. Django interacts with the MongoDB server using MongoDB's query language or through the utilization of an Object-Document Mapping (ODM) tool such as Djongo. This allows Django to store and retrieve data from MongoDB. The MongoDB server offers high scalability and flexibility, making it well-suited for handling unstructured or evolving data requirements.
+The MongoDB server is a NoSQL document database to store no scheme data. It operates by storing data in JSON or CSV documents that can be easily import and export. Django interacts with the MongoDB server using MongoDB's query language or through the utilization of an Object-Document Mapping (ODM) tool such as Djongo. This allows Django to store and retrieve data from MongoDB. The MongoDB server offers high scalability and flexibility.
 
 
 ## Contribution 🛠️
