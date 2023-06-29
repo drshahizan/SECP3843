@@ -15,6 +15,8 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 4
 
+For machine learning, I will be using Linear Regression to predict the property price when the users insert the input of property type, room type, number of bedrooms and amenities. The steps to make this machine learning successful have been written below.
+
 ### Import libraries
 
 First, import all the libraries that will be used to perform the machine learning.

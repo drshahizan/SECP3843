@@ -37,7 +37,6 @@ After that, we can start to integrate Django with the JSON dataset, ensuring dat
 
 <br>
 
-## Step 2:
 ### Create Django project and Django app
 To create a Django project, run the command below.
 ```
@@ -56,7 +55,6 @@ python manage.py startapp SupplyStore
 <br>
 <br>
 
-## Step 3:
 ### Configuring Django settings
 Go to settings.py in the AA_SupplyStore folder to set up the database connection for both MySQL and MongoDB.
 
@@ -85,7 +83,6 @@ DATABASES['mongodb'] = {
 ```
 <br>
 
-## Step 4:
 ### Define model
 Then, we need to define the model. Based on the dataset given, the database contains a single collection called `sales`. It has `items` and `customer` fields which contains nested attributes. Therefore, when creating a model, we need to use `JSONField`. The code are as follows:
 
@@ -105,7 +102,6 @@ class Sale(models.Model):
 ```
 <br>
 
-## Step 5:
 ### Load JSON file to the model's database
 Import the module and libraries.
 ```
@@ -131,7 +127,6 @@ with open('sales.json') as json_file:
 ```
 <br>
 
-## Step 6:
 ### Migration
 Now, we can start to migrate the `Sale` model to the `SupplyStore` app.To perform initial migration for the app, run the code below:
 ```
@@ -144,7 +139,6 @@ python manage.py migrate
 ```
 <br>
 
-## Step 7:
 ### Retrieve Data
 After performing the migration, we can try to access the data. First, we need to import the `Sale` model. 
 ```

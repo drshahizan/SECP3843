@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %}Dinner{% endblock title %}
+{% block content %}
+<h2>Meal list</h2>
+<a class="badge bg-success link-offset-2 link-underline link-underline-opacity-0" href=" {% url 'index' %} ">Add New</a>
+<hr>
+<div class="row">
+    <div class="col">
+        <h5>mySQL</h5>
+        <ul class="list-group shadow">
+            {% for meal in meals %}
+            <li class="list-group-item">{{ meal.name }} - Quantity: {{ meal.quantity }} - Date: {{ meal.datetime }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div class="col">
+        <h5>mongoDB</h5>
+        <ul class="list-group shadow"> 
+            {% for meal in meals_mongo %}
+            <li class="list-group-item">{{ meal.name }} - Quantity: {{ meal.quantity }} - Date: {{ meal.datetime }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock content %}

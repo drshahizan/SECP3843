@@ -15,13 +15,23 @@ Don't forget to hit the :star: if you like this repo.
 #### Datatset: City Inspections	
 
 ## Question 5 (a)
-<img src="./files/images/Screenshot%202023-06-29%20155117.png" alt="import">
+To optimize the dataset, I choose to remove the unwanted or unrelated columns form the dataset to make it lighter and improve efficiency of the system. I had used Jupyter to code the optimization process.
 
-<img src="./files/images/Screenshot%202023-06-29%20155131.png" alt="date id">
+#### 1. Import dataset
+The dataset which stored in MongoDB under the database "AA" and collection "city" is loaded into a Python dataframe for further processes. <br>
+<img src="./files/images/Screenshot%202023-06-29%20155117.png" alt="import"><br>
 
-<img src="./files/images/Screenshot%202023-06-29%20155141.png" alt="drop">
+#### 2. Pre-process the dataset
+Since all the columns are of data type "Object", I have changed the data type of the column "date" into datetime format, so that it will be easier for further analysis work. I also noticed that the "id" of each inspection record is quite lengthy but share common alphabetical identification such as "ENFO", "CMPL", "UNIT" and etc. Thus, I decided to split the "id" by the "-" within it and keep only the meaningful alphabetical path. <br>
+<img src="./files/images/Screenshot%202023-06-29%20155131.png" alt="date id"><br>
 
-<img src="./files/images/Screenshot%202023-06-29%20155058.png" alt="csv">
+#### 3. Drop unrelated or unwanted columns
+The columns "_id", "id1", "id2", "address.number", "address.zip", "address.street", "certificate_number" do not play any significant role in data analysis and visualization, thus I decided to drop all of them in order to minimize the dataset's volume. <br>
+<img src="./files/images/Screenshot%202023-06-29%20155141.png" alt="drop"><br>
+
+#### 4. Export to CSV
+The dataframe is exported to CSV file for the further analysis or visualization purposes. <br>
+<img src="./files/images/Screenshot%202023-06-29%20155058.png" alt="csv"><br>
 
 ## Question 5 (b)
 I have utilized Microsoft Power BI to create the dashboard for city_inspection dataset. First, open Microsoft Power BI and import the JSON file which contain the cleaned data into the Power BI. I have changed the format of column "date" form text to date, and for other columns, the format are remained as text. 

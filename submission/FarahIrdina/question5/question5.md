@@ -69,34 +69,49 @@ Then, click Run.
 
 ![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question5/files/images/1.png)
 
+The bar chart above shows that United States has the highest number of listings for each country while China has the lowest.
+
 #### 2. Average Price by Rating Score
 
 ![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question5/files/images/2.png)
+
+The line chart above shows that the rating score with a 50% to 55% has the highest average price while  20% to 25% of rating score has the lowest average price.
 
 #### 3. Average Price by Number of Bedrooms
 
 ![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question5/files/images/3.png)
 
+The line chart above shows that the bedrooms of value 9 has the highest average price while  the bedrooms of value 1 has the lowest average price.
+
 #### 4. Availability of Properties Over Time by Property Type
 
 ![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question5/files/images/4.png)
+
+The property type of apartment has the highest availability of properties across the year.
 
 #### 5. Average Property Prices Across Different Room Types and Rating Score
 
 ![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question5/files/images/5.png)
 
+Mostly, the room type of entire home/apt of rating 90-100 rating score has the highest price.
+
 #### 6. Distribution of Property Types Based on Number of Cancellation Policies
 
 ![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question5/files/images/6.png)
+
+Apartment has the highest number of cancellation policies while the heritage hotel has the lowest.
 
 #### 7. Total Rating Scores by Country
 
 ![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question5/files/images/7.png)
 
+Unites States has the highest total rating scores and China has the lowest.
+
 #### 8. Number of Reviews by Rating Scores According to Room Types
 
 ![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question5/files/images/8.png)
 
+This graph shows that it has a positive correlation because the higher rating scores, the highest number of reviews.
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
