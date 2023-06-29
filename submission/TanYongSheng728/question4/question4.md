@@ -207,6 +207,13 @@ Output:
 <img src="./files/images/donut sentiment.png"></img>
 </p>
 
+ - Before proceesing to next steps, need to install the required library in NTLK for setting the stopwords and words.
+ ```
+ import nltk
+nltk.download('stopwords')
+nltk.download('words')
+ ```
+
  - Now we add another bar chart to see the individual word for each category to have better preview. Below is the code for it.
 ```
 import pandas as pd
