@@ -18,7 +18,7 @@ Don't forget to hit the :star: if you like this repo.
 
 In order to optimize the performance of the portal when working with a lot of JSON data on the dashboard, we can do a few approach :
 
-1. Data Aggregation:
+#### Data Aggregation:
 When we aggregate data, this will help speed up the rendering process on the dashboard, as we won't need to perform complex calculations each time.
 In this project, I will perform aggregate to calculate the total number of comments and total number of diggs based on topic.name. The result will contain the _id (topic name), totalComments, and totalDiggs fields.
 ```
@@ -32,7 +32,7 @@ In this project, I will perform aggregate to calculate the total number of comme
    <img src="../question5/files/images/q5Aggregate.png">
 </p>
 
-2. Indexing:
+#### Indexing:
 
 When we create an index on a field, the DB system creates a separate data structure that maps the values in that field to the corresponding records or documents in the dataset, typically stored in a more efficient and optimized format. So, when we perform a query or filter based on an indexed field, the DB can quickly refer to the index to locate the relevant records or documents, rather than scanning through the entire dataset. This will definitely speeds up the data retrieval process and improves the overall performance of the queries.
 
@@ -42,7 +42,7 @@ In this project, The _id, submit_date, promote_date, comments and diggs are freq
    <img src="../question5/files/images/q5.png">
 </p>
 
-3. Make sure the data type is correct and efficient when performing queries and analysis.
+#### Make sure the data type is correct and efficient when performing queries and analysis.
    In stories.json, submit_date and promote_date was in Unix timestamp. Thus, in Mongo Shell, run the queries:
 ```
    use Stories
