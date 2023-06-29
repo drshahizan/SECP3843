@@ -183,7 +183,7 @@ The performance of the portal need to be optimized when dealing with large volum
       <img width="368" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/ea0f4e07-42ef-4394-aaf3-1d14809c33e2">
    </p>
 
-   Based on the infor, the memory storage reduce to **1.3+KB**.
+   Based on the info, the memory storage reduce to **1.3+KB**.
 
    <p align='center'>
       <img width="276" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/3b348bc7-ae2f-48e2-a988-28d1782c8f83">
