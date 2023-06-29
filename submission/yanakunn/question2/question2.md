@@ -25,6 +25,9 @@ To successfully upload the sales.json dataset into MongoDB, the JSON file must h
         for line in file:
             json_data.append(json.loads(line))
     ```
+- `sales.json`
+- <img width="900" alt="Screenshot 2023-06-29 at 1 13 53 PM" src="https://github.com/drshahizan/special-topic-data-engineering/assets/76076543/c8a44c34-f5da-4cb1-a830-47ff1ca128a9">
+
 2. Remove the special MongoDB operators and convert them to regular values
     ``` ruby
     def clean_data(item):
@@ -57,6 +60,9 @@ To successfully upload the sales.json dataset into MongoDB, the JSON file must h
                 cleaned_item[key] = value
         return cleaned_item
     ```
+- `newsales.json`
+- <img width="900" alt="Screenshot 2023-06-29 at 1 12 27 PM" src="https://github.com/drshahizan/special-topic-data-engineering/assets/76076543/2a977288-b2f2-42bc-9469-6559cd48cc48">
+
 3. Save the cleaned data to a new file
     ``` ruby
     
