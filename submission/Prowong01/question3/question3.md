@@ -108,8 +108,176 @@ In your settings.py file, update the TEMPLATES setting to include the directory 
 
 ### MySQL Database
 <img  src="./files/images/after_login.png"></img>
-## Question 3 (b)
 
+## Question 3 (b)
+MySQL and MongoDB are two different types of database management systems. MySQL is a relational database that uses SQL to store and query structured data in tables. MongoDB is a document-oriented database that uses JSON-like documents to store and query semi-structured data in collections. 
+
+## Replication Technique
+### 1. Configure Database Setting   
+<img  src="./files/images/setup_database.png"></img>
+
+### 2. Implement Replication Technique
+ a. Open XAMPP Controler panel and click config for MySQL to open my.ini
+ <img  src="./files/images/my_ini.png"></img>
+ b. Uncomment ``` log-bin=mysql-bin ```
+ <img  src="./files/images/uncomment.png"></img>
+ c. Setup a new MongoDB database
+<img  src="./files/images/new_db.png"></img>
+ d. Create a new folder and a python file
+ <img  src="./files/images/create.png"></img>
+
+### 3. Implementation
+a. Import SQL connector and MongoClient
+```
+import mysql.connector
+from pymongo import MongoClient
+```
+
+b. MySQL: Create Connection
+```
+mysql_connection = mysql.connector.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='q3'
+)
+mysql_cursor = mysql_connection.cursor()
+```
+
+c. MongoDB: Create Connection
+```
+mongo_client = MongoClient('mongodb+srv://eddiewong:prowong42@cluster0.ytff2so.mongodb.net')
+mongo_db = mongo_client['Q3']
+mongo_collection = mongo_db['replication']
+```
+
+d. MySQL: Read Data
+```
+mysql_cursor.execute("SELECT * FROM app_user")
+results = mysql_cursor.fetchall()
+```
+
+e. Import data to MongoDB
+```
+for row in results:
+    row_data = {
+        'id': row[0],
+        'password': row[1],
+        'last_login': row[2],
+        'is_superuser': row[3],
+        'username': row[4],
+        'first_name': row[5],
+        'last_name': row[6],
+        'email': row[7],
+        'is_staff': row[8],
+        'is_active': row[9],
+        'date_joined': row[10],
+        'user_type': row[11]
+    }
+    mongo_collection.insert_one(row_data)
+    print("Inserted row with ID:", row[0])
+```
+
+f. Log binary log events
+```
+mysql_cursor.execute("SHOW BINARY LOGS")
+binary_logs = mysql_cursor.fetchall()
+
+latest_log = binary_logs[-1]
+log_filename, log_position = latest_log[0], latest_log[1]
+
+mysql_cursor.execute(f"SHOW BINLOG EVENTS IN '{log_filename}' FROM {log_position}")
+for binlog_event in mysql_cursor:
+    event_type = binlog_event[7]
+
+    if event_type == 2:
+        query = binlog_event[8]
+
+        query_parts = query.split()
+        table_name = query_parts[2]
+        operation = "INSERT"
+
+        if table_name == 'app_user':
+            print("Binary Log Event:")
+            print("Query:", query)  # Logging statement
+
+            if operation == 'INSERT':
+                values_start = query.index("VALUES") + 7
+                values_end = query.index(")", values_start)
+                values = query[values_start:values_end].split(",")
+
+                row_data = {
+                    'id': int(values[0]),
+                    'password': values[1].strip("'"),
+                    'last_login': values[2].strip("'"),
+                    'is_superuser': bool(int(values[3])),
+                    'username': values[4].strip("'"),
+                    'first_name': values[5].strip("'"),
+                    'last_name': values[6].strip("'"),
+                    'email': values[7].strip("'"),
+                    'is_staff': bool(int(values[8])),
+                    'is_active': bool(int(values[9])),
+                    'date_joined': values[10].strip("'"),
+                    'user_type': values[11].strip("'")
+                }
+
+                mongo_collection.insert_one(row_data)
+                print("Inserted row with ID:", row_data['id'])  # Logging statement
+
+            elif operation == 'UPDATE':
+                set_start = query.index("SET") + 4
+                set_end = query.index("WHERE", set_start)
+                set_clause = query[set_start:set_end]
+
+                where_start = query.index("WHERE") + 6
+                where_clause = query[where_start:]
+
+                set_pairs = set_clause.split(",")
+                update_data = {}
+                for pair in set_pairs:
+                    column, value = pair.split("=")
+                    column = column.strip()
+                    value = value.strip("'")
+                    update_data[column] = value
+
+                where_parts = where_clause.split("=")
+                condition_column = where_parts[0].strip()
+                condition_value = where_parts[1].strip("'")
+
+                filter_condition = {condition_column: condition_value}
+
+                mongo_collection.update_one(filter_condition, {'$set': update_data})
+                print("Updated row matching condition:", filter_condition)  
+
+            elif operation == 'DELETE':
+                where_start = query.index("WHERE") + 6
+                where_clause = query[where_start:]
+
+                where_parts = where_clause.split("=")
+                condition_column = where_parts[0].strip()
+                condition_value = where_parts[1].strip("'")
+
+                filter_condition = {condition_column: condition_value}
+
+                mongo_collection.delete_one(filter_condition)
+                print("Deleted row matching condition:", filter_condition) 
+```
+g. MySQL: Close Connection
+```
+mysql_cursor.close()
+mysql_connection.close()
+```
+h. MongoDB: Close Connection
+```
+mongo_client.close()
+```
+
+### 4.Result
+MYSQL
+<img  src="./files/images/mysql_r.png"></img>
+
+MongoDB
+<img  src="./files/images/insert_mongodb.png"></img>
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
