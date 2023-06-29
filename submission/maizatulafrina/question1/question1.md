@@ -77,52 +77,25 @@ project, and the MySQL and MongoDB databases, few servers need to be setup and c
     <img width="717" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a915e9c8-4928-4671-b284-0bdb19fb431f">
 
 
-
-
 **5. Retrieve Data**
 
-## Question 1 (b)
+- Load the JSON Dataset into database
 
-                    +----------------------+
-                    |   Web Server         |
-                    | (Django Framework)   |
-                    +----------------------+
-                            |      |     
-                            |      |    
-                            |      |    
-                            v      v  
-                    +----------------------+
-                    |                      |
-                    |    JSON Dataset      |
-                    |                      |
-                    +----------------------+
-                            |      |     
-                            |      |    
-                            |      |    
-                            v      v  
-                    +----------------------+
-                    |                      |
-                    |   MySQL Database     |
-                    |                      |
-                    +----------------------+
-                            |      |     
-                            |      |    
-                            |      |    
-                            v      v  
-                    +----------------------+
-                    |                      |
-                    |   MongoDB Database   |
-                    |                      |
-                    +----------------------+
+<img width="697" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/8a30261c-88c1-4e25-b902-850a4c4b284a">
 
 
-   - Web Server (Django Framework): The web server component is responsible for handling client requests, managing URL routing, and rendering dynamic web pages. In this architecture, Django, a Python-based web framework, is used as the web server. Django follows the Model-View-Controller (MVC) architectural pattern and provides a high-level abstraction for building web applications. It facilitates the seamless integration of the other components and ensures efficient communication between the client and the backend.
+## Question 1 (b
 
-   - JSON Dataset: The JSON dataset component contains the data that needs to be imported into the databases. It follows a specific structure that matches the expected format for the target databases. The JSON dataset can be stored in a file or retrieved from an external source. It acts as the source of data for populating the databases and provides the initial set of information for the application.
+![image](https://github.com/drshahizan/SECP3843/assets/120564694/28288884-6417-4479-a96f-ed96966fa6f6)
 
-   - MySQL Database: The MySQL database component is a popular relational database management system. It provides a structured storage solution with support for ACID (Atomicity, Consistency, Isolation, Durability) properties. In this architecture, MySQL is integrated with Django using the Django ORM (Object-Relational Mapping). It allows seamless interaction with the MySQL database, including querying, data retrieval, and manipulation.
 
-   - MongoDB Database: The MongoDB database component is a NoSQL document-oriented database. It offers a flexible schema and scalability, making it suitable for handling unstructured or semi-structured data. In this architecture, Django integrates with MongoDB using the mongoengine library, which provides an Object-Document Mapping (ODM) layer. This allows the application to interact with MongoDB, perform queries, retrieve data, and manipulate documents.
+   - Web Server (Django Framework): The task of receiving client requests, controlling URL routing, and generating dynamic web pages falls under the purview of the web server component. The web server in this architecture is Django, a web framework built on Python. Django offers a high-level abstraction for creating web applications and adheres to the Model-View-Controller (MVC) architectural paradigm. It ensures effective communication between the client and the backend and enables the seamless integration of the other components.
+
+   - JSON Dataset: The data that has to be imported into the databases is contained in the JSON dataset component. It adheres to a particular structure that corresponds to the desired format for the target databases. The JSON dataset can be downloaded from a remote source or kept in a file. It serves as the data source for filling databases and gives the application its initial collection of data.
+
+   - MySQL Database: Popular relational database management systems include the MySQL database component. With support for ACID (Atomicity, Consistency, Isolation, Durability) qualities, it offers a structured storage solution. Using Django's ORM (Object-Relational Mapping), MySQL is integrated with Django in this design. It enables smooth querying, data retrieval, and modification interactions with the MySQL database.
+
+   - MongoDB Database: A NoSQL document-oriented database, MongoDB is one of the database components. Its scalability and flexible schema make it appropriate for managing unstructured or semi-structured data. The Object-Document Mapping (ODM) layer provided by the mongoengine module, which is used in this design, allows Django to integrate with MongoDB. This makes it possible for the application to communicate with MongoDB, run queries, get data, and work with documents.
 
 
 
