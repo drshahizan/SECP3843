@@ -87,7 +87,7 @@ Running `python manage.py makemigrations` examines the current state of your mod
 
 ## Question 1 (b)
 
-![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image17.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image18.png)
 
 The system architecture are as follow:
 
