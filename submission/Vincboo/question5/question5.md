@@ -16,17 +16,22 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 5 (a)
 ## Question 5 (b)
 In this section, I am going to crete my dashboard using the provide servidse on MongoDB Atlas
-1. Login into MongoDB Atlas
-2. Select `Chart` in the navigation bar
+### 1. Login into [MongoDB Atlas](https://account.mongodb.com/account/login?nds=true) through any web browser
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/2f8bd64a-a420-493d-8791-97c1cc0a5fb0"/>
+
+### 2. Select `Chart` in the navigation bar
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/2abffb6f-befa-4c77-9a40-8d9c167be5de"/>
-3. Create New Dashboard and click on 'Add Chart'
+
+### 3. Create New Dashboard and click on 'Add Chart'
 Create dashboard
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/ecece719-b236-4c84-84c5-0a8832479c32"/>
 Add Chart
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/ff3edd76-3303-40a1-bc67-e0f7b951fa7f"/>
-5. Select the collection that wanted to be use in the project.
+
+### 4. Select the collection that wanted to be use in the project.
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/458daa91-2e11-4cb5-9ac9-d2318e5c8f65"/>
-6. We will need to drag the variable to where we want it to be(x-axis, y-axis)
+
+### 5. We will need to drag the variable to where we want it to be(x-axis, y-axis)
 Results:
 1. Media published by Top 10 Writters
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/f7f66aba-8e97-475a-95f3-24594ff89627"/>
