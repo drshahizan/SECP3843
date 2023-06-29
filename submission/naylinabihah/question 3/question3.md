@@ -81,8 +81,9 @@ The terminal should give response when these command was executed:
 
 ## Question 3 (b)
 
-When it comes to working with different databases in one project, it may cause some issues and data integrity problems if it is not handled correctly.
-#### Step 1:
+When it comes to working with different databases in one project, it may cause some issues with data replication and synchronization if it is not handled correctly. It can be handled using various ways, however, below are the steps I had taken to ensure the data synchronization between the two databases is correctly work. These steps were for database-specific replication technique.
+
+#### Step 1: Install the REQUIRED Library
 
 
 #### Step 
