@@ -43,7 +43,7 @@ Indexing can help to optimize the database management system by minimizes the ne
 
 ### 2. Method 2: Data Caching
 
-#### 1. Install needed package
+#### 1. Install needed package `pip install cachetools`
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/08f81b8c-d342-4a31-bec2-d2048c15cd75"/>
 
 #### 2. Set default connection in `setting.py`
@@ -61,7 +61,6 @@ DATABASES = {
         }
     }
 }
-
 ```
 #### 3. Define function 
 1. Define the for getting cache data
