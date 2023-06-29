@@ -270,6 +270,11 @@ There are a total of 5 charts that I create based on this database.
       
    Based on the graph, we can see that the USA shows the most number of companies, along with Canada.
 
+#### Dashboard
+ <p align='center'>
+      <img width="951" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/033de277-8ced-42e4-a659-0bf5755c1c6a">
+   </p>
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
