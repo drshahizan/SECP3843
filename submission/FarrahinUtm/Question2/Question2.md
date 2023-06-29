@@ -66,7 +66,7 @@ This application allows users to inspect every database and collection from Mong
 1.Use the mongod command at the command prompt to launch the MongoDB server.
 
 2.To swap the database, type use mflix in the MongoDB Compass' MongoDB Shell terminal.
-<img src="./image/mongosh.png" style="width: 500px; height: 200px;">
+<img src="./image/renamedb.png" style="width: 500px; height: 200px;">
 
 
 
