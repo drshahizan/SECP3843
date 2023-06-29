@@ -15,7 +15,44 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/04-companies" >Companies</a>
 
 ## Question 5 (a)
+Use caching techniques to save and access pre-processed data. This reduces redundant computations and database queries, improving performance. Common caching options include Redis or Django's built-in caching framework.
 
+Steps to implement cache when handling large volumes of JSON data from the dataset are shown below.
+
+### Step 1:  Install all required packages
+```
+pip install cachetools
+```
+
+### Step 2: Import the necessary classes and functions from cachetools
+```
+from cachetools import cached, TTLCache
+```
+
+### Step 3: Define cache instance
+```
+result_by_sector_cache = TTLCache(maxsize=1, ttl=3600)  # Cache for inspections_by_sector
+inspections_by_month_cache = TTLCache(maxsize=1, ttl=3600)  # Cache for inspections_by_month
+```
+
+### Step 4: Apply cache decorator to function
+```
+@cached(result_by_sector_cache)
+def inspections_by_sector(request):
+    
+@cached(inspections_by_month_cache)
+def inspections_by_month(request):
+```
+
+### Step 5: Verify cache to check if cached data is available
+```
+    cached_data = cache.get('inspections_by_sector')
+    if cached_data:
+        print("Using cached data")
+        result_by_sector = cached_data
+    else:
+        print("Generating new data")
+```
 
 ## Question 5 (b)
 ### Step 1: Login to MongoDB Atlas and Load the dataset
