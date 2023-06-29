@@ -187,7 +187,7 @@ pip install mysql-connector
 pip install pymongo
 ```
 
-2. Create a new python script named `sql_to_mongo.py` to replicate the data from MySQL to MongoDB.
+2. Create a new python script named <a href="./files/code/sql_to_mongo.py">`sql_to_mongo.py`</a> to replicate the data from MySQL to MongoDB.
 ```py
 import mysql.connector 
 import pymongo
@@ -229,6 +229,12 @@ python sql_to_mongo.py
 ```
 
 <img src="./files/images/sql_to_mongo.png">
+
+After running the script, we can see that the user records from MySQL are now present in the MongoDB.
+
+<img src="./files/images/mysql_user.png">
+
+<img src="./files/images/mongodb_user.png">
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
