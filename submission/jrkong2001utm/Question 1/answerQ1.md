@@ -51,7 +51,7 @@ Then, create a Django app by running the command.
 python manage.py startapp SupplyStore
 ```
 
-<img src="..\Question 1\files\images\createproj.png" >
+<img src="..\Question 1\files\images\createproj.png" width=80%>
 <br>
 <br>
 
