@@ -37,7 +37,7 @@ Don't forget to hit the :star: if you like this repo.
 <img width="400" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/8c440801-08c2-4b43-b480-da5884087209">
 </p>
 
-6. Open command prompt for these two folders, ‘Server’ and ‘Tools’. Command for the server is to run the mongodb shell and tools to import file.
+6. Open command prompt for these two folders, ‘Server’ and ‘Tools’. Command for the 'Server' is to run the mongodb shell and 'Tools' to import file.
 <p align="center">
 <img width="400" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/4902e274-e71b-4761-822a-c76017e27053">
 </p>
