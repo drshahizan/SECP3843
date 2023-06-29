@@ -16,7 +16,8 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 5 (a)
 
-In order to optimize the performance of the portal when working with a lot of JSON data on the dashboard, we can do a few approach :
+In order to optimize the performance of the portal when working with a lot of JSON data on the dashboard, we can do these 3
+approach :
 
 #### Data Aggregation:
 When we aggregate data, this will help speed up the rendering process on the dashboard, as we won't need to perform complex calculations each time.
@@ -42,7 +43,7 @@ In this project, The _id, submit_date, promote_date, comments and diggs are freq
    <img src="../question5/files/images/q5.png">
 </p>
 
-#### Make sure the data type is correct and efficient when performing queries and analysis.
+#### Make sure the data type is correct and efficient when performing queries and analysis:
    In stories.json, submit_date and promote_date was in Unix timestamp. Thus, in Mongo Shell, run the queries:
 ```
    use Stories
