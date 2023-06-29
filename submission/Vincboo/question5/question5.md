@@ -14,8 +14,8 @@ Don't forget to hit the :star: if you like this repo.
 #### Matric No.: A20EC0231
 #### Dataset: [Stories](https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories)
 ## Question 5 (a)
-It  is imortant to optimize the performance when dealing with large JSON data. There are quite a few ways of dealing it such as convert data type, indexing and data caching.
-### 1. Data Indexing 
+It  is imortant to optimize the performance when dealing with large JSON data. There are quite a few ways of dealing it such as indexing and data caching.
+### 1. Method 1:  Data Indexing 
 Indexing can help to optimize the database management system by minimizes the need for excessive disk input/output operations and quickly locate the desired data based on the search criteria.
 #### 1. Select the collection that you want to create index in MongoDB Compass.
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/e8a3ec80-7c71-42b3-891d-b12982c269bb"/>
@@ -34,6 +34,53 @@ Indexing can help to optimize the database management system by minimizes the ne
 
 \ ##### 3. User
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/181f42a5-dac3-44b6-9780-1bb4c395e0aa"/>
+
+### 2. Method 2: Data Caching
+#### 1. Install needed package
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/08f81b8c-d342-4a31-bec2-d2048c15cd75"/>
+
+#### 2. Set default connection in `setting.py`
+```
+DATABASES = {
+    'default': {
+        'ENGINE': 'djongo',
+        'ENFORCE_SCHEMA': False,
+        'NAME': 'AA',
+        'CLIENT': {
+            'host': 'mongodb://localhost:27017/',
+            'port': 27017,
+            'username': '',
+            'password': '',
+        }
+    }
+}
+
+```
+#### 3. Define function 
+1. Define the for getting cache data
+```
+from django.core.cache import cache
+from django.shortcuts import render
+
+def get_data_from_cache_or_source():
+    data = cache.get(cache_data)
+```
+2. To ensures that only None values are considered for fetching data from the database.
+```
+if data is None:
+```
+3. Define database and collection to get data from MongoDB
+```
+client = MongoClient('mongodb://localhost:27017')
+db = client['AA']
+collection = db['Stories']
+```
+4. Get data collection and retrieve data, then store in cache
+```
+data = list(collection.find())
+cache.set(cache_data, data)
+```
+
 ## Question 5 (b)
 In this section, I am going to create my dashboard using the provide servidse on MongoDB Atlas
 ### 1. Login into [MongoDB Atlas](https://account.mongodb.com/account/login?nds=true) through any web browser
