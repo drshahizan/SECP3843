@@ -126,9 +126,34 @@ After creating the forms, update the views with the following code:
 ```
 <img  src="./files/images/senior.jpg"></img>
 
-
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+In order to ensure the changes made on one database will also be reflected in the other database, the dual-write techniques enables the flow of data between two databases by creating a mapping within the Django app. 
+
+### 1. Configure the database
+To use MongoDB and MYSQL as the database, modify the settings.py file in the project folder.
+<img  src="./files/images/configure.jpg"></img>
+
+### 2. Define models
+In the models.py, define the model that represents the data in databases.
+<img  src="./files/images/models.jpg"></img>
+
+### 3. Create function
+Create a replicate function to insert the three values into both database.
+<img  src="./files/images/replicate.jpg"></img>
+
+### 4. Apply function
+Insert the following code in the views file to apply the function created.  
+<img  src="./files/images/use.jpg"></img>
+
+### 5. Results
+Once the function is executed, the data is then successfully inserted into both databases. 
+
+- MySQL<br>
+<img  src="./files/images/sql.jpg"></img>
+
+- Mongodb<br>
+<img  src="./files/images/mongodb.jpg"></img>
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
