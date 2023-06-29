@@ -121,35 +121,18 @@ DATABASES = {
 
  **Create Model** 
  ```bash
-from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.db import models
+from django.contrib.auth.models import AbstractUser, Group, Permission
 
-class CustomUser(AbstractUser):
-    USER_TYPE_CHOICES = (
-        ('customer', 'Customer'),
-        ('technical_worker', 'Technical Worker'),
-        ('senior_management', 'Senior Management'),
-    )
+# Create your models here.
+class User(AbstractUser):
+    is_customer = models.BooleanField(default=False)
+    is_technical_worker = models.BooleanField(default=False)
+    is_senior_management = models.BooleanField(default=False)
 
-    user_type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES)
+    groups = models.ManyToManyField(Group, blank=True, related_name='custom_user_set', related_query_name='user')
+    user_permissions = models.ManyToManyField(Permission, blank=True, related_name='custom_user_set', related_query_name='user')
 
-    groups = models.ManyToManyField(
-        Group, 
-        verbose_name='groups',
-        blank=True, 
-        related_name='user_set', 
-        related_query_name='user',
-    )
-    user_permissions = models.ManyToManyField(
-        Permission,
-        verbose_name='user permissions',
-        blank=True,
-        related_name='user_set',
-        related_query_name='user',
-    )
-
-    def __str__(self):
-        return self.username
 ```
 In **settings.py**, set AUTH_USER_MODEL to the custom user model to make it the default authentication model.
 ```bash
