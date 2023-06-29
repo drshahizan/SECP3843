@@ -109,7 +109,47 @@ For MongoDB, the tables (or collections) will be created automatically when data
                                                           +------------------+
 
 
+#### Client (Web Browser):
 
+This represents the user's web browser, where they interact with the web application.
+Web Server Layer:
+
+- This layer handles the communication between the client and the web application.
+- It receives HTTP requests from the client and sends back HTTP responses.
+- In the diagram, it is represented as the "Web Server Layer."
+
+#### Django Web Server (Django App):
+
+- Django is a web framework written in Python that allows for building web applications.
+The Django web server runs the Django application, which consists of various components.
+Django Views:
+- Views in Django handle the logic for processing incoming requests and returning responses.
+- They receive HTTP requests from the web server layer, perform necessary operations, and generate HTTP responses.
+
+#### Django Models:
+
+- Models in Django represent the data structure and define how data is stored in the database.
+- They interact with the data storage layer to perform database operations.
+
+#### Data Storage Layer:
+
+- This layer is responsible for storing and retrieving data for the web application.
+
+#### MySQL Database (Relational Database):
+
+- MySQL is a popular relational database management system.
+- It stores data in a structured manner with predefined relationships between tables.
+- The Django ORM (Object-Relational Mapping) interacts with the MySQL database to perform database operations.
+
+#### MongoDB Database (NoSQL Document DB):
+
+ - MongoDB is a NoSQL document database that stores data in a flexible, JSON-like format.
+ - It allows for storing and retrieving data without predefined schemas.
+ - The MongoDB Connector enables the Django application to interact with the MongoDB database.
+
+#### Integration Components:
+
+ - These components represent the data integration between the web application and external data sources or files.
 
 
 ## Contribution 🛠️
@@ -119,5 +159,4 @@ You can also contact me using [Linkedin](https://www.linkedin.com/in/drshahizan/
 
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fdrshahizan&labelColor=%23697689&countColor=%23555555&style=plastic)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fdrshahizan)
 ![](https://hit.yhype.me/github/profile?user_id=81284918)
-
 
