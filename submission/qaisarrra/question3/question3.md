@@ -92,7 +92,19 @@ python manage.py startapp DjangoApp
 
 **Configure Database Connection** 
 
-Set up the MySQL and MongoDB connections. Alter the code for the databases in the Django project's'settings.py' file as shown below.
+Set up the MySQL and MongoDB connections. Alter the code for the databases and installed apps in the Django project's **settings.py** file as shown below.
+```bash
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django_login_required',
+    'DjangoApp'
+]
+```
 ```bash
 DATABASES = {
     'default': {
@@ -143,6 +155,7 @@ In **settings.py**, set AUTH_USER_MODEL to the custom user model to make it the 
 ```bash
 AUTH_USER_MODEL = 'DjangoApp.CustomUser'
 ```
+<br></br>
 
 **Perform Database Migration** 
 
@@ -152,6 +165,8 @@ AUTH_USER_MODEL = 'DjangoApp.CustomUser'
  python manage.py migrate
 ```
 Check your MySQL database (XAMPP > MySQL > Start > Admin) to confirm this migration procedure.
+
+<br></br>
 
 **Create Admin Site** 
 
@@ -173,9 +188,92 @@ class CustomUserAdmin(UserAdmin):
         ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
         ('Important dates', {'fields': ('last_login', 'date_joined')}),
     )
+    add_fieldsets = (
+        (None, {
+            'fields': ('username', 'password1', 'password2')}
+        ),
+    )
 
 admin.site.register(CustomUser, CustomUserAdmin)
 ```
+<br></br>
+
+**Create Registration Login View** 
+
+Here is the code for my DjangoApp **views.py** file that defines the user registration and login processes.
+```bash
+from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import LoginForm, SignUpForm
+from django.contrib.auth.decorators import login_required
+
+def registerUser(request):
+    msg = None
+    success = False
+
+    if request.method == "POST":
+        form = SignUpForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            user.user_type = 'customer'
+            user.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username,password=raw_password)
+
+            msg = "User created."
+            success = True
+            return redirect('login')
+        else:
+            msg = "Form is not valid."
+    else:
+        form = SignUpForm()
+
+    return render(request, "accounts/register.html", {"form": form, "msg" : msg, "success" : success})
+
+def loginView(request):
+    form = LoginForm(request.POST or None)
+    msg = None
+
+    if request.method == "POST":
+        if form.is_valid():
+            username = form.cleaned_data.get("username")
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+
+            if user is not None:
+                login(request, user)
+                if user.user_type == 'customer':
+                    return redirect('customer_home')
+                elif user.user_type == 'technical_worker':
+                    return redirect('technical_worker_home')
+                elif user.user_type == 'senior_management':
+                    return redirect('management_home')
+                else:
+                    return redirect('home')
+            else:
+                msg = "Invalid credentials"
+        else:
+            msg = "Error validating the form"
+
+    return render(request, "accounts/login.html", {"form": form, "msg" : msg})
+
+@login_required(login_url="/login/")
+def customer(request):
+    context = {'segment': 'index'}
+    return render(request, "home/customer_home.html", context)
+
+@login_required(login_url="/login/")
+def technical_worker(request):
+    context = {'segment': 'index'}
+    return render(request, "home/technical_worker_home.html", context)
+
+@login_required(login_url="/login/")
+def management(request):
+    context = {'segment': 'index'}
+    return render(request, "home/management_home.html", context)
+```
+
 
 ## Question 3 (b)
 
