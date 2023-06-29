@@ -19,8 +19,11 @@ a.	How can the performance of the portal be optimized when dealing with large vo
 
 ## Question 5 (b)
 Create a dashboard utilizing a JSON dataset, and provide a comprehensive description of its functionalities. You may include relevant code snippets and screenshots that illustrate the solution implemented.
+I will be using MongoDB Charts
 
-
+**Prerequisite**
+- Register for a MongoDB Atlas account
+- Setup databases and collections while creating a project.
 
 
 ## Contribution 🛠️
