@@ -104,13 +104,13 @@ The back-end of the system is the core of the Django application, which consists
 <li>View: The place where data is proceesed and retireved from the databases. Acts as the intermediate connection between the model and template. </li>
 <li>Template: Consists of HTML-based structure which is integrated along with the render of Django to generate a dynamic content to the user. </li>
 
-2. MySQL database <br>
+2. MySQL database: <br>
 Used to store data and manage user credential information securely. Connected to the Django framework using the package <code>mysqlclient</code>.
 
-3. MongoDB database <br>
+3. MongoDB database: <br>
 Used to handle (store and manipulation) the unstructured or semi-structured data of the application. The JSON file is stored in this database. Connected to the application using <code>djongo</code>.
 
-4. JSON file <br>
+4. JSON file: <br>
 Consists of the dataset which stored in JSON format. 
 
 
