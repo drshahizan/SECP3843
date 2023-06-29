@@ -15,17 +15,17 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset : [Analytics Dataset](https://github.com/drshahizan/dataset/tree/main/mongodb/02-analytics)
 
 ## Question 5 (a)
-<p>One of the many ways to optimize the performance when dealing with large volumes of JSON data from the dataset is aggregation. In MongoDB, we can do aggregation which is grouping multiple documents together. We can also filter and sort documents to analyze changes.</p>
+<p>One of the many ways to optimize the performance when dealing with large volumes of JSON data from the dataset, especially during dashboard visualizations is aggregation. In MongoDB, we can do aggregation which is grouping multiple documents together. We can also filter and sort documents to analyze changes.</p>
 
-<p>IN ADDITION, there are many stages in the aggregation pipeline we can use such as $match, $group, $sort and $project. However, for this alternative assessment, I will only be using two stages which are $group and $sort.</p>
+<p>In addition, there are many stages in the aggregation pipeline we can use such as $match, $group, $sort and $project. However, for this alternative assessment, I will only be using two stages which are $group and $sort.</p>
 
 ### Steps
 
-Open MongoDb Compass on your laptop.Connect with the connection strings and open the desired database and collection. I will do demonstration for **accounts**. Then, clik on the **Aggregations**.
+Open MongoDb Compass on your laptop. Connect with the connection strings and open the desired database and collection. I will do demonstration for **accounts**. Then, click on the **Aggregations**.
 
   <img  src="./files/images/agg.png"></img>
 
-In the first stage, I will be using $group which can group multiple documents based on the requirements. Select ‘+’ and choose $group. Then, write below code which I group based on account_id and total products which are the total products based in the products array.
+In the first stage, I will be using $group which can group multiple documents based on the requirements. Select ‘+’ to add a new stage and choose $group. Then, write below code which I group based on account_id and total products which are the total products based in the products array.
 
   <img  src="./files/images/group.png"></img>
 
@@ -33,12 +33,12 @@ In the second stage, I will sort the data based on the decreasing total products
 
   <img  src="./files/images/sort.png"></img>
 
-Lastly, click **Run** to establish the aggregation pipeline.
+Lastly, click **Run** to establish the aggregation pipeline. This aggregation pipeline output can simplify the data, make process more faster and optimizing of the performance when dealing with large volumes of JSON data from the dataset.
 
   <img  src="./files/images/run.png"></img>
 
 ## Question 5 (b)
-In answering this question, I will be creating a dashboard for `customer.json` using MongoDB Atlas Charts. I choose this tool because it is fast, easy to use and powerful in creating dashboard for JSON file especially for beginner.
+In answering this question, I will be creating a dashboard for `customer.json` using MongoDB Atlas Charts. I choose this tool because it is fast, easy to use and powerful in creating dashboard for JSON file especially for beginner. Creating a dashboard is important in helping visualizing the JSON dataset in meaningful way, interactive interaction, monitor key metrics and track the performance of your data over time.
 
 ### Prerequisite
 - Create an account in MongoDB Atlas in https://www.mongodb.com/cloud/atlas/register.
@@ -65,7 +65,7 @@ In answering this question, I will be creating a dashboard for `customer.json` u
 
   <img  src="./files/images/ch1.jpg"></img>
   
-  - Firstly, I will apply the first suggestion in the Charts. After writting the title, click on the **Save and close**. It will directly redirect to dashboard page where I can adjust the sizes of the created charts and adjust its position.
+  - Firstly, I will apply the first suggestion in the Charts which is Total Customer that involved in this dataset. After writting the title, click on the **Save and close**. It will directly redirect to dashboard page where I can adjust the sizes of the created charts and adjust its position.
 
   <img  src="./files/images/ch2.jpg"></img>
 
@@ -80,7 +80,6 @@ In answering this question, I will be creating a dashboard for `customer.json` u
   - Lastly, create a new chart title named Total Customer per Year which is the total customer have/create account in certain range of years. Then, I adjust the postion and size of the dashboard.
 
   <img  src="./files/images/ch5.jpg"></img>
-
 
 
 ## Contribution 🛠️
