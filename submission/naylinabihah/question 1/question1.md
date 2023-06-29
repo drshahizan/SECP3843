@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Name: Nayli Nabihah Binti Jasni
 #### Matric No.: A20EC0105
-#### Dataset: Companies
+#### Dataset: [Companies](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/companies.json)
 
 ## Question 1 (a)
 This portal is going to implement the usage of Django, JSON, MySQL and MongoDB. To built the best portal in terms of seamless integration between these four things in five servers at most, there are many ways to do so. These are the ways that I choose to use as an IT consultant in this case.
