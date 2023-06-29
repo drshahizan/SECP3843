@@ -29,42 +29,61 @@ Don't forget to hit the :star: if you like this repo.
     # Convert to dataframe
     df1 = pd.DataFrame(data)
     ```
-    
+    <div align="center">
       <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question4/files/images/df1.jpg">
+    </div>
 
     2. Data Preprocessing and Aggregation
        - Analyze the dashboard requirements and identify the specific data needed for visualization.
-       - Preprocess the JSON data to extract and transform the relevant information required for the dashboard.
+       - Preprocess the data to extract and transform the relevant information required for the dashboard.
        - Aggregate the data to reduce the volume and complexity. Summarize or group the data at appropriate levels to avoid processing unnecessary details during visualization.
+         
+       #### Drop Null rows and Useless Columns
+       ```python
+       # Handle missing values (drop rows with missing values)
+       df1.dropna(inplace=True)
 
-        ```python
-        # Extract and transform relevant columns information for visualization
-        processed_data = []
-        for item in sales:
-            processed_item = {
-                'name': item['name'],
-                'tag': item['tag'],
-                'price': item['price'],
-                'quantity': item['quantity']
-            }
-            processed_data.append(processed_item)
+       # Drop unnecessary columns
+        df1 = df1.drop(columns=["_id"])
         
-        # Aggregate the data
-        aggregated_data = {}
-        for item in processed_data:
-            name = item['name'],
-            tag = item['tag']
-            price = item['price']
-            if tag in aggregated_data:
-                aggregated_data[tag] += value
-            else:
-                aggregated_data[tag] = value
+        # Convert saleDate to datetime type
+        df1["saleDate"] = pd.to_datetime(df1["saleDate"])
         
-            if name in aggregated_data:
-                aggregated_data[name] += value
-            else:
-                aggregated_data[name] = value
-        ```
+        # Convert couponUsed to boolean type
+        df1["couponUsed"] = df1["couponUsed"].astype(bool)
+        
+        # Print the cleaned DataFrame
+        df1.head()
+       ```
+      <div align="center">
+        <img src="https://github.com/drshahizan/SECP3843/blob/main/submission/AfifHazmie/question5/files/images/dropcol.jpg" width="500">
+      </div>
+      
+    #### Aggregate Data
+    ```python
+    # Extract and transform relevant columns information for visualization
+    processed_data = []
+      for item in df1:
+      processed_item = {
+        'name': item['name'],
+        'tag': item['tag'],
+        'price': item['price'],
+        'quantity': item['quantity']
+      }
+      processed_data.append(processed_item)
+        
+    # Aggregate the data
+    aggregated_data = {}
+      for item in processed_data:
+        name = item['name'],
+        tag = item['tag']
+        price = item['price']
+    
+    if tag in aggregated_data:
+      aggregated_data[tag] += value
+    else:
+      aggregated_data[tag] = value
+    ```
 
     3. Data Indexing
        - Create indexes on the fields frequently used for querying and filtering in the JSON data.
@@ -95,7 +114,7 @@ Don't forget to hit the :star: if you like this repo.
             processed_data = cached_data
         else:
             # Perform data preprocessing and aggregation
-            processed_data = preprocess_and_aggregate(json_data)
+            processed_data = preprocess_and_aggregate(sales.json)
 
         # Store the processed data in the cache
         redis_client.set('cached_data', processed_data)
