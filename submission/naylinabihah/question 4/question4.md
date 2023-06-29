@@ -11,7 +11,7 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Name: Nayli Nabihah Binti Jasni
 #### Matric No.: A20EC0105
-#### Dataset: Companies
+#### Dataset: [Companies](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/companies.json)
 
 ## Question 4
 

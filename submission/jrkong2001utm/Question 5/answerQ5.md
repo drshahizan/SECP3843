@@ -101,33 +101,33 @@ Please refer to [Q5_SourceCode](https://github.com/drshahizan/SECP3843/blob/main
 
 ## Question 5 (b)
 
-<img src="..\Question 5\files\images\dashboard.png">
+<img src="..\Question 5\files\images\dashboard.png" width=90%>
 
-### Bar Chart 1: Total Sales of each Purchase Method
+#### Bar Chart 1: Total Sales of each Purchase Method
 
 This chart shows the total sales of each purchase method. From the chart, we can conclude that most of the customer purchase method are in store. The least purchase method is using phone.
 
-### Pie Chart 2: Total Item Sold by Item Name
+#### Pie Chart 2: Total Item Sold by Item Name
 
 This pie chart shows the percentage and the total number of the item sold categorize by item name. The item that has the highest sales is binder while the least is laptop.
 
-### Table 3: Customer Satisfaction
+#### Table 3: Customer Satisfaction
 
 This table shows the customer satisfaction on the product they purchased. 1 indicates the lowest level of satisfaction. It can be concluded that half of the customer are satisfied with their services.
 
-### Bar Chart 4: Total Sales of the Store in Different Country
+#### Bar Chart 4: Total Sales of the Store in Different Country
 
 This bar chart shows the total sales record of the store group by country. Denver has the highest sales record while the San Diego has the least sales record.
 
-### Card 5: Total Sales Record
+#### Card 5: Total Sales Record
 
 This card shows the accumulate daily sales record.
 
-### Card 6: Total of Coupon Used
+#### Card 6: Total of Coupon Used
 
 This card shows the accumulate number of coupons that have been used by the customers.
 
-### Card 7: Store Location by Country
+#### Card 7: Store Location by Country
 
 This card shows the total country where the store/merchant is located.
 

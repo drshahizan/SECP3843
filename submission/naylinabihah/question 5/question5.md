@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Name: Nayli Nabihah Binti Jasni
 #### Matric No.: A20EC0105
-#### Dataset: Companies
+#### Dataset: [Companies](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/companies.json)
 
 ## Question 5 (a)
 There are many ways to ensure an optimized performance of a website/portal when working with large volume of data in a JSON file. Either using pagination, indexing, caching, data ingestion and storage and many more.

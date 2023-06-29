@@ -95,6 +95,7 @@ X_scaled = scaler.fit_transform(X)
 3. Determine the optimal number of clusters using the elbow method
 
 # Perform K-means clustering for different values of k
+```python
 k_values = range(2, 10)
 inertias = []
 silhouette_scores = []
