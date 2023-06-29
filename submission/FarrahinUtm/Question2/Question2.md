@@ -112,6 +112,21 @@ After it is updated, this
 ![updatemany](https://github.com/drshahizan/SECP3843/assets/121208097/13871127-ede9-4e8a-b46e-61c300156635)
 
 
+- **Remove (1 inquiry)**
+employ db.theaters.Delete one piece of data from MongoDB using **deleteOne()**
+
+![Screenshot (276)](https://github.com/drshahizan/SECP3843/assets/121208097/956e01e9-10aa-4f1d-8bb0-cbed07add055)
+
+before deletion:
+
+![Screenshot (277)](https://github.com/drshahizan/SECP3843/assets/121208097/7c26b158-58cb-43e6-b85b-e68ab5dc30aa)
+
+after deletion:
+
+![Screenshot (278)](https://github.com/drshahizan/SECP3843/assets/121208097/220556b0-7f06-4ed8-a952-9e57ad1f94d9)
+
+
+
 
 
 
