@@ -66,6 +66,7 @@ DATABASES = {
 1. Define the for getting cache data
 ```
 from django.core.cache import cache
+from pymongo import MongoClient
 
 def get_data_from_cache_or_source():
     data = cache.get(cache_data)
