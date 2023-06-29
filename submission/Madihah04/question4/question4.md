@@ -14,7 +14,8 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: <a href="https://github.com/drshahizan/dataset/blob/c8e9f4a7cbdb0c1b78ca2c73915ff56ceeb50e70/mongodb/07-stories/stories.json">stories.json</a>
 
 ## Question 4 (a)
-The machine learning that I will implement for my dataset is K-Means Clustering which is an unsupervised machine learning algorithm used to group a dataset into k clusters. For this project, I will be using Colab to do the code. The file is attached [here](https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question4/files/code/q4.ipynb).
+
+For this project,  to identify popular or controversial stories versus less popular ones, I will use K-Means Clustering to group similar stories based on the engagement they received in terms of comments and diggs. As a result, it can help us to identify popular or controversial stories versus less popular ones.
 
 #### Import Dataset
 
