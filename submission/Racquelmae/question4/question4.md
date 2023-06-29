@@ -142,7 +142,7 @@ clusters
 ```
 <img  src="./files/images/clusters.jpg"></img>
 
-#### Map column
+#### Map cluster column
 ```
 k_df.insert(0, "Cluster", clusters, True)
 ```
