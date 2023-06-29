@@ -240,41 +240,145 @@ python manage.py migrate
 
 ## Question 3 (b)
 
-#### 1. 
+### 1. Use Trigger-based Replication Technique
 
-a
+This technique triggers to capture changes in the source database and apply them to the target database. Whenever the database detects changes in the source database, it will be triggered and insert the data to a table called listings_user_replicated. Open MySQL and go to SQL query and write the code below.
 
 ```
 DELIMITER $$
 
-CREATE TRIGGER insert_trigger AFTER INSERT ON listings_user
+CREATE TRIGGER replicate_listings_listings
+AFTER INSERT ON listings_listings
 FOR EACH ROW
 BEGIN
-    INSERT INTO listings_user_replicated (id, `password`, last_login, is_superuser, username, email, is_staff, is_active, date_joined, `type`) 
-    VALUES (NEW.id, NEW.`password`, NEW.last_login, NEW.is_superuser, NEW.username, NEW.email, NEW.is_staff, NEW.is_active, NEW.date_joined, NEW.`type`);
-END;$$
+    INSERT INTO listings_user_replicated (_id, listing_url, name, summary, space, description, neighborhood_overview, notes, transit, access, interaction, house_rules, property_type, room_type, bed_type, minimum_nights, maximum_nights, cancellation_policy, last_scraped, calendar_last_scraped, accommodates, bedrooms, beds, number_of_reviews, bathrooms, amenities, price, weekly_price, monthly_price, cleaning_fee, extra_people, guests_included, images, host, address, availability, review_scores, reviews)
+    VALUES (NEW.id, NEW.listing_url, NEW.name, NEW.summary, NEW.space, NEW.description, NEW.neighborhood_overview, NEW.notes, NEW.transit, NEW.access, NEW.interaction, NEW.house_rules, NEW.property_type, NEW.room_type, NEW.bed_type, NEW.minimum_nights, NEW.maximum_nights, NEW.cancellation_policy, NEW.last_scraped, NEW.calendar_last_scraped, NEW.accommodates, NEW.bedrooms, NEW.beds, NEW.number_of_reviews, NEW.bathrooms, NEW.amenities, NEW.price, NEW.weekly_price, NEW.monthly_price, NEW.cleaning_fee, NEW.extra_people, NEW.guests_included, NEW.images, NEW.host, NEW.address, NEW.availability, NEW.review_scores, NEW.reviews);
+END;
+$$
+
 
 DELIMITER ;
 ```
 
-#### 2. 
+### 2. Implement Replication Process between MySQL and MongoDB
 
-a
+This technique triggers to capture changes in the source database and apply them to the target database. Whenever the database detects changes in the source database, it will be triggered and insert the data to a table called listings_user_replicated.
 
 ```
-CREATE TABLE listings_user_replicated (
-    id INT PRIMARY KEY,
-    password VARCHAR(128),
-    last_login DATETIME,
-    is_superuser BOOLEAN,
-    username VARCHAR(150) NOT NULL,
-    email VARCHAR(254) NOT NULL,
-    is_staff BOOLEAN,
-    is_active BOOLEAN,
-    date_joined DATETIME,
-    type VARCHAR(20)
-);
+import mysql.connector
+from pymongo import MongoClient
+mysql_conn = mysql.connector.connect(host=localhost, user='root’, database=airbnb)
+mysql_cursor = mysql_conn.cursor()
+
+mongo_client = MongoClient("mongodb+srv://arasayooo:Irdin%407995335310@newcluster.rdxcnj3.mongodb.net/")
+mongo_db = client["airbnb"]
+mongo_collection = db["user"]
+
+mysql_cursor = mysql_conn.cursor()
+mysql_cursor.execute('SELECT * FROM airbnb)
+changed_data = mysql_cursor.fetchall()
+
+for item in changed_data::
+    doc = {
+        _id=item['_id'],
+                listing_url=item['listing_url'],
+                name=item['name'],
+                summary=item['summary'],
+                space=item['space'],
+                description=item['description'],
+                neighborhood_overview=item['neighborhood_overview'],
+                notes=item['notes'],
+                transit=item['transit'],
+                access=item['access'],
+                interaction=item['interaction'],
+                house_rules=item['house_rules'],
+                property_type=item['property_type'],
+                room_type=item['room_type'],
+                bed_type=item['bed_type'],
+                minimum_nights=item['minimum_nights'],
+                maximum_nights=item['maximum_nights'],
+                cancellation_policy=item['cancellation_policy'],
+                last_scraped=item['last_scraped'],
+                calendar_last_scraped=item['calendar_last_scraped'],
+                accommodates=item['accommodates'],
+                bedrooms=item['bedrooms'],
+                beds=item['beds'],
+                number_of_reviews=item['number_of_reviews'],
+                bathrooms=item['bathrooms'],
+                amenities=item['amenities'],
+                price=item['price'],
+                weekly_price=item['weekly_price'],
+                monthly_price=item['monthly_price'],
+                cleaning_fee=item['cleaning_fee'],
+                extra_people=item['extra_people'],
+                guests_included=item['guests_included'],
+                images=item['images'],
+                host=item['host'],
+                address=item['address'],
+                availability=item['availability'],
+                review_scores=item['review_scores'],
+                reviews=item['reviews']    
+}
+    mongo_collection.insert_one(doc)
+
+mysql_cursor.close()
+mysql_conn.close()
+mongo_client.close()
 ```
+
+### 3. Implement Real-time Updates using Debezium
+
+This allows to receive real-time notifications of changes happening in the database.
+
+```
+from debezium import connector
+
+pipeline = [{'$match': {'operationType': {'$in': ['insert', 'update', 'replace', 'delete']}}}]
+change_stream = mongo_collection.watch(pipeline=pipeline, full_document='updateLookup')
+
+connector_config = {
+    'name': 'mongodb-connector',
+    'connector.class': 'io.debezium.connector.mongodb.MongoDbConnector',
+    'tasks.max': '1',
+    'mongodb.hosts': 'mongo_host:27017',
+    'mongodb.name': 'mongodb_database',
+    'database.hostname': 'mysql_host',
+    'database.port': '3306',
+    'database.user': 'mysql_user',
+    'database.password': 'mysql_password',
+    'database.dbname': 'mysql_database',
+    'database.server.id': '1',
+    'database.server.name': 'mysql_server',
+    'collection.include.list': 'mongodb_database.mongodb_collection',
+    'transforms': 'unwrap',
+    'transforms.unwrap.type': 'io.debezium.transforms.ExtractNewRecordState',
+    'transforms.unwrap.drop.tombstones': 'false'
+}
+
+connector = connector.Connector(connector_config)
+connector.start()
+
+for change in change_stream:
+    operation_type = change['operationType']
+    document_id = change['documentKey']['_id']
+    document = change['fullDocument']
+
+    if operation_type == 'insert' or operation_type == 'replace':
+        pass
+    elif operation_type == 'update':
+        pass
+    elif operation_type == 'delete':
+        pass
+
+change_stream.close()
+connector.stop()
+mongo_client.close()
+mysql_cursor.close()
+mysql_conn.close()
+```
+
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
