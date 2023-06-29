@@ -19,10 +19,10 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 5 (b)
 
-<img width="957" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/b1812ca2-f755-4b1b-aa26-ebd90b7387a1">
-<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/e1cfd01f-9647-4ec7-b786-658078a8a97c">
-<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/99e6b2b5-69f7-4331-9784-9ea7728e03b8">
-<img width="595" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/928bbbe4-55bd-4b68-8ee0-aed5b696971d">
+To create a dashboard using JSON dataset, there are several platforms that can be used which are Power BI, Tableau as well as MongoDB Atlas Charts. However, it was found out that MongoDB Atlas Charts is best option for this task compared to Power BI and Tableau. One of the main reasons is Seamless Integration with MongoDB since it allows direct connection from the dataset. This can make the loading and transform process become smoother.
+
+
+<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/69a4473a-ff34-426d-be50-50d7651cac81">
 
 
 
