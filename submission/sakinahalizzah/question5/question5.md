@@ -28,6 +28,9 @@ The output of group by limit and sort the count in descending order.
 
 <img src="https://github.com/drshahizan/SECP3843/assets/99240177/45258a38-d311-4b26-b764-c80ae48730ac" />
 
+Add field
+
+<img src="https://github.com/drshahizan/SECP3843/assets/99240177/abc9be0a-501e-4489-9ef3-e802e933e7f7" />
 
 ### 2. Data Indexing
 
@@ -36,6 +39,12 @@ For optimal performance in retrieving and filtering JSON data, it is highly reco
 <img src="https://github.com/drshahizan/SECP3843/assets/99240177/8d44b737-1785-4b79-86cf-8cf862b19e7b" />
 
 ## Question 5 (b)
+
+### Dashboard
+
+<img src="https://github.com/drshahizan/SECP3843/assets/99240177/961ee63b-46db-4919-bf33-a92b5a062843" />
+
+<img src="https://github.com/drshahizan/SECP3843/assets/99240177/09a064df-5032-4f83-9ec6-ff1cc8b40369" />
 
 
 
