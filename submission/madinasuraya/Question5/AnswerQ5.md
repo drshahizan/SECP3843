@@ -119,7 +119,7 @@ The performance of the portal need to be optimized when dealing with large volum
        <img width="598" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/ec1b392c-6cea-48c6-a0de-99545b40e8ce">
       </p>
 
-7. Perform aggregation by grouping the data. There are two stage that I create. which are **$group** and **$project** to round off the value.
+7. Perform aggregation by grouping the data. There are two stage that I create. which are **$group** and **$project** to group the data based on category, get the average, and round the value into certain decimal place.
 
    <p align='center'>
       <img width="347" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/998dc381-12ba-4df6-8fe1-00171777949c">
