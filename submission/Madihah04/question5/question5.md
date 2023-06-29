@@ -83,12 +83,14 @@ Steps :
 
 #### Charts and Dashboard development
 
-For this chart, I want to know which topic have the highest number of comments by dragging `comments` to the X-axis and `topic_name` to the Y-axis.
-In this chart, I want to know the number stories submitted in each date. I put the `submit_date` in the X-axis and count the `title` in Y-axis.
-This pie chart will show me the number of stories in each media. This is because I want to know which media has the most uploaded stories in it.
-This scatter plot will show the relationship between `diggs` and `comments`. From this chart, we can conclude that highest diggs will probably have the highest comments.
-This chart shows the total comments and diggs in each month so that I can know which month has the highest visit by the user.
-For the last chart, I want to know the number of diggs based on each topic so that I can know which topic has the highest popularity.
+1. For the first chart, I would like to display all the categories of the story.
+2. For first chart in second row, I want to display number of distinct story. Basically, there are 9842 data or rows (exclude header) in the dataset.
+3. Second, I would like to know number of stories for each category
+4. Then, I choose mean in gauge chart as I would like to show the mean votes.
+5. In third row, I want to display the top 5 categories by votes.
+6. Next, I display relation between comments and diggs, which I used in question 4.
+7. As we already have votes and number per category, thus I want to display the number of comments per category too in the last row of chart in the dashboard.
+8. For the last chart, I was very curious about the number of story submitted per month in 2010, therefore I create a line chart that has the date as x-axis.
 
 Stories Dashboard:
 <p align="center">
