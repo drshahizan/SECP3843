@@ -194,7 +194,7 @@ The Heat Map below depicts, the Amount of URLS Binned by 10 used per tweet by co
 
 
 
-<p align="center"><img width="100%" src="./files/images/STDE_AA_Question5B.png"></img></p>
+<p align="center"><img width="100%" src="./files/images/STDE_AA_Question5B_updated.png"></img></p>
 
 
 ## Contribution 🛠️
