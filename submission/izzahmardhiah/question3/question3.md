@@ -52,6 +52,7 @@ DATABASES = {
 
 
 #### 3. views.py
+In the below code, I have added the logic to assign the user to the appropriate group based on their user type. Then, the user is added to the group using the user.groups.add(group) method.
 ```
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
@@ -60,22 +61,37 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, logout
 
 def signup(request):
-    if request.user.is_authenticated:
+   if request.user.is_authenticated:
         return redirect('/')
-    if request.method == 'POST':
-        form = UserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=password)
-            login(request, user)
-            return redirect('/')
-        else:
-            return render(request, 'signup.html', {'form': form})
-    else:
-        form = UserCreationForm()
-        return render(request, 'signup.html', {'form': form})
+   if request.method == 'POST':
+      form = UserCreationForm(request.POST)
+      if form.is_valid():
+         user = form.save()
+         username = form.cleaned_data.get('username')
+         password = form.cleaned_data.get('password1')
+         user = authenticate(username=username, password=password)
+         login(request, user)
+
+         # Assign user to the appropriate group based on their user type
+         user_type = form.cleaned_data.get('user_type')
+         if user_type == 'customer':
+            group = Group.objects.get(name='Customers')
+         elif user_type == 'technical_worker':
+            group = Group.objects.get(name='Technical Workers')
+         elif user_type == 'senior_management':
+            group = Group.objects.get(name='Senior Management')
+         else:
+            group = None
+
+         if group:
+            user.groups.add(group)
+
+         return redirect('/')
+      else:
+         return render(request, 'signup.html', {'form': form})
+   else:
+      form = UserCreationForm()
+      return render(request, 'signup.html', {'form': form})
 
 def home(request):
     return render(request, 'home.html')
