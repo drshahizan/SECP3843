@@ -84,10 +84,11 @@ Senior management dashboard: <br>
 
 
 ## Question 3 (b)
+### Steps to implement data replication and synchronization between MySQL and MongoDB
 
 <img src="./files/images/Screenshot%202023-06-29%20024629.png" alt="xampp">
 
-<img src="./files/images/Screenshot%202023-06-29%20024803.png" alt="my.ini xampp"
+<img src="./files/images/Screenshot%202023-06-29%20024803.png" alt="my.ini xampp">
 
 <img src="./files/images/Screenshot%202023-06-29%20025342.png" alt="mkdir">
 
