@@ -50,6 +50,8 @@ com = pd.DataFrame(comp)
 com
 ```
 
+![s1](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%204/files/images/step_1.png)
+
 #### Step 2: Study the Dataset Content for Data Cleaning Purposes
 
 - Try finding the possible information that needed like find the number of columns, the datatype and number of missing rows for each column. Below are the lists of example code that can be use to obtain these information:
@@ -61,6 +63,8 @@ com.info()
 ```
 com.columns
 ```
+
+![s2](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%204/files/images/step_2.png)
 
 #### Step 3: Remove Some Unwanted Columns
 Since this dataset is full of unused arrays, it will be the best if some columns can be dropped.
@@ -84,11 +88,74 @@ cols_drop = ['funding_rounds', 'investments', 'acquisition', 'acquisitions', 'of
 com.drop(cols_drop, axis=1, inplace=True)
 ```
 
-#### Step
-#### Step
-#### Step
-#### Step
-#### Step
+![s3](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%204/files/images/step_3.png)
+
+#### Step 4: Manipulate the Column
+The dataset given does not contain a lot of numeric data type, so, I need to create a new column to count the selected array that has relationship with the vriable I want to measure in the regression. Since I want to do the regression between the number of competitions of a company and the money raised by them, I have manipulated the competitions column by creating a new column named as `competitions_count`. This column will store the count of object in the competitions array for each row. Tod do so, this is the code block I used:
+
+```
+com['competitions_count'] = com['competitions'].apply(len)
+```
+
+![s4](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%204/files/images/step_4.png)
+
+#### Step 5: Reformat the Column (total_money_raised)
+This column is stored as an array object. From the column the example from one of the row is valued as '$14.9M' and makes it not calculable. To change these, I have created a new column named `money_raised` that only stores the value from the column `total_money_raised`.
+Below are the list of dictionary set in the code to change the necessary unusable characters.
+
+- `$` or `€` changed to 1
+- `M` is set as 1000000
+- `B` is set as 1000000000
+- `k` as 1000
+
+Code used to change the characters:
+
+```
+import numpy as np
+
+
+conversion_dict = {'$': 1, '€': 1, 'M': 1000000, 'B': 1000000000, 'k': 1000}
+
+def convert_to_numeric(value):
+    try:
+        value = value.strip()
+        if value == '$0':
+            return 0  # Return 0 if value is '$0'
+        currency_symbol = value[0]
+        number = value[1:-1]
+        suffix = value[-1]
+        
+        return float(number) * conversion_dict[currency_symbol] * conversion_dict[suffix]
+    except (ValueError, AttributeError, KeyError):
+        return np.nan 
+
+com['money_raised'] = com['total_money_raised'].apply(convert_to_numeric)
+
+com.head(15)
+```
+![s5](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%204/files/images/step_5.png)
+
+![conv](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%204/files/images/step_5_res.png)
+
+#### Step 6: Incorporate the selected machine learning algorithm (Linear Regression/Random Forest Regression/Support Vector Regression)
+
+- Linear Regression
+  ![lr](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%204/files/images/step_6a.png)
+- Random Forest Regression
+  ![rfr](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%204/files/images/step_6b.png)
+- Support Vector Regression
+  ![svr](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%204/files/images/step_6c.png)
+  
+#### Step 7: Plot Graph based on the Result Obtained
+
+I used Seaborn to get better visualization
+
+- Linear Regression
+  ![lr_plot](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%204/files/images/step_7a.png)
+- Random Forest Regression
+  ![rfr_plot](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%204/files/images/step_7b.png)
+- Support Vector Regression
+  ![svr_plot](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%204/files/images/step_7c.png)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

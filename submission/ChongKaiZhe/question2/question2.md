@@ -36,7 +36,18 @@ Transactions JSON imported
 ![image](https://github.com/drshahizan/SECP3843/assets/120616074/5c04311d-84e3-4594-ba3a-b12dea999406)
 
 ## Question 2 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+1. Create query
+  ![image](https://github.com/drshahizan/SECP3843/assets/120616074/f6853f75-8621-4b10-982e-415a110c672f)
+
+2. Read query
+   ![image](https://github.com/drshahizan/SECP3843/assets/120616074/ef4758dd-9f3f-4086-aa74-bd43e1a64723)
+
+3. Update query
+   ![image](https://github.com/drshahizan/SECP3843/assets/120616074/f95230a6-03a4-4437-8f1d-033c2a451d3f)
+
+4. Delete query
+   ![image](https://github.com/drshahizan/SECP3843/assets/120616074/30b031b2-dc95-49f7-8f1b-d502ce8e275d)
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

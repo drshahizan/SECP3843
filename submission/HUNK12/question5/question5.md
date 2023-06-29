@@ -1,6 +1,5 @@
 
-
-
+  
 
 <a href="https://github.com/drshahizan/SECP3843/stargazers"><img src="https://img.shields.io/github/stars/drshahizan/SECP3843" alt="Stars Badge"/></a>
 <a href="https://github.com/drshahizan/SECP3843/network/members"><img src="https://img.shields.io/github/forks/drshahizan/SECP3843" alt="Forks Badge"/></a>
@@ -74,7 +73,30 @@ Result:
 
 > As we can see, the original size of the dataset was 47.60MB. After preparing the data by dropping the unused columns, the new size became only 2.45MB. That's only about 5% of the orignal size! This means that less resources are needed to load the file thus improvving performance.
 
-### 2.
+### 2. Using libraries to process large data
+Using libraries such as Pandas or Dask to read the data is alot more efficient and uses alot less data. Reading a JSON file as a Pandas DataFrame significantly uses less memory. Below are code on how to use some libraries to improve efficiency:
+
+ - **Pandas Chunking:** This allows us to process the data in smaller portions, reducing the memory usage.
+```py
+import pandas as pd
+
+chunk_size = 1000
+
+df = pd.DataFrame()
+
+for chunk in pd.read_json('tweets.json', lines=True, chunksize=chunk_size):
+    df = df.append(chunk)
+```
+
+- **Dask for Parallel Processing:** Similar to Pandas Chunking, this allows us to handle large datasets by dividing them into smaller partitions and processing them in parallel.
+```py
+import dask.dataframe as dd
+df = dd.read_json('tweets.json', lines=True)
+filtered_df = df[df['text'] > 100]
+filtered_df = filtered_df.compute()
+```
+
+These are just a few suggestion that could be used to improve efficiency, however these are most likely not needed given how small our dataset is already. Using these methods may not even bring a significant impact to the performance.
 
 ## Question 5 (b)
 First, let's upload the sentiment analysis data to MongoDB. Continuing from [Question 4](https://github.com/drshahizan/SECP3843/blob/main/submission/HUNK12/question4/question4.md), we'll add the code below to upload the sentiment analysis data to MongoDB:

@@ -92,7 +92,7 @@ def customer_dashboard(request):
          {% endif %}
 ```
 #### 4. Path setting and run the App
-a. Open the `urls.py` file in your Django project. This file is usually located in the main project directory. Import the views you need to map to the URL paths.
+a. Open the `urls.py` file in q3_app project. This file is usually located in the main project directory. Import the views  to map to the URL paths.
 
 ```python
  from q3_app.views import user_registration, login_view, customer_dashboard_view, technical_worker_dashboard_view, management_dashboard_view,customer_dashboard
@@ -227,7 +227,7 @@ print('Predicted Sector:', predicted_sector)
 ```
 <img src="./files/image/predicted.png">
 
-f. Calculate the accuracy of the model (assuming model is referring to the Decision Tree classifier):
+f. Calculate the accuracy of the model:
 ```python
 accuracy = classifier.score(business_features, sector_names)
 print('Accuracy:', accuracy)

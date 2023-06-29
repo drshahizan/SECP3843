@@ -143,7 +143,7 @@ It is common for web developers to work with two different databases like MySQL 
 There will be several ways to ensure the data consistency between both databases including exploring database-specific replication techniques or leveraging external tools that facilitate real time updates and seamless interaction between the databases. Below shows the steps to overcome the challenge. 
 
 ### Step 1: Identify the Replication Strategy
-First, we need to determine the replication strategy that aligns with our requirements and the capabilities of the chosen databases. In this case, I have chosen a dual write technique to ensure that any changes made in one database are replicated and synchronized in the other database, maintaining data consistency across both systems.
+First, we need to determine the replication strategy that aligns with our requirements and the capabilities of the chosen databases. In this case, I have chosen a `dual write` technique to ensure that any changes made in one database are replicated and synchronized in the other database, maintaining data consistency across both systems.
 
 ### Step 2: Configure the database
 The MySQL and MongoDB connection have been declared in setting.py. 

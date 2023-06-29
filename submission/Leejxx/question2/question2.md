@@ -14,8 +14,13 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" >Supply Store Dataset</a>
 
 ## Question 2 (a)
-### 1. Download dataset (JSON File)
+### 1. Download & Prepare dataset (JSON File)
 Download the dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales" >Supply Store Dataset</a>
+
+Preparing the data before importing it into MongoDB involves converting the data into a valid JSON format. MongoDB stores data in a flexible and schema-less format called BSON (Binary JSON), which is a binary representation of JSON-like documents. When importing data into MongoDB, it expects the data to be in a specific format, typically JSON or CSV.
+
+In this case of my modified data (modified_data), wrapping the JSON objects in square brackets [ ] and joining them with commas , creates a valid JSON array. This format allows MongoDB to interpret each element of the array as a separate document when importing it into a collection. <br>
+<img  src="./files/images/prepare1.JPG"></img>
 
 ### 2. Start MongoDB server with command Prompt
 Open Command Prompt and enter `mongod` to start the MongoDB server.

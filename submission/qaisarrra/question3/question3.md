@@ -19,10 +19,11 @@ This segment of Question 3. (a) is similar to Question 1. (a) and is divided int
 * [Setting Up A Django Project](#️-setting-up-a-django-project)
 
 ### Prerequisites
-To carry out this segment of the question, it it crucial for to do the following:
+To carry out this segment of the question, it it crucial me for to do the following:
 1. Install [Python](https://www.python.org/downloads/)
 2. Install [Visual Studio Code](https://code.visualstudio.com/download)
 <br></br>
+
 
 ### Setting Up A Django Project
 
@@ -70,58 +71,203 @@ Below are the output when running the commands:
 
 **Create A Django Project** 
 
-You can now create a project after setting up, activating your virtual environment and installing Django. To start a new Django project, open a new terminal in Visual Studio Code and run the following command. The project is named **Companies** in the code below, but it can be changed to any name you like.
+You can now create a new project after setting up, activating your virtual environment and installing Django. To start a new Django project, open a new terminal in Visual Studio Code and run the following command. The project is named **Companies** in the code below, but it can be changed to any name you like.
 ```bash
-python -m django startproject Companies
+python -m django startproject Q3
 ```
 Navigate yourself to the project directory by inputing the command below:
 ```bash
-cd Companies
+cd Q3
 ```
 
 <br></br>
 
 **Create A Django Application** 
 
-The  ``startapp `` command generates a default folder structure for a Django app. This tutorial uses **CompaniesApp** as the name for the app:
+The  ``startapp `` command generates a default folder structure for a Django app. This tutorial uses **DjangoApp** as the name for the app:
 ```bash
-python manage.py startapp CompaniesApp
+python manage.py startapp DjangoApp
 ```
-<p align="center">
-   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/Create%20Django%20Project.png">
-</p>
 <br></br>
 
 **Configure Database Connection** 
 
-Set up the MySQL and MongoDB connections. Alter the code for the databases in the Django project's'settings.py' file as shown below.
+Set up the MySQL and MongoDB connections. Alter the code for the databases and installed apps in the Django project's **settings.py** file as shown below.
+```bash
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django_login_required',
+    'DjangoApp'
+]
+```
 ```bash
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_companies',
+        'NAME': 'aa',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
     },
-    'mongodb': {
-        'ENGINE': 'djongo',
-        'NAME': 'AA',
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
-            'host': 'localhost',
-            'port': 27017,
-            'username': 'qaisara',
-            'password': '8301',
-            'authSource': 'admin',
-            'authMechanism': 'SCRAM-SHA-1',
-        }
-    }
 }
 ```
 <br></br>
 
+ **Create Model** 
+ ```bash
+from django.db import models
+from django.contrib.auth.models import AbstractUser, Group, Permission
+
+# Create your models here.
+class User(AbstractUser):
+    is_customer = models.BooleanField(default=False)
+    is_technical_worker = models.BooleanField(default=False)
+    is_senior_management = models.BooleanField(default=False)
+
+    groups = models.ManyToManyField(Group, blank=True, related_name='custom_user_set', related_query_name='user')
+    user_permissions = models.ManyToManyField(Permission, blank=True, related_name='custom_user_set', related_query_name='user')
+
+```
+
+<br></br>
+
+**Perform Database Migration** 
+
+**makemigrations** provides SQL instructions for preinstalled apps and my **CustomUser model**, meanwhile **migrate** runs the SQL commands stored in the database file. So, after running migrate, all of my CompaniesApp's tables are created in the database file. Please establish an empty MySQL database named **aa** beforehand to assure this.
+```bash
+ python manage.py makemigrations
+ python manage.py migrate
+```
+Check your MySQL database (XAMPP > MySQL > Start > Admin) to confirm this migration procedure.
+
+<br></br>
+
+
+**Create Registration and Login View** 
+
+Here is the code for my DjangoApp **views.py** file that defines the user registration and login processes.
+
+The **Login** functionality
+```bash
+from django.shortcuts import render, redirect
+from .forms import RegistrationForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+from .decorators import is_customer, is_technical_worker, is_senior_management
+from django.contrib.auth.decorators import user_passes_test
+
+# Create your views here.
+def user_login(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request=request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(username=username, password=password)
+            print('User: ', user)
+            if user is not None:
+                 login(request, user)
+                 print('User logged in')
+                 return redirect('home')
+            else:
+                 print("Invalid username or password.")
+                 return redirect('login')
+            
+    else:
+        form = AuthenticationForm()
+    return render(request, 'login.html', {'form': form})
+```
+
+The **Register** functionality
+```bash
+def register(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = RegistrationForm()
+    return render(request, 'register.html', {'form': form})
+```
+
+These are other **views** processes that will help users to navigate arounf the portal
+```bash
+@login_required
+def profile(request):
+    user = request.user
+    return render(request, 'profile.html', {'user': user})
+
+@user_passes_test(is_customer)
+def customer_dashboard(request):
+    return render(request, 'customer_dashboard.html')
+
+@user_passes_test(is_technical_worker)
+def technical_worker_dashboard(request):
+    return render(request, 'technical_worker_dashboard.html')
+
+@user_passes_test(is_senior_management)
+def senior_management_dashboard(request):
+    return render(request, 'senior_management_dashboard.html')
+
+def redirect_dashboard(request):
+    user = request.user
+    if user.is_customer:
+        return redirect('customer_dashboard')
+    elif user.is_technical_worker:
+        return redirect('technical_worker_dashboard')
+    elif user.is_senior_management:
+        return redirect('senior_management_dashboard')
+    else:
+        return redirect('profile')
+    
+def user_logout(request):
+    logout(request)
+    return redirect('login')
+
+```
+
+**Create Registration Form** 
+In the DjangoApp folder, create a registration form file named **forms.py**
+```bash
+from django.contrib.auth.forms import UserCreationForm
+from django import forms
+from .models import User
+
+class RegistrationForm(UserCreationForm):
+    ROLE_CHOICES = [
+        ('customer', 'Customer'),
+        ('technical_worker', 'Technical Worker'),
+        ('senior_management', 'Senior Management'),
+    ]
+
+    role = forms.ChoiceField(choices=ROLE_CHOICES, widget=forms.RadioSelect)
+
+    class Meta:
+        model = User
+        fields = ['username', 'password1', 'password2', 'role']
+
+    def save(self, commit=True):
+        user = super(RegistrationForm, self).save(commit=False)
+        role = self.cleaned_data['role']
+        
+        if role == 'customer':
+            user.is_customer = True
+        elif role == 'technical_worker':
+            user.is_technical_worker = True
+        elif role == 'senior_management':
+            user.is_senior_management = True
+        if commit:
+            user.save()
+        return user
+```
 
 ## Question 3 (b)
 

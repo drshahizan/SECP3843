@@ -13,11 +13,21 @@ Don't forget to hit the :star: if you like this repo.
 #### Matric No.: A20EC0116
 #### Dataset: [City Inspections Dataset](https://github.com/drshahizan/dataset/tree/main/mongodb/08-city_inspections)
 
-## Question 4 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Question 4 
+### Supervised Learning: Classification
+**1. Load dataset**
+- Since my JSON data is stored in MongoDB Compass, I establishes a connection to a MongoDB database and retrieves the specific collection. 
+<div align="center"><img src="files/images/load.PNG" height="350px" /></div>
+<div align="center"><img src="files/images/display.PNG" height="350px" /></div>
 
-## Question 4 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+**2. Transform the dataset into an appropriate manner**
+<div align="center"><img src="files/images/transform.PNG" height="350px" /></div>
+
+**2. Data Cleaning**
+<div align="center"><img src="files/images/clean.PNG" height="350px" /></div>
+<div align="center"><img src="files/images/clean2.PNG" height="350px" /></div>
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

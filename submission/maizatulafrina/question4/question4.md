@@ -13,13 +13,16 @@ Don't forget to hit the :star: if you like this repo.
 #### Matric No.: A20EC0204
 #### Dataset: City Inspections
 
-## Question 4 (a)
+## Question 4
 
-<img width="548" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/f8f4fcc6-e839-4fb3-a72a-81ff0b18a2df">
-<img width="562" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a4d3abda-5010-4bcd-ad01-3cc9309a7727">
+<img width="933" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/e5888d93-a6cf-4434-a79c-0f55d063f041">
+<img width="932" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/4937aade-d1e5-4f99-b1ba-45449a5a65d0">
+<img width="924" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/279e3b11-d006-4ea8-9b9f-4ff3f63092ed">
 
 
-## Question 4 (b)
+
+
+
 
 
 ## Contribution 🛠️

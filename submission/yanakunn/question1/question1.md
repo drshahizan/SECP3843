@@ -25,30 +25,197 @@ Integrating the Django framework, JSON data, MySQL, and MongoDB can be achieved 
 
 ### Steps required to integrate Django with the JSON dataset, MySQL, and MongoDB:
 
-Step 1: Install Django and setup Django project
+#### Step 1: Install Django and setup the Django project
 
-1. Create and activate a new virtual environment called .venv in the project directory.
-``` ruby
-$ python3 -m venv .venv
-$ source .venv/bin/activate
+1. Create and activate a new virtual environment called `.venv` in the Django project directory. VVirtual environments enable the creation and management of separate spaces for individual Python projects on a single computer.
+  ``` ruby
+  % python3 -m venv .venv
+  % source .venv/bin/activate
 ```
-2. Install Django, then create a new project called project and start the local Django web server.
-``` ruby
-(.venv) $ python3 -m pip install django
-(.venv) $ django-admin startproject project .
-(.venv) $ python manage.py runserver
-```
-In your web browser, navigate to http://127.0.0.1:8000/ and see the Django Welcome Page.
+2. Install Django, then create a new project called `project`.
+  ``` ruby
+  (.venv) % python3 -m pip install django
+  (.venv) % django-admin startproject project
+  ```
 
-3. Configure the project settings to connect to the MySQL and MongoDB databases. Modify your Django project directory's `settings.py` file and provide the necessary database connection details for MySQL and MongoDB.
+3. To use MySQL and MongoDB in this Django project, we will utilized XAMPP's PHPMyAdmin and MongoDB Atlas. There are other options besides XAMPP for setting up your Django project such as installing the MySQL server separately and configuring it within the project's settings.
 
-Step 2:
+- XAMPP
+  - Open `http://localhost/phpmyadmin/` and create a new database.
+  - <img width="300" alt="Screenshot 2023-06-29 at 7 50 29 AM" src="https://github.com/drshahizan/special-topic-data-engineering/assets/76076543/70b6950b-e627-4cbe-ae2e-4084b5372d82">
+
+
+- MongoDB Atlas
+  - Go to `https://cloud.mongodb.com/`, sign in to your account, and create a new project.
+  - Build a new database cluster in the project and follow the instructions.
+  - Browse the collection and create a new database and collection.
+  - <img width="300" alt="Screenshot 2023-06-29 at 7 58 48 AM" src="https://github.com/drshahizan/special-topic-data-engineering/assets/76076543/97164025-4e91-49cc-882d-65ad7a9d9179">
+
+4. Configure the project's `settings.py` file and provide the database connection details for MySQL and MongoDB. Make sure to use MySQLClient as the database backend for the MySQL database, and utilize Djongo as the MongoDB connector for Django.
+  ```ruby
+  (.venv) project % pip3 install mysqlclient
+  (.venv) project % pip3 install djongo
+  ```
+In `settings.py`, define the databases,
+  ```ruby
+  DATABASES = {
+      'default': {
+          'ENGINE': 'django.db.backends.mysql',
+          'NAME': '<db_name>',
+          'USER': '<username>',
+          'PASSWORD': '<password>',
+          'HOST': 'localhost',
+          'PORT': '3306',
+          'OPTIONS': {
+              'unix_socket': 'your_path/to/mysql.sock',
+          },
+      },
+      'mongodb': {
+          'ENGINE': 'djongo',
+          'NAME': '<db_name>',
+          'CLIENT': {
+              'host': '<mongodb_connection_string>',
+              'username': '<username>',
+              'password': '<password>',
+              'authMechanism': 'SCRAM-SHA-1',
+              'authSource': 'admin',
+          },
+      },
+  }
+  ```
+#### Step 2: Define Django models that represent the structure of the project's data
+1. Define a Django model called `Sale` based on the given JSON data structure
+  ```ruby
+  from django.db import models
+  
+  class Sale(models.Model):
+      _id = models.CharField(max_length=24)
+      saleDate = models.DateTimeField()
+      items = models.JSONField()
+      storeLocation = models.CharField(max_length=255)
+      customer= models.JSONField()
+      couponUsed = models.BooleanField()
+      purchaseMethod = models.CharField(max_length=255)
+  
+      class Meta:
+          db_table = 'sales'
+          app_label = 'home'
+  ```
+2. Define a model for user by extending Django's built-in AbstractUser model
+  ```ruby
+  from django.contrib.auth.models import AbstractUser
+  
+  class User(AbstractUser):
+      USER_TYPE_CHOICES = (
+          ('customer', 'Customer'),
+          ('technical_worker', 'Technical Worker'),
+          ('senior_management', 'Senior Management'),
+      )
+  
+      user_type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES)
+  
+      class Meta:
+          db_table = 'users'
+          app_label = 'home'
+  ```
+3. Make migrations
+  ```ruby
+  (.venv) project % python3 manage.py makemigrations
+  (.venv) project % python3 manage.py migrate
+  ```
+
+#### Step 3: Prepare and import the JSON data file
+1. Write a Python code that transforms the JSON sales dataset into a structure compatible with MongoDB, save it to a new JSON file, and insert the data into MongoDB using the `pymongo` library.
+  ```ruby
+  from pymongo import MongoClient
+  import json
+  
+  uri = "mongodb+srv://<username>:<password>@<cluster_name>.mongodb.net/?retryWrites=true&w=majority"
+  
+  # Read the new JSON file
+  with open('/Documents/stde/newsales.json') as file:
+      json_data = json.load(file)
+  
+  # Establish a connection to the MongoDB server
+  client = MongoClient(uri)
+  db = client['<db_name>']
+  collection = db['<collection_name>']
+  
+  # Insert each sale record into the collection
+  for sale in json_data:
+      collection.insert_one(sale)
+  ```
+`sales.json`
+
+<img width="900" alt="Screenshot 2023-06-29 at 5 56 15 AM" src="https://github.com/drshahizan/special-topic-data-engineering/assets/76076543/9c5a811d-994d-41a1-984b-a00f7a51c116">
+
+`newsales.json`
+
+<img width="300" alt="Screenshot 2023-06-29 at 5 57 01 AM" src="https://github.com/drshahizan/special-topic-data-engineering/assets/76076543/287a025b-fcea-47b1-9526-09ad04779e25">
+
+#### Step 4: Build web pages for user interface
+1. Define Django views for retrieving data using Django's built-in Object-Relational Mapping system as required. In this example, we will retrieve the store locations for the dataset
+  ```ruby
+  from home.models import Sale
+  
+  def salesReport(request):
+      location = Sale.objects.using('mongodb').values('storeLocation').distinct()
+  
+      context = {
+          'location': location,
+      }
+      return render(request, 'salesReport.html', context)
+  ```
+2. Create Django templates that define the structure and presentation of the dynamic web pages. Generate the content by retrieving data from MySQL and MongoDB databases and use it in the templates. For this example, the file is named as `salesReport.html`.
+  ```ruby
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <title>Sales Page</title>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css">
+  </head>
+  <body>
+      <main>
+          <div class="container">
+              <div class="col-3 p-5">
+                  <table class="table">
+                      <thead>
+                          <tr>
+                              <th>Store Location</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          {% for s in location %}
+                          <tr>
+                              <td>{{s.storeLocation}}</td>
+                          </tr>
+                          {% endfor %}
+                      </tbody>
+                  </table>
+              </div>
+              
+          </div>
+      </main>
+  </body>
+  </html>
+  ```
+4. Map the URLs in your Django project to the corresponding views. Update the `urls.py` file in the Django project to define the URL patterns and associate them with the appropriate views.
+  ```ruby
+  path('salesReport', views.salesReport, name='salesReport')
+  ```
+#### Step 5: Run the Django application
+  ```ruby
+  (.venv) project % python3 manage.py runserver
+  ```
+#### Result of the page
+<img width="300" alt="Screenshot 2023-06-29 at 7 41 29 AM" src="https://github.com/drshahizan/special-topic-data-engineering/assets/76076543/bea00364-4a34-4859-9c20-81b8ebe32753">
 
 
 ## Question 1 (b)
 <img width="1000" alt="Screenshot 2023-06-28 at 12 11 32 PM" src="https://github.com/drshahizan/special-topic-data-engineering/assets/76076543/de697f28-c2e8-4809-95d7-c4be00f5f974">
 
-The system architecture seamlessly integrates Django with MySQL and MongoDB databases to create a dashboard visualization and data viewing platform. It consists of several tiers and components:
+This system architecture seamlessly integrates Django with MySQL and MongoDB databases to create a dashboard visualization and data viewing platform. It consists of several tiers and components:
 
 <table>
   <tr>

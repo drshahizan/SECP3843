@@ -12,13 +12,42 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Name: Eddie Wong Chung Pheng
 #### Matric No.: A20EC0031
-#### Dataset: Companies
+#### Dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/04-companies" >Companies</a>
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 ## Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### Step 1: Login to MongoDB Atlas and Load the dataset
+Go to this <a href="https://charts.mongodb.com/"> link </a> to start create dashboard and select the dataset.
+
+<img  src="./images/data.png"></img>
+
+### Step 2: Go to MongoDB Chart develop dashboard
+Create a dashboard in MongoDB Charts and add charts using your JSON data. You can use different chart types to visualize your data, such as bar charts, line charts, maps, etc. You can also apply filters and aggregations to your data
+
+### Dashboard
+<img  src="./images/dashboard.png"></img>
+
+### Bar Chart
+This bar chart shows the employee size and funding raised amount for various companies and startups in the dataset. This allows to see the relationship and comparison of employee size and funding raised amount for different companies and startups.
+<img  src="./images/1.png"></img>
+
+### Line Chart
+This line chart shows the stock symbol and IPO valuation amount over the year for various companies and startups in the dataset. This chart allows to see the trends and patterns of stock symbol and IPO valuation amount over the year for different companies and startups.
+<img  src="./images/3.png"></img>
+
+### Donut Chart
+This donut chart shows the top 10 most popular category codes by company count in the dataset. A donut chart is a circular chart that shows the proportion of each category within the total. The larger the slice, the higher the company count. This chart allows to see the popularity and ranking of different category codes by company count.
+<img  src="./images/2.png"></img>
+
+### Heatmap
+This heatmap shows the frequency of founded year and deadpooled year for various companies and startups in the dataset. A heatmap is a graphical representation of data where the values are encoded by colors. The darker the color, the higher the frequency. This heatmap allows to see the distribution and concentration of founded year and deadpooled year for different companies and startups. 
+<img  src="./images/5.png"></img>
+
+### Line Chart
+This chart shows the category and acquisition price amount for companies and startups over the year. The columns show the total price for each category and the lines show the percentage of each category. This report helps to see the changes and differences of category and price over the year.
+<img  src="./images/4.png"></img>
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
