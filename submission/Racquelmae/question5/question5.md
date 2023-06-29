@@ -83,7 +83,7 @@ df.to_csv(r'C:\Users\chloe\Desktop\City.csv', index=False)
 <img  src="./files/images/board.jpg"></img>
 
 ### City Business Inspections Dashboard
-The dashboard above displays the overview of the business inspections results in different cities and sectors.
+The [dashboard](./files/code/City%20Business%20Inspections%20Dashboard.pbix) above is created using Power BI by importing the processed dataset and it displays the overview of the business inspections results in different cities and sectors.
 
 #### Filter
 The drop down columns of sector and city are filters of the dashboard to view specific results based on sector or city.
