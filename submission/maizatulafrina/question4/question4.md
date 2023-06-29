@@ -15,6 +15,8 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 4
 
+[AA_Question4.ipynb](https://github.com/drshahizan/SECP3843/blob/main/submission/maizatulafrina/question4/files/code/AA_Question4.ipynb)
+
 #### 1. Install Necessary Library
 
 Install necessary library such as pymongo, textblob and wordcloud
@@ -23,9 +25,13 @@ Install necessary library such as pymongo, textblob and wordcloud
 
 #### 2. Import Library
 
+Import related library
+
 <img width="932" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/4937aade-d1e5-4f99-b1ba-45449a5a65d0">
 
 #### 3. Import and Load JSON Dataset from MongoDB
+
+Connect to MongoDB and load the dataset
 
 <img width="926" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/0f7ec563-5eb0-4f16-a6ee-0b339768766e">
 
@@ -35,6 +41,8 @@ Output:
 
 #### 4. Data Transfromation
 
+Separate the content in address.
+
 <img width="924" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/f2c31acd-9962-468a-a601-08bfd4a0f77b">
 
 Result:
@@ -43,27 +51,50 @@ Result:
 
 #### 5. Data Cleaning
 
+Check if there are any null values.
+
 <img width="932" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/d65b6fdc-b3eb-4cb1-b13e-bc587cd081ad">
-<img width="928" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/4239d4e8-2a84-4b43-a660-351f62e43d07">
+
+Check if there are any duplicate value in `Result`.
+
 <img width="936" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/38a75f14-e517-4ee3-8177-912e882a0306">
+
+Transform the datatype of "date" to datetime
+
 <img width="929" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/ce28fc46-66a1-41c7-b64a-b37c42495b5f">
 
 
-#### 6. """""""""
-<img width="928" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a21c00ab-d2b7-4093-9c1c-b64b194ddb44">
-<img width="938" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a4040839-9454-4d60-893c-571ef7bdba26">
+#### 6. Data Visualization
 
-<img width="931" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/ae63bea6-dc07-43b4-86a3-9a1fbb1f3a3a">
+- Percentage of Results from The Inspection
 
-Result:
+  <img width="928" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a21c00ab-d2b7-4093-9c1c-b64b194ddb44">
 
-<img width="934" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/2fd8bd70-0cb3-4276-833c-65727b1a378a">
+  Result:
+
+  <img width="938" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a4040839-9454-4d60-893c-571ef7bdba26">
+
+- Number of Inspection by Sectors
+
+  <img width="931" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/ae63bea6-dc07-43b4-86a3-9a1fbb1f3a3a">
+  
+  Result:
+
+  <img width="934" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/2fd8bd70-0cb3-4276-833c-65727b1a378a">
 
 
 #### 7. Machine Learning
 
+Create sample data.
+
 <img width="927" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/b9a9ec9b-0b28-49dd-b2dc-632254cccea2">
+
+Result:
+
 <img width="927" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/801c35bb-e161-4686-8e30-0207c2f509d2">
+
+
+- Prediction of Accuracy of new sector
 
 ```
     from sklearn.model_selection import train_test_split
@@ -108,14 +139,13 @@ Result:
 <img width="938" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a9dc19b1-6826-405c-8b50-e5fbff996dc6">
 
 
+- Classification Report of the Model
+
 <img width="937" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/170586a0-51d6-431c-801e-17faa76cc99f">
 
 Result:
 
 <img width="921" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a62c04d8-574c-4f62-b271-9054496d9249">
-
-
-
 
 
 
