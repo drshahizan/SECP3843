@@ -52,6 +52,62 @@ Next, update the settings.py file in question3 project folder. I change the DATA
 I need to define the models for q3 app that represent the data that I want to store in the database.
 <img  src="./files/images/model.png"></img>
 
+### Step 4: Migrate Database
+Apply the database migrations to create the necessary tables for the user model in the MySQL database.
+```
+python manage.py makemigrations Q3_analytics_app
+python manage.py migrate
+```
+<img  src="./files/images/model.png"></img>
+
+SQL Result:
+<img  src="./files/images/mysql_result.png"></img>
+
+### Step 5: Create Form for User
+Import the User model from  models.py file, which defines the attributes and methods of the user class
+<img  src="./files/images/forms.png"></img>
+
+### Step 6: Create View File and Template
+Define a login_view function 
+<img  src="./files/images/login_view.png"></img>
+
+Define a user_registration function 
+<img  src="./files/images/user_register.png"></img>
+
+Locate each user type to view to the related the template.
+<img  src="./files/images/all.png"></img>
+
+Create new directories at the app and put all the template inside one folder.
+<img  src="./files/images/template.png"></img>
+
+In your settings.py file, update the TEMPLATES setting to include the directory and remember to import the os module also.
+<img  src="./files/images/include_template.png"></img>
+
+### Step 6: Configure URL
+<img  src="./files/images/url.png"></img>
+
+## Ouput:
+
+### Home Page
+<img  src="./files/images/homepage.png"></img>
+
+### Home Page
+<img  src="./files/images/login.png"></img>
+
+### Registration Page
+<img  src="./files/images/register.png"></img>
+
+### Customer Page
+<img  src="./files/images/customer.png"></img>
+
+### Technical Worker Page
+<img  src="./files/images/worker.png"></img>
+
+### Senior Management Page
+<img  src="./files/images/management.png"></img>
+
+### MySQL Database
+<img  src="./files/images/after_login.png"></img>
 ## Question 3 (b)
 
 

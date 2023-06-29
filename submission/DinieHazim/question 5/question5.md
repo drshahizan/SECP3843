@@ -67,6 +67,32 @@ In order to optimize the perfomance of a portal when dealing with large volumes 
 
    <img src="./files/images/diggs.png">
 
+#### Aggregation:
+
+1. I create aggregation to summarize the total diggs and comments based on topic.
+2. Click on the Add Stage button.
+   ![image](https://github.com/drshahizan/SECP3843/assets/120595244/f25bff33-b8c3-4d68-b422-c5d144640440)
+3. For the stage type, choose $group and insert the code below
+   ```
+      {
+         {
+           _id: "$topic.name",
+           totalComments: { $sum: "$comments" },
+           totalDiggs: { $sum: "$diggs" }
+         }
+      }
+   ```
+
+4. Here is my sample output.
+   ![image](https://github.com/drshahizan/SECP3843/assets/120595244/a725f4d1-3ac2-4c46-a214-543c5fc9236b)
+5. Click Run to run the pipeline.
+6. Final result.
+   
+   ![image](https://github.com/drshahizan/SECP3843/assets/120595244/64428107-ca59-401a-bbb6-3d0541504dc5)
+
+
+
+
 ## Question 5 (b)
 
 #### Import JSON dataset into MongoDB
@@ -137,7 +163,7 @@ Here is my dashboard:
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
-You can also contact me using [Linkedin](https://www.linkedin.com/in/mikhel-adam/) for any other queries or feedback.
+You can also contact me using [Linkedin](https://www.linkedin.com/in/dinie-hazim-52770514b/) for any other queries or feedback.
 
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=https%3A%2F%2Fgithub.com%2Fdrshahizan&labelColor=%23697689&countColor=%23555555&style=plastic)](https://visitorbadge.io/status?path=https%3A%2F%2Fgithub.com%2Fdrshahizan)
 ![](https://hit.yhype.me/github/profile?user_id=81284918)

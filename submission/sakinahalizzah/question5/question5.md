@@ -15,10 +15,50 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Analytics](https://github.com/drshahizan/dataset/tree/main/mongodb/02-analytics)
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+When working with a large amount of JSON data that requires display on a dashboard, optimizing portal performance is essential. To achieve this, consider the following approach as a recommendation:
+
+1. Data Preprocessing and Aggregation
+
+When creating a dashboard, it is critical to conduct a thorough analysis of the requirements and identify the essential data that needs to be visualized. To achieve this, the JSON data must be preprocessed to extract and transform the relevant information needed for the dashboard. This can be done by aggregating the data to reduce its volume and complexity. By summarizing or grouping the data at appropriate levels, unnecessary details can be avoided during visualization. As an example, consider the aggregation of data in a transactions dataset. 
+```
+# Extract and transform relevant columns information for visualization
+processed_data = []
+for transaction in transactions:
+    account_id = transaction['account_id']
+    date = transaction['date']
+    amount = transaction['amount']
+    processed_item = {
+        'account_id': account_id,
+        'date': date,
+        'amount': amount
+    }
+    processed_data.append(processed_item)
+
+# Aggregate the data
+aggregated_data = {}
+for item in processed_data:
+    account_id = item['account_id']
+    amount = item['amount']
+    
+    if account_id in aggregated_data:
+        aggregated_data[account_id] += amount
+    else:
+        aggregated_data[account_id] = amount
+
+# Print the aggregated data
+for account_id, total_amount in aggregated_data.items():
+    print(f"Account ID: {account_id}, Total Amount: {total_amount}")
+```
+
+By following these steps, one can create a well-organized and informative dashboard that effectively communicates the necessary data.
+
+
+2. 
+
 
 ## Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 
 
