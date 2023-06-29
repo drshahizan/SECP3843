@@ -38,7 +38,7 @@ Lastly, click **Run** to establish the aggregation pipeline. This aggregation pi
   <img  src="./files/images/run.png"></img>
 
 ## Question 5 (b)
-In answering this question, I will be creating a dashboard for `customer.json` using MongoDB Atlas Charts. I choose this tool because it is fast, easy to use and powerful in creating dashboard for JSON file especially for beginner. Creating a dashboard is important in helping visualizing the JSON dataset in meaningful way, interactive interaction, monitor key metrics and track the performance of your data over time.
+In answering this question, I will be creating a dashboard for `customer.json` using MongoDB Atlas Charts. I choose this tool because it is fast, easy to use and powerful in creating dashboard for JSON file especially for beginner. Creating a dashboard is important in helping visualizing the JSON dataset in meaningful way, monitor key metrics and track the performance of your data over time.
 
 ### Prerequisite
 - Create an account in MongoDB Atlas in https://www.mongodb.com/cloud/atlas/register.
@@ -81,6 +81,7 @@ In answering this question, I will be creating a dashboard for `customer.json` u
 
   <img  src="./files/images/ch5.jpg"></img>
 
+> You can view my dashboard here https://charts.mongodb.com/charts-project-0-syabd/public/dashboards/644cc501-c015-4338-888e-73f563da51cb.
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
