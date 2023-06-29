@@ -25,6 +25,9 @@ To successfully upload the sales.json dataset into MongoDB, the JSON file must h
         for line in file:
             json_data.append(json.loads(line))
     ```
+- `sales.json`
+- <img width="900" alt="Screenshot 2023-06-29 at 1 13 53 PM" src="https://github.com/drshahizan/special-topic-data-engineering/assets/76076543/c8a44c34-f5da-4cb1-a830-47ff1ca128a9">
+
 2. Remove the special MongoDB operators and convert them to regular values
     ``` ruby
     def clean_data(item):
@@ -57,6 +60,9 @@ To successfully upload the sales.json dataset into MongoDB, the JSON file must h
                 cleaned_item[key] = value
         return cleaned_item
     ```
+- `newsales.json`
+- <img width="900" alt="Screenshot 2023-06-29 at 1 12 27 PM" src="https://github.com/drshahizan/special-topic-data-engineering/assets/76076543/2a977288-b2f2-42bc-9469-6559cd48cc48">
+
 3. Save the cleaned data to a new file
     ``` ruby
     
@@ -65,30 +71,32 @@ To successfully upload the sales.json dataset into MongoDB, the JSON file must h
         json.dump(cleaned_data, file, indent=2)
     ```
 ### Step 2: Setup MongoDB server
-1. Log in to MongoDB Atlas
-2. Create a new project
-3. Create a cluster in the project
+1. Log in to MongoDB Atlas.
+2. Create a new project.
+3. Create a cluster in the project.
 4. Click "Connect" and select "Drivers" to connect the application with MongoDB Driver. Since we are using the Django web framework, choose "Python" as the driver with the correct version.
 5. Copy the connection string provided to establish a connection with the MongoDB database server.
+<img width="700" alt="Screenshot 2023-06-29 at 11 49 15 AM" src="https://github.com/drshahizan/special-topic-data-engineering/assets/76076543/0b46061a-7c2c-4ad1-9623-c3e28192928e">
 
-### Step 3: Import newsales.json to MongoDB Database
+
+### Step 3: Import data to MongoDB Database
 1. Import MongoClient and JSON library
     ```ruby
     from pymongo import MongoClient
     import json
     ```
-2. Read the JSON file
+2. Read the new JSON file `newsales.json`
     ```ruby
     with open('/Documents/stde/newsales.json') as file:
         json_data = json.load(file)
     ```
-3. Establish a connection to the MongoDB server and insert records into the MongoDB collection
+3. Establish a connection to the MongoDB server and insert records into the MongoDB collection.
     ```ruby
-    uri = "mongodb+srv://<username>:<password>@cluster0.x8tqfdb.mongodb.net/?retryWrites=true&w=majority"
+    uri = "mongodb+srv://<username>:<password>@<cluster_name>.mongodb.net/?retryWrites=true&w=majority"
     
     client = MongoClient(uri)
-    db = client['db_stde']
-    collection = db['sales']
+    db = client['<db_name>']
+    collection = db['<collection_name>']
     
     # Insert each sale record into the collection
     for sale in json_data:
@@ -99,14 +107,14 @@ To successfully upload the sales.json dataset into MongoDB, the JSON file must h
 
 ## Question 2 (b)
 
-1. Connect to the MongoDB server and select the database and collection
+Connect to the MongoDB server and select the database and collection.
 ```ruby
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://nurarissadayana:123@cluster0.x8tqfdb.mongodb.net/?retryWrites=true&w=majority')
-db = client['db_stde']
-collection = db['sales']
+client = MongoClient('mongodb+srv://<username>:<password>@<cluster_name>.mongodb.net/?retryWrites=true&w=majority')
+db = client['<db_name>']
+collection = db['<collection_name>']
 ```
-- Create query: Add new object with the id "newobject123".
+- Create query: Add a new object with the id "newobject123" and define all the details.
 ```ruby
 sale = {
     "_id": "newobject123",
@@ -140,7 +148,7 @@ collection.insert_one(sale)
 print("Sale inserted successfully")
 print(sale)
 ```
-<img width="900" alt="Screenshot 2023-06-27 at 5 06 31 PM" src="https://github.com/drshahizan/SECP3843/assets/76076543/837079c2-7eba-4c06-8ae6-9572191962c8">
+<img width="1100" alt="Screenshot 2023-06-27 at 5 06 31 PM" src="https://github.com/drshahizan/SECP3843/assets/76076543/837079c2-7eba-4c06-8ae6-9572191962c8">
 
 - Read query: Print items bought by male customers at the store in Denver.
     ```ruby
@@ -160,8 +168,8 @@ collection.update_one(filter_query, update_query)
 print(collection.find_one(filter_query))
 ```
 <img width="900" alt="Screenshot 2023-06-27 at 5 03 37 PM" src="https://github.com/drshahizan/SECP3843/assets/76076543/6d6b1068-82f5-4fdd-81e6-a17f8c88d860">
-
-  - Update the value of an object's purchase method
+- Update queries
+    - Update the value of an object's purchase method
     
 ```ruby
 filter_query = {"_id": "5bd761dcae323e45a93ccfeb"}
@@ -171,7 +179,7 @@ print(collection.find_one(filter_query))
 ```
 <img width="900" alt="Screenshot 2023-06-27 at 5 12 03 PM" src="https://github.com/drshahizan/SECP3843/assets/76076543/239ef038-1eb0-4ab1-b20f-703baf75d1ee">
 
-- Delete
+- Delete an item
 ```ruby
 filter_query = {"_id": "newobject123"}
 collection.delete_one(filter_query)
