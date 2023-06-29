@@ -574,6 +574,65 @@ It will direct user to the coresponding user type page:
 
 - ![image-5.png](ss/s37.png)
 
+File structure:
+```powershell
+PS C:\Users\User\Desktop\django_project\mflix> tree /F
+Folder PATH listing
+Volume serial number is EE79-4E7C
+C:.
+│   manage.py
+│
+├───mflix
+│   │   settings.py
+│   │   urls.py
+│   │   wsgi.py
+│   │   __init__.py
+│   │
+│   └───__pycache__
+│           settings.cpython-311.pyc
+│           urls.cpython-311.pyc
+│           wsgi.cpython-311.pyc
+│           __init__.cpython-311.pyc
+│
+└───role
+    │   admin.py
+    │   apps.py
+    │   forms.py
+    │   models.py
+    │   tests.py
+    │   urls.py
+    │   views.py
+    │   __init__.py
+    │
+    ├───migrations
+    │   │   0001_initial.py
+    │   │   __init__.py
+    │   │
+    │   └───__pycache__
+    │           0001_initial.cpython-311.pyc
+    │           __init__.cpython-311.pyc
+    │
+    ├───templates
+    │       base.html
+    │       customer.html
+    │       home.html
+    │       index.html
+    │       login.html
+    │       register.html
+    │       senior.html
+    │       technical.html
+    │
+    └───__pycache__
+            admin.cpython-311.pyc
+            apps.cpython-311.pyc
+            forms.cpython-311.pyc
+            models.cpython-311.pyc
+            urls.cpython-311.pyc
+            views.cpython-311.pyc
+            __init__.cpython-311.pyc
+```
+
+
 ## Question 3 (b)
 The possible approach to solve data replication and synchronization between MySQL and MongoDB would be **database-level replication** and **application-level replication**. Ths is to ensure one databse are accurately reflect in the other. Thereby, it can maintain the data consistency across both system.
 
@@ -676,6 +735,61 @@ at this point, the data will add to database via passing throught `saveObj()` me
 ![image.png](ss/ss32.png)
 
 ![image-2.png](ss/ss33.png)
+
+File structure:
+```powershell
+PS C:\Users\User\Desktop\django_project\replicate> tree /F
+Folder PATH listing
+Volume serial number is EE79-4E7C
+C:.
+│   manage.py
+│
+├───replicate
+│   │   settings.py
+│   │   urls.py
+│   │   wsgi.py
+│   │   __init__.py
+│   │
+│   └───__pycache__
+│           settings.cpython-311.pyc
+│           urls.cpython-311.pyc
+│           wsgi.cpython-311.pyc
+│           __init__.cpython-311.pyc
+│
+└───savedata
+    │   admin.py
+    │   apps.py
+    │   forms.py
+    │   models.py
+    │   tests.py
+    │   urls.py
+    │   views.py
+    │   __init__.py
+    │
+    ├───migrations
+    │   │   0001_initial.py
+    │   │   0002_alter_meal_id.py
+    │   │   __init__.py
+    │   │
+    │   └───__pycache__
+    │           0001_initial.cpython-311.pyc
+    │           0002_alter_meal_id.cpython-311.pyc
+    │           __init__.cpython-311.pyc
+    │
+    ├───templates
+    │       base.html
+    │       index.html
+    │       meals.html
+    │
+    └───__pycache__
+            admin.cpython-311.pyc
+            apps.cpython-311.pyc
+            forms.cpython-311.pyc
+            models.cpython-311.pyc
+            urls.cpython-311.pyc
+            views.cpython-311.pyc
+            __init__.cpython-311.pyc
+```
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
