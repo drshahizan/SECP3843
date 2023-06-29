@@ -203,7 +203,7 @@ The performance of the portal need to be optimized when dealing with large volum
       </p>
 
    
-In conclusion, we can see that after cleaning and aggregating the data, the storage size in the database reduces from **15.4MB** to **168KB** after cleaning, and further decreases to **20KB** after aggregating. From here, we can easily create visualizations without concerning the performance especially if we use the collection with much lesser storage capacity
+In conclusion, we can see that after cleaning and aggregating the data, the storage size in the database reduces from **15.4MB** to **168KB** after cleaning, and further decreases to **20KB** after aggregating. From here, we can easily create visualizations without concerning the performance especially if we use the collection with much lesser storage capacity.
   
 
 
