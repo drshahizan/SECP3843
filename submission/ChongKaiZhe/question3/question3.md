@@ -14,10 +14,60 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Analytics
 
 ## Question 3 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### Pre-Requisites
+Make sure to start a new project using cmd
+```python
+django-admin startproject AAquestion3
+python manage.py startapp AAquestion3app
+```
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/a5785d3e-cc51-40c6-bd88-3673d9824dd5)
+
+Then we create Database in phpMyAdmin
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/bf9e8282-2064-430f-91e7-98f6af349db3)
+
+Then add our app to the installed apps definition and also MySQL database in `settings.py`
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/c97bc91f-37e6-48d4-9f13-990e90007a7c)
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/ff34254e-06f5-4868-ade5-ea6afc490482)
+
+### Defining User Model
+
+We will define our user model that includes username, name, password and also usertype in `models.py` file
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/7299be12-f2d5-4903-96dd-a6c91971516f)
+
+Now we need to make migrations, so run the following code:
+
+```python
+python manage.py makemigrations
+python manage.py migrate
+```
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/2a57ccd6-c4b5-41bf-8f82-cfe31f99d24c)
+
+### Creating User Registration, Login Views and Templates
+
+Registration
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/342c721e-051d-41d3-9e9c-065bb8456e87)
+
+Login
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/6804bd41-44a6-46b4-bd98-d4c351bdbcff)
+
+Customers
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/8c0b6750-fbdc-4200-bc3f-a054f550fa97)
+
+Managemnet
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/4af7e6bd-bb46-42e8-be2b-bcfbb0d47f78)
+
+Worker
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/f556c28d-0fba-45d2-92e9-46f0afa77311)
+
+### Configuring URLs
+
+ We will defined in the `urls.py`. Therefore, we should configure it before running our application.
+
+<br>
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/e4a95e16-da02-4051-b57e-4ffac3ecad1d)
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
