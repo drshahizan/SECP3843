@@ -25,6 +25,36 @@ I will be using MongoDB Charts
 - Register for a MongoDB Atlas account
 - Setup databases and collections while creating a project.
 
+1.GOt to MONGODB ATLAS and click charts
+
+![Screenshot (302)](https://github.com/drshahizan/SECP3843/assets/121208097/44053d00-7b02-495e-980c-240adad5c480)
+
+
+2.Click on chart builder
+![Screenshot (289)](https://github.com/drshahizan/SECP3843/assets/121208097/7969f0df-3d10-4742-aa6e-e8ba9c5a8d2c)
+
+3.Click the Add New Dashboard to create the dashboard. I named it Visualization
+
+**1st chart: geo scatter for location of theaters**
+
+![Screenshot (305)](https://github.com/drshahizan/SECP3843/assets/121208097/89541145-99ac-4c70-bd4b-73da60d4add1)
+
+**2nd chart: group combo chart**
+
+![Screenshot (306)](https://github.com/drshahizan/SECP3843/assets/121208097/cec74b0f-5ae2-4cd2-a9b0-ea4037bffbcf)
+
+**3rd chart: gauge for sum of comments**
+
+![Screenshot (307)](https://github.com/drshahizan/SECP3843/assets/121208097/1951150f-1293-4733-b1ce-be5c14b770ec)
+
+**4th chart: doughnout chart**
+
+![Screenshot (308)](https://github.com/drshahizan/SECP3843/assets/121208097/ac4b621e-338f-4865-8237-3bb3fa10f07a)
+
+**Here is the finalised dashboard**
+
+![Screenshot (309)](https://github.com/drshahizan/SECP3843/assets/121208097/33066bbb-d2b1-490a-b90d-c143ab082eb0)
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
