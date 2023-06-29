@@ -242,7 +242,7 @@ python manage.py migrate
 
 ### 1. Use Trigger-based Replication Technique
 
-This technique triggers to capture changes in the source database and apply them to the target database. Whenever the database detects changes in the source database, it will be triggered and insert the data to a table called listings_user_replicated. Open MySQL and go to SQL query and write the code below.
+This technique triggers to capture changes in the source database and apply them to the target database. Whenever the database detects changes in the source database, it will be triggered and insert the data to a table called listings_listings_replicated. Open MySQL and go to SQL query and write the code below.
 
 ```
 DELIMITER $$
@@ -251,7 +251,7 @@ CREATE TRIGGER replicate_listings_listings
 AFTER INSERT ON listings_listings
 FOR EACH ROW
 BEGIN
-    INSERT INTO listings_user_replicated (_id, listing_url, name, summary, space, description, neighborhood_overview, notes, transit, access, interaction, house_rules, property_type, room_type, bed_type, minimum_nights, maximum_nights, cancellation_policy, last_scraped, calendar_last_scraped, accommodates, bedrooms, beds, number_of_reviews, bathrooms, amenities, price, weekly_price, monthly_price, cleaning_fee, extra_people, guests_included, images, host, address, availability, review_scores, reviews)
+    INSERT INTO listings_listings_replicated (_id, listing_url, name, summary, space, description, neighborhood_overview, notes, transit, access, interaction, house_rules, property_type, room_type, bed_type, minimum_nights, maximum_nights, cancellation_policy, last_scraped, calendar_last_scraped, accommodates, bedrooms, beds, number_of_reviews, bathrooms, amenities, price, weekly_price, monthly_price, cleaning_fee, extra_people, guests_included, images, host, address, availability, review_scores, reviews)
     VALUES (NEW.id, NEW.listing_url, NEW.name, NEW.summary, NEW.space, NEW.description, NEW.neighborhood_overview, NEW.notes, NEW.transit, NEW.access, NEW.interaction, NEW.house_rules, NEW.property_type, NEW.room_type, NEW.bed_type, NEW.minimum_nights, NEW.maximum_nights, NEW.cancellation_policy, NEW.last_scraped, NEW.calendar_last_scraped, NEW.accommodates, NEW.bedrooms, NEW.beds, NEW.number_of_reviews, NEW.bathrooms, NEW.amenities, NEW.price, NEW.weekly_price, NEW.monthly_price, NEW.cleaning_fee, NEW.extra_people, NEW.guests_included, NEW.images, NEW.host, NEW.address, NEW.availability, NEW.review_scores, NEW.reviews);
 END;
 $$
