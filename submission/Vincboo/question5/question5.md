@@ -22,7 +22,7 @@ Indexing can help to optimize the database management system by minimizes the ne
 
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/e8a3ec80-7c71-42b3-891d-b12982c269bb"/>
 
-#### 2. Click on 'Index' at the navigation bar.
+#### 2. Click on 'Indexes' at the navigation bar.
 
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/758b5a7a-7d07-4051-8449-ab81e9610e42"/>
 
@@ -66,14 +66,13 @@ DATABASES = {
 1. Define the for getting cache data
 ```
 from django.core.cache import cache
-from django.shortcuts import render
 
 def get_data_from_cache_or_source():
     data = cache.get(cache_data)
 ```
-2. To ensures that only None values are considered for fetching data from the database.
+2. To ensures that only not None values are considered for fetching data from the database.
 ```
-if data is None:
+if data is not None:
 ```
 3. Define database and collection to get data from MongoDB
 ```
