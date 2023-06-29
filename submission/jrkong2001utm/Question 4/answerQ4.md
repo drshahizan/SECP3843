@@ -16,7 +16,7 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 4 
 In this question, I choose clustering to perform the machine learning on my dataset.Here are the detailed steps:
 
-[Clustering](..\Question 4\files\sourcecode\Q4_machinelearning.ipynb)
+[Clustering](https://github.com/drshahizan/SECP3843/blob/main/submission/jrkong2001utm/Question%204/files/sourcecode/Q4_machinelearning.ipynb)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
