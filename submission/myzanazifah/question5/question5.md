@@ -110,15 +110,20 @@ For this chart, you can choose to see either the Comments chart, Diggs chart or 
 
      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/images/db(7).png" /></div>
 
+
      The graph above display the number of digg votes users submit on certain days.
+
    
      - Number of Profile Views by Days  
 
+
      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/images/db(8).png" /></div>
+
 
      The graph above display the number of profile views users gain on days they submit stories or posts.
 
 6. Filters
+   
    You can see the datas based on certain users as shown in picture below by selecting the username in the dropdown.  
 
      <div align="center"><img src="https://github.com/drshahizan/SECP3843/blob/main/submission/myzanazifah/question5/images/db(1).png" /></div>
