@@ -1,0 +1,52 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <body>
+  <div class="content">
+    <div class="container">
+            <div class="mb-4">
+                <h1>User Registration page</h1>
+          </div>
+          <form  method="post">
+              {% csrf_token %}
+            <div class="form-group first">
+              <label for="username">Username</label>
+                {{ form.username }}
+            </div><br>
+            <div class="form-group first">
+              <label for="email">Email</label>
+                {{ form.email}}
+            </div><br>
+            <div class="form-group last mb-4">
+              <label for="password">Password</label>
+                {{ form.password1 }}
+            </div><br>
+            <div class="form-group last mb-4">
+              <label for="password">confirm Password</label>
+                {{ form.password2 }}
+            </div><br>
+            <div class="d-flex mb-5 align-items-center">
+              <label class="control control--checkbox mb-0"><span class="caption">Customer</span>
+                  {{ form.is_customer }}
+                <div class="control__indicator"></div>
+              </label>
+            </div>
+            <div class="d-flex mb-5 align-items-center">
+              <label class="control control--checkbox mb-0"><span class="caption">Technical Worker</span>
+                  {{ form.is_technical }}
+                <div class="control__indicator"></div>
+              </label>
+            </div>
+            <div class="d-flex mb-5 align-items-center">
+              <label class="control control--checkbox mb-0"><span class="caption">Senior Management</span>
+                  {{ form.is_senior }}
+                <div class="control__indicator"></div>
+              </label>
+            </div><br>
+              <span class="text-error">{{ form.errors }}</span>
+            <input type="submit"  value="Register" class="btn btn-pill text-white btn-block btn-primary">
+          </form>
+      </div>
+    </div>
+  </body>
+</html>

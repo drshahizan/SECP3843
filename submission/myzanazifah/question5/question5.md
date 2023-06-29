@@ -63,10 +63,7 @@ For the portal, I have suggested using MongoDB database to store the JSON datase
      
 ## Question 5 (b)
 
-<body>
-  <!-- Tableau Embed Code -->
-  <iframe src="https://public.tableau.com/app/profile/myza.nazifa.binti.nazry/viz/AA_16880213009910/Dashboard1?publish=yes" width="800" height="600"></iframe>
-</body>
+
 
 
 ## Contribution 🛠️
