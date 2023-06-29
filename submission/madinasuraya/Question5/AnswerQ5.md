@@ -283,7 +283,7 @@ To visualize this dashboard in a website, I can use this embedded code and inser
 
 This is the final result, in the website.
  <p align='center'>
-      <img width="822" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/f242f53a-1b43-4ef0-939e-9f428da57833">
+     <img width="799" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/43cc86ad-95b3-41b9-b1c2-0d8eddc188d9">
    </p>
 
 ## Contribution 🛠️
