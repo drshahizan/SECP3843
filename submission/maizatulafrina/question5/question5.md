@@ -77,6 +77,7 @@ To create a dashboard using JSON dataset, there are several platforms that can b
   <h2 ><b>Final Dashboard</b></h2>
 
   <img width="900" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/263525c6-684a-4b99-b935-7f4d4d1204cf">
+Link to the dashboard: https://charts.mongodb.com/charts-sampleproject01-ceqje/public/dashboards/d0404223-4dd9-4b47-adec-83e7207cafd9
 
 
 ## Contribution 🛠️
