@@ -94,9 +94,28 @@ The performance of the portal need to be optimized when dealing with large volum
     <img width="276" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/211d8147-a76f-4e42-9b2a-faff26a449b4">
   </p>
 
+5. Store the cleaned data into a collection in the database.
+   ```
+   mongo_uri = "mongodb+srv://user1:___________@cluster0.evngzba.mongodb.net/test"
+   database_name = "db_crunchbase"
+   collection_name = "companies_cleaned"
 
+   client = pymongo.MongoClient(mongo_uri)
+   db = client[database_name]
+   collection = db[collection_name]
 
-  
+   # Convert DataFrame to a list of dictionaries (documents)
+   documents = selected_fields.to_dict(orient='records')
+   collection.insert_many(documents)
+   ```
+   In the database, we can see that the storage reduced from **15.4MB** to **168KB**.
+   <p align='center'>
+      <img width="595" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/e066becb-c322-4478-ba2b-793681fa08a7"><br>
+        <img width="602" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/8bf787ac-0bb0-4f3c-a71a-7cfc99b712f9">
+   </p>
+
+   
+
 
 
 
