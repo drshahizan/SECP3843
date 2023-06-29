@@ -34,9 +34,9 @@ Add Chart\
 
 ### 5. We will need to drag the variable to where we want it to be(x-axis, y-axis)
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/14d2bf72-1e2e-4ed8-a8c6-8ce75e401442"/>
-\
+
 ### Results:
-1. Media published by Top 10 Writters\
+1. Media published by Top 10 Writters
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/f7f66aba-8e97-475a-95f3-24594ff89627"/>
 2. Comment by Media\
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/701b1c48-6843-4c83-b1ba-d8a01c779c93"/>
