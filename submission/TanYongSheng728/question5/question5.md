@@ -15,10 +15,30 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/06-tweets">Tweets</a>
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+To optimize the performance of a portal when dealing with large volumes of data from a dataset, especially during dashboard visualizations, we can implement several strategies. Below are illustrative solution with code snippets and screenshots:
+
+#
+### Data Preprocessing
+Data preprocessing can be done to reduce the database size by assigning correct data type and selecting the required column to import to database. This can ultimately reduce the dataset size and provide better performance of a portal.<br>
+1. The first step is to load the dataset into Google Collab to perform data preprocessing.
+```
+import json
+import pandas as pd
+
+
+with open('modified_tweets.json', encoding='utf-8') as file:
+    data = json.load(file)
+    
+print(data[1])
+```
+
+Output:
+<p align="center">
+<img src="./files/images/preprocess.png"></img>
+</p>
 
 ## Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
