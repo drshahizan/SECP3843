@@ -215,7 +215,7 @@ def get_data(key):
 ```
 > Caching data in the portal will improve performance by retrieving it much more quickly than fetching it from the database.
 
-### 4. Use suitable library to process the data
+
 
 
 ## Question 5 (b)
