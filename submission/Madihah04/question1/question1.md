@@ -21,6 +21,7 @@ As an IT consultant, I will provide instructions to the technical staff on imple
 2. MySQL: We will use MySQL  as a relational database management system (RDBMS) to store and manage structured data.
 3. MongoDB Compass: We will use MongoDB Compass as a NoSQL database. 
 4. MongoDB Atlas: We will use MongoDB Atlas, which is a cloud-based service for MongoDB. It is included in our project as we can connect it with MongoDB Compass but on the cloud, therefore it is more flexible and the data is saved if anything happen.
+5. Google Colab (that we will used in Question 4)
    
 Steps:
 
