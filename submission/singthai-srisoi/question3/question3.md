@@ -557,7 +557,18 @@ add path to new page and function
 ```
 
 Now the system can be login by three type of `user: ['customer', 'technical worker', 'senior management']` and each user will direct to the coresponding page after login.
+The landing page:
+![image.png](ss/s34.png)
 
+Register:
+![image-3.png](ss/s35.png)
+user ccan choose their user type when register
+
+Login into system:
+![image-4.png](ss/s36.png)
+
+It will direct user to the coresponding user type page:
+![image-5.png](ss/s37.png)
 
 ## Question 3 (b)
 The possible approach to solve data replication and synchronization between MySQL and MongoDB would be **database-level replication** and **application-level replication**. Ths is to ensure one databse are accurately reflect in the other. Thereby, it can maintain the data consistency across both system.
