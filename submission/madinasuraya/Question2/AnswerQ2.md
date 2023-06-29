@@ -73,7 +73,7 @@ Don't forget to hit the :star: if you like this repo.
     - URI:  connection string
     - Database name: db_crunchbase
     - Collection: companies (define name)
-       File: JSON file path.
+    - File: JSON file path.
 
     ```
     mongoimport –uri “mongodb+srv://user1:________________.mongodb.net/test” - - db db_crunchbase - - collection companies - - file "C:\Users\dina_\Documents\companies.json"
