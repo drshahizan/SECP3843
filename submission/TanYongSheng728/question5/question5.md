@@ -137,8 +137,54 @@ Output:
 </p>
 
 ## Question 5 (b)
+For this question we need to create a dashboard using the JSON file that we have been assigned.
+I have ustilized a software called PowerBI which powered by Microsoft to aids in data visualization.
 
+#
+### Card
 
+ - Card that shows the total user. This is the filter view for it.
+<p align="center">
+    <img src="./images/user filter.png"></img>
+</p>
+
+Output:
+<p align="center">
+    <img src="./images/user count.png"></img>
+</p>
+
+ - Next card shows the average user followers. This is the filter view for it.
+<p align="center">
+    <img src="./images/follower filter.png"></img>
+</p>
+
+Output:
+<p align="center">
+    <img src="./images/foller avg.png"></img>
+</p>
+
+ - The last card shows the max user status count. This is the filter view for it.
+<p align="center">
+    <img src="./images/status filter.png"></img>
+</p>
+
+Output:
+<p align="center">
+    <img src="./images/status max.png"></img>
+</p>
+
+#
+### Chart
+
+ - The chart is used to show the relationship between each user and their total retweet count
+<p align="center">
+    <img src="./images/chart.png"></img>
+</p>
+
+This is the filter view for it.
+ <p align="center">
+    <img src="./images/chart filter.png"></img>
+</p>
 
 
 ## Contribution 🛠️
