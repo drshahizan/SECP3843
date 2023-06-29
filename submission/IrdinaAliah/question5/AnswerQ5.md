@@ -70,11 +70,11 @@ functionalities. You may include relevant code snippets and screenshots that ill
 solution implemented. 
 
 <img src="https://github.com/drshahizan/SECP3843/blob/4a28043121dc60ae2fc133a0c13b078eb5f77a45/submission/IrdinaAliah/question5/images/FULL%20DASHBOARD.png" style="width: 700px; height: 200px;">
-
+This ilustration shows aveage price for each bed type, such like real bed. pull out sofa and couch. Thus , real bed has the highest average price.
 
 <img src="https://github.com/drshahizan/SECP3843/blob/07c6a5b89d871e9d1817cc13eee018252fd452a6/submission/IrdinaAliah/question5/images/DONUT%20CHART.png" style="width: 700px; height: 200px;">
 
-
+this ilustration shows apartment has the highest price  based on property type
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
