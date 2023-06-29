@@ -256,6 +256,9 @@ Referring to the dashboard above there are 7 visualizations.
   * `MY`
   * `You`
   * `HTTP`
+
+  *<img width="500" alt="image" src="https://github.com/drshahizan/SECP3843/assets/73205963/ca01d643-ef43-48f0-8ee8-5fede0951d17">
+
     
 5. User Followers
 
