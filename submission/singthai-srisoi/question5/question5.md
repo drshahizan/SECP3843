@@ -117,7 +117,8 @@ encoded_data = bson.dumps(df.to_dict())
 ```
 
 ## Question 5 (b)
-[![image](https://github.com/drshahizan/SECP3843/assets/84219904/95b06b1b-b518-46da-bc7d-519835c5929c)](https://singthai-srisoi.github.io/singthai.github.io/AAdashboard)
+[Movie Dashboard](https://singthai-srisoi.github.io/singthai.github.io/AAdashboard)
+![image](https://github.com/drshahizan/SECP3843/assets/84219904/95b06b1b-b518-46da-bc7d-519835c5929c)
 1. Bar Chart for Genres:
 This graph provides insights into the distribution of movies across different genres. The X-axis represents the genres, such as action, comedy, drama, etc. The Y-axis represents the count of movies belonging to each genre. The height of each bar indicates the number of movies in that genre. This chart helps visualize the popularity or prevalence of different genres in the dataset.
 
