@@ -277,7 +277,37 @@ Don't forget to hit the :star: if you like this repo.
     
   
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Data replication is the practise of copying and distributing data from one database or data source to one or more target databases or data repositories. While data synchronization is the process of having an up-to-date between multiple databases.
+
+Steps of data replication.
+- Open phpMyAdmin and click on `Replication` in the topbar.
+- ![image](https://github.com/drshahizan/SECP3843/assets/92329710/343bcc10-d2ce-4be1-bb7b-aac295aa8aaf)
+- Then, click `configure` under `Primary replication`.
+- ![image](https://github.com/drshahizan/SECP3843/assets/92329710/cafe4ee9-50be-4a5c-bec2-06659c215fd1)
+- Please select mode `Ignore all databases; Replicate`.
+- Choose the database required to replicate and copy the details at the below.
+- ![image](https://github.com/drshahizan/SECP3843/assets/92329710/24dd96dd-ab36-428a-8725-d8085a8981d8)
+- Next, Go to XAMPP panel. Click on `MySQL Config` then click on `my.ini`.
+- `my.ini` file wil open in notepad.
+- Paste the server-id code from phpmyAdmin.
+- Then, save the file.
+- Restart the XAMPP and open the phpmyAdmin again.
+- Go to `Replication` then click `show primary status` and it will appear as below:
+- ![image](https://github.com/drshahizan/SECP3843/assets/92329710/cbb970a2-ba69-49a0-97d9-d8c015b86814)
+- Next, click on `Add Replica replication user` then a new table will appear on the screen. Fill in the table as below:
+- ![image](https://github.com/drshahizan/SECP3843/assets/92329710/b6e0808f-4c97-400c-bc25-262aee376841)
+- Next, click on `configure` under `Replica replication`.
+- Copy the `server-id`.
+- ![image](https://github.com/drshahizan/SECP3843/assets/92329710/81d3ccc0-1b65-4676-a4c2-2e42f6fbbdc8)
+- Paste the `server-id` in `my.ini` file.
+- ![image](https://github.com/drshahizan/SECP3843/assets/92329710/ee4106d8-c873-4309-8633-76b761cd26f8)
+
+
+
+
+
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
