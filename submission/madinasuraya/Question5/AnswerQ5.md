@@ -229,7 +229,7 @@ There are a total of 5 charts that I create based on this database.
 
    As we can see from the chart, software companies acquire employees the most while web companies get the most competitors among its industry sector.
 
-  
+  <br>
 2. **Bar graph** - Top 10 Category with Highest Number of Employees
    <p align='center'>
       <img width="956" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/3bfccb42-b2a8-4a4c-8517-f1e42129cfdb">
@@ -238,6 +238,7 @@ There are a total of 5 charts that I create based on this database.
    
    Based on the chart, we can conclude that finance records the highest average number of employees with more than 20,000 people.
 
+<br>
 
 3. **Heatmap** - Employee Distribution by Category and Country
    <p align='center'>
@@ -246,8 +247,17 @@ There are a total of 5 charts that I create based on this database.
    Based on the total number of workers, the heatmap visualisation shows how the categories are distributed throughout different countries. The heatmap shows every category's number of employees in detail and draws attention to any geographical differences. This data may be useful for making strategic decisions, such as finding nations with a large pool of talent or analysing market potential in particular business sectors.
 
    Based on the heatmap, we can see that USA records the highest number of employees in hardware and software sectors while IND provides one of the highest consulting services.
+<br>
 
+4. **Discrete Line** - Top 10 Company with Highest Acquisition Price
+   <p align='center'>
+      <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/c8891a43-9978-4db9-b982-bab1689d96b6">
+   </p>
 
+      The top 10 businesses sector with respect to acquisition prices are shown in this graph. Acquisation price is the total expense a business spend in acquiring a new client or purchasing an asset. We can determine which businesses have undergone the most significant acquisition deals, giving us insights into the industry's competitive environment.
+
+   Based on the chart, we can conclude that Sprint Nextel spends the highest for their businesses. We can see that the top 10 are well-known and succesful companies.
+   
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
