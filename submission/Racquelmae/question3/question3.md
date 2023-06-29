@@ -43,10 +43,10 @@ To use MYSQL as the database, modify the `settings.py` file in the project folde
 <img  src="./files/images/data.jpg"></img>
 
 ### 6. Create urls
-Create a new file `urls.py` in the project folder and type the following code:
+Create a new file `urls.py` in the project folder and type the following code:<br>
 <img  src="./files/images/url.jpg"></img>
 
-Then, add the following code in the `urls.py` of the account(app) folder:
+Then, add the following code in the `urls.py` of the account(app) folder:<br>
 <img  src="./files/images/url2.jpg"></img>
 
 ### 7. Define model
@@ -68,10 +68,12 @@ Results:
 
 ### 8. Create forms
 Create a new file `forms.py` in the account(app) folder.
-- Login form
+- Login form<br>
+
 <img  src="./files/images/loginform.jpg"></img>
 
 - Register form
+
 <img  src="./files/images/registerform.jpg"></img>
 
 After creating the forms, update the views with the following code:
@@ -81,12 +83,13 @@ After creating the forms, update the views with the following code:
 ### 8. Create templates
 - index.html
 <img  src="./files/images/index.html.jpg"></img>
+<img  src="./files/images/index.jpg"></img>
 
-- login.html
+- login.html<br>
 <img  src="./files/images/login.html.jpg"></img>
 <img  src="./files/images/login.jpg"></img>
 
-- register.html
+- register.html<br>
 <img  src="./files/images/register.html.jpg"></img>
 <img  src="./files/images/register.jpg"></img>
 
