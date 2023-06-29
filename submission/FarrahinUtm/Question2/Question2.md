@@ -54,6 +54,8 @@ mongoimport "C:\Users\Acer\Desktop\AA\movies.json" -d Mflix -c movies
 
 -theatres is defined as the specified collection in the movie database using the -c option.
 
+**Accessing the MongoDB Shell**
+
 Next, inside the command type 'mongosh' to access the MongoDB Shell
 <img src="./image/mongosh.png" style="width: 500px; height: 200px;">
 
