@@ -48,6 +48,10 @@ mongoimport "C:\Users\Acer\Desktop\AA\users.json" -d Mflix -c users
 mongoimport "C:\Users\Acer\Desktop\AA\comments.json" -d Mflix -c comments
 mongoimport "C:\Users\Acer\Desktop\AA\movies.json" -d Mflix -c movies
 ```
+
+-The -d movie specifies the name of the database, which in MongoDB localhost is movie database.
+
+-theatres is defined as the specified collection in the movie database using the -c option.
 ## Question 2 (b)
 b.	Create FIVE (5) MongoDB queries that demonstrating various Create, Read, Update, and Delete (CRUD) operations on the documents stored in the database. Ensure that you use different types of functions provided by MongoDB for each query. The breakdown for the number of queries per operation is as follows:
 
