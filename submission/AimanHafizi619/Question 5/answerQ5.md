@@ -20,6 +20,10 @@ When working with large JSON data, several steps can be taken to help optimize t
 >*Data Preprocessing*:
 Performing data preprocessing steps to reduce the data size and improve data quality. This action may include filtering inconsistent data, remove noisy data, and eliminating duplicates.
 
+```python
+df.isna().sum()
+```
+
 >*Data Indexing*:
 Using appropriate indexing techniques on the large dataset to optimize up data retrieval and querying. Indexing helps to quickly locating and accessing specific records, reducing the processing time for filtering and searching operations.
 
