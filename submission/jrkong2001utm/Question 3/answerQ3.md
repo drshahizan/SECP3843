@@ -526,7 +526,7 @@ test_insert()
 ```
 
 Step 5: Run the project
-Type in the command to see the output. When the insert operation is successful, it will show the message "Insert successful!" as below.
+Type in the command to see the output. When the insert operation is successful, it will show the message "Insert successful!".
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
