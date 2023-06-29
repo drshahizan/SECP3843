@@ -230,6 +230,7 @@ There are a total of 5 charts that I create based on this database.
    As we can see from the chart, software companies acquire employees the most while web companies get the most competitors among its industry sector.
 
   <br>
+  
 2. **Bar graph** - Top 10 Category with Highest Number of Employees
    <p align='center'>
       <img width="956" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/3bfccb42-b2a8-4a4c-8517-f1e42129cfdb">
