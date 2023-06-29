@@ -15,10 +15,18 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: City Inspections
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 ## Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+<img width="957" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/b1812ca2-f755-4b1b-aa26-ebd90b7387a1">
+<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/e1cfd01f-9647-4ec7-b786-658078a8a97c">
+<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/99e6b2b5-69f7-4331-9784-9ea7728e03b8">
+<img width="595" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/928bbbe4-55bd-4b68-8ee0-aed5b696971d">
+
+
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

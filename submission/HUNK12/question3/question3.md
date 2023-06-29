@@ -254,6 +254,7 @@ Use the command below to test and check if the register and login functions work
 python manage.py runserver
 ```
 Below this are screenshots showing the pages working as it should
+
 ![image](https://github.com/drshahizan/SECP3843/assets/3646429/9670cb98-69c0-45f7-8452-165a9c8d0f22)
 ![image](https://github.com/drshahizan/SECP3843/assets/3646429/a723bbca-6b03-41af-886a-c8b07f5a5b3b)
 ![image](https://github.com/drshahizan/SECP3843/assets/3646429/78bcb204-eeb3-470f-bf3d-0a008c486a09)

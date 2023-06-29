@@ -28,35 +28,36 @@ d) Load Balancer: If the web server has high traffic expect or want to distribut
 
 e) Caching Server:  Introduce a caching server to improve performance and reduce database load. This server will store frequently accessed data in memory, allowing faster retrieval. For example, Redis or Memcached are popular choices for caching servers.
 
-To integrate Django with the JSON dataset and ensure efficient data storage and retrieval from both MySQL and MongoDB databases, you can follow these comprehensive steps:
+To integrate Django with the JSON dataset and ensure efficient data storage and retrieval from both MySQL and MongoDB databases :
 
-#### Django Installation: 
-1. Locate to the project file and create a virtual environment.
+#### 1. Django Installation: 
+a. Locate to the project file and create a virtual environment.
 ```python
 py -m venv env
 env\Scripts\activate
 ```
-2. Begin by installing Django on all five servers. use the pip package manager to install Django by running the following command:
+b. Begin by installing Django on all five servers. use the pip package manager to install Django by running the following command:
 ```pip install Django```
 <img src="./files/images/installdjango.png">
 
-3. Set up Django project: Create a Django project on one of the servers. Use the following command to create a new Django project:
+c. Set up Django project: Create a Django project on one of the servers. Use the following command to create a new Django project:
 ```django-admin startproject city_inspections```
 Then redirect to city_inspections using the following commands:
 ```cd city_inspections```
 <img src="./files/images/cdcity.png">
 
-4. Create Django app: Inside the Django project, create a new app that will handle the integration with the JSON dataset and databases. Use the following command to create a new app:
+d. Create Django app: Inside the Django project, create a new app that will handle the integration with the JSON dataset and databases. Use the following command to create a new app:
 ```python manage.py startapp city_inspectionsDataset```
 <img src="./files/images/startapp.png">
 
-5. Install necessary packages by using the following command :
+e. Install necessary packages by using the following command :
 ```pip install django mysqlclient pymongo``` and ```pip install djongo```
 <img src="./files/images/packages.png">
 
 ### 2. Configuring Django database settings
-   1. Open the Django project's `settings.py` file.
-   2. Define the database settings for both MySQL and MongoDB.
+   a. Open the Django project's `settings.py` file.
+   b. Define the database settings for both MySQL and MongoDB.
+   
 ``` python
  DATABASES = {
          'default': {
@@ -83,26 +84,27 @@ Then redirect to city_inspections using the following commands:
 <img src="./files/images/startapp.png">
 
 ### 3. Configuring Django models
- To define Django models that represent the structure and fields of the JSON dataset, you can open the models.py file in the city_inspectionsDataset app and define the models based on the data dictionary. Here's an example of how you can define the models:
+ To define Django models that represent the structure and fields of the JSON dataset, open the models.py file in the city_inspectionsDataset app and define the models based on the data dictionary. 
 -  In `models.py` file, define the models according to its data structure and data types.
 
-      ```python
+```python
       from django.db import models
-      
-      class Inspection(models.Model):
-          id = models.CharField(max_length=50, primary_key=True)
-          certificate_number = models.IntegerField()
-          business_name = models.CharField(max_length=255)
-          date = models.DateField()
-          result = models.CharField(max_length=255)
-          sector = models.CharField(max_length=255)
-          city = models.CharField(max_length=255)
-          zip_code = models.IntegerField()
-          street = models.CharField(max_length=255)
-          number = models.IntegerField()
-      
-          def __str__(self):
-              return self.name
+
+class Inspection (models.Model):
+    id = models.CharField(max_length=100, primary_key=True) 
+    certificate_number = models.CharField(max_length=50) 
+    business_name = models.CharField(max_length=255)
+    date = models.DateField()
+    result = models.CharField(max_length=255)
+    sector = models.CharField(max_length=255)
+    city = models.CharField(max_length=255, db_column='address.city')
+    zip = models.IntegerField(db_column='address.zip')
+    street = models.CharField(max_length=255, db_column='address.street')
+    number = models.CharField(max_length=10, db_column='address.number')
+        
+def _str_(self): 
+        return self.name
+```
              
 <img src="./files/images/models.png">
 
@@ -112,7 +114,7 @@ Then redirect to city_inspections using the following commands:
 b. Load JSON Data into Databases: A Python script has been declared to read the JSON dataset and populate the Django models.
     ```python
 class Command(BaseCommand):
-    help = 'Load JSON data into Django models'
+    help = 'Loads JSON data into the city_inspections model'
 
     def add_arguments(self, parser):
         parser.add_argument('json_file', type=str, help='Path to the JSON file')
@@ -123,27 +125,49 @@ class Command(BaseCommand):
             data = json.load(file)
 
             for item in data:
-                # Convert the 'date' field to a datetime object
-                date = datetime.strptime(item['date'], "%Y-%m-%d").date()
+                # Parse the date field with different formats
+                date_formats = ["%b %d %Y", "%b %d, %Y", "%B %d %Y", "%B %d, %Y"]
+                for format in date_formats:
+                    try:
+                        date = datetime.strptime(item['date'], format).date()
+                        break
+                    except ValueError:
+                        pass
+                else:
+                    # Handle the case when none of the formats match
+                    self.stdout.write(self.style.WARNING(f"Failed to parse date: {item['date']}"))
+                    continue
+
+                address = item['address']
+
+                zip_code = address.get('zip', None)
+                 
+                if zip_code:
+                    zip_code = int(zip_code)
+                else:
+                     zip_code = -1
 
                 inspection = Inspection(
-                    id=item['id'],
+                    id=item['id'], 
                     certificate_number=item['certificate_number'],
                     business_name=item['business_name'],
                     date=date,
                     result=item['result'],
                     sector=item['sector'],
-                    city=item['city'],
-                    zip_code=item['zip_code'],
-                    street=item['street'],
-                    number=item['number']
+                    city=address['city'],
+                    zip=int(zip_code) if zip_code else None,
+                    street=address['street'],
+                    number=address['number']
                 )
                 inspection.save()
 
-        self.stdout.write(self.style.SUCCESS('Data loaded successfully.'))
+                self.stdout.write(self.style.SUCCESS('Data loaded successfully'))
+
         
 Then, run the following command to import JSON file into MySQL and MongoDB database:
 `python manage.py load_data city_inspections.json`
+<img src="./files/images/dataload.png">
+<img src="./files/images/proof.png">
 
 ## Question 1 (b)
 ### System Architecture Diagram

@@ -10,15 +10,55 @@ Don't forget to hit the :star: if you like this repo.
 
 # Special Topic Data Engineering (SECP3843): Alternative Assessment
 
-#### Name:
-#### Matric No.:
-#### Dataset:
+#### Name: AHMAD AIMAN HAFIZI BIN MUHAMMAD
+#### Matric No.: A20EC0177
+#### Dataset: ANALYTICS DATASET
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+When working with large JSON data, several steps can be taken to help optimize the performance of the portal
+
+>*Data Preprocessing*:
+Performing data preprocessing steps to reduce the data size and improve data quality. This action may include filtering inconsistent data, remove noisy data, and eliminating duplicates.
+
+>*Data Indexing*:
+Using appropriate indexing techniques on the large dataset to optimize up data retrieval and querying. Indexing helps to quickly locating and accessing specific records, reducing the processing time for filtering and searching operations.
 
 ## Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Use MongoDB Atlass to visualize the JSON files
+
+1. Open MongoDB Atlass.
+
+2. Click `Charts` tabs add a new Dashboard called `Customer Analysis`
+
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image2.png)
+
+3. After that, click `Add Chart` to begin building some visualizations
+
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image3.png)
+
+4. A new tab will open. Select the cluster that will be use for visualization. In this case, the `projectCluster`. Select the database name `Analytics`. Select `Customers` collections.
+
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image4.png)
+
+5. The visualizations can be done by dragging and dropping items from `Fields` to `X Axis`, `Y Axis`, or `Series`.
+
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image5.png)
+
+6. The bar chart below depicts `Number of Transactions for each account`. It shows how many individual account that have been doing a certain time of transactions.
+
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image6.png)
+
+7. The above graph can be done by implementing the options below
+
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image7.png)  
+
+8. Another visualization, like the donut below can also be generated. The donut chart depicts the `Distribution of Accounts by Different Category of Products`. Each individual accounts are grouped based on their product investments.
+
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image8.png)  
+
+9. The above chart can be done by implementing the options below
+
+![Q5](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%205/files/images/Q5%20image9.png) 
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

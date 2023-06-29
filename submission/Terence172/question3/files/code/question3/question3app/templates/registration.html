@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="POST" action="{% url 'register' %}">
+    {% csrf_token %}
+    
+    <div class="col-md-2">
+        <a href="{% url 'login' %}">Login</a>
+    </div>
+    <div class="col-md-8">
+        
+        {{ form.as_p }}
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary form-control"><span class="glyphicon glyphicon-save"></span> Submit</button>
+        </div>
+    </div>
+</form>
+{% endblock %}

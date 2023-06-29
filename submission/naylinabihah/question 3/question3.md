@@ -81,6 +81,7 @@ The terminal should give response when these command was executed:
 
 ## Question 3 (b)
 
+When it comes to working with different databases in one project, it may cause some issues and data integrity problems if it is not handled correctly.
 #### Step 1:
 
 

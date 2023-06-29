@@ -19,10 +19,11 @@ This segment of Question 3. (a) is similar to Question 1. (a) and is divided int
 * [Setting Up A Django Project](#️-setting-up-a-django-project)
 
 ### Prerequisites
-To carry out this segment of the question, it it crucial for to do the following:
+To carry out this segment of the question, it it crucial me for to do the following:
 1. Install [Python](https://www.python.org/downloads/)
 2. Install [Visual Studio Code](https://code.visualstudio.com/download)
 <br></br>
+
 
 ### Setting Up A Django Project
 
@@ -70,26 +71,23 @@ Below are the output when running the commands:
 
 **Create A Django Project** 
 
-You can now create a project after setting up, activating your virtual environment and installing Django. To start a new Django project, open a new terminal in Visual Studio Code and run the following command. The project is named **Companies** in the code below, but it can be changed to any name you like.
+You can now create a new project after setting up, activating your virtual environment and installing Django. To start a new Django project, open a new terminal in Visual Studio Code and run the following command. The project is named **Companies** in the code below, but it can be changed to any name you like.
 ```bash
-python -m django startproject Companies
+python -m django startproject Q3
 ```
 Navigate yourself to the project directory by inputing the command below:
 ```bash
-cd Companies
+cd Q3
 ```
 
 <br></br>
 
 **Create A Django Application** 
 
-The  ``startapp `` command generates a default folder structure for a Django app. This tutorial uses **CompaniesApp** as the name for the app:
+The  ``startapp `` command generates a default folder structure for a Django app. This tutorial uses **DjangoApp** as the name for the app:
 ```bash
-python manage.py startapp CompaniesApp
+python manage.py startapp DjangoApp
 ```
-<p align="center">
-   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/Create%20Django%20Project.png">
-</p>
 <br></br>
 
 **Configure Database Connection** 
@@ -99,29 +97,85 @@ Set up the MySQL and MongoDB connections. Alter the code for the databases in th
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'db_companies',
+        'NAME': 'aa',
         'USER': 'root',
         'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
     },
-    'mongodb': {
-        'ENGINE': 'djongo',
-        'NAME': 'AA',
-        'ENFORCE_SCHEMA': False,
-        'CLIENT': {
-            'host': 'localhost',
-            'port': 27017,
-            'username': 'qaisara',
-            'password': '8301',
-            'authSource': 'admin',
-            'authMechanism': 'SCRAM-SHA-1',
-        }
-    }
 }
 ```
 <br></br>
 
+ **Create Model** 
+ ```bash
+from django.contrib.auth.models import AbstractUser, Group, Permission
+from django.db import models
+
+class CustomUser(AbstractUser):
+    USER_TYPE_CHOICES = (
+        ('customer', 'Customer'),
+        ('technical_worker', 'Technical Worker'),
+        ('senior_management', 'Senior Management'),
+    )
+
+    user_type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES)
+
+    groups = models.ManyToManyField(
+        Group, 
+        verbose_name='groups',
+        blank=True, 
+        related_name='user_set', 
+        related_query_name='user',
+    )
+    user_permissions = models.ManyToManyField(
+        Permission,
+        verbose_name='user permissions',
+        blank=True,
+        related_name='user_set',
+        related_query_name='user',
+    )
+
+    def __str__(self):
+        return self.username
+```
+In **settings.py**, set AUTH_USER_MODEL to the custom user model to make it the default authentication model.
+```bash
+AUTH_USER_MODEL = 'DjangoApp.CustomUser'
+```
+
+**Perform Database Migration** 
+
+**makemigrations** provides SQL instructions for preinstalled apps and my **CustomUser model**, meanwhile **migrate** runs the SQL commands stored in the database file. So, after running migrate, all of my CompaniesApp's tables are created in the database file. Please establish an empty MySQL database named **aa** beforehand to assure this.
+```bash
+ python manage.py makemigrations
+ python manage.py migrate
+```
+Check your MySQL database (XAMPP > MySQL > Start > Admin) to confirm this migration procedure.
+
+**Create Admin Site** 
+
+Go to **admin.py** to classify your own admin site. This will allow admins to register on a site of their own.
+```bash
+from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
+from django.contrib.auth.forms import UserChangeForm, UserCreationForm
+from .models import CustomUser
+
+
+class CustomUserAdmin(UserAdmin):
+    model = CustomUser
+    add_form = UserCreationForm
+    form = UserChangeForm
+    fieldsets = (
+        (None, {'fields': ('username', 'password')}),
+        ('Personal info', {'fields': ('user_type',)}),
+        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+        ('Important dates', {'fields': ('last_login', 'date_joined')}),
+    )
+
+admin.site.register(CustomUser, CustomUserAdmin)
+```
 
 ## Question 3 (b)
 

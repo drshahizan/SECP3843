@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'trcDjangoApp',
 ]
 
 MIDDLEWARE = [
@@ -86,7 +87,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'LearningCluster',
         'CLIENT': {
-            'host': 'mongodb+srv://terence:qCZgfWgGHCBSqCqk@learningcluster.p8bbacm.mongodb.net/',
+            'host': 'mongodb+srv://terence:***@learningcluster.p8bbacm.mongodb.net/',
             'authMechanism': 'SCRAM-SHA-1',
             'authSource': 'admin',
         }

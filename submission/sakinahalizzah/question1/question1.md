@@ -15,21 +15,26 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Analytics](https://github.com/drshahizan/dataset/tree/main/mongodb/02-analytics)
 
 ## Question 1 (a)
-As an IT consultant, I was responsible for guiding the technical team on how to implement a configuration that involves five servers for our latest project. For this endeavor, my team had to integrate the Django web framework with both MySQL and MongoDB databases and use a JSON dataset to create the required web pages. The five servers that we'll be leveraging for this project are:
+As an IT consultant, I was responsible for guiding the technical team on how to implement a configuration that involved five servers for our latest project. For this endeavor, my team had to integrate the Django web framework with both MySQL and MongoDB databases and use a JSON dataset to create the required web pages. The five servers that we'll be leveraging for this project are:
 
 Server 1: Web Server
-A web server is required to host and manage incoming HTTP requests for the Django application. For this project, nginx was chosen as it is highly scalable, efficient, and offers excellent support for load balancing, caching, and handling HTTP requests. 
+
+To host and manage incoming HTTP requests for the Django application, usually using Nginx or Apache. 
 
 Server 2: Django Application Server
+
 To effectively use Django, a reliable application server is crucial. It provides infrastructure for seamless framework operation and easy logic management. With a Django server, developers can streamline development and improve app functionality.
 
 Server 3: MySQL Database Server
+
 MySQL is a great way to store relational data from the portal. It's a powerful database management system offers secure and efficient storage, optimal performance, and seamless integration with Django through the Django-MySQL package. 
 
 Server 4: MongoDB Database Server
+
 This project will be using MongoDB Compass or Atlass to manage JSON datasets. MongoDB's document-based approach is great for unstructured data and allows for scalability and advanced queries. For Django integration, we suggest using Django MongoDB Engine. MongoDB Compass or Atlass are flexible and reliable tools for managing JSON datasets.
 
 Server 5: Load Balancer
+
 It's important to have a good system for managing traffic to ensure the web server and database servers are balanced. This helps prevent overload and ensures users can access the website quickly. By monitoring traffic and making changes as needed, the system can be maintained and handles lots of traffic without problems. Also, improve performance and avoid downtime or data loss by using failover and redundancy measures.
 
 ### The steps to integrate Django with the JSON dataset.
@@ -100,17 +105,15 @@ To define your Django models, head to the models.py file found within your app d
 <img src="https://github.com/drshahizan/SECP3843/assets/99240177/be5be54f-9a52-42a2-b1f4-963ae7b7997f" />
 
 
-Exploring the intricacies of the system architecture reveals the four tiers that work in perfect harmony to provide a seamless experience. Let's take a closer look at each one.
+The system architecture consists of the client tier, the part of the system that users interact with directly. Users send requests and receive responses through a web browser or a different client application through this tier. It's responsible for rendering the user interface and handling all user interactions, such as filling out forms and clicking links.
 
-Firstly, there's the client tier, the part of the system that users interact with directly. Whether using a web browser or a different client application, users send requests and receive responses through this tier. It's responsible for rendering the user interface and handling all user interactions, such as filling out forms and clicking on links.
+Second is the web tier, this is where all HTTP requests and responses are processed. It includes the Django web framework and various components that work in tandem to ensure seamless operation. As requests arrive from the client tier, the web tier directs them to the relevant views or controllers within the application tier. Additionally, it handles the task of generating templates and delivering dynamic HTML or other appropriate content in response.
 
-Next, there's the web tier, where all HTTP requests and responses are handled. It consists of the Django web framework and all the components that work together to make it run smoothly. When requests come in from the client tier, the web tier routes them to the appropriate views or controllers in the application tier. It also takes care of rendering templates and returning dynamic HTML or other relevant content as responses.
+Moving on to the application tier which is the core processing layer of the system. It's responsible for all the business logic, communicating with the web tier, databases, and datasets. This tier defines the Django models representing the database tables and contains all the necessary code to parse, validate, and process the JSON dataset. It also integrates with the database engines, MySQL and MongoDB, using Django's ORM to perform data storage, retrieval, and manipulation operations.
 
-Moving on to the application tier, we have the core processing layer of the system. It's responsible for all the business logic, communicating with the web tier, databases, and datasets. This tier defines the Django models that represent the database tables and contains all the necessary code to parse, validate, and process the JSON dataset. It also integrates with the database engines, MySQL and MongoDB, using Django's ORM to perform data storage, retrieval, and manipulation operations.
+Lastly, the portal tier is the user-facing part of the system that provides all the functionality and data visualization. It relies on the application tier to retrieve data from the databases and dataset and transform it into a suitable format for presentation. The portal tier includes all the necessary components to make the user experience as smooth as possible, such as data visualization libraries, dashboard modules, and user interface templates. It uses Django's templating system or frontend frameworks to render dynamic web pages and display the requested data visually appealing and interactively.
 
-Lastly, we have the portal tier, the user-facing part of the system that provides all the functionality and data visualization. It relies on the application tier to retrieve data from the databases and dataset and transform it into a suitable format for presentation. The portal tier includes all the necessary components to make the user experience as smooth as possible, such as data visualization libraries, dashboard modules, and user interface templates. It uses Django's templating system or frontend frameworks to render dynamic web pages and display the requested data in a visually appealing and interactive manner.
-
-In summary, these four tiers work together seamlessly to provide users with a great experience. With the Django web framework, the JSON dataset, and the MySQL and MongoDB databases all working together, data storage, retrieval, and visualization are efficient and effective.
+In summary, these four tiers work together seamlessly to provide users a great experience. With the Django web framework, the JSON dataset, and the MySQL and MongoDB databases all working together, data storage, retrieval, and visualization are efficient and effective.
 
 
 ## Contribution 🛠️

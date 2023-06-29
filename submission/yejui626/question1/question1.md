@@ -261,14 +261,15 @@ This system architecture focuses on the seamless integration between the web ser
       - **MongoDB:**
       It is a NoSQL database server which used to store JSON data. In this project, it is used to store the JSON dataset (Stories dataset).
 
-   - **External Libraries for database integration**
+   - **External Libraries/Tools for database integration and replication**
+        - **Apache Kafka**: 
+        Apache Kafka can be used as a message broker to publish database changes as events, which can then be consumed by other databases for synchronization purposes. In this project, Apache Kafka can do data replication and synchronization between MySQL and MongoDB, ensuring that changes made in one database are accurately reflected in the other.
+
         - **ORM**: 
-         To perform interaction between Django models and MySQL, Django's ORM (Object-Relational Mapping) provides an abstraction layer that allows us to work with MySQL using Python classes and methods, making it easier to perform database operations. In this project, it is used to interact with the user app's model.
+        To perform interaction between Django models and MySQL, Django's ORM (Object-Relational Mapping) provides an abstraction layer that allows us to work with MySQL using Python classes and methods, making it easier to perform database operations. In this project, it is used to interact with the user app's model.
 
         - **Djongo**: 
         Django can serve as the MongoDB connector when integrating it with MongoDB. Djongo enables interaction between Django models and MongoDB collections. In this project, it is used to interact with the stories app's model.
-
-    
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

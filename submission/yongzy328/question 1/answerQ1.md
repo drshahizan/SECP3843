@@ -27,51 +27,66 @@ The 5 servers of this project are implemented as below:
       <td>Used to handle the network routings (including the incoming requests and outgoing responses) between the user's browser and the Django framework through HTTP protocols. Examples of web server services are Apache HTTP Server, Nginx, and Microsoft IIS.</td>
     </tr>
     <tr>
-      <td>MySQL Database Server</td>
-      <td></td>
+      <td>Database Server 1 (MySQL)</td>
+      <td>Used to host the MySQL database for the system. It is crucial in handling the client's request from the application and executing the database operations such as inserting, querying, updating and deleting through the SQL queries. Django application will connect to this database using the package <code>mysqlclient</code>.</td>
+    </tr>
+    <tr>
+      <td>Database Server 2 (MongoDB)</td>
+      <td>Used to host the MongoDB database for the system. It is significant in handling high volume of unstructured data of the Django application through the processes of storing and retrieving. The package <code>djongo</code> is applied to manage the connection between Django framework and MongoDB database.</td>
+    </tr>
+    <tr>
+      <td>File Server</td>
+      <td>Used as a file storage system that responsible for managing all the files which will be accessed by the users through the application or system over the network. Example of file servers are Server Message Block (SMB) and Network File System (NFS) which enable the files to be accessed remotely by the client.</td>
+    </tr>
+    <tr>
+      <td>Load Balancer</td>
+      <td>Used to evenly distribute the incoming and outgoing network traffic accross the available servers in order to optimize the overall performance, increase realibility and prevent overload of the Django application. </td>
     </tr>
   </tbody>
 </table>
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153108.png" alt="activate virtual environment">
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153218.png" alt="install django mysqlclient pymongo">
+### Steps to Integrate Django with JSON dataset
+#### 1. Set up a new Django application
+Using the Command Prompt (CMD), change the directory to the created project folder's location (the AA folder in this case) and then set up a virtual environment for it by running the command <code>py -m venv env</code>. Then run the virtual environment by using the command <code>env\Scripts\activate</code>. <br>
+<img src="./files/images/Screenshot%202023-06-27%20153108.png" alt="activate virtual environment"><br>
+Install the neccessary packages using the code <code>pip install django mysqlclient pymongo</code>. Django is necessary for the implementation of Django framework, mtsqlclient is needed to connect MySQL database to Django framework, whereas pymongo is used to connect MongoDB database to the Django framework.<br>
+<img src="./files/images/Screenshot%202023-06-27%20153218.png" alt="install django mysqlclient pymongo"><br>
+Install the djongo package using the code <code>pip install djongo</code> to translate the SQL queries into MongoDB queries. <br>
+<img src="./files/images/Screenshot%202023-06-27%20153237.png" alt="install djongo"><br>
+Create a new project named "CityAA" using the command <code>django-admin startproject CityAA</code>. <br>
+<img src="./files/images/Screenshot%202023-06-27%20153149.png" alt="django start project"><br>
+Create a new Django application named "CityAAdata" in the directory of the CityAA project using the command <code>python manage.py startapp CityAAdata</code>. <br>
+<img src="./files/images/Screenshot%202023-06-27%20153205.png" alt="startapp"><br>
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153237.png" alt="install djongo">
+#### 2. Set up the setting of the application
+In the settings.py file, update information of the newly created application in the installed_apps as shown as below. <br>
+<img src="./files/images/Screenshot%202023-06-27%20164105.png" alt="setting.py"><br>
+Update the database credential information in the database setting as shown as below. <br>
+<img src="./files/images/Screenshot%202023-06-28%20015242.png" alt="database setting"><br>
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153149.png" alt="django start project">
+#### 3. Create model of the application
+The model of application is set according to the data types of the dataset provided as shown below. <br>
+<img src="./files/images/Screenshot%202023-06-28%20153939.png" alt="model"><br>
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20153205.png" alt="startapp">
+#### 4. Migrate to database
+All the data of the application will be migrated to the database in order to store them efficiently. The command <code>python manage.py makemigrations</code> is run to intialize the migration process. <br>
+<img src="./files/images/Screenshot%202023-06-28%20015411.png" alt="make migrations"><br>
+After that, the data are migrated to the database using the command <code>python manage.py migrate</code><br>
+<img src="./files/images/Screenshot%202023-06-28%20015441.png" alt="migrate"><br>
+All the data is successfuly migrated to the database as shown as the sceenshot below.<br>
+<img src="./files/images/Screenshot%202023-06-28%20015852.png" alt="mysql after migration"><br>
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-27%20164105.png" alt="setting.py">
+#### 5. Load JSON file into database
+In order to load JSON file into the Django model and database, a script named "loaddata.py" is written and saved in the same directory as the manage.py file. <br>
+<img src="./files/images/Screenshot%202023-06-28%20153924.png" alt="loaddata.py"><br>
+The command <code>python manage.py loaddata city_inspections.json</code> is run to load the data into the database. Note that within the command above, "city_inspections.json" is the JSON file which I am loading, it can be replaced by any other desired json file. <br>
+<img src="./files/images/Screenshot%202023-06-28%20162050.png" alt="loaddata json"><br>
+The loaded JSON data can be viewed in the database. <br>
+<img src="./files/images/Screenshot%202023-06-28%20162035.png" alt="load data success"><br>
 
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015242.png" alt="database setting">
-
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015505.png" alt="model">
-
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015411.png" alt="make migrations">
-
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015441.png" alt="migrate">
-
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20015852.png" alt="mysql after migration">
-
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20042111.png" alt="loaddata1">
-
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/Screenshot%202023-06-28%20042118.png" alt="loaddata2">
-
-
-
-
-
-
-
-
-
-
-
-<code>python manage.py loaddata city_inspections.json</code>
 
 ## Question 1 (b)
-<img src="https://github.com/drshahizan/SECP3843/blob/main/submission/yongzy328/question%201/files/images/use%20case%20diagram%20(current%20system)%20-%20Page%203.png" alt="system architecture">
+<img src="./files/images/use%20case%20diagram%20(current%20system)%20-%20Page%203.png" alt="system architecture">
 
 
 
