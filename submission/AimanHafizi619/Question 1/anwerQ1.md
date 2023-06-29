@@ -91,25 +91,22 @@ Running `python manage.py makemigrations` examines the current state of your mod
 
 The system architecture are as follow:
 
-**Xampp Web server** 
+**Apache Web server** 
 
->Xampp uses HTTP requests and respoanse as the primary ways of communication between clients and the web application. The framework handles incoming requests, routes them to the appropriate views, allows access to request data, and generates suitable responses.
+>Integrating Apache with Django help handle HTTP requests and respoanse as the primary ways of communication between clients and the web application. The framework handles incoming requests, routes them to the appropriate views, allows access to request data, and generates suitable responses.
 
 **Django**
 
 > Django is an open source web framework, serves as the foundation for this particular web server. Starting a Django project allows user to build application’s entire data model in Python without using SQL. It has three components; 1) Model for handling database, 2) View for handling HttpResponse, and 3) Template for diplaying html file for User Interface (UI).
 
-**3. Database**
+**Database**
 
 >MongoDB and MySQL have different strengths and are suitable for different use cases within the system architecture. MongoDB excels at storing and retrieving JSON data with flexibility, while MySQL provides structured data storage with SQL querying capabilities and transactional support. By leveraging both databases, one can take advantage of their respective strengths and choose the appropriate database for each data storage and retrieval requirement in one system.
 
-**4. JSON File**
+**JSON File**
 
 >JSON file to populate the MongoDB and MySQL databases provides a convenient and flexible approach for initializing the databases with the necessary data. It allows for easy data import, compatibility with the JSON dataset, and decoupling from database-specific import methods.
 
-**5. Data Visualization**
-
->Both Matplotlib and Seaborn can be integrated into the Django web framework to generate visualizations dynamically based on the data stored in the databases. These libraries provide a wide range of options for creating visually appealing and insightful plots, enabling users of the system to gain meaningful insights from the data and make data-driven decisions.
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
