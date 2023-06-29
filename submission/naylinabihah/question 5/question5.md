@@ -37,8 +37,51 @@ These are the steps that should be considered:
    ![1](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%205/files/images/5.png)
    
 ## Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
+#### 1. Login to MongoDB Atlas and Connect to MongoDB Compass
+Do this by click connect on the collection card. Then, click on 'Charts' to start creating charts in dashboard.
+
+#### 2. Load Dataset
+Choose the desired dataset from the collection saved earlier on
+
+#### 3. Create Desired Chart and Design the Dashboard
+
+There are 7 charts that consists of 3 bar charts, 2 Geo Choropleth chart, 2 cards.
+
+These are the charts created in the dashboard:
+
+![c1](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%205/files/images/c1.png)
+
+This chart is built based on the company and their number of employees. I only take top 50 on the list to insert in this chart
+
+
+![c2](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%205/files/images/c2.png)
+
+This is a geo choropleth chart that describes the number of employees in each country
+
+![c3](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%205/files/images/c3.png)
+
+This is also a geo choropleth chart that describes the sum of acquisition price amount of companies in each country
+
+![c4](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%205/files/images/c4.png)
+
+These are the cards that used to show the highest acquisition amount made by a company and the highes raised amount by a company
+
+![c5](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%205/files/images/c5.png)
+
+This chart is built to see the top 20 categories of company founded
+
+![c6](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%205/files/images/c6.png)
+
+This chart shows the number of company founded in each decade
+
+![c7](https://github.com/drshahizan/SECP3843/blob/main/submission/naylinabihah/question%205/files/images/NNJ_dbd.png)
+
+This is the full dashboard view I had done.
+
+
+#### Additional Charts
+I also had made some additional charts using python in google colab. To view it, click [here]().
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
