@@ -41,7 +41,7 @@ Add Chart\
 \
 2. Comment by Media
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/701b1c48-6843-4c83-b1ba-d8a01c779c93"/>
-\
+
 3. Comments by Topics\
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/ab2dfe5a-7202-4b41-bb41-24bbefc180c9"/>
 \
