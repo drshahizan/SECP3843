@@ -17,7 +17,61 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 5 (a)
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+### There are many way to optimize perfomance when dealing with large volumes of JSON data. Here the 3 most popular way to optimize the perfomance using MongoDB:
+
+## Indexing
+
+### Why ?
+
+1. Indexing are used by MongoDB to quickly identify and get data based on the criteria given.
+2. This can significantly improve query speed by defining indexes on columns that are often used for filtering or aggregating data.
+
+### Implementation 
+
+1. First, open MongoDB Compass and navigate to the database and collection that we are dealing with.
+
+2. Open MongoDB shell script editor run the `use databasename` to switch database from the default.
+
+3. Run the query ```bash db.CompaniesMeta.createIndex({ founded_year: 1 }) ``
+
+4. Then, new Indexes will be created
+
+<img src="../materials/Q5_1.png">
+
+By creating an index on the `founded_year` field, MongoDB can efficiently locate and retrieve data based on the `founded_year` criteria, resulting in improved query performance for dashboard visualizations that use filtering or sorting based on this field.
+
+## Aggregation Pipeline Optimization
+
+### Why ?
+
+Optimizing these pipelines is important to improve performance by reducing unnecessary data processing.
+
+### Implementation
+
+#### $match Stage
+
+This step allows for the filtering of data in the pipeline, hence helping in reducing the amount of data that being process resulting improving in performance.
+
+1. Open MongoDB and go to `Aggregations` tab and choose dropdown $match for Stage 1. Then, run the appropriate query. For example: 
+
+```bash { founded_year: { $gte: 2000 } } ```
+
+this query help to filters documents based on the condition that `founded_year` is greater than or equal to 2000.
+
+<img src="../materials/Q5_2.png">
+
+#### $project Stage
+
+1. Add another stage by clicking `Add Stage` option on the bottom of the page.
+
+2. Choose $project in the Stage 2 dropdown list.
+
+3. Run the intended query. For example:
+```bash { name: 1, founded_year: 1, total_money_raised: 1 }```
+
+By giving just the fields that are required, we can reduce the amount of data processed.
+
+<img src="../materials/Q5_3.png">
 
 ## Question 5 (b)
 
