@@ -1,0 +1,33 @@
+<h3>Movie Recommender</h3>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="text" name="title" placeholder="Enter movie title" value="{{title}}">
+
+    <button type="submit">Search</button>
+</form>
+
+{% if messages %}
+  {% for message in messages %}
+      <strong style="color:red">{{message}}</strong>
+ {% endfor %}
+{% endif %}
+
+
+{% if recommendations %}
+  {% for meta, desc, result in recommendations %}
+      <strong>{{meta}}</strong>
+	  <br/>
+	  <br/>
+	  <b>Fullplot:</b> {{desc}}
+	  <br/>
+	  <br/>
+	  <b>Recommendations:</b>
+	  <ul>
+	  {% for i in result %}
+		  <li>{{i}}</li>
+	 {% endfor %}
+	 </ul>
+	 <br/>
+ {% endfor %}
+{% endif %}

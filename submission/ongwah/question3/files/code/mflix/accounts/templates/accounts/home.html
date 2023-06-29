@@ -1,0 +1,14 @@
+{% if user.is_authenticated %}
+    <div class="alert alert-success" role="alert">
+        <h3>Welcome {{ user.username }}!</h3>
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
+{% else %}
+    <div class="alert alert-success" role="alert">
+        <h3>Welcome!</h3>
+        <a href="{% url 'register' %}">Signup</a>
+        <a href="{% url 'login' %}">Login</a>
+    </div>
+{% endif %}
+
+<iframe style="background: #F1F5F4;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);width: 100vw;height: 100vh;"  src="https://charts.mongodb.com/charts-project-0-eouzt/embed/dashboards?id=649d1991-b269-433f-851e-1fa3136c52b1&theme=light&autoRefresh=true&maxDataAge=3600&showTitleAndDesc=false&scalingWidth=scale&scalingHeight=scale"></iframe>
