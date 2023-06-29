@@ -136,7 +136,7 @@ class CustomUser(AbstractUser):
   </body>
   ```
   
-    <div align="center"><img src="files/images/login.png" height="500px" /></div>
+  <div align="center"><img src="files/images/login.png" height="500px" /></div>
     
   - register.html
   ```python
@@ -221,6 +221,7 @@ Replicating and synchronizing data between MySQL and MongoDB databases poses cha
       }
      ```
   3. Define models for both databases: Create separate model classes for MySQL and MongoDB in Django app's models.py file. Annotate the models with the database routing information to specify which database to use for each model.
+     
        ```python
       from django.db import models
       from djongo import models as djongo_models
@@ -237,47 +238,48 @@ Replicating and synchronizing data between MySQL and MongoDB databases poses cha
           couponUsed = models.BooleanField(db_column='couponUsed')
           purchaseMethod = models.CharField(max_length=100, db_column='purchase_method')
       ```
-  5. Define the synchronization functions in sync.py:
-     
-       ```python
-         from pymongo import MongoClient
-         from .models import Sale, CustomUser
-        
-        def sync_mysql_to_mongodb_sale(sale_instance):
-            client = MongoClient('mongodb://localhost:27017/')
-            db = client['AA']
-            collection = db['sale']
-        
-            # Create or update the document in MongoDB
-            collection.update_one({'_id': sale_instance._id}, {'$set': sale_instance.__dict__}, upsert=True)
-        
-        def sync_mysql_to_mongodb_customuser(customuser_instance):
-            client = MongoClient('mongodb://localhost:27017/')
-            db = client['AA']
-            collection = db['customuser']
-        
-            # Create or update the document in MongoDB
-            collection.update_one({'_id': customuser_instance.id}, {'$set': customuser_instance.__dict__}, upsert=True)
-       ```
-  6. Call the synchronization functions to synchronize the data
+  5. Define the insert data in views.py:
 
-      ```python
+```python
+  def insert_data(request):
+      # Create a Sale object for MySQL
+      sale_mysql = Sale(
+          _id='1',
+          saleDate='2023-06-30 12:00:00',
+          storeLocation='New York',
+          customerGender='M',
+          customerAge=30,
+          customerEmail='example@example.com',
+          satisfaction=5,
+          couponUsed=True,
+          purchaseMethod='Online'
+      )
+      sale_mysql.save()
   
-      from .models import Sale, CustomUser
-      from .sync import sync_mysql_to_mongodb_sale, sync_mysql_to_mongodb_customuser
-      
-      def create_sale(request):
-          # Create a Sale instance in MySQL
-          sale = Sale(_id='123', saleDate='2023-06-30', storeLocation='New York', customerGender='M',
-                      customerAge=25, customerEmail='example@example.com', satisfaction=5,
-                      couponUsed=True, purchaseMethod='Online')
-          sale.save()
-      
-          # Synchronize the Sale instance to MongoDB
-          sync_mysql_to_mongodb_sale(sale)
-      
-          # Redirect or return a response
-      ```
+      # Create a Sale object for MongoDB
+      sale_mongodb = Sale(
+          _id='1',
+          saleDate='2023-06-30 12:00:00',
+          storeLocation='New York',
+          customerGender='M',
+          customerAge=30,
+          customerEmail='example@example.com',
+          satisfaction=5,
+          couponUsed=True,
+          purchaseMethod='Online'
+      )
+      sale_mongodb.save(using='mongodb')
+  
+      # Rest of the view logic
+      return render(request, 'insert_data.html')
+```   
+  6. Run migration.
+      We can see data is now stored in both database.
+     
+       <div align="center"><img src="files/images/sql.png" height="80px" /></div>
+       
+       <div align="center"><img src="files/images/mongo.png" height="200px" /></div>
+       
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 
