@@ -15,6 +15,17 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 4 
 ### Supervised Learning: Classification
+**1. Load dataset**
+- Since my JSON data is stored in MongoDB Compass, I establishes a connection to a MongoDB database and retrieves the specific collection. 
+<div align="center"><img src="files/images/load.PNG" height="350px" /></div>
+<div align="center"><img src="files/images/display.PNG" height="350px" /></div>
+
+**2. Transform the dataset into an appropriate manner**
+<div align="center"><img src="files/images/transform.PNG" height="350px" /></div>
+
+**2. Data Cleaning**
+<div align="center"><img src="files/images/clean.PNG" height="350px" /></div>
+<div align="center"><img src="files/images/clean2.PNG" height="350px" /></div>
 
 
 
