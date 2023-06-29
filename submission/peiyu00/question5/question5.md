@@ -21,6 +21,8 @@ There are several techniques that can be implemented to optimize the performance
 
 Data preprocessing needs to be performed for large amounts of JSON data in order to ensure that the data is in the most efficient and usable state for visualization. It may involve data cleaning, feature selection and data transformation.
 
+Code: <a href="./files/code/Q5.ipynb">Q5.ipynb</a>
+
 #### Step 1: Load the JSON data
 The JSON data is loaded for further analysis and preprocess. 
 ```
