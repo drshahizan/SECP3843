@@ -18,7 +18,16 @@ Don't forget to hit the :star: if you like this repo.
 
 
 ## Question 5 (b)
+We can use MongoDB Atlas to visualize the JSON files
 
+Search for Charts tabs and click into it.
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/b606c7a0-d775-4436-a5a5-fff9e9f8a511)
+
+Then select data source
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/35083228-588e-4b3c-abbc-aed2aca5de80)
+
+You can use recommended tools to create a visualization in MongoDB Atlas
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/fa20514a-828d-442e-9f99-a3e82a437b70)
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
