@@ -37,16 +37,16 @@ Transactions JSON imported
 
 ## Question 2 (b)
 1. Create query
-  ![image](https://github.com/drshahizan/SECP3843/assets/120616074/f6853f75-8621-4b10-982e-415a110c672f)
+ ![image](https://github.com/drshahizan/SECP3843/assets/120616074/f6853f75-8621-4b10-982e-415a110c672f)
 
 2. Read query
-   ![image](https://github.com/drshahizan/SECP3843/assets/120616074/ef4758dd-9f3f-4086-aa74-bd43e1a64723)
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/ef4758dd-9f3f-4086-aa74-bd43e1a64723)
 
 3. Update query
-   ![image](https://github.com/drshahizan/SECP3843/assets/120616074/f95230a6-03a4-4437-8f1d-033c2a451d3f)
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/f95230a6-03a4-4437-8f1d-033c2a451d3f)
 
 4. Delete query
-   ![image](https://github.com/drshahizan/SECP3843/assets/120616074/30b031b2-dc95-49f7-8f1b-d502ce8e275d)
+![image](https://github.com/drshahizan/SECP3843/assets/120616074/30b031b2-dc95-49f7-8f1b-d502ce8e275d)
 
 
 ## Contribution 🛠️
