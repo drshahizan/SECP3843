@@ -35,11 +35,11 @@ Don't forget to hit the :star: if you like this repo.
 
 | No | Answer | File |
 | :-----: | ----- | :------: |
-| 1 | Question 1 | <a href="https://github.com/drshahizan/SECP3843/blob/main/submission/Vincboo/question%201/answerQ1.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 2 | Question 2 | <a href="https://github.com/drshahizan/SECP3843/blob/main/submission/Vincboo/quantion%202/answerQ2.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 3 | Question 3 | <a href="https://github.com/drshahizan/SECP3843/blob/main/submission/Vincboo/question%203/answerQ3.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 4 | Question 4 | <a href="https://github.com/drshahizan/SECP3843/blob/main/submission/Vincboo/question%204/answerQ4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
-| 5 | Question 5 | <a href="https://github.com/drshahizan/SECP3843/blob/main/submission/Vincboo/question%205/answerQ5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 1 | Question 1 | <a href="https://github.com/drshahizan/SECP3843/blob/main/submission/Vincboo/question1/question1.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 2 | Question 2 | <a href="https://github.com/drshahizan/SECP3843/blob/main/submission/Vincboo/question2/question2.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 3 | Question 3 | <a href="https://github.com/drshahizan/SECP3843/blob/main/submission/Vincboo/question3/question3.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 4 | Question 4 | <a href="https://github.com/drshahizan/SECP3843/blob/main/submission/Vincboo/question4/question4.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
+| 5 | Question 5 | <a href="https://github.com/drshahizan/SECP3843/blob/main/submission/Vincboo/question5/question5.md"><img src="../../images/answer.png" width="24px" height="24px"></a> |
 
 
 
