@@ -17,6 +17,16 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 5 (a)
 a.	How can the performance of the portal be optimized when dealing with large volumes of JSON data from the dataset, especially during dashboard visualizations? Please provide an illustrative solution with code and screenshots.
 
+We can take the following actions to improve a portal's efficiency while handling big amounts of JSON data during dashboard visualisations:
+
+1. decrease the dataset size: If at all possible, try to decrease the size of the JSON dataset by removing extraneous information or combining the information at the server level before sending it to the site.
+
+2. Implement server-side pagination: Based on the requested page size, receive only a portion of the JSON data using server-side pagination rather than obtaining the entire set at once. Performance is enhanced because less data is delivered to the gateway.
+
+3. Utilise downsampling or data sampling methods: When working with extremely large datasets, sampling the data can give visualisations a good approximation without having to load and analyse the complete dataset. It is possible to speed up calculation and rendering via stratified sampling or by randomly selecting samples.
+
+4. Improve JSON parsing and rendering: To prevent any performance snags, make sure that the JSON data is efficiently parsed on the client side. Additionally, optimise the rendering process by rendering only the viewable area of the dashboard using methods like virtualization to shorten the rendering time and improve performance.
+
 ## Question 5 (b)
 Create a dashboard utilizing a JSON dataset, and provide a comprehensive description of its functionalities. You may include relevant code snippets and screenshots that illustrate the solution implemented.
 I will be using MongoDB Charts
