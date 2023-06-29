@@ -12,7 +12,7 @@ Don't forget to hit the :star: if you like this repo.
 
 #### Name: Yong Zhi Yan
 #### Matric No.: A20EC0172
-#### Datatset: City Inspections	
+#### Dataset: City Inspections	
 
 ## Question 1 (a)
 The 5 servers of this project are implemented as below:
