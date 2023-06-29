@@ -20,31 +20,64 @@ Don't forget to hit the :star: if you like this repo.
 The approach I used is form of content-based filtering, which is a type of recommendation system. Content-based filtering recommends items (in this case, movies) to users based on the similarity of their attributes or content. In this case, I used the movie genres, cast, directors, and plot as the attributes to calculate the similarity between movies and generate recommendations.
 
 Install the necessary libraries:
+
 ```
     pip install pymongo
     pip install pandas
 ```
 
-  1. Retrieve the Mflix datatset from MongoDB
-     The code will retrieve the movies data from MongoDB collection named `mflixx`, iterates over each movie and extracts the rating from `imdb` field. It stores all the ratings of the movie. I used the `json_normalize` function that will extract the "rating" attribute from the "imdb" field.
+1.  Retrieve the Mflix datatset from MongoDB
+    The code will retrieve the movies data from MongoDB collection named `mflixx`, iterates over each movie and extracts the rating from `imdb` field. It stores all the ratings of the movie. I used the `json_normalize` function that will extract the "rating" attribute from the "imdb" field.
+
+    <img src="https://github.com/drshahizan/SECP3843/blob/2fdb7483384c69a2dd92476fa56559c874bba55d/submission/Jokeryde/question4/files/images/1.%20retrive.jpg">
+
+    <img src="https://github.com/drshahizan/SECP3843/blob/2fdb7483384c69a2dd92476fa56559c874bba55d/submission/Jokeryde/question4/files/images/1.%20retrive%20result.jpg">
+
+2.  Data Cleaning & Data Preprocessing
+
+         i. Remove the unnecessary clomuns by removing the columns that are not relevant for the recommendation system. Drop teh columns by using the `drop()` function and for "tomatoes" column I'm using the `startwith()` method.
 
 
 
+    <img src="https://github.com/drshahizan/SECP3843/blob/2fdb7483384c69a2dd92476fa56559c874bba55d/submission/Jokeryde/question4/files/images/2.%20cleaning.jpg">
+
+    <img src="https://github.com/drshahizan/SECP3843/blob/2fdb7483384c69a2dd92476fa56559c874bba55d/submission/Jokeryde/question4/files/images/2.%20cleaning%20result.jpg">
 
 
+         ii. Remove the rows that contains missing values by using the `dropna()` function.
 
+    <img src="https://github.com/drshahizan/SECP3843/blob/2fdb7483384c69a2dd92476fa56559c874bba55d/submission/Jokeryde/question4/files/images/3.%20dropna.jpg">
 
-   
+    <img src="https://github.com/drshahizan/SECP3843/blob/2fdb7483384c69a2dd92476fa56559c874bba55d/submission/Jokeryde/question4/files/images/3.%20dropna%20result.jpg">
 
-     2. Data Cleaning & Data Preprocessing
+         iii. Remove special characters, cleaning and preprocessing for column "Plot" and "Genre"
 
-         i. Remove the unnecessary clomuns by removing the columns that are not relevant for the recommendation system. Drop teh columns by using the `dropna()` function.
+    <img src="https://github.com/drshahizan/SECP3843/blob/2fdb7483384c69a2dd92476fa56559c874bba55d/submission/Jokeryde/question4/files/images/4.%20preprocess.jpg">
 
-        
+    <img src="https://github.com/drshahizan/SECP3843/blob/2fdb7483384c69a2dd92476fa56559c874bba55d/submission/Jokeryde/question4/files/images/4.%20preprocess%20result.jpg">
 
-      
-     
+3.  Feature Extraction & Representation
+    The approach I used is vectorized representation of the item features which will allow efficient computation and comparison of item similarities.
 
+         i. Concatenate the text-based feature columns into a single column. I've used the `apply()` method along with `join()` and also `map(str,row) method.
+
+    <img src="https://github.com/drshahizan/SECP3843/blob/2fdb7483384c69a2dd92476fa56559c874bba55d/submission/Jokeryde/question4/files/images/5.%20features.jpg">
+
+    <img src="https://github.com/drshahizan/SECP3843/blob/dfe4815494305d7cce506e6c2b882568ab05c9e5/submission/Jokeryde/question4/files/images/5.%20features%20result.jpg">
+
+4.  Calculate Similarity
+To calculate the similarity between text documents, I've used method cosine similarity by importing TF-IDF vectors.
+
+<img src="https://github.com/drshahizan/SECP3843/blob/dfe4815494305d7cce506e6c2b882568ab05c9e5/submission/Jokeryde/question4/files/images/6.%20matrix.jpg">
+
+5.  Generate Recommendations
+    To generate movie recommendations based on the similarity scores, I defined a function that takes a movie title as input and returns a list of recommended movies.
+
+    <img src="https://github.com/drshahizan/SECP3843/blob/dfe4815494305d7cce506e6c2b882568ab05c9e5/submission/Jokeryde/question4/files/images/7.%20recomend.jpg">
+
+    Testing:
+
+    <img src="https://github.com/drshahizan/SECP3843/blob/dfe4815494305d7cce506e6c2b882568ab05c9e5/submission/Jokeryde/question4/files/images/8.%20test%20mdoel.jpg">
 
 ## Contribution 🛠️
 

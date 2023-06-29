@@ -15,10 +15,52 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: City Inspections
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Data Aggrigation is the best way to optimized the performance when dealing with large volumes of JSON data from the dataset.
+
+- fvgrt
+
+  <img width="959" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/10343854-7432-4dfd-bb6f-30eebee824a1">
+
 
 ## Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+To create a dashboard using JSON dataset, there are several platforms that can be used which are Power BI, Tableau as well as MongoDB Atlas Charts. However, it was found out that MongoDB Atlas Charts is best option for this task compared to Power BI and Tableau. One of the main reasons is Seamless Integration with MongoDB since it allows direct connection from the dataset. This can make the loading and transform process become smoother.
+
+**MongoDB Atlas Chart Dashboard**
+
+- Step 1: Sign in to MongoDB Atlas https://www.mongodb.com/cloud/atlas/register (Create an account if you do not have any account)
+
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/e8814870-6d29-423b-bea1-6376ff19b39c">
+  
+- Step 2: Go to Database page and select `Browse Collections`.
+
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/58a04d69-e2df-434c-a57e-481d57642797">
+  
+- Step 3: Select the Database and Collection that need to be visualize, select `Visualize Your Data`.
+
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/58eb0548-8bab-4895-aeaf-2c2133fb02df">
+
+  if you chose the wrong database in the previous step, you can make the choice again.
+
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/54f477e5-c992-4e58-9128-4fb901432a85">
+
+- Step 4: Create the Charts based on your Creativity
+
+  For example: `Total Inspections by Results`
+  
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/0146f404-e9cd-410a-b27e-893477be6709">
+
+  To create new chart, select `Add Chart`.
+
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/237ed8bc-de39-4594-83d4-38b6194171f9">
+
+  <hr>
+  <br>
+  <h2 ><b>Final Dashboard</b></h2>
+
+  <img width="900" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/263525c6-684a-4b99-b935-7f4d4d1204cf">
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

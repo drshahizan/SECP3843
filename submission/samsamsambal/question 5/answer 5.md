@@ -14,7 +14,87 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: 03 - Movies
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Step 1: Data Cleaning
+
+Import the necessary libraries
+```python
+import pandas as pd
+import json
+```
+```python
+# Read the JSON file as a string
+with open('movies.json') as f:
+    json_data = f.read()
+
+# Split the string into individual JSON objects
+json_objects = json_data.strip().split('\n')
+
+# Initialize an empty list to store the parsed JSON objects
+parsed_data = []
+
+# Parse each JSON object and append it to the list
+for json_object in json_objects:
+    try:
+        parsed_data.append(json.loads(json_object))
+    except json.JSONDecodeError as e:
+        print(f"Error parsing JSON object: {json_object}")
+        print(f"Error message: {e}")
+
+# Create a DataFrame from the parsed JSON data
+df = pd.DataFrame(parsed_data)
+```
+Remove null
+```python
+df = df.dropna()
+df.isnull().sum()
+```
+Feature Extraction
+```python
+imdb_rating = df['imdb'].apply(lambda x: float(x.get('rating', {}).get('$numberDouble', 0)))
+viewer_rating = df['tomatoes'].apply(lambda x: float(x.get('viewer', {}).get('rating', {}).get('$numberDouble', 0)))
+single_country_df = df[df['countries'].str.len() == 1]
+```
+```python
+single_country_df['imdb_rating'] = imdb_rating
+single_country_df['viewer_rating'] = viewer_rating
+single_country_df
+```
+```python
+columns = ['_id','runtime','num_mflix_comments','year','poster','languages','writers','metacritic','plot', 'genres', 'cast', 'title', 'fullplot', 'awards', 'released', 'directors', 'rated', 'lastupdated', 'type', 'imdb', 'tomatoes']
+df1 = single_country_df.drop(columns, axis=1)
+```
+```python
+df1.to_json('movies_cleaned.json', orient='records')
+from IPython.display import FileLink
+
+json_file = 'movies_cleaned.json'  
+
+# Create a download link for the JSON file
+FileLink(json_file)
+```
+Import the file to your MongoDB
+
+Step 2: MongoDB Aggregation
+
+Head over to MongoDB Atklas. Click on "Browse Collections"
+
+![Q5](file/image/q61.png)
+
+Choose the collection that contains the data that we have cleaned. 
+
+![Q5](file/image/q62.png)
+
+Click on "Aggregation" and "Add Stage"
+
+![Q5](file/image/q63.png)
+
+Perform Aggregation accordingly, I chose to find the average of both imdb ratings and tomatoes ratings, then round them to two significant figures.
+
+![Q5](file/image/q65.png)
+
+This is the aggregation pipeline we will end up with
+
+![Q5](file/image/q64.png)
 
 ## Question 5 (b)
 I chose to visualize my dashboard with MongoDB Atlas. It has a built-in chart creator which will make our job a lot easier. It is also can be done by drag-and-drop, thus no coding is needed. The dataset is already imported as we have done so for Question 2.

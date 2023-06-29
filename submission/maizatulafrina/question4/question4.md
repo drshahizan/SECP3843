@@ -13,11 +13,17 @@ Don't forget to hit the :star: if you like this repo.
 #### Matric No.: A20EC0204
 #### Dataset: City Inspections
 
-## Question 4 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Question 4
 
-## Question 4 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<img width="933" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/e5888d93-a6cf-4434-a79c-0f55d063f041">
+<img width="932" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/4937aade-d1e5-4f99-b1ba-45449a5a65d0">
+<img width="924" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/279e3b11-d006-4ea8-9b9f-4ff3f63092ed">
+
+
+
+
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

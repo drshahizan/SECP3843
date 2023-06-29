@@ -16,6 +16,9 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 4 (a)
 Based on the provided Stories Dataset, I have identified one suitable machine learning approach which is text classification using Naive Bayes Classifier. This approach helps me to analyze and categorize textual data. In this project, I am using the `topic` as the label and `description` as the feature. 
 
+### Potential Usage of this feature
+For further usage of this feature, it can help website provide personalized recommendations to users based on their interest or preferred categories. For example, when a user used the search bar to search for "Lebron", it will recommend more stories about the topic "Basketball" to the user.
+
 ### Implementation of Machine Learning in Django
 
 #### Step 1 : Install required libraries
@@ -82,15 +85,13 @@ def customer(request):
 
 #### Step 3 : Define template
 Define a template that will render the function. <br>
-![Alt text](./files/images/image-5.png)
-![Alt text](./files/images/image-1.png)
-![Alt text](./files/images/image-2.png)
-![Alt text](./files/images/image-3.png)
+![Alt text](./files/images/image-5.png)<br>
+![Alt text](./files/images/image-1.png)<br>
+![Alt text](./files/images/image-2.png)<br>
+![Alt text](./files/images/image-3.png)<br>
 ![Alt text](./files/images/image-4.png)
 <br>
 
-### Potential Usage of this feature
-For further usage of this feature, it can help website provide personalized recommendations to users based on their interest or preferred categories. For example, when a user used the search bar to search for "Lebron", it will recommend more stories about the topic "Basketball" to the user.
 
 
 ## Contribution 🛠️

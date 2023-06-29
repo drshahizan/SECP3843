@@ -557,10 +557,239 @@ add path to new page and function
 ```
 
 Now the system can be login by three type of `user: ['customer', 'technical worker', 'senior management']` and each user will direct to the coresponding page after login.
+The landing page:
+- ![image.png](ss/s34.png)
+
+Register:
+
+- ![image-3.png](ss/s35.png)
+
+user ccan choose their user type when register
+
+Login into system:
+
+- ![image-4.png](ss/s36.png)
+
+It will direct user to the coresponding user type page:
+
+- ![image-5.png](ss/s37.png)
+
+File structure:
+```powershell
+PS C:\Users\User\Desktop\django_project\mflix> tree /F
+Folder PATH listing
+Volume serial number is EE79-4E7C
+C:.
+│   manage.py
+│
+├───mflix
+│   │   settings.py
+│   │   urls.py
+│   │   wsgi.py
+│   │   __init__.py
+│   │
+│   └───__pycache__
+│           settings.cpython-311.pyc
+│           urls.cpython-311.pyc
+│           wsgi.cpython-311.pyc
+│           __init__.cpython-311.pyc
+│
+└───role
+    │   admin.py
+    │   apps.py
+    │   forms.py
+    │   models.py
+    │   tests.py
+    │   urls.py
+    │   views.py
+    │   __init__.py
+    │
+    ├───migrations
+    │   │   0001_initial.py
+    │   │   __init__.py
+    │   │
+    │   └───__pycache__
+    │           0001_initial.cpython-311.pyc
+    │           __init__.cpython-311.pyc
+    │
+    ├───templates
+    │       base.html
+    │       customer.html
+    │       home.html
+    │       index.html
+    │       login.html
+    │       register.html
+    │       senior.html
+    │       technical.html
+    │
+    └───__pycache__
+            admin.cpython-311.pyc
+            apps.cpython-311.pyc
+            forms.cpython-311.pyc
+            models.cpython-311.pyc
+            urls.cpython-311.pyc
+            views.cpython-311.pyc
+            __init__.cpython-311.pyc
+```
 
 
 ## Question 3 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+The possible approach to solve data replication and synchronization between MySQL and MongoDB would be **database-level replication** and **application-level replication**. Ths is to ensure one databse are accurately reflect in the other. Thereby, it can maintain the data consistency across both system.
+
+**Database-level replication** is when you replicate the entire database from one to another. This can ensure for simplicity and reliability, as well as ensuring data consistency in database level.
+
+To implement this, in a Django project connect to both database in setting:
+```python
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "dinner",
+        "USER": "root",
+        "PASSWORD": "",
+        "HOST": "localhost",
+        "PORT": "3306",
+    },
+    'mongodb': {
+        'ENGINE': 'djongo',
+        'ENFORCE_SCHEMA': False,
+        'NAME': 'dinner',
+        'CLIENT': {
+            'host': 'localhost:27017',
+            'port': 27017,
+        },
+    },
+}
+```
+
+Create a model in the app:
+```python
+class Meal(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=100)
+    quantity = models.IntegerField()
+    datetime = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name
+```
+
+create a function that save data in both database:
+```python
+def saveObj(meal):
+    meal.save()
+    meal.save(using='mongodb')
+```
+
+create a form for adding the Meal data:
+```python
+class MealForm(forms.ModelForm):
+    class Meta:
+        model = Meal
+        fields = ['name', 'quantity']
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Name'}),
+            'quantity': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Quantity'}),
+        }
+```
+
+
+```python
+def index(request):
+    if request.method == 'POST':
+        form = MealForm(request.POST)
+        if form.is_valid():
+            name = form.cleaned_data['name']
+            quantity = form.cleaned_data['quantity']
+            meal = Meal(name=name, quantity=quantity)
+            # save into both databases
+            saveObj(meal)
+            # redirect
+            return redirect('index')
+    else:
+        form = MealForm()   
+    context = {'form': form}
+    return render(request, 'index.html', context)
+```
+
+```html
+<!-- add meal form -->
+{% extends 'base.html' %}
+{% block title %}Dinner{% endblock title %}
+{% block content %}
+<h2>Add meal for dinner</h2>
+<a class="badge bg-success link-offset-2 link-underline link-underline-opacity-0" href=" {% url 'meals' %} ">Meal List</a>
+<hr>
+<form method="post">
+    {% csrf_token %}
+    {{ form.name.label }}: {{ form.name }}
+    <br>
+    {{ form.quantity.label }}: {{ form.quantity }}
+    <br>
+    <input type="submit" value="Submit" class="btn btn-primary">
+</form>
+{% endblock content %}
+```
+
+at this point, the data will add to database via passing throught `saveObj()` method. By using this, it will synchronous both database by replicating the data.
+
+![image.png](ss/ss32.png)
+
+![image-2.png](ss/ss33.png)
+
+File structure:
+```powershell
+PS C:\Users\User\Desktop\django_project\replicate> tree /F
+Folder PATH listing
+Volume serial number is EE79-4E7C
+C:.
+│   manage.py
+│
+├───replicate
+│   │   settings.py
+│   │   urls.py
+│   │   wsgi.py
+│   │   __init__.py
+│   │
+│   └───__pycache__
+│           settings.cpython-311.pyc
+│           urls.cpython-311.pyc
+│           wsgi.cpython-311.pyc
+│           __init__.cpython-311.pyc
+│
+└───savedata
+    │   admin.py
+    │   apps.py
+    │   forms.py
+    │   models.py
+    │   tests.py
+    │   urls.py
+    │   views.py
+    │   __init__.py
+    │
+    ├───migrations
+    │   │   0001_initial.py
+    │   │   0002_alter_meal_id.py
+    │   │   __init__.py
+    │   │
+    │   └───__pycache__
+    │           0001_initial.cpython-311.pyc
+    │           0002_alter_meal_id.cpython-311.pyc
+    │           __init__.cpython-311.pyc
+    │
+    ├───templates
+    │       base.html
+    │       index.html
+    │       meals.html
+    │
+    └───__pycache__
+            admin.cpython-311.pyc
+            apps.cpython-311.pyc
+            forms.cpython-311.pyc
+            models.cpython-311.pyc
+            urls.cpython-311.pyc
+            views.cpython-311.pyc
+            __init__.cpython-311.pyc
+```
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

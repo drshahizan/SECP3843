@@ -14,7 +14,58 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Stories](https://github.com/drshahizan/dataset/tree/main/mongodb/07-stories)
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+In order to optimize the perfomance of a portal when dealing with large volumes of JSON data for dashboard visualizations, we can consider certain ways.
+
+#### Convert date type
+
+1. Open MongoDB Compass.
+   <img src="./files/images/mongodbCompass.png">
+2. Open your Mongo Shell.
+3. In my dataset, my `submit_date` and `promote_date` was in Unix timestamp.
+4. In order to change it to format that I want, I run this code below in Mongo Shell.
+   ```
+      db.Stories.updateMany(
+        {},
+        [
+          {
+            $set: {
+              submit_date: {
+                $toDate: {
+                  $multiply: ["$submit_date", 1000]
+                }
+              },
+              promote_date: {
+                $toDate: {
+                  $multiply: ["$promote_date", 1000]
+                }
+              }
+            }
+          },
+          {
+            $set: {
+              submit_year: { $year: "$submit_date" },
+              promote_year: { $year: "$promote_date" }
+            }
+          }
+        ]
+      );
+   ```
+
+5. This is the value of `submit_date` and `promote_date` that I get after run the code.
+   <img src="./files/images/afteraggregate.png">
+6. The first $set stage converts the submit_date and promote_date fields to date format.
+7. The second $set stage extracts the years from the converted dates and assigns them to submit_year and promote_year fields
+
+#### Indexing
+
+1. I create indexes on fields that are frequently used for queries such as `submit_date`, `promote_date`, `comments` and `diggs`.
+   <img src="./files/images/date_indexing.png">
+
+   <img src="./files/images/promote_indexing.png">
+
+   <img src="./files/images/comments.png">
+
+   <img src="./files/images/diggs.png">
 
 ## Question 5 (b)
 
@@ -47,6 +98,41 @@ For this step, can refer my [Question 2(a)](https://github.com/drshahizan/SECP38
    </p>
 
 #### Charts and Dashboard development
+
+<p align="center">
+   <img src="./files/images/Number%20of%20Comments%20for%20each%20Topic.png">
+</p>
+For this chart, I want to know which topic have the highest number of comments by dragging `comments` to the X-axis and `topic_name` to the Y-axis.
+
+<p align="center">
+   <img src="./files/images/Number%20of%20Stories%20in%20each%20Date%26nbsp%3B.png">
+</p>
+In this chart, I want to know the number stories submitted in each date. I put the `submit_date` in the X-axis and count the `title` in Y-axis.
+
+<p align="center">
+   <img src="./files/images/Number%20of%20Stories%20in%20each%20Media.png">
+</p>
+This pie chart will show me the number of stories in each media. This is because I want to know which media has the most uploaded stories in it.
+
+<p align="center">
+   <img src="./files/images/Relationship%20between%20number%20of%20Comments%20and%20Diggs.png">
+</p>
+This scatter plot will show the relationship between `diggs` and `comments`. From this chart, we can conclude that highest diggs will probably have the highest comments.
+
+<p align="center">
+   <img src="./files/images/Total%20Comments%20%26amp%3B%20Diggs%20for%20each%20Month.png">
+</p>
+This chart shows the total comments and diggs in each month so that I can know which month has the highest visit by the user.
+
+<p align="center">
+   <img src="./files/images/Total%20Number%20of%20Diggs%20based%20on%20Topic%20of%20Story.png">
+</p>
+For the last chart, I want to know the number of diggs based on each topic so that I can know which topic has the highest popularity.
+
+Here is my dashboard:
+<p align="center">
+   <img src="./files/images/Dinie's%20Dashboard.png">
+</p>
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

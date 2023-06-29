@@ -88,6 +88,8 @@ DATABASES = {
 
    **Construct Django Model**
 
+   For your app's models.py file, add a new model to provide the attributes and structure of the JSON dataset. Use the built-in field types provided by Django, such as CharField and IntegerField, to construct model fields that correspond to the attributes of the JSON dataset.
+
   Enter the'models.py' file and specify the models that reflect the data and correspond to the JSON dataset's structure.
    ```
     python manage.py makemigrations
@@ -98,6 +100,8 @@ DATABASES = {
 
 ## Question 1 (b)
 Design a detailed and comprehensive system architecture. Focusing on the seamless integration between the web server (Django), dataset (JSON), and databases (MySQL and MongoDB). Give detailed explanations for each component, utilizing precise terminology and suggesting acceptable terms to describe your understanding of the scenario.
+
+We will concentrate on achieving seamless integration between the web server, dataset, and databases in the system architecture. Django will act as the web server in this architecture, and MySQL and MongoDB will function as the databases. The dataset will be in JSON format. Here is a thorough breakdown of each element:
 
 
 
