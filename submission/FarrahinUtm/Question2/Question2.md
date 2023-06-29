@@ -37,6 +37,17 @@ c.theaters.json
 
 d.movies.json
 
+**Connect to MongoDB server** -Open the command prompt and type mongod
+
+Import the JSON file into MongoDB
+
+To import the JSON File into MongoDB, use mongoimport command. 
+```
+mongoimport "C:\Users\Acer\Desktop\AA\theaters.json" -d Mflix -c theaters
+mongoimport "C:\Users\Acer\Desktop\AA\users.json" -d Mflix -c users
+mongoimport "C:\Users\Acer\Desktop\AA\comments.json" -d Mflix -c comments
+mongoimport "C:\Users\Acer\Desktop\AA\movies.json" -d Mflix -c movies
+```
 ## Question 2 (b)
 b.	Create FIVE (5) MongoDB queries that demonstrating various Create, Read, Update, and Delete (CRUD) operations on the documents stored in the database. Ensure that you use different types of functions provided by MongoDB for each query. The breakdown for the number of queries per operation is as follows:
 
