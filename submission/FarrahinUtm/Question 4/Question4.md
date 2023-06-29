@@ -15,7 +15,10 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: Mflix
 
 ## Question 4
-Machine learning can be used to improve the functioning of the portal as well as provide advanced data analysis and visualisation tools. Please choose an appropriate machine learning approach or algorithm for your case study and describe how it will be used in your case study. You may include relevant code snippets and screenshots that illustrate the solution implemented.
+- The project's machine learning methodology is called **content-based filtering**.
+- A recommendation system that employs content-based filtering focuses on the qualities and features of things (in this case, movies) to provide recommendations.
+- It examines the characteristics or substance of films to find similarities and provide users with tailored recommendations.
+- The title, storyline, and genre attributes that are included in the movies.json dataset will be the primary focus of the movie recommendation engine that will be developed.
 
 
 ## Contribution 🛠️
