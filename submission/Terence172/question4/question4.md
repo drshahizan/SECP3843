@@ -27,7 +27,6 @@ In this part I decided to perform sentiment analysis to classify tweets as posit
     - [Preparing to Train the Model](#preparing-to-train-the-model)
     - [Train \& Evaluate the Naive Bayes Model](#train--evaluate-the-naive-bayes-model)
     - [Visualising the Dataset \& Performance of the Model](#visualising-the-dataset--performance-of-the-model)
-  - [Contribution 🛠️](#contribution-️)
 
 
 Want a better look at how i coded this? Click <a href="./files/code/Question4_STDE_AA_TerenceLoorthanathan.ipynb">Here</a>
