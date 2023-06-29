@@ -21,6 +21,23 @@ Don't forget to hit the :star: if you like this repo.
 
 To create a dashboard using JSON dataset, there are several platforms that can be used which are Power BI, Tableau as well as MongoDB Atlas Charts. However, it was found out that MongoDB Atlas Charts is best option for this task compared to Power BI and Tableau. One of the main reasons is Seamless Integration with MongoDB since it allows direct connection from the dataset. This can make the loading and transform process become smoother.
 
+**MongoDB Atlas Chart Dashboard**
+
+- Step 1: Sign in to MongoDB Atlas https://www.mongodb.com/cloud/atlas/register (Create an account if you do not have any account)
+
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/e8814870-6d29-423b-bea1-6376ff19b39c">
+  
+- Step 2: Go to Database page and select `Browse Collections`.
+
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/58a04d69-e2df-434c-a57e-481d57642797">
+  
+- Step 3: Select the Database and Collection that need to be visualize, select `Visualize Your Data`.
+
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/58eb0548-8bab-4895-aeaf-2c2133fb02df">
+
+
+
+
 
 <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/69a4473a-ff34-426d-be50-50d7651cac81">
 
