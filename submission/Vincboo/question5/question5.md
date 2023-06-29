@@ -23,15 +23,15 @@ Indexing can help to optimize the database management system by minimizes the ne
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/758b5a7a-7d07-4051-8449-ab81e9610e42"/>
 #### 3. Click on 'Create Index' button.
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/08a0f8aa-bff6-4055-a6ae-20111308f314"/>
+
 #### 4. Select the field that wanted to create index.
+
 ##### 1. Topic
 <img src="https://github.com/drshahizan/SECP3843/assets/120615951/20c1a61d-1969-40c0-b5ba-04ebebb9fd92"/>
 ##### 2. Diggs
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/18be9333-c79f-4065-ab88-259455bff296
-"/>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/18be9333-c79f-4065-ab88-259455bff296"/>
 ##### 3. User
-<img src="https://github.com/drshahizan/SECP3843/assets/120615951/181f42a5-dac3-44b6-9780-1bb4c395e0aa
-"/>
+<img src="https://github.com/drshahizan/SECP3843/assets/120615951/181f42a5-dac3-44b6-9780-1bb4c395e0aa"/>
 ## Question 5 (b)
 In this section, I am going to create my dashboard using the provide servidse on MongoDB Atlas
 ### 1. Login into [MongoDB Atlas](https://account.mongodb.com/account/login?nds=true) through any web browser
