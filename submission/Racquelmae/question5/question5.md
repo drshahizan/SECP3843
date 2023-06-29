@@ -44,7 +44,7 @@ df[['id1', 'id2', 'id']] = df['id'].str.split(pat = '-', expand=True)
 <img  src="./files/images/id.jpg"></img>
 
 ### 4. Create new dictionary 
-Extract the address column from the dataframe. Then, create a new address dictionary,append each item to the list and create a new dataframe for the address.
+Extract the address column from the dataframe. Then, create a new address dictionary, append each item to the list and create a new dataframe for the address.
 ```
 new_address = []
 for item in df['address']:
