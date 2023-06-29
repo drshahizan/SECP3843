@@ -207,17 +207,33 @@ In conclusion, we can see that after cleaning and aggregating the data, the stor
   
 
 
-   
-
-
-    
-      
-
-
-
-
 ### Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+After performing data cleaning and aggregation, I can use this newly created collection to create charts by utilizing MongoDB Atlas features, to visualize it in a portal. Charts in a dashboard can be created using all the collections in the database. There are a total of 3 collections that I created including the raw, cleaned, and aggregate. By clicking ‘Visualize Your Data’ option, I can create charts and a dashboard based on data in this database.
+
+<p align='center'>
+   <img width="615" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/515f7ee1-b3ba-4148-bb78-f406b041fed3">
+</p>
+
+I can choose my desired collections to be used as a data source for a particular chart.
+<p align='center'>
+   <img width="576" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/9af78a37-76ef-4753-a89b-d3b1aab0435d">
+</p>
+
+There are a total of 5 charts that I create based on this database.
+
+1. **Stacked Column** - Number of Competitors and Employees based on Category
+   <p align='center'>
+    <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/240ed9d6-93e2-457b-9adc-25f2a9a1930d">
+   </p>
+   The Crunchbase dataset's competitiveness and employee counts are shown in this graph for each category. It offers a comparison of the competitors and emploee  size across various industry sectors. The x-axis lists the category names, while the y-axis counts the number of employees and competitors. We can see the link between the number of competitors and the employees in each category by providing us with new information about the level of competition and the nature of employment across different industries. Businesses may use this data to analyze competition possibilities, and make reasoned judgements about market positioning.
+
+   As we can see from the chart, software companies acquire employees the most while web companies get the most competitors among its industry sector.
+
+  
+
+
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
