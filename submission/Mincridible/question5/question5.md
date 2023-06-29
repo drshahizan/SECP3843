@@ -32,7 +32,7 @@ Don't forget to hit the :star: if you like this repo.
 
 2. Open MongoDB shell script editor run the `use databasename` to switch database from the default.
 
-3. Run the query ```bash db.CompaniesMeta.createIndex({ founded_year: 1 }) ``
+3. Run the query ```bash db.CompaniesMeta.createIndex({ founded_year: 1 }) ```
 
 4. Then, new Indexes will be created
 

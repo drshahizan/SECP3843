@@ -20,8 +20,38 @@ When working with large JSON data, several steps can be taken to help optimize t
 >*Data Preprocessing*:
 Performing data preprocessing steps to reduce the data size and improve data quality. This action may include filtering inconsistent data, remove noisy data, and eliminating duplicates.
 
+```python
+df.isna().sum()
+```
+
 >*Data Indexing*:
 Using appropriate indexing techniques on the large dataset to optimize up data retrieval and querying. Indexing helps to quickly locating and accessing specific records, reducing the processing time for filtering and searching operations.
+
+```python
+collection.create_index("Customer")
+
+query = {"username": "glopez"}
+result = collection.find(query)
+
+for doc in result:
+    print(doc)
+```
+
+>*Import Libraries*
+Using the correct libraries refers getting the required software packages or modules to be use in the code. Libraries provide pre-written functions and tools that help ease complex tasks and enable efficient data processing.
+
+```python
+!pip install pymongo
+
+import pandas as pd
+import numpy as np
+import pymongo
+
+client = pymongo.MongoClient("mongodb+srv://admin:admin@projectcluster.7sndifd.mongodb.net/")
+db = client["Analytics"]
+collection = db["Customers"]
+data = list(collection.find())
+```
 
 ## Question 5 (b)
 Use MongoDB Atlass to visualize the JSON files

@@ -225,7 +225,7 @@ There are a total of 5 charts that I create based on this database.
    <p align='center'>
     <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/240ed9d6-93e2-457b-9adc-25f2a9a1930d">
    </p>
-   The Crunchbase dataset's competitiveness and employee counts are shown in this graph for each category. It offers a comparison of the competitors and emploee  size across various industry sectors. We can see the link between the number of competitors and the employees in each category by providing us with new information about the level of competition and the nature of employment across different industries. Businesses may use this data to analyze competition possibilities, and make reasoned judgements about market positioning.
+   The Crunchbase dataset's competitiveness and employee counts are shown in this graph for each category. It offers a comparison of the competitors and employee  size across various industry sectors. We can see the link between the number of competitors and the employees in each category by providing us with new information about the level of competition and the nature of employment across different industries. Businesses may use this data to analyze competition possibilities, and make reasoned judgements about market positioning.
 
    As we can see from the chart, software companies acquire employees the most while web companies get the most competitors among its industry sector.
 
@@ -259,6 +259,33 @@ There are a total of 5 charts that I create based on this database.
 
    Based on the chart, we can conclude that Sprint Nextel spends the highest for their businesses. We can see that the top 10 are well-known and succesful companies.
    
+   <br>
+
+6. **Geospatial Chart** - Number of Companies by Country
+   <p align='center'>
+      <img width="951" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/f493de47-db63-41c8-a609-c644665ecfb8">
+   </p>
+
+      This graph shows how businesses are distributed according to the nation by finding the total number of active businesses in each nation. Insights into the geographic distribution of businesses may be gained by identifying countries having the highest number of companies. Understanding a company's worldwide footprint and tracking entrepreneurial activity across several geographies are both made easier by this knowledge.
+      
+   Based on the graph, we can see that the USA shows the most number of companies, along with Canada.
+
+#### Dashboard
+ <p align='center'>
+      <img width="951" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/033de277-8ced-42e4-a659-0bf5755c1c6a">
+   </p>
+
+To visualize this dashboard in a website, I can use this embedded code and insert it into the portal's coding.
+ <p align='center'>
+     <img width="246" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/92c2efc2-dd25-40d1-95a8-a2424a6b8362"><br>
+    <img width="586" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/9642b77b-0964-434f-a366-69ffcfcd6eab">
+   </p>
+
+This is the final result, in the website.
+ <p align='center'>
+     <img width="799" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/43cc86ad-95b3-41b9-b1c2-0d8eddc188d9">
+   </p>
+
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 

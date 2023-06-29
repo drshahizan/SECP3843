@@ -16,6 +16,33 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 3 (a)
 On this project, the module for managing user registration and login will be placed in the mySQL database. This system is used by three types of people: customers, technical workers, and senior management. Describe in detail the creation of this module on the web server (Django) and the database (mySQL).
+
+**PREQUISITES**
+- install Visual Studio Code
+- Install Python in your computer
+
+**create a file project for Mflix**
+
+![Screenshot (291)](https://github.com/drshahizan/SECP3843/assets/121208097/1122a1bd-1ca8-4bea-bb35-e258e16700fe)
+
+1. setup your virtual environment
+
+![Screenshot (294)](https://github.com/drshahizan/SECP3843/assets/121208097/32bc8a5d-e9ba-41f1-9a52-8a0885b55f70)
+
+2. To start a Django project, enter django-admin startproject mflix. Inside the project, create a new application called mflixportal.
+
+![Screenshot (296)](https://github.com/drshahizan/SECP3843/assets/121208097/1bbbaab1-4cb5-43eb-982f-67f0486fbf0a)
+
+3. Open the settings.py file inside the Mflix project, set the MySQL database to my settings, and add the new app under INSTALLED_APPS.
+
+
+![Screenshot (299)](https://github.com/drshahizan/SECP3843/assets/121208097/9d4247e5-087c-4f97-8fdd-777286b2bfb8)
+
+ ![Screenshot (300)](https://github.com/drshahizan/SECP3843/assets/121208097/b5fad6f6-7265-489d-928b-a54111e1e971)
+
+ 5. 
+ 6. 
+ 
 ## Question 2 (b)
 When working with two different databases, the challenge of Data Replication and Synchronization arises between the MySQL and MongoDB databases. This challenge involves ensuring that any changes made in one database are accurately reflected in the other, thereby
  

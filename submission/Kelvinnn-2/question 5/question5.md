@@ -115,6 +115,7 @@ def inspections_by_sector(request):
     # Render the template with the data
     return render(request, 'registrations/management_dashboard.html', context)
 ```
+<img src="./files/image/chart.png">
 
 - Line chart showing `Trends in Inspections by Month`
 ```python
@@ -160,6 +161,7 @@ def inspections_by_month(request):
     # Render the template with the data
     return render(request, 'registrations/management_dashboard.html', context)
 ```
+<img src="./files/image/inspections_by_month.png">
 
 ### 3. Create templates for chart.
 ```python

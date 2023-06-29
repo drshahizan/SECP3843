@@ -15,7 +15,49 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: AIRBNB LISTINGS DATASET
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+Performance of the portable can be optimized when dealing with large volumes of JSON data from the dataset. Since I will be using MongoDB to make visualizations in Django, thus I will optimize using MongoDB Compass.
+
+### Perform aggregations
+
+An aggregation pipeline consists of one or more stages that process documents which can filter data, group data, and calculate its values. JSON dataset from the collection model will enter the pipeline and go through a number of stages, each of which are responsible for a specific operation. There are many operations that can be applied. But in this case, we will be using match, group and sort.
+
+Firstly, open MongoDB Compass and click database and collection that will be used, then click Aggregations`. Add three stage which are:
+
+#### Match
+```
+{ 
+  "availability.availability_90": 
+  { $ne: 0 } 
+}
+```
+
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question5/files/images/match.png)
+
+#### Group
+
+```
+{
+  "_id": "$property_type",
+  "total": {"$sum": 1}
+}
+```
+
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question5/files/images/group.png)
+
+#### Sort
+
+```
+{"total": -1}
+```
+
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question5/files/images/sort.png)
+
+Then, click Run.
+
+### Result
+
+![image](https://github.com/drshahizan/SECP3843/blob/main/submission/FarahIrdina/question5/files/images/result.png)
 
 ## Question 5 (b)
 

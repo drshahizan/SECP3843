@@ -15,10 +15,88 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Airbnb](https://github.com/drshahizan/dataset/tree/main/mongodb/05-airbnb)
 
 ## Question 5 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+When dealing with large volumes of JSON data for dashboard visualization in a portal, there are several strategies we can employ to optimize performance. Data Preprocessing will be used in this scenario.
+
+### Data Preprocessing:
+- Filter and Aggregate: Analyze the requirements of your dashboard visualization and identify the specific data subsets or aggregations needed. Preprocess the JSON dataset to filter out irrelevant data and perform any necessary aggregations, reducing the overall dataset size.
+
+- Data Compression: Consider compressing the JSON data to reduce its size. Techniques like gzip compression can significantly reduce network transfer time when retrieving the data from the server.
+
+### Step 1:  Import Libraries
+```python
+import json
+import pandas as pd
+import pymongo
+```
+
+### Step 2:  Connect MongoDB
+```python
+# Connect to MongoDB
+client = pymongo.MongoClient('mongodb://localhost:27017')
+db = client["AA"]
+collection = db["db_airbnb"]
+
+# Retrieve data from MongoDB
+data = list(collection.find())
+first_data = ""
+
+if len(data) > 0:
+    first_data = data[0]
+    print(first_data)
+else:
+    print("No data found in the dataset.")
+    
+# Convert MongoDB data to JSON serializable format
+json_data = json.loads(json.dumps(data, default=str))
+```
+
+### Step 3: Remove unnecessary fields
+```python
+# Remove fields from the first_data document
+fields_to_remove = ['_id', 'listing_url', 'last_scraped', 'calendar_last_scraped', 'amenities', 'images', 'host', 'address', 'availability', 'review_scores', 'reviews']
+for field in fields_to_remove:
+    if field in first_data:
+        del first_data[field]
+```
+
+### Step 4: Convert Decimal128 fields to float or string
+```python
+# Convert Decimal128 fields to float or string
+decimal_fields = ['bathrooms', 'price', 'weekly_price', 'monthly_price', 'cleaning_fee', 'extra_people']
+for field in decimal_fields:
+    if field in first_data:
+        first_data[field] = float(str(first_data[field]))
+```
+
+### Step 5: Preprocess text fields
+```python
+# Extract text fields
+text_fields = ['name', 'summary', 'space', 'description', 'neighborhood']
+text_data = {field: first_data[field] for field in text_fields if field in first_data}
+```
+
+### Step 6: Print result
+```python
+# Print the modified first_data document
+print(first_data)
+
+# Create a DataFrame from the modified data
+df = pd.DataFrame([first_data])
+
+# Save the DataFrame to a CSV file
+df.to_csv('airbnb_data.csv', index=False)
+```
+Output:
+
+
+
+![image](https://github.com/drshahizan/SECP3843/assets/120614501/7140a994-6eb2-43cb-8d11-d5c8d5087276)
+
+
+
 
 ## Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

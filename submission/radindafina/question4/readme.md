@@ -14,6 +14,8 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Supply Store](https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales)
 
 ## Question 4 
+
+### [Question 4: Code](https://github.com/drshahizan/SECP3843/blob/main/submission/radindafina/question4/files/code/Linear_Regression.ipynb)
 ### Data Preparation
 
 1. In this section, we perform the necessary data preparation steps before conducting any analysis or visualization. We import the required libraries, pandas and numpy, for data manipulation and analysis.

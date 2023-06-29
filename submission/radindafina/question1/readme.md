@@ -16,6 +16,7 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Supply Store](https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales)
 
 ## Question 1 (a)
+### [Question 1: Code](https://github.com/drshahizan/SECP3843/tree/main/submission/radindafina/question1/files/code)
 
 We will be utilizing five servers to create a robust and dynamic web application:
 

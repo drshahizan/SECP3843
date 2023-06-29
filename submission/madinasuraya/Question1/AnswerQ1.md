@@ -56,7 +56,6 @@ Steps required to integrate multiple datasets with Django are as follows.
                   'PORT': '3306',
                   'USER': '',
                   'PASSWORD': '',} }
-     ```
           
 5. Perform migration for MySQL.
     
@@ -100,7 +99,7 @@ Web framework such as Django used  for rapid development of secure and maintaina
 Data about user credentials are collected and retrieved in the MySQL database while data from MongoDB will be visualized as a dashboard.
 
 **Data Visualization** <br>
-Real-time analytics will be performed using preprocessed data in MongoDB. An instance dashboard will be created using MongoDB features which are MongoDB Charts.
+Real-time analytics will be performed using preprocessed data in MongoDB. An instance dashboard will be created using MongoDB features which are MongoDB Charts and this dashboard can be integrate easily into the web server.
 
 **Data Storage** <br>
 Preprocessed data is stored in MongoDB to be retrieved for data visualizations and data about users credential from Django will be stored in MySQL database.

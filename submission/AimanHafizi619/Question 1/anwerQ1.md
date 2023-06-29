@@ -8,7 +8,7 @@
 
 Don't forget to hit the :star: if you like this repo.
 
-# Special Topic Data Engineering (SECP3843): Alternative Assessment
+# Special Topic Data Engineering (SECP3843): Alternative Assessment 
 
 #### Name: AHMAD AIMAN HAFIZI BIN MUHAMMAD
 #### Matric No.: A20EC0177
@@ -63,7 +63,7 @@ By using mysqlclient, it can establish a connection to a MySQL database server, 
 
 In the context of Django, a model represents the structure and behavior of a database table. It defines the fields and relationships of the data stored in the table. Models in Django are typically defined in the models.py file of an app.
 
-8. *Create models*: For every app (Accounts, Cistomers, and Transaction), locate the `models.py` file and update the models as below.
+8. *Create models*: For every app (Accounts, Customers, and Transaction), locate the `models.py` file and update the models as below.
 
 ![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image13.png)
 ![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image14.png)
@@ -87,29 +87,26 @@ Running `python manage.py makemigrations` examines the current state of your mod
 
 ## Question 1 (b)
 
-![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image17.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image19.png)
 
 The system architecture are as follow:
 
-**1. User Interface (Customer UI, Worker UI, Management UI)**
+**Apache Web server** 
 
->User interface serves as the platform through which users interact with the application, while HTTP requests are generated when users perform actions within the user interface. Django, as a web framework, receives these requests, routes them to the appropriate views, and processes them to generate responses that are sent back to the user's browser or client. This interaction between users and HTTP requests forms the foundation of user interaction in a Django web application.
+>Integrating Apache with Django help handle HTTP requests and respoanse as the primary ways of communication between clients and the web application. The framework handles incoming requests, routes them to the appropriate views, allows access to request data, and generates suitable responses.
 
-**2. Web Server (Django)**
+**Django**
 
->Django leverages HTTP requests as the primary means of communication between clients and the web application. The framework handles incoming requests, routes them to the appropriate views, allows access to request data, and generates suitable responses. This request-response cycle forms the backbone of Django's functioning as a web framework and enables developers to build robust and dynamic web applications.
+> Django is an open source web framework, serves as the foundation for this particular web server. Starting a Django project allows user to build application’s entire data model in Python without using SQL. It has three components; 1) Model for handling database, 2) View for handling HttpResponse, and 3) Template for diplaying html file for User Interface (UI).
 
-**3. Database**
+**Database**
 
 >MongoDB and MySQL have different strengths and are suitable for different use cases within the system architecture. MongoDB excels at storing and retrieving JSON data with flexibility, while MySQL provides structured data storage with SQL querying capabilities and transactional support. By leveraging both databases, one can take advantage of their respective strengths and choose the appropriate database for each data storage and retrieval requirement in one system.
 
-**4. JSON File**
+**JSON File**
 
 >JSON file to populate the MongoDB and MySQL databases provides a convenient and flexible approach for initializing the databases with the necessary data. It allows for easy data import, compatibility with the JSON dataset, and decoupling from database-specific import methods.
 
-**5. Data Visualization**
-
->Both Matplotlib and Seaborn can be integrated into the Django web framework to generate visualizations dynamically based on the data stored in the databases. These libraries provide a wide range of options for creating visually appealing and insightful plots, enabling users of the system to gain meaningful insights from the data and make data-driven decisions.
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
