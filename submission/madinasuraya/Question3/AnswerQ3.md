@@ -73,12 +73,7 @@ Don't forget to hit the :star: if you like this repo.
      python manage.py migrate
      ```
      
-7. Open localhost and create new database. I created my folder as 'aa'.
-      <p align="center">
-           <img width="162" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/af17e0cd-33c6-4216-9f79-50e4941f4f75">
-      </p>
-
-8. Open **models.py** in the **signup** folder and start making user authentication. To perform this, firstly, define django authentication models and import it. Then, define the class for each user needed. In here, there will be three users which are customers, technical workers, and senior management. This also means that each user type will have their own table in the database. Since we use some common fields such as **first_name, last_name, email, username, and password**, we dont have to specify it in the class as the django authentication model already include this.
+7. Open **models.py** in the **signup** folder and start making user authentication. To perform this, firstly, define django authentication models and import it. Then, define the class for each user needed. In here, there will be three users which are customers, technical workers, and senior management. This also means that each user type will have their own table in the database. Since we use some common fields such as **first_name, last_name, email, username, and password**, we dont have to specify it in the class as the django authentication model already include this.
    ```
    from django.contrib.auth.models import AbstractUser
    ```
@@ -93,14 +88,14 @@ Don't forget to hit the :star: if you like this repo.
        pass
    ```
 
-9. Perform migrations for database and tables using commands below:
+8. Perform migrations for database and tables using commands below:
     ```
     python manage.py makemigrations
     ```
     ```
     python manage.py migrate
     ```
-10. Create the views for user registration and login, create urls routing to the specific page and perform CRUD for each user using **request.POST** and **request.GET** method.
+9. Create the views for user registration and login, create urls routing to the specific page and perform CRUD for each user using **request.POST** and **request.GET** method.
    <p align="center">
       <img width="389" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/45a21554-6f16-4e8d-aaea-12061a5a46ce">
        <br><br>
@@ -109,7 +104,7 @@ Don't forget to hit the :star: if you like this repo.
        <img width="412" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/e6efb5fa-c714-4da8-8c9c-97cc2f00fa77">
    </p>
    
-11. The tables and its field created in mysql database are as follows:
+10. The tables and its field created in mysql database are as follows:
     <p align="center">
       <img width="157" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/44b21732-1880-44c7-87e6-58ff7886444a">
       <img width="515" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/a876d3d2-0c9d-46cf-be5d-bbf2bc90efdc">
