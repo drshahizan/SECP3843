@@ -97,6 +97,29 @@ Output:
 
 ## Question 5 (b)
 
+### Dashboard
+![image](https://github.com/drshahizan/SECP3843/assets/120614501/61ae1910-a60d-4ff8-a306-ee09105a03c6)
+
+
+### Number of Listing by Property
+![image](https://github.com/drshahizan/SECP3843/assets/120614501/17a39978-a6b7-48aa-8e31-203c7a319551)
+
+
+### Number of Listing by Country
+![image](https://github.com/drshahizan/SECP3843/assets/120614501/456eb1d1-a680-46ba-a3ac-02c20c15117c)
+
+
+### Availability by Country
+![image](https://github.com/drshahizan/SECP3843/assets/120614501/6e9a3236-3d26-47b9-8218-a879e6ac5b45)
+
+
+### Availability by Property Type
+![image](https://github.com/drshahizan/SECP3843/assets/120614501/b52aee07-dc11-459c-bd81-56dca3f5a1d9)
+
+
+### Total Review by Town
+![image](https://github.com/drshahizan/SECP3843/assets/120614501/b87b3adb-93c5-44ec-ab03-5d0ff4a0c5bc)
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
