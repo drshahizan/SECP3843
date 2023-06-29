@@ -113,8 +113,105 @@ The performance of the portal need to be optimized when dealing with large volum
       <img width="595" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/e066becb-c322-4478-ba2b-793681fa08a7"><br>
         <img width="602" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/8bf787ac-0bb0-4f3c-a71a-7cfc99b712f9">
    </p>
+i
+ 6. To further reducing the volume of the data, I will perform aggregation pipeline in MongoDB Atlas. In the new collection, choose **Aggregation**.
+    <p align='center'>
+       <img width="598" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/ec1b392c-6cea-48c6-a0de-99545b40e8ce">
+      </p>
+
+7. Perform aggregation by grouping the data. There are two stage that I create. which are **$group** and **$project** to round off the value.
+
+   <p align='center'>
+      <img width="347" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/998dc381-12ba-4df6-8fe1-00171777949c">
+   </p>
+
+   This is the pipeline created based on the stage.
+   <p align='center'>
+       <img width="286" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/0bd3c489-055c-4c02-888c-9d9f66da5f6e">
+   </p>
+
+8. Export the pipeline in python language and use it to create new collection.
+   <p align='center'>
+      <img width="351" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/1f2b90f1-04ea-4fcf-8c2f-078eadd82040">
+   </p>
+
+   ```
+   from pymongo import MongoClient
+
+   client = MongoClient('mongodb+srv://user1:60XRzCr4mubxCPC5@cluster0.evngzba.mongodb.net/test')
+   result = client['db_crunchbase']['companies_cleaned'].aggregate([
+       {
+           '$group': {
+               '_id': '$category_code',
+               'average_funding': {
+                   '$avg': '$total_money_raised'
+               },
+               'average_employees': {
+                   '$avg': '$number_of_employees'
+               },
+               'average_competitions': {
+                   '$avg': '$competitions'
+               }
+           }
+       }, {
+           '$project': {
+               'average_funding': {
+                   '$round': [
+                       '$average_funding', 2
+                   ]
+               },
+               'average_employees': {
+                   '$round': [
+                       '$average_employees', 0
+                   ]
+               },
+               'average_competitions': {
+                   '$round': [
+                       '$average_competitions', 0
+                   ]
+               }
+           }
+       }
+   ])
+
+   df2 = pd.DataFrame(result)
+   df2.head(5)
+   df2.info()
+   ```
+
+   <p align='center'>
+      <img width="368" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/ea0f4e07-42ef-4394-aaf3-1d14809c33e2">
+   </p>
+
+   Based on the infor, the memory storage reduce to **1.3+KB**.
+
+   <p align='center'>
+      <img width="276" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/3b348bc7-ae2f-48e2-a988-28d1782c8f83">
+   </p>
+
+9. Store the aggregate data in a collection.
+    ```
+    db = client['db_crunchbase']
+      collection = db['companies_cleaned_aggregate']
+      
+      for doc in result:
+          collection.insert_one(doc)
+    ```
+    As we can see, the storage size decreased to **20KB** in the database.
+    <p align='center'>
+       <img width="588" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/387961c8-62bc-43c8-afb8-6af56ec0158c">
+      </p>
 
    
+In conclusion, we can see that after cleaning and aggregating the data, the storage size in the database reduces from **15.4MB** to **168KB** after cleaning, and further decreases to **20KB**. From here, we can easily create visualizations without concerning the performance especially if we use the collection with much lesser storage capacity
+  
+
+
+   
+
+
+    
+      
 
 
 
