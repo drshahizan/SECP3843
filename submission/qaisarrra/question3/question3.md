@@ -134,10 +134,7 @@ class User(AbstractUser):
     user_permissions = models.ManyToManyField(Permission, blank=True, related_name='custom_user_set', related_query_name='user')
 
 ```
-In **settings.py**, set AUTH_USER_MODEL to the custom user model to make it the default authentication model.
-```bash
-AUTH_USER_MODEL = 'DjangoApp.CustomUser'
-```
+
 <br></br>
 
 **Perform Database Migration** 
