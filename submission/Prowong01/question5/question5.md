@@ -15,43 +15,84 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/04-companies" >Companies</a>
 
 ## Question 5 (a)
-Use caching techniques to save and access pre-processed data. This reduces redundant computations and database queries, improving performance. Common caching options include Redis or Django's built-in caching framework.
+Data Preprocessing is a crucial step in optimizing the performance of a portal or any data-driven system. It involves transforming and cleaning the raw data to make it suitable for analysis, storage, and retrieval. The goal of preprocessing is to enhance data quality, reduce noise, and improve efficiency in subsequent tasks such as data mining, machine learning, or user interactions. 
 
-Steps to implement cache when handling large volumes of JSON data from the dataset are shown below.
+In this case, I use companies.json as my dataset.
 
-### Step 1:  Install all required packages
+### Step 1: Install the required libraries
 ```
-pip install cachetools
-```
-
-### Step 2: Import the necessary classes and functions from cachetools
-```
-from cachetools import cached, TTLCache
+!pip install pymongo
 ```
 
-### Step 3: Define cache instance
+### Step 2: Import the required libraries
 ```
-result_by_sector_cache = TTLCache(maxsize=1, ttl=3600)  # Cache for inspections_by_sector
-inspections_by_month_cache = TTLCache(maxsize=1, ttl=3600)  # Cache for inspections_by_month
-```
-
-### Step 4: Apply cache decorator to function
-```
-@cached(result_by_sector_cache)
-def inspections_by_sector(request):
-    
-@cached(inspections_by_month_cache)
-def inspections_by_month(request):
+import pandas as pd
+import numpy as np
+import pymongo
 ```
 
-### Step 5: Verify cache to check if cached data is available
+### Step 3: Connect to MongoDB and Load Data 
+Make sure the collection does exist in the Cluster server so that the pymongo can load the data.
+<img  src="./files/images/mongodb.png"></img>
+
 ```
-    cached_data = cache.get('inspections_by_sector')
-    if cached_data:
-        print("Using cached data")
-        result_by_sector = cached_data
-    else:
-        print("Generating new data")
+client = pymongo.MongoClient("mongodb+srv://prowong42:eddie2001@cluster0.hdgexg2.mongodb.net/")
+db = client["test"]
+collection = db["companies"]
+data = list(collection.find())
+
+#Convert to Dataframe
+df = pd.DataFrame(data)
+
+df.head(10)
+```
+<img  src="./files/images/df.png"></img>
+
+### Step 4: Data Cleaning
+Checking Null Data
+```
+ df.isna().sum()
+```
+
+<img  src="./files/images/before_clean.png"></img>
+
+Clean the data
+```
+ df["category_code"].fillna("NaN", inplace = True)
+ df["number_of_employees"].fillna("NaN", inplace = True)
+ df["founded_day"].fillna("NaN", inplace = True)
+ df["founded_year"].fillna("NaN", inplace = True)
+ df["founded_month"].fillna("NaN", inplace = True)
+ df["deadpooled_year"].fillna("NaN", inplace = True)
+ df["tag_list"].fillna("NaN", inplace = True)
+ df["alias_list"].fillna("NaN", inplace = True)
+ df["founded_month"].fillna("NaN", inplace = True)
+ df["deadpooled_month"].fillna("NaN", inplace = True)
+ df["deadpooled_day"].fillna("NaN", inplace = True)
+ df["deadpooled_url"].fillna("NaN", inplace = True)
+```
+
+### Step 4: Data Reduction
+Drop some unwanted column & rows that contain NaN data 
+```
+ columns_to_drop = ['email_address', 'phone_number','description','overview','image','ipo','twitter_username','acquisition','homepage_url','blog_url','blog_feed_url']
+ df = df.drop(columns_to_drop, axis=1)
+ df.dropna(inplace=True)
+```
+
+Check again
+```
+df.isna().sum()
+```
+
+## Another way is Indexing
+### Step 1: Define which columns has to be indexed in the model
+For my case, I will choose ``` founded_year ``` so that the database engine can quickly locate the required data based on the indexed fields.
+
+### Step 2: Update the database 
+```
+python manage.py makemigrations
+python manage.py migrate
 ```
 
 ## Question 5 (b)
