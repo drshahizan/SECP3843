@@ -54,20 +54,7 @@ To create a dashboard using JSON dataset, there are several platforms that can b
   <br>
   <h2 ><b>Final Dashboard</b></h2>
 
-  <img width="543" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/48bd3f2a-ae6f-47a3-9bee-bc148cd4f561">
-
-
-  
-
-
-
-
-
-
-
-
-
-
+  <img width="900" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/48bd3f2a-ae6f-47a3-9bee-bc148cd4f561">
 
 
 
