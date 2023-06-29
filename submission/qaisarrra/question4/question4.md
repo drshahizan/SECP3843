@@ -13,11 +13,45 @@ Don't forget to hit the :star: if you like this repo.
 #### Matric No.: A20EC0133
 #### Dataset: 04 - Companies
 
-## Question 4 (a)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+## Question 4 
+Machine learning is a branch of computer science that enables computers to learn without having to be explicitly programmed. Machine learning is classified into two types: supervised learning and unsupervised learning. In this question, we will be performing appropriate machine learning approach or algorithm by using Python. I will be including snippets of my Python code from my Google Colab project file here.
 
-## Question 4 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+**Installing Libraries**
+
+```bash
+!pip install pymongo
+```
+
+```bash
+ import pymongo
+ import pandas as pd
+ import numpy as np
+```
+<br></br>
+
+**Connect Database**
+
+```bash
+# Create the client
+client = pymongo.MongoClient("mongodb+srv://qaisara:qaisara8@companies.m3iqyfp.mongodb.net")
+
+# Connect to our database
+db = client["AA"]
+
+# Fetch our series collection
+collection = db["Companies"]
+
+data = list(collection.find())
+```
+<br></br>
+
+**Convert extracted data to DataFrame**
+```bash
+companies = pd.DataFrame(data)
+companies
+```
+
+
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
