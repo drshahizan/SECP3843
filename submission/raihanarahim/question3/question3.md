@@ -16,16 +16,16 @@ Don't forget to hit the :star: if you like this repo.
 ## Question 3 (a)
 ### Steps to create user registration and login module on web server (Django) and database (MySQL).
 1. Setup Django project using command prompt by installing django and also MySQL connector using pip installation
-```
+```py
 pip install django
 pip install mysqlclient
 ```
 2. Create a project file. In this case, I named my file as `tweetsproject`. Run the following command to create :
- ```
+ ```py
 django-admin startproject tweetsproject
 ```
 3. Next, configure the MySQL database connection by adding credentials in `settings.py` located in project file. This is because the default database for Django is dbsqlite hence configuration need to be done.The `ENGINE` value is where we define what database we are using for our project. Below is the example configuration :
- ```
+ ```py
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -38,7 +38,7 @@ DATABASES = {
 }
 ```
 4. After succesfully configure the database, create a new app in your Django project file by running the command below :
- ```
+ ```py
 python manage.py startapp tweetsapp
 ```
 5. Define models to store the user attributes for login and register module.<br>
@@ -51,7 +51,7 @@ python manage.py startapp tweetsapp
   * Defining models are based on the requirement of the specific system. Any additional attributes can be added too.
   * Django application provides a built-in user authentication and authorization which makes it easier compared to defining it from scratch. You can also modify based on your requirements as it is flexible.
 * Below is an instance on how to define models :
- ```
+ ```py
 class TechnicalWorker(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
     username = models.CharField(max_length=150, unique=True)
@@ -75,7 +75,7 @@ class TechnicalWorker(AbstractBaseUser, PermissionsMixin):
 ```
 6. Run migrations to create database tables corresponding to the models that have been created. The command is as follows :
 
- ```
+ ```py
 python manage.py makemigrations
 python manage.py migrate
 
@@ -87,7 +87,7 @@ These 2 commands will create tables in mySQL and its schema.
 * The process of this module requires input validation, create new objects, retrieving and storing in database.
 * The logic need to be implemented correctly to cater each of these process to ensure only authorized and authenticated are able to access the system.
 * Below I provide an example of view method to register user using Django built-in `User` model :
- ```
+ ```py
 def register(request):
     if request.method == 'POST':
         username = request.POST['username']
@@ -115,7 +115,7 @@ def register(request):
 8. Since Django uses MVT (Models-Views-Templates), we have discussed on Models and Views. Now, we will create Templates for login and registration.
 * Templates can be customize according to your preferences and creativity. Create HTML templates for both login and register in the project's template file. Django will then render the forms to handle user's request.
 * Code snippet of Login template :
- ```
+ ```py
 <form action="action_page.php" method="post">
   <div class="imgcontainer">
     <img src="img_avatar2.png" alt="Avatar" class="avatar">
@@ -147,7 +147,7 @@ Example of rendered Login page.<br>
 
 9. Next, we need to configure `urls.py` to ensure correct routing between pages. This is to define which page user redirected to. It will map URLs to the corresponding view.
 * Example on how URLs are defined in `urls.py`
- ```
+ ```py
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -173,19 +173,19 @@ urlpatterns = [
 Consider the following scenario where the tweets data are stored in MongoDB and MySQL stores user information data. I'm going to use Debezium to capture changes made on the databases then streaming the change events to Kafka topic.
 
 1. Install Debezium using pip installer on your command prompt.
-```
+```py
 pip install debezium
 ```
 2. Configure Debezium to capture changes.
 * Configuration for MongoDB
-```
+```py
 connector.class=io.debezium.connector.mongodb.MongoDbConnector
 mongodb.connection.string=mongodb://localhost:27017
 topic.prefix=tweets
 
 ```
 * Configuration for MySQL
-```
+```py
 connector.class=io.debezium.connector.mysql.MySqlConnector
 database.hostname=localhost
 database.port=3306
@@ -197,34 +197,34 @@ topic.prefix=my-users
 
 ```
 *Start Debezium MySQL connector using the command :
-```
+```py
 ./bin/connect-standalone.sh ./config/connect-standalone.properties ./config/mysql-connector.properties
 
 ```
 * Configure MongoDB Sink Connector
   * Download and install MongoDB Kafka Connector using the command :
- ```
+ ```py
 confluent-hub install mongodb/kafka-connect-mongodb:1.5.2
 
 ```
 * Start MongoDB Sink Connector using the following command :
-```
+```py
 ./bin/connect-standalone.sh ./config/connect-standalone.properties ./config/mongodb-connector.properties
 
 ```
 3. Configure Apache Kafka to receive the change events
 * Firstly, start Kafka server by running this command :
-```
+```py
 kafka-server-start /etc/kafka/server.properties
 
 ```
 * Create your desired Kafka topic to store the change events.
-```
+```py
 kafka-topics --create --bootstrap-server localhost:9092 --topic tweets
 
 ```
 4. Write a consumer to process the change events.
-```
+```py
 try:
     while True:
         msg = consumer.poll(timeout=1.0)
@@ -255,12 +255,12 @@ finally:
 
 ```
 5. Start Debezium by running this command :
-```
+```py
 debezium-server
 
 ```
 Output of the Kafka consumer script to process the change events:
-```
+```py
 Received message:
 Before: {'id': 1, 'name': 'Amirah Raihanah', 'email': 'raihanah@gmail.com'}
 After: {'id': 1, 'name': 'Amirah Raihanah', 'email': 'raihanah@gmail.com'}

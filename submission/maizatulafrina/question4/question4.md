@@ -53,7 +53,62 @@ Result:
 <img width="928" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a21c00ab-d2b7-4093-9c1c-b64b194ddb44">
 <img width="938" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a4040839-9454-4d60-893c-571ef7bdba26">
 
+<img width="931" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/ae63bea6-dc07-43b4-86a3-9a1fbb1f3a3a">
+
+Result:
+
+<img width="934" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/2fd8bd70-0cb3-4276-833c-65727b1a378a">
+
+
 #### 7. Machine Learning
+
+<img width="927" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/b9a9ec9b-0b28-49dd-b2dc-632254cccea2">
+<img width="927" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/801c35bb-e161-4686-8e30-0207c2f509d2">
+
+```
+    from sklearn.model_selection import train_test_split
+    from sklearn.tree import DecisionTreeClassifier
+    from sklearn.metrics import classification_report
+    from sklearn.preprocessing import LabelEncoder
+    from sklearn.feature_extraction.text import CountVectorizer
+    
+    sectors = sample['sector'].tolist()
+    results = sample['result'].tolist()
+    
+    label_encoder = LabelEncoder()
+    encoded_results = label_encoder.fit_transform(results)
+    
+    # Split the data into training and test 
+    X_train, X_test, y_train, y_test = train_test_split(sectors, encoded_results, test_size=0.2, random_state=42)
+    
+    vectorizer = CountVectorizer()
+    X_train_vectors = vectorizer.fit_transform(X_train)
+    X_test_vectors = vectorizer.transform(X_test)
+    
+    classifier = DecisionTreeClassifier()
+    classifier.fit(X_train_vectors, y_train)
+    
+    new_sectors = ['Cosmetic']
+    new_sectors_vectors = vectorizer.transform(new_sectors)
+    
+    predicted_results = classifier.predict(new_sectors_vectors)
+    
+    predicted_labels = label_encoder.inverse_transform(predicted_results)
+    
+    for sectors, label in zip(new_sectors, predicted_labels):
+        print(f"Sector: {sectors}, Predicted Result: {label}")
+    
+    accuracy = classifier.score(X_test_vectors, y_test)
+    print('Accuracy:', accuracy)
+
+```
+
+Result: 
+
+<img width="938" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/a9dc19b1-6826-405c-8b50-e5fbff996dc6">
+
+
+
 
 
 
