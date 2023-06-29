@@ -16,6 +16,7 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 5 (a)
 
+Data Aggrigation is the best way to optimized the performance when dealing with large volumes of JSON data from the dataset.
 
 ## Question 5 (b)
 
