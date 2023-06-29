@@ -52,7 +52,7 @@ python manage.py startapp mflixApp
 
 <img src="./files/images/startapp.png">
 
-6. Update the databases configuration for MySQL and MongoDB in settings.py
+6. Update the databases configuration for MySQL and MongoDB in `settings.py`
 ```
 DATABASES = {
     'default': {
@@ -71,7 +71,7 @@ DATABASES = {
 }
 ```
 
-7. Define the models in models.py
+7. Define the models in `models.py`
 ```
 from django.db import models
 
