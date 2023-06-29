@@ -98,7 +98,7 @@ The drop down columns of sector and city are filters of the dashboard to view sp
 - Certificate Count by ID: Total number of certificates issued based on ID such as ENFO, CMPL, UNIT, ASLS, AMND, DRT, ATTC and ASWC. This shows that the majority businesses are issued with the certificate of ID type `ENFO`. 
 
 #### Line chart
-- Certificate Issuance by Month: Total number of certificates issued based on month. From the chart, it visualises that the month `January` has the most number of certificates issued.
+- Certificate Issuance by Month: Total number of certificates issued based on month. From the chart, it visualises that the month `January` has the most number of certificates issued while `November` has the least number of certificates issued.
 
 #### Table
 - Result of Inspection: Total number of results after inspections in descending order. This illustrates that the `no violation issued` result is the most common result after inspection as the majority of businesses follows the rules.
