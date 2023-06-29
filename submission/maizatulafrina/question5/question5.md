@@ -35,11 +35,33 @@ To create a dashboard using JSON dataset, there are several platforms that can b
 
   <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/58eb0548-8bab-4895-aeaf-2c2133fb02df">
 
+  if you chose the wrong database in the previous step, you can make the choice again.
+
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/54f477e5-c992-4e58-9128-4fb901432a85">
+
+- Step 4: Create the Charts based on your Creativity
+
+  For example: `Total Inspections by Results`
+  
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/0146f404-e9cd-410a-b27e-893477be6709">
+
+  To create new chart, select `Add Chart`.
+
+  <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/237ed8bc-de39-4594-83d4-38b6194171f9">
+
+  <hr>
+  <br>
+  <h2 ><b>Final Dashboard</b></h2>
+
+  
 
 
 
 
-<img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/69a4473a-ff34-426d-be50-50d7651cac81">
+
+
+
+
 
 
 
