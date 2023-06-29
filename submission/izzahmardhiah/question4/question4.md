@@ -28,6 +28,7 @@ Don't forget to hit the :star: if you like this repo.
 
 **4. Machine Learning**
 ### Supervised Learning: Classification
+I would like to predict the inspection result based on the sector.
 **i. Decision Tree**
 ```
 from sklearn.model_selection import train_test_split
@@ -36,7 +37,7 @@ from sklearn.metrics import classification_report
 from sklearn.preprocessing import LabelEncoder
 from sklearn.feature_extraction.text import CountVectorizer
 
-business_names = df['business_name'].tolist()
+sectors = df['sector'].tolist()
 results = df['result'].tolist()
 
 # Encode the results using LabelEncoder
@@ -44,9 +45,9 @@ label_encoder = LabelEncoder()
 encoded_results = label_encoder.fit_transform(results)
 
 # Split the data into training and test sets
-X_train, X_test, y_train, y_test = train_test_split(business_names, encoded_results, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(sectors, encoded_results, test_size=0.2, random_state=42)
 
-# Vectorize the business_names using CountVectorizer
+# Vectorize the sectors using CountVectorizer
 vectorizer = CountVectorizer()
 X_train_vectors = vectorizer.fit_transform(X_train)
 X_test_vectors = vectorizer.transform(X_test)
@@ -55,83 +56,78 @@ X_test_vectors = vectorizer.transform(X_test)
 classifier = DecisionTreeClassifier()
 classifier.fit(X_train_vectors, y_train)
 
-new_business_names = ['YTJT BUSINESS SOLUTIONS']
+new_sectors = ['Agriculture']
 
-# Transform the new business_names using the fitted vectorizer
-new_business_names_vectors = vectorizer.transform(new_business_names)
+# Transform the new sectors using the fitted vectorizer
+new_sectors_vectors = vectorizer.transform(new_sectors)
 
-# Predict the results for the new business_names
-predicted_results = classifier.predict(new_business_names_vectors)
+# Predict the results for the new sectors
+predicted_results = classifier.predict(new_sectors_vectors)
 
 # Decode the predicted results back to original labels
 predicted_labels = label_encoder.inverse_transform(predicted_results)
 
-for business_names, label in zip(new_business_names, predicted_labels):
-    print(f"Business Name: {business_names}, Predicted Result: {label}")
+for sectors, label in zip(new_sectors, predicted_labels):
+    print(f"Sector: {sectors}, Predicted Result: {label}")
 
 # Calculate and print the accuracy on the test set
 accuracy = classifier.score(X_test_vectors, y_test)
 print('Accuracy:', accuracy)
+
 ```
 
 Output:
 
-Business Name: YTJT BUSINESS SOLUTIONS, Predicted Result: No Violation Issued
+Sector: Agriculture, Predicted Result: Pass
 
 
-Accuracy: 0.4431832202344232
+Accuracy: 0.5898210980876002
 
 **ii. Random Forest**
 ```
 from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.metrics import classification_report
-from sklearn.preprocessing import LabelEncoder
-from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.feature_extraction.text import TfidfVectorizer
 
-business_names = df['business_name'].tolist()
+sectors = df['sector'].tolist()
 results = df['result'].tolist()
 
-# Encode the results using LabelEncoder
-label_encoder = LabelEncoder()
-encoded_results = label_encoder.fit_transform(results)
-
 # Split the data into training and test sets
-X_train, X_test, y_train, y_test = train_test_split(business_names, encoded_results, test_size=0.2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(sectors, results, test_size=0.2, random_state=42)
 
-# Vectorize the business_names using CountVectorizer
-vectorizer = CountVectorizer()
+# Vectorize the sectors using TF-IDF Vectorizer
+vectorizer = TfidfVectorizer()
 X_train_vectors = vectorizer.fit_transform(X_train)
 X_test_vectors = vectorizer.transform(X_test)
 
-# Train the decision tree classifier
-classifier = DecisionTreeClassifier()
+# Train the random forest classifier
+classifier = RandomForestClassifier()
 classifier.fit(X_train_vectors, y_train)
 
-new_business_names = ['YTJT BUSINESS SOLUTIONS']
+new_sectors = ['YTJT BUSINESS SOLUTIONS']
 
-# Transform the new business_names using the fitted vectorizer
-new_business_names_vectors = vectorizer.transform(new_business_names)
+# Transform the new sectors using the fitted vectorizer
+new_sectors_vectors = vectorizer.transform(new_sectors)
 
-# Predict the results for the new business_names
-predicted_results = classifier.predict(new_business_names_vectors)
+# Predict the results for the new sectors
+predicted_results = classifier.predict(new_sectors_vectors)
 
-# Decode the predicted results back to original labels
-predicted_labels = label_encoder.inverse_transform(predicted_results)
-
-for business_names, label in zip(new_business_names, predicted_labels):
-    print(f"Business Name: {business_names}, Predicted Result: {label}")
+for sectors, label in zip(new_sectors, predicted_results):
+    print(f"Sector: {sectors}, Predicted Result: {label}")
 
 # Calculate and print the accuracy on the test set
-accuracy = classifier.score(X_test_vectors, y_test)
+predicted_test_results = classifier.predict(X_test_vectors)
+accuracy = accuracy_score(y_test, predicted_test_results)
 print('Accuracy:', accuracy)
+
 
 ```
 Output:
-Business Name: YTJT BUSINESS SOLUTIONS, Predicted Result: No Violation Issued
+Sector: YTJT BUSINESS SOLUTIONS, Predicted Result: Pass
 
 
-Accuracy: 0.4582973473164713
+Accuracy: 0.5898210980876002
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
