@@ -272,7 +272,42 @@ class RegistrationForm(UserCreationForm):
 ```
 
 ## Question 3 (b)
-The difficulty of Data Replication and Synchronisation between the MySQL and MongoDB databases occurs while working with two separate databases. This issue entails making sure that any changes made in one database are appropriately mirrored in the other, ensuring data consistency across both systems. To address this issue, I:
+The difficulty of Data Replication and Synchronisation between the MySQL and MongoDB databases occurs while working with two separate databases. This issue entails making sure that any changes made in one database are appropriately mirrored in the other, ensuring data consistency across both systems. To address this issue, we can do as follows:
+
+**Open phpMyAdmin**
+
+Once you're directed to the main page of phpMyAdmin, click on the **Replication** tab on the ribbon navigation bar. Here, in the **Primary Replication** container, click **configure**.
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/Open%20PHPMyAdmin.png">
+</p>
+
+You will then be directed to **Replication** page. Ensure that you have chose **Ignore all databases: Replicate**
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/Primary%20configuration.png">
+</p>
+<br></br>
+
+**Open XAMPP Control Panel**
+
+From the control panel, click on MySQL's **config** button, then click on the **my.ini** file. From the primary configuration page, copy the four lines to be pasted in the my.ini file.
+```bash
+server-id=5182973
+log_bin=mysql-bin
+log_error=mysql-bin.err
+binlog_do_db=aa
+```
+
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/My%20Ini%20file.png">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/Log%20Error.png">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/Save%20file.png">
+</p>
+     
+<br></br>
+
+**Restart Apache and MySQL**
+
+After restarting both Apache and MySQL, reload the replication page and explore it's functionalities
 
 
 ## Contribution 🛠️
