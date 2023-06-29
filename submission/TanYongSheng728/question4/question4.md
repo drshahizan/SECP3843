@@ -19,6 +19,8 @@ Since my dataset assigned is <a href="https://github.com/drshahizan/dataset/tree
 I have chosen 1 type of sentiment analyzer for this project which is :
 - <strong>VADER</strong>
 
+Link to code: <a href="https://github.com/drshahizan/SECP3843/blob/main/submission/TanYongSheng728/question4/files/code/Sentiment_Analysis_Tan_Yong_Sheng.ipynb">Sentiment Analysis</a>
+
 #
 ### 1. Load Data from MongoDB
 Since the dataset is stored in MongoDB which results from previous question, we need to retrieve the data from there. 
