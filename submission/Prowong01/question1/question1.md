@@ -15,7 +15,7 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: <a href="https://github.com/drshahizan/dataset/tree/main/mongodb/04-companies" >Companies</a>
 
 ## Question 1 (a)
-Below are the brief introduction of the 5 servers. 
+Below are the brief introduction of the 5 servers that will be used in this project.
 
 1. Django Application Server:<br>
    This is a server that runs Django web application using a Python web framework. It handles requests from clients, executes your code, and returns responses. It can be use by different web servers to run Django app, such as Apache, Nginx, Gunicorn, or uWSGI
@@ -159,11 +159,20 @@ To create migrations for these models, I need to use the manage.py command with 
 
 ```
 python manage.py makemigrations
+```
+
+<img  src="./files/images/migration.png"></img> </br>
+
+```
 python manage.py migrate
 ```
-<img  src="./files/images/migration.png"></img>
-MYSQL:
 <img  src="./files/images/database.png"></img>
+
+```
+python manage.py migrate --database=mongodb
+```
+<img  src="./files/images/mongo_db.png"></img>
+
 
 ## Question 1 (b)
 <img  src="./files/images/system_architecture.png"></img>
@@ -171,13 +180,20 @@ MYSQL:
 #### User
 User can send requests to the web server, such as viewing a web page, submitting a form, or calling an API. The web server then responds to the user by sending back the requested data or content. The user can also provide feedback to the web server, such as rating, commenting, or liking a web page or an API response. The user component is important for understanding the user needs, preferences, and behaviors, which can help improve the usability and functionality of the web application.
 
+
 #### Django Web Server
 This is the component that handles the requests from the clients and serves the web pages or API responses. You can use Django as your web framework to build your web server, as it provides a high-level abstraction of common web development tasks, such as URL routing, template rendering, authentication, etc. Django also supports multiple database backends, which allows you to use MySQL and MongoDB in your system.
 
 #### Database (MySQL & MongoDB)
 These are the components that persistently store and manage data. </br>
 -MySQL: MySQL is a relational database that uses tables, rows, and columns to store structured data. It supports SQL queries, transactions, and joins, which can be useful for performing complex operations on data.</br>
+
 -MongoDB: MongoDB is a document database that uses collections, documents, and fields to store unstructured or semi-structured data. It supports dynamic schemas, flexible queries, and aggregation pipelines, which can be useful for handling large amounts of data or data with varying structures.
+
+#### External Database Integration Libraries
+-ORM: stands for Object-Relational Mapping, a technique that maps Python objects to database tables and allows developers to manipulate data using object-oriented programming. Django ORM uses the active record pattern, which means each model class corresponds to a single database table and each model instance corresponds to a single row in the table. </br>
+
+-Djongo: It is a Django database connector that allows Django applications to use MongoDB, a popular NoSQL database, as the backend. Djongo also supports features such as embedded models, array references, and raw queries.
 
 #### Dataset (JSON)
 This is the component that stores the data that want to use in web application. I use JSON as the data format, as it is a lightweight and human-readable format that can be easily parsed and manipulated by Python. JSON also supports nested structures, which can be useful for storing complex data. 
