@@ -66,7 +66,7 @@ class User(AbstractUser):
     is_senior = models.BooleanField('Is senior', default=False)
 ```
 
-In the terminal, migrate using ```py manage.py makemigrations``` and ```py manage.py migrate```. The database will be update din the MySQL database.
+In the terminal, migrate using ```py manage.py makemigrations``` and ```py manage.py migrate```. The database will be update in the MySQL database.
 
 <p align="center">
   <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question3/files/images/database.png" />
@@ -474,7 +474,220 @@ User Interfaces
 
 ## Question 3 (b)
 
+<h4>Step 1 - Set Up Replication in MySQL</h4>
 
+In the Xampp, open the configuration file of phpmyadmin by clicking the 'my.ini'.
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question3/files/images/my.ini.png" />
+</p>
+
+Uncomment the line 'log-bin=mysql-bin' in the configuration file.
+
+From this
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question3/files/images/comment.png" />
+</p>
+
+To this
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question3/files/images/uncomment.png" />
+</p>
+
+<h4>Step 2 - Create a database in MongoDB Compass</h4>
+
+Create a new database named 'aa_system' and collection 'app_user' in MongoDB compass.
+
+<p align="center">
+  <img height="100px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question3/files/images/databasename.png" />
+</p>
+
+<h4>Step 3 - Create a mongoDB.py file in VS code</h4>
+
+<p align="center">
+  <img height="100px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question3/files/images/mongoDB.py.png" />
+</p>
+
+The following code in the mongoDB.py is to connect to both MySQL and MongoDB local database. The row_data reprsents all the rows need to be defined to be insert into the MongoDB database. The structure is same as the aa_app_user table in MySQL database. 
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question3/files/images/Screenshot%202023-06-29%20130159.png" />
+</p>
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question3/files/images/Screenshot%202023-06-29%20130212.png" />
+</p>
+
+```
+import mysql.connector
+from pymongo import MongoClient
+
+# Connect to MySQL database
+mysql_connection = mysql.connector.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='aa_system'
+)
+mysql_cursor = mysql_connection.cursor()
+
+# Connect to MongoDB database
+mongodb_host = 'localhost'
+mongodb_port = 27017
+mongodb_database = 'aa_system'
+mongodb_collection = 'app_user'
+
+mongo_client = MongoClient('localhost', 27017)
+mongodb = mongo_client['aa_system']
+mongo_collection = mongodb['app_user']
+
+# Read data from the MySQL table
+mysql_cursor.execute("SELECT * FROM aa_app_user")
+results = mysql_cursor.fetchall()
+
+# Import data to MongoDB
+for row in results:
+    row_data = {
+        'id': row[0],
+        'password': row[1],
+        'last_login': row[2],
+        'is_superuser': row[3],
+        'username': row[4],
+        'first_name': row[5],
+        'last_name': row[6],
+        'email': row[7],
+        'is_staff': row[8],
+        'is_active': row[9],
+        'date_joined': row[10],
+        'is_admin': row[11],
+        'is_customer': row[12],
+        'is_technical': row[13],
+        'is_senior': row[14],
+    }
+    mongo_collection.insert_one(row_data)
+    print("Inserted row with ID:", row[0])
+
+# Close MySQL connection
+mysql_cursor.close()
+mysql_connection.close()
+
+# Close MongoDB connection
+mongo_client.close()
+
+# Log the binary log events
+mysql_connection = mysql.connector.connect(
+    host='localhost',
+    user='root',
+    password='',
+    database='aa_system'
+)
+mysql_cursor = mysql_connection.cursor()
+
+mysql_cursor.execute("SHOW BINARY LOGS")
+binary_logs = mysql_cursor.fetchall()
+
+latest_log = binary_logs[-1]
+log_filename, log_position = latest_log[0], latest_log[1]
+
+mysql_cursor.execute(f"SHOW BINLOG EVENTS IN '{log_filename}' FROM {log_position}")
+for binlog_event in mysql_cursor:
+    event_type = binlog_event[7]
+
+    if event_type == 2:
+        query = binlog_event[8]
+
+        query_parts = query.split()
+        table_name = query_parts[2]
+        operation = "INSERT"
+
+        if table_name == 'aa_app_user':
+            print("Binary Log Event:")
+            print("Query:", query)  # Logging statement
+
+            if operation == 'INSERT':
+                values_start = query.index("VALUES") + 7
+                values_end = query.index(")", values_start)
+                values = query[values_start:values_end].split(",")
+
+                row_data = {
+                    'id': int(values[0]),
+                    'password': values[1].strip("'"),
+                    'last_login': values[2].strip("'"),
+                    'is_superuser': bool(int(values[3])),
+                    'username': values[4].strip("'"),
+                    'first_name': values[5].strip("'"),
+                    'last_name': values[6].strip("'"),
+                    'email': values[7].strip("'"),
+                    'is_staff': bool(int(values[8])),
+                    'is_active': bool(int(values[9])),
+                    'date_joined': values[10].strip("'"),
+                    'is_admin': bool(int(values[11])),
+                    'is_customer': bool(int(values[12])),
+                    'is_technical': bool(int(values[13])),
+                    'is_senior': bool(int(values[14])),
+                }
+
+                mongo_collection.insert_one(row_data)
+                print("Inserted row with ID:", row_data['id'])  # Logging statement
+
+            elif operation == 'UPDATE':
+                set_start = query.index("SET") + 4
+                set_end = query.index("WHERE", set_start)
+                set_clause = query[set_start:set_end]
+
+                where_start = query.index("WHERE") + 6
+                where_clause = query[where_start:]
+
+                set_pairs = set_clause.split(",")
+                update_data = {}
+                for pair in set_pairs:
+                    column, value = pair.split("=")
+                    column = column.strip()
+                    value = value.strip("'")
+                    update_data[column] = value
+
+                where_parts = where_clause.split("=")
+                condition_column = where_parts[0].strip()
+                condition_value = where_parts[1].strip("'")
+
+                filter_condition = {condition_column: condition_value}
+
+                mongo_collection.update_one(filter_condition, {'$set': update_data})
+                print("Updated row matching condition:", filter_condition)  # Logging statement
+
+            elif operation == 'DELETE':
+                where_start = query.index("WHERE") + 6
+                where_clause = query[where_start:]
+
+                where_parts = where_clause.split("=")
+                condition_column = where_parts[0].strip()
+                condition_value = where_parts[1].strip("'")
+
+                filter_condition = {condition_column: condition_value}
+
+                mongo_collection.delete_one(filter_condition)
+                print("Deleted row matching condition:", filter_condition)  # 
+
+# Close MySQL connection
+mysql_cursor.close()
+mysql_connection.close()
+
+mongo_client.close()
+```
+
+Then, run the command in the terminal to migrate the data. ```python C:\Users\User\Desktop\aa_system\aa_system\aa_system\mongoDB.py```
+
+Result:
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question3/files/images/Screenshot%202023-06-29%20123212.png" />
+</p>
+
+<p align="center">
+  <img height="300px" src="https://github.com/drshahizan/SECP3843/blob/main/submission/leecaixuan/question3/files/images/mongo.png" />
+</p>
 
 
 

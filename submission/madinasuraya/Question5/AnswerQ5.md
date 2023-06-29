@@ -207,17 +207,84 @@ In conclusion, we can see that after cleaning and aggregating the data, the stor
   
 
 
-   
-
-
-    
-      
-
-
-
-
 ### Question 5 (b)
-Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+After performing data cleaning and aggregation, I can use this newly created collection to create charts by utilizing MongoDB Atlas features, to visualize it in a portal. Charts in a dashboard can be created using all the collections in the database. There are a total of 3 collections that I created including the raw, cleaned, and aggregate. By clicking ‘Visualize Your Data’ option, I can create charts and a dashboard based on data in this database.
+
+<p align='center'>
+   <img width="615" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/515f7ee1-b3ba-4148-bb78-f406b041fed3">
+</p>
+
+I can choose my desired collections to be used as a data source for a particular chart.
+<p align='center'>
+   <img width="576" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/9af78a37-76ef-4753-a89b-d3b1aab0435d">
+</p>
+
+There are a total of 5 charts that I create based on this database.
+
+1. **Stacked Column** - Number of Competitors and Employees based on Category
+   <p align='center'>
+    <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/240ed9d6-93e2-457b-9adc-25f2a9a1930d">
+   </p>
+   The Crunchbase dataset's competitiveness and employee counts are shown in this graph for each category. It offers a comparison of the competitors and employee  size across various industry sectors. We can see the link between the number of competitors and the employees in each category by providing us with new information about the level of competition and the nature of employment across different industries. Businesses may use this data to analyze competition possibilities, and make reasoned judgements about market positioning.
+
+   As we can see from the chart, software companies acquire employees the most while web companies get the most competitors among its industry sector.
+
+  <br>
+  
+2. **Bar graph** - Top 10 Category with Highest Number of Employees
+   <p align='center'>
+      <img width="956" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/3bfccb42-b2a8-4a4c-8517-f1e42129cfdb">
+   </p>
+   This graph displays the top 10 industry categories with the most number of employees. The most popular sectors are highlighted, together with information on their potential for hiring. We can determine the industries with the greatest employment levels by illustrating this data, which may be useful for industry research and talent acquisition.
+   
+   Based on the chart, we can conclude that finance records the highest average number of employees with more than 20,000 people.
+
+<br>
+
+3. **Heatmap** - Employee Distribution by Category and Country
+   <p align='center'>
+      <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/dfee17de-cc39-4aa2-973b-977c3ad26ca5">
+   </p>
+   Based on the total number of workers, the heatmap visualisation shows how the categories are distributed throughout different countries. The heatmap shows every category's number of employees in detail and draws attention to any geographical differences. This data may be useful for making strategic decisions, such as finding nations with a large pool of talent or analysing market potential in particular business sectors.
+
+   Based on the heatmap, we can see that USA records the highest number of employees in hardware and software sectors while IND provides one of the highest consulting services.
+<br>
+
+4. **Discrete Line** - Top 10 Company with Highest Acquisition Price
+   <p align='center'>
+      <img width="960" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/c8891a43-9978-4db9-b982-bab1689d96b6">
+   </p>
+
+      The top 10 businesses sector with respect to acquisition prices are shown in this graph. Acquisation price is the total expense a business spend in acquiring a new client or purchasing an asset. We can determine which businesses have undergone the most significant acquisition deals, giving us insights into the industry's competitive environment.
+
+   Based on the chart, we can conclude that Sprint Nextel spends the highest for their businesses. We can see that the top 10 are well-known and succesful companies.
+   
+   <br>
+
+6. **Geospatial Chart** - Number of Companies by Country
+   <p align='center'>
+      <img width="951" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/f493de47-db63-41c8-a609-c644665ecfb8">
+   </p>
+
+      This graph shows how businesses are distributed according to the nation by finding the total number of active businesses in each nation. Insights into the geographic distribution of businesses may be gained by identifying countries having the highest number of companies. Understanding a company's worldwide footprint and tracking entrepreneurial activity across several geographies are both made easier by this knowledge.
+      
+   Based on the graph, we can see that the USA shows the most number of companies, along with Canada.
+
+#### Dashboard
+ <p align='center'>
+      <img width="951" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/033de277-8ced-42e4-a659-0bf5755c1c6a">
+   </p>
+
+To visualize this dashboard in a website, I can use this embedded code and insert it into the portal's coding.
+ <p align='center'>
+     <img width="246" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/92c2efc2-dd25-40d1-95a8-a2424a6b8362"><br>
+    <img width="586" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/9642b77b-0964-434f-a366-69ffcfcd6eab">
+   </p>
+
+This is the final result, in the website.
+ <p align='center'>
+     <img width="799" alt="image" src="https://github.com/drshahizan/SECP3843/assets/119557584/43cc86ad-95b3-41b9-b1c2-0d8eddc188d9">
+   </p>
 
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.

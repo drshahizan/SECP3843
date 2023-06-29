@@ -14,13 +14,15 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: [Supply Store](https://github.com/drshahizan/dataset/tree/main/mongodb/01-sales)
 
 ## Question 3 (a)
+### [Question 3: Code](https://github.com/drshahizan/SECP3843/tree/main/submission/radindafina/question3/files/code/supplystore)
+
 ### Prerequisite
-  - ``pip install mysqlclient``
-  - supplystore Database
+  - Ensure that you have installed the mysqlclient package by running the command ``pip install mysqlclient``
+  - Make sure you have a database named "supplystore" available.
 
 ### Set up
 
-1. Connect to database. 
+1. Connect to the database by configuring the database settings in your Django project's settings.py file. Use the following code as a template, modifying the values to match your database configuration:
    
  ```python
 DATABASES = {
@@ -35,7 +37,7 @@ DATABASES = {
 }
 ```
 
-models.py 
+2. Define the required models in your Django project's models.py file. The provided code snippet shows an example of a custom user model with additional fields for different roles:
 
  ```python
 from django.contrib.auth.models import AbstractUser, Group, Permission
@@ -49,125 +51,129 @@ class CustomUser(AbstractUser):
 
 ```
 
-views.py - index
-```python
-def index_view(request):
-    # Add your logic here
-    return render(request, 'index.html')
-```
+3. Create the required views in your Django project's views.py file. The code snippets provided demonstrate example views for the index, login, and register pages:
+  - views.py - index
+    
+    ```python
+    def index_view(request):
+        # Add your logic here
+        return render(request, 'index.html')
+    ```
 
-views.py - login
-```python
-def login_view(request):
-    if request.method == 'POST':
-        # Retrieve the username and password from the POST request
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        if username == 'admin' and password == 'password':
-            # If the login is successful, you can redirect to a success page
-            return redirect('/success/')
-        else:
-            # If the login fails, you can render the login page again with an error message
-            error_message = 'Invalid username or password.'
-            return render(request, 'login.html', {'error_message': error_message})
-
-    # If the request method is GET, render the login page
-    return render(request, 'login.html')
-```
-views.py - register
-```python
-def register_view(request):
-    if request.method == 'POST':
-            email = request.POST.get('email')
+  - views.py - login
+    ```python
+    def login_view(request):
+        if request.method == 'POST':
+            # Retrieve the username and password from the POST request
             username = request.POST.get('username')
             password = request.POST.get('password')
-            role = request.POST.get('role')
-            
-            # Check if the username already exists
-            if User.objects.filter(username=username).exists():
-                error_message = "Username already exists. Please choose a different username."
-                return render(request, 'register.html', {'error_message': error_message})
-
-    return render(request, 'register.html')
-```
-
-index.html
-```python
-<body>
-    <div class="container">
-        <h1>Welcome to Supply Store</h1>
-        <p>Your one-stop shop for all your supply needs.</p>
-        <div class="button-container">
-            <a href="/login">Login</a>
-            <a href="/register">Register</a>
+    
+            if username == 'admin' and password == 'password':
+                # If the login is successful, you can redirect to a success page
+                return redirect('/success/')
+            else:
+                # If the login fails, you can render the login page again with an error message
+                error_message = 'Invalid username or password.'
+                return render(request, 'login.html', {'error_message': error_message})
+    
+        # If the request method is GET, render the login page
+        return render(request, 'login.html')
+    ```
+  - views.py - register
+    ```python
+    def register_view(request):
+        if request.method == 'POST':
+                email = request.POST.get('email')
+                username = request.POST.get('username')
+                password = request.POST.get('password')
+                role = request.POST.get('role')
+                
+                # Check if the username already exists
+                if User.objects.filter(username=username).exists():
+                    error_message = "Username already exists. Please choose a different username."
+                    return render(request, 'register.html', {'error_message': error_message})
+    
+        return render(request, 'register.html')
+    ```
+  4. Create the HTML templates for the index, login, and register pages. Use the provided HTML snippets as a starting point, customizing the content and layout as desired.
+  
+  - index.html
+    ```python
+    <body>
+        <div class="container">
+            <h1>Welcome to Supply Store</h1>
+            <p>Your one-stop shop for all your supply needs.</p>
+            <div class="button-container">
+                <a href="/login">Login</a>
+                <a href="/register">Register</a>
+            </div>
         </div>
-    </div>
-</body>
-```
+    </body>
+    ```
 
   <div align="center"><img src="files/images/index.png" height="500px" /></div>
   
-login.html
-```python
-<body>
-    <div class="container">
-        <h2>User Login</h2>
-        <form action="/login" method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <button type="submit">Login</button>
-            </div>
-        </form>
-    </div>
-</body>
-```
-
-  <div align="center"><img src="files/images/login.png" height="500px" /></div>
+  - login.html
+  ```python
+  <body>
+      <div class="container">
+          <h2>User Login</h2>
+          <form action="/login" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                  <label for="username">Username:</label>
+                  <input type="text" id="username" name="username" required>
+              </div>
+              <div class="form-group">
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" name="password" required>
+              </div>
+              <div class="form-group">
+                  <button type="submit">Login</button>
+              </div>
+          </form>
+      </div>
+  </body>
+  ```
   
-register.html
-```python
-<body>
-    <div class="container">
-        <h2>User Registration</h2>
-        <form action="/register" method="post">
-            {% csrf_token %}
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div class="form-group">
-                <label for="role">Role:</label>
-                <select id="role" name="role" required>
-                    <option value="">Select Role</option>
-                    <option value="customer">Customer</option>
-                    <option value="technical_worker">Technical Worker</option>
-                    <option value="senior_management">Senior Management</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <button type="submit">Register</button>
-            </div>
-        </form>
-    </div>
-</body>
-```
+    <div align="center"><img src="files/images/login.png" height="500px" /></div>
+    
+  - register.html
+  ```python
+  <body>
+      <div class="container">
+          <h2>User Registration</h2>
+          <form action="/register" method="post">
+              {% csrf_token %}
+              <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" name="email" required>
+              </div>
+              <div class="form-group">
+                  <label for="username">Username:</label>
+                  <input type="text" id="username" name="username" required>
+              </div>
+              <div class="form-group">
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" name="password" required>
+              </div>
+              <div class="form-group">
+                  <label for="role">Role:</label>
+                  <select id="role" name="role" required>
+                      <option value="">Select Role</option>
+                      <option value="customer">Customer</option>
+                      <option value="technical_worker">Technical Worker</option>
+                      <option value="senior_management">Senior Management</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <button type="submit">Register</button>
+              </div>
+          </form>
+      </div>
+  </body>
+  ```
+    
   <div align="center"><img src="files/images/register.png" height="500px" /></div>
 
 ## Question 3 (b)

@@ -121,40 +121,20 @@ DATABASES = {
 
  **Create Model** 
  ```bash
-from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.db import models
+from django.contrib.auth.models import AbstractUser, Group, Permission
 
-class CustomUser(AbstractUser):
-    USER_TYPE_CHOICES = (
-        ('customer', 'Customer'),
-        ('technical_worker', 'Technical Worker'),
-        ('senior_management', 'Senior Management'),
-    )
+# Create your models here.
+class User(AbstractUser):
+    is_customer = models.BooleanField(default=False)
+    is_technical_worker = models.BooleanField(default=False)
+    is_senior_management = models.BooleanField(default=False)
 
-    user_type = models.CharField(max_length=20, choices=USER_TYPE_CHOICES)
+    groups = models.ManyToManyField(Group, blank=True, related_name='custom_user_set', related_query_name='user')
+    user_permissions = models.ManyToManyField(Permission, blank=True, related_name='custom_user_set', related_query_name='user')
 
-    groups = models.ManyToManyField(
-        Group, 
-        verbose_name='groups',
-        blank=True, 
-        related_name='user_set', 
-        related_query_name='user',
-    )
-    user_permissions = models.ManyToManyField(
-        Permission,
-        verbose_name='user permissions',
-        blank=True,
-        related_name='user_set',
-        related_query_name='user',
-    )
-
-    def __str__(self):
-        return self.username
 ```
-In **settings.py**, set AUTH_USER_MODEL to the custom user model to make it the default authentication model.
-```bash
-AUTH_USER_MODEL = 'DjangoApp.CustomUser'
-```
+
 <br></br>
 
 **Perform Database Migration** 
@@ -168,114 +148,166 @@ Check your MySQL database (XAMPP > MySQL > Start > Admin) to confirm this migrat
 
 <br></br>
 
-**Create Admin Site** 
 
-Go to **admin.py** to classify your own admin site. This will allow admins to register on a site of their own.
-```bash
-from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth.forms import UserChangeForm, UserCreationForm
-from .models import CustomUser
-
-
-class CustomUserAdmin(UserAdmin):
-    model = CustomUser
-    add_form = UserCreationForm
-    form = UserChangeForm
-    fieldsets = (
-        (None, {'fields': ('username', 'password')}),
-        ('Personal info', {'fields': ('user_type',)}),
-        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
-        ('Important dates', {'fields': ('last_login', 'date_joined')}),
-    )
-    add_fieldsets = (
-        (None, {
-            'fields': ('username', 'password1', 'password2')}
-        ),
-    )
-
-admin.site.register(CustomUser, CustomUserAdmin)
-```
-<br></br>
-
-**Create Registration Login View** 
+**Create Registration and Login View** 
 
 Here is the code for my DjangoApp **views.py** file that defines the user registration and login processes.
+
+The **Login** functionality
 ```bash
 from django.shortcuts import render, redirect
-from django.contrib.auth import authenticate, login
-from django.contrib.auth.forms import LoginForm, SignUpForm
+from .forms import RegistrationForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from .decorators import is_customer, is_technical_worker, is_senior_management
+from django.contrib.auth.decorators import user_passes_test
 
-def registerUser(request):
-    msg = None
-    success = False
-
-    if request.method == "POST":
-        form = SignUpForm(request.POST)
+# Create your views here.
+def user_login(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(request=request, data=request.POST)
         if form.is_valid():
-            user = form.save()
-            user.user_type = 'customer'
-            user.save()
             username = form.cleaned_data.get('username')
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=username,password=raw_password)
-
-            msg = "User created."
-            success = True
-            return redirect('login')
-        else:
-            msg = "Form is not valid."
-    else:
-        form = SignUpForm()
-
-    return render(request, "accounts/register.html", {"form": form, "msg" : msg, "success" : success})
-
-def loginView(request):
-    form = LoginForm(request.POST or None)
-    msg = None
-
-    if request.method == "POST":
-        if form.is_valid():
-            username = form.cleaned_data.get("username")
             password = form.cleaned_data.get('password')
             user = authenticate(username=username, password=password)
-
+            print('User: ', user)
             if user is not None:
-                login(request, user)
-                if user.user_type == 'customer':
-                    return redirect('customer_home')
-                elif user.user_type == 'technical_worker':
-                    return redirect('technical_worker_home')
-                elif user.user_type == 'senior_management':
-                    return redirect('management_home')
-                else:
-                    return redirect('home')
+                 login(request, user)
+                 print('User logged in')
+                 return redirect('home')
             else:
-                msg = "Invalid credentials"
-        else:
-            msg = "Error validating the form"
-
-    return render(request, "accounts/login.html", {"form": form, "msg" : msg})
-
-@login_required(login_url="/login/")
-def customer(request):
-    context = {'segment': 'index'}
-    return render(request, "home/customer_home.html", context)
-
-@login_required(login_url="/login/")
-def technical_worker(request):
-    context = {'segment': 'index'}
-    return render(request, "home/technical_worker_home.html", context)
-
-@login_required(login_url="/login/")
-def management(request):
-    context = {'segment': 'index'}
-    return render(request, "home/management_home.html", context)
+                 print("Invalid username or password.")
+                 return redirect('login')
+            
+    else:
+        form = AuthenticationForm()
+    return render(request, 'login.html', {'form': form})
 ```
 
+The **Register** functionality
+```bash
+def register(request):
+    if request.method == 'POST':
+        form = RegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('login')
+    else:
+        form = RegistrationForm()
+    return render(request, 'register.html', {'form': form})
+```
+
+These are other **views** processes that will help users to navigate arounf the portal
+
+```bash
+@login_required
+def profile(request):
+    user = request.user
+    return render(request, 'profile.html', {'user': user})
+
+@user_passes_test(is_customer)
+def customer_dashboard(request):
+    return render(request, 'customer_dashboard.html')
+
+@user_passes_test(is_technical_worker)
+def technical_worker_dashboard(request):
+    return render(request, 'technical_worker_dashboard.html')
+
+@user_passes_test(is_senior_management)
+def senior_management_dashboard(request):
+    return render(request, 'senior_management_dashboard.html')
+
+def redirect_dashboard(request):
+    user = request.user
+    if user.is_customer:
+        return redirect('customer_dashboard')
+    elif user.is_technical_worker:
+        return redirect('technical_worker_dashboard')
+    elif user.is_senior_management:
+        return redirect('senior_management_dashboard')
+    else:
+        return redirect('profile')
+    
+def user_logout(request):
+    logout(request)
+    return redirect('login')
+
+```
+
+**Create Registration Form** 
+
+In the DjangoApp folder, create a registration form file named **forms.py**
+```bash
+from django.contrib.auth.forms import UserCreationForm
+from django import forms
+from .models import User
+
+class RegistrationForm(UserCreationForm):
+    ROLE_CHOICES = [
+        ('customer', 'Customer'),
+        ('technical_worker', 'Technical Worker'),
+        ('senior_management', 'Senior Management'),
+    ]
+
+    role = forms.ChoiceField(choices=ROLE_CHOICES, widget=forms.RadioSelect)
+
+    class Meta:
+        model = User
+        fields = ['username', 'password1', 'password2', 'role']
+
+    def save(self, commit=True):
+        user = super(RegistrationForm, self).save(commit=False)
+        role = self.cleaned_data['role']
+        
+        if role == 'customer':
+            user.is_customer = True
+        elif role == 'technical_worker':
+            user.is_technical_worker = True
+        elif role == 'senior_management':
+            user.is_senior_management = True
+        if commit:
+            user.save()
+        return user
+```
 
 ## Question 3 (b)
+The difficulty of Data Replication and Synchronisation between the MySQL and MongoDB databases occurs while working with two separate databases. This issue entails making sure that any changes made in one database are appropriately mirrored in the other, ensuring data consistency across both systems. To address this issue, we can do as follows:
+
+**Open phpMyAdmin**
+
+Once you're directed to the main page of phpMyAdmin, click on the **Replication** tab on the ribbon navigation bar. Here, in the **Primary Replication** container, click **configure**.
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/Open%20PHPMyAdmin.png">
+</p>
+
+You will then be directed to **Replication** page. Ensure that you have chose **Ignore all databases: Replicate**
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/Primary%20configuration.png">
+</p>
+<br></br>
+
+**Open XAMPP Control Panel**
+
+From the control panel, click on MySQL's **config** button, then click on the **my.ini** file. From the primary configuration page, copy the four lines to be pasted in the my.ini file.
+```bash
+server-id=5182973
+log_bin=mysql-bin
+log_error=mysql-bin.err
+binlog_do_db=aa
+```
+
+<p align="center">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/My%20Ini%20file.png">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/Log%20Error.png">
+   <img width="800" alt="image" src="https://github.com/drshahizan/SECP3843/blob/main/submission/qaisarrra/question3/files/images/Save%20file.png">
+</p>
+     
+<br></br>
+
+**Restart Apache and MySQL**
+
+After restarting both Apache and MySQL, reload the replication page and explore it's functionalities
 
 
 ## Contribution 🛠️

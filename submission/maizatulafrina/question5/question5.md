@@ -16,11 +16,28 @@ Don't forget to hit the :star: if you like this repo.
 
 ## Question 5 (a)
 
-Data Aggrigation is the best way to optimized the performance when dealing with large volumes of JSON data from the dataset.
+Data Aggregation is the best way to optimized the performance when dealing with large volumes of JSON data from the dataset.
 
-- fvgrt
+- Go to your database and collection, select "Aggregation.
 
   <img width="959" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/10343854-7432-4dfd-bb6f-30eebee824a1">
+
+- Add aggregation stage by grouping them at the first place  
+  <img width="768" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/7f54d459-90f6-4396-a43c-6eaeb0b78d9a">
+
+- Add another aggregation stage for sort.
+
+  <img width="760" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/30a9bc90-ffaf-4268-b502-cac63e57b677">
+
+- Click "Run"
+
+  Result:
+  
+  <img width="759" alt="image" src="https://github.com/drshahizan/SECP3843/assets/120564694/434f7abf-a8f6-4096-ae3f-63c6da2cad86">
+
+This aggregation query will provide a result that gives you a brief breakdown of how the dataset's results are distributed. The separate values from the "result" field as well as the corresponding counts for each value will be included.
+
+
 
 
 ## Question 5 (b)

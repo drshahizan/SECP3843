@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+pzk6j56_e5h@l46)@f!e&_qu((oxqxn+lh6uf6ti@nd0yf4$2'
+SECRET_KEY = 'django-insecure--h*wxs#rg^hfi+1$@#54(hq8stwk@+-vc8uqtot&t*6rk=fjpl'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'portalapp',
+    'account.apps.AccountConfig',
 ]
 
 MIDDLEWARE = [
@@ -75,21 +75,13 @@ WSGI_APPLICATION = 'portalproject.wsgi.application'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'AA',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '3306',
-    },
-    'mongodb': {
-        'ENGINE': 'djongo',
-        'NAME': 'AA',
-        'CLIENT': {
-            'host': 'mongodb+srv://Chloe:Racq0711@atlascluster.uwqwdbv.mongodb.net/',
-        },
-    },
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "aa",
+        "USER": "root",
+        "HOST": "localhost",
+        "PORT": "3306",
+    }
 }
 
 
@@ -128,6 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
+AUTH_USER_MODEL = "account.User"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

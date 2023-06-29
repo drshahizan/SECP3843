@@ -56,7 +56,6 @@ Steps required to integrate multiple datasets with Django are as follows.
                   'PORT': '3306',
                   'USER': '',
                   'PASSWORD': '',} }
-     ```
           
 5. Perform migration for MySQL.
     

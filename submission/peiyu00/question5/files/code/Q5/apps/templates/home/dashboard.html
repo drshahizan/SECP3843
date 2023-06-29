@@ -1,0 +1,386 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Dashboard {% endblock title %}
+
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+    <!-- Header -->
+    <div class="header bg-primary pb-6">
+      <div class="container-fluid">
+        <div class="header-body">
+          <div class="row align-items-center py-4">
+            <div class="col-lg-6 col-7">
+              <h6 class="h2 text-white d-inline-block mb-0">Default</h6>
+              <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
+                <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
+                  <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+                  <li class="breadcrumb-item"><a href="#">Dashboards</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Default</li>
+                </ol>
+              </nav>
+            </div>
+          </div>
+          
+          <!-- Card stats -->
+          <div class="row">
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Total Users</h5>
+                      <span class="h2 font-weight-bold mb-0">{{total_count}}</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-gradient-red text-white rounded-circle shadow">
+                        <i class="ni ni-single-02"></i>          
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Average Favorite</h5>
+                      <span class="h2 font-weight-bold mb-0">{{avg_favourites}}</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
+                        <i class="ni ni-favourite-28"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Average Follower</h5>
+                      <span class="h2 font-weight-bold mb-0">{{avg_followers}}</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-gradient-green text-white rounded-circle shadow">
+                        <i class="ni ni-satisfied"></i>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-md-6">
+              <div class="card card-stats">
+                <!-- Card body -->
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col">
+                      <h5 class="card-title text-uppercase text-muted mb-0">Average Friend</h5>
+                      <span class="h2 font-weight-bold mb-0">{{avg_friends}}</span>
+                    </div>
+                    <div class="col-auto">
+                      <div class="icon icon-shape bg-gradient-info text-white rounded-circle shadow">
+                        <i class="ni ni-satisfied"></i>          
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Page content -->
+    <div class="container-fluid mt--6">
+      
+      <div class="col-xl-12">
+        <div class="card bg-default">
+          <div class="card-header bg-transparent">
+            <div class="row align-items-center">
+              <div class="col">
+                <h6 class="text-light text-uppercase ls-1 mb-1">Overview</h6>
+                <h5 class="h3 text-white mb-0">Registration of User Over Time</h5>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <!-- Chart -->
+            <div>
+              <!-- Chart wrapper -->
+              <canvas id="userChart"></canvas>  
+              <script>
+                // Retrieve the data from the context passed by the view
+                const dates = JSON.parse('{{ dates|safe }}');
+                const userCounts = JSON.parse('{{ user_counts|safe }}');
+            
+                // Create the line chart using Chart.js
+                const ctx = document.getElementById('userChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: dates,
+                        datasets: [{
+                            label: 'Number of Users',
+                            data: userCounts,
+                            backgroundColor: 'rgba(0, 123, 255, 0.2)', 
+                            borderColor: 'rgba(0, 123, 255, 1)', 
+                            borderWidth: 1,
+                            cubicInterpolationMode: 'monotone'
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                              grid: {
+                                display: false
+                              },
+                                title: {
+                                    display: true,
+                                    text: 'Date',
+                                    color: 'white' 
+                                },
+                                ticks: {
+                                    color: 'white' 
+                                }
+                            },
+                            y: {
+                              grid: {
+                                display: false
+                              },
+                                title: {
+                                    display: true,
+                                    text: 'Number of Users',
+                                    color: 'white' 
+                                },
+                                ticks: {
+                                    color: 'white' 
+                                }
+                            },
+                        },
+                        plugins: {
+                          legend: {
+                              position: 'top'
+                          },
+                          tooltip: {
+                              mode: 'index',
+                              intersect: false
+                          }
+                      },
+                    }
+                });
+            </script> 
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-xl-8">
+          <div class="card">
+            <div class="card-header bg-transparent">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="text text-uppercase ls-1 mb-1">Overview</h6>
+                  <h5 class="h3 text mb-0">Top 10 User Locations</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-body">
+              <!-- Chart -->
+              <div>
+                <!-- Chart wrapper -->
+                <canvas id="barChart"></canvas>
+                <script>
+                  var labels = {{ labels | safe }};
+                  var data = {{ data | safe }};
+          
+                  // Create the bar chart
+                  var barChart = new Chart(document.getElementById('barChart'), {
+                      type: 'bar',
+                      data: {
+                          labels: labels,
+                          datasets: [{
+                              label: 'User Count',
+                              data: data,
+                              backgroundColor: 'rgba(54, 162, 235, 0.5)', 
+                              borderColor: 'rgba(54, 162, 235, 1)',
+                              borderWidth: 1
+                          }]
+                      },
+                      options: {
+                          responsive: true,
+                          scales: {
+                            x: {
+                              grid: {
+                                display: false
+                              },
+                            },
+                              y: {
+                                  grid: {
+                                    display: false
+                                  },
+                                  beginAtZero: true,
+                                  stepSize: 1
+                              }
+                          }
+                      }
+                  });
+              </script>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-4">
+          <div class="card">
+            <div class="card-header bg-transparent">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h6 class="text-uppercase text-muted ls-1 mb-1">Distribution</h6>
+                  <h5 class="h3 mb-0">Tweet Sources</h5>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <!-- Chart -->
+              <div>
+                <canvas id="pieChart"></canvas>
+                <script>
+                  var sources = JSON.parse('{{ sources|safe }}');
+                  var counts = JSON.parse('{{ counts|safe }}');
+          
+                  var pieChart = new Chart(document.getElementById('pieChart'), {
+                      type: 'pie',
+                      data: {
+                          labels: sources,
+                          datasets: [{
+                              data: counts,
+                              backgroundColor: ['#FF6384', '#36A2EB'], // Customize the colors for web and others
+                              hoverBackgroundColor: ['#FF6384', '#36A2EB']
+                          }]
+                      },
+                      options: {
+                          responsive: true,
+                          legend: {
+                              position: 'bottom'
+                          }
+                      }
+                  });
+              </script>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xl-8">
+          <div class="card">
+            <div class="card-header border-0">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h3 class="mb-0">Top 5 Users by Followers Count</h3>
+                </div>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Screen Name</th>
+                    <th scope="col">Followers Count</th>
+                    <th scope="col">Location</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for user in top_users %}
+                  <tr>
+                    <th scope="row">
+                      {{ user.screen_name }}
+                    </th>
+                    <td>
+                      {{ user.followers_count }}
+                    </td>
+                    <td>
+                      {{ user.location }}
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-xl-4">
+          <div class="card">
+            <div class="card-header border-0">
+              <div class="row align-items-center">
+                <div class="col">
+                  <h3 class="mb-0">Hashtag Analysis</h3>
+                </div>
+              </div>
+            </div>
+            <div class="table-responsive">
+              <table class="table align-items-center table-flush">
+                <thead class="thead-light">
+                  <tr>
+                    <th scope="col">Hashtag</th>
+                    <th scope="col">Count</th>
+                    <th scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for hashtag, count, percentage in hashtag_counts %}
+                  <tr>
+                    <th scope="row">{{ hashtag }}</th>
+                    <td>{{ count }}</td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                        <span class="mr-2">{{ percentage }}%</span>
+                        <div>
+                          <div class="progress">
+                            <div class="progress-bar bg-gradient-primary" role="progressbar" aria-valuenow="{{ percentage }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ percentage }}%;"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        
+
+    </div>
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}
+
+  <script src="/static/assets/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="/static/assets/vendor/chart.js/dist/Chart.extension.js"></script>
+
+{% endblock javascripts %}

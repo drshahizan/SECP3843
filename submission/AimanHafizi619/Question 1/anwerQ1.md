@@ -8,7 +8,7 @@
 
 Don't forget to hit the :star: if you like this repo.
 
-# Special Topic Data Engineering (SECP3843): Alternative Assessment
+# Special Topic Data Engineering (SECP3843): Alternative Assessment 
 
 #### Name: AHMAD AIMAN HAFIZI BIN MUHAMMAD
 #### Matric No.: A20EC0177
@@ -87,17 +87,17 @@ Running `python manage.py makemigrations` examines the current state of your mod
 
 ## Question 1 (b)
 
-![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image17.png)
+![Q1](https://github.com/drshahizan/SECP3843/blob/main/submission/AimanHafizi619/Question%201/files/images/Q1%20image18.png)
 
 The system architecture are as follow:
 
-**1. User Interface (Customer UI, Worker UI, Management UI)**
+**Xampp Web server** 
 
->User interface serves as the platform through which users interact with the application, while HTTP requests are generated when users perform actions within the user interface. Django, as a web framework, receives these requests, routes them to the appropriate views, and processes them to generate responses that are sent back to the user's browser or client. This interaction between users and HTTP requests forms the foundation of user interaction in a Django web application.
+>Xampp uses HTTP requests and respoanse as the primary ways of communication between clients and the web application. The framework handles incoming requests, routes them to the appropriate views, allows access to request data, and generates suitable responses.
 
-**2. Web Server (Django)**
+**Django**
 
->Django leverages HTTP requests as the primary means of communication between clients and the web application. The framework handles incoming requests, routes them to the appropriate views, allows access to request data, and generates suitable responses. This request-response cycle forms the backbone of Django's functioning as a web framework and enables developers to build robust and dynamic web applications.
+> Django is an open source web framework, serves as the foundation for this particular web server. Starting a Django project allows user to build application’s entire data model in Python without using SQL. It has three components; 1) Model for handling database, 2) View for handling HttpResponse, and 3) Template for diplaying html file for User Interface (UI).
 
 **3. Database**
 

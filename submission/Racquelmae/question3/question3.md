@@ -14,47 +14,118 @@ Don't forget to hit the :star: if you like this repo.
 #### Dataset: City Inspections	
 
 ## Question 3 (a)
-Continue with the project created in Question 1.
+#### Prerequisites
+To utilize Django, a Python installation is required which can be obtained by downloading it from the [official website](https://www.python.org/downloads/).
 
-### 1. Create views
-This is created for user authentication 
-The code can be found here [views.py](./files/code/Portal/portalproject/portalapp/views.py)
+### 1. Create & activate virtual environment
+To create a virtual environment, run `python -m venv env` in your command prompt. Once the virtual environment is created, activate it by typing `env\Scripts\activate`.
+<img  src="./files/images/env.jpg"></img>
 
-### 2. Create templates
-Create a new folder named templates in the app folder and paste all the html files used in this folder.
+### 2. Install Django
+With the virtual environment activated, type `pip install django` to install Django.
+<img  src="./files/images/django.jpg"></img>
 
-### 3. Create home.html
-This is created as the index page of the system.
-The code can be found here [home.html](./files/code/Portal/portalproject/portalapp/templates/home.html)
+### 3. Create project & app
+Use `django-admin startproject portalproject` to create the Django project. Then, navigate to the project directory and create a new app by running `python manage.py startapp account`. 
+<img  src="./files/images/start.jpg"></img>
 
-### 4. Create register.html
-This is created to allow user to register.
-The code can be found here [register.html](./files/code/Portal/portalproject/portalapp/templates/register.html)
+Once the app is created, add the app name in the INSTALLED_APPS array of settings.py file.<br>
+<img  src="./files/images/app.jpg"></img>
 
-### 5. Create login.html
-This is created to allow user to enter the username and password for login.
-The code can be found here [login.html](./files/code/Portal/portalproject/portalapp/templates/login.html)
+### 4. Install package 
+After creating the database in MySQL database servers, install the required package by running this command: 
+- `pip install mysqlclient`<br>
 
-### 6. Create profile.html
-This is created to display the user profile when the user log in the system.
-The code can be found here [profile.html](./files/code/Portal/portalproject/portalapp/templates/profile.html)
+<img  src="./files/images/mysql.jpg"></img>
 
-### 7. Create urls.py
-Add all the urls of the html files in the templates folder.
+### 5. Configure the database
+To use MYSQL as the database, modify the `settings.py` file in the project folder.<br>
+<img  src="./files/images/data.jpg"></img>
+
+### 6. Create urls
+Create a new file `urls.py` in the project folder and type the following code:<br>
+<img  src="./files/images/url.jpg"></img>
+
+Then, add the following code in the `urls.py` of the account(app) folder:<br>
+<img  src="./files/images/url2.jpg"></img>
+
+### 7. Define model
+In the `models.py`, define the model that represents the user types `customers`, `technical workers` and `senior management`.
+<img  src="./files/images/model.jpg"></img>
+
+Then add the following code in the `settings.py` file:
 ```
-from django.contrib import admin
-from django.urls import path
-from portalapp import views
-
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', views.home, name='home'),
-    path('signin/',views.signin, name='signin'),
-    path('signout/',views.signout, name='signout'),
-    path('register/',views.register, name='register'),
-    path('profile/',views.profile, name='profile'),
-]
+AUTH_USER_MODEL = "account.User"
 ```
+
+### 8. Migrate database
+Once the models are defined, create the database tables by running `python manage.py makemigrations`. Then, apply the migration by using this command `python manage.py migrate`
+
+<img  src="./files/images/migrate.jpg"></img><br>
+
+Results:
+<img  src="./files/images/database.jpg"></img>
+
+### 8. Create forms
+Create a new file `forms.py` in the account(app) folder.
+- Login form<br>
+
+<img  src="./files/images/loginform.jpg"></img>
+
+- Register form
+
+<img  src="./files/images/registerform.jpg"></img>
+
+After creating the forms, update the views with the following code:
+<img  src="./files/images/view1.jpg"></img>
+<img  src="./files/images/view2.jpg"></img>
+
+### 8. Create templates
+- index.html
+<img  src="./files/images/index.html.jpg"></img>
+<img  src="./files/images/index.jpg"></img>
+
+- login.html<br>
+<img  src="./files/images/login.html.jpg"></img>
+<img  src="./files/images/login.jpg"></img>
+
+- register.html<br>
+<img  src="./files/images/register.html.jpg"></img>
+<img  src="./files/images/register.jpg"></img>
+
+- customer.html
+```
+<!DOCTYPE html>
+<html lang="en">
+<body>
+ <h1> hello {{ user.username }}.cutomer</h1>
+</body>
+</html>
+```
+<img  src="./files/images/customer.jpg"></img>
+
+- technical.html
+```
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1> hello {{ user.username }}.technical worker</h1>
+</body>
+</html>
+```
+<img  src="./files/images/technical.jpg"></img>
+
+- senior.html
+```
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <h1> hello {{ user.username }}.senior worker</h1>
+</body>
+</html>
+```
+<img  src="./files/images/senior.jpg"></img>
+
 
 ## Question 3 (b)
 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

@@ -292,6 +292,95 @@ After conducting sentiment analysis on the tweets dataset using the TextBlob lib
 
 In summary, by performing sentiment analysis on tweets dataset can help to improve the functioning of the portal. For example, identify areas of improvement based on negative feedback, understand user sentiment trends, and make data-driven decisions for enhancing user experience.
 
+
+## Integrate Sentiment Analysis in Django
+#### Step 1: Install required libraries
+To perform sentiment analysis, install the textblob library to our project using the following commands:
+```
+Pip install textblob
+```
+Command Prompt:
+
+<img  src="./files/images/textblob.png"></img>
+
+#### Step 2: Define View
+Inside the Django view.py, define a function that will receive the input text and perform sentiment analysis. 
+```
+def analyze_sentiment(request):
+    if request.method == 'POST':
+        text = request.POST.get('text', '')
+        blob = TextBlob(text)
+        sentiment = blob.sentiment.polarity
+
+
+        if sentiment > 0:
+            sentiment_label = 'Positive'
+        elif sentiment < 0:
+            sentiment_label = 'Negative'
+        else:
+            sentiment_label = 'Neutral'
+
+        return render(request, 'analyze.html', {'sentiment_label': sentiment_label})
+
+    return render(request, 'analyze.html')
+```
+
+#### Step 3: Create Template
+Next, create Django templates to render the sentiment analysis form and display the sentiment analysis results.
+```
+<form method="POST" action="{% url 'analyze_sentiment' %}">
+  {% csrf_token %}
+  <label for="text">Enter Text:</label>
+  <br>
+  <textarea name="text" id="text" rows="5" cols="30"></textarea>
+  <br><br>
+  <button type="submit" class="btn btn-primary">
+    <i class="fas fa-search"></i> Analyze Sentiment
+  </button>
+</form>
+
+{% if sentiment_label %}
+  <div class="result">
+    <h3>Sentiment Analysis Result:</h3>
+    <p>Sentiment: {{ sentiment_label }}</p>
+  </div>
+{% endif %}
+```
+
+#### Step 4: Configure URL
+Configure the URL in urls.py.
+```
+from django.urls import path
+from sentiment_analysis.views import analyze_sentiment
+
+urlpatterns = [
+    path('analyze/', analyze_sentiment, name='analyze_sentiment'),
+]
+```
+
+#### Step 5: Run the Django server
+Run the following command to test the sentiment analysis.
+```
+python manage.py runserver
+```
+
+Output:
+
+- Positive
+
+    <img  src="./files/images/django1.png"></img>
+
+- Negative
+
+    <img  src="./files/images/django3.png"></img>
+
+- Neutral
+  
+    <img  src="./files/images/django2.png"></img>
+    
+After utilizing sentiment analysis in django to analyze the sentiments expressed in the text data collected from the portal's users, the portal can gain insights into the sentiment expressed by the user in order to understand user satisfaction, identify areas of improvement, and tailor the portal's content accordingly.
+
+
 ## Contribution 🛠️
 Please create an [Issue](https://github.com/drshahizan/special-topic-data-engineering/issues) for any improvements, suggestions or errors in the content.
 

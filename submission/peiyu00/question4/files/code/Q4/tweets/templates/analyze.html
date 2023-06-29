@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+<form method="POST" action="{% url 'analyze_sentiment' %}">
+  {% csrf_token %}
+  <label for="text">Enter Text:</label>
+  <br>
+  <textarea name="text" id="text" rows="5" cols="30"></textarea>
+  <br><br>
+  <button type="submit" class="btn btn-primary">
+    <i class="fas fa-search"></i> Analyze Sentiment
+  </button>
+</form>
+
+{% if sentiment_label %}
+  <div class="result">
+    <h3>Sentiment Analysis Result:</h3>
+    <p>Sentiment: {{ sentiment_label }}</p>
+  </div>
+{% endif %}
